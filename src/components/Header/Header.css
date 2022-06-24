@@ -1,0 +1,25 @@
+.avatar {
+  background: var(--blue);
+  border-radius: 50%;
+  position: relative;
+  bottom: 12px;
+  right: 0;
+  overflow: hidden;
+}
+section {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.langs {
+  margin: 0 0.5rem 0 0;
+  cursor: pointer;
+}
+
+.langs:hover {
+  margin: 0 0.5rem 0 0;
+  text-decoration: underline;
+}
