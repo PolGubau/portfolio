@@ -21,10 +21,13 @@ export const Card = memo(
     title,
     category,
     history,
-    pointOfInterest,
+    pointOfInterestX,
+    pointOfInterestY,
+    textColor,
     backgroundColor,
     description,
     path,
+    width,
     lang,
   }) => {
     const y = useMotionValue(0);
@@ -54,7 +57,6 @@ export const Card = memo(
     if (lang === Languages[0]) langIndex = 0;
     if (lang === Languages[1]) langIndex = 1;
     if (lang === Languages[2]) langIndex = 2;
-    console.log(lang);
     // When this card is selected, attach a wheel event listener
     const containerRef = useRef(null);
     useWheelScroll(
@@ -81,12 +83,19 @@ export const Card = memo(
           >
             <Image
               id={id}
+              width={width}
               path={path}
               isSelected={isSelected}
-              pointOfInterest={pointOfInterest}
+              pointOfInterestX={pointOfInterestX}
+              pointOfInterestY={pointOfInterestY}
               backgroundColor={backgroundColor}
             />
-            <Title title={title} category={category} isSelected={isSelected} />
+            <Title
+              title={title}
+              category={category}
+              isSelected={isSelected}
+              textColor={textColor}
+            />
             <motion.div
               className="content-container"
               style={{ ...inverted, originY: 0, originX: 0 }}
@@ -105,7 +114,7 @@ export const Card = memo(
 const Overlay = ({ isSelected }) => (
   <motion.div
     initial={false}
-    animate={{ opacity: isSelected ? 1 : 0 }}
+    animate={{ opacity: isSelected ? 0.6 : 0 }}
     transition={{ duration: 0.2 }}
     style={{ pointerEvents: isSelected ? "auto" : "none" }}
     className="overlay"

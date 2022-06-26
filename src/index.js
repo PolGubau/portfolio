@@ -6,12 +6,16 @@ import "./styles.css";
 import { useState } from "react";
 import { Languages } from "./Service/Consts";
 
+//import css
+import "./styles.css";
 function App() {
   const [lang, setLang] = useState(Languages[0]);
+
   return (
     <div className="container">
       <Header setLang={setLang} lang={lang} />
-      <CardList lang={lang} />
+
+      <CardList />
     </div>
   );
 }

@@ -5,8 +5,10 @@ import { closeSpring } from "./animations";
 export const Image = ({
   id,
   path,
+  width,
   isSelected,
-  pointOfInterest = 0,
+  pointOfInterestX = 0,
+  pointOfInterestY = 0,
   backgroundColor,
 }) => {
   const inverted = useInvertedScale();
@@ -18,11 +20,14 @@ export const Image = ({
     >
       <motion.img
         className="card-image"
-        src={`images/${path}.jpg`}
+        src={`images/${path}`}
         alt=""
+        width={isSelected ? `${width + 100}px` : `${width}px`}
         initial={false}
         animate={
-          isSelected ? { x: -20, y: -20 } : { x: -pointOfInterest, y: 0 }
+          isSelected
+            ? { x: pointOfInterestX + 50, y: pointOfInterestY + -20 }
+            : { x: pointOfInterestX, y: pointOfInterestY }
         }
         transition={closeSpring}
       />
