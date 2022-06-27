@@ -32,11 +32,11 @@ export const cardData = [
     backgroundColor: "#faabff",
     path: "/UABMèdia/0.png",
     tags: ["PHP", "WebTV", "BOOTSTRAP", "JQUERY", "AWS"],
-    description: [
-      "Web aplication to manage the UAB Mèdia's webtv",
-      "Aplicación web para la gestión de contenidos de UAB Mèdia",
-      "Aplicació web per a la gestió de continguts de la UAB Mèdia",
-    ],
+    description: {
+      English: "Web aplication to manage the UAB Mèdia's webtv",
+      Spanish: "Aplicación web para la gestión de contenidos de UAB Mèdia",
+      Catalan: "Aplicació web per a la gestió de continguts de la UAB Mèdia",
+    },
 
     link: "https://uab.media/",
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Description.css";
-export default function Description({ tags, description, langIndex = 0 }) {
+export default function Description({ tags, description, lang }) {
   return (
     <>
       <section>
@@ -11,7 +11,7 @@ export default function Description({ tags, description, langIndex = 0 }) {
         </ul>
       </section>
       <section>
-        <p className="descriptionText">{description[langIndex]}</p>
+        <p className="descriptionText">{description[lang]}</p>
       </section>
     </>
   );

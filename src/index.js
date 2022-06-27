@@ -11,10 +11,9 @@ function App() {
   const [lang, setlang] = useState(langHook());
 
   useEffect(() => {
-    window.localStorage.setItem("language", lang);
+    localStorage.setItem("language", lang);
   }, [lang]);
 
-  console.log("🚀 App ~ lang", lang);
 
   return (
     <div className="container">
