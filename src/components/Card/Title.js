@@ -27,15 +27,18 @@ export const Title = ({
       transformTemplate={scaleTranslate}
       style={{ ...inverted, originX: 0, originY: 0 }}
     >
-      <span className="category" style={{ color: textColor }}>
-        {category[lang]}
-      </span>
       <a onClick={handleClick} href={link}>
         <h2 className="title" style={{ color: textColor }}>
           {title}
           <FiArrowRight className="arrow" style={{ color: textColor }} />
         </h2>
       </a>
+      <motion.span
+        className="category"
+        style={{ color: textColor, opacity: isSelected ? 1 : 0 }}
+      >
+        {category[lang]}
+      </motion.span>
     </motion.div>
   );
 };

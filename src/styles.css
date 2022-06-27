@@ -6,7 +6,7 @@
 body {
   --secondary: rgb(161, 161, 161);
   --divider: #343434;
-  --blue: #a1d7f0;
+  --primary: #a1d7f0;
   --white: rgb(245, 245, 245);
   margin: 0;
   padding: 0;
@@ -36,8 +36,6 @@ body {
   flex: 1 1 100%;
   padding: 45px 25px;
 }
-
-
 
 ul,
 li {
@@ -100,7 +98,7 @@ li {
   pointer-events: auto;
   position: relative;
   border-radius: 20px;
-  background: var(--blue);
+  background: var(--primary);
   overflow: hidden;
   width: 100%;
   height: 100%;

@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 300px;
+  max-width: 400px;
   z-index: 3;
 }
 a {
@@ -10,7 +10,8 @@ a {
 }
 .title {
   display: flex;
-  font-size: 1.6em;
+  font-size: 1.8em;
+  font-weight: 600;
   margin: 0px 0;
   padding: 0;
 }

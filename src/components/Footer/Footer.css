@@ -1,0 +1,34 @@
+h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  color: rgb(0, 0, 0);
+  margin: 6px 0 12px;
+}
+a {
+  color: black;
+}
+footer {
+  border-top: 1px solid var(--divider);
+  position: relative;
+  margin-top: 40px;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.cv {
+  padding: 15px 20px;
+  border: 1px solid black;
+}
+.cv:hover {
+  cursor: pointer;
+  background-color: var(--primary);
+}
+.icon {
+  margin-right: 7px;
+}

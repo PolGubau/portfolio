@@ -16,7 +16,7 @@ header {
   height: 120px;
 }
 .avatar {
-  background: var(--blue);
+  background: var(--primary);
   border-radius: 50%;
   position: relative;
   bottom: 12px;
