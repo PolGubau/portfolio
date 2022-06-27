@@ -1,7 +1,7 @@
 import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
 import { closeSpring } from "./animations";
-
+import "./Image.css";
 export const Image = ({
   id,
   path,
@@ -18,6 +18,7 @@ export const Image = ({
       className="card-image-container"
       style={{ ...inverted, backgroundColor, originX: 0, originY: 0 }}
     >
+      
       <motion.img
         className="card-image"
         src={`images/${path}`}

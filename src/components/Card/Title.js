@@ -1,12 +1,23 @@
 import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
 import { closeSpring, openSpring } from "./animations";
+import "./Title.css";
+import { FiArrowRight } from "react-icons/fi";
 
-export const Title = ({ title, category, textColor, isSelected }) => {
+export const Title = ({
+  title,
+  category,
+  textColor,
+  isSelected,
+  link,
+  lang,
+}) => {
   const inverted = useInvertedScale();
   const x = isSelected ? 30 : 15;
   const y = x;
-
+  const handleClick = () => {
+    window.open(link, "_blank");
+  };
   return (
     <motion.div
       className="title-container"
@@ -17,9 +28,14 @@ export const Title = ({ title, category, textColor, isSelected }) => {
       style={{ ...inverted, originX: 0, originY: 0 }}
     >
       <span className="category" style={{ color: textColor }}>
-        {category}
+        {category[lang]}
       </span>
-      <h2 style={{ color: textColor }}>{title}</h2>
+      <a onClick={handleClick} href={link}>
+        <h2 className="title" style={{ color: textColor }}>
+          {title}
+          <FiArrowRight className="arrow" style={{ color: textColor }} />
+        </h2>
+      </a>
     </motion.div>
   );
 };

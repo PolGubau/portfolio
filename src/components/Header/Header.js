@@ -2,9 +2,12 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Languages } from "../../Service/Consts";
 import "./Header.css";
+
 import { useState } from "react";
+//
 export default function Header({ lang, setLang }) {
   const [langsToDisplay, setLangsToDisplay] = useState(0);
+
   return (
     <>
       <header>

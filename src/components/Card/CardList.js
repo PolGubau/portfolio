@@ -2,9 +2,11 @@ import * as React from "react";
 import { Card } from "./Card";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { cardData } from "../../Service/Consts";
+import "./CardList.css";
+import langHook from "../../hooks/langHook";
 
-function List({ match, history, lang }) {
-  console.log(lang);
+function List({ match, history }) {
+  const lang = langHook();
 
   return (
     <ul className="card-list">
@@ -18,6 +20,8 @@ function List({ match, history, lang }) {
           history={history}
           description={card.description}
           width={card.width}
+          link={card.link}
+          tags={card.tags}
           {...card}
         />
       ))}
@@ -25,7 +29,7 @@ function List({ match, history, lang }) {
   );
 }
 
-export function CardList({}) {
+export function CardList() {
   return (
     <Router>
       <Route path={["/:id", "/"]} component={List} />

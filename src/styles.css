@@ -37,23 +37,7 @@ body {
   padding: 45px 25px;
 }
 
-h1 {
-  font-weight: bold;
-  font-size: 3rem;
-  color: rgb(0, 0, 0);
-  margin: 6px 0 12px;
-}
 
-header {
-  border-bottom: 1px solid var(--divider);
-  position: relative;
-}
-
-.avatar,
-.avatar img {
-  width: 120px;
-  height: 120px;
-}
 
 ul,
 li {
@@ -151,24 +135,7 @@ li {
   height: 420px;
   width: 100vw;
   transform: translateZ(0);
-}
-
-.title-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 300px;
-}
-
-h2 {
-  color: #fff;
-  margin: 8px 0;
-}
-
-.category {
-  color: #fff;
-  font-size: 14px;
-  text-transform: uppercase;
+  z-index: 2;
 }
 
 .overlay {
@@ -202,7 +169,7 @@ h2 {
 }
 
 p {
-  color: #9d9ca1;
+  color: #070707;
   font-size: 20px;
   line-height: 28px;
 }

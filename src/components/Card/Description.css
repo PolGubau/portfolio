@@ -1,0 +1,16 @@
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.tagsContainer li {
+  margin-right: 10px;
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin: 5px;
+}
+.descriptionText {
+  display: flex;
+}

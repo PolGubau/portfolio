@@ -3,19 +3,24 @@ import { render } from "react-dom";
 import Header from "./components/Header/Header";
 import { CardList } from "./components/Card/CardList";
 import "./styles.css";
-import { useState } from "react";
-import { Languages } from "./Service/Consts";
 
-//import css
-import "./styles.css";
+import langHook from "./hooks/langHook";
+import { useState, useEffect } from "react";
+
 function App() {
-  const [lang, setLang] = useState(Languages[0]);
+  const [lang, setlang] = useState(langHook());
+
+  useEffect(() => {
+    window.localStorage.setItem("language", lang);
+  }, [lang]);
+
+  console.log("🚀 App ~ lang", lang);
 
   return (
     <div className="container">
-      <Header setLang={setLang} lang={lang} />
+      <Header lang={lang} setLang={setlang} />
 
-      <CardList />
+      <CardList lang={lang} />
     </div>
   );
 }

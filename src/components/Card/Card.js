@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import { useInvertedBorderRadius } from "./utils/use-inverted-border-radius";
 import { Title } from "./Title";
 import { Image } from "./Image";
+import Description from "./Description";
 import { openSpring, closeSpring } from "./animations";
 import { useScrollConstraints } from "./utils/use-scroll-constraints";
 import { useWheelScroll } from "./utils/use-wheel-scroll";
-import { Languages } from "../../Service/Consts";
+import "./Card.css";
 
 // Distance in pixels a user has to scroll a card down before we recognise
 // a swipe-to dismiss action.
@@ -28,6 +29,8 @@ export const Card = memo(
     description,
     path,
     width,
+    tags,
+    link,
     lang,
   }) => {
     const y = useMotionValue(0);
@@ -41,7 +44,9 @@ export const Card = memo(
     const constraints = useScrollConstraints(cardRef, isSelected);
 
     function checkSwipeToDismiss() {
+      // DISTANCIAS DONDE SE QUITA LA CARTA AL HACER SCROLL
       y.get() > dismissDistance && history.push("/");
+      y.get() > -150 && history.push("/");
     }
 
     function checkZIndex(latest) {
@@ -51,12 +56,7 @@ export const Card = memo(
         zIndex.set(0);
       }
     }
-    let langIndex = 0;
-    console.log(`L'idioma actual és ${lang}`);
 
-    if (lang === Languages[0]) langIndex = 0;
-    if (lang === Languages[1]) langIndex = 1;
-    if (lang === Languages[2]) langIndex = 2;
     // When this card is selected, attach a wheel event listener
     const containerRef = useRef(null);
     useWheelScroll(
@@ -90,17 +90,26 @@ export const Card = memo(
               pointOfInterestY={pointOfInterestY}
               backgroundColor={backgroundColor}
             />
+            <motion.p
+              initial={{ opacity: 0 }}
+              className="closeButton"
+              animate={isSelected ? { opacity: 1 } : { opacity: 0 }}
+            >
+              x
+            </motion.p>
             <Title
+              lang={lang}
               title={title}
               category={category}
               isSelected={isSelected}
               textColor={textColor}
+              link={link}
             />
             <motion.div
               className="content-container"
               style={{ ...inverted, originY: 0, originX: 0 }}
             >
-              {description[langIndex]}
+              <Description tags={tags} description={description} lang={lang} />
             </motion.div>
           </motion.div>
         </div>

@@ -1,3 +1,20 @@
+h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  color: rgb(0, 0, 0);
+  margin: 6px 0 12px;
+}
+
+header {
+  border-bottom: 1px solid var(--divider);
+  position: relative;
+}
+
+.avatar,
+.avatar img {
+  width: 120px;
+  height: 120px;
+}
 .avatar {
   background: var(--blue);
   border-radius: 50%;
