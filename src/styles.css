@@ -4,9 +4,10 @@
 }
 
 body {
-  --secondary: rgb(161, 161, 161);
-  --divider: #343434;
   --primary: #a1d7f0;
+  --secondary: #68b4d8;
+  --divider: #343434;
+
   --white: rgb(245, 245, 245);
   margin: 0;
   padding: 0;
@@ -20,7 +21,9 @@ body {
 
   -webkit-tap-highlight-color: rgba(224, 68, 68, 0);
 }
-
+p {
+  margin: 0;
+}
 #root {
   display: flex;
   justify-content: center;
@@ -131,7 +134,7 @@ li {
   left: 0;
   overflow: hidden;
   height: 420px;
-  width: 100vw;
+  width: 100%;
   transform: translateZ(0);
   z-index: 2;
 }
