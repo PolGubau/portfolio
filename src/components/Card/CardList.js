@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Card } from "./Card";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { cardData } from "../../Service/Consts";
+import { cardData } from "../../Service/Data";
 import "./CardList.css";
 import langHook from "../../hooks/langHook";
 
