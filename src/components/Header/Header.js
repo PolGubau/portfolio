@@ -57,7 +57,7 @@ export default function Header({ lang, setLang }) {
             <a href="/">
               <motion.img
                 className="meinPhoto"
-                src={`images/me.png`}
+                src={`images/me.webp`}
                 alt="Me"
                 initial={false}
               />
