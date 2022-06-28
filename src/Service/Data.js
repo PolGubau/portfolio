@@ -15,10 +15,18 @@ export const cardData = [
     backgroundColor: "#faabff",
     path: "/UABMèdia/0.png",
     tags: ["PHP", "WebTV", "BOOTSTRAP", "JQUERY", "AWS"],
+    madeFor: {
+      English: "Autonomous University of Barcelona",
+      Spanish: "Universidad autónoma de Barcelona",
+      Catalan: "Universitat autònoma de Barcelona",
+    },
     description: {
-      English: "Web aplication to manage the UAB Mèdia's webtv",
-      Spanish: "Aplicación web para la gestión de contenidos de UAB Mèdia",
-      Catalan: "Aplicació web per a la gestió de continguts de la UAB Mèdia",
+      English:
+        "Web and mobile application for viewing UAB Mèdia content. On this page you can see the news, television programs, radio and interviews both in real time and on demand. Also listen to college radio.",
+      Spanish:
+        "Aplicación web y móvil para la visualización de contenidos de UAB Mèdia. En esta página se pueden ver las noticias, programas de televisión, de radio y entrevistas tanto en tiempo real como a la carta. También escuchar la radio de la universidad.",
+      Catalan:
+        "Aplicació web i mòbil per a la visualització de continguts de la UAB Mèdia. En aquesta pàgina es poden veure les notícies, programes de televisió, de ràdio i entrevistes tant a temps real com a la carta. També escoltar la ràdio de la universitat.",
     },
 
     link: "https://uab.media/",
@@ -56,7 +64,7 @@ export const cardData = [
     width: 600,
     backgroundColor: "#abfeff",
     path: "/Rispot/0.png",
-    tags: ["PHP", "SQL", "JQUERY"],
+    tags: ["PHP", "SQL", "JQUERY", "EXCEL"],
     description: ["aaa", "bbb", "ccc"],
     link: "https://www.amazon.es/s?i=merchant-items&me=A1O24E5ASY81J5&rh=p_4%3ARISPOT",
   },
