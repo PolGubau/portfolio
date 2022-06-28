@@ -13,7 +13,7 @@ import "./Card.css";
 
 // Distance in pixels a user has to scroll a card down before we recognise
 // a swipe-to dismiss action.
-const dismissDistance = 150;
+const dismissDistance = 100;
 
 export const Card = memo(
   ({
@@ -31,6 +31,7 @@ export const Card = memo(
     width,
     tags,
     link,
+    madeFor,
     lang,
   }) => {
     const y = useMotionValue(0);
@@ -46,7 +47,7 @@ export const Card = memo(
     function checkSwipeToDismiss() {
       // DISTANCIAS DONDE SE QUITA LA CARTA AL HACER SCROLL
       y.get() > dismissDistance && history.push("/");
-      y.get() > -150 && history.push("/");
+      // y.get() > -150 && history.push("/");
     }
 
     function checkZIndex(latest) {
@@ -109,7 +110,13 @@ export const Card = memo(
               className="content-container"
               style={{ ...inverted, originY: 0, originX: 0 }}
             >
-              <Description tags={tags} description={description} lang={lang} />
+              <Description
+                tags={tags}
+                description={description}
+                lang={lang}
+                link={link}
+                madeFor={madeFor}
+              />
             </motion.div>
           </motion.div>
         </div>
