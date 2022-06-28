@@ -54,12 +54,14 @@ export default function Header({ lang, setLang }) {
             </h3>
           </article>
           <div className="avatar">
-            <motion.img
-              className="meinPhoto"
-              src={`images/me.png`}
-              alt="Me"
-              initial={false}
-            />
+            <a href="/">
+              <motion.img
+                className="meinPhoto"
+                src={`images/me.png`}
+                alt="Me"
+                initial={false}
+              />
+            </a>
           </div>
         </section>
       </header>
