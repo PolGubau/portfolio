@@ -1,16 +1,40 @@
-.tagsContainer {
+.Description-header {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+.Description-tagsContainer {
   display: flex;
+  user-select: none;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
-.tagsContainer li {
+
+.Description-tagsContainer li {
   margin-right: 10px;
   border: 1px solid black;
   padding: 5px 10px;
   margin: 5px;
 }
-.descriptionText {
+.Description-descriptionText {
   display: flex;
+}
+
+.Description-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.Description-search {
+  display: flex;
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+.Description-search:hover {
+  background-color: var(--secondary);
 }
