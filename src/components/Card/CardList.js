@@ -19,6 +19,7 @@ function List({ match, history }) {
           isSelected={match.params.id === card.id}
           history={history}
           description={card.description}
+          madeFor={card.madeFor}
           width={card.width}
           link={card.link}
           tags={card.tags}
