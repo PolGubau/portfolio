@@ -4,25 +4,27 @@ import { closeSpring } from "./animations";
 import "./Image.css";
 import { useState } from "react";
 import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 export const Image = ({
   id,
+  ids,
   path,
   width,
   isSelected,
   pointOfInterestX = 0,
   pointOfInterestY = 0,
   backgroundColor,
-  imagesNum = 4,
 }) => {
-  const [imageIndex, setImageIndex] = useState(0);
   const inverted = useInvertedScale();
-  // si hay imagen donde ir, la ponemos en el estado
-  const nextImage = (d) => {
-    if (imageIndex + d > -1 && imageIndex + d < imagesNum) {
-      setImageIndex(imageIndex + d);
-    }
-  };
+
+  let actualID = ids.indexOf(id);
+  console.log("🚀 ~ file: Image.js ~ line 29 ~ actualID", actualID);
+  //da la posición de la carta actual en el array ids
+
+  const prevID = actualID - 1 < 0 ? ids[ids.length - 1] : ids[actualID - 1];
+  const nextID = actualID + 1 > ids.length - 1 ? ids[0] : ids[actualID + 1];
+
   return (
     <motion.div
       className="card-image-container"
@@ -30,28 +32,22 @@ export const Image = ({
     >
       {isSelected && (
         <div className="buttons-image">
-          <motion.button
-            className="controls-image prev-image"
-            onClick={() => {
-              nextImage(-1);
-            }}
-          >
-            <GrFormPreviousLink />
+          <motion.button className="controls-image prev-image">
+            <Link to={`/${prevID}`}>
+              <GrFormPreviousLink />
+            </Link>
           </motion.button>
-          <motion.button
-            className="controls-image next-image"
-            onClick={() => {
-              nextImage(1);
-            }}
-          >
-            <GrFormNextLink />
+          <motion.button className="controls-image next-image">
+            <Link to={`/${nextID}`}>
+              <GrFormNextLink />
+            </Link>
           </motion.button>
         </div>
       )}
 
       <motion.img
         className="card-image"
-        src={`images/${id}/${imageIndex}.webp`}
+        src={`images/${id}/0.webp`}
         alt=""
         width={isSelected ? `${width + 100}px` : `${width}px`}
         initial={false}

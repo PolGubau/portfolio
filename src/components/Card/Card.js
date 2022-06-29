@@ -32,6 +32,7 @@ export const Card = memo(
     tags,
     link,
     madeFor,
+    ids,
     lang,
   }) => {
     const y = useMotionValue(0);
@@ -84,6 +85,7 @@ export const Card = memo(
           >
             <Image
               id={id}
+              ids={ids}
               width={width}
               path={path}
               isSelected={isSelected}

@@ -4,7 +4,6 @@
 }
 .Description-tagsContainer {
   display: flex;
-  user-select: none;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
@@ -13,8 +12,8 @@
 
 .Description-tagsContainer li {
   margin-right: 10px;
-  border: 1px solid black;
   padding: 5px 10px;
+  background-color: var(--secondary);
   margin: 5px;
 }
 .Description-descriptionText {
@@ -31,6 +30,7 @@
   flex-direction: row;
 }
 .Description-search {
+  
   display: flex;
   border: 1px solid black;
   padding: 10px 20px;

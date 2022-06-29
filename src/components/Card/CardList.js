@@ -7,11 +7,15 @@ import langHook from "../../hooks/langHook";
 
 function List({ match, history }) {
   const lang = langHook();
-
+  const ids = [];
+  cardData.map((card) => {
+    ids.push(card.id);
+  });
   return (
     <ul className="card-list">
       {cardData.map((card) => (
         <Card
+          ids={ids}
           key={card.id}
           path={card.path}
           lang={lang}
