@@ -17,6 +17,7 @@ const dismissDistance = 100;
 
 export const Card = memo(
   ({
+    index,
     isSelected,
     id,
     title,
@@ -70,15 +71,35 @@ export const Card = memo(
     );
 
     return (
-      <li ref={containerRef} className={`card`}>
+      <motion.li
+        ref={containerRef}
+        className={`card`}
+        initial={
+          isSelected
+            ? {
+                y: 0,
+                opacity: 1,
+              }
+            : { y: 50, opacity: 0 }
+        }
+        animate={{ y: 0, opacity: 1 }}
+        transition={
+          isSelected
+            ? {
+                delay: 0,
+              }
+            : { delay: index * 0.1 }
+        }
+      >
         <Overlay isSelected={isSelected} />
-        <div className={`card-content-container ${isSelected && "open"}`}>
+        <motion.div
+          className={`card-content-container ${isSelected && "open"}`}
+        >
           <motion.div
             ref={cardRef}
             className="card-content"
             style={{ ...inverted, zIndex, y }}
             layoutTransition={isSelected ? openSpring : closeSpring}
-            // drag={isSelected ? "y" : false}
             dragConstraints={constraints}
             onDrag={checkSwipeToDismiss}
             onUpdate={checkZIndex}
@@ -121,9 +142,9 @@ export const Card = memo(
               />
             </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
         {!isSelected && <Link to={id} className={`card-open-link`} />}
-      </li>
+      </motion.li>
     );
   },
   (prev, next) => prev.isSelected === next.isSelected

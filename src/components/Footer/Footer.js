@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Languages } from "../../Service/Consts";
+import { Languages } from "../../Consts";
 import "./Footer.css";
 import { RiGithubLine, RiLinkedinLine } from "react-icons/ri";
 import { MdOutlineAlternateEmail } from "react-icons/md";
@@ -16,11 +16,11 @@ export default function Footer({ lang }) {
           <article>
             <h2>Pol Gubau Amores</h2>
 
-            <p>
+            <motion.p>
               {lang === Languages[0] && "Thank you :)"}
               {lang === Languages[1] && "Muchas gracias :)"}
               {lang === Languages[2] && "Moltes gràcies :)"}
-            </p>
+            </motion.p>
           </article>
           <article>
             <a href="files/cv2022.pdf" download>

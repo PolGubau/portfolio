@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Languages } from "../../Service/Consts";
+import { Languages } from "../../Consts";
 import "./Header.css";
 
 import { useState } from "react";

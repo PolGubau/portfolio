@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Card } from "./Card";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { motion, useMotionValue, Variants } from "framer-motion";
+
 import { cardData } from "../../Data";
 import "./CardList.css";
 import langHook from "../../hooks/langHook";
@@ -11,10 +13,12 @@ function List({ match, history }) {
   cardData.map((card) => {
     ids.push(card.id);
   });
+
   return (
     <ul className="card-list">
-      {cardData.map((card) => (
+      {cardData.map((card, index) => (
         <Card
+          index={index}
           ids={ids}
           key={card.id}
           path={card.path}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Languages } from "src/Service/Consts";
+import { Languages } from "../../Consts";
 import "./Description.css";
 import { BsSearch } from "react-icons/bs";
 
