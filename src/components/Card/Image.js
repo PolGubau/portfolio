@@ -2,7 +2,6 @@ import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
 import { closeSpring } from "./animations";
 import "./Image.css";
-import { useState } from "react";
 import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
@@ -19,7 +18,6 @@ export const Image = ({
   const inverted = useInvertedScale();
 
   let actualID = ids.indexOf(id);
-  console.log("🚀 ~ file: Image.js ~ line 29 ~ actualID", actualID);
   //da la posición de la carta actual en el array ids
 
   const prevID = actualID - 1 < 0 ? ids[ids.length - 1] : ids[actualID - 1];
