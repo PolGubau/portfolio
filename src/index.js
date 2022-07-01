@@ -5,18 +5,13 @@ import { CardList } from "./components/Card/CardList";
 import "./styles.css";
 import Footer from "./components/Footer/Footer";
 import langHook from "./hooks/langHook";
-import { useState, useEffect } from "react";
 
 function App() {
-  const [lang, setlang] = useState(langHook());
-
-  useEffect(() => {
-    localStorage.setItem("language", lang);
-  }, [lang]);
+  const lang = langHook();
 
   return (
     <div className="container">
-      <Header lang={lang} setLang={setlang} />
+      <Header lang={lang} />
 
       <CardList lang={lang} />
       <Footer lang={lang} />

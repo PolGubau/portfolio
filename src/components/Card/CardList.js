@@ -1,17 +1,14 @@
 import * as React from "react";
 import { Card } from "./Card";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
 import { cardData } from "../../Data";
 import "./CardList.css";
 import langHook from "../../hooks/langHook";
 
 function List({ match, history }) {
-  const lang = langHook();
   const ids = [];
   cardData.map((card) => {
     ids.push(card.id);
-    console.log(cardData);
   });
 
   return (
@@ -22,7 +19,7 @@ function List({ match, history }) {
           ids={ids}
           key={card.id}
           path={card.path}
-          lang={lang}
+          lang={langHook()}
           textColor={card.textColor}
           isSelected={match.params.id === card.id}
           history={history}

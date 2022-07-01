@@ -4,8 +4,15 @@ import { Languages } from "../../Consts";
 import "./Header.css";
 
 import { useState } from "react";
-//
-export default function Header({ lang, setLang }) {
+import langHook from "../../hooks/langHook";
+
+export default function Header() {
+  //function that override current language on langHook
+  const [lang, setLang] = useState(langHook);
+function newlang(language) {
+  if (language) setLang(language);
+  return lang;
+}
   const [langsToDisplay, setLangsToDisplay] = useState(0);
 
   return (
@@ -17,7 +24,7 @@ export default function Header({ lang, setLang }) {
               <span
                 className="langs"
                 onClick={() => {
-                  setLang(Languages[0]);
+                  newlang(Languages[0]);
                   setLangsToDisplay(0);
                 }}
               >
@@ -26,7 +33,7 @@ export default function Header({ lang, setLang }) {
               <span
                 className="langs"
                 onClick={() => {
-                  setLang(Languages[1]);
+                  newlang(Languages[1]);
                   setLangsToDisplay(1);
                 }}
               >
@@ -35,13 +42,12 @@ export default function Header({ lang, setLang }) {
               <span
                 className="langs"
                 onClick={() => {
-                  setLang(Languages[2]);
+                  newlang(Languages[2]);
                   setLangsToDisplay(2);
                 }}
               >
                 {Languages[langsToDisplay * 3 + 2]}
               </span>
-              {/* <span>Ara mateix: {lang}</span> */}
             </div>
             <h1>Pol Gubau Amores</h1>
 
