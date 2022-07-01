@@ -1,13 +1,13 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { Card } from "./Card";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import { cardData } from "../../Data";
 import "./CardList.css";
-import { Languages } from "../../Consts";
+import LangContext from "../../context/LangContext";
 
 function List({ match, history }) {
-  const lang = Languages[0];
+  const { lang } = useContext(LangContext);
   const ids = [];
   cardData.map((card) => {
     ids.push(card.id);

@@ -13,7 +13,7 @@
 .Description-tagsContainer li {
   margin-right: 10px;
   padding: 5px 10px;
-  background-color: var(--secondary);
+  background-color: var(--primary-dark);
   margin: 5px;
 }
 .Description-descriptionText {
@@ -30,11 +30,10 @@
   flex-direction: row;
 }
 .Description-search {
-  
   display: flex;
   border: 1px solid black;
   padding: 10px 20px;
 }
 .Description-search:hover {
-  background-color: var(--secondary);
+  background-color: var(--primary-dark);
 }

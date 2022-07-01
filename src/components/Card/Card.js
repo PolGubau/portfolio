@@ -114,13 +114,7 @@ export const Card = memo(
               pointOfInterestY={pointOfInterestY}
               backgroundColor={backgroundColor}
             />
-            <motion.p
-              initial={{ opacity: 0 }}
-              className="closeButton"
-              animate={isSelected ? { opacity: 1 } : { opacity: 0 }}
-            >
-              x
-            </motion.p>
+            
             <Title
               lang={lang}
               title={title}

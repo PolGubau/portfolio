@@ -23,9 +23,9 @@ export const cardData = [
     },
     description: {
       English:
-        "Web and mobile application for viewing UAB Mèdia content. On this page you can see the news, television programs, radio and interviews both in real time and on demand. Also listen to college radio.",
+        "Web and mobile application for viewing UAB Mèdia content. On this page you can see the news, television programs, radio and interviews in real time and on demand. You can also listen to the college radio.",
       Spanish:
-        "Aplicación web y móvil para la visualización de contenidos de UAB Mèdia. En esta página se pueden ver las noticias, programas de televisión, de radio y entrevistas tanto en tiempo real como a la carta. También escuchar la radio de la universidad.",
+        "Aplicación web y móvil para la visualización de contenidos de UAB Mèdia. En esta página se pueden ver las notícias, programas de televisión, de radio y entrevistes, tanto en tiempo real como a la carta. También escuchar la radio de la universidad.",
       Catalan:
         "Aplicació web i mòbil per a la visualització de continguts de la UAB Mèdia. En aquesta pàgina es poden veure les notícies, programes de televisió, de ràdio i entrevistes tant a temps real com a la carta. També escoltar la ràdio de la universitat.",
     },
@@ -58,9 +58,9 @@ export const cardData = [
       English:
         "NUWE is a gamification company in hiring developers. I work here as a graphic designer and I carry the creatives of social networks, rollups... I visually capture the ideas of my jobmates.",
       Spanish:
-        "NUWE es una empresa de gamificación en contratar desarrolladores. Trabajo aquí como Diseñador gráfico y llevo las creatividades de redes sociales, rollups... Plasmar visualmente las ideas de mis compañeros.",
+        "NUWE es una empresa de gamificación en contratar desarrolladores. Trabajo aquí como diseñador gráfico y llevo las creatividades de redes sociales, rollups... Plasmar visualmente las ideas de mis compañeros.",
       Catalan:
-        "NUWE és una empresa de gamificació en contractar desenvolupadors. Treballo aquí com a Dissenyador gràfic i porto les creativitats a xarxes socials, rollups... Plasmar visualment les idees dels meus companys.",
+        "NUWE és una empresa de gamificació en contractar desenvolupadors. Treballo aquí com a dissenyador gràfic i porto les creativitats de xarxes socials, rollups... Plasmar visualment les idees dels meus companys.",
     },
     link: "https://nuwe.io/en",
   },
@@ -90,11 +90,11 @@ export const cardData = [
     },
     description: {
       English:
-        "Rispot is a small product sales company, I have developed the entire internal database system and the 'Backstage' of the website, where you can view the data of all sales and see their statistics.",
+        "Rispot is a small product sales company. I have developed the entire internal database system and the 'backstage' of the website, where you can view the data of all sales and see their statistics.",
       Spanish:
-        "Rispot es una pequeña empresa de venta de productos, he desarrollado todo el sistema de base de datos interna y 'Backstage' de la página web, donde se puede visualizar los datos de todas las ventas y ver estadísticas de estas.",
+        "Rispot es una pequeña empresa de venta de productos. He desarrollado todo el sistema de base de datos interno y 'Backstage' de la página web, donde se puede visualizar los datos de todas las ventas y ver estadísticas de estas.",
       Catalan:
-        "Rispot és una petita empresa de venda de productes, he desenvolupat tot el sistema de la base de dades interna i 'Backstage' de la pàgina web, on es poden visualitzar les dades de totes les vendes i veure estadístiques d'aquestes.",
+        "Rispot és una petita empresa de venda de productes. He desenvolupat tot el sistema de la base de dades interna i 'Backstage' de la pàgina web, on es poden visualitzar les dades de totes les vendes i veure estadístiques d'aquestes.",
     },
     link: "https://www.amazon.es/s?i=merchant-items&me=A1O24E5ASY81J5&rh=p_4%3ARISPOT",
   },
@@ -122,11 +122,11 @@ export const cardData = [
     },
     description: {
       English:
-        "Gubau's Afternoons shows where I spent my afternoons on when I was in high school. I used it as a portfolio for two years and it's one of the pages that I have worked on the most. You can see in detail many projects that I have not shown here.",
+        "Gubau's Afternoons shows where I spent my afternoons when I was in high school. I used it as a portfolio for two years and it's one of the pages that I have worked on the most. You can see in detail many projects that I have not shown here.",
       Spanish:
         "Gubau's Afternoons muestra en lo que gastaba mis tardes cuando iba al instituto. La usé de portfolio durante dos años y es una de las páginas que más he trabajado. Se pueden ver a detalle muchos proyectos que no he mostrado aquí.",
       Catalan:
-        "Gubau's Afternoons mostra on gastava les tardes quan anava a l'institut. La vaig fer servir de portfoli durant dos anys i és una de les pàgines que més he treballat. Es poden veure detalladament molts projectes que no he mostrat aquí.",
+        "Gubau's Afternoons mostra on gastava les tardes quan anava a l'institut. La vaig fer servir de portafoli durant dos anys i és una de les pàgines que més he treballat. Es poden veure detalladament molts projectes que no he mostrat aquí.",
     },
     link: "https://gubauafternoons.com/",
   },
@@ -154,7 +154,7 @@ export const cardData = [
     },
     description: {
       English:
-        "A dynamic portfolio for Unbrushed, where to show the hairdressing sessions and their collaborations. The whole web is controlled from a different page where the database can be modified. Both the frontend and the backend were created by me.",
+        "A dynamic portfolio for Unbrushed, where you can show the hairdressing sessions and their collaborations. The whole website is controlled from a different page where the database is modified. Both the frontend and the backend were created by me.",
       Spanish:
         "Un portafolio dinámico para Unbrushed, donde mostrar las sesiones de peluquería y sus colaboraciones. Toda la web se controla desde una página distinta donde se modifica la base de datos. Se creó tanto el frontend como el backend.",
       Catalan:
@@ -186,11 +186,11 @@ export const cardData = [
     },
     description: {
       English:
-        "Škatla is a university project where we created an ecological packaging company, a lot of mockups and designs for social networks were made. Škatla creates boxes and merchandising as the client needs.",
+        "Škatla is a university project where we created an ecological packaging company, a lot of mockups and designs for social networks were made. Škatla creates boxes and merchandising at the customer's request. ",
       Spanish:
-        "Škatla es un proyecto universitario donde creamos una empresa de Packagings ecologicos, se realizaron cantidad de mockups y diseños para redes sociales. Škatla crea cajas y merchandising a medida que necesita el cliente. ",
+        "Škatla es un proyecto universitario donde creamos una empresa de packagings ecologicos, se realizaron cantidad de mockups y diseños para redes sociales. Škatla crea cajas y merchandising a demanda del cliente. ",
       Catalan:
-        "Škatla és un projecte universitari on vam crear una empresa de Packagings ecològics, es van realitzar quantitat de mockups i dissenys per a xarxes socials. Škatla crea caixes i marxandatge a mesura que necessita el client.",
+        "Škatla és un projecte universitari on vam crear una empresa de Packagings ecològics, es van realitzar quantitat de mockups i dissenys per a xarxes socials. Škatla crea caixes i marxandatge a demanda del client.",
     },
     link: "https://www.instagram.com/skatlapack/",
   },
@@ -249,11 +249,11 @@ export const cardData = [
     },
     description: {
       English:
-        "This is a website that I completed with Javascript to practice using LocalStorage. It was forked from GitHub and I added features, like changing the color of the Memos.",
+        "This is a website that I completed with Javascript to practice using LocalStorage. It was forked from GitHub and I added features like changing the color of the Memos.",
       Spanish:
-        "Esta es una web que completé con Javascript para practicar el uso del LocalStorage. Fue duplicada de GitHub y añadí funcionalidades, como el cambio de color de los Memos.",
+        "Esta es una web que completé con Javascript para practicar el uso del LocalStorage. Fue duplicada de GitHub y añadí funcionalidades como el cambio de color de los Memos.",
       Catalan:
-        "Aquesta és una web que vaig completar amb Javascript per practicar l'ús del LocalStorage. Va ser duplicada de GitHub i vaig afegir funcionalitats, com el canvi de color dels Memos.",
+        "Aquesta és una web que vaig completar amb Javascript per practicar l'ús del LocalStorage. Va ser duplicada de GitHub i vaig afegir funcionalitats com el canvi de color dels Memos.",
     },
     link: "https://pol-uab.alwaysdata.net/Otros/memo/",
   },

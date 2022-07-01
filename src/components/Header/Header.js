@@ -8,7 +8,7 @@ import LangContext from "../../context/LangContext";
 export default function Header() {
   const [langsToDisplay, setLangsToDisplay] = useState(0);
 
-  const lang = useContext(LangContext);
+  const { lang, setLang } = useContext(LangContext);
 
   return (
     <>
@@ -19,7 +19,7 @@ export default function Header() {
               <span
                 className="langs"
                 onClick={() => {
-                  // newlang(Languages[0]);
+                  setLang(Languages[0]);
                   setLangsToDisplay(0);
                 }}
               >
@@ -28,7 +28,7 @@ export default function Header() {
               <span
                 className="langs"
                 onClick={() => {
-                  // newlang(Languages[1]);
+                  setLang(Languages[1]);
                   setLangsToDisplay(1);
                 }}
               >
@@ -37,7 +37,7 @@ export default function Header() {
               <span
                 className="langs"
                 onClick={() => {
-                  // newlang(Languages[2]);
+                  setLang(Languages[2]);
                   setLangsToDisplay(2);
                 }}
               >

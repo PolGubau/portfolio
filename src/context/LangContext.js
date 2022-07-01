@@ -3,7 +3,7 @@ import { Languages } from "../Consts";
 
 const LangContext = createContext();
 
-export function langProvider({ children }) {
+export function LangProvider({ children }) {
   const [lang, setLang] = useState(Languages[0]);
 
   return (

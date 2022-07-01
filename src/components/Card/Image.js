@@ -28,6 +28,15 @@ export const Image = ({
       className="card-image-container"
       style={{ ...inverted, backgroundColor, originX: 0, originY: 0 }}
     >
+      <Link to={`/`}>
+        <motion.p
+          initial={{ opacity: 0 }}
+          className="closeButton"
+          animate={isSelected ? { opacity: 1 } : { opacity: 0 }}
+        >
+          x
+        </motion.p>{" "}
+      </Link>
       {isSelected && (
         <div className="buttons-image">
           <motion.button className="controls-image prev-image">
