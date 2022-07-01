@@ -30,6 +30,7 @@ export const Card = memo(
     description,
     path,
     width,
+    mobile,
     tags,
     link,
     madeFor,
@@ -99,7 +100,7 @@ export const Card = memo(
             ref={cardRef}
             className="card-content"
             style={{ ...inverted, zIndex, y }}
-            layoutTransition={isSelected ? openSpring : closeSpring}
+            layoutTransition={isSelected ? !mobile && openSpring : closeSpring}
             dragConstraints={constraints}
             onDrag={checkSwipeToDismiss}
             onUpdate={checkZIndex}
@@ -114,7 +115,7 @@ export const Card = memo(
               pointOfInterestY={pointOfInterestY}
               backgroundColor={backgroundColor}
             />
-            
+
             <Title
               lang={lang}
               title={title}

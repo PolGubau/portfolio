@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { Card } from "./Card";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
 import { cardData } from "../../Data";
 import "./CardList.css";
 import LangContext from "../../context/LangContext";
+import useMedia from "../../hooks/useMedia";
 
 function List({ match, history }) {
+  const mobile = useMedia();
+
   const { lang } = useContext(LangContext);
   const ids = [];
   cardData.map((card) => {
@@ -29,6 +31,7 @@ function List({ match, history }) {
           madeFor={card.madeFor}
           width={card.width}
           link={card.link}
+          mobile={mobile}
           tags={card.tags}
           {...card}
         />
