@@ -1,19 +1,14 @@
-import * as React from "react";
+import React, { useState, useContext } from "react";
+
 import { motion } from "framer-motion";
 import { Languages } from "../../Consts";
 import "./Header.css";
-
-import { useState } from "react";
-import langHook from "../../hooks/langHook";
+import LangContext from "../../context/LangContext";
 
 export default function Header() {
-  //function that override current language on langHook
-  const [lang, setLang] = useState(langHook);
-function newlang(language) {
-  if (language) setLang(language);
-  return lang;
-}
   const [langsToDisplay, setLangsToDisplay] = useState(0);
+
+  const lang = useContext(LangContext);
 
   return (
     <>
@@ -24,7 +19,7 @@ function newlang(language) {
               <span
                 className="langs"
                 onClick={() => {
-                  newlang(Languages[0]);
+                  // newlang(Languages[0]);
                   setLangsToDisplay(0);
                 }}
               >
@@ -33,7 +28,7 @@ function newlang(language) {
               <span
                 className="langs"
                 onClick={() => {
-                  newlang(Languages[1]);
+                  // newlang(Languages[1]);
                   setLangsToDisplay(1);
                 }}
               >
@@ -42,7 +37,7 @@ function newlang(language) {
               <span
                 className="langs"
                 onClick={() => {
-                  newlang(Languages[2]);
+                  // newlang(Languages[2]);
                   setLangsToDisplay(2);
                 }}
               >
@@ -52,10 +47,11 @@ function newlang(language) {
             <h1>Pol Gubau Amores</h1>
 
             <h3>
-              {lang === Languages[0] && "Front-End Developer and UX designer."}
-              {lang === Languages[1] &&
+              {{ lang } === Languages[0] &&
+                "Front-End Developer and UX designer."}
+              {{ lang } === Languages[1] &&
                 "Desarrollador Front-End y diseñador UX."}
-              {lang === Languages[2] &&
+              {{ lang } === Languages[2] &&
                 "Programador Front-End i dissenyador UX."}
             </h3>
           </article>

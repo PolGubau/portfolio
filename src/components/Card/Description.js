@@ -2,14 +2,13 @@ import React from "react";
 import { Languages } from "../../Consts";
 import "./Description.css";
 import { BsSearch } from "react-icons/bs";
-import langHook from "../../hooks/langHook";
 
 export default function Description({
   tags = "",
   description = "",
   madeFor = "",
   link = "",
-  lang = langHook(),
+  lang = Languages[0],
 }) {
   return (
     <>

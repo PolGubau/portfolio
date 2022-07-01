@@ -56,11 +56,11 @@ export const cardData = [
     },
     description: {
       English:
-        "Web and mobile application for viewing UAB Mèdia content. On this page you can see the news, television programs, radio and interviews both in real time and on demand. Also listen to college radio.",
+        "NUWE is a gamification company in hiring developers. I work here as a graphic designer and I carry the creatives of social networks, rollups... I visually capture the ideas of my jobmates.",
       Spanish:
-        "Aplicación web y móvil para la visualización de contenidos de UAB Mèdia. En esta página se pueden ver las noticias, programas de televisión, de radio y entrevistas tanto en tiempo real como a la carta. También escuchar la radio de la universidad.",
+        "NUWE es una empresa de gamificación en contratar desarrolladores. Trabajo aquí como Diseñador gráfico y llevo las creatividades de redes sociales, rollups... Plasmar visualmente las ideas de mis compañeros.",
       Catalan:
-        "Aplicació web i mòbil per a la visualització de continguts de la UAB Mèdia. En aquesta pàgina es poden veure les notícies, programes de televisió, de ràdio i entrevistes tant a temps real com a la carta. També escoltar la ràdio de la universitat.",
+        "NUWE és una empresa de gamificació en contractar desenvolupadors. Treballo aquí com a Dissenyador gràfic i porto les creativitats a xarxes socials, rollups... Plasmar visualment les idees dels meus companys.",
     },
     link: "https://nuwe.io/en",
   },
