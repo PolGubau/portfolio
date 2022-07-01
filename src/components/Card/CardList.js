@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Card } from "./Card";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { motion, useMotionValue, Variants } from "framer-motion";
 
 import { cardData } from "../../Data";
 import "./CardList.css";
@@ -12,6 +11,7 @@ function List({ match, history }) {
   const ids = [];
   cardData.map((card) => {
     ids.push(card.id);
+    console.log(cardData);
   });
 
   return (
