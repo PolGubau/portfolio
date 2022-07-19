@@ -2,7 +2,7 @@ import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
 import { closeSpring } from "./animations";
 import "./Image.css";
-import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
+
 import { Link } from "react-router-dom";
 
 export const Image = ({
@@ -16,12 +16,6 @@ export const Image = ({
   backgroundColor,
 }) => {
   const inverted = useInvertedScale();
-
-  let actualID = ids.indexOf(id);
-  //da la posición de la carta actual en el array ids
-
-  const prevID = actualID - 1 < 0 ? ids[ids.length - 1] : ids[actualID - 1];
-  const nextID = actualID + 1 > ids.length - 1 ? ids[0] : ids[actualID + 1];
 
   return (
     <motion.div
@@ -37,20 +31,6 @@ export const Image = ({
           x
         </motion.p>{" "}
       </Link>
-      {isSelected && (
-        <div className="buttons-image">
-          <motion.button className="controls-image prev-image">
-            <Link to={`/${prevID}`}>
-              <GrFormPreviousLink />
-            </Link>
-          </motion.button>
-          <motion.button className="controls-image next-image">
-            <Link to={`/${nextID}`}>
-              <GrFormNextLink />
-            </Link>
-          </motion.button>
-        </div>
-      )}
 
       <motion.img
         className="card-image"

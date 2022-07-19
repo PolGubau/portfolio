@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { Languages } from "../../Consts";
 import "./Header.css";
 import LangContext from "../../context/LangContext";
-
+import { headerText } from "../../Consts";
 export default function Header() {
   const [langsToDisplay, setLangsToDisplay] = useState(0);
 
   const { lang, setLang } = useContext(LangContext);
 
+  console.log("Description: " + headerText[lang].description);
   return (
     <>
       <header>
@@ -44,27 +45,21 @@ export default function Header() {
                 {Languages[langsToDisplay * 3 + 2]}
               </span>
             </div>
-            <h1>Pol Gubau Amores</h1>
-
-            <h3>
-              {{ lang } === Languages[0] &&
-                "Front-End Developer and UX designer."}
-              {{ lang } === Languages[1] &&
-                "Desarrollador Front-End y diseñador UX."}
-              {{ lang } === Languages[2] &&
-                "Programador Front-End i dissenyador UX."}
-            </h3>
+            <h1>{headerText[lang].title}</h1>
+            <h3>{headerText[lang].description}</h3>
           </article>
-          <div className="avatar">
-            <a href="/">
-              <motion.img
-                className="meinPhoto"
-                src={`images/me.webp`}
-                alt="Me"
-                initial={false}
-              />
-            </a>
-          </div>
+          <article className="descriptionAndImage">
+            <div className="avatar">
+              <a href="/">
+                <motion.img
+                  className="meinPhoto"
+                  src={`images/me.webp`}
+                  alt="Me"
+                  initial={false}
+                />
+              </a>
+            </div>
+          </article>
         </section>
       </header>
     </>

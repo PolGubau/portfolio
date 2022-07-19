@@ -1,8 +1,11 @@
 h1 {
   font-weight: bold;
-  font-size: 3rem;
+  font-size: var(--title);
   color: rgb(0, 0, 0);
-  margin: 6px 0 12px;
+  margin: 5px 0 0px 0;
+}
+h3 {
+  margin: 0 0 15px 0;
 }
 
 header {
@@ -16,13 +19,15 @@ header {
   height: 120px;
 }
 .avatar {
-  background: var(--primary);
+  animation: bgc 2s ease;
   border-radius: 50%;
   position: relative;
   bottom: 12px;
-  right: 0;
+  min-width: fit-content;
   overflow: hidden;
+  background: var(--primary);
 }
+
 section {
   display: flex;
   justify-content: space-between;
@@ -39,4 +44,56 @@ section {
 .langs:hover {
   margin: 0 0.5rem 0 0;
   text-decoration: underline;
+}
+
+/* iF MOBILE */
+@media only screen and (max-width: 600px) {
+  .descriptionAndImage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+  .avatar {
+    animation: bgc 3s ease;
+    border-radius: 0 50% 50% 0;
+    position: relative;
+    bottom: 12px;
+    min-width: fit-content;
+    margin-right: 30px;
+    overflow: hidden;
+    background: var(--primary);
+  }
+}
+
+@-webkit-keyframes bgc {
+  0% {
+    background-color: var(--white);
+  }
+
+  100% {
+    background: var(--primary);
+  }
+}
+
+@-moz-keyframes bgc {
+  0% {
+    background-color: var(--white);
+  }
+
+  100% {
+    background: var(--primary);
+  }
+}
+
+@keyframes bgc {
+  0% {
+    background-color: var(--white);
+  }
+
+  100% {
+    background: var(--primary);
+  }
 }

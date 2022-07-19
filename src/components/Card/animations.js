@@ -1,10 +1,10 @@
 export const openSpring = {
   type: "spring",
-  stiffness: 400, //Stiffness of the spring. Higher values will create more sudden movement. Set to 100 by default.
-  damping: 70, //fuerza opuesta
+  stiffness: 800, //Stiffness of the spring. Higher values will create more sudden movement. Set to 100 by default.
+  damping: 30, //fuerza opuesta
 };
 export const closeSpring = {
   type: "spring",
-  stiffness: 500,
-  damping: 70,
+  stiffness: 400,
+  damping: 50,
 };

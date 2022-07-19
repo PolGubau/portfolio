@@ -5,10 +5,12 @@ import "./Footer.css";
 import { RiGithubLine, RiLinkedinLine } from "react-icons/ri";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
+import LangContext from "../../context/LangContext";
+import { useContext } from "react";
+import { footerText } from "../../Consts";
+export default function Footer() {
+  const { lang } = useContext(LangContext);
 
-//
-
-export default function Footer({ lang }) {
   return (
     <>
       <footer>
@@ -16,19 +18,11 @@ export default function Footer({ lang }) {
           <article>
             <h2>Pol Gubau Amores</h2>
 
-            <motion.p>
-              {lang === Languages[0] && "Thank you :)"}
-              {lang === Languages[1] && "Muchas gracias :)"}
-              {lang === Languages[2] && "Moltes gràcies :)"}
-            </motion.p>
+            <motion.p>{footerText[lang].greeting}</motion.p>
           </article>
           <article>
             <a href="files/cv2022.pdf" download>
-              <div className="cv">
-                {lang === Languages[0] && "Download my CV"}
-                {lang === Languages[1] && "Descarga mi CV"}
-                {lang === Languages[2] && "Descarrega el meu CV"}
-              </div>
+              <div className="cv">{footerText[lang].curriculum}</div>
             </a>
           </article>
           {/*  */}
@@ -39,9 +33,7 @@ export default function Footer({ lang }) {
                   <span className="icon">
                     <MdOutlineAlternateEmail />
                   </span>
-                  {lang === Languages[0] && "Send me an Email"}
-                  {lang === Languages[1] && "Envíame un Email"}
-                  {lang === Languages[2] && "Envia'm un Email"}
+                  <motion.span>{footerText[lang].email}</motion.span>
                 </a>
               </li>
               <li>
@@ -52,9 +44,7 @@ export default function Footer({ lang }) {
                   <span className="icon">
                     <RiLinkedinLine />
                   </span>
-                  {lang === Languages[0] && "My Linkedin"}
-                  {lang === Languages[1] && "Mi Linkedin"}
-                  {lang === Languages[2] && "El meu Linkedin"}
+                  <motion.span>{footerText[lang].linkedin}</motion.span>
                 </a>
               </li>
               <li>
@@ -62,9 +52,7 @@ export default function Footer({ lang }) {
                   <span className="icon">
                     <RiGithubLine />
                   </span>
-                  {lang === Languages[0] && "My GitHub"}
-                  {lang === Languages[1] && "Mi GitHub"}
-                  {lang === Languages[2] && "El meu GitHub"}
+                  <motion.span>{footerText[lang].github}</motion.span>
                 </a>
               </li>
               <li>
@@ -72,9 +60,7 @@ export default function Footer({ lang }) {
                   <span className="icon">
                     <FaInstagram />
                   </span>
-                  {lang === Languages[0] && "My Instagram"}
-                  {lang === Languages[1] && "Mi Instagram"}
-                  {lang === Languages[2] && "El meu Instagram"}
+                  <motion.span>{footerText[lang].instagram}</motion.span>
                 </a>
               </li>
             </ul>

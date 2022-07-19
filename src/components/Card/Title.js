@@ -30,7 +30,15 @@ export const Title = ({
       <a onClick={handleClick} href={link}>
         <h2 className="title" style={{ color: textColor }}>
           {title}
-          <FiArrowRight className="arrow" style={{ color: textColor }} />
+          <motion.div
+            transition={{ delay: 0.3, duration: 0.3 }}
+            initial={{ display: "none", x: -100, opacity: 0 }}
+            duration={2}
+            animate={{ display: "flex", x: 0, opacity: 1 }}
+            className="arrow"
+          >
+            <FiArrowRight style={{ color: textColor }} />
+          </motion.div>
         </h2>
       </a>
       <motion.span

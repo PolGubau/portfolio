@@ -5,17 +5,15 @@ import { CardList } from "./components/Card/CardList";
 import "./styles.css";
 import Footer from "./components/Footer/Footer";
 import { LangProvider } from "./context/LangContext";
-import { Languages } from "./Consts";
 
 function App() {
-  const lang = Languages[0];
   return (
     <LangProvider>
       <div className="container">
-        <Header lang={lang} />
+        <Header />
 
-        <CardList lang={lang} />
-        <Footer lang={lang} />
+        <CardList />
+        <Footer />
       </div>
     </LangProvider>
   );

@@ -4,11 +4,21 @@
 }
 
 body {
+  /* colors */
+
   --primary: #a1d7f0;
   --primary-dark: #68b4d8;
+  --primary-light: #a8a4a8;
+
   --divider: #343434;
 
   --white: rgb(245, 245, 245);
+
+  /* FontSizes */
+  --title: 64px;
+  --subtitle: 24px;
+  --text: 12px;
+
   margin: 0;
   padding: 0;
   background: var(--white);

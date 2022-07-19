@@ -1,0 +1,36 @@
+.buttons-image {
+  width: 850px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  z-index: 3;
+}
+.controls-image {
+  display: flex;
+  margin: 0px;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 25px;
+  font-size: 2em;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.controls-image a {
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+.controls-image:hover {
+  cursor: pointer;
+  background-color: var(--primary-dark);
+}

@@ -10,7 +10,7 @@ import { openSpring, closeSpring } from "./animations";
 import { useScrollConstraints } from "./utils/use-scroll-constraints";
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import "./Card.css";
-
+import ChangeProjectButtons from "./ChangeProjectButtons/index";
 // Distance in pixels a user has to scroll a card down before we recognise
 // a swipe-to dismiss action.
 const dismissDistance = 100;
@@ -35,15 +35,14 @@ export const Card = memo(
     link,
     madeFor,
     ids,
+
     lang,
   }) => {
     const y = useMotionValue(0);
     const zIndex = useMotionValue(isSelected ? 2 : 0);
 
-    // Maintain the visual border radius when we perform the layoutTransition by inverting its scaleX/Y
     const inverted = useInvertedBorderRadius(20);
 
-    // We'll use the opened card element to calculate the scroll constraints
     const cardRef = useRef(null);
     const constraints = useScrollConstraints(cardRef, isSelected);
 
@@ -105,6 +104,16 @@ export const Card = memo(
             onDrag={checkSwipeToDismiss}
             onUpdate={checkZIndex}
           >
+            <ChangeProjectButtons id={id} ids={ids} isSelected={isSelected} />
+            <Title
+              lang={lang}
+              title={title}
+              category={category}
+              isSelected={isSelected}
+              textColor={textColor}
+              link={link}
+            />
+
             <Image
               id={id}
               ids={ids}
@@ -116,14 +125,6 @@ export const Card = memo(
               backgroundColor={backgroundColor}
             />
 
-            <Title
-              lang={lang}
-              title={title}
-              category={category}
-              isSelected={isSelected}
-              textColor={textColor}
-              link={link}
-            />
             <motion.div
               className="content-container"
               style={{ ...inverted, originY: 0, originX: 0 }}
