@@ -2,7 +2,7 @@ import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
 import { closeSpring } from "src/components/Card/utils/animations";
 import "./Image.css";
-import { CgCloseO } from "react-icons/cg";
+import { GrFormClose } from "react-icons/gr";
 
 import { Link } from "react-router-dom";
 
@@ -28,7 +28,7 @@ export const Image = ({
           className="closeButton"
           animate={isSelected ? { opacity: 1 } : { opacity: 0 }}
         >
-          <CgCloseO className="closeIcon" />
+          <GrFormClose className="closeIcon" size={29} />
         </motion.p>
       </Link>
 

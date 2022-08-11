@@ -1,15 +1,13 @@
 import React, { useState, useContext } from "react";
 
 import { motion } from "framer-motion";
-import { Languages } from "../../Consts";
 import "./Header.css";
-import LangContext from "../../context/LangContext";
-import { headerText } from "../../Consts";
-import LanguageButton from "./languagesButtons/LanguageButton";
-export default function Header() {
-  const [langsToDisplay, setLangsToDisplay] = useState(0);
+import LangContext from "src/context/LangContext";
+import { headerText } from "src/Consts";
+import LanguageButtons from "./languagesButtons/LanguageButtons";
 
-  const { lang, setLang } = useContext(LangContext);
+export default function Header() {
+  const { lang } = useContext(LangContext);
 
   return (
     <>
@@ -17,27 +15,9 @@ export default function Header() {
         <section>
           <article>
             <div className="langsContainer">
-              <LanguageButton
-                Languages={Languages}
-                langsToDisplay={langsToDisplay}
-                Position={0}
-                setLangsToDisplay={setLangsToDisplay}
-              />
-              <LanguageButton
-                Languages={Languages}
-                langsToDisplay={langsToDisplay}
-                Position={1}
-                setLangsToDisplay={setLangsToDisplay}
-              />
-              <LanguageButton
-                Languages={Languages}
-                langsToDisplay={langsToDisplay}
-                Position={2}
-                setLangsToDisplay={setLangsToDisplay}
-              />
+              <LanguageButtons />
             </div>
 
-            {/*  */}
             <h1>{headerText[lang].title}</h1>
             <h3>{headerText[lang].description}</h3>
           </article>

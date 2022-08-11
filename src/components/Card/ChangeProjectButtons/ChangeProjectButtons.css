@@ -11,16 +11,14 @@
   bottom: 0;
   z-index: -1;
 }
-.button {
-  z-index: 2;
-}
+
 .controls-image {
   display: flex;
-  margin: 0px;
+  height: 49px;
+  width: 49px;
   background-color: var(--primary);
   border: none;
   border-radius: 25px;
-  font-size: 2em;
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -28,11 +26,12 @@
   flex-direction: row;
 }
 .controls-image a {
+  text-decoration: none;
+  display: flex;
   margin: 0;
   padding: 0;
-  width: 40px;
-  height: 40px;
 }
+
 .controls-image:hover {
   cursor: pointer;
   background-color: var(--primary-dark);

@@ -2,7 +2,7 @@ import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
 import { closeSpring, openSpring } from "src/components/Card/utils/animations";
 import "./Title.css";
-import { FiArrowRight } from "react-icons/fi";
+import { FaArrowRight } from "react-icons/fa";
 
 export const Title = ({
   title,
@@ -13,7 +13,7 @@ export const Title = ({
   lang,
 }) => {
   const inverted = useInvertedScale();
-  const x = isSelected ? 30 : 15;
+  const x = isSelected ? 30 : 20; // padding del titulo
   const y = x;
   const handleClick = () => {
     window.open(link, "_blank");
@@ -30,15 +30,17 @@ export const Title = ({
       <a onClick={handleClick} href={link}>
         <h2 className="title" style={{ color: textColor }}>
           {title}
-          <motion.div
-            transition={{ delay: 0.3, duration: 0.3 }}
-            initial={{ display: "none", x: -100, opacity: 0 }}
-            duration={2}
-            animate={{ display: "flex", x: 0, opacity: 1 }}
-            className="arrow"
-          >
-            <FiArrowRight style={{ color: textColor }} />
-          </motion.div>
+          {isSelected && (
+            <motion.div
+              transition={{ delay: 0.3, duration: 0.3 }}
+              initial={{ display: "none", x: -100, opacity: 0 }}
+              duration={2}
+              animate={{ display: "flex", x: 0, opacity: 1 }}
+              className="arrow"
+            >
+              <FaArrowRight style={{ color: textColor }} />
+            </motion.div>
+          )}
         </h2>
       </a>
       <motion.span

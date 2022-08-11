@@ -1,14 +1,16 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import LangContext from "src/context/LangContext";
+import { Languages } from "src/Consts";
+import "./LanguageButton.css";
 export default function LanguageButton({
-  Languages,
   langsToDisplay,
   Position,
   setLangsToDisplay,
 }) {
+  const { lang, setLang } = useContext(LangContext);
   return (
     <span
-      className={`lang`}
+      className={`lang` + (lang === Languages[Position] ? " selected" : "")}
       onClick={() => {
         setLang(Languages[Position]);
         setLangsToDisplay(Position);

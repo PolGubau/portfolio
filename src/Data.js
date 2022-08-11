@@ -62,7 +62,7 @@ export const cardData = [
       Catalan:
         "NUWE és una empresa de gamificació en contractar desenvolupadors. Treballo aquí com a dissenyador gràfic i porto les creativitats de xarxes socials, rollups... Plasmar visualment les idees dels meus companys.",
     },
-    link: "https://nuwe.io/en",
+    link: "https://nuwe.io/",
   },
 
   {

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import "./ChangeProjectButtons.css";
 
 //
@@ -20,20 +20,20 @@ export default function ChangeProjectButtons({ id, ids, isSelected }) {
             initial={{ opacity: 0, x: 200 }}
             transition={{ duration: 0.3, delay: 0.8 }}
             animate={{ opacity: 1, x: 0 }}
-            className=" button controls-image prev-image"
+            className="controls-image prev-image"
           >
             <Link to={`/${prevID}`}>
-              <GrFormPreviousLink />
+              <FaArrowLeft size={25} />
             </Link>
           </motion.button>
           <motion.button
             initial={{ opacity: 0, x: -200 }}
             transition={{ duration: 0.3, delay: 0.8 }}
             animate={{ opacity: 1, x: 0 }}
-            className="button controls-image next-image"
+            className="controls-image next-image"
           >
             <Link to={`/${nextID}`}>
-              <GrFormNextLink />
+              <FaArrowRight size={25} />
             </Link>
           </motion.button>
         </div>
