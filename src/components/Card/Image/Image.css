@@ -1,0 +1,24 @@
+.closeButton {
+  user-select: none;
+  position: absolute;
+  z-index: 5;
+  top: 0px;
+  height: 39px;
+  right: 0px;
+  color: var(--black);
+  padding: 5px 13px;
+  display: flex;
+  background-color: var(--primary);
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.closeButton:hover {
+  background-color: var(--primary-dark);
+}
+
+.closeIcon svg {
+  width: 49px;
+}

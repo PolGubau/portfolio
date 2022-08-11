@@ -2,7 +2,7 @@ export const cardData = [
   {
     id: "UABMèdia",
 
-    title: "UAB MÈDIA",
+    title: "UAB Mèdia",
     year: "2022",
     category: {
       English: "web",

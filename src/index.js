@@ -1,7 +1,7 @@
 import * as React from "react";
 import { render } from "react-dom";
 import Header from "./components/Header/Header";
-import { CardList } from "./components/Card/CardList";
+import { CardList } from "./components/Card/CardList/CardList";
 import "./styles.css";
 import Footer from "./components/Footer/Footer";
 import { LangProvider } from "./context/LangContext";

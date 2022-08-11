@@ -1,14 +1,14 @@
 import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
-import { closeSpring } from "./animations";
+import { closeSpring } from "../utils/animations";
 import "./Image.css";
+import { CgCloseO } from "react-icons/cg";
 
 import { Link } from "react-router-dom";
 
 export const Image = ({
   id,
-  ids,
-  path,
+
   width,
   isSelected,
   pointOfInterestX = 0,
@@ -28,8 +28,8 @@ export const Image = ({
           className="closeButton"
           animate={isSelected ? { opacity: 1 } : { opacity: 0 }}
         >
-          x
-        </motion.p>{" "}
+          <CgCloseO className="closeIcon" />
+        </motion.p>
       </Link>
 
       <motion.img

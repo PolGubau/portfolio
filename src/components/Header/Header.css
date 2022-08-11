@@ -45,6 +45,9 @@ section {
   margin: 0 0.5rem 0 0;
   text-decoration: underline;
 }
+.langChoosen {
+  background-color: red;
+}
 
 /* iF MOBILE */
 @media only screen and (max-width: 600px) {
@@ -58,7 +61,7 @@ section {
   }
   .avatar {
     animation: bgc 3s ease;
-    border-radius: 0 50% 50% 0;
+    border-radius: 50%;
     position: relative;
     bottom: 12px;
     min-width: fit-content;

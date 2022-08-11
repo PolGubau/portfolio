@@ -9,7 +9,10 @@
   position: fixed;
   top: 0px;
   bottom: 0;
-  z-index: 3;
+  z-index: -1;
+}
+.button {
+  z-index: 2;
 }
 .controls-image {
   display: flex;

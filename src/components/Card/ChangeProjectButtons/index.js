@@ -16,12 +16,22 @@ export default function ChangeProjectButtons({ id, ids, isSelected }) {
     <>
       {isSelected && (
         <div className="buttons-image">
-          <motion.button className="controls-image prev-image">
+          <motion.button
+            initial={{ opacity: 0, x: 200 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
+            animate={{ opacity: 1, x: 0 }}
+            className=" button controls-image prev-image"
+          >
             <Link to={`/${prevID}`}>
               <GrFormPreviousLink />
             </Link>
           </motion.button>
-          <motion.button className="controls-image next-image">
+          <motion.button
+            initial={{ opacity: 0, x: -200 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="button controls-image next-image"
+          >
             <Link to={`/${nextID}`}>
               <GrFormNextLink />
             </Link>
