@@ -1,15 +1,16 @@
 .card {
   position: relative;
-  padding: 25px;
-  height: 460px;
-  flex: 0 0 40%;
-  max-width: 40%;
+  padding: 0;
+  height: 420px;
+  flex: 0 0 38%;
+  max-width: 38%;
+  margin-bottom: var(--space-cards);
 }
 
 .card:nth-child(4n + 1),
 .card:nth-child(4n + 4) {
-  flex: 0 0 60%;
-  max-width: 60%;
+  flex: 0 0 58%;
+  max-width: 58%;
 }
 
 .card:nth-child(odd) {
@@ -61,11 +62,18 @@
 
 .card-open-link {
   position: absolute;
+
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
+.card-open-link:hover {
+  opacity: 0.2;
+  background-color: var(--primary);
+  border-radius: 20px;
+}
+
 .card-image {
   display: flex;
   flex-direction: row;

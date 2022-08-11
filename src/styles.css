@@ -17,9 +17,11 @@ body {
   --subtitle: 24px;
   --text: 12px;
 
+  --space-cards: 4%;
   margin: 0;
   padding: 0;
   background: var(--white);
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
