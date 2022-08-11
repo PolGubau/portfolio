@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { Card } from "./Card";
+import { Card } from "src/components/Card/Card/Card";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { cardData } from "../../../Data";
+import { cardData } from "src/Data";
 import "./CardList.css";
-import LangContext from "../../../context/LangContext";
-import useMedia from "../../../hooks/useMedia";
+import LangContext from "src/context/LangContext";
+import useMedia from "src/hooks/useMedia";
 
 function List({ match, history }) {
   const mobile = useMedia();

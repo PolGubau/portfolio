@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
-import { closeSpring } from "../utils/animations";
+import { closeSpring } from "src/components/Card/utils/animations";
 import "./Image.css";
 import { CgCloseO } from "react-icons/cg";
 

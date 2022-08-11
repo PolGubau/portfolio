@@ -1,16 +1,15 @@
-import * as React from "react";
-import { memo, useRef } from "react";
+import React, { memo, useRef } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useInvertedBorderRadius } from "./utils/use-inverted-border-radius";
-import { Title } from "./Title";
-import { Image } from "./Image";
-import Description from "./Description";
-import { openSpring, closeSpring } from "./animations";
-import { useScrollConstraints } from "./utils/use-scroll-constraints";
-import { useWheelScroll } from "./utils/use-wheel-scroll";
+import { useInvertedBorderRadius } from "src/components/Card/utils/use-inverted-border-radius";
+import { Title } from "src/components/Card/Title/Title";
+import { Image } from "src/components/Card/Image/Image";
+import Description from "src/components/Card/Description/Description";
+import { openSpring, closeSpring } from "src/components/Card/utils/animations";
+import { useScrollConstraints } from "src/components/Card/utils/use-scroll-constraints";
+import { useWheelScroll } from "src/components/Card/utils/use-wheel-scroll";
 import "./Card.css";
-import ChangeProjectButtons from "./ChangeProjectButtons/index";
+import ChangeProjectButtons from "src/components/Card/ChangeProjectButtons";
 // Distance in pixels a user has to scroll a card down before we recognise
 // a swipe-to dismiss action.
 const dismissDistance = 100;

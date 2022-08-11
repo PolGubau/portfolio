@@ -1,8 +1,8 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".", // this must be specified if "paths" is specified.
-      "paths": {
-        "@comp/": ["src/components/"] // this mapping is relative to "baseUrl"
-      }
+  "compilerOptions": {
+    "baseUrl": ".", 
+    "paths": {
+      "@comp/": ["src/components/"] 
     }
   }
+}

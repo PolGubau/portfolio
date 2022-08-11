@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
-import { closeSpring, openSpring } from "../utils/animations";
+import { closeSpring, openSpring } from "src/components/Card/utils/animations";
 import "./Title.css";
 import { FiArrowRight } from "react-icons/fi";
 
