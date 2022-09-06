@@ -67,14 +67,16 @@ export function useWheelScroll(ref, y, constraints, onWheelCallback, isActive) {
     if (constraints && !isWithinBounds) {
       newY = mix(currentY, newY, elasticFactor);
 
-      if (newY < constraints.top) {
-        if (event.deltaY <= deltaThreshold) {
-          springTo(y, newY, constraints.top);
-          startedAnimation = true;
-        } else {
-          debouncedSpringTo(y, newY, constraints.top);
-        }
-      }
+      // if (newY < constraints.top - 500) {
+      //   // funcion que hace subir la carta
+
+      //   if (event.deltaY <= deltaThreshold) {
+      //     // springTo(y, newY, constraints.top);
+      //     startedAnimation = true;
+      //   } else {
+      //     debouncedSpringTo(y, newY, constraints.top);
+      //   }
+      // }
 
       if (newY > constraints.bottom) {
         if (event.deltaY >= -deltaThreshold) {
