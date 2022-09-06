@@ -5,9 +5,11 @@
   max-width: 400px;
   z-index: 3;
 }
+
 a {
   text-decoration: none;
 }
+
 .title {
   display: flex;
   font-size: 1.8em;
@@ -15,19 +17,35 @@ a {
   margin: 0px 0;
   padding: 0;
 }
+
 .arrow {
   display: none;
 
   margin: 5px 5px;
 }
+
 .title:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+
 .title:hover .arrow {
   display: flex;
 }
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
 .category {
+  font-size: 14px;
+  margin: 0px 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.year {
   font-size: 14px;
   margin: 0px 0;
   padding: 0;
