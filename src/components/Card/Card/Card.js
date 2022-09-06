@@ -28,6 +28,7 @@ export const Card = memo(
     backgroundColor,
     description,
     path,
+    year,
     width,
     mobile,
     tags,
@@ -48,7 +49,7 @@ export const Card = memo(
     function checkSwipeToDismiss() {
       // DISTANCIAS DONDE SE QUITA LA CARTA AL HACER SCROLL
       y.get() > dismissDistance && history.push("/");
-      // y.get() > -150 && history.push("/");
+      // y.get() < -600 && history.push("/");
     }
 
     function checkZIndex(latest) {
@@ -69,24 +70,24 @@ export const Card = memo(
       isSelected
     );
 
-    return (
+    return (<>
       <motion.li
         ref={containerRef}
         className={`card`}
         initial={
           isSelected
             ? {
-                y: 0,
-                opacity: 1,
-              }
+              y: 0,
+              opacity: 1,
+            }
             : { y: 50, opacity: 0 }
         }
         animate={{ y: 0, opacity: 1 }}
         transition={
           isSelected
             ? {
-                delay: 0,
-              }
+              delay: 0,
+            }
             : { delay: index * 0.1 }
         }
       >
@@ -110,6 +111,7 @@ export const Card = memo(
               category={category}
               isSelected={isSelected}
               textColor={textColor}
+              year={year}
               link={link}
             />
 
@@ -137,10 +139,15 @@ export const Card = memo(
               />
             </motion.div>
           </motion.div>
+
+
         </motion.div>
         {!isSelected && <Link to={id} className={`card-open-link`} />}
+
       </motion.li>
-    );
+
+
+    </>);
   },
   (prev, next) => prev.isSelected === next.isSelected
 );
