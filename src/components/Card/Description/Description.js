@@ -2,6 +2,7 @@ import React from "react";
 import { Languages } from "src/Consts";
 import "./Description.css";
 import { BsSearch } from "react-icons/bs";
+import Madefor from "./MadeFor/MadeFor";
 
 export default function Description({
   tags = "",
@@ -19,12 +20,11 @@ export default function Description({
               <li key={tag}>{tag}</li>
             ))}
           </ul>
-          <p>
-            {lang === Languages[0] && madeFor[lang] && "For "}
-            {lang === Languages[1] && madeFor[lang] && "Para "}
-            {lang === Languages[2] && madeFor[lang] && "Per a "}
-            <b>{madeFor[lang]}</b>.
-          </p>
+       <Madefor
+          madeFor={madeFor}
+          lang={lang}
+          Languages={Languages}
+        />
         </header>
         <section>
           <p className="Description-descriptionText">{description[lang]}</p>
