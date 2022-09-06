@@ -18,11 +18,13 @@ function List({ match, history }) {
   return (
     <ul className="card-list">
       {cardData.map((card, index) => (
+
         <Card
           index={index}
           ids={ids}
           key={card.id}
           path={card.path}
+          year={card.year}
           lang={lang}
           textColor={card.textColor}
           isSelected={match.params.id === card.id}
@@ -35,7 +37,11 @@ function List({ match, history }) {
           tags={card.tags}
           {...card}
         />
+
+
       ))}
+
+
     </ul>
   );
 }
