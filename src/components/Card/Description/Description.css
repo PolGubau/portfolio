@@ -2,6 +2,7 @@
   margin-bottom: 30px;
   padding-bottom: 10px;
 }
+
 .Description-tagsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -16,6 +17,7 @@
   background-color: var(--primary-dark);
   margin: 5px;
 }
+
 .Description-descriptionText {
   display: flex;
 }
@@ -29,11 +31,20 @@
   flex-wrap: wrap;
   flex-direction: row;
 }
+
 .Description-search {
   display: flex;
   border: 1px solid black;
   padding: 10px 20px;
+  /* border-radius: 20px; */
 }
+
 .Description-search:hover {
   background-color: var(--primary-dark);
+  transform: scale(0.95);
+}
+
+.Description-search:active {
+  background-color: var(--primary-dark);
+  transform: scale(0.9);
 }
