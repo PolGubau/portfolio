@@ -1,5 +1,35 @@
 export const cardData = [
   {
+    id: "AskaQuest",
+
+    title: "AskaQuest",
+    year: "2022",
+    category: {
+      English: "web",
+      Spanish: "web",
+      Catalan: "web",
+    },
+    pointOfInterestX: 30,
+    pointOfInterestY: 80,
+    textColor: "#000",
+    width: 700,
+    backgroundColor: "#abd7ff",
+    path: "/AskaQuest/0.png",
+    tags: ["Nextjs", "PostgreSQL", "TypeScript", "Vercel", "SWR"],
+
+
+    description: {
+      English:
+        "Dynamic web application made with NextJS and using a PostgreSQL database, consists of a social network of questions where users can create questions and answer them. The user can follow other users and view their questions, as well as add them as favorites. A login system, following and encryption in the Backend were developed. All of it typed with TypeScript. ",
+      Spanish:
+        "Aplicación web dinámica hecha con NextJS y usando una base de datos PostgreSQL, consiste en una red social de preguntas donde los usuarios pueden crear preguntas y responderlas. El usuario puede seguir a otros usuarios y ver sus preguntas, así como agregarlas como favoritas. Un sistema de login, following y encriptación en el Backend se programó. Toda ella tipada con TypeScript. ",
+      Catalan:
+        "Aplicació web dinàmica feta amb NextJS i usant una base de dades PostgreSQL, consisteix en una xarxa social de preguntes on els usuaris poden crear preguntes i respondre-les. L'usuari pot seguir altres usuaris i veure les seves preguntes, així com agregar-les com a favorites. Un sistema de login, seguiment i encriptació al Backend va ser desenvolupat. Tota ella tipada amb TypeScript",
+    },
+
+    link: "https://askaquest.vercel.app/",
+  },
+  {
     id: "UABMèdia",
 
     title: "UAB Mèdia",
@@ -115,11 +145,6 @@ export const cardData = [
     backgroundColor: "#abbaff",
     path: "/GubauAfternoons/0.png",
     tags: ["HTML", "SCSS", "JQUERY"],
-    madeFor: {
-      English: "myself :)",
-      Spanish: "mi :)",
-      Catalan: "mi :)",
-    },
     description: {
       English:
         "Gubau's Afternoons shows where I spent my afternoons when I was in high school. I used it as a portfolio for two years and it's one of the pages that I have worked on the most. You can see in detail many projects that I have not shown here.",
@@ -210,11 +235,6 @@ export const cardData = [
     backgroundColor: "#feffab",
     path: "/ThoseColors/0.png",
     tags: ["PHP", "SASS"],
-    madeFor: {
-      English: "myself :)",
-      Spanish: "mi :)",
-      Catalan: "mi :)",
-    },
     description: {
       English:
         "This is a website I made to practice checking the hexadecimal codes of colors and modifying them. It is written with vanilla PHP and can create color palettes with the color and amount you tell it.",
@@ -242,11 +262,6 @@ export const cardData = [
     backgroundColor: "#e6abff",
     path: "/Memo/0.png",
     tags: ["Javascript", "HTML", "CSS"],
-    madeFor: {
-      English: "myself :)",
-      Spanish: "mi :)",
-      Catalan: "mi :)",
-    },
     description: {
       English:
         "This is a website that I completed with Javascript to practice using LocalStorage. It was forked from GitHub and I added features like changing the color of the Memos.",
