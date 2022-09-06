@@ -8,6 +8,7 @@ export const Title = ({
   title,
   category,
   textColor,
+  year,
   isSelected,
   link,
   lang,
@@ -43,12 +44,20 @@ export const Title = ({
           )}
         </h2>
       </a>
-      <motion.span
-        className="category"
-        style={{ color: textColor, opacity: isSelected ? 1 : 0 }}
-      >
-        {category[lang]}
-      </motion.span>
+
+      <motion.div className="details">
+        <motion.span
+          className="category"
+          style={{ color: textColor, opacity: isSelected ? 1 : 0 }}
+        >
+          {category[lang]}
+        </motion.span>
+        <motion.span
+          className="year"
+          style={{ color: textColor, opacity: isSelected ? 1 : 0 }}
+        >
+          {year}
+        </motion.span></motion.div>
     </motion.div>
   );
 };
