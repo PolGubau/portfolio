@@ -1,11 +1,20 @@
 .lang {
-  margin-right: 10px;
+  padding: 2px 10px;
+  border-radius: 30px;
 }
+
 .lang:hover {
   cursor: pointer;
+  background: var(--primary-light);
+
 }
+
 .selected {
   background-color: var(--primary);
   padding: 2px 10px;
   border-radius: 30px;
+}
+
+.selected:hover {
+  background-color: var(--primary-dark);
 }
