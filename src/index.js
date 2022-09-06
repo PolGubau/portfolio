@@ -9,7 +9,7 @@ import { LangProvider } from "./context/LangContext";
 function App() {
   return (
     <LangProvider>
-      <div className="container">
+      <div className="container" >
         <Header />
 
         <CardList />
