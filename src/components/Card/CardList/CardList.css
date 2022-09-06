@@ -1,4 +1,5 @@
 .card-list {
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
