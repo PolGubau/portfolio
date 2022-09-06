@@ -39,6 +39,8 @@
   padding: 40px 0;
 }
 
+
+
 .card-content {
   display: flex;
   flex-direction: column;
@@ -68,6 +70,7 @@
   right: 0;
   bottom: 0;
 }
+
 .card-open-link:hover {
   opacity: 0.2;
   background-color: var(--primary);
@@ -81,6 +84,7 @@
   align-items: center;
   align-self: auto;
 }
+
 .card-image-container {
   position: absolute;
   top: 0;
