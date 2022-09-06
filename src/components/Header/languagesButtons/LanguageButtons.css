@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: center;
   border-radius: 50px;
-
+  gap: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
