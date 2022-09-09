@@ -7,6 +7,8 @@
   margin-bottom: var(--space-cards);
 }
 
+
+
 .card:nth-child(4n + 1),
 .card:nth-child(4n + 4) {
   flex: 0 0 58%;
@@ -69,12 +71,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-}
-
-.card-open-link:hover {
-  opacity: 0.2;
-  background-color: var(--primary);
-  border-radius: 20px;
 }
 
 .card-image {

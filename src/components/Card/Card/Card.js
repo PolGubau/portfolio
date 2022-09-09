@@ -91,10 +91,10 @@ export const Card = memo(
             : { delay: index * 0.1 }
         }
       >
-        <Overlay isSelected={isSelected} />
-        <motion.div
-          className={`card-content-container ${isSelected && "open"}`}
-        >
+        <Overlay isSelected={isSelected} />        
+        
+        {/* Card */}
+        <Link className={`card-content-container ${isSelected && "open"} card-open-link`} to={id}>
           <motion.div
             ref={cardRef}
             className="card-content"
@@ -139,24 +139,20 @@ export const Card = memo(
               />
             </motion.div>
           </motion.div>
-
-
-        </motion.div>
-        {!isSelected && <Link to={id} className={`card-open-link`} />}
-
+        </Link>
+        {/* Outside Card */}
+        {!isSelected && <Link  />}
       </motion.li>
-
-
     </>);
   },
-  (prev, next) => prev.isSelected === next.isSelected
 );
+
 
 const Overlay = ({ isSelected }) => (
   <motion.div
     initial={false}
-    animate={{ opacity: isSelected ? 0.6 : 0 }}
-    transition={{ duration: 0.2 }}
+    animate={{ opacity: isSelected ? 0.7 : 0 }}
+    transition={{ duration: 0.3 }}
     style={{ pointerEvents: isSelected ? "auto" : "none" }}
     className="overlay"
   >

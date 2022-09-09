@@ -18,7 +18,6 @@ function List({ match, history }) {
   return (
     <ul className="card-list">
       {cardData.map((card, index) => (
-
         <Card
           index={index}
           ids={ids}
