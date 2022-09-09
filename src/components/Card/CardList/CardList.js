@@ -49,6 +49,7 @@ function List({ match, history }) {
 export function CardList() {
   return (
     <Router>
+      {/* Urls posibles para que me enseñe la lista de cards */}
       <Route path={["/:id", "/"]} component={List} />
     </Router>
   );
