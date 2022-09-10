@@ -51,3 +51,7 @@
   transform: translateZ(0);
   z-index: 2;
 }
+
+.mobileAndSelected {
+  height: 300px;
+}
