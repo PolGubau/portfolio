@@ -40,7 +40,6 @@ export const Card = memo(
       checkSwipeToDismiss,
       isSelected
     );
-    const [openBig, setOpenBig] = useState(false);
 
     return (
       <>
@@ -81,8 +80,6 @@ export const Card = memo(
             onUpdate={checkZIndex}
           >
             <CardContent
-              setopenBig={setOpenBig}
-              openBig={openBig}
               project={project}
               ids={ids}
               lang={lang}
