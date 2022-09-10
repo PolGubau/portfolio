@@ -17,7 +17,7 @@ function List({ match }) {
 
   return (
     <>
-      nav
+      {/* Here will go the nav */}
       <ul className="card-list">
         {cardData.map((card, index) => (
           <Card
