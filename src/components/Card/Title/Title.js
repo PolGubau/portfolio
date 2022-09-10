@@ -1,18 +1,12 @@
 import * as React from "react";
-import { motion, useInvertedScale } from "framer-motion";
+import { motion } from "framer-motion";
 import { closeSpring, openSpring } from "src/components/Card/utils/animations";
 import "./Title.css";
 import { FaArrowRight } from "react-icons/fa";
 
-export const Title = ({
-  title,
-  category,
-  textColor,
-  year,
-  isSelected,
-  link,
-  lang,
-}) => {
+export const Title = ({ project, isSelected, lang }) => {
+  const { title, textColor, year, category, link } = project;
+
   const handleClick = () => {
     window.open(link, "_blank");
   };
