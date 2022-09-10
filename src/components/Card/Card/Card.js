@@ -1,4 +1,4 @@
-import { memo, useRef, useState } from "react";
+import { memo, useRef } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useScrollConstraints } from "src/components/Card/utils/use-scroll-constraints";
@@ -16,14 +16,7 @@ export const Card = memo(
     let history = useHistory();
 
     const y = useMotionValue(0);
-    const zIndex = useMotionValue(isSelected ? 2 : 0);
-    function checkZIndex(latest) {
-      if (isSelected) {
-        zIndex.set(2);
-      } else if (!isSelected && latest.scaleX < 1.01) {
-        zIndex.set(0);
-      }
-    }
+
     const cardRef = useRef(null);
     const constraints = useScrollConstraints(cardRef, isSelected);
 
@@ -73,11 +66,10 @@ export const Card = memo(
             className={`cardContainer ${
               isSelected ? (mobile ? "openMobile" : " openPC") : " noOpened"
             }`}
-            style={{ zIndex, y }}
+            style={{ y }}
             layoutTransition={isSelected ? !mobile && openSpring : closeSpring}
             dragConstraints={constraints}
             onDrag={checkSwipeToDismiss}
-            onUpdate={checkZIndex}
           >
             <CardContent
               project={project}
