@@ -6,7 +6,7 @@ import "./CardList.css";
 import LangContext from "src/context/LangContext";
 import useMedia from "src/hooks/useMedia";
 
-function List({ match, history }) {
+function List({ match }) {
   const mobile = useMedia();
 
   const { lang } = useContext(LangContext);
@@ -29,7 +29,6 @@ function List({ match, history }) {
             lang={lang}
             textColor={card.textColor}
             isSelected={match.params.id === card.id}
-            history={history}
             description={card.description}
             madeFor={card.madeFor}
             width={card.width}
