@@ -5,14 +5,16 @@ import { GrFormClose } from "react-icons/gr";
 // import { FiMaximize2 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-export const Image = ({ isSelected, project, openBig, setOpenBig }) => {
+export const Image = ({ isSelected, project, mobile }) => {
   const { pointOfInterestX, pointOfInterestY, id, width, backgroundColor } =
     project;
   const inverted = useInvertedScale();
 
   return (
     <motion.div
-      className="card-image-container"
+      className={`card-image-container ${
+        mobile && isSelected ? "mobileAndSelected" : ""
+      }`}
       style={{ ...inverted, backgroundColor, originX: 0, originY: 0 }}
     >
       <Link to={`/`}>
@@ -24,16 +26,6 @@ export const Image = ({ isSelected, project, openBig, setOpenBig }) => {
           <GrFormClose className="closeIcon" size={29} />
         </motion.p>
       </Link>
-      
-      {/* `Future ft */}
-      {/* <motion.p
-        onClick={() => setOpenBig(true)}
-        initial={{ opacity: 0 }}
-        className="bigButton"
-        animate={isSelected ? { opacity: 1 } : { opacity: 0 }}
-      >
-        <FiMaximize2 className="bigIcon" size={20} />
-      </motion.p> */}
 
       <motion.img
         className="card-image"
