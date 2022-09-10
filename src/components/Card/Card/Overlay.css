@@ -1,0 +1,23 @@
+.overlay {
+    background: var(--white);
+    bottom: 0;
+    left: 50%;
+    max-width: 990px;
+    position: fixed;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    will-change: opacity;
+    z-index: 1;
+}
+
+.overlay a {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
