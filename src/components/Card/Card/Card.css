@@ -69,8 +69,14 @@
   cursor: pointer;
 }
 
-.content-container {
+.contentContainer {
   padding: 410px 35px 0px 35px;
+  max-width: 700px;
+  width: 90vw;
+}
+
+.contentContainerMobile {
+  padding: 310px 35px 0px 35px;
   max-width: 700px;
   width: 90vw;
 }
