@@ -1,20 +1,13 @@
-import * as React from "react";
 import { motion, useInvertedScale } from "framer-motion";
 import { closeSpring } from "src/components/Card/utils/animations";
 import "./Image.css";
 import { GrFormClose } from "react-icons/gr";
-
+// import { FiMaximize2 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-export const Image = ({
-  id,
-
-  width,
-  isSelected,
-  pointOfInterestX = 0,
-  pointOfInterestY = 0,
-  backgroundColor,
-}) => {
+export const Image = ({ isSelected, project, openBig, setOpenBig }) => {
+  const { pointOfInterestX, pointOfInterestY, id, width, backgroundColor } =
+    project;
   const inverted = useInvertedScale();
 
   return (
@@ -31,6 +24,16 @@ export const Image = ({
           <GrFormClose className="closeIcon" size={29} />
         </motion.p>
       </Link>
+      
+      {/* `Future ft */}
+      {/* <motion.p
+        onClick={() => setOpenBig(true)}
+        initial={{ opacity: 0 }}
+        className="bigButton"
+        animate={isSelected ? { opacity: 1 } : { opacity: 0 }}
+      >
+        <FiMaximize2 className="bigIcon" size={20} />
+      </motion.p> */}
 
       <motion.img
         className="card-image"
