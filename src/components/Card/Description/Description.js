@@ -1,30 +1,20 @@
-import React from "react";
 import { Languages } from "src/Consts";
 import "./Description.css";
 import { BsSearch } from "react-icons/bs";
 import Madefor from "./MadeFor/MadeFor";
 
-export default function Description({
-  tags = "",
-  description = "",
-  madeFor = "",
-  link = "",
-  lang = Languages[0],
-}) {
+export default function Description({ project, lang = Languages[0] }) {
+  const { description, madeFor, tags, link } = project;
   return (
     <>
-      <article className="">
+      <article>
         <header className="Description-header">
           <ul className="Description-tagsContainer">
             {tags.map((tag) => (
               <li key={tag}>{tag}</li>
             ))}
           </ul>
-       <Madefor
-          madeFor={madeFor}
-          lang={lang}
-          Languages={Languages}
-        />
+          <Madefor madeFor={madeFor} lang={lang} Languages={Languages} />
         </header>
         <section>
           <p className="Description-descriptionText">{description[lang]}</p>
