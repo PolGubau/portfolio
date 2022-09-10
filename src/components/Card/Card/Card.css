@@ -23,7 +23,7 @@
   padding-right: 0;
 }
 
-.card-content-container {
+.cardContainer {
   width: 100%;
   height: 100%;
   position: relative;
@@ -31,7 +31,7 @@
   pointer-events: none;
 }
 
-.card-content-container.open {
+.cardContainer.open {
   top: 0;
   left: 0;
   right: 0;
@@ -40,8 +40,6 @@
   overflow: hidden;
   padding: 40px 0;
 }
-
-
 
 .card-content {
   display: flex;
@@ -64,30 +62,3 @@
   overflow: hidden;
 }
 
-.card-open-link {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.card-image {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-self: auto;
-}
-
-.card-image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  height: 420px;
-  width: 100%;
-  transform: translateZ(0);
-  z-index: 2;
-}
