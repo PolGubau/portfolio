@@ -9,7 +9,7 @@ import "./Overlay.css";
 import ChangeProjectButtons from "src/components/Card/ChangeProjectButtons";
 
 export const CardContent = memo(
-  ({ project, ids, lang, isSelected, mobile, setOpenBig, openBig }) => {
+  ({ project, ids, lang, isSelected, mobile }) => {
     return (
       <>
         <ChangeProjectButtons
@@ -19,14 +19,14 @@ export const CardContent = memo(
         />
         <Title lang={lang} project={project} isSelected={isSelected} />
 
-        <Image
-          isSelected={isSelected}
-          project={project}
-          setOpenBig={setOpenBig}
-          openBig={openBig}
-        />
+        <Image isSelected={isSelected} project={project} mobile={mobile} />
 
-        <div className="content-container" style={{ originY: 0, originX: 0 }}>
+        <div
+          className={`${
+            mobile && isSelected ? "contentContainerMobile" : "contentContainer"
+          } `}
+          style={{ originY: 0, originX: 0 }}
+        >
           <Description lang={lang} project={project} />
         </div>
       </>
