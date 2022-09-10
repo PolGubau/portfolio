@@ -8,11 +8,11 @@ import { openSpring, closeSpring } from "src/components/Card/utils/animations";
 import { useScrollConstraints } from "src/components/Card/utils/use-scroll-constraints";
 import { useWheelScroll } from "src/components/Card/utils/use-wheel-scroll";
 import "./Card.css";
+import "./Overlay.css";
 import { useHistory } from "react-router-dom";
 
 import ChangeProjectButtons from "src/components/Card/ChangeProjectButtons";
-// Distance in pixels a user has to scroll a card down before we recognise
-// a swipe-to dismiss action.
+
 const dismissDistance = 100;
 
 export const Card = memo(
@@ -93,8 +93,8 @@ export const Card = memo(
           <Overlay isSelected={isSelected} />
 
           {/* Card */}
-          <Link
-            to={`/${id}`}
+          <section
+            onClick={() => !isSelected && history.push(`/${id}`)}
             className={`cardContainer ${isSelected && "open"}`}
           >
             <motion.div
@@ -143,7 +143,7 @@ export const Card = memo(
                 />
               </div>
             </motion.div>
-          </Link>
+          </section>
         </motion.li>
       </>
     );
