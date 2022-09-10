@@ -49,6 +49,7 @@
   position: fixed;
   z-index: 1;
   overflow: hidden;
+    z-index: 2;
   padding: 40px 0;
 }
 
@@ -60,13 +61,15 @@
   right: 0;
   position: fixed;
   z-index: 1;
-  /* overflow: hidden; */
+  overflow: hidden;
   padding: 40px 0;
+  z-index: 2;
 }
 
 
 .noOpened {
   cursor: pointer;
+  z-index: 0;
 }
 
 .contentContainer {
