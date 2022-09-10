@@ -35,7 +35,6 @@ export const Card = memo(
     link,
     madeFor,
     ids,
-
     lang,
   }) => {
     const y = useMotionValue(0);
@@ -70,83 +69,91 @@ export const Card = memo(
       isSelected
     );
 
-    return (<>
-      <motion.li
-        ref={containerRef}
-        className={`card`}
-        initial={
-          isSelected
-            ? {
-              y: 0,
-              opacity: 1,
-            }
-            : { y: 50, opacity: 0 }
-        }
-        animate={{ y: 0, opacity: 1 }}
-        transition={
-          isSelected
-            ? {
-              delay: 0,
-            }
-            : { delay: index * 0.1 }
-        }
-      >
-        <Overlay isSelected={isSelected} />        
-        
-        {/* Card */}
-        <Link className={`card-content-container ${isSelected && "open"} card-open-link`} to={id}>
-          <motion.div
-            ref={cardRef}
-            className="card-content"
-            style={{ ...inverted, zIndex, y }}
-            layoutTransition={isSelected ? !mobile && openSpring : closeSpring}
-            dragConstraints={constraints}
-            onDrag={checkSwipeToDismiss}
-            onUpdate={checkZIndex}
+    return (
+      <>
+        <motion.li
+          ref={containerRef}
+          className={`card`}
+          initial={
+            isSelected
+              ? {
+                  y: 0,
+                  opacity: 1,
+                }
+              : { y: 50, opacity: 0 }
+          }
+          animate={{ y: 0, opacity: 1 }}
+          transition={
+            isSelected
+              ? {
+                  delay: 0,
+                }
+              : { delay: index * 0.1 }
+          }
+        >
+          <Overlay isSelected={isSelected} />
+
+          {/* Card */}
+          <Link
+            className={`card-content-container ${
+              isSelected && "open"
+            } card-open-link`}
+            to={id}
           >
-            <ChangeProjectButtons id={id} ids={ids} isSelected={isSelected} />
-            <Title
-              lang={lang}
-              title={title}
-              category={category}
-              isSelected={isSelected}
-              textColor={textColor}
-              year={year}
-              link={link}
-            />
-
-            <Image
-              id={id}
-              ids={ids}
-              width={width}
-              path={path}
-              isSelected={isSelected}
-              pointOfInterestX={pointOfInterestX}
-              pointOfInterestY={pointOfInterestY}
-              backgroundColor={backgroundColor}
-            />
-
             <motion.div
-              className="content-container"
-              style={{ ...inverted, originY: 0, originX: 0 }}
+              ref={cardRef}
+              className="card-content"
+              style={{ ...inverted, zIndex, y }}
+              layoutTransition={
+                isSelected ? !mobile && openSpring : closeSpring
+              }
+              dragConstraints={constraints}
+              onDrag={checkSwipeToDismiss}
+              onUpdate={checkZIndex}
             >
-              <Description
-                tags={tags}
-                description={description}
+              <ChangeProjectButtons id={id} ids={ids} isSelected={isSelected} />
+              <Title
                 lang={lang}
+                title={title}
+                category={category}
+                isSelected={isSelected}
+                textColor={textColor}
+                year={year}
                 link={link}
-                madeFor={madeFor}
               />
-            </motion.div>
-          </motion.div>
-        </Link>
-        {/* Outside Card */}
-        {!isSelected && <Link  />}
-      </motion.li>
-    </>);
-  },
-);
 
+              <Image
+                id={id}
+                ids={ids}
+                width={width}
+                path={path}
+                isSelected={isSelected}
+                pointOfInterestX={pointOfInterestX}
+                pointOfInterestY={pointOfInterestY}
+                backgroundColor={backgroundColor}
+              />
+
+              <motion.div
+                className="content-container"
+                style={{ ...inverted, originY: 0, originX: 0 }}
+              >
+                <Description
+                  tags={tags}
+                  description={description}
+                  lang={lang}
+                  link={link}
+                  madeFor={madeFor}
+                />
+              </motion.div>
+            </motion.div>
+          </Link>
+          {/* Outside Card */}
+          {!isSelected && <Link />}
+        </motion.li>
+      </>
+    );
+  }
+);
 
 const Overlay = ({ isSelected }) => (
   <motion.div
