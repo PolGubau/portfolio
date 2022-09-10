@@ -21,21 +21,13 @@ function List({ match }) {
       <ul className="card-list">
         {cardData.map((card, index) => (
           <Card
-            index={index}
-            ids={ids}
             key={card.id}
-            path={card.path}
-            year={card.year}
+            index={index}
+            project={card}
+            ids={ids}
             lang={lang}
-            textColor={card.textColor}
             isSelected={match.params.id === card.id}
-            description={card.description}
-            madeFor={card.madeFor}
-            width={card.width}
-            link={card.link}
             mobile={mobile}
-            tags={card.tags}
-            {...card}
           />
         ))}
       </ul>
