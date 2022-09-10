@@ -1,14 +1,12 @@
 .title-container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 3%;
+  left: 5%;
   max-width: 400px;
   z-index: 3;
 }
 
-a {
-  text-decoration: none;
-}
+
 
 .title {
   display: flex;
