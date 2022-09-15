@@ -1,6 +1,6 @@
 import { memo, useRef } from "react";
 import { motion, useMotionValue } from "framer-motion";
-import { useNavigate } from "react-router";
+import { useLocation } from "wouter";
 
 import { useScrollConstraints } from "src/components/Card/utils/use-scroll-constraints";
 import { useWheelScroll } from "src/components/Card/utils/use-wheel-scroll";
@@ -22,15 +22,16 @@ interface CardInterfaceInline {
 
 export const Card = memo(
   ({ index, project, ids, lang, isSelected, mobile }: CardInterfaceInline) => {
-    const navigate = useNavigate();
-
     const y = useMotionValue(0);
+    const [location, setLocation] = useLocation();
 
     const cardRef = useRef(null);
     const constraints = useScrollConstraints(cardRef, isSelected);
 
     function checkSwipeToDismiss() {
-      y.get() > dismissDistance && navigate("/");
+      if (y.get() > dismissDistance) {
+        setLocation("/");
+      }
     }
 
     // When this card is selected, attach a wheel event listener
@@ -70,7 +71,10 @@ export const Card = memo(
           <motion.div
             ref={cardRef}
             onClick={() => {
-              !isSelected && navigate(`/${project.id}`);
+              if (!isSelected) {
+                // return <Navigate to={`/${project.id}`} />;
+                setLocation(`/${project.title}`);
+              }
             }}
             className={`cardContainer ${
               isSelected ? (mobile ? "openMobile" : " openPC") : " noOpened"
@@ -101,11 +105,8 @@ const Overlay = ({
   isSelected: boolean;
   mobile: boolean;
 }) => {
-  const navigate = useNavigate();
+  const [location, setLocation] = useLocation();
 
-  const handleClick = () => {
-    navigate("/");
-  };
   return (
     <>
       {!mobile && (
@@ -116,7 +117,10 @@ const Overlay = ({
           style={{ pointerEvents: isSelected ? "auto" : "none" }}
           className="overlay"
         >
-          <div className="overlayContent" onClick={handleClick}></div>
+          <div
+            className="overlayContent"
+            onClick={() => setLocation("/")}
+          ></div>
         </motion.div>
       )}
     </>
