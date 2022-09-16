@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Card } from "src/components/Card/Card/Card";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Link, Route, Routes, useParams } from "react-router-dom";
 import { cardData } from "src/Data";
 import "./CardList.css";
 import LangContext from "src/context/LangContext";
@@ -9,12 +9,11 @@ import Nav from "src/components/Nav/Nav";
 
 function List() {
   const mobile = useMedia();
-  const params = useParams();
+  const { path } = useParams();
   const { lang } = useContext(LangContext);
-  const ids = cardData.map((project) => project.title);
+  const ids = cardData.map((project) => project.id);
 
   const [filter, setFilter] = useState(cardData);
-  console.log("Filter", filter);
   const actualProjects = filter;
   return (
     <>
@@ -23,11 +22,12 @@ function List() {
         {actualProjects.map((card, index) => (
           <Card
             key={card.id}
+            allData={cardData}
             index={index}
             project={card}
             ids={ids}
             lang={lang}
-            isSelected={params.id === card.title}
+            isSelected={path === card.path}
             mobile={mobile}
           />
         ))}
@@ -41,15 +41,7 @@ export function CardList() {
     <>
       <Routes>
         <Route path="/" element={<List />} />
-        <Route
-          path="/:id"
-          element={
-            <>
-              One
-              <List />
-            </>
-          }
-        />
+        <Route path="/:path" element={<List />} />
       </Routes>
     </>
   );
