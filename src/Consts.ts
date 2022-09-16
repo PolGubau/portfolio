@@ -57,3 +57,27 @@ export const headerText: HeaderDataInterface = {
     description: "Programador Junior Full-Stack i dissenyador UX.",
   },
 };
+export const errorOnSearch = {
+  English: {
+    title: "Oups, nothing here...",
+    description:
+      "It seems that you are looking for something that doesn't exist",
+    action: "Delete all filters",
+  },
+  Spanish: {
+    title: "Uy, nada por aquí...",
+    description: "Parece que has buscado algo que no existe",
+    action: "Borra todos los filtros",
+  },
+  Catalan: {
+    title: "Ui, res per aquí...",
+    description: "Sembla que has buscat alguna cosa que no existeix",
+    action: "Esborra tots els filtres",
+  },
+};
+
+export const placeholderInput = {
+  English: "Search...",
+  Spanish: "Buscar...",
+  Catalan: "Buscar...",
+};
