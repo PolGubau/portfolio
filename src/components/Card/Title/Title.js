@@ -45,7 +45,7 @@ export const Title = ({ project, isSelected, lang }) => {
           {category[lang]}
         </span>
         <span
-          className="year"
+          className="yearCard"
           style={{ color: textColor, opacity: isSelected ? 1 : 0 }}
         >
           {year}
