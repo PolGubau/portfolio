@@ -1,0 +1,70 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 7px;
+    margin: 0 0 0 0;
+    padding: 0px;
+    list-style: none;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.years {
+    /* margin-top: 2px; */
+    display: flex;
+    gap: 5px;
+}
+
+.year {
+
+    padding: 3px 7px;
+    border-radius: 0 0 10px 10px;
+}
+
+.year:hover {
+    background-color: var(--bg-light);
+}
+
+
+.sortIcon {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 0;
+    padding: 8px 5px 5px 5px;
+    color: var(--black);
+    cursor: pointer;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 0 0 10px 10px;
+}
+
+.sortIcon:hover {
+    background-color: var(--bg-light);
+
+}
+
+.refresh {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 0;
+    padding: 5px;
+    color: var(--black);
+    cursor: pointer;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 0 0 10px 10px;
+}
+
+.refresh:hover {
+    background-color: var(--bg-light);
+
+}
