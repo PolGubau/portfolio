@@ -1,6 +1,6 @@
 import { memo, useRef } from "react";
 import { motion, useMotionValue } from "framer-motion";
-import { useLocation } from "wouter";
+import { useNavigate } from "react-router-dom";
 
 import { useScrollConstraints } from "src/components/Card/utils/use-scroll-constraints";
 import { useWheelScroll } from "src/components/Card/utils/use-wheel-scroll";
@@ -8,29 +8,39 @@ import "./Card.css";
 import "./Overlay.css";
 import { CardContent } from "./CardContent";
 import { closeSpring, openSpring } from "../utils/animations";
+import { ProyectoInterface } from "src/Interfaces";
 
 const dismissDistance = 100;
 
 interface CardInterfaceInline {
-  project: any;
-  ids: any;
+  project: ProyectoInterface;
+  allData: Array<ProyectoInterface>;
+  ids: Array<number>;
   lang: any;
   isSelected: any;
-  mobile: any;
+  mobile: boolean;
   index: number;
 }
 
 export const Card = memo(
-  ({ index, project, ids, lang, isSelected, mobile }: CardInterfaceInline) => {
+  ({
+    index,
+    project,
+    ids,
+    lang,
+    isSelected,
+    mobile,
+    allData,
+  }: CardInterfaceInline) => {
     const y = useMotionValue(0);
-    const [location, setLocation] = useLocation();
+    const navigate = useNavigate();
 
     const cardRef = useRef(null);
     const constraints = useScrollConstraints(cardRef, isSelected);
 
     function checkSwipeToDismiss() {
-      if (y.get() > dismissDistance) {
-        setLocation("/");
+      if (mobile && y.get() > dismissDistance) {
+        navigate("/");
       }
     }
 
@@ -72,8 +82,7 @@ export const Card = memo(
             ref={cardRef}
             onClick={() => {
               if (!isSelected) {
-                // return <Navigate to={`/${project.id}`} />;
-                setLocation(`/${project.title}`);
+                navigate(`/${project.path}`);
               }
             }}
             className={`cardContainer ${
@@ -85,6 +94,7 @@ export const Card = memo(
             onDrag={checkSwipeToDismiss}
           >
             <CardContent
+              allData={allData}
               project={project}
               ids={ids}
               lang={lang}
@@ -105,7 +115,7 @@ const Overlay = ({
   isSelected: boolean;
   mobile: boolean;
 }) => {
-  const [location, setLocation] = useLocation();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -116,12 +126,8 @@ const Overlay = ({
           transition={{ duration: 0.3 }}
           style={{ pointerEvents: isSelected ? "auto" : "none" }}
           className="overlay"
-        >
-          <div
-            className="overlayContent"
-            onClick={() => setLocation("/")}
-          ></div>
-        </motion.div>
+          onClick={() => navigate("/")}
+        ></motion.div>
       )}
     </>
   );
