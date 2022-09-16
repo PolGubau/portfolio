@@ -16,6 +16,36 @@
     flex-wrap: wrap;
 }
 
+.inputWithIcon {
+    border: 1px solid black;
+    display: flex;
+    border-top: none;
+    outline: none;
+    margin: 0 0 0 0;
+    gap: 5px;
+    border-radius: 0 0 10px 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding-left: 5px;
+
+
+}
+
+.input {
+    padding: 4px 10px;
+
+    border: none;
+    border-radius: 0 0 10px 0;
+
+    outline: none;
+    cursor: pointer;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
 .years {
     /* margin-top: 2px; */
     display: flex;
