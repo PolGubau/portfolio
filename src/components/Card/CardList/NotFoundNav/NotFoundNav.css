@@ -1,0 +1,20 @@
+.filterDelete {
+    margin: 10px 0;
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: var(--primary);
+    border: 1px solid black;
+    cursor: pointer;
+
+}
+
+.filterDelete:hover {
+    color: white;
+
+    background-color: var(--primary-dark);
+
+}
+
+.filterDelete:active {
+    transform: scale(0.95);
+}
