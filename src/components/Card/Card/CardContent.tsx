@@ -10,10 +10,11 @@ import "./Overlay.css";
 import ChangeProjectButtons from "src/components/Card/ChangeProjectButtons";
 
 export const CardContent = memo(
-  ({ project, ids, lang, isSelected, mobile }: CartInterface) => {
+  ({ project, ids, lang, isSelected, mobile, allData }: CartInterface) => {
     return (
       <>
         <ChangeProjectButtons
+          allData={allData}
           id={project.id}
           ids={ids}
           isSelected={isSelected}
