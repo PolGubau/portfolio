@@ -1,4 +1,11 @@
 import { ProyectoInterface } from "./Interfaces";
+import {
+  tagsDatabase,
+  tagsDesign,
+  tagsJS,
+  tagsLogin,
+  tagsMobile,
+} from "./utils/Tags";
 export const cardData: ProyectoInterface[] = [
   {
     id: 8,
@@ -17,6 +24,21 @@ export const cardData: ProyectoInterface[] = [
     backgroundColor: "#abd7ff",
     pathToImg: "/AskaQuest/0.webp",
     tags: ["Nextjs", "PostgreSQL", "TypeScript", "Vercel", "SWR"],
+    invisibleTags: [
+      ...tagsDatabase,
+      ...tagsMobile,
+      ...tagsLogin,
+      ...tagsJS,
+      "App",
+      "Aplicación",
+      "TS",
+      "React",
+      "Mobile",
+      "fullstack",
+      "localStorage",
+      "Red Social",
+      "2022",
+    ],
 
     description: {
       English:
@@ -47,6 +69,19 @@ export const cardData: ProyectoInterface[] = [
     backgroundColor: "#faabff",
     pathToImg: "/UABMedia/0.webp",
     tags: ["PHP", "WebTV", "BOOTSTRAP", "JQUERY", "AWS"],
+    invisibleTags: [
+      ...tagsDatabase,
+      ...tagsMobile,
+      "UAB",
+      "Autonoma",
+      "amazon",
+      "frontend",
+      "comunicacio",
+      "television",
+      "radio",
+      "Universidad",
+      "2022",
+    ],
     madeFor: {
       English: "Autonomous University of Barcelona",
       Spanish: "Universidad autónoma de Barcelona",
@@ -82,6 +117,7 @@ export const cardData: ProyectoInterface[] = [
     backgroundColor: "#aaffaa",
     pathToImg: "/NUWE/0.webp",
     tags: ["Figma", "Illustrator", "Photoshop"],
+    invisibleTags: [...tagsDesign],
     madeFor: {
       English: "NUWE",
       Spanish: "NUWE",
@@ -118,6 +154,21 @@ export const cardData: ProyectoInterface[] = [
     backgroundColor: "#abfeff",
     pathToImg: "/Rispot/0.webp",
     tags: ["PHP", "SQL", "JQUERY", "EXCEL"],
+    invisibleTags: [
+      ...tagsDatabase,
+      ...tagsMobile,
+      "fullstack",
+      "frontend",
+      "backend",
+      "Rispot",
+      "graphic",
+      "stadistics",
+      "excel",
+      "pau",
+      "backstage",
+      "2022",
+    ],
+
     madeFor: {
       English: "Rispot Reseller",
       Spanish: "Rispot Reseller",
@@ -152,6 +203,18 @@ export const cardData: ProyectoInterface[] = [
     backgroundColor: "#abbaff",
     pathToImg: "/GubauAfternoons/0.webp",
     tags: ["HTML", "SCSS", "JQUERY"],
+    invisibleTags: [
+      ...tagsMobile,
+      "frontend",
+      "Gubau",
+      "GubauAfternoons",
+      "Gubau'sAfternoons",
+      "Gubau's",
+      "Afternoons",
+      "Portfolio",
+      "black",
+      "2020",
+    ],
     description: {
       English:
         "Gubau's Afternoons shows where I spent my afternoons when I was in high school. I used it as a portfolio for two years and it's one of the pages that I have worked on the most. You can see in detail many projects that I have not shown here.",
@@ -181,6 +244,28 @@ export const cardData: ProyectoInterface[] = [
     backgroundColor: "#ffabd5",
     pathToImg: "/Unbrushed/0.webp",
     tags: ["PHP", "SQL", "JavaScript"],
+    invisibleTags: [
+      ...tagsMobile,
+      ...tagsDatabase,
+      "Helena",
+      "Unbrushed",
+      "2021",
+      "fullstack",
+      "frontend",
+      "peluquería",
+      "peluqueria",
+      "MariaBD",
+      "MySQL",
+      "MPA",
+      "MVC",
+      "PHP",
+      "SQL",
+      "JavaScript",
+      "JQUERY",
+      "HTML",
+      "CSS",
+      "SCSS",
+    ],
     madeFor: {
       English: "Unbrushed",
       Spanish: "Unbrushed",
@@ -214,6 +299,16 @@ export const cardData: ProyectoInterface[] = [
     backgroundColor: "#ffdbab",
     pathToImg: "/Skatla/0.webp",
     tags: ["Indesign", "Illustrator", "Photoshop"],
+    invisibleTags: [
+      ...tagsMobile,
+      ...tagsDesign,
+      "Autonoma",
+      "uab",
+      "universidad",
+      "diseño",
+      "skatla",
+      "design",
+    ],
     madeFor: {
       English: "Škatla",
       Spanish: "Škatla",
@@ -247,6 +342,7 @@ export const cardData: ProyectoInterface[] = [
     backgroundColor: "#feffab",
     pathToImg: "/ThoseColors/0.webp",
     tags: ["PHP", "SASS"],
+    invisibleTags: ["color", "gradient", "palette", "generator"],
     description: {
       English:
         "This is a website I made to practice checking the hexadecimal codes of colors and modifying them. It is written with vanilla PHP and can create color palettes with the color and amount you tell it.",
@@ -275,6 +371,8 @@ export const cardData: ProyectoInterface[] = [
     backgroundColor: "#e6abff",
     pathToImg: "/Memo/0.webp",
     tags: ["Javascript", "HTML", "CSS"],
+    invisibleTags: ["localStorage", "memory", "notas", "notes", "todo"],
+
     description: {
       English:
         "This is a website that I completed with Javascript to practice using LocalStorage. It was forked from GitHub and I added features like changing the color of the Memos.",
