@@ -6,18 +6,42 @@ import "./CardList.css";
 import LangContext from "src/context/LangContext";
 import useMedia from "src/hooks/useMedia";
 import Nav from "src/components/Nav/Nav";
-
+import NotFoundNav from "./NotFoundNav/NotFoundNav";
 function List() {
   const mobile = useMedia();
   const { path } = useParams();
   const { lang } = useContext(LangContext);
+
+  const [value, setValue] = useState("");
+
   const ids = cardData.map((project) => project.id);
 
   const [filter, setFilter] = useState(cardData);
   const actualProjects = filter;
+
+  const resetFilters = () => {
+    setValue("");
+    setFilter(cardData);
+  };
+
   return (
     <>
-      <Nav filter={filter} setFilter={setFilter} allData={cardData} />
+      <Nav
+        value={value}
+        setValue={setValue}
+        filter={filter}
+        setFilter={setFilter}
+        allData={cardData}
+        lang={lang}
+      />
+      {actualProjects.length === 0 && (
+        <NotFoundNav
+          lang={lang}
+          resetFilters={resetFilters}
+          value={value}
+          setValue={setValue}
+        />
+      )}
       <ul className="card-list">
         {actualProjects.map((card, index) => (
           <Card
