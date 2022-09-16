@@ -10,8 +10,6 @@ import { CardContent } from "./CardContent";
 import { closeSpring, openSpring } from "../utils/animations";
 import { ProyectoInterface } from "src/Interfaces";
 
-const dismissDistance = 100;
-
 interface CardInterfaceInline {
   project: ProyectoInterface;
   allData: Array<ProyectoInterface>;
@@ -39,7 +37,11 @@ export const Card = memo(
     const constraints = useScrollConstraints(cardRef, isSelected);
 
     function checkSwipeToDismiss() {
-      if (mobile && y.get() > dismissDistance) {
+      const dismissDistance = 100;
+      if (y.get() > dismissDistance) {
+        navigate("/");
+      }
+      if (!mobile && y.get() < -dismissDistance) {
         navigate("/");
       }
     }
