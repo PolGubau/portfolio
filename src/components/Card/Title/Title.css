@@ -22,7 +22,7 @@
   margin: 5px 5px;
 }
 
-.title:hover {
+.titleOpened:hover {
   cursor: pointer;
   text-decoration: underline;
 }
