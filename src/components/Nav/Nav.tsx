@@ -47,7 +47,11 @@ export default function Nav({
   };
 
   const filterTags = (e: any) => {
+    setFiltered(true);
+
     if (e.target.value === "") {
+      setFiltered(false);
+
       setFilter(allData);
       return;
     }
@@ -96,11 +100,6 @@ export default function Nav({
             </div>
           </div>
           <div className={`filterNav ${value.length > 0 ? "noFilters" : ""}`}>
-            {/* {filtered && (
-              <div className="refresh" onClick={refresh}>
-                <IoMdRefresh />
-              </div>
-            )} */}
             {value.length === 0 && (
               <ul className="years">
                 <li className="year" onClick={() => onlyShowCathegory("web")}>
@@ -117,7 +116,7 @@ export default function Nav({
               </ul>
             )}
 
-            {filter.length > 0 || filtered ? (
+            {filter.length > 0 || filtered || value.length > 0 ? (
               <div onClick={changeOrder} className="sortIcon">
                 {newest ? <HiSortAscending /> : <HiSortDescending />}
               </div>
