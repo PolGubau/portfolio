@@ -23,8 +23,7 @@ body {
   margin: 0;
   padding: 0;
   background: var(--white);
-  overflow-x: hidden;
-  overflow-y: scroll;
+
 }
 
 * {
@@ -43,8 +42,13 @@ a {
 }
 
 #root {
+  align-content: center;
+  align-items: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
 }
 
 .screen {
