@@ -38,10 +38,7 @@ export const Card = memo(
 
     function checkSwipeToDismiss() {
       const dismissDistance = 100;
-      if (y.get() > dismissDistance) {
-        navigate("/");
-      }
-      if (!mobile && y.get() < -dismissDistance) {
+      if (mobile && y.get() > dismissDistance) {
         navigate("/");
       }
     }
