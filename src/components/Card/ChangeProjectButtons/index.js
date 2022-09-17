@@ -14,7 +14,7 @@ export default function ChangeProjectButtons({ id, ids, isSelected, allData }) {
   const prevPath = allData.find((project) => project.id === prevID).path;
   const nextPath = allData.find((project) => project.id === nextID).path;
 
-  const isMobile = useMedia();
+  const isMobile = useMedia(700);
 
   return (
     <>
