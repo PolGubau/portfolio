@@ -42,12 +42,8 @@ a {
 }
 
 #root {
-  align-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+ display: grid;
+    justify-items: center;
 
 }
 
