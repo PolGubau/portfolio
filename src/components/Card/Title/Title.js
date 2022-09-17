@@ -18,7 +18,7 @@ export const Title = ({ project, isSelected, lang }) => {
     >
       {isSelected ? (
         <a onClick={handleClick} href={link}>
-          <h2 className="title" style={{ color: textColor }}>
+          <h2 className="title titleOpened" style={{ color: textColor }}>
             {title}
             <motion.div
               transition={{ delay: 0.3, duration: 0.3 }}
