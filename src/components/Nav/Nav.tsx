@@ -5,6 +5,8 @@ import { ProyectoInterface } from "src/Interfaces";
 import { IoMdRefresh } from "react-icons/io";
 import { placeholderInput } from "src/Consts";
 import { BiSearch } from "react-icons/bi";
+import useMedia from "src/hooks/useMedia";
+
 export default function Nav({
   value,
   setValue,
@@ -20,6 +22,7 @@ export default function Nav({
   allData: ProyectoInterface[];
   lang: any;
 }): any {
+  const mobile = useMedia(450);
   const [newest, setNewest] = useState<boolean>(false);
   const [filtered, setFiltered] = useState<boolean>(false);
   const changeOrder = () => {
@@ -37,6 +40,7 @@ export default function Nav({
   };
 
   const refresh = () => {
+    setValue("");
     setFilter(allData);
     setNewest(false);
     setFiltered(false);
@@ -68,52 +72,61 @@ export default function Nav({
       : lang === "Catalan"
       ? placeholderInput.Catalan
       : placeholderInput.English;
-
   return (
     <>
       <nav className="nav">
-        <div className="inputWithIcon">
-          <BiSearch />
-          <input
-            type="text"
-            className="input"
-            value={value}
-            placeholder={placeHolderInfo}
-            onChange={(e) => {
-              setValue(e.target.value);
-              filterTags(e);
-            }}
-          />
-        </div>
-        {filtered && (
-          <div className="refresh" onClick={refresh}>
-            <IoMdRefresh />
-          </div>
-        )}
-
-        <ul className="years">
-          <li className="year" onClick={() => onlyShowCathegory("web")}>
-            Web
-          </li>
-          <li className="year" onClick={() => onlyShowCathegory("design")}>
-            {lang === "English" && "Design"}
-            {lang === "Spanish" && "Diseño"}
-            {lang === "Catalan" && "Disseny"}
-          </li>
-        </ul>
-
-        <div onClick={changeOrder} className="sortIcon">
-          {filter.length > 0 ? (
-            newest ? (
-              <HiSortAscending />
-            ) : (
-              <HiSortDescending />
-            )
-          ) : (
-            <div className="refresh" onClick={refresh}>
-              <IoMdRefresh />
+        <div className="contentNav">
+          <div className={`searchNav ${mobile ? "mobileSearch" : ""}`}>
+            <div
+              className={`inputWithIcon ${
+                value.length > 0 ? "activeInput" : ""
+              }`}
+            >
+              <BiSearch className="iconSearch" />
+              <input
+                type="text"
+                className={`input `}
+                value={value}
+                placeholder={placeHolderInfo}
+                onChange={(e) => {
+                  setValue(e.target.value);
+                  filterTags(e);
+                }}
+              />
             </div>
-          )}
+          </div>
+          <div className={`filterNav ${value.length > 0 ? "noFilters" : ""}`}>
+            {/* {filtered && (
+              <div className="refresh" onClick={refresh}>
+                <IoMdRefresh />
+              </div>
+            )} */}
+            {value.length === 0 && (
+              <ul className="years">
+                <li className="year" onClick={() => onlyShowCathegory("web")}>
+                  Web
+                </li>
+                <li
+                  className="year"
+                  onClick={() => onlyShowCathegory("design")}
+                >
+                  {lang === "English" && "Design"}
+                  {lang === "Spanish" && "Diseño"}
+                  {lang === "Catalan" && "Disseny"}
+                </li>
+              </ul>
+            )}
+
+            {filter.length > 0 || filtered ? (
+              <div onClick={changeOrder} className="sortIcon">
+                {newest ? <HiSortAscending /> : <HiSortDescending />}
+              </div>
+            ) : (
+              <div className="refresh" onClick={refresh}>
+                <IoMdRefresh />
+              </div>
+            )}
+          </div>
         </div>
       </nav>
     </>
