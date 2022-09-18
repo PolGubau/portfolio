@@ -21,15 +21,22 @@ export const CardContent = memo(
         />
         <Title lang={lang} project={project} isSelected={isSelected} />
 
-        <Image isSelected={isSelected} project={project} mobile={mobile} />
-
         <div
-          className={`${
-            mobile && isSelected ? "contentContainerMobile" : "contentContainer"
-          } `}
-          // style={{ originY: 0, originX: 0 }}
+          className={`imageAndDescription ${
+            mobile ? "imageAndDescriptionMobile" : ""
+          }`}
         >
-          <Description lang={lang} project={project} />
+          <Image isSelected={isSelected} project={project} mobile={mobile} />
+
+          <div
+            className={`${
+              mobile && isSelected
+                ? "card-content-Mobile"
+                : "card-content-PC"
+            } `}
+          >
+            <Description lang={lang} project={project} />
+          </div>
         </div>
       </>
     );
