@@ -40,9 +40,16 @@
   align-items: center;
   overflow: hidden;
   align-self: auto;
+  transition: 0.3s ease-out all;
 }
 
+.card-image:hover {
+  transition: none;
+}
+
+
 .card-image-container {
+  perspective: 1000px;
   position: absolute;
   top: 0;
   border-radius: 20px;
@@ -54,7 +61,11 @@
   z-index: 2;
 }
 
+.card-image-container-selected {
+  height: 400px;
+}
+
 
 .mobileAndSelected {
-  height: 300px;
+  height: 350px;
 }
