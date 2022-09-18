@@ -2,7 +2,8 @@ h1 {
   font-weight: bold;
   font-size: var(--title);
   color: rgb(0, 0, 0);
-  margin: 5px 0 0px 0;
+  margin: 10px 0 10px 0;
+  line-height: 0.9;
 }
 
 h3 {
@@ -24,7 +25,7 @@ header {
 }
 
 .avatar {
-  animation: bgc 2s ease;
+  animation: bgc 3s ease;
   border-radius: 50%;
   position: relative;
   bottom: 12px;
