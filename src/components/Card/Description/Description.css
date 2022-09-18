@@ -11,7 +11,7 @@
   margin: 20px 0;
 }
 
-.Description-tagsContainer li {
+.Description-tag {
   margin-right: 10px;
   padding: 5px 10px;
   background-color: var(--primary-dark);
