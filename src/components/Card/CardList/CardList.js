@@ -6,8 +6,17 @@ import "./CardList.css";
 import LangContext from "src/context/LangContext";
 import useMedia from "src/hooks/useMedia";
 import Nav from "src/components/Nav/Nav";
+import { useLocation } from "react-router-dom";
+
 import NotFoundNav from "./NotFoundNav/NotFoundNav";
 function List() {
+  const location = useLocation();
+  const locationInput = location.state;
+  let inputSearch = "";
+  if (locationInput) {
+    inputSearch = locationInput.inputSearch;
+    console.log(inputSearch);
+  }
   const mobile = useMedia();
   const { path } = useParams();
   const { lang } = useContext(LangContext);
@@ -33,6 +42,7 @@ function List() {
         setFilter={setFilter}
         allData={cardData}
         lang={lang}
+        inputSearch={inputSearch}
       />
       {actualProjects.length === 0 && (
         <NotFoundNav
