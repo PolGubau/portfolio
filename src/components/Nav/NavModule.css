@@ -13,29 +13,28 @@
 }
 
 .contentNav {
+    gap: 8px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     align-content: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
 }
 
 .filterNav {
-    width: 180px;
+    width: fit-content;
     display: flex;
-    justify-content: flex-end;
-    align-content: flex-start;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
 }
 
-.noFilters {
-    width: 30px;
-}
 
 .searchNav {
+    gap: 5px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -68,11 +67,10 @@
     justify-content: center;
     align-content: flex-start;
     padding-left: 5px;
-    /* transition: 0.3s ease-in-out; */
 }
 
 .activeInput {
-    width: 350px;
+    width: 311px;
 }
 
 
@@ -91,20 +89,20 @@
 
 
 
-.years {
+.filterWord-container {
     /* margin-top: 2px; */
     display: flex;
     gap: 5px;
 }
 
-.year {
-
+.filterWord {
     padding: 3px 7px;
     border-radius: 0 0 10px 10px;
 }
 
-.year:hover {
+.filterWord:hover {
     background-color: var(--bg-light);
+    cursor: pointer;
 }
 
 
@@ -123,10 +121,9 @@
 
 .sortIcon:hover {
     background-color: var(--bg-light);
-
 }
 
-.refresh {
+.refreshIcon {
     display: flex;
     flex-direction: row;
     margin: 0 0 0 0;
@@ -139,9 +136,8 @@
     border-radius: 0 0 10px 10px;
 }
 
-.refresh:hover {
+.refreshIcon:hover {
     background-color: var(--bg-light);
-
 }
 
 
@@ -155,7 +151,6 @@
     }
 
     .contentNav {
-        gap: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -188,12 +183,12 @@
         border-radius: 10px;
     }
 
-    .year {
+    .filterWord {
         border-radius: 10px;
     }
 
     .sortIcon {
         border-radius: 10px;
-        
+
     }
 }

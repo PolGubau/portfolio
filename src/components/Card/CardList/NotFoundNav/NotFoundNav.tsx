@@ -11,7 +11,7 @@ export default function NotFoundNav({
   resetFilters: MouseEventHandler<HTMLButtonElement>;
 }): JSX.Element {
   return (
-    <div>
+    <div className="containerNotFound">
       {lang === "English" && (
         <>
           <h3>{errorOnSearch.English.title}</h3>
