@@ -25,6 +25,9 @@ export default function Nav({
   const mobile = useMedia(450);
   const [newest, setNewest] = useState<boolean>(false);
   const [filtered, setFiltered] = useState<boolean>(false);
+
+  console.log(filtered);
+
   const changeOrder = () => {
     if (!newest) {
       setFilter([...filter].sort((a, b) => a.year - b.year));
@@ -99,14 +102,17 @@ export default function Nav({
               />
             </div>
           </div>
-          <div className={`filterNav ${value.length > 0 ? "noFilters" : ""}`}>
+          <div className={`filterNav`}>
             {value.length === 0 && (
-              <ul className="years">
-                <li className="year" onClick={() => onlyShowCathegory("web")}>
+              <ul className="filterWord-container">
+                <li
+                  className="filterWord"
+                  onClick={() => onlyShowCathegory("web")}
+                >
                   Web
                 </li>
                 <li
-                  className="year"
+                  className="filterWord"
                   onClick={() => onlyShowCathegory("design")}
                 >
                   {lang === "English" && "Design"}
@@ -116,12 +122,13 @@ export default function Nav({
               </ul>
             )}
 
-            {filter.length > 0 || filtered || value.length > 0 ? (
+            {filter.length > 0 && (
               <div onClick={changeOrder} className="sortIcon">
                 {newest ? <HiSortAscending /> : <HiSortDescending />}
               </div>
-            ) : (
-              <div className="refresh" onClick={refresh}>
+            )}
+            {filtered && (
+              <div onClick={refresh} className="refreshIcon">
                 <IoMdRefresh />
               </div>
             )}
