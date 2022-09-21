@@ -14,6 +14,7 @@ export default function Nav({
   setFilter,
   allData,
   lang,
+  inputSearch,
 }: {
   value: string;
   setValue: Function;
@@ -21,13 +22,17 @@ export default function Nav({
   setFilter: Function;
   allData: ProyectoInterface[];
   lang: any;
-}): any {
+  inputSearch: string;
+}): JSX.Element {
   const mobile = useMedia(450);
   const [newest, setNewest] = useState<boolean>(false);
   const [filtered, setFiltered] = useState<boolean>(false);
 
+<<<<<<< HEAD
   console.log(filtered);
 
+=======
+>>>>>>> main
   const changeOrder = () => {
     if (!newest) {
       setFilter([...filter].sort((a, b) => a.year - b.year));
