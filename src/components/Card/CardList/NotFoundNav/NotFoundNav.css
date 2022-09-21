@@ -1,3 +1,10 @@
+.containerNotFound {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+
 .filterDelete {
     margin: 10px 0;
     padding: 5px 10px;
