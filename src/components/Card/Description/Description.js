@@ -2,16 +2,27 @@ import { Languages } from "src/Consts";
 import "./Description.css";
 import { BsSearch } from "react-icons/bs";
 import Madefor from "./MadeFor/MadeFor";
+import { Link } from "react-router-dom";
 
 export default function Description({ project, lang = Languages[0] }) {
   const { description, madeFor, tags, link } = project;
+
   return (
     <>
       <article>
         <header className="Description-header">
           <ul className="Description-tagsContainer">
             {tags.map((tag) => (
-              <li key={tag}>{tag}</li>
+              <Link
+                key={tag}
+                to="/"
+                state={{
+                  inputSearch: tag,
+                }}
+                className="Description-tag"
+              >
+                {tag}
+              </Link>
             ))}
           </ul>
           <Madefor madeFor={madeFor} lang={lang} Languages={Languages} />
