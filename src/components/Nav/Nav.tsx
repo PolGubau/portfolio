@@ -28,11 +28,8 @@ export default function Nav({
   const [newest, setNewest] = useState<boolean>(false);
   const [filtered, setFiltered] = useState<boolean>(false);
 
-<<<<<<< HEAD
   console.log(filtered);
 
-=======
->>>>>>> main
   const changeOrder = () => {
     if (!newest) {
       setFilter([...filter].sort((a, b) => a.year - b.year));
