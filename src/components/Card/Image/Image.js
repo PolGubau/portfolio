@@ -56,7 +56,7 @@ export const Image = ({ isSelected, project, mobile }) => {
               //aply 3d rotatim with device orientation to move a bit the image
               // rotateY: isSelected ? alpha / 2 : 0,
               rotateX: isSelected ? beta / 5 : 0,
-              rotateZ: isSelected ? gamma / 5 : 0,
+              // rotateZ: isSelected ? gamma / 5 : 0,
             }}
             onMouseLeave={(e) => {
               if (isSelected) {
