@@ -1,5 +1,11 @@
 # PolGubauAmores.me
-[]: # Description: Personal website
+## my personal description
 
-My personal webspace made with React and Framer Motion.
+Welcome to my webspace made with React and Framer Motion.
+You can find my CV, my projects and my contact information here.
+Click on any project to see more details.
+
+Icons: React Icons.
+Routing: React Router v6
+Animations: Framer Motion
 
