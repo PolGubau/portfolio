@@ -14,11 +14,11 @@ function List() {
   const locationInput = location.state;
   let inputSearch = "";
 
-  if (locationInput?.inputSearch) {
-    inputSearch = locationInput.inputSearch;
+  // if (locationInput?.inputSearch) {
+  //   inputSearch = locationInput.inputSearch;
 
-    console.log("sended", inputSearch);
-  }
+  //   console.log("sended", inputSearch);
+  // }
 
   const [value, setValue] = useState("");
 
