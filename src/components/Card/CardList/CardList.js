@@ -13,15 +13,17 @@ function List() {
   const location = useLocation();
   const locationInput = location.state;
   let inputSearch = "";
-  if (locationInput) {
-    inputSearch = locationInput.inputSearch;
-    console.log(inputSearch);
+
+  if (locationInput?.inputSearch) {
+    inputSearch === locationInput.inputSearch ? "" : locationInput.inputSearch;
+    console.log("sended", inputSearch);
   }
+
+  const [value, setValue] = useState("");
+
   const mobile = useMedia();
   const { path } = useParams();
   const { lang } = useContext(LangContext);
-
-  const [value, setValue] = useState("");
 
   const ids = cardData.map((project) => project.id);
 
