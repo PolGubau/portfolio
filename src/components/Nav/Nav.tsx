@@ -28,7 +28,21 @@ export default function Nav({
   const [newest, setNewest] = useState<boolean>(false);
   const [filtered, setFiltered] = useState<boolean>(false);
 
-  console.log(filtered);
+  const filteringByTagsAndTitle = () => {
+    // when we write in the input, will be checked if the tag, title, or description starts like the value or contains the input value
+    setFilter(
+      allData.filter(
+        (card) =>
+          card.tags.some((tag) =>
+            tag.toLowerCase().startsWith(value.toLowerCase())
+          ) ||
+          card.title.toLowerCase().startsWith(value.toLowerCase()) ||
+          card.invisibleTags?.some((tag) =>
+            tag.toLowerCase().startsWith(value.toLowerCase())
+          )
+      )
+    );
+  };
 
   const changeOrder = () => {
     if (!newest) {
@@ -60,20 +74,18 @@ export default function Nav({
       setFilter(allData);
       return;
     }
-    // when we write in the input, will be checked if the tag, title, or description starts like the value or contains the input value
+    filteringByTagsAndTitle();
+  };
+  if (inputSearch) {
+    console.log("gotted", inputSearch);
     setFilter(
-      allData.filter(
-        (card) =>
-          card.tags.some((tag) =>
-            tag.toLowerCase().startsWith(e.target.value.toLowerCase())
-          ) ||
-          card.title.toLowerCase().startsWith(e.target.value.toLowerCase()) ||
-          card.invisibleTags?.some((tag) =>
-            tag.toLowerCase().startsWith(e.target.value.toLowerCase())
-          )
+      allData.filter((card) =>
+        card.tags.some((tag) =>
+          tag.toLowerCase().startsWith(inputSearch.toLowerCase())
+        )
       )
     );
-  };
+  }
 
   const placeHolderInfo =
     lang === "Spanish"
