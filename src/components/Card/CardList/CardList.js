@@ -15,7 +15,8 @@ function List() {
   let inputSearch = "";
 
   if (locationInput?.inputSearch) {
-    inputSearch === locationInput.inputSearch ? "" : locationInput.inputSearch;
+    inputSearch = locationInput.inputSearch;
+
     console.log("sended", inputSearch);
   }
 
