@@ -11,6 +11,7 @@ body {
   --primary-dark: #68b4d8;
   --primary-light: #a8a4a8;
   --bg-light: #c8c8c8;
+  --bg-dark: #949494;
   --divider: #343434;
   --white: rgb(245, 245, 245);
   --black: #000
@@ -42,8 +43,8 @@ a {
 }
 
 #root {
- display: grid;
-    justify-items: center;
+  display: grid;
+  justify-items: center;
 
 }
 
@@ -54,6 +55,7 @@ a {
 
 .container {
   max-width: 990px;
+  width: 100vw;
   flex: 1 1 100%;
   padding: 45px 25px;
 }
