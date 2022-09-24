@@ -104,7 +104,12 @@ export const Nav = memo(
                   value.length > 0 ? "activeInput" : ""
                 }`}
               >
-                <BiSearch className="iconSearch" />
+                <div className="inputIconDiv">
+                  <BiSearch
+                    className="iconSearch"
+                    onClick={filteringByTagsAndTitle}
+                  />
+                </div>
                 <input
                   type="text"
                   className={`input `}
