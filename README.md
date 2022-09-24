@@ -1,7 +1,6 @@
 # **polgubauamores.me**
 ## _my personal description and projects._
 [Link to src][src]
-![Avatar img](https://www.polgubauamores.me/images/me.webp)
 
 
 > Welcome to my webspace made with React and Framer Motion.
