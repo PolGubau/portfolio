@@ -2,6 +2,8 @@
   margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  max-width: 100vw;
   align-content: flex-start;
   flex-direction: row;
   justify-content: flex-start;
