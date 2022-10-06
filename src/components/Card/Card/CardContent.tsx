@@ -8,6 +8,7 @@ import "./Card.css";
 import "./Overlay.css";
 
 import ChangeProjectButtons from "src/components/Card/ChangeProjectButtons";
+import FooterNav from "../FooterNav/FooterNav";
 
 export const CardContent = memo(
   ({ project, ids, lang, isSelected, mobile, allData }: CartInterface) => {
@@ -30,13 +31,19 @@ export const CardContent = memo(
 
           <div
             className={`${
-              mobile && isSelected
-                ? "card-content-Mobile"
-                : "card-content-PC"
+              mobile && isSelected ? "card-content-Mobile" : "card-content-PC"
             } `}
           >
             <Description lang={lang} project={project} />
           </div>
+          {mobile && (
+            <FooterNav
+              allData={allData}
+              id={project.id}
+              ids={ids}
+              isSelected={isSelected}
+            />
+          )}
         </div>
       </>
     );
