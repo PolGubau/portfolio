@@ -8,6 +8,51 @@ import {
 } from "./utils/Tags";
 export const cardData: ProyectoInterface[] = [
   {
+    id: 9,
+    title: "Cv Creator",
+    path: "CvCreator",
+    year: 2022,
+    category: {
+      English: "web",
+      Spanish: "web",
+      Catalan: "web",
+    },
+    madeFor: {
+      English: "Autonomous University of Barcelona",
+      Spanish: "Universidad autónoma de Barcelona",
+      Catalan: "Universitat autònoma de Barcelona",
+    },
+    pointOfInterestX: -70,
+    pointOfInterestY: 20,
+    textColor: "#000",
+    width: 600,
+    backgroundColor: "#abffe2",
+    pathToImg: "/cvCreator/0.webp",
+    tags: ["PHP", "MYSQL", "PDO", "CRUD", "DDBB"],
+    invisibleTags: [
+      ...tagsDatabase,
+      ...tagsMobile,
+      ...tagsLogin,
+      "App",
+      "Aplicación",
+      "Mobile",
+      "fullstack",
+      "Red Social",
+      "2022",
+    ],
+
+    description: {
+      English:
+        "Cv Creator is a tool to generate resumes in a web way, they are downloadable and each user can have infinite resumes.  ",
+      Spanish:
+        "Cv Creator es una herramienta para generar currículums de manera web, son descargables y cada usuario puede tener infinitos. ",
+      Catalan:
+        "Cv Creator és una eina per generar currículums de manera web, es poden descarregar i cada usuari pot tenir infinitat de currículums.",
+    },
+
+    link: "https://pol-uab.alwaysdata.net/UAB/Web/3er/uab-2022-Practica3/",
+  },
+  {
     id: 8,
     title: "AskaQuest",
     path: "AskaQuest",
@@ -114,7 +159,7 @@ export const cardData: ProyectoInterface[] = [
     pointOfInterestY: 70,
     textColor: "#000",
     width: 700,
-    backgroundColor: "#aaffaa",
+    backgroundColor: "#c1ffab",
     pathToImg: "/NUWE/0.webp",
     tags: ["Figma", "Illustrator", "Photoshop"],
     invisibleTags: [...tagsDesign],
