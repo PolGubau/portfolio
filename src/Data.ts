@@ -8,6 +8,51 @@ import {
 } from "./utils/Tags";
 export const cardData: ProyectoInterface[] = [
   {
+    id: 10,
+    title: "Stickies",
+    path: "Stickies",
+    year: 2022,
+    category: {
+      English: "web",
+      Spanish: "web",
+      Catalan: "web",
+    },
+    // madeFor: {
+    //   English: "Autonomous University of Barcelona",
+    //   Spanish: "Universidad autónoma de Barcelona",
+    //   Catalan: "Universitat autònoma de Barcelona",
+    // },
+    pointOfInterestX: -50,
+    pointOfInterestY: -90,
+    textColor: "#000",
+    width: 800,
+    backgroundColor: "#ffe9ab",
+    pathToImg: "/Stickies/0.webp",
+    tags: ["React", "React Icons", "Styled Components"],
+    invisibleTags: [
+      ...tagsMobile,
+      "App",
+      "Aplicación",
+      "Mobile",
+      "scrud",
+      "Notes",
+      "TodoList",
+      "todo",
+      "2022",
+    ],
+
+    description: {
+      English:
+        "Stickies is an app to take notes and manage them. You can make private notes and classify them into categories.",
+      Spanish:
+        "Stickies es una app para tomar notas y manejarlas. Puedes hacer notas privadas y clasificarlas en categorías. ",
+      Catalan:
+        "Stickies és una app per prendre notes i manejar-les. Es poden fer notes privades i classificar-les en categories.",
+    },
+
+    link: "https://mystickies.vercel.app/",
+  },
+  {
     id: 9,
     title: "Cv Creator",
     path: "CvCreator",

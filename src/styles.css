@@ -55,7 +55,7 @@ a {
 
 .container {
   max-width: 990px;
-  width: 100%;
+  width: 100vw;
   flex: 1 1 100%;
   padding: 45px 25px;
 }

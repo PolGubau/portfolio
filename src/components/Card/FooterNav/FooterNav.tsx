@@ -11,5 +11,5 @@ export default function FooterNav({ id, ids, isSelected, allData }: any) {
     (project: { id: any }) => project.id === nextID
   ).path;
 
-  return <>{isSelected && <>asd</>}</>;
+  return <>{isSelected}</>;
 }

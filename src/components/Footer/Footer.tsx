@@ -49,7 +49,7 @@ export default function Footer() {
               <li>
                 <a
                   target="_blank"
-                  href="https://www.linkedin.com/in/pol-gubau-amores-398898184/"
+                  href="https://www.linkedin.com/in/polgubauamores/"
                 >
                   <span className="icon">
                     <RiLinkedinLine />
@@ -58,7 +58,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a target="_blank" href="https://github.com/gubaupol">
+                <a target="_blank" href="https://github.com/polgubau">
                   <span className="icon">
                     <RiGithubLine />
                   </span>
@@ -66,7 +66,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a target="_blank" href="https://www.instagram.com/polgubi02/">
+                <a target="_blank" href="https://www.instagram.com/polgubau/">
                   <span className="icon">
                     <FaInstagram />
                   </span>
