@@ -28,7 +28,7 @@ export const cardData: ProyectoInterface[] = [
     width: 800,
     backgroundColor: "#ffe9ab",
     pathToImg: "/Stickies/0.webp",
-    tags: ["React", "React Icons", "Styled Components"],
+    tags: ["React", "React Icons", "Styled Components, 'TypeScript"],
     invisibleTags: [
       ...tagsMobile,
       "App",
