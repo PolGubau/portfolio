@@ -8,13 +8,7 @@ import useMedia from "src/hooks/useMedia";
 
 export const Image = ({ isSelected, project, mobile }) => {
   const isMobile = useMedia(450);
-  const {
-    pointOfInterestX,
-    pointOfInterestY,
-    pathToImg,
-    width,
-    backgroundColor,
-  } = project;
+  const { pointOfInterest, pathToImg, width, backgroundColor } = project;
   const inverted = useInvertedScale();
 
   return (
@@ -55,10 +49,12 @@ export const Image = ({ isSelected, project, mobile }) => {
               originX: 0,
               originY: 0,
               perspective: isSelected ? 1000 : 0,
-              marginTop: isSelected ? pointOfInterestY - 50 : pointOfInterestY,
+              marginTop: isSelected
+                ? pointOfInterest.y - 50
+                : pointOfInterest.y,
               marginLeft: isSelected
-                ? pointOfInterestX + 100
-                : pointOfInterestX,
+                ? pointOfInterest.x + 100
+                : pointOfInterest.x,
 
               //aply 3d rotatim with device orientation to move a bit the image
               // rotateY: isSelected ? alpha / 2 : 0,

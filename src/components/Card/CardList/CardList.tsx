@@ -6,23 +6,14 @@ import "./CardList.css";
 import LangContext from "src/context/LangContext";
 import useMedia from "src/hooks/useMedia";
 import Nav from "src/components/Nav/Nav";
-import { useLocation } from "react-router-dom";
 
 import NotFoundNav from "./NotFoundNav/NotFoundNav";
+import About from "src/Pages/About/About";
 function List() {
-  const location = useLocation();
-  const locationInput = location.state;
   let inputSearch = "";
-
-  // if (locationInput?.inputSearch) {
-  //   inputSearch = locationInput.inputSearch;
-
-  //   console.log("sended", inputSearch);
-  // }
-
   const [value, setValue] = useState("");
 
-  const mobile = useMedia();
+  const mobile = useMedia(700);
   const { path } = useParams();
   const { lang } = useContext(LangContext);
 
@@ -48,12 +39,7 @@ function List() {
         inputSearch={inputSearch}
       />
       {actualProjects.length === 0 && (
-        <NotFoundNav
-          lang={lang}
-          resetFilters={resetFilters}
-          value={value}
-          setValue={setValue}
-        />
+        <NotFoundNav lang={lang} resetFilters={resetFilters} value={value} />
       )}
       <ul className="card-list">
         {actualProjects.map((card, index) => (
@@ -79,6 +65,7 @@ export function CardList() {
       <Routes>
         <Route path="/" element={<List />} />
         <Route path="/:path" element={<List />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );

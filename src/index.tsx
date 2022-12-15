@@ -1,7 +1,7 @@
 import { render } from "react-dom";
 import Header from "./components/Header/Header";
 import { CardList } from "./components/Card/CardList/CardList";
-import "./styles.css";
+import "./styles/styles.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import { LangProvider } from "./context/LangContext";

@@ -1,12 +1,9 @@
 .card {
   padding: 0;
-  height: 420px;
   flex: 0 0 38%;
   max-width: 38%;
   margin-bottom: var(--space-cards);
 }
-
-
 
 .card:nth-child(4n + 1),
 .card:nth-child(4n + 4) {
@@ -89,7 +86,7 @@
 
 .card-content-Mobile {
   display: flex;
-  padding: 300px 0 0px 0;
+  padding: 200px 0 0px 0;
   max-width: 700px;
   width: calc(100% - 5vw);
 }

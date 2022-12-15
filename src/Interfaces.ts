@@ -4,8 +4,7 @@ export interface ProyectoInterface {
   title: string;
   year: number;
   category: { English: string; Spanish: string; Catalan: string };
-  pointOfInterestX: number;
-  pointOfInterestY: number;
+  pointOfInterest: { x: number; y: number };
   textColor: string;
   backgroundColor: string;
   width: number;
@@ -14,6 +13,7 @@ export interface ProyectoInterface {
   invisibleTags?: string[];
   madeFor?: { English: string; Spanish: string; Catalan: string };
   description: { English: string; Spanish: string; Catalan: string };
+  githubLink: string;
   link: string;
 }
 

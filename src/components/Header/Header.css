@@ -18,21 +18,8 @@ header {
 
 
 
-.avatar,
-.avatar img {
-  width: 120px;
-  height: 120px;
-}
 
-.avatar {
-  animation: bgc 3s ease;
-  border-radius: 50%;
-  position: relative;
-  bottom: 12px;
-  min-width: fit-content;
-  overflow: hidden;
-  background: var(--primary);
-}
+
 
 section {
   display: flex;
@@ -74,44 +61,29 @@ section {
     width: 100%;
   }
 
+
   .avatar {
-    animation: bgc 3s ease;
     border-radius: 50%;
     position: relative;
     bottom: 12px;
-    min-width: fit-content;
+    width: 120px;
     margin-right: 30px;
-    overflow: hidden;
-    background: var(--primary);
-  }
-}
-
-@-webkit-keyframes bgc {
-  0% {
-    background-color: var(--white);
+    display: flex;
   }
 
-  100% {
-    background: var(--primary);
-  }
-}
-
-@-moz-keyframes bgc {
-  0% {
-    background-color: var(--white);
-  }
-
-  100% {
-    background: var(--primary);
-  }
-}
-
-@keyframes bgc {
-  0% {
-    background-color: var(--white);
+  .meinPhoto {
+    max-width: 120px;
+    max-height: 120px;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 
-  100% {
-    background: var(--primary);
+  .blob {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
   }
 }

@@ -17,13 +17,8 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    // madeFor: {
-    //   English: "Autonomous University of Barcelona",
-    //   Spanish: "Universidad autónoma de Barcelona",
-    //   Catalan: "Universitat autònoma de Barcelona",
-    // },
-    pointOfInterestX: -50,
-    pointOfInterestY: -90,
+    pointOfInterest: { x: -50, y: -90 },
+
     textColor: "#000",
     width: 800,
     backgroundColor: "#ffe9ab",
@@ -49,7 +44,7 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Stickies és una app per prendre notes i manejar-les. Es poden fer notes privades i classificar-les en categories.",
     },
-
+    githubLink: "",
     link: "https://mystickies.vercel.app/",
   },
   {
@@ -67,8 +62,8 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "Universidad autónoma de Barcelona",
       Catalan: "Universitat autònoma de Barcelona",
     },
-    pointOfInterestX: -70,
-    pointOfInterestY: 20,
+    pointOfInterest: { x: -70, y: 20 },
+
     textColor: "#000",
     width: 600,
     backgroundColor: "#abffe2",
@@ -94,6 +89,7 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Cv Creator és una eina per generar currículums de manera web, es poden descarregar i cada usuari pot tenir infinitat de currículums.",
     },
+    githubLink: "",
 
     link: "https://pol-uab.alwaysdata.net/UAB/Web/3er/uab-2022-Practica3/",
   },
@@ -107,8 +103,8 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterestX: 30,
-    pointOfInterestY: 80,
+    pointOfInterest: { x: 30, y: 80 },
+
     textColor: "#000",
     width: 700,
     backgroundColor: "#abd7ff",
@@ -138,6 +134,7 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Aplicació web dinàmica feta amb NextJS i usant una base de dades PostgreSQL, consisteix en una xarxa social de preguntes on els usuaris poden crear preguntes i respondre-les. L'usuari pot seguir altres usuaris i veure les seves preguntes, així com agregar-les com a favorites. Un sistema de login, seguiment i encriptació al Backend va ser desenvolupat. Tota ella tipada amb TypeScript",
     },
+    githubLink: "",
 
     link: "https://askaquest.vercel.app/",
   },
@@ -152,8 +149,8 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterestX: 70,
-    pointOfInterestY: 110,
+    pointOfInterest: { x: 70, y: 110 },
+
     textColor: "#000",
     width: 450,
     backgroundColor: "#faabff",
@@ -185,6 +182,7 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Aplicació web i mòbil per a la visualització de continguts de la UAB Mèdia. En aquesta pàgina es poden veure les notícies, programes de televisió, de ràdio i entrevistes tant a temps real com a la carta. També escoltar la ràdio de la universitat.",
     },
+    githubLink: "",
 
     link: "https://uab.media/",
   },
@@ -200,8 +198,8 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "diseño",
       Catalan: "disseny",
     },
-    pointOfInterestX: 120,
-    pointOfInterestY: 70,
+    pointOfInterest: { x: 120, y: 70 },
+
     textColor: "#000",
     width: 700,
     backgroundColor: "#c1ffab",
@@ -221,6 +219,8 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "NUWE és una empresa de gamificació en contractar desenvolupadors. Treballo aquí com a dissenyador gràfic i porto les creativitats de xarxes socials, rollups... Plasmar visualment les idees dels meus companys.",
     },
+    githubLink: "",
+
     link: "https://nuwe.io/",
   },
 
@@ -237,8 +237,8 @@ export const cardData: ProyectoInterface[] = [
       Catalan: "web",
     },
 
-    pointOfInterestX: -50,
-    pointOfInterestY: 90,
+    pointOfInterest: { x: -50, y: 90 },
+
     textColor: "#000",
     width: 600,
     backgroundColor: "#abfeff",
@@ -272,6 +272,8 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Rispot és una petita empresa de venda de productes. He desenvolupat tot el sistema de la base de dades interna i 'Backstage' de la pàgina web, on es poden visualitzar les dades de totes les vendes i veure estadístiques d'aquestes.",
     },
+    githubLink: "",
+
     link: "https://www.amazon.es/s?i=merchant-items&me=A1O24E5ASY81J5&rh=p_4%3ARISPOT",
   },
   {
@@ -286,8 +288,8 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterestX: 50,
-    pointOfInterestY: 120,
+    pointOfInterest: { x: 50, y: 120 },
+
     textColor: "#000",
     width: 470,
     backgroundColor: "#abbaff",
@@ -313,6 +315,8 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Gubau's Afternoons mostra on gastava les tardes quan anava a l'institut. La vaig fer servir de portafoli durant dos anys i és una de les pàgines que més he treballat. Es poden veure detalladament molts projectes que no he mostrat aquí.",
     },
+    githubLink: "",
+
     link: "https://gubauafternoons.com/",
   },
   {
@@ -327,8 +331,9 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterestX: 0,
-    pointOfInterestY: 0,
+
+    pointOfInterest: { x: 0, y: 0 },
+
     textColor: "#000",
     width: 700,
     backgroundColor: "#ffabd5",
@@ -369,6 +374,8 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Un portafoli dinàmic per a Unbrushed, on mostrar les sessions de perruqueria i les seves col·laboracions. Tot el web es controla des d'una pàgina diferent on es modifica la base de dades. Es va crear tant el frontend com el backend.",
     },
+    githubLink: "",
+
     link: "https://pol-uab.alwaysdata.net/Otros/Unbrushed_PHP/Code/",
   },
   {
@@ -382,8 +389,8 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "diseño",
       Catalan: "disseny",
     },
-    pointOfInterestX: 60,
-    pointOfInterestY: 80,
+    pointOfInterest: { x: 60, y: 80 },
+
     textColor: "#000000",
     width: 400,
     backgroundColor: "#ffdbab",
@@ -412,6 +419,8 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Škatla és un projecte universitari on vam crear una empresa de Packagings ecològics, es van realitzar quantitat de mockups i dissenys per a xarxes socials. Škatla crea caixes i marxandatge a demanda del client.",
     },
+    githubLink: "",
+
     link: "https://www.instagram.com/skatlapack/",
   },
   {
@@ -425,8 +434,8 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterestX: 40,
-    pointOfInterestY: 70,
+    pointOfInterest: { x: 40, y: 70 },
+
     textColor: "#000000",
     width: 500,
     backgroundColor: "#feffab",
@@ -441,6 +450,8 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Aquesta és una web que vaig fer per practicar el control dels codis hexadecimals dels colors i modificar-los. Està escrita amb PHP vanilla i pot crear paletes de colors amb el color i la quantitat que li diguis.",
     },
+    githubLink: "",
+
     link: "https://pol-uab.alwaysdata.net/Otros/ThoseColors/index.php",
   },
   {
@@ -454,8 +465,8 @@ export const cardData: ProyectoInterface[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterestX: 40,
-    pointOfInterestY: 120,
+    pointOfInterest: { x: 40, y: 120 },
+
     textColor: "#000000",
     width: 600,
     backgroundColor: "#e6abff",
@@ -471,6 +482,7 @@ export const cardData: ProyectoInterface[] = [
       Catalan:
         "Aquesta és una web que vaig completar amb Javascript per practicar l'ús del LocalStorage. Va ser duplicada de GitHub i vaig afegir funcionalitats com el canvi de color dels Memos.",
     },
+    githubLink: "",
     link: "https://pol-uab.alwaysdata.net/Otros/memo/",
   },
 ];
