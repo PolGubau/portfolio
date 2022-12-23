@@ -26,7 +26,7 @@ export const Nav = memo(
     allData: ProyectoInterface[];
     inputSearch: string;
   }): JSX.Element => {
-    const mobile = useMedia(450);
+    const mobile = useMedia(800);
     const [newest, setNewest] = useState<boolean>(false);
     const [filtered, setFiltered] = useState<boolean>(false);
 
@@ -107,6 +107,7 @@ export const Nav = memo(
                   />
                 </div>
                 <input
+                  maxLength={20}
                   type="text"
                   className={`input `}
                   value={value}

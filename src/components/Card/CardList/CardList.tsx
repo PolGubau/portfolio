@@ -8,11 +8,19 @@ import Nav from "src/components/Nav/Nav";
 
 import NotFoundNav from "./NotFoundNav/NotFoundNav";
 import About from "src/Pages/About/About";
-function List() {
+import ButtonsOnTop from "src/components/ButtonsOnTop/ButtonsOnTop";
+import styled from "styled-components";
+export const ContentStyled = styled.section`
+  border-top: 1px solid var(--greyDark);
+  @media only screen and (max-width: 600px) {
+    border: none;
+  }
+`;
+const List = () => {
   let inputSearch = "";
   const [value, setValue] = useState("");
 
-  const mobile = useMedia(700);
+  const mobile = useMedia(800);
   const { path } = useParams();
 
   const ids = cardData.map((project) => project.id);
@@ -26,7 +34,8 @@ function List() {
   };
 
   return (
-    <>
+    <ContentStyled>
+      <ButtonsOnTop />
       <Nav
         value={value}
         setValue={setValue}
@@ -51,9 +60,9 @@ function List() {
           />
         ))}
       </ul>
-    </>
+    </ContentStyled>
   );
-}
+};
 
 export function CardList() {
   return (

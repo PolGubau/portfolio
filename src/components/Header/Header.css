@@ -12,13 +12,8 @@ h3 {
 }
 
 header {
-  border-bottom: 1px solid var(--greyDark);
   position: relative;
 }
-
-
-
-
 
 
 section {
@@ -59,9 +54,7 @@ section {
 
 
 @media only screen and (max-width: 600px) {
-  header {
-    border: none;
-  }
+
 
   .descriptionAndImage {
     display: flex;
@@ -72,4 +65,13 @@ section {
     width: 100%;
   }
 
+  .subTextAndImage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 10%;
+  }
 }

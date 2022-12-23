@@ -14,9 +14,8 @@ body {
   --bg-dark: #949494;
   --greyDark: #343434;
   --white: rgb(245, 245, 245);
-  --black: #000
-    /* FontSizes */
-    --title: 64px;
+  --black: #000;
+  --title: 48px;
   --subtitle: 24px;
   --text: 12px;
   --black: #000;
