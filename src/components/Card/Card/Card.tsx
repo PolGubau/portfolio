@@ -14,7 +14,6 @@ interface CardInterfaceInline {
   project: ProyectoInterface;
   allData: Array<ProyectoInterface>;
   ids: Array<number>;
-  lang: any;
   isSelected: any;
   mobile: boolean;
   index: number;
@@ -25,7 +24,6 @@ export const Card = memo(
     index,
     project,
     ids,
-    lang,
     isSelected,
     mobile,
     allData,
@@ -96,7 +94,6 @@ export const Card = memo(
               allData={allData}
               project={project}
               ids={ids}
-              lang={lang}
               isSelected={isSelected}
               mobile={mobile}
             />

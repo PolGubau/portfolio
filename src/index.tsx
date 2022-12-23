@@ -4,19 +4,20 @@ import { CardList } from "./components/Card/CardList/CardList";
 import "./styles/styles.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
-import { LangProvider } from "./context/LangContext";
+import { Provider } from "react-redux";
+import { store } from "./redux/app/store";
 
 function App() {
   return (
-    <LangProvider>
-      <div className="container">
+    <div className="container">
+      <Provider store={store}>
         <Router>
           <Header />
           <CardList />
           <Footer />
         </Router>
-      </div>
-    </LangProvider>
+      </Provider>
+    </div>
   );
 }
 

@@ -34,17 +34,22 @@
 
 .Description-search {
   display: flex;
-  border: 1px solid black;
+  gap: 10px;
+  background-color: var(--greyDark);
+  color: white;
+  border-radius: 15px;
+  align-items: center;
+  justify-items: center;
   padding: 10px 20px;
   /* border-radius: 20px; */
 }
 
 .Description-search:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--black);
   transform: scale(0.95);
 }
 
 .Description-search:active {
-  background-color: var(--primary-dark);
+  background-color: var(--black);
   transform: scale(0.9);
 }

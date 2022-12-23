@@ -1,21 +1,29 @@
-import { FooterDataInterface, HeaderDataInterface } from "./Interfaces";
+import {
+  FooterDataInterface,
+  HeaderDataInterface,
+  ICardDataLanguages,
+  IErrorLanguages,
+  ILanguagesDataLanguages,
+  InavTextsLanguages,
+} from "./Interfaces";
 
-export const Languages = [
-  // Si elige inglés
-  "English",
-  "Spanish",
-  "Catalan",
-
-  // Si elige español
-  "Inglés",
-  "Español",
-  "Catalán",
-
-  // Si elige catalán
-  "Anglès",
-  "Castellà",
-  "Català",
-];
+export const languagesTexts: ILanguagesDataLanguages = {
+  English: {
+    English: "English",
+    Spanish: "Spanish",
+    Catalan: "Catalan",
+  },
+  Spanish: {
+    English: "Inglés",
+    Spanish: "Español",
+    Catalan: "Catalán",
+  },
+  Catalan: {
+    English: "Anglès",
+    Spanish: "Castellà",
+    Catalan: "Català",
+  },
+};
 
 export const footerText: FooterDataInterface = {
   English: {
@@ -57,7 +65,7 @@ export const headerText: HeaderDataInterface = {
     description: "Programador Junior Full-Stack i dissenyador UX.",
   },
 };
-export const errorOnSearch = {
+export const errorOnSearch: IErrorLanguages = {
   English: {
     title: "Oups, nothing here...",
     description:
@@ -76,8 +84,47 @@ export const errorOnSearch = {
   },
 };
 
-export const placeholderInput = {
-  English: "Search...",
-  Spanish: "Buscar...",
-  Catalan: "Buscar...",
+export const cardTexts: ICardDataLanguages = {
+  English: {
+    madeFor: "Made for",
+    tags: "Tags",
+    description: "Description",
+    githubLink: "GitHub",
+    link: "Link",
+    linkButton: "Search",
+  },
+  Spanish: {
+    madeFor: "Hecho para",
+    tags: "Etiquetas",
+    description: "Descripción",
+    githubLink: "GitHub",
+    link: "Enlace",
+    linkButton: "Échale un vistazo",
+  },
+  Catalan: {
+    madeFor: "Fet per",
+    tags: "Etiquetes",
+    description: "Descripció",
+    githubLink: "GitHub",
+    link: "Enllaç",
+    linkButton: "Fes-li una ullada",
+  },
+};
+
+export const navTexts: InavTextsLanguages = {
+  English: {
+    web: "Web",
+    design: "Design",
+    placeholder: "Search...",
+  },
+  Spanish: {
+    web: "Web",
+    design: "Diseño",
+    placeholder: "Buscar...",
+  },
+  Catalan: {
+    web: "Web",
+    design: "Disseny",
+    placeholder: "Buscar...",
+  },
 };

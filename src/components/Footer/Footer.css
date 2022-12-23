@@ -10,9 +10,10 @@ a {
 }
 
 footer {
-  border-top: 1px solid var(--divider);
+  border-top: 1px solid var(--greyDark);
   position: relative;
   margin-top: 40px;
+  margin-bottom: 100px;
 }
 
 section {

@@ -12,7 +12,7 @@ h3 {
 }
 
 header {
-  border-bottom: 1px solid var(--divider);
+  border-bottom: 1px solid var(--greyDark);
   position: relative;
 }
 
@@ -44,6 +44,17 @@ section {
   background-color: red;
 }
 
+
+
+
+.meinPhoto {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
 /* iF MOBILE */
 
 
@@ -61,29 +72,4 @@ section {
     width: 100%;
   }
 
-
-  .avatar {
-    border-radius: 50%;
-    position: relative;
-    bottom: 12px;
-    width: 120px;
-    margin-right: 30px;
-    display: flex;
-  }
-
-  .meinPhoto {
-    max-width: 120px;
-    max-height: 120px;
-    z-index: 2;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-
-  .blob {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-  }
 }

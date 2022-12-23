@@ -1,15 +1,16 @@
 import { MouseEventHandler } from "react";
 import { errorOnSearch } from "src/Consts";
+import { useAppSelector } from "src/redux/app/hooks";
+import { actualLanguage } from "src/redux/features/languageSlice";
 import "./NotFoundNav.css";
 export default function NotFoundNav({
-  lang,
   value,
   resetFilters,
 }: {
   value: string;
-  lang: string;
   resetFilters: MouseEventHandler<HTMLButtonElement>;
 }): JSX.Element {
+  const lang = useAppSelector(actualLanguage);
   return (
     <div className="containerNotFound">
       {lang === "English" && (

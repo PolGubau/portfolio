@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
 import { Card } from "src/components/Card/Card/Card";
-import { Link, Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import { cardData } from "src/Data";
 import "./CardList.css";
-import LangContext from "src/context/LangContext";
 import useMedia from "src/hooks/useMedia";
 import Nav from "src/components/Nav/Nav";
 
@@ -15,7 +14,6 @@ function List() {
 
   const mobile = useMedia(700);
   const { path } = useParams();
-  const { lang } = useContext(LangContext);
 
   const ids = cardData.map((project) => project.id);
 
@@ -35,11 +33,10 @@ function List() {
         filter={filter}
         setFilter={setFilter}
         allData={cardData}
-        lang={lang}
         inputSearch={inputSearch}
       />
       {actualProjects.length === 0 && (
-        <NotFoundNav lang={lang} resetFilters={resetFilters} value={value} />
+        <NotFoundNav resetFilters={resetFilters} value={value} />
       )}
       <ul className="card-list">
         {actualProjects.map((card, index) => (
@@ -49,7 +46,6 @@ function List() {
             index={index}
             project={card}
             ids={ids}
-            lang={lang}
             isSelected={path === card.path}
             mobile={mobile}
           />

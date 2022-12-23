@@ -3,9 +3,12 @@ import { HiSortDescending, HiSortAscending } from "react-icons/hi";
 import { memo, useState } from "react";
 import { ProyectoInterface } from "src/Interfaces";
 import { IoMdRefresh } from "react-icons/io";
-import { placeholderInput } from "src/Consts";
+import { navTexts } from "src/Consts";
 import { BiSearch } from "react-icons/bi";
 import useMedia from "src/hooks/useMedia";
+import { useAppSelector } from "src/redux/app/hooks";
+import { actualLanguage } from "src/redux/features/languageSlice";
+import { getTextByLang } from "src/utils/getTextByLang";
 
 export const Nav = memo(
   ({
@@ -14,7 +17,6 @@ export const Nav = memo(
     filter,
     setFilter,
     allData,
-    lang,
     inputSearch,
   }: {
     value: string;
@@ -22,13 +24,14 @@ export const Nav = memo(
     filter: ProyectoInterface[];
     setFilter: Function;
     allData: ProyectoInterface[];
-    lang: any;
     inputSearch: string;
   }): JSX.Element => {
     const mobile = useMedia(450);
     const [newest, setNewest] = useState<boolean>(false);
     const [filtered, setFiltered] = useState<boolean>(false);
 
+    const { language } = useAppSelector(actualLanguage);
+    const text = getTextByLang(language, navTexts);
     const filteringByTagsAndTitle = () => {
       // when we write in the input, will be checked if the tag, title, or description starts like the value or contains the input value
       setFilter(
@@ -78,7 +81,6 @@ export const Nav = memo(
       filteringByTagsAndTitle();
     };
     if (inputSearch) {
-      console.log("gotted", inputSearch);
       setFilter(
         allData.filter((card) =>
           card.tags.some((tag) =>
@@ -88,12 +90,6 @@ export const Nav = memo(
       );
     }
 
-    const placeHolderInfo =
-      lang === "Spanish"
-        ? placeholderInput.Spanish
-        : lang === "Catalan"
-        ? placeholderInput.Catalan
-        : placeholderInput.English;
     return (
       <>
         <nav className="nav">
@@ -114,7 +110,7 @@ export const Nav = memo(
                   type="text"
                   className={`input `}
                   value={value}
-                  placeholder={placeHolderInfo}
+                  placeholder={text.placeholder}
                   onChange={(e) => {
                     setValue(e.target.value);
                     filterTags(e);
@@ -129,15 +125,13 @@ export const Nav = memo(
                     className="filterWord"
                     onClick={() => onlyShowCathegory("web")}
                   >
-                    Web
+                    {text.web}
                   </li>
                   <li
                     className="filterWord"
                     onClick={() => onlyShowCathegory("design")}
                   >
-                    {lang === "English" && "Design"}
-                    {lang === "Spanish" && "Diseño"}
-                    {lang === "Catalan" && "Disseny"}
+                    {text.design}
                   </li>
                 </ul>
               )}

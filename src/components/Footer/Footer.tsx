@@ -3,24 +3,14 @@ import "./Footer.css";
 import { RiGithubLine, RiLinkedinLine } from "react-icons/ri";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
-import LangContext from "../../context/LangContext";
-import { useContext } from "react";
-import { footerText } from "../../Consts";
+import { footerText } from "src/Consts";
 import { FooterTextInterface } from "src/Interfaces";
+import { useAppSelector } from "src/redux/app/hooks";
+import { actualLanguage } from "src/redux/features/languageSlice";
+import { getTextByLang } from "src/utils/getTextByLang";
 export default function Footer() {
-  const { lang } = useContext(LangContext);
-
-  let text: FooterTextInterface = footerText.English;
-  if (lang === "Spanish") {
-    text = footerText.Spanish;
-  }
-  if (lang === "English") {
-    text = footerText.English;
-  }
-  if (lang === "Catalan") {
-    text = footerText.Catalan;
-  }
-
+  const { language } = useAppSelector(actualLanguage);
+  const text: FooterTextInterface = getTextByLang(language, footerText);
   return (
     <>
       <footer>
