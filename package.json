@@ -19,8 +19,7 @@
     "react-router": "6.3.0",
     "react-router-dom": "^6.4.0",
     "react-scripts": "^5.0.1",
-    "styled-components": "^5.3.6",
-    "wouter": "^2.8.0-alpha.2"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/lodash": "4.14.136",
