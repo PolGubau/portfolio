@@ -1,18 +1,20 @@
-.nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 7px;
-    margin: 0 0 0 0;
-    padding: 0px;
-    list-style: none;
-    color: var(--black);
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    text-decoration: none;
-}
+import { breakpointsString } from "src/styles/theme";
+import styled from "styled-components";
 
-.contentNav {
+export const NavStyled = styled.nav`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 7px;
+  margin: 0 0 0 0;
+  padding: 0px;
+  list-style: none;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+
+  .contentNav {
     gap: 8px;
     display: flex;
     justify-content: space-between;
@@ -20,9 +22,9 @@
     align-content: flex-start;
     flex-wrap: nowrap;
     flex-direction: row;
-}
+  }
 
-.filterNav {
+  .filterNav {
     width: fit-content;
     display: flex;
     flex-wrap: nowrap;
@@ -30,10 +32,9 @@
     align-items: center;
     align-content: center;
     justify-content: flex-end;
-}
+  }
 
-
-.searchNav {
+  .searchNav {
     gap: 5px;
     display: flex;
     align-items: flex-start;
@@ -41,13 +42,13 @@
     align-content: flex-start;
     flex-wrap: nowrap;
     flex-direction: row;
-}
+  }
 
-.mobileSearch {
+  .mobileSearch {
     width: 100%;
-}
+  }
 
-.inputIconDiv {
+  .inputIconDiv {
     padding: 4px 5px;
     height: 100%;
     border-radius: 0 0 0 9px;
@@ -56,18 +57,17 @@
     align-content: center;
     align-items: center;
     justify-content: center;
-}
+  }
 
-
-.iconSearch {
+  .iconSearch {
     cursor: pointer;
     width: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.inputWithIcon {
+  .inputWithIcon {
     width: 200px;
     border: 1px solid black;
     display: flex;
@@ -78,14 +78,13 @@
     align-items: center;
     justify-content: center;
     align-content: flex-start;
-}
+  }
 
-.activeInput {
+  .activeInput {
     width: 311px;
-}
+  }
 
-
-.input {
+  .input {
     padding: 4px 10px;
     width: calc(100% - 20px);
     border: none;
@@ -95,28 +94,25 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-}
+  }
 
-
-
-.filterWord-container {
+  .filterWord-container {
     /* margin-top: 2px; */
     display: flex;
     gap: 5px;
-}
+  }
 
-.filterWord {
+  .filterWord {
     padding: 3px 7px;
     border-radius: 0 0 10px 10px;
-}
+  }
 
-.filterWord:hover {
+  .filterWord:hover {
     background-color: var(--bg-light);
     cursor: pointer;
-}
+  }
 
-
-.sortIcon {
+  .sortIcon {
     display: flex;
     flex-direction: row;
     margin: 0 0 0 0;
@@ -127,13 +123,13 @@
     align-content: center;
     flex-wrap: wrap;
     border-radius: 0 0 10px 10px;
-}
+  }
 
-.sortIcon:hover {
+  .sortIcon:hover {
     background-color: var(--bg-light);
-}
+  }
 
-.refreshIcon {
+  .refreshIcon {
     display: flex;
     flex-direction: row;
     margin: 0 0 0 0;
@@ -144,64 +140,56 @@
     align-content: center;
     flex-wrap: wrap;
     border-radius: 0 0 10px 10px;
-}
+  }
 
-.refreshIcon:hover {
+  .refreshIcon:hover {
     background-color: var(--bg-light);
-}
+  }
 
-
-@media only screen and (max-width: 600px) {
-    .nav {
-        width: 100%;
-        justify-content: flex-start;
-        text-decoration: none;
-        align-items: center;
-        align-content: flex-start;
-        flex-wrap: wrap;
-    }
+  @media only screen and (max-width: ${breakpointsString.tablet}) {
+    width: 100%;
+    justify-content: flex-start;
+    text-decoration: none;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
 
     .contentNav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        align-content: flex-start;
-        flex-wrap: wrap;
-        width: 100%;
-        flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+      flex-direction: row;
     }
 
     /* Make .searchNav biggest as possible inside the flex parent */
 
     .searchNav {
-        flex: 1;
+      flex: 1;
     }
 
     .filterNav {
-        width: fit-content;
-        justify-content: flex-start;
+      width: fit-content;
+      justify-content: flex-start;
     }
 
     .inputWithIcon {
-        width: 100%;
-        border-radius: 10px;
-        border: 1px solid black;
-        justify-content: space-between;
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid black;
+      justify-content: space-between;
     }
-
-
 
     .input {
-        width: 92%;
-        border-radius: 10px;
+      width: 92%;
+      border-radius: 10px;
     }
 
-    .filterWord {
-        border-radius: 10px;
-    }
-
+    .filterWord,
     .sortIcon {
-        border-radius: 10px;
-
+      border-radius: 10px;
     }
-}
+  }
+`;

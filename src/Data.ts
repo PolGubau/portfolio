@@ -1,4 +1,4 @@
-import { ProyectoInterface } from "./Interfaces";
+import { IProject } from "./Interfaces";
 import {
   tagsDatabase,
   tagsDesign,
@@ -6,7 +6,7 @@ import {
   tagsLogin,
   tagsMobile,
 } from "./utils/Tags";
-export const cardData: ProyectoInterface[] = [
+export const cardData: IProject[] = [
   {
     id: 10,
     title: "Stickies",

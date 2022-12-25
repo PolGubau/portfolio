@@ -1,3 +1,4 @@
+import { breakpoints, breakpointsString } from "src/styles/theme";
 import styled, { keyframes } from "styled-components";
 
 // appear animation
@@ -66,7 +67,7 @@ export const HeaderStyled = styled.header`
 
   /* iF MOBILE */
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: ${breakpointsString.tablet}) {
     .descriptionAndImage {
       display: flex;
       justify-content: space-between;
@@ -83,6 +84,7 @@ export const HeaderStyled = styled.header`
       align-content: center;
       flex-direction: row;
       width: 100%;
+      margin-bottom: 5px;
       gap: 10%;
     }
   }

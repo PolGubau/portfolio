@@ -31,7 +31,7 @@ export const CardContent = memo(
             mobile ? "imageAndDescriptionMobile" : ""
           }`}
         >
-          <Image isSelected={isSelected} project={project} mobile={mobile} />
+          <Image isSelected={isSelected} project={project} />
 
           <div
             className={`${

@@ -1,7 +1,6 @@
-import "./NavModule.css";
 import { HiSortDescending, HiSortAscending } from "react-icons/hi";
 import { memo, useState } from "react";
-import { ProyectoInterface } from "src/Interfaces";
+import { IProject } from "src/Interfaces";
 import { IoMdRefresh } from "react-icons/io";
 import { navTexts } from "src/Consts";
 import { BiSearch } from "react-icons/bi";
@@ -9,6 +8,8 @@ import useMedia from "src/hooks/useMedia";
 import { useAppSelector } from "src/redux/app/hooks";
 import { actualLanguage } from "src/redux/features/languageSlice";
 import { getTextByLang } from "src/utils/getTextByLang";
+import { NavStyled } from "./NavStyled";
+import { breakpoints } from "src/styles/theme";
 
 export const Nav = memo(
   ({
@@ -21,12 +22,12 @@ export const Nav = memo(
   }: {
     value: string;
     setValue: Function;
-    filter: ProyectoInterface[];
+    filter: IProject[];
     setFilter: Function;
-    allData: ProyectoInterface[];
+    allData: IProject[];
     inputSearch: string;
   }): JSX.Element => {
-    const mobile = useMedia(800);
+    const mobile = useMedia(breakpoints.tablet);
     const [newest, setNewest] = useState<boolean>(false);
     const [filtered, setFiltered] = useState<boolean>(false);
 
@@ -91,66 +92,64 @@ export const Nav = memo(
     }
 
     return (
-      <>
-        <nav className="nav">
-          <div className="contentNav">
-            <div className={`searchNav ${mobile ? "mobileSearch" : ""}`}>
-              <div
-                className={`inputWithIcon ${
-                  value.length > 0 ? "activeInput" : ""
-                }`}
-              >
-                <div className="inputIconDiv">
-                  <BiSearch
-                    className="iconSearch"
-                    onClick={filteringByTagsAndTitle}
-                  />
-                </div>
-                <input
-                  maxLength={20}
-                  type="text"
-                  className={`input `}
-                  value={value}
-                  placeholder={text.placeholder}
-                  onChange={(e) => {
-                    setValue(e.target.value);
-                    filterTags(e);
-                  }}
+      <NavStyled>
+        <div className="contentNav">
+          <div className={`searchNav ${mobile ? "mobileSearch" : ""}`}>
+            <div
+              className={`inputWithIcon ${
+                value.length > 0 ? "activeInput" : ""
+              }`}
+            >
+              <div className="inputIconDiv">
+                <BiSearch
+                  className="iconSearch"
+                  onClick={filteringByTagsAndTitle}
                 />
               </div>
-            </div>
-            <div className={`filterNav`}>
-              {value.length === 0 && (
-                <ul className="filterWord-container">
-                  <li
-                    className="filterWord"
-                    onClick={() => onlyShowCathegory("web")}
-                  >
-                    {text.web}
-                  </li>
-                  <li
-                    className="filterWord"
-                    onClick={() => onlyShowCathegory("design")}
-                  >
-                    {text.design}
-                  </li>
-                </ul>
-              )}
-
-              {filter.length > 0 && (
-                <div onClick={changeOrder} className="sortIcon">
-                  {newest ? <HiSortAscending /> : <HiSortDescending />}
-                </div>
-              )}
-              {filtered && (
-                <div onClick={refresh} className="refreshIcon">
-                  <IoMdRefresh />
-                </div>
-              )}
+              <input
+                maxLength={20}
+                type="text"
+                className={`input `}
+                value={value}
+                placeholder={text.placeholder}
+                onChange={(e) => {
+                  setValue(e.target.value);
+                  filterTags(e);
+                }}
+              />
             </div>
           </div>
-        </nav>
-      </>
+          <div className={`filterNav`}>
+            {value.length === 0 && (
+              <ul className="filterWord-container">
+                <li
+                  className="filterWord"
+                  onClick={() => onlyShowCathegory("web")}
+                >
+                  {text.web}
+                </li>
+                <li
+                  className="filterWord"
+                  onClick={() => onlyShowCathegory("design")}
+                >
+                  {text.design}
+                </li>
+              </ul>
+            )}
+
+            {filter.length > 0 && (
+              <div onClick={changeOrder} className="sortIcon">
+                {newest ? <HiSortAscending /> : <HiSortDescending />}
+              </div>
+            )}
+            {filtered && (
+              <div onClick={refresh} className="refreshIcon">
+                <IoMdRefresh />
+              </div>
+            )}
+          </div>
+        </div>
+      </NavStyled>
     );
   }
 );

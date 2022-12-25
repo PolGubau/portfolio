@@ -8,11 +8,11 @@ import "./Card.css";
 import "./Overlay.css";
 import { CardContent } from "./CardContent";
 import { closeSpring, openSpring } from "../utils/animations";
-import { ProyectoInterface } from "src/Interfaces";
+import { IProject } from "src/Interfaces";
 
 interface CardInterfaceInline {
-  project: ProyectoInterface;
-  allData: Array<ProyectoInterface>;
+  project: IProject;
+  allData: Array<IProject>;
   ids: Array<number>;
   isSelected: any;
   mobile: boolean;

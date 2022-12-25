@@ -1,9 +1,12 @@
 {
   "name": "polgubauamores",
   "version": "1.0.0",
-  "description": "My personal portfolio",
+  "description": "Pol Gubau's website Portfolio",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "Pol Gubau",
+    "Portfolio"
+  ],
   "main": "src/index.tsx",
   "dependencies": {
     "@popmotion/popcorn": "0.4.2",
@@ -11,7 +14,7 @@
     "framer-motion": "1.6.0",
     "lodash": "4.17.21",
     "popmotion": "9.0.0-beta-8",
-    "react": "^16.8.0",
+    "react": "^16.14.0",
     "react-device-orientation": "^0.1.0",
     "react-dom": "16.8.4",
     "react-icons": "4.4.0",

@@ -1,4 +1,4 @@
-export interface ProyectoInterface {
+export interface IProject {
   id: number;
   path: string;
   title: string;
@@ -19,8 +19,8 @@ export interface ProyectoInterface {
 
 export interface CardInterface {
   index?: number;
-  allData?: Array<ProyectoInterface>;
-  project: ProyectoInterface;
+  allData?: Array<IProject>;
+  project: IProject;
   ids: any;
   isSelected: boolean;
   mobile: boolean;

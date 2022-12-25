@@ -3,18 +3,30 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import "./ChangeProjectButtons.css";
 import { Link } from "react-router-dom";
 import useMedia from "src/hooks/useMedia";
+import { breakpoints } from "src/styles/theme";
+import { IProject } from "src/Interfaces";
 
 //
-export default function ChangeProjectButtons({ id, ids, isSelected, allData }) {
+export default function ChangeProjectButtons({
+  id,
+  ids,
+  isSelected,
+  allData,
+}: {
+  id: number;
+  ids: Array<number>;
+  isSelected: boolean;
+  allData: Array<IProject> | undefined;
+}) {
   let actualID = ids.indexOf(id);
   //da la posición de la carta actual en el array ids
   const prevID = actualID - 1 < 0 ? ids[ids.length - 1] : ids[actualID - 1];
   const nextID = actualID + 1 > ids.length - 1 ? ids[0] : ids[actualID + 1];
 
-  const prevPath = allData.find((project) => project.id === prevID).path;
-  const nextPath = allData.find((project) => project.id === nextID).path;
+  const prevPath = allData?.find((project) => project.id === prevID)?.path;
+  const nextPath = allData?.find((project) => project.id === nextID)?.path;
 
-  const isMobile = useMedia(700);
+  const isMobile = useMedia(breakpoints.tablet);
 
   return (
     <>
