@@ -7,7 +7,6 @@ import { CardInterface } from "src/Interfaces";
 import "./Card.css";
 import "./Overlay.css";
 
-import ChangeProjectButtons from "src/components/Card/ChangeProjectButtons";
 import FooterNav from "../FooterNav/FooterNav";
 import { useAppSelector } from "src/redux/app/hooks";
 import { actualLanguage } from "src/redux/features/languageSlice";
@@ -18,12 +17,6 @@ export const CardContent = memo(
 
     return (
       <>
-        <ChangeProjectButtons
-          allData={allData}
-          id={project.id}
-          ids={ids}
-          isSelected={isSelected}
-        />
         <Title lang={lang} project={project} isSelected={isSelected} />
 
         <div
@@ -38,16 +31,8 @@ export const CardContent = memo(
               mobile && isSelected ? "card-content-Mobile" : "card-content-PC"
             } `}
           >
-            <Description project={project} />
+            <Description project={project} id={project.id} ids={ids} />
           </div>
-          {mobile && (
-            <FooterNav
-              allData={allData}
-              id={project.id}
-              ids={ids}
-              isSelected={isSelected}
-            />
-          )}
         </div>
       </>
     );

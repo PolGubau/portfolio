@@ -6,18 +6,28 @@ import "./MadeforModule.css";
 
 //
 
-export default function Madefor({ madeFor = "" }: { madeFor: string }) {
+export default function Madefor({
+  madeFor,
+}: {
+  madeFor:
+    | undefined
+    | {
+        English: string;
+        Spanish: string;
+        Catalan: string;
+      };
+}) {
   const { language: lang } = useAppSelector(actualLanguage);
-  const text: IMadeForTextOneLanguage = getTextByLang(lang, madeForText);
 
-  if (madeFor) {
-    return (
-      <p>
-        <span>{`${text.madeFor} `}</span>
-        <span className="bold">{`${madeFor} `}</span>
-      </p>
-    );
-  } else {
-    return <p className="bold">{text.forMe}</p>;
-  }
+  const text: IMadeForTextOneLanguage = getTextByLang(lang, madeForText);
+  const whoIMadeFor = madeFor ? getTextByLang(lang, madeFor) : "";
+
+  !madeFor && <p className="bold">{text.forMe}</p>;
+
+  return (
+    <p>
+      <span>{`${text.madeFor} `}</span>
+      <span className="bold">{`${whoIMadeFor} `}</span>
+    </p>
+  );
 }

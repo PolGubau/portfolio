@@ -6,13 +6,20 @@ import LanguageButtons from "./languagesButtons/LanguageButtons";
 import { motion } from "framer-motion";
 import useMedia from "src/hooks/useMedia";
 import { HeaderStyled } from "./HeaderStyled";
+
 import { breakpoints } from "src/styles/theme";
 import { Link } from "react-router-dom";
 import { PagesNavStyled } from "./PagesNavStyled";
+import { useEffect } from "react";
 export default function Header() {
   const { language: lang } = useAppSelector(actualLanguage);
   const text = getTextByLang(lang, headerText);
   const mobile = useMedia(breakpoints.tablet);
+
+  // useEffect to see in witch page we are
+  useEffect(() => {
+    console.log(location.pathname);
+  }, [location.pathname]);
 
   return (
     <>
@@ -57,10 +64,9 @@ export default function Header() {
             </section>
           </>
         )}
-        <PagesNavStyled>
+        {/* <PagesNavStyled>
           <Link
             to={"/"}
-            // if location.pathname === "/" then add class "active"
             className={`link ${location.pathname === "/" && "active"}`}
           >
             Projects
@@ -71,7 +77,7 @@ export default function Header() {
           >
             About
           </Link>
-        </PagesNavStyled>
+        </PagesNavStyled> */}
       </HeaderStyled>
     </>
   );

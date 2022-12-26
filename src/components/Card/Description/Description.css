@@ -23,11 +23,16 @@
 }
 
 .Description-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 30px 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   align-content: center;
+  gap: 20px;
   flex-wrap: wrap;
   flex-direction: row;
 }

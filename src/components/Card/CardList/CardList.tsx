@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Card } from "src/components/Card/Card/Card";
 import { Route, Routes, useParams } from "react-router-dom";
 import { cardData } from "src/Data";
@@ -43,7 +43,6 @@ const List = () => {
         setValue={setValue}
         filter={filter}
         setFilter={setFilter}
-        allData={cardData}
         inputSearch={inputSearch}
       />
       {actualProjects.length === 0 && (

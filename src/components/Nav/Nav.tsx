@@ -10,6 +10,7 @@ import { actualLanguage } from "src/redux/features/languageSlice";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { NavStyled } from "./NavStyled";
 import { breakpoints } from "src/styles/theme";
+import { cardData } from "src/Data";
 
 export const Nav = memo(
   ({
@@ -17,16 +18,15 @@ export const Nav = memo(
     setValue,
     filter,
     setFilter,
-    allData,
     inputSearch,
   }: {
     value: string;
     setValue: Function;
     filter: IProject[];
     setFilter: Function;
-    allData: IProject[];
     inputSearch: string;
   }): JSX.Element => {
+    const allData: IProject[] = cardData;
     const mobile = useMedia(breakpoints.tablet);
     const [newest, setNewest] = useState<boolean>(false);
     const [filtered, setFiltered] = useState<boolean>(false);
