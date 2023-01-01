@@ -41,7 +41,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "eslint": "eslint './**/*.{js,jsx,ts,tsx}'"
+    "eslint": "eslint './**/*.{js,jsx,ts,tsx}'",
+    "vercel": "vercel --prod"
   },
   "browserslist": [
     ">0.2%",

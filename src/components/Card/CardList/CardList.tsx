@@ -11,6 +11,8 @@ import CentralActionsButtons from "src/components/Buttons/ButtonsOnTop/CentralAc
 import { CardListStyled, ContentStyled } from "./CardListStyled";
 import { OpenedCard } from "../Card/OpenedCard/OpenedCard";
 import { ClosedCard } from "../Card/ClosedCard/ClosedCard";
+import { thereIsAProjectSelected } from "src/redux/features/selectedSlice";
+import { useAppSelector } from "src/redux/app/hooks";
 
 const List = () => {
   let inputSearch = "";
@@ -20,6 +22,7 @@ const List = () => {
 
   const ids = cardData.map((project) => project.id);
   const [shown, setShown] = useState(cardData);
+  console.log("Algo enseñado", useAppSelector(thereIsAProjectSelected));
 
   const resetFilters = () => {
     setValue("");
@@ -28,7 +31,7 @@ const List = () => {
 
   return (
     <ContentStyled>
-      <ButtonsOnTop />
+      {!useAppSelector(thereIsAProjectSelected) && <ButtonsOnTop />}
       <Nav
         value={value}
         setValue={setValue}

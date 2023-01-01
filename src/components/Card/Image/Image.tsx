@@ -23,8 +23,6 @@ export const Image = ({
       mobile={mobile}
       backgroundColor={backgroundColor}
     >
-    
-
       {isSelected && <CloseButton />}
 
       <motion.img

@@ -1,5 +1,7 @@
 import { GrFormClose } from "react-icons/gr";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { changeSomeProjectSelectedActionCreator } from "src/redux/features/selectedSlice";
 import styled from "styled-components";
 const CloseButtonStyled = styled.div`
   .closeButton {
@@ -27,9 +29,13 @@ const CloseButtonStyled = styled.div`
   }
 `;
 const CloseButton = () => {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(changeSomeProjectSelectedActionCreator(false));
+  };
   return (
     <CloseButtonStyled>
-      <Link to={`/`}>
+      <Link to={`/`} onClick={handleClick}>
         <GrFormClose className="closeButton" size={25} />
       </Link>
     </CloseButtonStyled>

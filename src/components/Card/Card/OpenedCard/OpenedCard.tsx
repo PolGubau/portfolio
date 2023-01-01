@@ -19,7 +19,6 @@ interface CardInterfaceInline {
 }
 
 export const OpenedCard = memo(({ project, ids }: CardInterfaceInline) => {
-  const navigate = useNavigate();
   const mobile = useMedia(breakpoints.tablet);
   const cardRef = useRef(null);
 

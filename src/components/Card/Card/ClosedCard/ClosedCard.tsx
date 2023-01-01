@@ -4,6 +4,8 @@ import { IProject } from "src/Interfaces";
 import { closeSpring } from "../../utils/animations";
 import { ClosedCardStyled } from "./ClosedCardStyled";
 import { Title } from "../../Title/Title";
+import { useDispatch } from "react-redux";
+import { changeSomeProjectSelectedActionCreator } from "src/redux/features/selectedSlice";
 
 interface CardInterfaceInline {
   project: IProject;
@@ -12,19 +14,21 @@ interface CardInterfaceInline {
 }
 
 export const ClosedCard = memo(({ project }: CardInterfaceInline) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const cardRef = useRef(null);
 
+  const handleClick = () => {
+    dispatch(changeSomeProjectSelectedActionCreator(true));
+    navigate(`/${project.path}`);
+  };
   return (
     <ClosedCardStyled
-      
       project={project}
       ref={cardRef}
       layoutTransition={closeSpring}
       className={`card`}
-      onClick={() => {
-        navigate(`/${project.path}`);
-      }}
+      onClick={handleClick}
     >
       <Title project={project} isSelected={false} />
       <img src={`images/${project.pathToImg}`} alt={project.title} />

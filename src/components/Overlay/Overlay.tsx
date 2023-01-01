@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useMedia from "src/hooks/useMedia";
+import { changeSomeProjectSelectedActionCreator } from "src/redux/features/selectedSlice";
 import { breakpoints } from "src/styles/theme";
 import styled from "styled-components";
 const OverlayStyled = styled(motion.div)`
@@ -31,16 +33,20 @@ const OverlayStyled = styled(motion.div)`
   }
 `;
 const Overlay = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const mobile = useMedia(breakpoints.tablet);
-
+  const handleClick = () => {
+    dispatch(changeSomeProjectSelectedActionCreator(false));
+    navigate("/");
+  };
   return (
     <>
       {!mobile && (
         <OverlayStyled
           initial={false}
           transition={{ duration: 0.3 }}
-          onClick={() => navigate("/")}
+          onClick={handleClick}
         ></OverlayStyled>
       )}
     </>

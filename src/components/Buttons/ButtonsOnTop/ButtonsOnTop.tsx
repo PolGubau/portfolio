@@ -1,4 +1,3 @@
-import { FaAngleUp } from "react-icons/fa";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { BsArrowUpShort } from "react-icons/bs";
@@ -31,6 +30,7 @@ const ButtonsStyled = styled.div`
 `;
 const ButtonsOnTop = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 400) {
