@@ -51,7 +51,7 @@ export const NavStyled = styled.nav`
   .inputIconDiv {
     padding: 4px 5px;
     height: 100%;
-    border-radius: 0 0 0 9px;
+    border-radius: 0 0 0 20px;
     display: flex;
     height: 28px;
     align-content: center;
@@ -74,7 +74,7 @@ export const NavStyled = styled.nav`
     border-top: none;
     outline: none;
     margin: 0;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 15px 15px;
     align-items: center;
     justify-content: center;
     align-content: flex-start;
@@ -88,7 +88,7 @@ export const NavStyled = styled.nav`
     padding: 4px 10px;
     width: calc(100% - 20px);
     border: none;
-    border-radius: 0 0 10px 0;
+    border-radius: 0 0 15px 0;
 
     outline: none;
     align-items: center;
@@ -104,7 +104,7 @@ export const NavStyled = styled.nav`
 
   .filterWord {
     padding: 3px 7px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 15px 15px;
   }
 
   .filterWord:hover {
@@ -177,19 +177,19 @@ export const NavStyled = styled.nav`
 
     .inputWithIcon {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 20px;
       border: 1px solid black;
       justify-content: space-between;
     }
 
     .input {
-      width: 92%;
-      border-radius: 10px;
+      width: 94%;
+      border-radius: 20px;
     }
 
     .filterWord,
     .sortIcon {
-      border-radius: 10px;
+      border-radius: 20px;
     }
   }
 `;

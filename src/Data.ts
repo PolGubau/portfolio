@@ -17,10 +17,10 @@ export const cardData: IProject[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterest: { x: -50, y: -90 },
+    pointOfInterest: { x: -10, y: 20 },
 
     textColor: "#000",
-    width: 800,
+    width: 320,
     backgroundColor: "#ffe9ab",
     pathToImg: "/Stickies/0.webp",
     tags: ["React", "React Icons", "Styled Components", "TypeScript"],
@@ -62,10 +62,10 @@ export const cardData: IProject[] = [
       Spanish: "Universidad autónoma de Barcelona",
       Catalan: "Universitat autònoma de Barcelona",
     },
-    pointOfInterest: { x: -70, y: 20 },
+    pointOfInterest: { x: 30, y: 20 },
 
     textColor: "#000",
-    width: 600,
+    width: 300,
     backgroundColor: "#abffe2",
     pathToImg: "/cvCreator/0.webp",
     tags: ["PHP", "MYSQL", "PDO", "CRUD", "DDBB"],
@@ -103,10 +103,10 @@ export const cardData: IProject[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterest: { x: 30, y: 80 },
+    pointOfInterest: { x: -70, y: 10 },
 
     textColor: "#000",
-    width: 700,
+    width: 270,
     backgroundColor: "#abd7ff",
     pathToImg: "/AskaQuest/0.webp",
     tags: ["Nextjs", "PostgreSQL", "TypeScript", "Vercel", "SWR"],
@@ -128,11 +128,11 @@ export const cardData: IProject[] = [
 
     description: {
       English:
-        "Dynamic web application made with NextJS and using a PostgreSQL database, consists of a social network of questions where users can create questions and answer them. The user can follow other users and view their questions, as well as add them as favorites. A login system, following and encryption in the Backend were developed. All of it typed with TypeScript. ",
+        "Dynamic web application made with NextJS and using a PostgreSQL database, consists of a social network of questions where users can create questions and answer them. The user can follow other users and view their questions, as well as add them as favorites. A login system, following and encryption in the Backend were developed.  ",
       Spanish:
-        "Aplicación web dinámica hecha con NextJS y usando una base de datos PostgreSQL, consiste en una red social de preguntas donde los usuarios pueden crear preguntas y responderlas. El usuario puede seguir a otros usuarios y ver sus preguntas, así como agregarlas como favoritas. Un sistema de login, following y encriptación en el Backend se programó. Toda ella tipada con TypeScript. ",
+        "Aplicación web dinámica hecha con NextJS y usando una base de datos PostgreSQL, consiste en una red social de preguntas donde los usuarios pueden crear preguntas y responderlas. El usuario puede seguir a otros usuarios y ver sus preguntas, así como agregarlas como favoritas. Un sistema de login, following y encriptación en el Backend se programó.",
       Catalan:
-        "Aplicació web dinàmica feta amb NextJS i usant una base de dades PostgreSQL, consisteix en una xarxa social de preguntes on els usuaris poden crear preguntes i respondre-les. L'usuari pot seguir altres usuaris i veure les seves preguntes, així com agregar-les com a favorites. Un sistema de login, seguiment i encriptació al Backend va ser desenvolupat. Tota ella tipada amb TypeScript",
+        "Aplicació web dinàmica feta amb NextJS i usant una base de dades PostgreSQL, consisteix en una xarxa social de preguntes on els usuaris poden crear preguntes i respondre-les. L'usuari pot seguir altres usuaris i veure les seves preguntes, així com agregar-les com a favorites. Un sistema de login, seguiment i encriptació al Backend va ser desenvolupat. ",
     },
     githubLink: "",
 
@@ -149,10 +149,10 @@ export const cardData: IProject[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterest: { x: 70, y: 110 },
+    pointOfInterest: { x: 30, y: 20 },
 
     textColor: "#000",
-    width: 450,
+    width: 290,
     backgroundColor: "#faabff",
     pathToImg: "/UABMedia/0.webp",
     tags: ["PHP", "WebTV", "BOOTSTRAP", "JQUERY", "AWS"],
@@ -198,10 +198,10 @@ export const cardData: IProject[] = [
       Spanish: "diseño",
       Catalan: "disseny",
     },
-    pointOfInterest: { x: 120, y: 70 },
+    pointOfInterest: { x: 90, y: 20 },
 
     textColor: "#000",
-    width: 700,
+    width: 320,
     backgroundColor: "#c1ffab",
     pathToImg: "/NUWE/0.webp",
     tags: ["Figma", "Illustrator", "Photoshop"],
@@ -223,7 +223,6 @@ export const cardData: IProject[] = [
 
     link: "https://nuwe.io/",
   },
-
   {
     id: 5,
     path: "Rispot",
@@ -237,10 +236,10 @@ export const cardData: IProject[] = [
       Catalan: "web",
     },
 
-    pointOfInterest: { x: -50, y: 90 },
+    pointOfInterest: { x: -100, y: 20 },
 
     textColor: "#000",
-    width: 600,
+    width: 300,
     backgroundColor: "#abfeff",
     pathToImg: "/Rispot/0.webp",
     tags: ["PHP", "SQL", "JQUERY", "EXCEL"],
@@ -288,10 +287,10 @@ export const cardData: IProject[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterest: { x: 50, y: 120 },
+    pointOfInterest: { x: 20, y: 60 },
 
     textColor: "#000",
-    width: 470,
+    width: 200,
     backgroundColor: "#abbaff",
     pathToImg: "/GubauAfternoons/0.webp",
     tags: ["HTML", "SCSS", "JQUERY"],
@@ -332,10 +331,10 @@ export const cardData: IProject[] = [
       Catalan: "web",
     },
 
-    pointOfInterest: { x: 0, y: 0 },
+    pointOfInterest: { x: -120, y: -80 },
 
     textColor: "#000",
-    width: 700,
+    width: 500,
     backgroundColor: "#ffabd5",
     pathToImg: "/Unbrushed/0.webp",
     tags: ["PHP", "SQL", "JavaScript"],
@@ -389,10 +388,10 @@ export const cardData: IProject[] = [
       Spanish: "diseño",
       Catalan: "disseny",
     },
-    pointOfInterest: { x: 60, y: 80 },
+    pointOfInterest: { x: 20, y: 0 },
 
     textColor: "#000000",
-    width: 400,
+    width: 350,
     backgroundColor: "#ffdbab",
     pathToImg: "/Skatla/0.webp",
     tags: ["Indesign", "Illustrator", "Photoshop"],
@@ -434,10 +433,10 @@ export const cardData: IProject[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterest: { x: 40, y: 70 },
+    pointOfInterest: { x: -30, y: 10 },
 
     textColor: "#000000",
-    width: 500,
+    width: 300,
     backgroundColor: "#feffab",
     pathToImg: "/ThoseColors/0.webp",
     tags: ["PHP", "SASS"],
@@ -465,10 +464,10 @@ export const cardData: IProject[] = [
       Spanish: "web",
       Catalan: "web",
     },
-    pointOfInterest: { x: 40, y: 120 },
+    pointOfInterest: { x: 20, y: 50 },
 
     textColor: "#000000",
-    width: 600,
+    width: 160,
     backgroundColor: "#e6abff",
     pathToImg: "/Memo/0.webp",
     tags: ["Javascript", "HTML", "CSS"],

@@ -1,36 +1,46 @@
-import * as React from "react";
 import { motion } from "framer-motion";
 import { closeSpring, openSpring } from "src/components/Card/utils/animations";
-import "./Title.css";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { IProject } from "src/Interfaces";
+import { getTextByLang } from "src/utils/getTextByLang";
+import { useAppSelector } from "src/redux/app/hooks";
+import { actualLanguage } from "src/redux/features/languageSlice";
+import { TitleStyled } from "./TitleStyled";
 
-export const Title = ({ project, isSelected, lang }) => {
+export const Title = ({
+  project,
+  isSelected,
+}: {
+  project: IProject;
+  isSelected: boolean;
+}) => {
+  const { language: lang } = useAppSelector(actualLanguage);
   const { title, textColor, year, category, link } = project;
-
+  const categoryLangugaged = getTextByLang(lang, category);
   const handleClick = () => {
     window.open(link, "_blank");
   };
   return (
-    <motion.div
-      className="title-container"
+    <TitleStyled
+      project={project}
       initial={false}
       transition={isSelected ? openSpring : closeSpring}
     >
       {isSelected ? (
-        <a onClick={handleClick} href={link}>
+        <Link onClick={handleClick} to={link}>
           <h2 className="title titleOpened" style={{ color: textColor }}>
             {title}
             <motion.div
               transition={{ delay: 0.3, duration: 0.3 }}
               initial={{ display: "none", x: -100, opacity: 0 }}
-              duration={2}
               animate={{ display: "flex", x: 0, opacity: 1 }}
               className="arrow"
             >
               <FaArrowRight style={{ color: textColor }} />
             </motion.div>
           </h2>
-        </a>
+        </Link>
       ) : (
         <h2 className="title" style={{ color: textColor }}>
           {title}
@@ -42,7 +52,7 @@ export const Title = ({ project, isSelected, lang }) => {
           className="category"
           style={{ color: textColor, opacity: isSelected ? 1 : 0 }}
         >
-          {category[lang]}
+          {categoryLangugaged}
         </span>
         <span
           className="yearCard"
@@ -51,6 +61,24 @@ export const Title = ({ project, isSelected, lang }) => {
           {year}
         </span>
       </div>
-    </motion.div>
+      {isSelected && (
+        <>
+          <div className="Description-tagsContainer">
+            {project.tags.map((tag: string) => (
+              <Link
+                key={tag}
+                to="/"
+                state={{
+                  inputSearch: tag,
+                }}
+                className="Description-tag"
+              >
+                {tag}
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
+    </TitleStyled>
   );
 };

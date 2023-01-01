@@ -1,29 +1,22 @@
+.descriptionContainer {
+  padding: 20px 40px 40px 40px;
+  width: 100%;
+}
+
 .Description-header {
   margin-bottom: 30px;
   padding-bottom: 10px;
 }
 
-.Description-tagsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 20px 0;
-}
 
-.Description-tag {
-  margin-right: 10px;
-  padding: 5px 10px;
-  background-color: var(--primary-dark);
-  margin: 5px;
-}
 
 .Description-descriptionText {
   display: flex;
 }
 
 .Description-footer {
-  position: absolute;
+  position: fixed;
+  width: 100%;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);

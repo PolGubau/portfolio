@@ -11,6 +11,8 @@ import { getTextByLang } from "src/utils/getTextByLang";
 import { NavStyled } from "./NavStyled";
 import { breakpoints } from "src/styles/theme";
 import { cardData } from "src/Data";
+import { useDispatch } from "react-redux";
+import { setInputValueActionCreator } from "src/redux/features/searchInputSlice";
 
 export const Nav = memo(
   ({
@@ -30,6 +32,7 @@ export const Nav = memo(
     const mobile = useMedia(breakpoints.tablet);
     const [newest, setNewest] = useState<boolean>(false);
     const [filtered, setFiltered] = useState<boolean>(false);
+    const dispatch = useDispatch();
 
     const { language } = useAppSelector(actualLanguage);
     const text = getTextByLang(language, navTexts);
@@ -68,6 +71,7 @@ export const Nav = memo(
       setFilter(allData);
       setNewest(false);
       setFiltered(false);
+      dispatch(setInputValueActionCreator(""));
     };
 
     const filterTags = (e: any) => {
@@ -91,6 +95,16 @@ export const Nav = memo(
       );
     }
 
+    const handleChange = (e: any) => {
+      if (e.target.value === "") {
+        setFiltered(false);
+        setValue(e.target.value);
+        filterTags(e);
+        dispatch(setInputValueActionCreator(e.target.value));
+        return;
+      }
+    };
+
     return (
       <NavStyled>
         <div className="contentNav">
@@ -112,10 +126,7 @@ export const Nav = memo(
                 className={`input `}
                 value={value}
                 placeholder={text.placeholder}
-                onChange={(e) => {
-                  setValue(e.target.value);
-                  filterTags(e);
-                }}
+                onChange={handleChange}
               />
             </div>
           </div>

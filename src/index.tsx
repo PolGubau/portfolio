@@ -1,21 +1,21 @@
 import { render } from "react-dom";
 import Header from "./components/Header/Header";
-import { CardList } from "./components/Card/CardList/CardList";
 import "./styles/styles.css";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import { Provider } from "react-redux";
 import { store } from "./redux/app/store";
+import Router from "./components/Router/Router";
 
 function App() {
   return (
     <div className="container">
       <Provider store={store}>
-        <Router>
+        <BrowserRouter>
           <Header />
-          <CardList />
+          <Router />
           <Footer />
-        </Router>
+        </BrowserRouter>
       </Provider>
     </div>
   );

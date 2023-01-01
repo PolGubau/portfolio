@@ -1,63 +1,41 @@
-import { motion, useInvertedScale } from "framer-motion";
+import { motion } from "framer-motion";
 import { closeSpring } from "src/components/Card/utils/animations";
-import "./Image.css";
-import { GrFormClose } from "react-icons/gr";
-import { Link } from "react-router-dom";
 import useMedia from "src/hooks/useMedia";
 import { breakpoints } from "src/styles/theme";
 import { IProject } from "src/Interfaces";
+import { Title } from "../Title/Title";
+import { ImageStyled } from "./ImageStyled";
+import CloseButton from "src/components/Buttons/CloseButton/CloseButton";
 
 export const Image = ({
-  isSelected,
+  isSelected = true,
   project,
 }: {
-  isSelected: boolean;
+  isSelected?: boolean;
   project: IProject;
 }) => {
   const mobile = useMedia(breakpoints.tablet);
-  const { pointOfInterest, pathToImg, width, backgroundColor } = project;
-  const inverted = useInvertedScale();
+  const { pathToImg, backgroundColor } = project;
 
   return (
-    <motion.div
-      className={`card-image-container ${
-        mobile && isSelected ? "mobileAndSelected" : ""
-      }  ${
-        isSelected
-          ? "card-image-container-selected"
-          : "card-image-container-no-selected"
-      }`}
-      style={{ ...inverted, backgroundColor, originX: 0, originY: 0 }}
+    <ImageStyled
+      opened={isSelected}
+      mobile={mobile}
+      backgroundColor={backgroundColor}
     >
-      {/* Close Button */}
-      <Link to={`/`}>
-        <motion.p
-          initial={{ opacity: 0 }}
-          className="closeButton"
-          animate={isSelected ? { opacity: 1 } : { opacity: 0 }}
-        >
-          <GrFormClose className="closeIcon" size={29} />
-        </motion.p>
-      </Link>
+    
+
+      {isSelected && <CloseButton />}
 
       <motion.img
-        className={`card-image  `}
+        className={`card-image`}
         src={`images/${pathToImg}`}
         alt={pathToImg}
-        width={isSelected ? `${width + 200}px` : width}
-        initial={false}
-        style={{
-          originX: 0,
-          originY: 0,
-          perspective: isSelected ? 1000 : 0,
-          marginTop: isSelected ? pointOfInterest.y - 50 : pointOfInterest.y,
-          marginLeft: isSelected ? pointOfInterest.x + 100 : pointOfInterest.x,
-        }}
         onMouseLeave={(e) => {
           if (isSelected) {
             const image = e.target as HTMLImageElement;
             image.style.transform = `rotateY(0deg) rotateX(0deg)`;
-            image.style.transition = "all 0.5s ease";
+            image.style.transition = "all 0.3s ease";
           }
         }}
         onMouseEnter={(e) => {
@@ -77,6 +55,6 @@ export const Image = ({
         }}
         transition={closeSpring}
       />
-    </motion.div>
+    </ImageStyled>
   );
 };

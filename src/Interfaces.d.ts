@@ -22,7 +22,6 @@ export interface CardInterface {
   allData?: Array<IProject>;
   project: IProject;
   ids: any;
-  isSelected: boolean;
   mobile: boolean;
 }
 

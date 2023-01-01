@@ -22,9 +22,9 @@ export default function Madefor({
   const text: IMadeForTextOneLanguage = getTextByLang(lang, madeForText);
   const whoIMadeFor = madeFor ? getTextByLang(lang, madeFor) : "";
 
-  !madeFor && <p className="bold">{text.forMe}</p>;
-
-  return (
+  return !whoIMadeFor ? (
+    <p className="bold">{text.forMe}</p>
+  ) : (
     <p>
       <span>{`${text.madeFor} `}</span>
       <span className="bold">{`${whoIMadeFor} `}</span>
