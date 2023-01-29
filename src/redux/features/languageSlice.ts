@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  language: "en",
+  language: "EN",
 };
 
 // create a slice for terminals

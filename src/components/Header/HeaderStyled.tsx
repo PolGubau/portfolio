@@ -1,4 +1,4 @@
-import { breakpoints, breakpointsString } from "src/styles/theme";
+import { breakpointsString, colors, fontSizes } from "src/styles/theme";
 import styled, { keyframes } from "styled-components";
 
 // appear animation
@@ -19,7 +19,7 @@ export const HeaderStyled = styled.header`
   }
   h1 {
     font-weight: bold;
-    font-size: var(--title);
+    font-size: ${fontSizes.largeTitle};
     color: rgb(0, 0, 0);
     margin: 10px 0 10px 0;
     line-height: 0.9;
@@ -37,6 +37,7 @@ export const HeaderStyled = styled.header`
   section {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -61,11 +62,14 @@ export const HeaderStyled = styled.header`
     width: 120px;
     height: 120px;
     object-fit: cover;
-    background-color: var(--primary);
+    background-color: ${colors.lightBlue};
     border-radius: 50%;
   }
-
-  /* iF MOBILE */
+  .titles {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
 
   @media only screen and (max-width: ${breakpointsString.tablet}) {
     .descriptionAndImage {

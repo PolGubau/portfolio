@@ -10,11 +10,11 @@ export const inputSearchSlice = createSlice({
   initialState,
   reducers: {
     setInputValue: (state, action) => {
-      state.value = action.payload;
+      state.value = state.value + action.payload;
     },
   },
 });
-export const getInputValue = (state: any) => state.language;
+export const getInputValue = (state: any) => state.input.value;
 
 export const { setInputValue: setInputValueActionCreator } =
   inputSearchSlice.actions;

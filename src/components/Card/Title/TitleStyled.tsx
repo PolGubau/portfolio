@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { IProject } from "src/Interfaces";
+import { colors } from "src/styles/theme";
 import styled from "styled-components";
 
 interface ITitleInterface {
@@ -13,7 +14,11 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
   z-index: 3;
 
   .title {
-    background-color: ${(props) => props.project.backgroundColor};
+    /* background-color: ${(props) => props.project.backgroundColor}; */
+    text-shadow: -1px -1px 0 ${(props) => props.project.backgroundColor},
+      1px -1px 0 ${(props) => props.project.backgroundColor},
+      -1px 1px 0 ${(props) => props.project.backgroundColor},
+      1px 1px 0 ${(props) => props.project.backgroundColor};
 
     border-radius: 10px;
     display: flex;
@@ -21,7 +26,6 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
     font-weight: 600;
     margin: 0px 0;
     width: fit-content;
-    padding: 5px;
   }
 
   .arrow {
@@ -49,6 +53,10 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
     margin: 0px 0;
     padding: 0;
     text-transform: uppercase;
+    text-shadow: -1px -1px 0 ${(props) => props.project.backgroundColor},
+      1px -1px 0 ${(props) => props.project.backgroundColor},
+      -1px 1px 0 ${(props) => props.project.backgroundColor},
+      1px 1px 0 ${(props) => props.project.backgroundColor};
   }
 
   .yearCard {
@@ -56,6 +64,10 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
     margin: 0px 0;
     padding: 0;
     text-transform: uppercase;
+    text-shadow: -1px -1px 0 ${(props) => props.project.backgroundColor},
+      1px -1px 0 ${(props) => props.project.backgroundColor},
+      -1px 1px 0 ${(props) => props.project.backgroundColor},
+      1px 1px 0 ${(props) => props.project.backgroundColor};
   }
 
   .Description-tagsContainer {
@@ -71,7 +83,7 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
   .Description-tag {
     padding: 4px 8px;
     border-radius: 10px;
-    background-color: var(--primary-dark);
+    background-color: ${colors.darkBlue};
     margin: 5px;
   }
 `;

@@ -5,23 +5,6 @@
 }
 
 body {
-  /* colors */
-
-  --primary: #a1d7f0;
-  --primary-dark: #68b4d8;
-  --primary-light: #a8a4a8;
-  --bg-light: #c8c8c8;
-  --bg-dark: #949494;
-  --greyDark: #343434;
-  --white: rgb(245, 245, 245);
-  --black: #000;
-  --title: 48px;
-  --subtitle: 24px;
-  --text: 12px;
-  --black: #000;
-  --space-cards: 4%;
-
-
   margin: 0;
   padding: 0;
   background: var(--white);
@@ -31,6 +14,7 @@ body {
 * {
   box-sizing: border-box;
   font-family: "Poppins", Helvetica, Arial, sans-serif;
+  color: black;
 
   -webkit-tap-highlight-color: rgba(224, 68, 68, 0);
 }
@@ -56,7 +40,7 @@ a {
 
 .container {
   padding-top: 30px;
-  max-width: 990px;
+  max-width: 1024px;
   width: 90vw;
   flex: 1 1 100%;
 }

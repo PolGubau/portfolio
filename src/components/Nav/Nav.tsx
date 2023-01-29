@@ -12,24 +12,24 @@ import { NavStyled } from "./NavStyled";
 import { breakpoints } from "src/styles/theme";
 import { cardData } from "src/Data";
 import { useDispatch } from "react-redux";
-import { setInputValueActionCreator } from "src/redux/features/searchInputSlice";
+import {
+  getInputValue,
+  setInputValueActionCreator,
+} from "src/redux/features/searchInputSlice";
+import { useCallback } from "react";
 
 export const Nav = memo(
   ({
-    value,
-    setValue,
     filter,
     setFilter,
-    inputSearch,
   }: {
-    value: string;
-    setValue: Function;
     filter: IProject[];
     setFilter: Function;
-    inputSearch: string;
   }): JSX.Element => {
     const allData: IProject[] = cardData;
     const mobile = useMedia(breakpoints.tablet);
+    const value = useAppSelector(getInputValue);
+
     const [newest, setNewest] = useState<boolean>(false);
     const [filtered, setFiltered] = useState<boolean>(false);
     const dispatch = useDispatch();
@@ -67,7 +67,6 @@ export const Nav = memo(
     };
 
     const refresh = () => {
-      setValue("");
       setFilter(allData);
       setNewest(false);
       setFiltered(false);
@@ -85,25 +84,25 @@ export const Nav = memo(
       }
       filteringByTagsAndTitle();
     };
-    if (inputSearch) {
+    if (value) {
       setFilter(
         allData.filter((card) =>
           card.tags.some((tag) =>
-            tag.toLowerCase().startsWith(inputSearch.toLowerCase())
+            tag.toLowerCase().startsWith(value.toLowerCase())
           )
         )
       );
     }
 
-    const handleChange = (e: any) => {
-      if (e.target.value === "") {
-        setFiltered(false);
-        setValue(e.target.value);
-        filterTags(e);
+    const handleChange = (e: any) =>
+      useCallback((e: any) => {
         dispatch(setInputValueActionCreator(e.target.value));
-        return;
-      }
-    };
+        filterTags(e);
+
+        if (e.target.value === "") {
+          setFiltered(false);
+        }
+      }, []);
 
     return (
       <NavStyled>

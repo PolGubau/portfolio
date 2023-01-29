@@ -6,12 +6,14 @@ import Footer from "./components/Footer/Footer";
 import { Provider } from "react-redux";
 import { store } from "./redux/app/store";
 import Router from "./components/Router/Router";
+import LanguageButtons from "./components/Buttons/ButtonsOnTop/Language/LanguageButtons";
 
 function App() {
   return (
     <div className="container">
       <Provider store={store}>
         <BrowserRouter>
+          <LanguageButtons />
           <Header />
           <Router />
           <Footer />

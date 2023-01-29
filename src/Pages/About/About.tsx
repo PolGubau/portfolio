@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-
+import AboutStructure from "./Components/AboutStructure/AboutStructure";
+import LineContainer from "./Components/Line/LineContainer";
+import { AboutStyled } from "./Styles/AboutStyled";
 const About = () => {
   return (
-    <>
-      <Link to={"/"}>Go Home</Link>
-      <h2>About me</h2>
-      <p>lorem ipsum </p>
-    </>
+    <AboutStyled>
+      <LineContainer />
+      <AboutStructure />
+    </AboutStyled>
   );
 };
 

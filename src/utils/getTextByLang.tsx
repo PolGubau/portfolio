@@ -7,12 +7,12 @@ export const getTextByLang = (
   }
 ) => {
   switch (lang) {
-    case "en":
+    case "EN":
       return text.English;
 
-    case "es":
+    case "ES":
       return text.Spanish;
-    case "ca":
+    case "CA":
       return text.Catalan;
     default:
       return text.Catalan;

@@ -1,4 +1,4 @@
-import { breakpointsString } from "src/styles/theme";
+import { breakpointsString, colors } from "src/styles/theme";
 import styled from "styled-components";
 
 export const NavStyled = styled.nav`
@@ -9,7 +9,7 @@ export const NavStyled = styled.nav`
   margin: 0 0 0 0;
   padding: 0px;
   list-style: none;
-  color: var(--black);
+  color: ${colors.black};
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   text-decoration: none;
@@ -105,11 +105,10 @@ export const NavStyled = styled.nav`
   .filterWord {
     padding: 3px 7px;
     border-radius: 0 0 15px 15px;
-  }
-
-  .filterWord:hover {
-    background-color: var(--bg-light);
-    cursor: pointer;
+    :hover {
+      background-color: ${colors.lightBlue};
+      cursor: pointer;
+    }
   }
 
   .sortIcon {
@@ -117,33 +116,30 @@ export const NavStyled = styled.nav`
     flex-direction: row;
     margin: 0 0 0 0;
     padding: 8px 5px 5px 5px;
-    color: var(--black);
+    color: ${colors.black};
     cursor: pointer;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
     border-radius: 0 0 10px 10px;
+    :hover {
+      background-color: ${colors.lightBlue};
+    }
   }
-
-  .sortIcon:hover {
-    background-color: var(--bg-light);
-  }
-
   .refreshIcon {
     display: flex;
     flex-direction: row;
     margin: 0 0 0 0;
     padding: 8px 5px 5px 5px;
-    color: var(--black);
+    color: ${colors.black};
     cursor: pointer;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
     border-radius: 0 0 10px 10px;
-  }
-
-  .refreshIcon:hover {
-    background-color: var(--bg-light);
+    :hover {
+      background-color: ${colors.lightBlue};
+    }
   }
 
   @media only screen and (max-width: ${breakpointsString.tablet}) {
@@ -178,7 +174,7 @@ export const NavStyled = styled.nav`
     .inputWithIcon {
       width: 100%;
       border-radius: 20px;
-      border: 1px solid black;
+      border: 1px solid ${colors.black};
       justify-content: space-between;
     }
 

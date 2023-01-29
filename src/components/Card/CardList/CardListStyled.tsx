@@ -1,8 +1,9 @@
-import { breakpointsString } from "src/styles/theme";
+import { breakpointsString, colors } from "src/styles/theme";
 import styled from "styled-components";
 
 export const CardListStyled = styled.section`
   margin-top: 25px;
+  gap: 15px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +15,7 @@ export const CardListStyled = styled.section`
   align-items: flex-start;
 `;
 export const ContentStyled = styled.section`
-  border-top: 1px solid var(--greyDark);
+  border-top: 1px solid ${colors.darkGray};
   @media only screen and (max-width: ${breakpointsString.tablet}) {
     border: none;
   }

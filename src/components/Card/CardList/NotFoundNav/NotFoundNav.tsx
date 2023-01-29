@@ -2,7 +2,7 @@ import { MouseEventHandler } from "react";
 import { errorOnSearch } from "src/Consts";
 import { useAppSelector } from "src/redux/app/hooks";
 import { actualLanguage } from "src/redux/features/languageSlice";
-import "./NotFoundNav.css";
+import { NotFoundStyled } from "./NotFoundStyled";
 export default function NotFoundNav({
   value,
   resetFilters,
@@ -12,7 +12,7 @@ export default function NotFoundNav({
 }): JSX.Element {
   const lang = useAppSelector(actualLanguage);
   return (
-    <div className="containerNotFound">
+    <NotFoundStyled>
       {lang === "English" && (
         <>
           <h3>{errorOnSearch.English.title}</h3>
@@ -46,6 +46,6 @@ export default function NotFoundNav({
           </button>
         </>
       )}
-    </div>
+    </NotFoundStyled>
   );
 }

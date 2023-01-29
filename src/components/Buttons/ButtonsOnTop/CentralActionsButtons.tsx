@@ -6,6 +6,7 @@ import { cardData } from "src/Data";
 import { IProject } from "src/Interfaces";
 import { useAppSelector } from "src/redux/app/hooks";
 import { actualLanguage } from "src/redux/features/languageSlice";
+import { colors } from "src/styles/theme";
 import { getTextByLang } from "src/utils/getTextByLang";
 import styled from "styled-components";
 
@@ -24,6 +25,23 @@ const CentralActionsButtonsStyle = styled.section`
   flex-wrap: wrap;
   flex-direction: row;
   z-index: 100;
+  .search {
+    background-color: ${colors.black};
+    color: ${colors.white};
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    svg {
+      color: ${colors.white};
+      fill: white;
+    }
+  }
 `;
 const CentralActionsButtons = () => {
   const params = useParams<{ path: string }>();
@@ -52,9 +70,9 @@ const CentralActionsButtons = () => {
         <Link to={`/${prevPath}`} className="changeProjectLink">
           <FaArrowLeft size={25} />
         </Link>
-        <a className="Description-search" href={project.link} target="_blank">
+        <a className="search" href={project.link} target="_blank">
           {text.linkButton}
-          <BsSearch />
+          <BsSearch color={colors.white} />
         </a>
         <Link to={`/${nextPath}`} className="changeProjectLink">
           <FaArrowRight size={25} />

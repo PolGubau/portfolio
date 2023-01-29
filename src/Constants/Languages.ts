@@ -1,23 +1,29 @@
-
-
-export type availableLangCodesType = "en" | "es" | "ca";
-
+export type availableLangCodesType = "EN" | "ES" | "CA" | "DE";
 
 export interface IAvalibleLanguges {
   code: availableLangCodesType;
   name: string;
+  available: boolean;
 }
 export const availableLanguages: IAvalibleLanguges[] = [
   {
-    code: "en",
+    code: "EN",
     name: "English",
+    available: true,
   },
   {
-    code: "es",
+    code: "ES",
     name: "Spanish",
+    available: true,
   },
   {
-    code: "ca",
+    code: "CA",
     name: "Catalan",
+    available: true,
+  },
+  {
+    code: "DE",
+    name: "Deutsch",
+    available: false,
   },
 ];

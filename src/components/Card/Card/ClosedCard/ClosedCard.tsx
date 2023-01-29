@@ -13,7 +13,7 @@ interface CardInterfaceInline {
   index: number;
 }
 
-export const ClosedCard = memo(({ project }: CardInterfaceInline) => {
+export const ClosedCard = memo(({ project, index }: CardInterfaceInline) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cardRef = useRef(null);
@@ -24,6 +24,7 @@ export const ClosedCard = memo(({ project }: CardInterfaceInline) => {
   };
   return (
     <ClosedCardStyled
+      index={index}
       project={project}
       ref={cardRef}
       layoutTransition={closeSpring}

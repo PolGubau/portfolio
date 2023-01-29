@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { BsArrowUpShort } from "react-icons/bs";
+import { colors } from "src/styles/theme";
 
 const ButtonsStyled = styled.div`
   .top-to-btm {
@@ -13,19 +14,20 @@ const ButtonsStyled = styled.div`
     z-index: 20;
   }
   .icon-style {
-    background-color: var(--greyDark);
-    border: 2px solid transparent;
+    background-color: ${colors.darkGray};
+    border: 2px solid ${colors.transparent};
     border-radius: 20px;
     height: 50px;
     width: 50px;
-    color: #fff;
+    fill: ${colors.white};
     cursor: pointer;
   }
   .icon-style:hover {
     animation: none;
-    background: transparent;
-    color: var(--greyDark);
-    border: 2px solid var(--greyDark);
+    background: ${colors.transparent};
+    fill: ${colors.darkGray};
+
+    border: 2px solid ${colors.darkGray};
   }
 `;
 const ButtonsOnTop = () => {

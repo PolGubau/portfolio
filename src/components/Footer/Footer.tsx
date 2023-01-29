@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import "./Footer.css";
 import { RiGithubLine, RiLinkedinLine } from "react-icons/ri";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
@@ -8,12 +7,13 @@ import { FooterTextInterface } from "src/Interfaces";
 import { useAppSelector } from "src/redux/app/hooks";
 import { actualLanguage } from "src/redux/features/languageSlice";
 import { getTextByLang } from "src/utils/getTextByLang";
+import { FooterStyled } from "./FooterStyled";
 export default function Footer() {
   const { language } = useAppSelector(actualLanguage);
   const text: FooterTextInterface = getTextByLang(language, footerText);
   return (
     <>
-      <footer>
+      <FooterStyled>
         <section>
           <article>
             <h2>Pol Gubau Amores</h2>
@@ -66,7 +66,7 @@ export default function Footer() {
             </ul>
           </article>
         </section>
-      </footer>
+      </FooterStyled>
     </>
   );
 }

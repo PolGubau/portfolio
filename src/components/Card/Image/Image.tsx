@@ -14,16 +14,18 @@ export const Image = ({
   isSelected?: boolean;
   project: IProject;
 }) => {
-  const mobile = useMedia(breakpoints.tablet);
+  const mobile = useMedia(breakpoints.mobile);
+  const tablet = useMedia(breakpoints.tablet);
   const { pathToImg, backgroundColor } = project;
 
   return (
     <ImageStyled
       opened={isSelected}
       mobile={mobile}
+      tablet={tablet}
       backgroundColor={backgroundColor}
     >
-      {isSelected && <CloseButton />}
+      {isSelected && <CloseButton project={project} />}
 
       <motion.img
         className={`card-image`}

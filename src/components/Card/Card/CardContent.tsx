@@ -16,8 +16,6 @@ export const CardContent = memo(({ project, ids, mobile }: CardInterface) => {
       >
         <>
           {project.tags.map((tag: string) => {
-            console.log(tag);
-
             <p>{tag}</p>;
           })}
           <Title isSelected={true} project={project} />
@@ -26,7 +24,7 @@ export const CardContent = memo(({ project, ids, mobile }: CardInterface) => {
           <div
             className={`${mobile ? "card-content-Mobile" : "card-content-PC"} `}
           >
-            <Description project={project} id={project.id} ids={ids} />
+            <Description project={project} />
           </div>
         </>
       </article>
