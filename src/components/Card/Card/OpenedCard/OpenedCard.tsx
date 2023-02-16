@@ -20,24 +20,12 @@ export const OpenedCard = memo(({ project, ids }: CardInterfaceInline) => {
 
   return (
     <>
-      <OpenedCardStyled
-        project={project}
-        initial={{
-          x: 50,
-        }}
-        // transition={openSpring}
-        animate={{ x: 0 }}
-      >
+      <OpenedCardStyled project={project} transition={openSpring}>
         <Overlay />
 
         <motion.div
           ref={cardRef}
           className={`cardContainer ${mobile ? "openMobile" : " openPC"}`}
-          transition={{
-            delay: 0.5,
-            x: { duration: 0.3 },
-            default: { ease: "linear" },
-          }}
         >
           <CardContent project={project} ids={ids} mobile={mobile} />
         </motion.div>

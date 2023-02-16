@@ -9,7 +9,7 @@ import { useState } from "react";
 //
 
 const EachDream = ({ dream }: { dream: any }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
   const cardVariants: Variants = {
     offscreen: {
       y: 100,
@@ -54,7 +54,7 @@ const EachDream = ({ dream }: { dream: any }) => {
         setIsHovered(false);
       }}
     >
-      <Styled done={dream.status} isHovered={isHovered}>
+      <Styled done={dream.status} ishovered={isHovered as boolean}>
         {dream.status === "done" && (
           <>
             <motion.div

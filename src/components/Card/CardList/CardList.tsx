@@ -23,7 +23,6 @@ const List = () => {
 
   const ids = cardData.map((project) => project.id);
   const [shown, setShown] = useState(cardData);
-  console.log("Algo enseñado", useAppSelector(thereIsAProjectSelected));
 
   const resetFilters = () => {
     setValue("");
@@ -33,10 +32,7 @@ const List = () => {
   return (
     <ContentStyled>
       {!useAppSelector(thereIsAProjectSelected) && <ButtonsOnTop />}
-      <Nav
-        filter={shown}
-        setFilter={setShown}
-      />
+      <Nav filter={shown} setFilter={setShown} />
       {shown.length === 0 && (
         <NotFoundNav resetFilters={resetFilters} value={value} />
       )}

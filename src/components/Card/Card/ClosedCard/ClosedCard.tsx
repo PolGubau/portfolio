@@ -27,12 +27,8 @@ export const ClosedCard = memo(({ project, index }: CardInterfaceInline) => {
       index={index}
       project={project}
       ref={cardRef}
-      transition={{
-        delay: 0,
-        x: { duration: 0.3 },
-        default: { ease: "linear" },
-      }}
       className={`card`}
+      transition={closeSpring}
       onClick={handleClick}
     >
       <Title project={project} isSelected={false} />

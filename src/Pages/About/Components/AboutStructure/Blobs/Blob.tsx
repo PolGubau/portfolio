@@ -5,7 +5,7 @@ import { BlobStyled } from "./BlobStyle";
 const Blob = ({ blob }: { blob: IDataBlobs }) => {
   const comeFromLeft: Variants = {
     offscreen: {
-      x: -100,
+      x: 100,
       opacity: 0,
     },
     onscreen: {

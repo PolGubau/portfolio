@@ -26,9 +26,10 @@ export const HeaderStyled = styled.header`
     line-height: 0.9;
   }
 
-  h3 {
+  h2 {
     margin: 0 0 15px 0;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 1.5em;
   }
 
   header {

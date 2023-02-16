@@ -7,7 +7,6 @@ export default function LineContainer() {
   const [shown, setShown] = useState(false);
 
   function animateOnScroll(value) {
-    console.log("value", value);
     var line_total_length = line.current.getTotalLength();
 
     line.current.style.strokeDasharray = line_total_length; // Get the starting position of the draw.
