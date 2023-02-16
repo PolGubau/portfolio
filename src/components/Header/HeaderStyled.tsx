@@ -1,3 +1,4 @@
+import { decreaseFrom10, grow, growBouncing } from "src/styles/animations";
 import { breakpointsString, colors, fontSizes } from "src/styles/theme";
 import styled, { keyframes } from "styled-components";
 
@@ -58,13 +59,43 @@ export const HeaderStyled = styled.header`
     background-color: red;
   }
 
-  .meinPhoto {
+  .imageContainer {
+    position: relative;
     width: 120px;
+    display: flex;
     height: 120px;
-    object-fit: cover;
-    background-color: ${colors.lightBlue};
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
+
+    background-color: ${colors.lightBlue};
+
+    .meinPhoto {
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .grower {
+      animation: 0.5s ${grow} ease;
+      width: 120px;
+      height: 120px;
+      transform: scale(10);
+      border-radius: 50%;
+      position: absolute;
+      background-color: ${colors.lightBlue};
+      z-index: -1;
+    }
+    .decreaser {
+      animation: 0.5s ease-in ${decreaseFrom10};
+
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: ${colors.lightBlue};
+      z-index: -1;
+    }
   }
+
   .titles {
     display: flex;
     flex-direction: column;

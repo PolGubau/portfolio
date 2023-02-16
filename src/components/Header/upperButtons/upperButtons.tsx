@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 const UpperButtons = () => {
   const path = useLocation().pathname;
-  console.log(path);
 
   return (
     <LanguageStyled>

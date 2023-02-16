@@ -6,7 +6,7 @@ import { CardInterface } from "src/Interfaces";
 import "./Card.css";
 import { Title } from "../Title/Title";
 
-export const CardContent = memo(({ project, ids, mobile }: CardInterface) => {
+export const CardContent = memo(({ project, mobile }: CardInterface) => {
   return (
     <>
       <article

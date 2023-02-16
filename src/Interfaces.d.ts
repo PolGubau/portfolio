@@ -13,7 +13,8 @@ export interface IProject {
   invisibleTags?: string[];
   madeFor?: { English: string; Spanish: string; Catalan: string };
   description: { English: string; Spanish: string; Catalan: string };
-  githubLink: string;
+  githubLink?: string;
+  figmaLink?: string;
   link: string;
 }
 

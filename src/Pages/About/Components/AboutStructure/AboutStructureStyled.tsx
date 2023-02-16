@@ -2,102 +2,67 @@ import { breakpoints, colors } from "src/styles/theme";
 import styled from "styled-components";
 
 export const AboutStructureStyled = styled.main`
+  width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: fit-content;
+  overflow: visible;
 
   @media only screen and (min-width: ${breakpoints.desktop}px) {
-    .box {
-      display: flex;
-      flex-direction: column;
-
-      justify-content: flex-start;
-      align-items: center;
-      height: 150px;
-      border: 1px solid green;
-      h3 {
-        font-size: 2rem;
-        margin-top: -17px;
-        background-color: white;
-        width: fit-content;
-        padding: 0 5px;
-        line-height: 1;
-        span {
-          font-size: 1.5rem;
-          font-weight: 400;
-        }
-      }
-    }
-    .b1 {
-      border-color: #0059ff;
-      margin: 0% 0 0 10%;
-      height: 200px;
-      margin-top: 235px;
-      width: 50%;
-      border-radius: 999px;
-    }
     .dreamsBox {
       border-color: #fff700;
-      margin: 0% 0 0 60%;
-      width: 40%;
-      margin-top: 20px;
-      li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
+      margin: 90px 0 0 0%;
+      width: 45%;
     }
-    .b2 {
-      border-color: #fff700;
-      margin: 0% 0 0 45%;
-      width: 50%;
-      margin-top: 600px;
-      border-radius: 9999px;
-      h3 {
-        margin-top: -50px;
-      }
+    .firstBlob {
+      margin-top: 165px;
+      height: 200px;
+      position: relative;
+      display: flex;
+      gap: 10px;
+      border-radius: 99px;
+      border: 1px solid black;
+      width: 60%;
+      padding: 5px 10px;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      justify-content: center;
+      transition: 0.3s ease;
+      align-items: center;
     }
-    .b3 {
-      border-color: #6f00ff;
-      margin: 0% 0 0 0;
-      height: 170px;
-      margin-top: 20px;
-      width: 50%;
-      border-radius: 9999px;
+    .blobsContainer {
+      margin-bottom: 300px;
     }
-    .b4 {
-      border-color: #ff0051;
-      height: 170px;
-      border-radius: 9999px;
-      width: 50%;
-      margin: 0% 0 0 47%;
-      margin-top: 20px;
-      h3 {
-        margin-top: -50px;
-      }
+
+    .redondaVerde {
+      position: absolute;
+      border-radius: 50%;
+      transform: translate(-60%, -80px);
+      z-index: -10;
+      user-select: none;
+      pointer-events: none;
+      width: 1200px;
+      aspect-ratio: 1/1;
+      background-color: #daffc8;
     }
-    .b5 {
-      border-color: #00eaff;
-      margin-top: 25px;
-      height: 130px;
-      border-radius: 9999px;
-      width: 52%;
-    }
-    .b6 {
-      border-color: #22ff00;
-      margin-top: 110px;
-      height: 140px;
-      border-radius: 9999px;
-      width: 50%;
-    }
-    .b7 {
-      margin: 0% 0 0 42%;
-      margin-top: 70px;
-      height: 220px;
-      border-radius: 9999px;
-      width: 50%;
-      margin-bottom: 700px;
+    .redondaAmarilla {
+      position: absolute;
+      border-radius: 50%;
+      bottom: 0;
+      right: 0;
+      transform: translate(60%, 50%);
+      z-index: -10;
+      user-select: none;
+      pointer-events: none;
+      width: 1200px;
+      aspect-ratio: 1/1;
+      background-color: #f4ffc8;
     }
   }
 `;

@@ -3,20 +3,34 @@ import { useAppSelector } from "src/redux/app/hooks";
 import { actualLanguage } from "src/redux/features/languageSlice";
 import { getTextByLang } from "src/utils/getTextByLang";
 import UpperButtons from "./upperButtons/upperButtons";
-import { motion } from "framer-motion";
 import useMedia from "src/hooks/useMedia";
 import { HeaderStyled } from "./HeaderStyled";
-
+import { useLocation } from "react-router-dom";
 import { breakpoints } from "src/styles/theme";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import useMountTransition from "src/hooks/useMountTransition";
+
 export default function Header() {
   const { language: lang } = useAppSelector(actualLanguage);
   const text = getTextByLang(lang, headerText);
-  const mobile = useMedia(breakpoints.tablet);
+  const smallerThanTablet = useMedia(breakpoints.tablet);
+  const location = useLocation();
+  const isAbout = location.pathname === "/about";
+  const [isMounted, setIsMounted] = useState(isAbout);
+  const hasTransitionedIn = useMountTransition(isMounted, 1000);
+  useEffect(() => {
+    if (isAbout) {
+      setIsMounted(true);
+    } else {
+      setIsMounted(false);
+    }
+  }, [location]);
 
   return (
     <>
       <HeaderStyled>
-        {mobile ? (
+        {smallerThanTablet ? (
           <section>
             <article>
               <div className="langsContainer">
@@ -26,13 +40,20 @@ export default function Header() {
             </article>
             <article className="subTextAndImage">
               <h3>{text.description}</h3>
-              <motion.img
-                className="meinPhoto"
-                src={`images/me.webp`}
-                alt="Me"
-                width={120}
-                initial={false}
-              />
+              <div className="imageContainer">
+                <motion.img
+                  className="meinPhoto"
+                  src={`images/me.webp`}
+                  alt="Me"
+                  width={120}
+                  initial={false}
+                />
+                {hasTransitionedIn && (
+                  <div
+                    className={`${isMounted ? "grower" : "decreaser"}`}
+                  ></div>
+                )}
+              </div>
             </article>
           </section>
         ) : (
@@ -43,16 +64,23 @@ export default function Header() {
                   <UpperButtons />
                 </div>
                 <h1>{text.title}</h1>
-                <h3>{text.description}</h3>
+                <h2>{text.description}</h2>
               </article>
 
-              <motion.img
-                className="meinPhoto"
-                src={`images/me.webp`}
-                alt="Me"
-                width={120}
-                initial={false}
-              />
+              <div className="imageContainer">
+                <motion.img
+                  className="meinPhoto"
+                  src={`images/me.webp`}
+                  alt="Me"
+                  width={120}
+                  initial={false}
+                />
+                {hasTransitionedIn && (
+                  <div
+                    className={`${isMounted ? "grower" : "decreaser"}`}
+                  ></div>
+                )}
+              </div>
             </section>
           </>
         )}

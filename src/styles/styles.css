@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   background: var(--white);
+  overflow-x: hidden;
 
 }
 
@@ -40,7 +41,7 @@ a {
 
 .container {
   padding-top: 30px;
-  max-width: 1024px;
+  max-width: 950px;
   width: 90vw;
   flex: 1 1 100%;
 }

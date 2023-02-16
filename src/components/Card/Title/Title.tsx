@@ -18,9 +18,7 @@ export const Title = ({
   const { language: lang } = useAppSelector(actualLanguage);
   const { title, textColor, year, category, link } = project;
   const categoryLangugaged = getTextByLang(lang, category);
-  const handleClick = () => {
-    window.open(link, "_blank");
-  };
+
   return (
     <TitleStyled
       project={project}
@@ -28,7 +26,7 @@ export const Title = ({
       transition={isSelected ? openSpring : closeSpring}
     >
       {isSelected ? (
-        <Link onClick={handleClick} to={link}>
+        <a href={link} target="_blank">
           <h2 className="title titleOpened" style={{ color: textColor }}>
             {title}
             <motion.div
@@ -40,7 +38,7 @@ export const Title = ({
               <FaArrowRight style={{ color: textColor }} />
             </motion.div>
           </h2>
-        </Link>
+        </a>
       ) : (
         <h2 className="title" style={{ color: textColor }}>
           {title}

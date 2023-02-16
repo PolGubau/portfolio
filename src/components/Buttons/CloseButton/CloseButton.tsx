@@ -51,12 +51,21 @@ const CloseButton = ({ project }: { project: IProject }) => {
       <Link to={`/`} onClick={handleClick} className={"button red"}>
         <GrFormClose size={25} />
       </Link>
-      <Link to={project.githubLink} onClick={handleClick} className={"button"}>
-        <FiGithub size={18} />
-      </Link>
-      <Link to={project.link} onClick={handleClick} className={"button"}>
+
+      {project.githubLink && (
+        <a href={project.githubLink} onClick={handleClick} className={"button"}>
+          <FiGithub size={18} />
+        </a>
+      )}
+
+      <a
+        href={project.link}
+        onClick={handleClick}
+        target="_blank"
+        className={"button"}
+      >
         <BsSearch size={15} />
-      </Link>
+      </a>
     </CloseButtonStyled>
   );
 };

@@ -8,6 +8,46 @@ import {
 } from "./utils/Tags";
 export const cardData: IProject[] = [
   {
+    id: 11,
+    title: "Habits",
+    path: "Habits",
+    year: 2023,
+    category: {
+      English: "web",
+      Spanish: "web",
+      Catalan: "web",
+    },
+    pointOfInterest: { x: 50, y: 70 },
+
+    textColor: "#000",
+    width: 220,
+    backgroundColor: "#FFC8C8",
+    pathToImg: "/Habits/0.webp",
+    tags: ["React", "Ant Design", "Admin Pannel", "TypeScript"],
+    invisibleTags: [
+      ...tagsMobile,
+      "App",
+      "Aplicación",
+      "Mobile",
+      "scrud",
+      "Notes",
+      "TodoList",
+      "todo",
+      "2022",
+    ],
+
+    description: {
+      English:
+        "Stickies is an app to take notes and manage them. You can make private notes and classify them into categories.",
+      Spanish:
+        "Stickies es una app para tomar notas y manejarlas. Puedes hacer notas privadas y clasificarlas en categorías. ",
+      Catalan:
+        "Stickies és una app per prendre notes i manejar-les. Es poden fer notes privades i classificar-les en categories.",
+    },
+    githubLink: "https://github.com/PolGubau/habits",
+    link: "https://habitss.vercel.app/",
+  },
+  {
     id: 10,
     title: "Stickies",
     path: "Stickies",
@@ -44,7 +84,7 @@ export const cardData: IProject[] = [
       Catalan:
         "Stickies és una app per prendre notes i manejar-les. Es poden fer notes privades i classificar-les en categories.",
     },
-    githubLink: "",
+    githubLink: "https://github.com/PolGubau/stickies",
     link: "https://mystickies.vercel.app/",
   },
   {
@@ -89,7 +129,7 @@ export const cardData: IProject[] = [
       Catalan:
         "Cv Creator és una eina per generar currículums de manera web, es poden descarregar i cada usuari pot tenir infinitat de currículums.",
     },
-    githubLink: "",
+    githubLink: "https://github.com/PolGubau/uab-2022-Practica3",
 
     link: "https://pol-uab.alwaysdata.net/UAB/Web/3er/uab-2022-Practica3/",
   },
@@ -134,7 +174,7 @@ export const cardData: IProject[] = [
       Catalan:
         "Aplicació web dinàmica feta amb NextJS i usant una base de dades PostgreSQL, consisteix en una xarxa social de preguntes on els usuaris poden crear preguntes i respondre-les. L'usuari pot seguir altres usuaris i veure les seves preguntes, així com agregar-les com a favorites. Un sistema de login, seguiment i encriptació al Backend va ser desenvolupat. ",
     },
-    githubLink: "",
+    githubLink: "https://github.com/PolGubau/AskaQuest",
 
     link: "https://askaquest.vercel.app/",
   },
@@ -182,8 +222,7 @@ export const cardData: IProject[] = [
       Catalan:
         "Aplicació web i mòbil per a la visualització de continguts de la UAB Mèdia. En aquesta pàgina es poden veure les notícies, programes de televisió, de ràdio i entrevistes tant a temps real com a la carta. També escoltar la ràdio de la universitat.",
     },
-    githubLink: "",
-
+    githubLink: "https://github.com/orgs/UABmedia/repositories",
     link: "https://uab.media/",
   },
   {
@@ -219,7 +258,7 @@ export const cardData: IProject[] = [
       Catalan:
         "NUWE és una empresa de gamificació en contractar desenvolupadors. Treballo aquí com a dissenyador gràfic i porto les creativitats de xarxes socials, rollups... Plasmar visualment les idees dels meus companys.",
     },
-    githubLink: "",
+    figmaLink: "",
 
     link: "https://nuwe.io/",
   },
@@ -271,7 +310,7 @@ export const cardData: IProject[] = [
       Catalan:
         "Rispot és una petita empresa de venda de productes. He desenvolupat tot el sistema de la base de dades interna i 'Backstage' de la pàgina web, on es poden visualitzar les dades de totes les vendes i veure estadístiques d'aquestes.",
     },
-    githubLink: "",
+    githubLink: "https://github.com/PolGubau/Rispot",
 
     link: "https://www.amazon.es/s?i=merchant-items&me=A1O24E5ASY81J5&rh=p_4%3ARISPOT",
   },
@@ -314,7 +353,7 @@ export const cardData: IProject[] = [
       Catalan:
         "Gubau's Afternoons mostra on gastava les tardes quan anava a l'institut. La vaig fer servir de portafoli durant dos anys i és una de les pàgines que més he treballat. Es poden veure detalladament molts projectes que no he mostrat aquí.",
     },
-    githubLink: "",
+    githubLink: "https://github.com/PolGubau/gubauafternoons.com",
 
     link: "https://gubauafternoons.com/",
   },
@@ -373,7 +412,7 @@ export const cardData: IProject[] = [
       Catalan:
         "Un portafoli dinàmic per a Unbrushed, on mostrar les sessions de perruqueria i les seves col·laboracions. Tot el web es controla des d'una pàgina diferent on es modifica la base de dades. Es va crear tant el frontend com el backend.",
     },
-    githubLink: "",
+    githubLink: "https://github.com/PolGubau/Unbrushed",
 
     link: "https://pol-uab.alwaysdata.net/Otros/Unbrushed_PHP/Code/",
   },
@@ -418,7 +457,7 @@ export const cardData: IProject[] = [
       Catalan:
         "Škatla és un projecte universitari on vam crear una empresa de Packagings ecològics, es van realitzar quantitat de mockups i dissenys per a xarxes socials. Škatla crea caixes i marxandatge a demanda del client.",
     },
-    githubLink: "",
+    figmaLink: "",
 
     link: "https://www.instagram.com/skatlapack/",
   },
@@ -449,7 +488,7 @@ export const cardData: IProject[] = [
       Catalan:
         "Aquesta és una web que vaig fer per practicar el control dels codis hexadecimals dels colors i modificar-los. Està escrita amb PHP vanilla i pot crear paletes de colors amb el color i la quantitat que li diguis.",
     },
-    githubLink: "",
+    githubLink: "https://github.com/PolGubau/ThoseColors",
 
     link: "https://pol-uab.alwaysdata.net/Otros/ThoseColors/index.php",
   },
@@ -481,7 +520,6 @@ export const cardData: IProject[] = [
       Catalan:
         "Aquesta és una web que vaig completar amb Javascript per practicar l'ús del LocalStorage. Va ser duplicada de GitHub i vaig afegir funcionalitats com el canvi de color dels Memos.",
     },
-    githubLink: "",
     link: "https://pol-uab.alwaysdata.net/Otros/memo/",
   },
 ];
