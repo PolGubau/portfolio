@@ -7,18 +7,22 @@ import { Provider } from "react-redux";
 import { store } from "./redux/app/store";
 import Router from "./components/Router/Router";
 import LanguageButtons from "./components/Buttons/ButtonsOnTop/Language/LanguageButtons";
-
+import { ThemeProvider } from "styled-components";
+import { ThemeAtom } from "./Recoil/Atoms/ThemeAtoms";
+import { useRecoilValue, RecoilRoot } from "recoil";
+import { lightTheme } from "./styles/theme/lightTheme";
+import { darkTheme } from "./styles/theme/darkMode";
+import Hero from "./components/Hero/Hero";
 function App() {
   return (
     <div className="container">
-      <Provider store={store}>
-        <BrowserRouter>
-          <LanguageButtons />
-          <Header />
-          <Router />
-          <Footer />
-        </BrowserRouter>
-      </Provider>
+      <RecoilRoot>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Hero />
+          </BrowserRouter>
+        </Provider>
+      </RecoilRoot>
     </div>
   );
 }

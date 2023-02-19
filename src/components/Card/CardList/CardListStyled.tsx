@@ -11,8 +11,8 @@ export const CardListStyled = styled.section`
   max-width: 100vw;
   align-content: flex-start;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: flex-start;
+  justify-content: center;
 `;
 export const ContentStyled = styled.section`
   border-top: 1px solid ${colors.darkGray};

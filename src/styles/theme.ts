@@ -53,3 +53,4 @@ export const colors = {
   darkCyan: "#008B8B",
   transparent: "transparent",
 };
+
