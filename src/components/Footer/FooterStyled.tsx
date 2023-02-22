@@ -2,19 +2,19 @@ import { colors } from "src/styles/theme";
 import styled from "styled-components";
 
 export const FooterStyled = styled.footer`
-  border-top: 1px solid ${colors.black};
+  border-top: 1px solid ${({ theme }) => theme.colors.text};
   position: relative;
   margin-top: 40px;
   margin-bottom: 100px;
   h1 {
     font-weight: bold;
     font-size: 3rem;
-    color: ${colors.black};
+    color: ${({ theme }) => theme.colors.text};
     margin: 6px 0 12px;
   }
 
   a {
-    color: ${colors.black};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   section {
@@ -29,7 +29,7 @@ export const FooterStyled = styled.footer`
 
   .cv {
     padding: 15px 20px;
-    border: 1px solid ${colors.black};
+    border: 1px solid ${({ theme }) => theme.colors.text};
     :hover {
       cursor: pointer;
       background-color: ${colors.blue};

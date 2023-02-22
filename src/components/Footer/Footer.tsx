@@ -4,13 +4,13 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
 import { footerText } from "src/Consts";
 import { FooterTextInterface } from "src/Interfaces";
-import { useAppSelector } from "src/redux/app/hooks";
-import { actualLanguage } from "src/redux/features/languageSlice";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { FooterStyled } from "./FooterStyled";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { useRecoilValue } from "recoil";
 export default function Footer() {
-  const { language } = useAppSelector(actualLanguage);
-  const text: FooterTextInterface = getTextByLang(language, footerText);
+  const l = useRecoilValue(LanguageAtom);
+  const text: FooterTextInterface = getTextByLang(l.code, footerText);
   return (
     <>
       <FooterStyled>

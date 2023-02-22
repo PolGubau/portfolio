@@ -1,22 +1,20 @@
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useMedia from "src/hooks/useMedia";
-import { changeSomeProjectSelectedActionCreator } from "src/redux/features/selectedSlice";
 import { breakpoints } from "src/styles/theme";
 import styled from "styled-components";
+import { useRecoilState } from "recoil";
+import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
+import { emptyProject } from "src/utils/empties/Project";
+
 const OverlayStyled = styled(motion.div)`
   bottom: 0;
   left: 50%;
   width: 100vw;
   position: fixed;
   top: 0;
-  background-image: linear-gradient(
-    to top,
-    #ffffff 0%,
-    rgba(245, 245, 245, 0.5) 40%
-  );
-  /* opacity: 1; */
+  background-color: ${({ theme }) => theme.colors.background};
+  opacity: 0.8;
   transform: translateX(-50%);
   width: 100%;
   cursor: pointer;
@@ -33,13 +31,17 @@ const OverlayStyled = styled(motion.div)`
   }
 `;
 const Overlay = () => {
-  const dispatch = useDispatch();
+  const [projectSelected, setProjectSelected] =
+    useRecoilState(projectSelectedAtom);
+
   const navigate = useNavigate();
   const mobile = useMedia(breakpoints.tablet);
+  //
   const handleClick = () => {
-    dispatch(changeSomeProjectSelectedActionCreator(false));
+    setProjectSelected(emptyProject);
     navigate("/");
   };
+
   return (
     <>
       {!mobile && (

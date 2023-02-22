@@ -1,4 +1,3 @@
-import { fontSizes } from "src/styles/theme";
 import styled from "styled-components";
 
 export const DescriptionStyled = styled.article`

@@ -237,10 +237,10 @@ export const cardData: IProject[] = [
       Spanish: "diseño",
       Catalan: "disseny",
     },
-    pointOfInterest: { x: 90, y: 20 },
+    pointOfInterest: { x: 20, y: 20 },
 
     textColor: "#000",
-    width: 320,
+    width: 300,
     backgroundColor: "#c1ffab",
     pathToImg: "/NUWE/0.webp",
     tags: ["Figma", "Illustrator", "Photoshop"],

@@ -1,12 +1,18 @@
+import { colors } from "../theme";
 import { baseTheme } from "./baseTheme";
 
 export const darkTheme = {
   ...baseTheme,
   colors: {
-    primary: "#FFA500",
-    secondary: "#00CED1",
-    accent: "#FF1493",
-    background: "#222222",
+    main: "#262335",
+    background: "#2b2d31",
     text: "#F5F5F5",
+    buttons: {
+      base: "#b8b9bf",
+      hover: colors.gray,
+      active: colors.darkPurple,
+      disabled: colors.lightGray,
+      text: colors.black,
+    },
   },
 };

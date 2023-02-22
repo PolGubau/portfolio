@@ -4,49 +4,17 @@ import { Link, useParams } from "react-router-dom";
 import { cardTexts } from "src/Consts";
 import { cardData } from "src/Data";
 import { IProject } from "src/Interfaces";
-import { useAppSelector } from "src/redux/app/hooks";
-import { actualLanguage } from "src/redux/features/languageSlice";
 import { colors } from "src/styles/theme";
 import { getTextByLang } from "src/utils/getTextByLang";
 import styled from "styled-components";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { useRecoilValue } from "recoil";
+import { CentralActionsButtonsStyle } from "./Styled";
 
-const CentralActionsButtonsStyle = styled.section`
-  position: fixed;
-  width: 100%;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  flex-direction: row;
-  z-index: 100;
-  .search {
-    background-color: ${colors.black};
-    color: ${colors.white};
-    padding: 10px 20px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-    svg {
-      color: ${colors.white};
-      fill: white;
-    }
-  }
-`;
 const CentralActionsButtons = () => {
   const params = useParams<{ path: string }>();
   const cardPath: string = params.path || "";
-  const { language: lang } = useAppSelector(actualLanguage);
+  const lang = useRecoilValue(LanguageAtom);
   if (!cardPath) return null;
 
   const project: IProject | undefined = cardData.find(
@@ -54,7 +22,7 @@ const CentralActionsButtons = () => {
   );
   if (!project) return null;
 
-  const text = getTextByLang(lang, cardTexts);
+  const text = getTextByLang(lang.code, cardTexts);
 
   const ids = cardData.map((project) => project.id);
   const actualID = ids.indexOf(project.id);
@@ -72,7 +40,9 @@ const CentralActionsButtons = () => {
         </Link>
         <a className="search" href={project.link} target="_blank">
           {text.linkButton}
-          <BsSearch color={colors.white} />
+          <span>
+            <BsSearch color={colors.white} />
+          </span>
         </a>
         <Link to={`/${nextPath}`} className="changeProjectLink">
           <FaArrowRight size={25} />

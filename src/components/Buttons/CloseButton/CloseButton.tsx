@@ -1,12 +1,13 @@
 import { GrFormClose } from "react-icons/gr";
 import { FiGithub } from "react-icons/fi";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { changeSomeProjectSelectedActionCreator } from "src/redux/features/selectedSlice";
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import { IProject } from "src/Interfaces";
 import { colors } from "src/styles/theme";
+import { useRecoilState } from "recoil";
+import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
+import { emptyProject } from "src/utils/empties/Project";
 const CloseButtonStyled = styled.div`
   position: absolute;
   right: 10px;
@@ -26,9 +27,9 @@ const CloseButtonStyled = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: ${colors.blue};
+    background-color: ${({ theme }) => theme.colors.main};
 
-    color: black;
+    color: ${({ theme }) => theme.colors.text};
     aspect-ratio: 1/1;
     :hover {
       background-color: ${colors.darkBlue};
@@ -42,9 +43,10 @@ const CloseButtonStyled = styled.div`
   }
 `;
 const CloseButton = ({ project }: { project: IProject }) => {
-  const dispatch = useDispatch();
+  const [someProjectSelected, setSomeProjectSelected] =
+    useRecoilState(projectSelectedAtom);
   const handleClick = () => {
-    dispatch(changeSomeProjectSelectedActionCreator(false));
+    setSomeProjectSelected(emptyProject);
   };
   return (
     <CloseButtonStyled>

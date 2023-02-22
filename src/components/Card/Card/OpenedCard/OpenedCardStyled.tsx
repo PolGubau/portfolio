@@ -31,7 +31,7 @@ export const OpenedCardStyled = styled(motion.li)<CardInterfaceInline>`
     pointer-events: auto;
     position: relative;
     border-radius: 20px;
-    background: ${colors.blue};
+    background: ${({ theme }) => theme.colors.main};
     /* overflow-x: hidden; */
     margin: 0 auto;
   }
@@ -39,7 +39,7 @@ export const OpenedCardStyled = styled(motion.li)<CardInterfaceInline>`
   .openPC {
     top: 10vh;
     width: 90vw;
-    max-width: 900px;
+    max-width: 920px;
     max-height: 100vh;
     height: fit-content;
     left: 0;

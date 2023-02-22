@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import About from "src/Pages/About/About";
 import List from "../Card/CardList/CardList";

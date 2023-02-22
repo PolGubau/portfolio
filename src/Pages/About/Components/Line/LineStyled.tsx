@@ -5,8 +5,8 @@ export const LineStyled = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
-  z-index: -1;
   text-align: center;
   height: -webkit-fit-content;
   height: -moz-fit-content;

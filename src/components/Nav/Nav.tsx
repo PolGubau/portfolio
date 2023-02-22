@@ -5,18 +5,17 @@ import { IoMdRefresh } from "react-icons/io";
 import { navTexts } from "src/Consts";
 import { BiSearch } from "react-icons/bi";
 import useMedia from "src/hooks/useMedia";
-import { useAppSelector } from "src/redux/app/hooks";
-import { actualLanguage } from "src/redux/features/languageSlice";
+
 import { getTextByLang } from "src/utils/getTextByLang";
 import { NavStyled } from "./NavStyled";
 import { breakpoints } from "src/styles/theme";
 import { cardData } from "src/Data";
 import { useDispatch } from "react-redux";
-import {
-  getInputValue,
-  setInputValueActionCreator,
-} from "src/redux/features/searchInputSlice";
+
 import { useCallback } from "react";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { useRecoilValue, useRecoilState } from "recoil";
+import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
 
 export const Nav = memo(
   ({
@@ -28,25 +27,23 @@ export const Nav = memo(
   }): JSX.Element => {
     const allData: IProject[] = cardData;
     const mobile = useMedia(breakpoints.tablet);
-    const value = useAppSelector(getInputValue);
 
     const [newest, setNewest] = useState<boolean>(false);
     const [filtered, setFiltered] = useState<boolean>(false);
-    const dispatch = useDispatch();
-
-    const { language } = useAppSelector(actualLanguage);
-    const text = getTextByLang(language, navTexts);
+    const [searched, setSearched] = useRecoilState(SearchProjectAtom);
+    const language = useRecoilValue(LanguageAtom);
+    const text = getTextByLang(language.code, navTexts);
     const filteringByTagsAndTitle = () => {
       // when we write in the input, will be checked if the tag, title, or description starts like the value or contains the input value
       setFilter(
         allData.filter(
           (card) =>
             card.tags.some((tag) =>
-              tag.toLowerCase().startsWith(value.toLowerCase())
+              tag.toLowerCase().startsWith(searched.toLowerCase())
             ) ||
-            card.title.toLowerCase().startsWith(value.toLowerCase()) ||
+            card.title.toLowerCase().startsWith(searched.toLowerCase()) ||
             card.invisibleTags?.some((tag) =>
-              tag.toLowerCase().startsWith(value.toLowerCase())
+              tag.toLowerCase().startsWith(searched.toLowerCase())
             )
         )
       );
@@ -70,7 +67,7 @@ export const Nav = memo(
       setFilter(allData);
       setNewest(false);
       setFiltered(false);
-      dispatch(setInputValueActionCreator(""));
+      setSearched("");
     };
 
     const filterTags = (e: any) => {
@@ -84,25 +81,24 @@ export const Nav = memo(
       }
       filteringByTagsAndTitle();
     };
-    if (value) {
+    if (searched) {
       setFilter(
         allData.filter((card) =>
           card.tags.some((tag) =>
-            tag.toLowerCase().startsWith(value.toLowerCase())
+            tag.toLowerCase().startsWith(searched.toLowerCase())
           )
         )
       );
     }
 
-    const handleChange = (e: any) =>
-      useCallback((e: any) => {
-        dispatch(setInputValueActionCreator(e.target.value));
-        filterTags(e);
+    const handleChange = (e: any) => {
+      setSearched(e.target.value);
+      filterTags(e);
 
-        if (e.target.value === "") {
-          setFiltered(false);
-        }
-      }, []);
+      if (e.target.value === "") {
+        setFiltered(false);
+      }
+    };
 
     return (
       <NavStyled>
@@ -110,7 +106,7 @@ export const Nav = memo(
           <div className={`searchNav ${mobile ? "mobileSearch" : ""}`}>
             <div
               className={`inputWithIcon ${
-                value.length > 0 ? "activeInput" : ""
+                searched.length > 0 ? "activeInput" : ""
               }`}
             >
               <div className="inputIconDiv">
@@ -123,14 +119,14 @@ export const Nav = memo(
                 maxLength={20}
                 type="text"
                 className={`input `}
-                value={value}
+                value={searched}
                 placeholder={text.placeholder}
                 onChange={handleChange}
               />
             </div>
           </div>
           <div className={`filterNav`}>
-            {value.length === 0 && (
+            {searched.length === 0 && (
               <ul className="filterWord-container">
                 <li
                   className="filterWord"

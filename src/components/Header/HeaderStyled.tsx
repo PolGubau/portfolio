@@ -19,6 +19,7 @@ export const HeaderStyled = styled.header`
     animation: ${appear} 0.3s ease-in-out;
   }
   h1 {
+    z-index: 2;
     font-weight: bold;
     font-size: ${fontSizes.largeTitle};
     color: rgb(0, 0, 0);
@@ -27,6 +28,7 @@ export const HeaderStyled = styled.header`
   }
 
   h2 {
+    z-index: 2;
     margin: 0 0 15px 0;
     font-weight: 400;
     font-size: 1.5em;
@@ -72,10 +74,12 @@ export const HeaderStyled = styled.header`
     background-color: ${colors.lightBlue};
 
     .meinPhoto {
+      z-index: 2;
       object-fit: cover;
       border-radius: 50%;
     }
     .grower {
+      z-index: -1;
       animation: 0.5s ${grow} ease;
       width: 120px;
       height: 120px;
@@ -83,7 +87,6 @@ export const HeaderStyled = styled.header`
       border-radius: 50%;
       position: absolute;
       background-color: ${colors.lightBlue};
-      z-index: -1;
     }
     .decreaser {
       animation: 0.5s ease-in ${decreaseFrom10};
@@ -93,7 +96,6 @@ export const HeaderStyled = styled.header`
       border-radius: 50%;
       position: absolute;
       background-color: ${colors.lightBlue};
-      z-index: -1;
     }
   }
 

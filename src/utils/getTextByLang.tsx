@@ -1,5 +1,7 @@
+import { availableLangCodesType } from "src/Constants/Languages";
+
 export const getTextByLang = (
-  lang: any,
+  lang: availableLangCodesType,
   text: {
     English: any;
     Spanish: any;
@@ -9,7 +11,6 @@ export const getTextByLang = (
   switch (lang) {
     case "EN":
       return text.English;
-
     case "ES":
       return text.Spanish;
     case "CA":

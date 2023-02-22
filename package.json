@@ -15,6 +15,7 @@
     "@reduxjs/toolkit": "^1.9.1",
     "framer-motion": "6.4.0",
     "react": "^16.14.0",
+    "react-country-flag": "^3.0.2",
     "react-device-orientation": "^0.1.0",
     "react-dom": "16.8.4",
     "react-icons": "4.4.0",

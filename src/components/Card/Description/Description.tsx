@@ -1,24 +1,18 @@
 import Madefor from "./MadeFor/MadeFor";
-import { useAppSelector } from "src/redux/app/hooks";
-import { actualLanguage } from "src/redux/features/languageSlice";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { IProject } from "src/Interfaces";
 import { DescriptionStyled } from "./DescriptionStyled";
-
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { useRecoilValue } from "recoil";
 export default function Description({ project }: { project: IProject }) {
-  const { description } = project;
-
-  const { language: lang } = useAppSelector(actualLanguage);
-  const descriptionText = getTextByLang(lang, description);
-
+  const l = useRecoilValue(LanguageAtom);
+  const descriptionText = getTextByLang(l.code, project.description);
   return (
-    <>
-      <DescriptionStyled>
-        <header>
-          <Madefor madeFor={project.madeFor} />
-        </header>
-        <p>{descriptionText}</p>
-      </DescriptionStyled>
-    </>
+    <DescriptionStyled>
+      <header>
+        <Madefor madeFor={project.madeFor} />
+      </header>
+      <p>{descriptionText}</p>
+    </DescriptionStyled>
   );
 }

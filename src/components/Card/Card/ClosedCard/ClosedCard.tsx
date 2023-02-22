@@ -4,8 +4,8 @@ import { IProject } from "src/Interfaces";
 import { closeSpring } from "../../utils/animations";
 import { ClosedCardStyled } from "./ClosedCardStyled";
 import { Title } from "../../Title/Title";
-import { useDispatch } from "react-redux";
-import { changeSomeProjectSelectedActionCreator } from "src/redux/features/selectedSlice";
+import { useRecoilState } from "recoil";
+import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 
 interface CardInterfaceInline {
   project: IProject;
@@ -14,12 +14,13 @@ interface CardInterfaceInline {
 }
 
 export const ClosedCard = memo(({ project, index }: CardInterfaceInline) => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const cardRef = useRef(null);
+  const [projectSelected, setProjectSelected] =
+    useRecoilState(projectSelectedAtom);
 
   const handleClick = () => {
-    dispatch(changeSomeProjectSelectedActionCreator(true));
+    setProjectSelected(project);
     navigate(`/${project.path}`);
   };
   return (

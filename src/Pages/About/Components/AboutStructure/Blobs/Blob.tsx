@@ -33,6 +33,8 @@ const Blob = ({ blob }: { blob: IDataBlobs }) => {
       },
     },
   };
+  const hasUpperTitle = blob.upperTitle ? true : false;
+
   return (
     <BlobStyled
       width={blob.style.width}
@@ -40,7 +42,7 @@ const Blob = ({ blob }: { blob: IDataBlobs }) => {
       marginTop={blob.style.marginTop}
       color={blob.style.color}
       placed={blob.placed}
-      hasUpperTitle={blob.upperTitle ? true : false}
+      hasUpperTitle
       className="box b2"
       initial="offscreen"
       whileInView="onscreen"

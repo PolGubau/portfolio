@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface StyledProps {
   color: string;
+  hasUpperTitle: boolean;
 }
 export const BlobMobileStyled: any = styled(motion.div)<StyledProps>`
   width: 100%;

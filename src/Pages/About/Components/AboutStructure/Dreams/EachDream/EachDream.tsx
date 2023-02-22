@@ -54,7 +54,7 @@ const EachDream = ({ dream }: { dream: any }) => {
         setIsHovered(false);
       }}
     >
-      <Styled done={dream.status} ishovered={isHovered as boolean}>
+      <Styled done={dream.status}>
         {dream.status === "done" && (
           <>
             <motion.div

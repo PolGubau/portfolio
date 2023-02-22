@@ -1,4 +1,3 @@
-import { breakpoints, colors } from "src/styles/theme";
 import styled from "styled-components";
 interface StyledProps {
   smallerThanTablet: boolean;
@@ -22,7 +21,6 @@ export const AboutStructureStyled = styled.main<StyledProps>`
     position: absolute;
     border-radius: 50%;
     transform: translate(-60%, -80px);
-    z-index: -10;
     user-select: none;
     pointer-events: none;
     width: 1200px;
@@ -35,7 +33,6 @@ export const AboutStructureStyled = styled.main<StyledProps>`
     bottom: 0;
     right: 0;
     transform: translate(60%, 50%);
-    z-index: -10;
     user-select: none;
     pointer-events: none;
     width: 1200px;

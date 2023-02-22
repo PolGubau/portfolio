@@ -54,15 +54,15 @@ export const footerText: FooterDataInterface = {
 export const headerText: HeaderDataInterface = {
   English: {
     title: "Pol Gubau Amores",
-    description: "Junior Full-Stack Developer and UX designer.",
+    description: "Full-Stack Developer and UX designer.",
   },
   Spanish: {
     title: "Pol Gubau Amores",
-    description: "Desarrollador Junior Full-Stack y diseñador UX.",
+    description: "Desarrollador Full-Stack y diseñador UX.",
   },
   Catalan: {
     title: "Pol Gubau Amores",
-    description: "Programador Junior Full-Stack i dissenyador UX.",
+    description: "Programador Full-Stack i dissenyador UX.",
   },
 };
 export const errorOnSearch: IErrorLanguages = {

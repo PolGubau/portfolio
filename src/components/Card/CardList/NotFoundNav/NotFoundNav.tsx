@@ -1,8 +1,8 @@
 import { MouseEventHandler } from "react";
 import { errorOnSearch } from "src/Consts";
-import { useAppSelector } from "src/redux/app/hooks";
-import { actualLanguage } from "src/redux/features/languageSlice";
 import { NotFoundStyled } from "./NotFoundStyled";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { useRecoilValue } from "recoil";
 export default function NotFoundNav({
   value,
   resetFilters,
@@ -10,10 +10,10 @@ export default function NotFoundNav({
   value: string;
   resetFilters: MouseEventHandler<HTMLButtonElement>;
 }): JSX.Element {
-  const lang = useAppSelector(actualLanguage);
+  const lang = useRecoilValue(LanguageAtom);
   return (
     <NotFoundStyled>
-      {lang === "English" && (
+      {lang.code === "EN" && (
         <>
           <h3>{errorOnSearch.English.title}</h3>
           <p>
@@ -24,7 +24,7 @@ export default function NotFoundNav({
           </button>
         </>
       )}
-      {lang === "Spanish" && (
+      {lang.code === "ES" && (
         <>
           <h3>{errorOnSearch.Spanish.title}</h3>
           <p>
@@ -35,7 +35,7 @@ export default function NotFoundNav({
           </button>
         </>
       )}
-      {lang === "Catalan" && (
+      {lang.code === "CA" && (
         <>
           <h3>{errorOnSearch.Catalan.title}</h3>
           <p>

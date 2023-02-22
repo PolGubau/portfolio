@@ -14,12 +14,6 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
   z-index: 3;
 
   .title {
-    /* background-color: ${(props) => props.project.backgroundColor}; */
-    text-shadow: -1px -1px 0 ${(props) => props.project.backgroundColor},
-      1px -1px 0 ${(props) => props.project.backgroundColor},
-      -1px 1px 0 ${(props) => props.project.backgroundColor},
-      1px 1px 0 ${(props) => props.project.backgroundColor};
-
     border-radius: 10px;
     display: flex;
     font-size: 1.8em;
@@ -53,10 +47,6 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
     margin: 0px 0;
     padding: 0;
     text-transform: uppercase;
-    text-shadow: -1px -1px 0 ${(props) => props.project.backgroundColor},
-      1px -1px 0 ${(props) => props.project.backgroundColor},
-      -1px 1px 0 ${(props) => props.project.backgroundColor},
-      1px 1px 0 ${(props) => props.project.backgroundColor};
   }
 
   .yearCard {
@@ -83,7 +73,8 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
   .Description-tag {
     padding: 4px 8px;
     border-radius: 10px;
-    background-color: ${colors.darkBlue};
+    background-color: ${(props) => props.theme.colors.buttons.base};
+    color: ${(props) => props.theme.colors.buttons.text};
     margin: 5px;
   }
 `;

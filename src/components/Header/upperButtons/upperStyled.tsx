@@ -20,7 +20,7 @@ export const LanguageStyled = styled.div`
     border-radius: 15px;
     background-color: ${colors.lightGray};
     :hover {
-      background-color: ${colors.lightBlue};
+      background-color: ${({ theme }) => theme.colors.main};
     }
   }
 

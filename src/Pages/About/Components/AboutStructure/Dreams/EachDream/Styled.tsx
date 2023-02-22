@@ -3,7 +3,6 @@ import styled, { keyframes } from "styled-components";
 
 interface StyledProps {
   done: boolean;
-  ishovered: boolean;
 }
 
 export const spin = keyframes`
@@ -39,7 +38,7 @@ export const Styled = styled(motion.div)<StyledProps>`
     height: 1px;
     background-color: #000000;
     opacity: 0.2;
-    display: ${(props) => (props.ishovered ? "none" : "flex")};
+    display: flex;
   }
 
   .loadingIcon {

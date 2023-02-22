@@ -1,9 +1,15 @@
+export interface ITextByLanguage {
+  English: string;
+  Spanish: string;
+  Catalan: string;
+}
+
 export interface IProject {
   id: number;
   path: string;
   title: string;
   year: number;
-  category: { English: string; Spanish: string; Catalan: string };
+  category: ITextByLanguage;
   pointOfInterest: { x: number; y: number };
   textColor: string;
   backgroundColor: string;
@@ -11,8 +17,8 @@ export interface IProject {
   pathToImg: string;
   tags: string[];
   invisibleTags?: string[];
-  madeFor?: { English: string; Spanish: string; Catalan: string };
-  description: { English: string; Spanish: string; Catalan: string };
+  madeFor?: ITextByLanguage;
+  description: ITextByLanguage;
   githubLink?: string;
   figmaLink?: string;
   link: string;

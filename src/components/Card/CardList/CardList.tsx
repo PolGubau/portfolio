@@ -1,23 +1,18 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { cardData } from "src/Data";
-import useMedia from "src/hooks/useMedia";
 import Nav from "src/components/Nav/Nav";
 
 import NotFoundNav from "./NotFoundNav/NotFoundNav";
-import ButtonsOnTop from "src/components/Buttons/ButtonsOnTop/ScrollButtons";
-import { breakpoints } from "src/styles/theme";
-import CentralActionsButtons from "src/components/Buttons/ButtonsOnTop/CentralActionsButtons";
+import CentralActionsButtons from "src/components/Buttons/ButtonsOnTop/CentralProjectButtons/CentralActionsButtons";
 import { CardListStyled, ContentStyled } from "./CardListStyled";
 import { OpenedCard } from "../Card/OpenedCard/OpenedCard";
 import { ClosedCard } from "../Card/ClosedCard/ClosedCard";
-import { thereIsAProjectSelected } from "src/redux/features/selectedSlice";
-import { useAppSelector } from "src/redux/app/hooks";
-import { getInputValue } from "src/redux/features/searchInputSlice";
+import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
+import { useRecoilState } from "recoil";
 
 const List = () => {
-  const inputValue = useAppSelector(getInputValue);
-  const [value, setValue] = useState(inputValue);
+  const [searched, setSearched] = useRecoilState(SearchProjectAtom);
 
   const { path } = useParams();
 
@@ -25,16 +20,15 @@ const List = () => {
   const [shown, setShown] = useState(cardData);
 
   const resetFilters = () => {
-    setValue("");
+    setSearched("");
     setShown(cardData);
   };
 
   return (
     <ContentStyled>
-      {!useAppSelector(thereIsAProjectSelected) && <ButtonsOnTop />}
       <Nav filter={shown} setFilter={setShown} />
       {shown.length === 0 && (
-        <NotFoundNav resetFilters={resetFilters} value={value} />
+        <NotFoundNav resetFilters={resetFilters} value={searched} />
       )}
       <CardListStyled>
         {shown.map((card, index) =>

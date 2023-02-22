@@ -2,11 +2,9 @@ import { IDataBlobs } from "../../dataBlobs";
 import { BlobMobileStyled } from "./BlobMobileStyled";
 
 const BlobMobile = ({ blob }: { blob: IDataBlobs }) => {
+  const hasUpperTitle = blob.upperTitle ? true : false;
   return (
-    <BlobMobileStyled
-      color={blob.style.color}
-      hasUpperTitle={blob.upperTitle ? true : false}
-    >
+    <BlobMobileStyled color={blob.style.color} hasUpperTitle>
       <article>
         <div className="titles">
           {blob.upperTitle && <p className="upperTitle">{blob.upperTitle}</p>}

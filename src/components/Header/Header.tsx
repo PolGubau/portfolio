@@ -1,6 +1,4 @@
 import { headerText } from "src/Consts";
-import { useAppSelector } from "src/redux/app/hooks";
-import { actualLanguage } from "src/redux/features/languageSlice";
 import { getTextByLang } from "src/utils/getTextByLang";
 import UpperButtons from "./upperButtons/upperButtons";
 import useMedia from "src/hooks/useMedia";
@@ -10,10 +8,12 @@ import { breakpoints } from "src/styles/theme";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMountTransition from "src/hooks/useMountTransition";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { useRecoilValue } from "recoil";
 
 export default function Header() {
-  const { language: lang } = useAppSelector(actualLanguage);
-  const text = getTextByLang(lang, headerText);
+  const l = useRecoilValue(LanguageAtom);
+  const text = getTextByLang(l.code, headerText);
   const smallerThanTablet = useMedia(breakpoints.tablet);
   const location = useLocation();
   const isAbout = location.pathname === "/about";

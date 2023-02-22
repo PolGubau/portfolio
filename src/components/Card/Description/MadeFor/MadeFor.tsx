@@ -1,9 +1,8 @@
-import { useAppSelector } from "src/redux/app/hooks";
-import { actualLanguage } from "src/redux/features/languageSlice";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { IMadeForTextOneLanguage, madeForText } from "./MadeFor.text";
 import "./MadeforModule.css";
-
+import { useRecoilValue } from "recoil";
 //
 
 export default function Madefor({
@@ -17,10 +16,10 @@ export default function Madefor({
         Catalan: string;
       };
 }) {
-  const { language: lang } = useAppSelector(actualLanguage);
+  const l = useRecoilValue(LanguageAtom);
 
-  const text: IMadeForTextOneLanguage = getTextByLang(lang, madeForText);
-  const whoIMadeFor = madeFor ? getTextByLang(lang, madeFor) : "";
+  const text: IMadeForTextOneLanguage = getTextByLang(l.code, madeForText);
+  const whoIMadeFor = madeFor ? getTextByLang(l.code, madeFor) : "";
 
   return !whoIMadeFor ? (
     <p className="bold">{text.forMe}</p>

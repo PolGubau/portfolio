@@ -9,7 +9,7 @@ export const NavStyled = styled.nav`
   margin: 0 0 0 0;
   padding: 0px;
   list-style: none;
-  color: ${colors.black};
+  color: ${({ theme }) => theme.colors.text};
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   text-decoration: none;
@@ -69,7 +69,7 @@ export const NavStyled = styled.nav`
 
   .inputWithIcon {
     width: 200px;
-    border: 1px solid black;
+    border: 1px solid ${({ theme }) => theme.colors.text};
     display: flex;
     border-top: none;
     outline: none;
@@ -89,7 +89,8 @@ export const NavStyled = styled.nav`
     width: calc(100% - 20px);
     border: none;
     border-radius: 0 0 15px 0;
-
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
     outline: none;
     align-items: center;
     align-content: center;
@@ -106,7 +107,7 @@ export const NavStyled = styled.nav`
     padding: 3px 7px;
     border-radius: 0 0 15px 15px;
     :hover {
-      background-color: ${colors.lightBlue};
+      background-color: ${({ theme }) => theme.colors.main};
       cursor: pointer;
     }
   }
@@ -116,7 +117,7 @@ export const NavStyled = styled.nav`
     flex-direction: row;
     margin: 0 0 0 0;
     padding: 8px 5px 5px 5px;
-    color: ${colors.black};
+    color: ${({ theme }) => theme.colors.text};
     cursor: pointer;
     align-items: center;
     align-content: center;
@@ -131,14 +132,14 @@ export const NavStyled = styled.nav`
     flex-direction: row;
     margin: 0 0 0 0;
     padding: 8px 5px 5px 5px;
-    color: ${colors.black};
+    color: ${({ theme }) => theme.colors.text};
     cursor: pointer;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
     border-radius: 0 0 10px 10px;
     :hover {
-      background-color: ${colors.lightBlue};
+      background-color: ${({ theme }) => theme.colors.main};
     }
   }
 
@@ -174,7 +175,7 @@ export const NavStyled = styled.nav`
     .inputWithIcon {
       width: 100%;
       border-radius: 20px;
-      border: 1px solid ${colors.black};
+      border: 1px solid ${({ theme }) => theme.colors.text};
       justify-content: space-between;
     }
 

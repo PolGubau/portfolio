@@ -25,3 +25,13 @@ export const decreaseFrom10 = keyframes`
     from{ transform: scale(10, 10); }
     to { transform: scale(1, 1); }
 `;
+
+export const rotate180 = keyframes`
+    
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+`;

@@ -4,10 +4,9 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IProject } from "src/Interfaces";
 import { getTextByLang } from "src/utils/getTextByLang";
-import { useAppSelector } from "src/redux/app/hooks";
-import { actualLanguage } from "src/redux/features/languageSlice";
 import { TitleStyled } from "./TitleStyled";
-
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { useRecoilValue } from "recoil";
 export const Title = ({
   project,
   isSelected,
@@ -15,9 +14,10 @@ export const Title = ({
   project: IProject;
   isSelected: boolean;
 }) => {
-  const { language: lang } = useAppSelector(actualLanguage);
+  const l = useRecoilValue(LanguageAtom);
+
   const { title, textColor, year, category, link } = project;
-  const categoryLangugaged = getTextByLang(lang, category);
+  const categoryLangugaged = getTextByLang(l.code, category);
 
   return (
     <TitleStyled
