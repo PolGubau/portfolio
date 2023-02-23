@@ -23,7 +23,7 @@ export default function CustomSelect() {
   };
   const isSmallerThanTablet = useMedia(breakpoints.tablet);
   return (
-    <LanguageButtons onClick={handleTrigger}>
+    <LanguageButtons onClick={handleTrigger} isSelectingLanguage={langSelector}>
       {langSelector && (
         <>
           <div className="selectorLanguage">

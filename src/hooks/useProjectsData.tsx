@@ -1,6 +1,8 @@
 import { useRecoilState } from "recoil";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
+import { cardData } from "src/Data";
 
+//
 export const useProjectsData = () => {
   const [projects, setProjects] = useRecoilState(SearchProjectAtom);
 
@@ -14,5 +16,29 @@ export const useProjectsData = () => {
     });
   };
 
-  return { projects, setProjects, projectsFiltered };
+  const resetShowingList = () => {
+    setProjects({
+      ...projects,
+      toShow: cardData,
+    });
+  };
+  const resetSearch = () => {
+    setProjects({
+      ...projects,
+      search: "",
+    });
+  };
+  const resetAll = () => {
+    resetShowingList();
+    resetSearch();
+  };
+
+  return {
+    projects,
+    setProjects,
+    projectsFiltered,
+    resetShowingList,
+    resetSearch,
+    resetAll,
+  };
 };

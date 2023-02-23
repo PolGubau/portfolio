@@ -13,12 +13,7 @@ export const spin = keyframes`
         transform: rotate(360deg);
     }
 `;
-const applyOpacityToColor = (color: any, opacity: number) => {
-  const opacityHex = Math.round(opacity * 255)
-    .toString(16)
-    .padStart(2, "0");
-  return `${color}${opacityHex}`;
-};
+
 const mainColor = ({ theme }: any) => theme.colors.text;
 const textColor = ({ theme }: any) => theme.colors.text;
 const backgroundColor = ({ theme }: any) => theme.colors.background;
@@ -33,11 +28,12 @@ export const Styled = styled(motion.div)<StyledProps>`
   width: fit-content;
   padding: 5px 10px;
   flex-direction: row;
-  background: ${applyOpacityToColor(textColor, 0.25)};
-  box-shadow: 0 4px 30px ${applyOpacityToColor(textColor, 0.1)};
+  background: ${({ theme }) => theme.colors.opacity50.main};
+  /* opacity to background */
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid ${applyOpacityToColor(textColor, 0.2)};
+  border: 1px solid ${({ theme }) => theme.colors.text};
   justify-content: center;
   transition: 0.3s ease;
   align-items: center;

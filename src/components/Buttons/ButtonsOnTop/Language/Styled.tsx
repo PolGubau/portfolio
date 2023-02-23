@@ -1,7 +1,12 @@
+import { useRecoilValue } from "recoil";
+import { ToggleLanguageSelectorAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { baseTheme } from "src/styles/theme/baseTheme";
 import styled from "styled-components";
-
-export const LanguageButtons = styled.div`
+//
+interface IProps {
+  isSelectingLanguage: boolean;
+}
+export const LanguageButtons = styled.div<IProps>`
   .trigger {
     display: flex;
     align-items: center;
@@ -11,11 +16,22 @@ export const LanguageButtons = styled.div`
     bottom: 30px;
     left: 25px;
     color: ${(props) => props.theme.colors.text};
-    border: 2px solid ${({ theme }) => theme.colors.background};
+    border: 2px solid
+      ${({ isSelectingLanguage }) =>
+        isSelectingLanguage
+          ? ({ theme }) => theme.colors.text
+          : ({ theme }) => theme.colors.background};
     padding: 10px;
     border-radius: 15px;
-    background-color: ${(props) => props.theme.colors.buttons.base};
+    background-color: ${({ isSelectingLanguage }) =>
+      isSelectingLanguage
+        ? ({ theme }) => theme.colors.buttons.hover
+        : ({ theme }) => theme.colors.buttons.base};
     cursor: pointer;
+    :hover {
+      background-color: ${({ theme }) => theme.colors.buttons.hover};
+      border: 2px solid ${({ theme }) => theme.colors.text};
+    }
     @media screen and (max-width: ${baseTheme.breakpoints.tablet}px) {
       bottom: 10px;
       left: 10px;

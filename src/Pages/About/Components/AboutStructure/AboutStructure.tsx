@@ -14,8 +14,8 @@ const AboutStructure = () => {
 
   return (
     <AboutStructureStyled smallerThanTablet={smallerThanTablet}>
-      <div className="redondaVerde"></div>
-      <div className="redondaAmarilla"></div>
+      <div className="greenCircle"></div>
+      <div className="yellowCircle"></div>
 
       <div className="firstBlob">
         <p>An art background and {yearsSince2018} years of experience.</p>

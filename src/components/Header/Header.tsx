@@ -77,7 +77,7 @@ export default function Header() {
                 />
                 {hasTransitionedIn && (
                   <div
-                    className={`${isMounted ? "grower" : "decreaser"}`}
+                    className={`${isMounted ? "grower" : "growerReversed"}`}
                   ></div>
                 )}
               </div>

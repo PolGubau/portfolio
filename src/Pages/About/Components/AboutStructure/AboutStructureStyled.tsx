@@ -17,7 +17,7 @@ export const AboutStructureStyled = styled.main<StyledProps>`
     flex-direction: column;
     gap: ${(props) => (props.smallerThanTablet ? "20px" : "0px")};
   }
-  .redondaVerde {
+  .greenCircle {
     position: absolute;
     border-radius: 50%;
     transform: translate(-60%, -80px);
@@ -25,15 +25,18 @@ export const AboutStructureStyled = styled.main<StyledProps>`
     pointer-events: none;
     width: 1200px;
     aspect-ratio: 1/1;
+    z-index: -2;
+
     background-color: ${({ theme }) => theme.colors.green};
   }
-  .redondaAmarilla {
+  .yellowCircle {
     position: absolute;
     border-radius: 50%;
     bottom: 0;
     right: 0;
     transform: translate(60%, 50%);
     user-select: none;
+    z-index: -2;
     pointer-events: none;
     width: 1200px;
     aspect-ratio: 1/1;

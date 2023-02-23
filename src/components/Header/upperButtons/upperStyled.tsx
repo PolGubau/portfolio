@@ -18,16 +18,23 @@ export const LanguageStyled = styled.div`
     gap: 15px;
     padding: 3px 10px;
     border-radius: 15px;
-    background-color: ${colors.lightGray};
+    background-color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.text};
+
+    border: 1px solid ${({ theme }) => theme.colors.background};
     :hover {
-      background-color: ${({ theme }) => theme.colors.main};
+      background-color: ${({ theme }) => theme.colors.mainHover};
+      /* border: 1px solid ${({ theme }) => theme.colors.text}; */
+      color: ${({ theme }) => theme.colors.background};
     }
   }
 
   .active {
-    background-color: ${colors.blue};
+    background-color: ${({ theme }) => theme.colors.main};
     :hover {
-      background-color: ${colors.darkBlue};
+      color: ${({ theme }) => theme.colors.text};
+
+      background-color: ${({ theme }) => theme.colors.main};
     }
   }
 `;

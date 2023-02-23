@@ -88,6 +88,7 @@ export const HeaderStyled = styled.header`
       animation: 0.5s ease-in ${decreaseFrom10};
       width: 120px;
       height: 120px;
+      z-index: -1;
       border-radius: 50%;
       position: absolute;
       background-color: ${({ theme }) => theme.colors.main};
