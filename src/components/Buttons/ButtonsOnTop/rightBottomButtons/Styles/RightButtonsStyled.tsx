@@ -1,4 +1,5 @@
 import { colors } from "src/styles/theme";
+import { baseTheme } from "src/styles/theme/baseTheme";
 import styled from "styled-components";
 
 export const RightBottomButtonsStyled = styled.div`
@@ -9,11 +10,15 @@ export const RightBottomButtonsStyled = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  @media screen and (max-width: ${baseTheme.breakpoints.tablet}px) {
+    bottom: 10px;
+    right: 10px;
+  }
 `;
 export const ButtonStyled = styled.div`
   background-color: ${({ theme }) => theme.colors.buttons.base};
   color: ${({ theme }) => theme.colors.buttons.text};
-  border: 2px solid ${colors.transparent};
+  border: 2px solid ${({ theme }) => theme.colors.background};
   border-radius: 20px;
   height: 50px;
   width: 50px;
@@ -26,7 +31,7 @@ export const ButtonStyled = styled.div`
   :hover {
     animation: none;
     background-color: ${({ theme }) => theme.colors.buttons.hover};
-
-    border: 2px solid ${colors.darkGray};
+    color: ${({ theme }) => theme.colors.buttons.textHover};
+    border: 2px solid ${({ theme }) => theme.colors.buttons.base};
   }
 `;

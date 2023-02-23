@@ -4,15 +4,18 @@ import { baseTheme } from "./baseTheme";
 export const darkTheme = {
   ...baseTheme,
   colors: {
-    main: "#262335",
+    main: "#465870",
+    green: "#3f6250",
+    yellow: "#636340",
     background: "#2b2d31",
     text: "#F5F5F5",
     buttons: {
-      base: "#b8b9bf",
+      base: "#dfdce1",
       hover: colors.gray,
       active: colors.darkPurple,
       disabled: colors.lightGray,
       text: colors.black,
+      textHover: colors.white,
     },
   },
 };

@@ -1,120 +1,17 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { useRecoilState } from "recoil";
 import GenericWrapper from "src/components/Wrapper/GenericWrapper";
-import { availableLanguages, IAvalibleLanguges } from "src/Constants/Languages";
+import {
+  availableLanguages,
+  IAvailableLanguages,
+} from "src/Constants/Languages";
 import useMedia from "src/hooks/useMedia";
 import {
   LanguageAtom,
   ToggleLanguageSelectorAtom,
 } from "src/Recoil/Atoms/LanguageAtom";
 import { breakpoints } from "src/styles/theme";
-import styled from "styled-components";
-
-const LanguageButtons = styled.div`
-  .trigger {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    position: fixed;
-    bottom: 30px;
-    left: 25px;
-    color: ${(props) => props.theme.colors.text};
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    background-color: ${(props) => props.theme.colors.buttons.base};
-    cursor: pointer;
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px #3c8c9e;
-    }
-  }
-  .flag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    font-size: 2.3em;
-    padding: 0;
-    svg {
-      width: 100%;
-      height: 100%;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  .arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    height: fit-content;
-    padding: 0;
-    margin-left: 10px;
-    color: ${(props) => props.theme.colors.buttons.text};
-
-    .icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .active {
-      rotate: 180deg;
-    }
-  }
-  .selectorLanguage {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    position: fixed;
-    bottom: 90px;
-    left: 25px;
-    z-index: 999;
-    background-color: ${(props) => props.theme.colors.buttons.base};
-    border-radius: 15px;
-    gap: 5px;
-    padding: 5px;
-    .active {
-      background-color: ${(props) => props.theme.colors.buttons.active};
-    }
-    .option {
-      width: 100%;
-      justify-content: flex-start;
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-      border-radius: 10px;
-      padding: 8px;
-      gap: 8px;
-      padding: 5px;
-      color: ${(props) => props.theme.colors.buttons.text};
-      &:hover {
-        cursor: pointer;
-        background-color: ${(props) => props.theme.colors.buttons.hover};
-      }
-
-      .flag {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        font-size: 2.3em;
-        padding: 0;
-        svg {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-    }
-  }
-`;
+import { LanguageButtons } from "./Styled";
 
 export default function CustomSelect() {
   const [language, setLanguage] = useRecoilState(LanguageAtom);
@@ -130,7 +27,7 @@ export default function CustomSelect() {
       {langSelector && (
         <>
           <div className="selectorLanguage">
-            {availableLanguages.map((lang: IAvalibleLanguges) => {
+            {availableLanguages.map((lang: IAvailableLanguages) => {
               return (
                 <div
                   key={lang.code}
@@ -143,7 +40,9 @@ export default function CustomSelect() {
                   }}
                 >
                   <span className="flag">{lang.flag}</span>
-                  <p>{isSmallerThanTablet ? lang.code : lang.name}</p>
+                  <p className="langName">
+                    {isSmallerThanTablet ? lang.code : lang.name}
+                  </p>
                 </div>
               );
             })}

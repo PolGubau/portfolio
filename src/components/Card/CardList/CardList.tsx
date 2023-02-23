@@ -12,24 +12,16 @@ import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
 import { useRecoilState } from "recoil";
 
 const List = () => {
-  const [searched, setSearched] = useRecoilState(SearchProjectAtom);
-
+  const [projectsData, setProjectsData] = useRecoilState(SearchProjectAtom);
+  const shown = projectsData.toShow;
   const { path } = useParams();
 
   const ids = cardData.map((project) => project.id);
-  const [shown, setShown] = useState(cardData);
-
-  const resetFilters = () => {
-    setSearched("");
-    setShown(cardData);
-  };
 
   return (
     <ContentStyled>
-      <Nav filter={shown} setFilter={setShown} />
-      {shown.length === 0 && (
-        <NotFoundNav resetFilters={resetFilters} value={searched} />
-      )}
+      <Nav />
+      {shown.length === 0 && <NotFoundNav />}
       <CardListStyled>
         {shown.map((card, index) =>
           path === card.path ? (

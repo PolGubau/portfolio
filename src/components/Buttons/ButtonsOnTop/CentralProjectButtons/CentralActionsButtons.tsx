@@ -41,7 +41,7 @@ const CentralActionsButtons = () => {
         <a className="search" href={project.link} target="_blank">
           {text.linkButton}
           <span>
-            <BsSearch color={colors.white} />
+            <BsSearch />
           </span>
         </a>
         <Link to={`/${nextPath}`} className="changeProjectLink">

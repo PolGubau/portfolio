@@ -26,6 +26,7 @@ export const MainStyled = styled.main`
     text-decoration: none;
   }
   .App {
+    width: 100%;
     max-width: 950px;
     flex: 1 1 100%;
   }

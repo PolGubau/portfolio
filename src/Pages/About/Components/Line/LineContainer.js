@@ -37,7 +37,7 @@ export default function LineContainer() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMax meet"
         >
-          <path ref={line} d={pathLine} stroke="#000" />
+          <path ref={line} d={pathLine} />
         </svg>
       )}
     </LineStyled>

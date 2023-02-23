@@ -9,7 +9,4 @@ export const PagesNavStyled = styled.nav`
     text-decoration: none;
     padding: 5px 10px;
   }
-  .active {
-    background-color: red;
-  }
 `;

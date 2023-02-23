@@ -1,5 +1,5 @@
 import { HiSortDescending, HiSortAscending } from "react-icons/hi";
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { IProject } from "src/Interfaces";
 import { IoMdRefresh } from "react-icons/io";
 import { navTexts } from "src/Consts";
@@ -9,141 +9,129 @@ import useMedia from "src/hooks/useMedia";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { NavStyled } from "./NavStyled";
 import { breakpoints } from "src/styles/theme";
-import { cardData } from "src/Data";
-import { useDispatch } from "react-redux";
 
-import { useCallback } from "react";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
 
-export const Nav = memo(
-  ({
-    filter,
-    setFilter,
-  }: {
-    filter: IProject[];
-    setFilter: Function;
-  }): JSX.Element => {
-    const allData: IProject[] = cardData;
-    const mobile = useMedia(breakpoints.tablet);
+export const Nav = memo((): JSX.Element => {
+  const mobile = useMedia(breakpoints.tablet);
+  const language = useRecoilValue(LanguageAtom);
+  const text = getTextByLang(language.code, navTexts);
+  const [projectList, setProjectList] = useRecoilState(SearchProjectAtom);
+  const { search } = projectList;
 
-    const [newest, setNewest] = useState<boolean>(false);
-    const [filtered, setFiltered] = useState<boolean>(false);
-    const [searched, setSearched] = useRecoilState(SearchProjectAtom);
-    const language = useRecoilValue(LanguageAtom);
-    const text = getTextByLang(language.code, navTexts);
-    const filteringByTagsAndTitle = () => {
-      // when we write in the input, will be checked if the tag, title, or description starts like the value or contains the input value
-      setFilter(
-        allData.filter(
-          (card) =>
-            card.tags.some((tag) =>
-              tag.toLowerCase().startsWith(searched.toLowerCase())
-            ) ||
-            card.title.toLowerCase().startsWith(searched.toLowerCase()) ||
-            card.invisibleTags?.some((tag) =>
-              tag.toLowerCase().startsWith(searched.toLowerCase())
-            )
-        )
-      );
-    };
+  // const filteringByTagsAndTitle = () => {
 
-    const changeOrder = () => {
-      if (!newest) {
-        setFilter([...filter].sort((a, b) => a.year - b.year));
-      } else {
-        setFilter([...filter].sort((a, b) => b.year - a.year));
-      }
-      setNewest(!newest);
-    };
+  //   setFilter(
+  //     allData.filter(
+  //       (card) =>
+  //         card.tags.some((tag) =>
+  //           tag.toLowerCase().startsWith(search.toLowerCase())
+  //         ) ||
+  //         card.title.toLowerCase().startsWith(search.toLowerCase()) ||
+  //         card.invisibleTags?.some((tag) =>
+  //           tag.toLowerCase().startsWith(searched.toLowerCase())
+  //         )
+  //     )
+  //   );
+  // };
 
-    const onlyShowCathegory = (category: string) => {
-      setFiltered(true);
-      setFilter(allData.filter((card) => card.category.English === category));
-    };
+  // const changeOrder = () => {
+  //   if (!newest) {
+  //     setFilter([...filter].sort((a, b) => a.year - b.year));
+  //   } else {
+  //     setFilter([...filter].sort((a, b) => b.year - a.year));
+  //   }
+  //   setNewest(!newest);
+  // };
 
-    const refresh = () => {
-      setFilter(allData);
-      setNewest(false);
-      setFiltered(false);
-      setSearched("");
-    };
+  // const onlyShowCategory = (category: string) => {
+  //   setFiltered(true);
+  //   setFilter(allData.filter((card) => card.category.English === category));
+  // };
 
-    const filterTags = (e: any) => {
-      setFiltered(true);
+  // const refresh = () => {
+  //   setFilter(allData);
+  //   setNewest(false);
+  //   setFiltered(false);
+  //   setSearched("");
+  // };
 
-      if (e.target.value === "") {
-        setFiltered(false);
+  // const filterTags = (e: any) => {
+  //   setFiltered(true);
 
-        setFilter(allData);
-        return;
-      }
-      filteringByTagsAndTitle();
-    };
-    if (searched) {
-      setFilter(
-        allData.filter((card) =>
-          card.tags.some((tag) =>
-            tag.toLowerCase().startsWith(searched.toLowerCase())
-          )
-        )
-      );
-    }
+  //   if (e.target.value === "") {
+  //     setFiltered(false);
 
-    const handleChange = (e: any) => {
-      setSearched(e.target.value);
-      filterTags(e);
+  //     setFilter(allData);
+  //     return;
+  //   }
+  //   filteringByTagsAndTitle();
+  // };
+  // if (searched) {
+  //   setFilter(
+  //     allData.filter((card) =>
+  //       card.tags.some((tag) =>
+  //         tag.toLowerCase().startsWith(searched.toLowerCase())
+  //       )
+  //     )
+  //   );
+  // }
 
-      if (e.target.value === "") {
-        setFiltered(false);
-      }
-    };
+  const handleSearchTermChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setProjectList({
+      ...projectList,
+      search: event.target.value,
+    });
+  };
 
-    return (
-      <NavStyled>
-        <div className="contentNav">
-          <div className={`searchNav ${mobile ? "mobileSearch" : ""}`}>
-            <div
-              className={`inputWithIcon ${
-                searched.length > 0 ? "activeInput" : ""
-              }`}
-            >
-              <div className="inputIconDiv">
-                <BiSearch
-                  className="iconSearch"
-                  onClick={filteringByTagsAndTitle}
-                />
-              </div>
-              <input
-                maxLength={20}
-                type="text"
-                className={`input `}
-                value={searched}
-                placeholder={text.placeholder}
-                onChange={handleChange}
+  return (
+    <NavStyled>
+      <div className="contentNav">
+        <div className={`searchNav ${mobile ? "mobileSearch" : ""}`}>
+          <div
+            className={`inputWithIcon ${
+              search.length > 0 ? "activeInput" : ""
+            }`}
+          >
+            <div className="inputIconDiv">
+              <BiSearch
+                className="iconSearch"
+                // onClick={filteringByTagsAndTitle}
               />
             </div>
+            <input
+              maxLength={20}
+              type="text"
+              className={`input `}
+              value={search}
+              placeholder={text.placeholder}
+              onChange={handleSearchTermChange}
+            />
           </div>
-          <div className={`filterNav`}>
-            {searched.length === 0 && (
-              <ul className="filterWord-container">
-                <li
-                  className="filterWord"
-                  onClick={() => onlyShowCathegory("web")}
-                >
-                  {text.web}
-                </li>
-                <li
-                  className="filterWord"
-                  onClick={() => onlyShowCathegory("design")}
-                >
-                  {text.design}
-                </li>
-              </ul>
-            )}
+        </div>
+        <div className={`filterNav`}>
+          {search.length === 0 && (
+            <ul className="filterWord-container">
+              <li
+                className="filterWord"
+                // onClick={() => onlyShowCategory("web")}
+              >
+                {text.web}
+              </li>
+              <li
+                className="filterWord"
+                // onClick={() => onlyShowCategory("design")}
+              >
+                {text.design}
+              </li>
+            </ul>
+          )}
 
-            {filter.length > 0 && (
+          {/* {filter.length > 0 && (
               <div onClick={changeOrder} className="sortIcon">
                 {newest ? <HiSortAscending /> : <HiSortDescending />}
               </div>
@@ -152,11 +140,10 @@ export const Nav = memo(
               <div onClick={refresh} className="refreshIcon">
                 <IoMdRefresh />
               </div>
-            )}
-          </div>
+            )} */}
         </div>
-      </NavStyled>
-    );
-  }
-);
+      </div>
+    </NavStyled>
+  );
+});
 export default Nav;

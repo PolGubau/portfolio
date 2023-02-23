@@ -124,7 +124,7 @@ export const NavStyled = styled.nav`
     flex-wrap: wrap;
     border-radius: 0 0 10px 10px;
     :hover {
-      background-color: ${colors.lightBlue};
+      background-color: ${({ theme }) => theme.colors.main};
     }
   }
   .refreshIcon {
@@ -160,8 +160,6 @@ export const NavStyled = styled.nav`
       width: 100%;
       flex-direction: row;
     }
-
-    /* Make .searchNav biggest as possible inside the flex parent */
 
     .searchNav {
       flex: 1;

@@ -39,7 +39,7 @@ export default function Header() {
               <h1>{text.title}</h1>
             </article>
             <article className="subTextAndImage">
-              <h3>{text.description}</h3>
+              <h2>{text.description}</h2>
               <div className="imageContainer">
                 <motion.img
                   className="meinPhoto"
@@ -50,7 +50,7 @@ export default function Header() {
                 />
                 {hasTransitionedIn && (
                   <div
-                    className={`${isMounted ? "grower" : "decreaser"}`}
+                    className={`${isMounted ? "grower" : "growerReversed"}`}
                   ></div>
                 )}
               </div>

@@ -18,7 +18,9 @@ export const LineStyled = styled.div`
   flex-direction: row;
   svg {
     height: fit-content;
-
     display: flex;
+    path {
+      stroke: ${({ theme }) => theme.colors.text};
+    }
   }
 `;

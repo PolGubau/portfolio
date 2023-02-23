@@ -1,12 +1,12 @@
 export type availableLangCodesType = "EN" | "ES" | "CA" | "DE" | "SV";
 import { EN, ES, CA, DE, SV } from "src/assets/flags";
-export interface IAvalibleLanguges {
+export interface IAvailableLanguages {
   code: availableLangCodesType;
   name: string;
   available: boolean;
   flag: JSX.Element;
 }
-export const allLanguages: IAvalibleLanguges[] = [
+export const allLanguages: IAvailableLanguages[] = [
   {
     code: "EN",
     name: "English",

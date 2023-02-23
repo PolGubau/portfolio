@@ -21,7 +21,7 @@ export const HeaderStyled = styled.header`
   h1 {
     z-index: 2;
     font-weight: bold;
-    font-size: ${fontSizes.largeTitle};
+    font-size: ${({ theme }) => theme.fontSizes.largeTitle};
     color: rgb(0, 0, 0);
     margin: 10px 0 10px 0;
     line-height: 0.9;
@@ -58,10 +58,6 @@ export const HeaderStyled = styled.header`
     text-decoration: underline;
   }
 
-  .langChoosen {
-    background-color: red;
-  }
-
   .imageContainer {
     position: relative;
     width: 120px;
@@ -71,7 +67,7 @@ export const HeaderStyled = styled.header`
     align-items: center;
     border-radius: 50%;
 
-    background-color: ${colors.lightBlue};
+    background-color: ${({ theme }) => theme.colors.main};
 
     .meinPhoto {
       z-index: 2;
@@ -86,16 +82,15 @@ export const HeaderStyled = styled.header`
       transform: scale(10);
       border-radius: 50%;
       position: absolute;
-      background-color: ${colors.lightBlue};
+      background-color: ${({ theme }) => theme.colors.main};
     }
-    .decreaser {
+    .growerReversed {
       animation: 0.5s ease-in ${decreaseFrom10};
-
       width: 120px;
       height: 120px;
       border-radius: 50%;
       position: absolute;
-      background-color: ${colors.lightBlue};
+      background-color: ${({ theme }) => theme.colors.main};
     }
   }
 

@@ -25,7 +25,7 @@ export const AboutStructureStyled = styled.main<StyledProps>`
     pointer-events: none;
     width: 1200px;
     aspect-ratio: 1/1;
-    background-color: #daffc8;
+    background-color: ${({ theme }) => theme.colors.green};
   }
   .redondaAmarilla {
     position: absolute;
@@ -37,7 +37,7 @@ export const AboutStructureStyled = styled.main<StyledProps>`
     pointer-events: none;
     width: 1200px;
     aspect-ratio: 1/1;
-    background-color: #f4ffc8;
+    background-color: ${({ theme }) => theme.colors.yellow};
   }
   .firstBlob {
     margin-top: ${(props) => (props.smallerThanTablet ? "10px" : "165px")};

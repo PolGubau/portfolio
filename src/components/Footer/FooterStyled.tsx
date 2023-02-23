@@ -1,4 +1,3 @@
-import { colors } from "src/styles/theme";
 import styled from "styled-components";
 
 export const FooterStyled = styled.footer`
@@ -32,7 +31,7 @@ export const FooterStyled = styled.footer`
     border: 1px solid ${({ theme }) => theme.colors.text};
     :hover {
       cursor: pointer;
-      background-color: ${colors.blue};
+      background-color: ${({ theme }) => theme.colors.main};
     }
   }
 
