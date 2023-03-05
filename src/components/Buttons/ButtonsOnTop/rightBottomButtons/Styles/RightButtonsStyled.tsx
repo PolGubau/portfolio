@@ -1,4 +1,3 @@
-import { colors } from "src/styles/theme";
 import { baseTheme } from "src/styles/theme/baseTheme";
 import styled from "styled-components";
 
@@ -22,7 +21,7 @@ export const ButtonStyled = styled.div`
   border-radius: 20px;
   height: 50px;
   width: 50px;
-  fill: ${colors.white};
+  fill: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   display: flex;
   justify-content: center;

@@ -2,14 +2,11 @@ import { BsSearch } from "react-icons/bs";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { cardTexts } from "src/Consts";
-import { cardData } from "src/Data";
-import { IProject } from "src/Interfaces";
-import { colors } from "src/styles/theme";
-import { getTextByLang } from "src/utils/getTextByLang";
-import styled from "styled-components";
-import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue } from "recoil";
 import { CentralActionsButtonsStyle } from "./Styled";
+import { allProjects } from "src/Models/Texts/ProjectsTexts";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { getTextByLang } from "src/utils/getTextByLang";
 
 const CentralActionsButtons = () => {
   const params = useParams<{ path: string }>();
@@ -17,20 +14,18 @@ const CentralActionsButtons = () => {
   const lang = useRecoilValue(LanguageAtom);
   if (!cardPath) return null;
 
-  const project: IProject | undefined = cardData.find(
-    (project) => project.path === cardPath
-  );
+  const project = allProjects.find((project) => project.path === cardPath);
   if (!project) return null;
 
   const text = getTextByLang(lang.code, cardTexts);
 
-  const ids = cardData.map((project) => project.id);
+  const ids = allProjects.map((project) => project.id);
   const actualID = ids.indexOf(project.id);
   //da la posición de la carta actual en el array ids
   const prevID = actualID - 1 < 0 ? ids[ids.length - 1] : ids[actualID - 1];
   const nextID = actualID + 1 > ids.length - 1 ? ids[0] : ids[actualID + 1];
-  const prevPath = cardData?.find((project) => project.id === prevID)?.path;
-  const nextPath = cardData?.find((project) => project.id === nextID)?.path;
+  const prevPath = allProjects?.find((project) => project.id === prevID)?.path;
+  const nextPath = allProjects?.find((project) => project.id === nextID)?.path;
 
   return (
     <>

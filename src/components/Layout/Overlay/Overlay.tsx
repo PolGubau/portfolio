@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import useMedia from "src/hooks/useMedia";
-import { breakpoints } from "src/styles/theme";
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
 import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 import { emptyProject } from "src/utils/empties/Project";
+import { baseTheme } from "src/styles/theme/baseTheme";
+const breakpoints = baseTheme.breakpoints;
 
 const OverlayStyled = styled(motion.div)`
   bottom: 0;

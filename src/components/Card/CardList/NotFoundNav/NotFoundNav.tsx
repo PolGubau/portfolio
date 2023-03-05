@@ -4,7 +4,7 @@ import { NotFoundStyled } from "./NotFoundStyled";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
-import { cardData } from "src/Data";
+import { allProjects } from "src/Models/Texts/ProjectsTexts";
 export default function NotFoundNav({}: {}): JSX.Element {
   const lang = useRecoilValue(LanguageAtom);
   const [projects, setSearched] = useRecoilState(SearchProjectAtom);
@@ -12,7 +12,7 @@ export default function NotFoundNav({}: {}): JSX.Element {
     setSearched({
       search: "",
       orderBy: "name",
-      toShow: cardData,
+      toShow: allProjects,
     });
   };
 

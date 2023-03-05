@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { IProject } from "src/Interfaces";
-import { breakpoints, breakpointsString, colors } from "src/styles/theme";
 import styled, { keyframes } from "styled-components";
 
 interface CardInterfaceInline {

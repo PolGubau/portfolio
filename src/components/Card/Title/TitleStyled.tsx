@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { IProject } from "src/Interfaces";
-import { colors } from "src/styles/theme";
 import styled from "styled-components";
 
 interface ITitleInterface {
@@ -68,6 +67,7 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
     justify-content: flex-start;
     align-items: flex-start;
     margin: 20px 0;
+    gap: 5px;
   }
 
   .Description-tag {
@@ -75,6 +75,5 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
     border-radius: 10px;
     background-color: ${(props) => props.theme.colors.buttons.base};
     color: ${(props) => props.theme.colors.buttons.text};
-    margin: 5px;
   }
 `;

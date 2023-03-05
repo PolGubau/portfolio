@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { closeSpring } from "src/components/Card/utils/animations";
 import useMedia from "src/hooks/useMedia";
-import { breakpoints } from "src/styles/theme";
 import { IProject } from "src/Interfaces";
 import { Title } from "../Title/Title";
 import { ImageStyled } from "./ImageStyled";
 import CloseButton from "src/components/Buttons/CloseButton/CloseButton";
-
+import { baseTheme } from "src/styles/theme/baseTheme";
+const breakpoints = baseTheme.breakpoints;
 export const Image = ({
   isSelected = true,
   project,

@@ -1,4 +1,4 @@
-import { breakpointsString } from "src/styles/theme";
+import { baseTheme } from "src/styles/theme/baseTheme";
 import styled from "styled-components";
 
 export const CardListStyled = styled.section`
@@ -16,7 +16,7 @@ export const CardListStyled = styled.section`
 `;
 export const ContentStyled = styled.section`
   border-top: 1px solid ${({ theme }) => theme.colors.text};
-  @media only screen and (max-width: ${breakpointsString.tablet}) {
+  @media only screen and (max-width: ${baseTheme.breakpoints.tablet}) {
     border: none;
   }
 `;

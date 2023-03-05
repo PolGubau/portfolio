@@ -1,8 +1,7 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
 import LanguageButtons from "src/components/Buttons/ButtonsOnTop/Language/LanguageButtons";
-import Footer from "src/components/Footer/Footer";
-import Header from "src/components/Header/Header";
+import Footer from "src/components/Layout/Footer/Footer";
 import Router from "src/components/Router/Router";
 import { OptionsAtom } from "src/Recoil/Atoms/OptionsAtom";
 import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
@@ -11,6 +10,7 @@ import { darkTheme } from "src/styles/theme/darkMode";
 import { lightTheme } from "src/styles/theme/lightTheme";
 import { ThemeProvider } from "styled-components";
 import RightBottomButtons from "../Buttons/ButtonsOnTop/rightBottomButtons";
+import Header from "../Layout/Header/Header";
 import OptionsModal from "../Modals/Options/Options";
 import { MainStyled } from "./MainStyles";
 

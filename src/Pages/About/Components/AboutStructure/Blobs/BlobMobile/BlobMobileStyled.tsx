@@ -19,24 +19,29 @@ export const BlobMobileStyled: any = styled(motion.div)<StyledProps>`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    background: ${({ theme }) => theme.colors.background};
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     .titles {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+
       h3 {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 5px;
+        margin: 0;
+        padding: 0;
         font-size: 1.5rem;
-        width: fit-content;
         padding: 0 5px;
         line-height: 1;
-        font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: 600;
       }
+    }
+    .description {
+      margin: 20px 0;
     }
   }
 `;

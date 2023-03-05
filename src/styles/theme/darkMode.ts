@@ -1,5 +1,5 @@
-import { colors } from "../theme";
 import { baseTheme } from "./baseTheme";
+const colors = baseTheme.colors;
 
 export const darkTheme = {
   ...baseTheme,

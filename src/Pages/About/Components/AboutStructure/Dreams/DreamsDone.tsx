@@ -1,8 +1,9 @@
 import { DreamsStyled } from "./DreamsStyled";
 import EachDream from "./EachDream/EachDream";
 import useMedia from "src/hooks/useMedia";
-import { breakpoints } from "src/styles/theme";
 import { DreamsList } from "./DreamList";
+import { baseTheme } from "src/styles/theme/baseTheme";
+const breakpoints = baseTheme.breakpoints;
 
 const Dreamsstatus = () => {
   const smallerThanTablet = useMedia(breakpoints.tablet);

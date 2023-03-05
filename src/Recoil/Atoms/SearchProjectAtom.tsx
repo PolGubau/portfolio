@@ -1,12 +1,11 @@
 import { atom } from "recoil";
-
-import { cardData } from "src/Data";
+import { allProjects } from "src/Models/Texts/ProjectsTexts";
 
 export const SearchProjectAtom = atom({
   key: "searchProjectAtom",
   default: {
     search: "",
     orderBy: "name",
-    toShow: cardData,
+    toShow: allProjects,
   },
 });

@@ -1,6 +1,7 @@
 import { IoIosClose } from "react-icons/io";
 import { useRecoilState } from "recoil";
-import GenericWrapper from "src/components/Wrapper/GenericWrapper";
+import GenericWrapper from "src/components/Layout/Wrapper/GenericWrapper";
+
 import { OptionsAtom } from "src/Recoil/Atoms/OptionsAtom";
 import { ThemeAtom } from "src/Recoil/Atoms/ThemeAtoms";
 import { OptionsStyled } from "./OptionsModalStyled";

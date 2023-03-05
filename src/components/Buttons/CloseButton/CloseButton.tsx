@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import { IProject } from "src/Interfaces";
-import { colors } from "src/styles/theme";
 import { useRecoilState } from "recoil";
 import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 import { emptyProject } from "src/utils/empties/Project";
@@ -32,13 +31,13 @@ const CloseButtonStyled = styled.div`
     color: ${({ theme }) => theme.colors.text};
     aspect-ratio: 1/1;
     :hover {
-      background-color: ${colors.darkBlue};
+      background-color: ${({ theme }) => theme.colors.darkBlue};
     }
   }
   .red {
-    background-color: ${colors.lightRed};
+    background-color: ${({ theme }) => theme.colors.lightRed};
     :hover {
-      background-color: ${colors.red};
+      background-color: ${({ theme }) => theme.colors.red};
     }
   }
 `;

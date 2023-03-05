@@ -1,4 +1,3 @@
-import { colors } from "src/styles/theme";
 import styled from "styled-components";
 
 export const LanguageStyled = styled.div`
@@ -24,7 +23,6 @@ export const LanguageStyled = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.background};
     :hover {
       background-color: ${({ theme }) => theme.colors.mainHover};
-      /* border: 1px solid ${({ theme }) => theme.colors.text}; */
       color: ${({ theme }) => theme.colors.background};
     }
   }

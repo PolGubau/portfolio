@@ -1,4 +1,4 @@
-import { breakpointsString, colors } from "src/styles/theme";
+import { baseTheme } from "src/styles/theme/baseTheme";
 import styled from "styled-components";
 
 export const NavStyled = styled.nav`
@@ -143,7 +143,7 @@ export const NavStyled = styled.nav`
     }
   }
 
-  @media only screen and (max-width: ${breakpointsString.tablet}) {
+  @media only screen and (max-width: ${baseTheme.breakpoints.tablet}) {
     width: 100%;
     justify-content: flex-start;
     text-decoration: none;

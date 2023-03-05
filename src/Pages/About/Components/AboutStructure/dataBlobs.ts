@@ -17,24 +17,9 @@ export interface IDataBlobs {
 
 export const dataBlobs: IDataBlobs[] = [
   {
-    id: -1,
-    placed: "right",
-    upperTitle: "Istituto",
-    title: "Tecnico Superiore",
-    description: "lorem lorem lorem",
-    date: "2018-2019",
-    style: {
-      color: "#0059ff",
-      height: "200px",
-      marginTop: "165px",
-      width: "60%",
-    },
-  },
-  {
     id: 1,
     placed: "right",
     upperTitle: "Istituto",
-
     title: "Tecnico Superiore",
     description: "lorem lorem lorem",
     date: "2018-2019",

@@ -1,6 +1,6 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { useRecoilState } from "recoil";
-import GenericWrapper from "src/components/Wrapper/GenericWrapper";
+import GenericWrapper from "src/components/Layout/Wrapper/GenericWrapper";
 import {
   availableLanguages,
   IAvailableLanguages,
@@ -10,7 +10,7 @@ import {
   LanguageAtom,
   ToggleLanguageSelectorAtom,
 } from "src/Recoil/Atoms/LanguageAtom";
-import { breakpoints } from "src/styles/theme";
+import { baseTheme } from "src/styles/theme/baseTheme";
 import { LanguageButtons } from "./Styled";
 
 export default function CustomSelect() {
@@ -21,7 +21,7 @@ export default function CustomSelect() {
   const handleTrigger = () => {
     setLangSelector(!langSelector);
   };
-  const isSmallerThanTablet = useMedia(breakpoints.tablet);
+  const isSmallerThanTablet = useMedia(baseTheme.breakpoints.tablet);
   return (
     <LanguageButtons onClick={handleTrigger} isSelectingLanguage={langSelector}>
       {langSelector && (

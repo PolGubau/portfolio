@@ -1,16 +1,20 @@
+import { useRecoilValue } from "recoil";
 import useMedia from "src/hooks/useMedia";
-import { breakpoints } from "src/styles/theme";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { firstBlobText } from "src/Models/aboutPageText";
+import { getTextByLang } from "src/utils/getTextByLang";
 import { AboutStructureStyled } from "./AboutStructureStyled";
 import Blob from "./Blobs/Blob";
 import BlobMobile from "./Blobs/BlobMobile/BlobMobile";
 import { dataBlobs } from "./dataBlobs";
 import DreamsDone from "./Dreams/DreamsDone";
 const yearsSince2018 = new Date().getFullYear() - 2018;
-
+import { baseTheme } from "src/styles/theme/baseTheme";
+const breakpoints = baseTheme.breakpoints;
 const AboutStructure = () => {
   const smallerThanTablet = useMedia(breakpoints.tablet);
-  console.log("ChangingSize", smallerThanTablet);
-  const dataSinceSecond = dataBlobs.filter((blob, index) => index > 0);
+  const l = useRecoilValue(LanguageAtom);
+  const text = getTextByLang(l.code, firstBlobText);
 
   return (
     <AboutStructureStyled smallerThanTablet={smallerThanTablet}>
@@ -18,14 +22,19 @@ const AboutStructure = () => {
       <div className="yellowCircle"></div>
 
       <div className="firstBlob">
-        <p>An art background and {yearsSince2018} years of experience.</p>
-        <p>Based in Barcelona.</p>
+        <p>
+          {text.beforeYear}
+          {` `}
+          {yearsSince2018} {` `}
+          {text.afterYear}
+        </p>
+        <p>{text.based}</p>
       </div>
       <section className="dreamsAndPartners">
         <DreamsDone />
       </section>
       <section className="blobsContainer">
-        {dataSinceSecond.map((blob, index) =>
+        {dataBlobs.map((blob, index) =>
           smallerThanTablet ? (
             <BlobMobile key={index} blob={blob} />
           ) : (

@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
-import { cardData } from "src/Data";
+import { allProjects } from "src/Models/Texts/ProjectsTexts";
 
 //
 export const useProjectsData = () => {
@@ -19,7 +19,7 @@ export const useProjectsData = () => {
   const resetShowingList = () => {
     setProjects({
       ...projects,
-      toShow: cardData,
+      toShow: allProjects,
     });
   };
   const resetSearch = () => {

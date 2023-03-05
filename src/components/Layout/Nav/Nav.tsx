@@ -1,21 +1,18 @@
-import { HiSortDescending, HiSortAscending } from "react-icons/hi";
-import { memo, useEffect, useState } from "react";
-import { IProject } from "src/Interfaces";
-import { IoMdRefresh } from "react-icons/io";
+import { memo } from "react";
 import { navTexts } from "src/Consts";
 import { BiSearch } from "react-icons/bi";
 import useMedia from "src/hooks/useMedia";
 
 import { getTextByLang } from "src/utils/getTextByLang";
 import { NavStyled } from "./NavStyled";
-import { breakpoints } from "src/styles/theme";
 
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
+import { baseTheme } from "src/styles/theme/baseTheme";
 
 export const Nav = memo((): JSX.Element => {
-  const mobile = useMedia(breakpoints.tablet);
+  const mobile = useMedia(baseTheme.breakpoints.tablet);
   const language = useRecoilValue(LanguageAtom);
   const text = getTextByLang(language.code, navTexts);
   const [projectList, setProjectList] = useRecoilState(SearchProjectAtom);

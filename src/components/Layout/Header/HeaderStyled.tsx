@@ -1,5 +1,5 @@
 import { decreaseFrom10, grow, growBouncing } from "src/styles/animations";
-import { breakpointsString, colors, fontSizes } from "src/styles/theme";
+import { baseTheme } from "src/styles/theme/baseTheme";
 import styled, { keyframes } from "styled-components";
 
 // appear animation
@@ -101,7 +101,7 @@ export const HeaderStyled = styled.header`
     flex-grow: 1;
   }
 
-  @media only screen and (max-width: ${breakpointsString.tablet}) {
+  @media only screen and (max-width: ${baseTheme.breakpoints.tablet}) {
     .descriptionAndImage {
       display: flex;
       justify-content: space-between;

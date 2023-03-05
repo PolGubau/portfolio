@@ -4,17 +4,17 @@ import UpperButtons from "./upperButtons/upperButtons";
 import useMedia from "src/hooks/useMedia";
 import { HeaderStyled } from "./HeaderStyled";
 import { useLocation } from "react-router-dom";
-import { breakpoints } from "src/styles/theme";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMountTransition from "src/hooks/useMountTransition";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue } from "recoil";
+import { baseTheme } from "src/styles/theme/baseTheme";
 
 export default function Header() {
   const l = useRecoilValue(LanguageAtom);
   const text = getTextByLang(l.code, headerText);
-  const smallerThanTablet = useMedia(breakpoints.tablet);
+  const smallerThanTablet = useMedia(baseTheme.breakpoints.tablet);
   const location = useLocation();
   const isAbout = location.pathname === "/about";
   const [isMounted, setIsMounted] = useState(isAbout);

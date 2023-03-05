@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { LanguageStyled } from "./upperStyled";
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 const UpperButtons = () => {
   const path = useLocation().pathname;
@@ -15,6 +14,9 @@ const UpperButtons = () => {
         className={`option ${path === "/about" ? "active" : ""}`}
       >
         About
+      </Link>
+      <Link to="/blog" className={`option ${path === "/blog" ? "active" : ""}`}>
+        Blog
       </Link>
     </LanguageStyled>
   );
