@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { navTexts } from "src/Consts";
 import { BiSearch } from "react-icons/bi";
 import useMedia from "src/hooks/useMedia";
@@ -16,32 +16,25 @@ export const Nav = memo((): JSX.Element => {
   const language = useRecoilValue(LanguageAtom);
   const text = getTextByLang(language.code, navTexts);
   const [projectList, setProjectList] = useRecoilState(SearchProjectAtom);
-  const { search } = projectList;
+  const { searched } = projectList;
+  const [newest, setNewest] = useState(false);
 
-  // const filteringByTagsAndTitle = () => {
-
-  //   setFilter(
-  //     allData.filter(
-  //       (card) =>
-  //         card.tags.some((tag) =>
-  //           tag.toLowerCase().startsWith(search.toLowerCase())
-  //         ) ||
-  //         card.title.toLowerCase().startsWith(search.toLowerCase()) ||
-  //         card.invisibleTags?.some((tag) =>
-  //           tag.toLowerCase().startsWith(searched.toLowerCase())
-  //         )
-  //     )
-  //   );
-  // };
-
-  // const changeOrder = () => {
-  //   if (!newest) {
-  //     setFilter([...filter].sort((a, b) => a.year - b.year));
-  //   } else {
-  //     setFilter([...filter].sort((a, b) => b.year - a.year));
-  //   }
-  //   setNewest(!newest);
-  // };
+  const changeOrder = () => {
+    if (!newest) {
+      const newOrder = [...projectList.toShow].sort((a, b) => a.year - b.year);
+      setProjectList({
+        ...projectList,
+        toShow: newOrder,
+      });
+    } else {
+      const newOrder = [...projectList.toShow].sort((a, b) => b.year - a.year);
+      setProjectList({
+        ...projectList,
+        toShow: newOrder,
+      });
+    }
+    setNewest(!newest);
+  };
 
   // const onlyShowCategory = (category: string) => {
   //   setFiltered(true);
@@ -75,14 +68,36 @@ export const Nav = memo((): JSX.Element => {
   //     )
   //   );
   // }
+  const projectsFiltered = () => {
+    const filteredProjects = projectList.toShow.filter(
+      (project) =>
+        project.tags.some((tag) =>
+          tag.toLowerCase().startsWith(searched.toLowerCase())
+        ) ||
+        project.title.toLowerCase().startsWith(searched.toLowerCase()) ||
+        project.invisibleTags?.some((tag) =>
+          tag.toLowerCase().startsWith(searched.toLowerCase())
+        )
+    );
 
-  const handleSearchTermChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
     setProjectList({
       ...projectList,
-      search: event.target.value,
+      toShow: filteredProjects,
     });
+    console.log(projectList);
+  };
+  const handleSearchTermChange = (event: any) => {
+    const valueSearched = event.target.value;
+
+    const newValue = {
+      searched: valueSearched,
+      orderBy: projectList.orderBy,
+      toShow: projectList.toShow,
+    };
+    console.log(newValue);
+
+    setProjectList(newValue);
+    projectsFiltered();
   };
 
   return (
@@ -91,27 +106,27 @@ export const Nav = memo((): JSX.Element => {
         <div className={`searchNav ${mobile ? "mobileSearch" : ""}`}>
           <div
             className={`inputWithIcon ${
-              search.length > 0 ? "activeInput" : ""
+              searched.length > 0 ? "activeInput" : ""
             }`}
           >
             <div className="inputIconDiv">
               <BiSearch
                 className="iconSearch"
-                // onClick={filteringByTagsAndTitle}
+                onClick={handleSearchTermChange}
               />
             </div>
             <input
               maxLength={20}
               type="text"
               className={`input `}
-              value={search}
+              defaultValue={searched}
               placeholder={text.placeholder}
               onChange={handleSearchTermChange}
             />
           </div>
         </div>
         <div className={`filterNav`}>
-          {search.length === 0 && (
+          {searched.length === 0 && (
             <ul className="filterWord-container">
               <li
                 className="filterWord"
@@ -128,16 +143,17 @@ export const Nav = memo((): JSX.Element => {
             </ul>
           )}
 
-          {/* {filter.length > 0 && (
-              <div onClick={changeOrder} className="sortIcon">
-                {newest ? <HiSortAscending /> : <HiSortDescending />}
-              </div>
-            )}
-            {filtered && (
-              <div onClick={refresh} className="refreshIcon">
-                <IoMdRefresh />
-              </div>
-            )} */}
+          {projectList.toShow.length > 0 && (
+            <div onClick={changeOrder} className="sortIcon">
+              {newest ? <p>+</p> : <p>-</p>}
+              {/* {newest ? <HiSortAscending /> : <HiSortDescending />} */}
+            </div>
+          )}
+          {/* {filtered && (
+            <div onClick={refresh} className="refreshIcon">
+              <IoMdRefresh />
+            </div>
+          )} */}
         </div>
       </div>
     </NavStyled>

@@ -1,12 +1,8 @@
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { Link } from "react-router-dom";
+import BlogList from "src/components/Blog/List/BlogList/CourseList";
+import blogs from "src/Models/Courses/CoursesData";
 
 const BlogPage = () => {
-  return (
-    <div>
-      <Link to="/blog/introduction">Go to this course</Link>
-    </div>
-  );
+  return <BlogList blogs={blogs} />;
 };
 
 export default BlogPage;

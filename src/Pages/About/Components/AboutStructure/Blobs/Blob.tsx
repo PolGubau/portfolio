@@ -1,8 +1,13 @@
-import { Variants, motion } from "framer-motion";
-import { IDataBlobs } from "../dataBlobs";
+import { Variants } from "framer-motion";
+import { useRecoilValue } from "recoil";
+import { IDataStudies } from "src/Models/Texts/StudiesText";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { getTextByLang } from "src/utils/getTextByLang";
 import { BlobStyled } from "./BlobStyle";
 
-const Blob = ({ blob }: { blob: IDataBlobs }) => {
+const Blob = ({ blob }: { blob: IDataStudies }) => {
+  const f = useRecoilValue(LanguageAtom);
+  const textDescription = getTextByLang(f.code, blob.description);
   const comeFromLeft: Variants = {
     offscreen: {
       x: 100,
@@ -42,20 +47,25 @@ const Blob = ({ blob }: { blob: IDataBlobs }) => {
       marginTop={blob.style.marginTop}
       color={blob.style.color}
       placed={blob.placed}
-      hasUpperTitle
+      hasUpperTitle={hasUpperTitle}
       className="box b2"
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: false, amount: "all" }}
-      variants={blob.placed === "left" ? comeFromLeft : comeFromRight}
+      // initial="offscreen"
+      // whileInView="onscreen"
+      // viewport={{ once: false, amount: "all" }}
+      // variants={blob.placed === "left" ? comeFromLeft : comeFromRight}
     >
       <article>
         <div className="titles">
-          {blob.upperTitle && <p className="upperTitle">{blob.upperTitle}</p>}
+          {blob.upperTitle && (
+            <p className="upperTitle">
+              {blob.upperTitle}
+              {/* <span>{blob.flag}</span> */}
+            </p>
+          )}
           <h3>{blob.title}</h3>
         </div>
-        <p>{blob.description}</p>
-        <p>{blob.date}</p>
+        <p className="content">{textDescription}</p>
+        <p className="date">{blob.date}</p>
       </article>
     </BlobStyled>
   );

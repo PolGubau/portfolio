@@ -17,6 +17,7 @@ export const BlobMobileStyled: any = styled(motion.div)<StyledProps>`
     border: 1px solid ${(props) => props.color};
     display: flex;
     flex-direction: column;
+    text-align: center;
     justify-content: flex-start;
     align-items: center;
     border-radius: 30px;

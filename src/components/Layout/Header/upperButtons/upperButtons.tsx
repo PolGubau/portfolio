@@ -15,7 +15,11 @@ const UpperButtons = () => {
       >
         About
       </Link>
-      <Link to="/blog" className={`option ${path === "/blog" ? "active" : ""}`}>
+      <Link
+        to="/blog"
+        className={`option 
+      ${path.includes("/blog") ? "active" : ""}`}
+      >
         Blog
       </Link>
     </LanguageStyled>

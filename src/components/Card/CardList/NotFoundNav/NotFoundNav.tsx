@@ -10,7 +10,7 @@ export default function NotFoundNav({}: {}): JSX.Element {
   const [projects, setSearched] = useRecoilState(SearchProjectAtom);
   const resetFilters: MouseEventHandler<HTMLButtonElement> = () => {
     setSearched({
-      search: "",
+      searched: "",
       orderBy: "name",
       toShow: allProjects,
     });
@@ -22,7 +22,7 @@ export default function NotFoundNav({}: {}): JSX.Element {
         <>
           <h3>{errorOnSearch.English.title}</h3>
           <p>
-            {errorOnSearch.English.description}: ({projects.search})
+            {errorOnSearch.English.description}: ({projects.searched})
           </p>
           <button className="filterDelete" onClick={resetFilters}>
             {errorOnSearch.English.action}
@@ -33,7 +33,7 @@ export default function NotFoundNav({}: {}): JSX.Element {
         <>
           <h3>{errorOnSearch.Spanish.title}</h3>
           <p>
-            {errorOnSearch.Spanish.description}: ({projects.search})
+            {errorOnSearch.Spanish.description}: ({projects.searched})
           </p>
           <button className="filterDelete" onClick={resetFilters}>
             {errorOnSearch.Spanish.action}
@@ -44,7 +44,7 @@ export default function NotFoundNav({}: {}): JSX.Element {
         <>
           <h3>{errorOnSearch.Catalan.title}</h3>
           <p>
-            {errorOnSearch.Catalan.description}: ({projects.search})
+            {errorOnSearch.Catalan.description}: ({projects.searched})
           </p>
           <button className="filterDelete" onClick={resetFilters}>
             {errorOnSearch.Catalan.action}

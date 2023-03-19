@@ -1,40 +1,44 @@
-import { useRecoilValue } from "recoil";
 import useMedia from "src/hooks/useMedia";
-import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
-import { firstBlobText } from "src/Models/aboutPageText";
-import { getTextByLang } from "src/utils/getTextByLang";
 import { AboutStructureStyled } from "./AboutStructureStyled";
 import Blob from "./Blobs/Blob";
 import BlobMobile from "./Blobs/BlobMobile/BlobMobile";
-import { dataBlobs } from "./dataBlobs";
-import DreamsDone from "./Dreams/DreamsDone";
-const yearsSince2018 = new Date().getFullYear() - 2018;
+
+import DreamsDone from "./Dreams/Dreams";
 import { baseTheme } from "src/styles/theme/baseTheme";
+import MyDescription from "./Dreams/Me/meDescription";
+import { dataStudies } from "src/Models/Texts/StudiesText";
+import Partners from "./Partners";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { useRecoilValue } from "recoil";
+import { getTextByLang } from "src/utils/getTextByLang";
+import {
+  aboutYouText,
+  IAboutYouText,
+} from "src/Models/Texts/PagesText/aboutYou.text";
 const breakpoints = baseTheme.breakpoints;
+
+//
 const AboutStructure = () => {
   const smallerThanTablet = useMedia(breakpoints.tablet);
   const l = useRecoilValue(LanguageAtom);
-  const text = getTextByLang(l.code, firstBlobText);
-
+  const text: IAboutYouText = getTextByLang(l.code, aboutYouText);
   return (
     <AboutStructureStyled smallerThanTablet={smallerThanTablet}>
       <div className="greenCircle"></div>
       <div className="yellowCircle"></div>
-
-      <div className="firstBlob">
-        <p>
-          {text.beforeYear}
-          {` `}
-          {yearsSince2018} {` `}
-          {text.afterYear}
-        </p>
-        <p>{text.based}</p>
+      <div className="titleContainer">
+        <h3>{text.mainTitle} </h3>
       </div>
-      <section className="dreamsAndPartners">
+
+      <section className="descriptionAndDreams">
+        <MyDescription />
         <DreamsDone />
       </section>
       <section className="blobsContainer">
-        {dataBlobs.map((blob, index) =>
+        <div className="title">
+          <h3>{text.studiesTitle} </h3>
+        </div>
+        {dataStudies.map((blob, index) =>
           smallerThanTablet ? (
             <BlobMobile key={index} blob={blob} />
           ) : (
@@ -42,6 +46,7 @@ const AboutStructure = () => {
           )
         )}
       </section>
+      <Partners />
     </AboutStructureStyled>
   );
 };

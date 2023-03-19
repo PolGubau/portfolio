@@ -1,20 +1,24 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import About from "src/Pages/About/About";
-import BlogPage from "src/Pages/Blog/BlogPage";
-import ConcreteBlog from "src/Pages/Blog/ConcreteBlog";
 import List from "../Card/CardList/CardList";
 
+const AboutLazy = lazy(() => import("src/Pages/About/About"));
+const BlogPageLazy = lazy(() => import("src/Pages/Blog/BlogPage"));
+const ConcreteBlogLazy = lazy(() => import("src/Pages/Blog/ConcreteBlog"));
+//
 const Router = () => {
   return (
-    <Routes>
-      <Route path="/" element={<List />} />
-      <Route path="/:path" element={<List />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/blog" element={<BlogPage />} />
-      <Route path="/blog/*" element={<ConcreteBlog />} />
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<List />} />
+        <Route path="/:path" element={<List />} />
+        <Route path="/about" element={<AboutLazy />} />
+        <Route path="/blog" element={<BlogPageLazy />} />
+        <Route path="/blog/:path" element={<ConcreteBlogLazy />} />
 
-      <Route path="*" element={<List />} />
-    </Routes>
+        <Route path="*" element={<List />} />
+      </Routes>
+    </Suspense>
   );
 };
 

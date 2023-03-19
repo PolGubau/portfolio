@@ -8,7 +8,7 @@ export const useProjectsData = () => {
 
   const projectsFiltered = () => {
     const filteredProjects = projects.toShow.filter((project) =>
-      project.title.toLowerCase().includes(projects.search.toLowerCase())
+      project.title.toLowerCase().includes(projects.searched.toLowerCase())
     );
     setProjects({
       ...projects,
@@ -25,7 +25,7 @@ export const useProjectsData = () => {
   const resetSearch = () => {
     setProjects({
       ...projects,
-      search: "",
+      searched: "",
     });
   };
   const resetAll = () => {

@@ -15,38 +15,55 @@ export const BlobStyled: any = styled(motion.div)<StyledProps>`
   justify-content: ${(props) => props.placed};
 
   article {
+    position: relative;
     width: ${(props) => props.width};
-    height: ${(props) => props.height};
+    /* height: ${(props) => props.height}; */
     margin-top: ${(props) => props.marginTop};
     border: 1px solid ${(props) => props.color};
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    gap: 20px;
+
     align-items: center;
-    border-radius: 999px;
+    border-radius: 90px;
+    text-align: center;
+    padding: 10px 30px 0 30px;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     .titles {
-      margin-top: ${(props) => (props.hasUpperTitle ? "-40px" : "0px")};
+      margin: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
       h3 {
+        margin: 0;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 5px;
         font-size: 1.5rem;
-        margin-top: -13px;
         width: fit-content;
         padding: 0 5px;
         line-height: 1;
         font-size: 1.5rem;
         font-weight: 700;
       }
-      .upperTitle {
-        margin-bottom: 20px;
-        height: 20px;
-      }
+    }
+    .content {
+      margin-bottom: 60px;
+    }
+    .date {
+      position: absolute;
+      bottom: 0;
+      border: 1px solid ${(props) => props.color};
+      border-radius: 10px 10px 0 0;
+      padding: 5px 10px;
+      border-bottom: 0;
     }
   }
 `;

@@ -4,7 +4,7 @@ import { allProjects } from "src/Models/Texts/ProjectsTexts";
 export const SearchProjectAtom = atom({
   key: "searchProjectAtom",
   default: {
-    search: "",
+    searched: "",
     orderBy: "name",
     toShow: allProjects,
   },

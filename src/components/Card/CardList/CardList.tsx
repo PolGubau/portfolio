@@ -9,7 +9,6 @@ import { OpenedCard } from "../Card/OpenedCard/OpenedCard";
 import { ClosedCard } from "../Card/ClosedCard/ClosedCard";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
 import { useRecoilState } from "recoil";
-import { IProject } from "src/Interfaces";
 import { allProjects } from "src/Models/Texts/ProjectsTexts";
 
 const List = () => {

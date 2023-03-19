@@ -44,8 +44,10 @@ export const ClosedCardStyled = styled(motion.li)<CardInterfaceInline>`
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  transition: 0.1s ease-in-out;
   :hover {
     filter: brightness(1.03);
+    transform: scale(0.98);
   }
   @media only screen and (min-width: ${baseTheme.breakpoints.tablet}px) {
     flex: 1 0 58%;

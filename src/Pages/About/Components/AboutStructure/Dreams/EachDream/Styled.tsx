@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 
 interface StyledProps {
-  done: boolean;
+  done: string;
 }
 
 export const spin = keyframes`

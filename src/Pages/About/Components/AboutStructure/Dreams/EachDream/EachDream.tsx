@@ -6,9 +6,15 @@ import {
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { Styled } from "./Styled";
 import { useState } from "react";
+import { useRecoilValue } from "recoil";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { getTextByLang } from "src/utils/getTextByLang";
+import { IDream } from "src/Models/Texts/dreamsText/DreamList";
 //
 
-const EachDream = ({ dream }: { dream: any }) => {
+const EachDream = ({ dream }: { dream: IDream }) => {
+  const l = useRecoilValue(LanguageAtom);
+  const dreamName = getTextByLang(l.code, dream.title);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const cardVariants: Variants = {
     offscreen: {
@@ -73,7 +79,7 @@ const EachDream = ({ dream }: { dream: any }) => {
         {dream.status === "false" && (
           <RiCheckboxBlankCircleLine className="notDone" />
         )}
-        <span>{dream.title}</span>
+        <span>{dreamName}</span>
       </Styled>
     </motion.li>
   );

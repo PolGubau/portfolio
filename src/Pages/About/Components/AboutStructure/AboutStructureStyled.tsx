@@ -11,12 +11,6 @@ export const AboutStructureStyled = styled.main<StyledProps>`
   height: fit-content;
   overflow: visible;
 
-  .blobsContainer {
-    margin-bottom: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: ${(props) => (props.smallerThanTablet ? "20px" : "0px")};
-  }
   .greenCircle {
     position: absolute;
     border-radius: 50%;
@@ -67,5 +61,56 @@ export const AboutStructureStyled = styled.main<StyledProps>`
     justify-content: center;
     transition: 0.3s ease;
     align-items: center;
+  }
+
+  @keyframes appearFromLeft {
+    0% {
+      transform: translate(0 -200%);
+    }
+    to {
+      transform: translate(0, 0);
+    }
+  }
+  .titleContainer {
+    animation: appearFromLeft 0.5s ease;
+    margin-top: 100px;
+    border: 1px solid white;
+    padding: 20px 30px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 180, 0.1);
+    backdrop-filter: blur(5px);
+    h3 {
+      margin: 0;
+      font-size: 3em;
+    }
+  }
+  .descriptionAndDreams {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+  }
+
+  .blobsContainer {
+    margin: 200px 0;
+    display: flex;
+    flex-direction: column;
+    gap: ${(props) => (props.smallerThanTablet ? "20px" : "0px")};
+    .title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h3 {
+        text-align: center;
+        font-size: 2em;
+        margin: 0;
+        padding: 10px 20px;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 180, 0.1);
+        backdrop-filter: blur(5px);
+        margin-bottom: 90px;
+      }
+    }
   }
 `;

@@ -101,25 +101,23 @@ export const HeaderStyled = styled.header`
     flex-grow: 1;
   }
 
-  @media only screen and (max-width: ${baseTheme.breakpoints.tablet}) {
-    .descriptionAndImage {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      align-content: center;
-      flex-direction: row-reverse;
-      width: 100%;
-    }
+  .descriptionAndImage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
 
-    .subTextAndImage {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      align-content: center;
-      flex-direction: row;
-      width: 100%;
-      margin-bottom: 5px;
-      gap: 10%;
-    }
+  .subTextAndImage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5px;
+    gap: 10%;
   }
 `;

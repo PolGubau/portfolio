@@ -1,4 +1,3 @@
-import React from "react";
 import { useRecoilValue } from "recoil";
 import LanguageButtons from "src/components/Buttons/ButtonsOnTop/Language/LanguageButtons";
 import Footer from "src/components/Layout/Footer/Footer";
@@ -27,6 +26,7 @@ const Hero = () => {
           <LanguageButtons />
           {options && options.show && <OptionsModal />}
           {!projectSelected.id && <RightBottomButtons />}
+        
           <Header />
           <Router />
           <Footer />

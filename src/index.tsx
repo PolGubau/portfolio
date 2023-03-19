@@ -1,8 +1,9 @@
-import { render } from "react-dom";
 import "./styles/styles.css";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import Hero from "./components/Hero/Hero";
+import { createRoot } from "react-dom/client";
+
 function App() {
   return (
     <RecoilRoot>
@@ -13,5 +14,6 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById("root");
-render(<App />, rootElement);
+const domNode = document.getElementById("root");
+const root = createRoot(domNode!);
+root.render(<App />);
