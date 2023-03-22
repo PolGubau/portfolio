@@ -1,4 +1,4 @@
-export const WhatIsNext = `# **Introduction**
+export const English = `# **Introduction**
 
 Next.js is a powerful **React-based framework** that makes it easy to build fast and scalable web applications. In this blog post, we will explore some of the key features of Next.js and how they can be used to build rich and dynamic web applications. This blog post is targeted towards technical readers who want to get up to speed on Next.js quickly, so we will include plenty of coding examples and practical information.
 

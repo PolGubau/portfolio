@@ -1,4 +1,4 @@
-export const WhatIsBootstrap = `# **An Introduction to Bootstrap**
+export const English = `# **An Introduction to Bootstrap**
 
 Bootstrap is a popular front-end framework that is used to build responsive and mobile-first websites. It was originally developed by Twitter and was released as an open-source project in 2011. Bootstrap is known for its ease of use, cross-browser compatibility, and large community.
 

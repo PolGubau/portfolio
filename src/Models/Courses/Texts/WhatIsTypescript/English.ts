@@ -1,4 +1,4 @@
-export const WhatIsTypescript = `
+export const English = `
 # **Typescript**
 
 Typescript is a **superset of JavaScript** that adds **static typing** to the language. It was developed by Microsoft and is widely used by developers around the world. Typescript is an open-source project and has a large community of contributors.

@@ -1,4 +1,4 @@
-export const WhatIsFigma = `# **Introduction**
+export const English = `# **Introduction**
 
 Figma is a popular design tool that has gained popularity in recent years. It is an online-based design tool that allows users to collaborate in real-time and create designs for a wide range of applications. In this essay, we will explore some of the key features of Figma and how they can be used to create stunning designs.
 

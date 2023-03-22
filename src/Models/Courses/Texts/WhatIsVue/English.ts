@@ -1,4 +1,4 @@
-export const WhatIsVue = `
+export const English = `
 # **An Introduction to Vue.js**
 
 Vue.js is a popular JavaScript framework for building user interfaces. It is a progressive framework, meaning that it can be used for both small and large-scale projects. Vue.js is known for its simplicity, flexibility, and ease of use.

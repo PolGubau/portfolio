@@ -1,4 +1,4 @@
-export const WhatIsReduxContent = `
+export const English = `
 # **Redux**
 
 Redux is a **popular JavaScript library** for managing application state. It was developed by Dan Abramov and Andrew Clark and is widely used by developers around the world. Redux is an open-source project and has a large community of contributors.

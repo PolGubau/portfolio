@@ -32,11 +32,11 @@ export const habitsText: IProject = {
 
   description: {
     English:
-      "Stickies is an app to take notes and manage them. You can make private notes and classify them into categories.",
+      "Habits is a Tracking App for your daily habits. You can create habits, track them and see your progress. You can also create private habits and share them with your friends. Under the hood, it uses React, Ant Design, PostgreSQL and NodeJS. It is a full-stack application. Under development.",
     Spanish:
-      "Stickies es una app para tomar notas y manejarlas. Puedes hacer notas privadas y clasificarlas en categorías. ",
+      "Habits es una aplicación para rastrear tus hábitos diarios. Puedes crear hábitos, rastrearlos y ver tu progreso. También puedes crear hábitos privados y compartirlos con tus amigos. Por debajo, usa React, Ant Design, PostgreSQL y NodeJS. Es una aplicación full-stack. En desarrollo.",
     Catalan:
-      "Stickies és una app per prendre notes i manejar-les. Es poden fer notes privades i classificar-les en categories.",
+      "Habits és una aplicació per rastrejar els teus hàbits diaris. Pots crear hàbits, rastrejar-los i veure el teu progrés. També pots crear hàbits privats i compartir-los amb els teus amics. Per sota, usa React, Ant Design, PostgreSQL i NodeJS. És una aplicació full-stack. En desenvolupament.",
   },
   githubLink: "https://github.com/PolGubau/habits",
   link: "https://habitss.vercel.app/",

@@ -1,4 +1,4 @@
-export const WhatIsReactContent = `# **React**
+export const English = `# **React**
 
 React is a **popular JavaScript library** for building user interfaces. It was developed by Facebook and is widely used by developers around the world. React is an open-source project and has a large community of contributors.
 

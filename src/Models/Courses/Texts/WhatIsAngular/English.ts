@@ -1,4 +1,4 @@
-export const WhatIsAngular = `
+export const English = `
 # **An Introduction to Angular**
 
 Angular is a popular web application framework that is used to build dynamic and interactive single-page applications (SPAs). It was developed by Google and first released in 2010. Angular is known for its robustness, scalability, and ease of use.

@@ -4,8 +4,9 @@ export const BlogContentStyled = styled.div`
   overflow-x: hidden;
   header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
+    flex-wrap: wrap;
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 20px;
@@ -34,7 +35,8 @@ export const BlogContentStyled = styled.div`
 
   .details {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 10px;
     .level {
       display: flex;

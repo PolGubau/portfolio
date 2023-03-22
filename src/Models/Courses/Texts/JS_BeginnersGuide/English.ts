@@ -1,4 +1,4 @@
-export const JS_BeginnersGuide = `# **JavaScript: A Beginner's Guide**
+export const English = `# **JavaScript: A Beginner's Guide**
 
 JavaScript is a programming language that is used to add interactivity and dynamic behavior to websites. It is a powerful and flexible language that has become an essential tool for web developers. In this guide, we will cover the basics of JavaScript and provide some examples of how it can be used in web development.
 

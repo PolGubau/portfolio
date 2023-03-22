@@ -1,4 +1,4 @@
-export const WhatIsAdobeXd = `
+export const English = `
 # **Introduction**
 
 Adobe XD is a powerful design tool used to create user interfaces, web designs, and mobile applications. It allows designers to create interactive prototypes, wireframes, and high-fidelity designs quickly and easily. In this essay, we will explore some of the features of Adobe XD and how they can be used to create stunning designs.

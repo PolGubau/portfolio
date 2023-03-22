@@ -1,4 +1,4 @@
-export const WhatIsGatsby = `# **Introduction**
+export const English = `# **Introduction**
 
 Gatsby is a modern web development framework that has gained popularity in recent years. It is based on React and allows developers to build fast and scalable websites and applications. In this essay, we will explore some of the key features of Gatsby and how they can be used to create stunning websites and applications.
 

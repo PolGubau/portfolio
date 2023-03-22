@@ -26,7 +26,6 @@ export const BlogStyled = styled(Link)<Props>`
   position: relative;
   .name {
     z-index: 1;
-    /* background-color: ${({ theme }) => theme.colors.background}; */
     padding: 20px 20px;
     width: 100%;
     display: flex;
@@ -34,6 +33,7 @@ export const BlogStyled = styled(Link)<Props>`
     justify-content: center;
     gap: 10px;
     border-radius: 0 0 20px 20px;
+    text-align: center;
     font-size: 1.1em;
     font-weight: 500;
   }

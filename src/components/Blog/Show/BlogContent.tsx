@@ -1,4 +1,4 @@
-import { TbArrowBack, TbStairs } from "react-icons/tb";
+import { TbArrowBack, TbClockHour4, TbStairs } from "react-icons/tb";
 import ReactMarkdown from "react-markdown";
 import { IBlogData } from "src/Models/Courses/CoursesData";
 import { BlogContentStyled } from "./BlogContentStyled";
@@ -8,8 +8,16 @@ import { Link } from "react-router-dom";
 import { getCoursesWithSameTags } from "src/resources/courses/getCourses";
 import BlogList from "../List/BlogList/CourseList";
 import remarkGfm from "remark-gfm";
+import { useRecoilValue } from "recoil";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { getTextByLang } from "src/utils/getTextByLang";
+import { timeToRead } from "../Functions/timeToRead";
 const BlogContent = ({ blog }: { blog: IBlogData }) => {
   const similarBlogs = getCoursesWithSameTags(blog.tags, 3);
+  const l = useRecoilValue(LanguageAtom);
+  const name = getTextByLang(l.code, blog.name);
+  const level = getTextByLang(l.code, blog.level);
+  const content = getTextByLang(l.code, blog.content);
   return (
     <BlogContentStyled>
       <header>
@@ -17,12 +25,16 @@ const BlogContent = ({ blog }: { blog: IBlogData }) => {
           <TbArrowBack />
           Back
         </Link>
-        <h3>{blog.name}</h3>
+        <h3>{name}</h3>
       </header>
       <div className="details">
         <p className="level">
           <TbStairs />
-          {blog.level}
+          {level}
+        </p>
+        <p className="level">
+          <TbClockHour4 />
+          {timeToRead(content.length)} min
         </p>
         <div className="tags">
           {blog.tags.map((tag) => (
@@ -32,7 +44,7 @@ const BlogContent = ({ blog }: { blog: IBlogData }) => {
       </div>
       <ReactMarkdown
         className="content"
-        children={blog.content}
+        children={content}
         components={{
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || "");

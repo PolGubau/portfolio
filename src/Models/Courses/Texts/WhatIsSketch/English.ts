@@ -1,4 +1,4 @@
-export const WhatIsSketch = `# **Introduction**
+export const English = `# **Introduction**
 
 Sketch is a popular design tool used by designers to create user interfaces, mobile applications, and web designs. It is known for its intuitive interface, powerful features, and flexibility. In this essay, we will explore some of the features of Sketch and how they can be used to create stunning designs.
 

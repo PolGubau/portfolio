@@ -122,7 +122,7 @@ export const dataStudies: IDataStudies[] = [
         2021
       )} anys com a principal Dissenyador gràfic de l'empresa.`,
     },
-    date: `2021-${actualYear}`,
+    date: `2021-act`,
     style: {
       color: "#22ff00",
       height: "150px",
@@ -140,7 +140,7 @@ export const dataStudies: IDataStudies[] = [
       Spanish: `Oportunidad de crear un entorno basado en tecnologías web para clientes internacionales. Como Desarrollador Mid-Level he podido aprender y aplicar mis conocimientos en el desarrollo de aplicaciones web. Trabajo en equipo como parte del Innovation Hub de Mesalvo Freiburg.`,
       Catalan: `Oportunitat de crear un entorn basat en tecnologies web per a clients internacionals. Com a Desenvolupador Mid-Level he pogut aprendre i aplicar els meus coneixements en el desenvolupament d'aplicacions web. Treballo en equip com a part del Innovation Hub de Mesalvo Freiburg.`,
     },
-    date: `2022-${actualYear}`,
+    date: `2022-act`,
     style: {
       color: "#22ffff",
       height: "220px",

@@ -1,15 +1,13 @@
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { Link } from "react-router-dom";
 import { IBlogData } from "src/Models/Courses/CoursesData";
 import { BlogStyled, OverlayStyled } from "./CourseStyled";
-import { useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { baseTheme } from "src/styles/theme/baseTheme";
+import { getTextByLang } from "src/utils/getTextByLang";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 
 const Blog = ({ course }: { course: IBlogData }) => {
-  const minContent = course.content;
-  const navigate = useNavigate();
-
+  const l = useRecoilValue(LanguageAtom);
+  const name = getTextByLang(l.code, course.name);
   const url = `/blog/${course.path}`;
 
   return (
@@ -17,7 +15,7 @@ const Blog = ({ course }: { course: IBlogData }) => {
       to={url}
       color={course.color ? course.color : baseTheme.colors.blue}
     >
-      <p className="name">{course.name}</p>
+      <p className="name">{name}</p>
       <OverlayStyled>
         <span className="bigIcon">{course.icon ? course.icon : ""}</span>
       </OverlayStyled>

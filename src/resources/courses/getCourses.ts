@@ -2,9 +2,9 @@ import courseData from "src/Models/Courses/CoursesData";
 export const getCourses = () => {
   return courseData;
 };
-export const getCourseByName = (name: string) => {
+export const getCourseByName = (nameInEnglish: string) => {
   const courses = getCourses();
-  return courses.find((course) => course.name === name);
+  return courses.find((course) => course.name.English === nameInEnglish);
 };
 export const getCourseByPath = (path: string) => {
   const courses = getCourses();
