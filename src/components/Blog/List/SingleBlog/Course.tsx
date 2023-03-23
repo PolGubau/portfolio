@@ -5,7 +5,7 @@ import { baseTheme } from "src/styles/theme/baseTheme";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { userAlreadyRead } from "../../Functions/userAlreadyRead";
-import { HiCheckCircle } from "react-icons/hi";
+import { BiCheckCircle } from "react-icons/bi";
 
 const Blog = ({ course }: { course: IBlogData }) => {
   const l = useRecoilValue(LanguageAtom);
@@ -19,7 +19,7 @@ const Blog = ({ course }: { course: IBlogData }) => {
     >
       {userAlreadyRead(course.id) && (
         <span className="seenCheck">
-          <HiCheckCircle />
+          <BiCheckCircle size={40} />
         </span>
       )}
       <p className="name">{name}</p>

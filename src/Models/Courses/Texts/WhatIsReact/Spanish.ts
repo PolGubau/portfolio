@@ -12,9 +12,9 @@ En este ejemplo, definimos un componente **Button** que toma **prop** como argum
 
 React usa un **DOM virtual** para optimizar el rendimiento del renderizado. El DOM virtual es una representación ligera del DOM real. Cuando se realizan cambios en el DOM virtual, React determina la forma más eficiente de actualizar el DOM real. Esto hace que React sea muy rápido y eficiente.
 
-## **ganchos de reacción**
+## **Hooks**
 
-React también introdujo **ganchos** en la versión 16.8. Los ganchos son funciones que le permiten usar funciones de React, como métodos de estado y ciclo de vida, en componentes funcionales. Aquí hay un ejemplo:
+React también introdujo **hooks** en la versión 16.8. Los hooks son funciones que le permiten usar funciones de React, como métodos de estado y ciclo de vida, en componentes funcionales. Aquí hay un ejemplo:
 
 En este ejemplo, usamos el enlace **useState** para crear un estado en un componente funcional. También definimos un controlador de eventos que actualiza el estado cuando se hace clic en un botón.
 

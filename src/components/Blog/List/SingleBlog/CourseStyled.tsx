@@ -24,12 +24,12 @@ export const BlogStyled = styled(Link)<Props>`
   position: relative;
   .seenCheck {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    color: ${({ theme }) => theme.colors.background};
     border-radius: 50%;
-    background-color: ${({ theme }) => theme.colors.primary};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,7 +48,7 @@ export const BlogStyled = styled(Link)<Props>`
     font-weight: 500;
   }
   :hover {
-    transform: scale(0.95);
+    transform: scale(0.98);
     filter: brightness(0.9);
   }
 `;

@@ -20,7 +20,7 @@ var app = new Vue({
 
 \`\`\`
 
-L'objecte options passat a la funció Vue és on defineixes les dades, mètodes i ganxos del cicle de vida de la teva aplicació. Vet aquí un exemple:
+L'objecte options passat a la funció Vue és on defineixes les dades, mètodes i hooks del cicle de vida de la teva aplicació. Vet aquí un exemple:
 
 \`\`\`javascript
 var app = new Vue({

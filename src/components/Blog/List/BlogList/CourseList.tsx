@@ -2,9 +2,15 @@ import { IBlogData } from "src/Models/Courses/CoursesData";
 import Blog from "../SingleBlog/Course";
 import { BlogListStyled } from "./CourseListStyled";
 
-const BlogList = ({ blogs }: { blogs: IBlogData[] }) => {
+const BlogList = ({
+  blogs,
+  narrowLayout = false,
+}: {
+  blogs: IBlogData[];
+  narrowLayout?: boolean;
+}) => {
   return (
-    <BlogListStyled>
+    <BlogListStyled narrowLayout={narrowLayout}>
       {blogs.map((course: IBlogData) => {
         return <Blog course={course} key={course.id} />;
       })}

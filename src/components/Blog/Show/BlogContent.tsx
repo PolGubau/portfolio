@@ -16,7 +16,7 @@ import { useCallback, useEffect } from "react";
 import { addBlogToAlreadyRedIfNotAlreadyRead } from "../Functions/userAlreadyRead";
 const BlogContent = ({ blog }: { blog: IBlogData }) => {
   const similarBlogs = useCallback(() => {
-    return getCoursesWithSameTags(blog, 3);
+    return getCoursesWithSameTags(blog, 4);
   }, [blog]);
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const BlogContent = ({ blog }: { blog: IBlogData }) => {
       />
       <section className="similarBlogs">
         <h2>Similar Blogs</h2>
-        <BlogList blogs={similarBlogs()} />
+        <BlogList blogs={similarBlogs()} narrowLayout />
       </section>
     </BlogContentStyled>
   );

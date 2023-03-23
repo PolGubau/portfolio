@@ -14,7 +14,7 @@ React utilitza un **DOM virtual** per optimitzar el rendiment de renderització.
 
 ## **React Hooks**
 
-React també va introduir **ganxos** a la versió 16.8. Els ganxos són funcions que us permeten utilitzar les funcions de React, com ara els mètodes d'estat i de cicle de vida, en components funcionals. Aquí teniu un exemple:
+React també va introduir **hooks** a la versió 16.8. Els hooks són funcions que us permeten utilitzar les funcions de React, com ara els mètodes d'estat i de cicle de vida, en components funcionals. Aquí teniu un exemple:
 
 En aquest exemple, utilitzem el ganxo **useState** per crear estat en un component funcional. També definim un gestor d'esdeveniments que actualitza l'estat quan es fa clic en un botó.
 
