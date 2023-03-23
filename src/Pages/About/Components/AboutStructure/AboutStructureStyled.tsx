@@ -82,6 +82,12 @@ export const AboutStructureStyled = styled.main<StyledProps>`
     h3 {
       margin: 0;
       font-size: 3em;
+      @media screen and (max-width: 500px) {
+        font-size: 2em;
+      }
+      @media screen and (max-width: 300px) {
+        font-size: 1.5em;
+      }
     }
   }
   .descriptionAndDreams {
@@ -92,7 +98,7 @@ export const AboutStructureStyled = styled.main<StyledProps>`
   }
 
   .blobsContainer {
-    margin: 200px 0;
+    margin: ${(props) => (props.smallerThanTablet ? "70px 0" : "200px 0")};
     display: flex;
     flex-direction: column;
     gap: ${(props) => (props.smallerThanTablet ? "20px" : "0px")};
@@ -110,6 +116,13 @@ export const AboutStructureStyled = styled.main<StyledProps>`
         background-color: rgba(0, 0, 180, 0.1);
         backdrop-filter: blur(5px);
         margin-bottom: 90px;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .title {
+        h3 {
+          font-size: 1.5em;
+        }
       }
     }
   }

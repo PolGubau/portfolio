@@ -10,9 +10,15 @@ import { useRecoilValue } from "recoil";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { IDream } from "src/Models/Texts/dreamsText/DreamList";
+import useMedia from "src/hooks/useMedia";
+import { baseTheme } from "src/styles/theme/baseTheme";
 //
 
 const EachDream = ({ dream }: { dream: IDream }) => {
+  const { breakpoints } = baseTheme;
+
+  const smallerThanTablet = useMedia(breakpoints.tablet);
+
   const l = useRecoilValue(LanguageAtom);
   const dreamName = getTextByLang(l.code, dream.title);
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -49,7 +55,7 @@ const EachDream = ({ dream }: { dream: IDream }) => {
   return (
     <motion.li
       key={dream.id}
-      initial="offscreen"
+      initial={smallerThanTablet ? "onscreen" : "offscreen"}
       whileInView="onscreen"
       viewport={{ once: true, amount: "all" }}
       variants={cardVariants}

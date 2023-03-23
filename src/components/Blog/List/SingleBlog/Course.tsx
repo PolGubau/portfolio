@@ -4,6 +4,8 @@ import { useRecoilValue } from "recoil";
 import { baseTheme } from "src/styles/theme/baseTheme";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { userAlreadyRead } from "../../Functions/userAlreadyRead";
+import { HiCheckCircle } from "react-icons/hi";
 
 const Blog = ({ course }: { course: IBlogData }) => {
   const l = useRecoilValue(LanguageAtom);
@@ -15,6 +17,11 @@ const Blog = ({ course }: { course: IBlogData }) => {
       to={url}
       color={course.color ? course.color : baseTheme.colors.blue}
     >
+      {userAlreadyRead(course.id) && (
+        <span className="seenCheck">
+          <HiCheckCircle />
+        </span>
+      )}
       <p className="name">{name}</p>
       <OverlayStyled>
         <span className="bigIcon">{course.icon ? course.icon : ""}</span>

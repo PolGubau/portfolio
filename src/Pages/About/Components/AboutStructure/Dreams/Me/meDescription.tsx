@@ -20,7 +20,7 @@ const MeDescription = () => {
   const text: IAboutYouText = getTextByLang(l.code, aboutYouText);
   return (
     <MeStyled smallerThanTablet={smallerThanTablet}>
-      <ReactMarkdown>{text.firstParagraph}</ReactMarkdown>
+      <ReactMarkdown className="description">{text.firstParagraph}</ReactMarkdown>
       <div className="logos">
         <LogosCarrousel />
       </div>

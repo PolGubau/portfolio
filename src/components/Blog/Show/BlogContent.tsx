@@ -12,8 +12,17 @@ import { useRecoilValue } from "recoil";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { timeToRead } from "../Functions/timeToRead";
+import { useCallback, useEffect } from "react";
+import { addBlogToAlreadyRedIfNotAlreadyRead } from "../Functions/userAlreadyRead";
 const BlogContent = ({ blog }: { blog: IBlogData }) => {
-  const similarBlogs = getCoursesWithSameTags(blog.tags, 3);
+  const similarBlogs = useCallback(() => {
+    return getCoursesWithSameTags(blog, 3);
+  }, [blog]);
+
+  useEffect(() => {
+    addBlogToAlreadyRedIfNotAlreadyRead(blog);
+  }, [blog]);
+
   const l = useRecoilValue(LanguageAtom);
   const name = getTextByLang(l.code, blog.name);
   const level = getTextByLang(l.code, blog.level);
@@ -69,7 +78,7 @@ const BlogContent = ({ blog }: { blog: IBlogData }) => {
       />
       <section className="similarBlogs">
         <h2>Similar Blogs</h2>
-        <BlogList blogs={similarBlogs} />
+        <BlogList blogs={similarBlogs()} />
       </section>
     </BlogContentStyled>
   );

@@ -1,4 +1,15 @@
 import { useRecoilValue } from "recoil";
+import AlmatoIcon from "src/assets/logos/brands/Almato";
+import BinanceIcon from "src/assets/logos/brands/Binance";
+import CaixaBankIcon from "src/assets/logos/brands/CaixaBank";
+import HereticsIcon from "src/assets/logos/brands/Heretics";
+import MediaMarkt from "src/assets/logos/brands/MediaMarkt";
+import MesalvoIcon from "src/assets/logos/brands/Mesalvo";
+import NovartisIcon from "src/assets/logos/brands/Novartis";
+import NuweIcon from "src/assets/logos/brands/Nuwe";
+import SantanderIcon from "src/assets/logos/brands/Santander";
+import UabIcon from "src/assets/logos/brands/UabIcon";
+
 import {
   aboutYouText,
   IAboutYouText,
@@ -15,7 +26,18 @@ const Partners = () => {
       <div className="title">
         <h3>{text.partnersTitle}</h3>
       </div>
-      logos
+      <div className="logosGrid">
+        <BinanceIcon />
+        <HereticsIcon />
+        <AlmatoIcon />
+        <SantanderIcon />
+        <MediaMarkt />
+        <CaixaBankIcon />
+        <MesalvoIcon />
+        <UabIcon />
+        <NuweIcon />
+        <NovartisIcon />
+      </div>
     </PartnersStyled>
   );
 };

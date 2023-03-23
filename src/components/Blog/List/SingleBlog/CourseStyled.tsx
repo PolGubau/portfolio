@@ -17,13 +17,23 @@ export const BlogStyled = styled(Link)<Props>`
 
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0px 1px 3px #d4d4d4;
-  border: 1px solid #ccc;
   background-image: linear-gradient(
     ${({ color }) => color},
     ${({ color }) => applyOpacityToColor(color, 0.2)}
   );
   position: relative;
+  .seenCheck {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: ${({ theme }) => theme.colors.primary};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .name {
     z-index: 1;
     padding: 20px 20px;

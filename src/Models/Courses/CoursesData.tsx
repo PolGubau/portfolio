@@ -24,6 +24,10 @@ import WhatIsTypescript from "./Texts/WhatIsTypescript";
 import WhatIsFigma from "./Texts/WhatIsFigma";
 import JS_BeginnersGuide from "./Texts/JS_BeginnersGuide";
 import WhatIsMaterialDesign from "./Texts/WhatIsMaterialDesign";
+import WhatIsAngular from "./Texts/WhatIsAngular";
+import WhatIsBootstrap from "./Texts/WhatIsBootstrap";
+import WhatIsSketch from "./Texts/WhatIsSketch";
+import WhatIsGatsby from "./Texts/WhatIsGatsby";
 
 export interface IBlogData {
   id: string;
@@ -190,38 +194,38 @@ const courseData: IBlogData[] = [
     level: levels.Beginner,
     date: "2023-16-03",
   },
-  // {
-  //   id: "course-4",
-  //   name: {
-  //     English: "What is Angular?",
-  //     Spanish: "¿Qué es Angular?",
-  //     Catalan: "Què és Angular?",
-  //   },
-  //   path: "what-is-angular",
-  //   tags: ["Angular", "JavaScript", "Frontend"],
-  //   icon: <TbBrandAngular />,
-  //   color: "#dd1b16",
-  //   content: WhatIsAngular,
-  //   author: "Pol Gubau Amores",
-  //   level: levels.Beginner,
-  //   date: "2023-16-03",
-  // },
-  // {
-  //   id: "course-5",
-  //   name: {
-  //     English: "What is Bootstrap?",
-  //     Spanish: "¿Qué es Bootstrap?",
-  //     Catalan: "Què és Bootstrap?",
-  //   },
-  //   path: "what-is-bootstrap",
-  //   tags: ["Bootstrap", "CSS", "UI"],
-  //   icon: <TbBrandBootstrap />,
-  //   color: "#563d7c",
-  //   content: WhatIsBootstrap,
-  //   author: "Pol Gubau Amores",
-  //   level: levels.Beginner,
-  //   date: "2023-16-03",
-  // },
+  {
+    id: "course-4",
+    name: {
+      English: "What is Angular?",
+      Spanish: "¿Qué es Angular?",
+      Catalan: "Què és Angular?",
+    },
+    path: "what-is-angular",
+    tags: ["Angular", "JavaScript", "Frontend"],
+    icon: <TbBrandAngular />,
+    color: "#dd1b16",
+    content: WhatIsAngular,
+    author: "Pol Gubau Amores",
+    level: levels.Beginner,
+    date: "2023-16-03",
+  },
+  {
+    id: "course-5",
+    name: {
+      English: "What is Bootstrap?",
+      Spanish: "¿Qué es Bootstrap?",
+      Catalan: "Què és Bootstrap?",
+    },
+    path: "what-is-bootstrap",
+    tags: ["Bootstrap", "CSS", "UI"],
+    icon: <TbBrandBootstrap />,
+    color: "#563d7c",
+    content: WhatIsBootstrap,
+    author: "Pol Gubau Amores",
+    level: levels.Beginner,
+    date: "2023-16-03",
+  },
   {
     id: "course-7",
     name: {
@@ -238,38 +242,38 @@ const courseData: IBlogData[] = [
     level: levels.Beginner,
     date: "2023-16-03",
   },
-  // {
-  //   id: "course-8",
-  //   name: {
-  //     English: "What is Sketch?",
-  //     Spanish: "¿Qué es Sketch?",
-  //     Catalan: "Què és Sketch?",
-  //   },
-  //   path: "what-is-sketch",
-  //   tags: ["Sketch", "Design", "UI"],
-  //   icon: <TbBrandSketch />,
-  //   color: "#ff9a00",
-  //   content: WhatIsSketch,
-  //   author: "Pol Gubau Amores",
-  //   level: levels.Beginner,
-  //   date: "2023-16-03",
-  // },
-  // {
-  //   id: "course-10",
-  //   name: {
-  //     English: "What is Gatsby?",
-  //     Spanish: "¿Qué es Gatsby?",
-  //     Catalan: "Què és Gatsby?",
-  //   },
-  //   path: "what-is-gatsby",
-  //   tags: ["Gatsby", "React", "Frontend"],
-  //   icon: <TbBrandGatsby />,
-  //   color: "#663399",
-  //   content: WhatIsGatsby,
-  //   author: "Pol Gubau Amores",
-  //   level: levels.Beginner,
-  //   date: "2023-18-03",
-  // },
+  {
+    id: "course-8",
+    name: {
+      English: "What is Sketch?",
+      Spanish: "¿Qué es Sketch?",
+      Catalan: "Què és Sketch?",
+    },
+    path: "what-is-sketch",
+    tags: ["Sketch", "Design", "UI"],
+    icon: <TbBrandSketch />,
+    color: "#ff9a00",
+    content: WhatIsSketch,
+    author: "Pol Gubau Amores",
+    level: levels.Beginner,
+    date: "2023-16-03",
+  },
+  {
+    id: "course-10",
+    name: {
+      English: "What is Gatsby?",
+      Spanish: "¿Qué es Gatsby?",
+      Catalan: "Què és Gatsby?",
+    },
+    path: "what-is-gatsby",
+    tags: ["Gatsby", "React", "Frontend"],
+    icon: <TbBrandGatsby />,
+    color: "#663399",
+    content: WhatIsGatsby,
+    author: "Pol Gubau Amores",
+    level: levels.Beginner,
+    date: "2023-18-03",
+  },
 ];
 
 export default courseData;

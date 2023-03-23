@@ -8,6 +8,7 @@ export const MeStyled = styled.div<StyledProps>`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
   p {
     font-size: 1.2rem;
     font-weight: normal;
