@@ -10,7 +10,7 @@ import { BiCheckCircle } from "react-icons/bi";
 const Blog = ({ course }: { course: IBlogData }) => {
   const l = useRecoilValue(LanguageAtom);
   const name = getTextByLang(l.code, course.name);
-  const url = `/blog/${course.path}`;
+  const url = `/courses/${course.path}`;
 
   return (
     <BlogStyled

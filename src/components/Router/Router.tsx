@@ -13,9 +13,8 @@ const Router = () => {
         <Route path="/" element={<List />} />
         <Route path="/:path" element={<List />} />
         <Route path="/about" element={<AboutLazy />} />
-        <Route path="/blog" element={<BlogPageLazy />} />
-        <Route path="/blog/:path" element={<ConcreteBlogLazy />} />
-
+        <Route path="/courses" element={<BlogPageLazy />} />
+        <Route path="/courses/:path" element={<ConcreteBlogLazy />} />
         <Route path="*" element={<List />} />
       </Routes>
     </Suspense>

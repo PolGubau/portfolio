@@ -11,6 +11,7 @@ import { stickiesText } from "./stickies.text";
 import { thoseColorsText } from "./thoseColors.text";
 import { uabMediaText } from "./uabMedia.text";
 import { unbrushedText } from "./unbrushed.text";
+import Beecipes from "./beecipes.text";
 
 export * from "./afternoons.text";
 export * from "./askaquest.text";
@@ -24,8 +25,10 @@ export * from "./stickies.text";
 export * from "./thoseColors.text";
 export * from "./uabMedia.text";
 export * from "./unbrushed.text";
+export * from "./beecipes.text";
 
 export const allProjects: IProject[] = [
+  Beecipes,
   habitsText,
   stickiesText,
   nuweText,
@@ -35,7 +38,7 @@ export const allProjects: IProject[] = [
   uabMediaText,
   unbrushedText,
   rispotText,
-  skatlaText,
+  // skatlaText,
   memoText,
-  thoseColorsText,
+  // thoseColorsText,
 ];

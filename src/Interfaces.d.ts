@@ -21,6 +21,8 @@ export interface IProject {
   description: ITextByLanguage;
   githubLink?: string;
   figmaLink?: string;
+  npmComand?: string;
+  npmLink?: string;
   link: string;
 }
 

@@ -1,5 +1,4 @@
 import { IProject } from "src/Interfaces";
-import { tagsMobile } from "src/utils/Tags";
 
 export const thoseColorsText: IProject = {
   id: 1,
