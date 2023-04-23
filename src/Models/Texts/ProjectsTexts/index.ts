@@ -37,7 +37,7 @@ export const allProjects: IProject[] = [
   cvCreatorText,
   uabMediaText,
   unbrushedText,
-  rispotText,
+  // rispotText,
   // skatlaText,
   memoText,
   // thoseColorsText,

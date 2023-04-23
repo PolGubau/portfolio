@@ -18,9 +18,9 @@ const beecipesText: IProject = {
   pathToImg: "/Beecipes/0.webp",
   tags: ["React", "Recoil", "UI", "Spoonacular API", "JOBarcelona"],
   madeFor: {
-    English: "JOBarcelona",
-    Spanish: "JOBarcelona",
-    Catalan: "JOBarcelona",
+    English: "JOBarcelona Hackathon 2023",
+    Spanish: "JOBarcelona Hackathon 2023",
+    Catalan: "JOBarcelona Hackathon 2023",
   },
   invisibleTags: [
     "frontend",
@@ -42,7 +42,7 @@ const beecipesText: IProject = {
       "La meva participació al hackathon JOBarcelona 2023. Beecipes és una aplicació de receptes que utilitza l'API Spoonacular per obtenir receptes i mostrar-les d'una manera fàcil d'utilitzar.",
   },
   githubLink: "https://github.com/PolGubau/hackathon-JOBarcelona-recipes-2023",
-  link: "https://github.com/PolGubau/pol-ui",
+  link: "https://beecipes.vercel.app",
 };
 
 export default beecipesText;
