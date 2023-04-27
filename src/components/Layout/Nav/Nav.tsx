@@ -10,13 +10,18 @@ import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
 import { baseTheme } from "src/styles/theme/baseTheme";
+import { IProject } from "src/Interfaces";
+import { allProjects } from "src/Models/Texts/ProjectsTexts";
 
 export const Nav = memo((): JSX.Element => {
   const mobile = useMedia(baseTheme.breakpoints.tablet);
   const language = useRecoilValue(LanguageAtom);
   const text = getTextByLang(language.code, navTexts);
+
   const [projectList, setProjectList] = useRecoilState(SearchProjectAtom);
+
   const { searched } = projectList;
+
   const [newest, setNewest] = useState(false);
 
   const changeOrder = () => {
@@ -36,68 +41,26 @@ export const Nav = memo((): JSX.Element => {
     setNewest(!newest);
   };
 
-  // const onlyShowCategory = (category: string) => {
-  //   setFiltered(true);
-  //   setFilter(allData.filter((card) => card.category.English === category));
-  // };
+  const filterProjects = (NameOrTag: string, allProjects: IProject[]) => {
+    const filteredProjects = allProjects.filter((project) => {
+      const name = project.title.toLowerCase();
+      const tags = project.tags.map((tag) => tag.toLowerCase());
+      const nameOrTag = NameOrTag.toLowerCase();
 
-  // const refresh = () => {
-  //   setFilter(allData);
-  //   setNewest(false);
-  //   setFiltered(false);
-  //   setSearched("");
-  // };
-
-  // const filterTags = (e: any) => {
-  //   setFiltered(true);
-
-  //   if (e.target.value === "") {
-  //     setFiltered(false);
-
-  //     setFilter(allData);
-  //     return;
-  //   }
-  //   filteringByTagsAndTitle();
-  // };
-  // if (searched) {
-  //   setFilter(
-  //     allData.filter((card) =>
-  //       card.tags.some((tag) =>
-  //         tag.toLowerCase().startsWith(searched.toLowerCase())
-  //       )
-  //     )
-  //   );
-  // }
-  const projectsFiltered = () => {
-    const filteredProjects = projectList.toShow.filter(
-      (project) =>
-        project.tags.some((tag) =>
-          tag.toLowerCase().startsWith(searched.toLowerCase())
-        ) ||
-        project.title.toLowerCase().startsWith(searched.toLowerCase()) ||
-        project.invisibleTags?.some((tag) =>
-          tag.toLowerCase().startsWith(searched.toLowerCase())
-        )
-    );
-
-    setProjectList({
-      ...projectList,
-      toShow: filteredProjects,
+      return name.includes(nameOrTag) || tags.includes(nameOrTag);
     });
-    console.log(projectList);
+    return filteredProjects;
   };
+
   const handleSearchTermChange = (event: any) => {
     const valueSearched = event.target.value;
 
     const newValue = {
       searched: valueSearched,
       orderBy: projectList.orderBy,
-      toShow: projectList.toShow,
+      toShow: filterProjects(valueSearched, allProjects),
     };
-    console.log(newValue);
-
     setProjectList(newValue);
-    projectsFiltered();
   };
 
   return (
@@ -119,13 +82,20 @@ export const Nav = memo((): JSX.Element => {
               maxLength={20}
               type="text"
               className={`input `}
-              defaultValue={searched}
+              value={searched}
               placeholder={text.placeholder}
               onChange={handleSearchTermChange}
             />
           </div>
         </div>
-        <div className={`filterNav`}>
+      </div>
+    </NavStyled>
+  );
+});
+export default Nav;
+
+/**
+ * <div className={`filterNav`}>
           {searched.length === 0 && (
             <ul className="filterWord-container">
               <li
@@ -146,17 +116,13 @@ export const Nav = memo((): JSX.Element => {
           {projectList.toShow.length > 0 && (
             <div onClick={changeOrder} className="sortIcon">
               {newest ? <p>+</p> : <p>-</p>}
-              {/* {newest ? <HiSortAscending /> : <HiSortDescending />} */}
+               {newest ? <HiSortAscending /> : <HiSortDescending />} 
+              </div>
+              )}
+               {filtered && (
+                <div onClick={refresh} className="refreshIcon">
+                  <IoMdRefresh />
+                </div>
+              )} 
             </div>
-          )}
-          {/* {filtered && (
-            <div onClick={refresh} className="refreshIcon">
-              <IoMdRefresh />
-            </div>
-          )} */}
-        </div>
-      </div>
-    </NavStyled>
-  );
-});
-export default Nav;
+ */

@@ -7,7 +7,6 @@ export const NotFoundStyled = styled.div`
   .filterDelete {
     margin: 10px 0;
     padding: 5px 10px;
-    font-size: ${({ theme }) => theme.fontSize.text};
     background-color: ${({ theme }) => theme.colors.blue};
     border: 1px solid ${({ theme }) => theme.colors.black};
     cursor: pointer;

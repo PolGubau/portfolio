@@ -9,7 +9,6 @@ import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 
 interface CardInterfaceInline {
   project: IProject;
-  ids: Array<number>;
   index: number;
 }
 

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Nav from "src/components/Layout/Nav/Nav";
 
@@ -12,8 +11,7 @@ import { useRecoilState } from "recoil";
 import { allProjects } from "src/Models/Texts/ProjectsTexts";
 
 const List = () => {
-  const [projectsData, setProjectsData] = useRecoilState(SearchProjectAtom);
-  const shown = projectsData.toShow;
+  const [projectList, setProjectList] = useRecoilState(SearchProjectAtom);
   const { path } = useParams();
 
   const ids = allProjects.map((project) => project.id);
@@ -21,13 +19,13 @@ const List = () => {
   return (
     <ContentStyled>
       <Nav />
-      {shown.length === 0 && <NotFoundNav />}
+      {projectList.toShow.length === 0 && <NotFoundNav />}
       <CardListStyled>
-        {shown.map((card, index) =>
+        {projectList.toShow.map((card, index) =>
           path === card.path ? (
-            <OpenedCard key={card.id} project={card} ids={ids} />
+            <OpenedCard key={card.id} project={card} />
           ) : (
-            <ClosedCard key={card.id} index={index} project={card} ids={ids} />
+            <ClosedCard key={card.id} index={index} project={card} />
           )
         )}
       </CardListStyled>

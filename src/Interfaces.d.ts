@@ -30,7 +30,6 @@ export interface CardInterface {
   index?: number;
   allData?: Array<IProject>;
   project: IProject;
-  ids: any;
   mobile: boolean;
 }
 

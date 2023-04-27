@@ -11,10 +11,9 @@ import { baseTheme } from "src/styles/theme/baseTheme";
 
 interface CardInterfaceInline {
   project: IProject;
-  ids: Array<number>;
 }
 
-export const OpenedCard = memo(({ project, ids }: CardInterfaceInline) => {
+export const OpenedCard = memo(({ project }: CardInterfaceInline) => {
   const mobile = useMedia(baseTheme.breakpoints.tablet);
   const cardRef = useRef(null);
 
@@ -27,7 +26,7 @@ export const OpenedCard = memo(({ project, ids }: CardInterfaceInline) => {
           ref={cardRef}
           className={`cardContainer ${mobile ? "openMobile" : " openPC"}`}
         >
-          <CardContent project={project} ids={ids} mobile={mobile} />
+          <CardContent project={project} mobile={mobile} />
         </motion.div>
       </OpenedCardStyled>
     </>
