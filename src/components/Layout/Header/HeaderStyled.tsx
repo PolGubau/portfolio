@@ -1,5 +1,4 @@
-import { decreaseFrom10, grow, growBouncing } from "src/styles/animations";
-import { baseTheme } from "src/styles/theme/baseTheme";
+import { decreaseFrom10, grow } from "src/styles/animations";
 import styled, { keyframes } from "styled-components";
 
 // appear animation
@@ -46,6 +45,9 @@ export const HeaderStyled = styled.header`
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
+  }
+  .sectionInPC {
+    flex-wrap: nowrap;
   }
 
   .langs {

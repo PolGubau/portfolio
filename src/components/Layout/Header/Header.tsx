@@ -14,7 +14,7 @@ import { baseTheme } from "src/styles/theme/baseTheme";
 export default function Header() {
   const l = useRecoilValue(LanguageAtom);
   const text = getTextByLang(l.code, headerText);
-  const smallerThanTablet = useMedia(baseTheme.breakpoints.tablet);
+  const smallerThanTablet = useMedia(baseTheme.breakpoints.mobile);
   const location = useLocation();
   const isAbout = location.pathname === "/about";
   const [isMounted, setIsMounted] = useState(isAbout);
@@ -58,7 +58,7 @@ export default function Header() {
           </section>
         ) : (
           <>
-            <section>
+            <section className="sectionInPC">
               <article className="titles">
                 <div className="langsContainer">
                   <UpperButtons />
