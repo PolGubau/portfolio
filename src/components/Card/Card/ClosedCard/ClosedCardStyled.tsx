@@ -48,6 +48,8 @@ export const ClosedCardStyled = styled(motion.li)<CardInterfaceInline>`
   }
 
   img {
+    user-select: none;
+    pointer-events: none;
     height: ${(props) => props.project.width}px;
     margin-right: ${(props) => props.project.pointOfInterest.x}px;
     margin-bottom: ${(props) => props.project.pointOfInterest.y}px;

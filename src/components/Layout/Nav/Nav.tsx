@@ -7,72 +7,22 @@ import { getTextByLang } from "src/utils/getTextByLang";
 import { NavStyled } from "./NavStyled";
 
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
-import { useRecoilValue, useRecoilState } from "recoil";
-import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
+import { useRecoilValue } from "recoil";
 import { baseTheme } from "src/styles/theme/baseTheme";
-import { IProject } from "src/Interfaces";
-import { allProjects } from "src/Models/Texts/ProjectsTexts";
+import useFilter from "src/hooks/useFilter";
 
 export const Nav = memo((): JSX.Element => {
   const mobile = useMedia(baseTheme.breakpoints.tablet);
   const language = useRecoilValue(LanguageAtom);
   const text = getTextByLang(language.code, navTexts);
+  const { filterProjects, projects } = useFilter();
 
-  const [projectList, setProjectList] = useRecoilState(SearchProjectAtom);
-
-  const { searched } = projectList;
-
-  const [newest, setNewest] = useState(false);
-
-  const changeOrder = () => {
-    if (!newest) {
-      const newOrder = [...projectList.toShow].sort((a, b) => a.year - b.year);
-      setProjectList({
-        ...projectList,
-        toShow: newOrder,
-      });
-    } else {
-      const newOrder = [...projectList.toShow].sort((a, b) => b.year - a.year);
-      setProjectList({
-        ...projectList,
-        toShow: newOrder,
-      });
-    }
-    setNewest(!newest);
+  const filterWord = () => {
+    filterProjects();
   };
-
-  const filterProjects = (value: string, allProjects: IProject[]) => {
-    const filteredProjects = allProjects.filter((project) => {
-      const {
-        title,
-        tags,
-        backgroundColor,
-        year,
-        category,
-        invisibleTags,
-        madeFor,
-        description,
-      } = project;
-      const tagsString = tags.join(" ");
-      const invisibleTagsString = invisibleTags ? invisibleTags.join(" ") : "";
-      const madeForString = madeFor ? Object.values(madeFor).join(" ") : "";
-      const plainProject = `${title} ${tagsString} ${backgroundColor} ${year} ${category} ${invisibleTagsString} ${madeForString} ${description}`;
-
-      const plainValue = value.toLowerCase();
-      return plainProject.toLowerCase().includes(plainValue);
-    });
-    return filteredProjects;
-  };
-
-  const handleSearchTermChange = (event: any) => {
-    const valueSearched = event.target.value;
-
-    const newValue = {
-      searched: valueSearched,
-      orderBy: projectList.orderBy,
-      toShow: filterProjects(valueSearched, allProjects),
-    };
-    setProjectList(newValue);
+  const handleChangeInput = (event: any) => {
+    const valueSearched: string = event.target.value;
+    filterProjects(valueSearched);
   };
 
   return (
@@ -81,22 +31,19 @@ export const Nav = memo((): JSX.Element => {
         <div className={`searchNav ${mobile ? "mobileSearch" : ""}`}>
           <div
             className={`inputWithIcon ${
-              searched.length > 0 ? "activeInput" : ""
+              projects.searched.length > 0 ? "activeInput" : ""
             }`}
           >
             <div className="inputIconDiv">
-              <BiSearch
-                className="iconSearch"
-                onClick={handleSearchTermChange}
-              />
+              <BiSearch className="iconSearch" onClick={filterWord} />
             </div>
             <input
               maxLength={20}
               type="text"
               className={`input `}
-              value={searched}
+              value={projects.searched}
               placeholder={text.placeholder}
-              onChange={handleSearchTermChange}
+              onChange={handleChangeInput}
             />
           </div>
         </div>

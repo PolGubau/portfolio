@@ -36,6 +36,10 @@ export const HeaderStyled = styled.header`
   header {
     position: relative;
   }
+  img {
+    user-select: none;
+    pointer-events: none;
+  }
 
   section {
     display: flex;

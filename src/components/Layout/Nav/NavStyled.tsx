@@ -36,6 +36,7 @@ export const NavStyled = styled.nav`
   }
 
   .searchNav {
+    max-width: 80vw;
     gap: 5px;
     display: flex;
     align-items: flex-start;
@@ -47,6 +48,7 @@ export const NavStyled = styled.nav`
 
   .mobileSearch {
     width: 100%;
+    justify-content: center;
   }
 
   .inputIconDiv {
