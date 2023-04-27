@@ -1,6 +1,6 @@
 import { IProject } from "src/Interfaces";
 
-export const polUi: IProject = {
+const polUi: IProject = {
   id: 12,
   path: "pol-ui",
   title: "Pol-UI",
@@ -44,3 +44,5 @@ export const polUi: IProject = {
   link: "https://github.com/PolGubau/pol-ui",
   relevant: true,
 };
+
+export default polUi;
