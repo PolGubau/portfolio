@@ -59,4 +59,5 @@ export const unbrushedText: IProject = {
   githubLink: "https://github.com/PolGubau/Unbrushed",
 
   link: "https://pol-uab.alwaysdata.net/Otros/Unbrushed_PHP/Code/",
+  relevant: true,
 };

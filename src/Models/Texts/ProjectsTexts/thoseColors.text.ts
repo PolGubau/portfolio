@@ -30,4 +30,5 @@ export const thoseColorsText: IProject = {
   githubLink: "https://github.com/PolGubau/ThoseColors",
 
   link: "https://pol-uab.alwaysdata.net/Otros/ThoseColors/index.php",
+  relevant: false,
 };

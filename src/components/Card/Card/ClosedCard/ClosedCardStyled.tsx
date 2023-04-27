@@ -8,22 +8,7 @@ interface CardInterfaceInline {
   index: number;
 }
 
-const bright = keyframes`
-  0% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.05);
-  }
-  100% {
-    filter: brightness(1);
-  }
-`;
-
 export const ClosedCardStyled = styled(motion.li)<CardInterfaceInline>`
-  animation: ${bright} 0.5s ease-in-out;
-  animation-delay: ${(props) => props.index * 0.2}s;
-
   padding: 0;
   flex: 1 0 100%;
   width: 100%;

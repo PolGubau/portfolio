@@ -46,4 +46,5 @@ export const cvCreatorText: IProject = {
   githubLink: "https://github.com/PolGubau/uab-2022-Practica3",
 
   link: "https://pol-uab.alwaysdata.net/UAB/Web/3er/uab-2022-Practica3/",
+  relevant: true,
 };

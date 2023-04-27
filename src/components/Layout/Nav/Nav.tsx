@@ -41,13 +41,25 @@ export const Nav = memo((): JSX.Element => {
     setNewest(!newest);
   };
 
-  const filterProjects = (NameOrTag: string, allProjects: IProject[]) => {
+  const filterProjects = (value: string, allProjects: IProject[]) => {
     const filteredProjects = allProjects.filter((project) => {
-      const name = project.title.toLowerCase();
-      const tags = project.tags.map((tag) => tag.toLowerCase());
-      const nameOrTag = NameOrTag.toLowerCase();
+      const {
+        title,
+        tags,
+        backgroundColor,
+        year,
+        category,
+        invisibleTags,
+        madeFor,
+        description,
+      } = project;
+      const tagsString = tags.join(" ");
+      const invisibleTagsString = invisibleTags ? invisibleTags.join(" ") : "";
+      const madeForString = madeFor ? Object.values(madeFor).join(" ") : "";
+      const plainProject = `${title} ${tagsString} ${backgroundColor} ${year} ${category} ${invisibleTagsString} ${madeForString} ${description}`;
 
-      return name.includes(nameOrTag) || tags.includes(nameOrTag);
+      const plainValue = value.toLowerCase();
+      return plainProject.toLowerCase().includes(plainValue);
     });
     return filteredProjects;
   };

@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import { baseTheme } from "src/styles/theme/baseTheme";
 import styled from "styled-components";
 
-export const CardListStyled = styled.section`
+export const CardListStyled = styled(motion.ul)`
   margin-top: 25px;
   gap: 15px;
   width: 100%;
@@ -13,6 +14,11 @@ export const CardListStyled = styled.section`
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+
+  .item {
+    margin: 0;
+    padding: 0;
+  }
 `;
 export const ContentStyled = styled.section`
   border-top: 1px solid ${({ theme }) => theme.colors.text};

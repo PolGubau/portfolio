@@ -27,7 +27,7 @@ export * from "./uabMedia.text";
 export * from "./unbrushed.text";
 export * from "./beecipes.text";
 
-export const allProjects: IProject[] = [
+export const projects: IProject[] = [
   Beecipes,
   habitsText,
   stickiesText,
@@ -37,8 +37,19 @@ export const allProjects: IProject[] = [
   cvCreatorText,
   uabMediaText,
   unbrushedText,
-  // rispotText,
-  // skatlaText,
+  rispotText,
+  skatlaText,
   memoText,
-  // thoseColorsText,
+  thoseColorsText,
+];
+
+export const relevantProjects = projects.filter((project) => project.relevant);
+
+export const notRelevantProjects = projects.filter(
+  (project) => !project.relevant
+);
+
+export const allProjects: IProject[] = [
+  ...relevantProjects,
+  ...notRelevantProjects,
 ];

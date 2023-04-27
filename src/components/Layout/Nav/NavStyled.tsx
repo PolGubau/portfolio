@@ -8,6 +8,7 @@ export const NavStyled = styled.nav`
   gap: 7px;
   margin: 0 0 0 0;
   padding: 0px;
+  margin-bottom: 20px;
   list-style: none;
   color: ${({ theme }) => theme.colors.text};
   text-transform: uppercase;

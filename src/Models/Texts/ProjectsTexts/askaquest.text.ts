@@ -45,4 +45,5 @@ export const askaquestText: IProject = {
   githubLink: "https://github.com/PolGubau/AskaQuest",
 
   link: "https://askaquest.vercel.app/",
+  relevant: true,
 };

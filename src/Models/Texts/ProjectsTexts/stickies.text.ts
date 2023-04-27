@@ -40,4 +40,5 @@ export const stickiesText: IProject = {
   },
   githubLink: "https://github.com/PolGubau/stickies",
   link: "https://mystickies.vercel.app/",
+  relevant: true,
 };

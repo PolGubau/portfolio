@@ -40,4 +40,5 @@ export const habitsText: IProject = {
   },
   githubLink: "https://github.com/PolGubau/habits",
   link: "https://habitss.vercel.app/",
+  relevant: false,
 };

@@ -43,4 +43,5 @@ export const afternoonsText: IProject = {
   githubLink: "https://github.com/PolGubau/gubauafternoons.com",
 
   link: "https://gubauafternoons.com/",
+  relevant: true,
 };

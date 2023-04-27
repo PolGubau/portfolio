@@ -4,8 +4,9 @@ import { IProject } from "src/Interfaces";
 import { closeSpring } from "../../utils/animations";
 import { ClosedCardStyled } from "./ClosedCardStyled";
 import { Title } from "../../Title/Title";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
+import { motion } from "framer-motion";
 
 interface CardInterfaceInline {
   project: IProject;
@@ -15,20 +16,33 @@ interface CardInterfaceInline {
 export const ClosedCard = memo(({ project, index }: CardInterfaceInline) => {
   const navigate = useNavigate();
   const cardRef = useRef(null);
-  const [projectSelected, setProjectSelected] =
-    useRecoilState(projectSelectedAtom);
+  const setProjectSelected = useSetRecoilState(projectSelectedAtom);
 
   const handleClick = () => {
     setProjectSelected(project);
     navigate(`/${project.path}`);
   };
+  const item = {
+    hidden: { opacity: 0, scale: 0.8, y: 100 },
+    show: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 120,
+        damping: 6,
+        inertia: 100,
+      },
+    },
+  };
   return (
     <ClosedCardStyled
       index={index}
       project={project}
+      variants={item}
       ref={cardRef}
       className={`card`}
-      transition={closeSpring}
       onClick={handleClick}
     >
       <Title project={project} isSelected={false} />

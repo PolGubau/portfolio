@@ -29,4 +29,5 @@ export const memoText: IProject = {
       "Aquesta és una web que vaig completar amb Javascript per practicar l'ús del LocalStorage. Va ser duplicada de GitHub i vaig afegir funcionalitats com el canvi de color dels Memos.",
   },
   link: "https://pol-uab.alwaysdata.net/Otros/memo/",
+  relevant: false,
 };

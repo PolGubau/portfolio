@@ -47,4 +47,5 @@ export const uabMediaText: IProject = {
   },
   githubLink: "https://github.com/orgs/UABmedia/repositories",
   link: "https://uab.media/",
+  relevant: true,
 };

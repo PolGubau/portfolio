@@ -29,6 +29,9 @@ export const MainStyled = styled.main`
     width: 100%;
     max-width: 950px;
     flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   p,
   h1,

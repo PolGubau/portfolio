@@ -52,4 +52,5 @@ export const rispotText: IProject = {
   githubLink: "https://github.com/PolGubau/Rispot",
 
   link: "https://www.amazon.es/s?i=merchant-items&me=A1O24E5ASY81J5&rh=p_4%3ARISPOT",
+  relevant: false,
 };

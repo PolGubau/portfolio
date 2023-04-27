@@ -24,6 +24,7 @@ export interface IProject {
   npmComand?: string;
   npmLink?: string;
   link: string;
+  relevant: boolean;
 }
 
 export interface CardInterface {

@@ -42,4 +42,5 @@ export const afternoonsText: IProject = {
   npmComand: "npm i pol-ui",
   npmLink: "https://www.npmjs.com/package/pol-ui",
   link: "https://github.com/PolGubau/pol-ui",
+  relevant: true,
 };

@@ -14,4 +14,5 @@ export const emptyProject: IProject = {
   tags: [],
   description: { English: "", Spanish: "", Catalan: "" },
   link: "",
+  relevant: false,
 };

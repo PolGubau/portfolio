@@ -1,9 +1,9 @@
 import { useRecoilState } from "recoil";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
-import { allProjects } from "src/Models/Texts/ProjectsTexts";
+import { allProjects, relevantProjects } from "src/Models/Texts/ProjectsTexts";
 
 //
-export const useProjectsData = () => {
+const useFilter = () => {
   const [projects, setProjects] = useRecoilState(SearchProjectAtom);
 
   const projectsFiltered = () => {
@@ -16,20 +16,27 @@ export const useProjectsData = () => {
     });
   };
 
-  const resetShowingList = () => {
+  const resetShowingListToAll = () => {
     setProjects({
       ...projects,
       toShow: allProjects,
     });
   };
-  const resetSearch = () => {
+  const resetShowingListToRelevant = () => {
     setProjects({
       ...projects,
+      toShow: relevantProjects,
+    });
+  };
+  const resetSearch = () => {
+    setProjects({
       searched: "",
+      orderBy: "name",
+      toShow: relevantProjects,
     });
   };
   const resetAll = () => {
-    resetShowingList();
+    resetShowingListToRelevant();
     resetSearch();
   };
 
@@ -37,8 +44,11 @@ export const useProjectsData = () => {
     projects,
     setProjects,
     projectsFiltered,
-    resetShowingList,
+    resetShowingListToAll,
+    resetShowingListToRelevant,
     resetSearch,
     resetAll,
   };
 };
+
+export default useFilter;

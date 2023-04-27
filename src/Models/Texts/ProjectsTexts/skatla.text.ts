@@ -45,4 +45,5 @@ export const skatlaText: IProject = {
   figmaLink: "",
 
   link: "https://www.instagram.com/skatlapack/",
+  relevant: false,
 };

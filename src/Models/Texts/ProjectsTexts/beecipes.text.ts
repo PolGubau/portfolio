@@ -43,6 +43,7 @@ const beecipesText: IProject = {
   },
   githubLink: "https://github.com/PolGubau/hackathon-JOBarcelona-recipes-2023",
   link: "https://beecipes.vercel.app",
+  relevant: true,
 };
 
 export default beecipesText;

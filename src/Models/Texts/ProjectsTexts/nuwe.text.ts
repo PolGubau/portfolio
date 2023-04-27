@@ -37,4 +37,5 @@ export const nuweText: IProject = {
   figmaLink: "",
 
   link: "https://nuwe.io/",
+  relevant: true,
 };
