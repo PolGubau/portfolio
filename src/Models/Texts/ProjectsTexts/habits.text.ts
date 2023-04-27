@@ -24,6 +24,8 @@ export const habitsText: IProject = {
     "Aplicación",
     "Mobile",
     "SCRUD",
+    "Styled Components",
+
     "Notes",
     "TodoList",
     "todo",

@@ -1,6 +1,6 @@
 import { IProject } from "src/Interfaces";
 
-export const afternoonsText: IProject = {
+export const polUi: IProject = {
   id: 12,
   path: "pol-ui",
   title: "Pol-UI",

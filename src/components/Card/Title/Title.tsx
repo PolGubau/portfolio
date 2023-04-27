@@ -7,6 +7,8 @@ import { getTextByLang } from "src/utils/getTextByLang";
 import { TitleStyled } from "./TitleStyled";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue } from "recoil";
+import useGoTo from "src/hooks/useGoTo";
+import useFilter from "src/hooks/useFilter";
 export const Title = ({
   project,
   isSelected,
@@ -18,6 +20,13 @@ export const Title = ({
 
   const { title, textColor, year, category, link } = project;
   const categoryLangugaged = getTextByLang(l.code, category);
+  const { goThere } = useGoTo();
+  const { filterProjects } = useFilter();
+
+  const handleClickTag = (tag: string) => {
+    filterProjects(tag);
+    goThere("/");
+  };
 
   return (
     <TitleStyled
@@ -63,16 +72,13 @@ export const Title = ({
         <>
           <div className="Description-tagsContainer">
             {project.tags.map((tag: string) => (
-              <Link
+              <p
                 key={tag}
-                to="/"
-                state={{
-                  inputSearch: tag,
-                }}
+                onClick={() => handleClickTag(tag)}
                 className="Description-tag"
               >
                 {tag}
-              </Link>
+              </p>
             ))}
           </div>
         </>

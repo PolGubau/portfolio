@@ -75,5 +75,11 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
     border-radius: 10px;
     background-color: ${(props) => props.theme.colors.buttons.base};
     color: ${(props) => props.theme.colors.buttons.text};
+    transition: all 0.1s ease-in-out;
+    :hover {
+      cursor: pointer;
+      filter: brightness(0.8);
+      transform: scale(0.95);
+    }
   }
 `;

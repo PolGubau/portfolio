@@ -31,6 +31,8 @@ const beecipesText: IProject = {
     "api",
     "web",
     "react",
+    "Styled Components",
+
     "ui",
   ],
   description: {

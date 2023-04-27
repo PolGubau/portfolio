@@ -22,6 +22,7 @@ export const stickiesText: IProject = {
     ...tagsMobile,
     "App",
     "Aplicación",
+    "Styled Components",
     "Mobile",
     "scrud",
     "Notes",
