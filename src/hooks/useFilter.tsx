@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
-import { allProjects, relevantProjects } from "src/Models/Texts/ProjectsTexts";
+import { relevantProjects, allProjects } from "src/utils/textsUtils";
+
 import { IProject } from "src/Interfaces";
 import { useState } from "react";
 

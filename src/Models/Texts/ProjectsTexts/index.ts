@@ -42,14 +42,3 @@ export const projects: IProject[] = [
   memoText,
   thoseColorsText,
 ];
-
-export const relevantProjects = projects.filter((project) => project.relevant);
-
-export const notRelevantProjects = projects.filter(
-  (project) => !project.relevant
-);
-
-export const allProjects: IProject[] = [
-  ...relevantProjects,
-  ...notRelevantProjects,
-];

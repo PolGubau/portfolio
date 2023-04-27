@@ -1,5 +1,5 @@
 import { IProject } from "src/Interfaces";
-import { allProjects } from "src/Models/Texts/ProjectsTexts";
+import { allProjects } from "./textsUtils";
 
 /**
  * Returns an array of up to 'limit' projects that have at least one tag in common with the given project.

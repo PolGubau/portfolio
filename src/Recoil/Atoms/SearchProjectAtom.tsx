@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { relevantProjects } from "src/Models/Texts/ProjectsTexts";
+import { relevantProjects } from "src/utils/textsUtils";
 
 export const SearchProjectAtom = atom({
   key: "searchProjectAtom",

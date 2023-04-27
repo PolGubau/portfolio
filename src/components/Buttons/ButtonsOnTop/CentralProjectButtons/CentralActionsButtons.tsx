@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router-dom";
 import { cardTexts } from "src/Consts";
 import { useRecoilValue } from "recoil";
 import { CentralActionsButtonsStyle } from "./Styled";
-import { allProjects } from "src/Models/Texts/ProjectsTexts";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { getTextByLang } from "src/utils/getTextByLang";
+import { allProjects } from "src/utils/textsUtils";
 
 const CentralActionsButtons = () => {
   const params = useParams<{ path: string }>();

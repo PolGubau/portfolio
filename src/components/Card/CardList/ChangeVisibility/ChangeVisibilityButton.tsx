@@ -1,4 +1,4 @@
-import { allProjects, relevantProjects } from "src/Models/Texts/ProjectsTexts";
+import { relevantProjects, allProjects } from "src/utils/textsUtils";
 import useFilter from "src/hooks/useFilter";
 import { CVBStyled } from "./Styled";
 import { TbEye, TbEyeOff } from "react-icons/tb";

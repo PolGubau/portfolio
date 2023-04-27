@@ -10,7 +10,7 @@ import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
 import { useRecoilValue } from "recoil";
 import ChangeVisibilityButton from "./ChangeVisibility/ChangeVisibilityButton";
 import useFilter from "src/hooks/useFilter";
-import { allProjects } from "src/Models/Texts/ProjectsTexts";
+import { allProjects } from "src/utils/textsUtils";
 
 const List = () => {
   const { projects } = useFilter();
