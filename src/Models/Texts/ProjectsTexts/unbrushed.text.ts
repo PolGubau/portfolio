@@ -1,5 +1,5 @@
 import { IProject } from "src/Interfaces";
-import { tagsDatabase, tagsMobile } from "src/utils/Tags";
+import { tagsDatabase, tagsMobile } from "src/Models/Tags";
 
 export const unbrushedText: IProject = {
   id: 3,

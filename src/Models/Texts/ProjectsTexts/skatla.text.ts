@@ -1,5 +1,5 @@
 import { IProject } from "src/Interfaces";
-import { tagsDesign, tagsMobile } from "src/utils/Tags";
+import { tagsDesign, tagsMobile } from "src/Models/Tags";
 
 export const skatlaText: IProject = {
   id: 2,

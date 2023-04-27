@@ -1,5 +1,5 @@
 import { IProject } from "src/Interfaces";
-import { tagsDatabase, tagsJS, tagsLogin, tagsMobile } from "src/utils/Tags";
+import { tagsDatabase, tagsJS, tagsLogin, tagsMobile } from "src/Models/Tags";
 
 export const askaquestText: IProject = {
   id: 8,

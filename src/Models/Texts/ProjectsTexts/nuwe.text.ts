@@ -1,5 +1,5 @@
 import { IProject } from "src/Interfaces";
-import { tagsDesign } from "src/utils/Tags";
+import { tagsDesign } from "src/Models/Tags";
 
 export const nuweText: IProject = {
   id: 6,

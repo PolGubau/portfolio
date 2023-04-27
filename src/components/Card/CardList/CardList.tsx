@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Nav from "src/components/Layout/Nav/Nav";
 
 import NotFoundNav from "./NotFoundNav/NotFoundNav";
@@ -7,14 +7,11 @@ import { CardListStyled, ContentStyled } from "./CardListStyled";
 import { OpenedCard } from "../Card/OpenedCard/OpenedCard";
 import { ClosedCard } from "../Card/ClosedCard/ClosedCard";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
-import { useRecoilState } from "recoil";
-import { allProjects } from "src/Models/Texts/ProjectsTexts";
+import { useRecoilValue } from "recoil";
 
 const List = () => {
-  const [projectList, setProjectList] = useRecoilState(SearchProjectAtom);
+  const projectList = useRecoilValue(SearchProjectAtom);
   const { path } = useParams();
-
-  const ids = allProjects.map((project) => project.id);
 
   return (
     <ContentStyled>

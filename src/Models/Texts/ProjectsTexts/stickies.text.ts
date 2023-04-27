@@ -1,5 +1,5 @@
 import { IProject } from "src/Interfaces";
-import { tagsMobile } from "src/utils/Tags";
+import { tagsMobile } from "src/Models/Tags";
 
 export const stickiesText: IProject = {
   id: 10,

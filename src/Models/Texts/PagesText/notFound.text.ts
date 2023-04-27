@@ -10,29 +10,31 @@ interface INotFoundLanguage {
   Catalan: INotFound;
   Deutsch: INotFound;
 }
-export const aboutYouText: INotFoundLanguage = {
+const notFoundText: INotFoundLanguage = {
   English: {
-    title: `Oupsss.. I hadn't had time to create this project yet. 🤷‍♂️`,
+    title: `Thanks for this great idea, but I haven't had time to develop it yet...`,
     paragraph: `Maybe `,
     buttonResetFilters: `Reset filters`,
     seeMoreParagraph: `or see more projects below.`,
   },
   Spanish: {
-    title: `Oupsss.. Todavía no he tenido tiempo de crear este proyecto. 🤷‍♂️`,
+    title: `Gracias por esta genial idea, pero no he tenido tiempo de desarrollarla aún...`,
     paragraph: `Quizás `,
     buttonResetFilters: `Reiniciar filtros`,
     seeMoreParagraph: `o ver más proyectos abajo.`,
   },
   Catalan: {
-    title: `Oupsss.. Encara no he tingut temps de crear aquest projecte. 🤷‍♂️`,
+    title: `Gràcies per aquesta genial idea, però no he tingut temps de desenvolupar-la encara...`,
     paragraph: `Potser `,
     buttonResetFilters: `Reiniciar filtres`,
     seeMoreParagraph: `o veure més projectes a sota.`,
   },
   Deutsch: {
-    title: `Oupsss.. Ich hatte noch keine Zeit, dieses Projekt zu erstellen. 🤷‍♂️`,
+    title: `Danke für diese tolle Idee, aber ich hatte noch keine Zeit, sie zu entwickeln...`,
     paragraph: `Vielleicht `,
     buttonResetFilters: `Filter zurücksetzen`,
     seeMoreParagraph: `oder sehen Sie unten mehr Projekte.`,
   },
 };
+
+export default notFoundText;

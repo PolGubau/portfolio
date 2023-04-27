@@ -4,9 +4,14 @@ import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
 import { allProjects } from "src/Models/Texts/ProjectsTexts";
+import notFoundText, {
+  INotFound,
+} from "src/Models/Texts/PagesText/notFound.text";
+import { getTextByLang } from "src/utils/getTextByLang";
 
 export default function NotFoundNav({}: {}): JSX.Element {
   const lang = useRecoilValue(LanguageAtom);
+  const text: INotFound = getTextByLang(lang.code, notFoundText);
   const [projects, setSearched] = useRecoilState(SearchProjectAtom);
 
   const resetFilters: MouseEventHandler<HTMLButtonElement> = () => {
@@ -19,8 +24,8 @@ export default function NotFoundNav({}: {}): JSX.Element {
 
   return (
     <NotFoundStyled>
-      <h1>Not found</h1>
-      <button onClick={resetFilters}>Reset filters</button>
+      <h1>{text.title}</h1>
+      <button onClick={resetFilters}>{text.buttonResetFilters}</button>
     </NotFoundStyled>
   );
 }

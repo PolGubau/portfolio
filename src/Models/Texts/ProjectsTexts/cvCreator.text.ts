@@ -1,5 +1,5 @@
 import { IProject } from "src/Interfaces";
-import { tagsDatabase, tagsLogin, tagsMobile } from "src/utils/Tags";
+import { tagsDatabase, tagsLogin, tagsMobile } from "src/Models/Tags";
 
 export const cvCreatorText: IProject = {
   id: 9,

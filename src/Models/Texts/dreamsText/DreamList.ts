@@ -6,6 +6,7 @@ export interface IDream {
     Catalan: string;
   };
   status: "done" | "loading" | "false";
+  link?: string;
 }
 
 export const DreamsList: IDream[] = [
@@ -55,6 +56,16 @@ export const DreamsList: IDream[] = [
     status: "done",
   },
   {
+    id: 8,
+    status: "done",
+    link: "https://www.npmjs.com/package/pol-ui",
+    title: {
+      English: `Publish a .npm package`,
+      Spanish: `Publicar un paquete .npm`,
+      Catalan: `Publicar un paquet .npm`,
+    },
+  },
+  {
     id: 6,
     title: {
       English: `Design fonts and publish them`,
@@ -71,15 +82,6 @@ export const DreamsList: IDream[] = [
       Catalan: `Escriure un llibre`,
     },
     status: "false",
-  },
-  {
-    id: 8,
-    status: "false",
-    title: {
-      English: `Publish a .npm package`,
-      Spanish: `Publicar un paquete .npm`,
-      Catalan: `Publicar un paquet .npm`,
-    },
   },
 
   {
