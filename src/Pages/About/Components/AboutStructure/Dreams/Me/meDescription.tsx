@@ -12,7 +12,6 @@ import LogosCarrousel from "./LogosCarrousel";
 import { MeStyled } from "./meStyled";
 
 const breakpoints = baseTheme.breakpoints;
-const yearsFrom2018 = new Date().getFullYear() - 2018;
 
 const MeDescription = () => {
   const smallerThanTablet = useMedia(breakpoints.tablet);

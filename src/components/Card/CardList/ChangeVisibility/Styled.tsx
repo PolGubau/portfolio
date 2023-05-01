@@ -17,6 +17,7 @@ export const CVBStyled = styled.div`
     border-radius: 10px;
     background-color: ${({ theme }) => theme.colors.main};
     border: 1px solid ${({ theme }) => theme.colors.mainHover};
+    color: ${({ theme }) => theme.colors.text};
     cursor: pointer;
     :hover {
       filter: brightness(0.9);

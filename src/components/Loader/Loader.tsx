@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const LoaderStyled = styled.div`
-  --size: 20vw;
+  --size: 15vw;
+
   --speed: 1.4s;
   --color: ${({ theme }) => theme.colors.text};
   --line-weight: 8px;
@@ -11,6 +12,7 @@ export const LoaderStyled = styled.div`
   align-items: center;
   justify-content: center;
   height: var(--line-weight);
+  min-width: 200px;
   width: var(--size);
   border-radius: calc(var(--line-weight) / 2);
   overflow: hidden;

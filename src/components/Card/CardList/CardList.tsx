@@ -40,8 +40,6 @@ const List = () => {
       <CardListStyled variants={container} initial="hidden" animate="show">
         {projectList.toShow.map((card, index) => (
           <ClosedCard index={index} project={card} key={card.id} />
-
-          // <ClosedCard index={index} project={card} key={card.id} />
         ))}
       </CardListStyled>
       {!projects.searched && <ChangeVisibilityButton />}
