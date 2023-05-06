@@ -14,6 +14,9 @@ import { getTextByLang } from "src/utils/getTextByLang";
 import { timeToRead } from "../Functions/timeToRead";
 import { useCallback, useEffect } from "react";
 import { addBlogToAlreadyRedIfNotAlreadyRead } from "../Functions/userAlreadyRead";
+import { coursePageText } from "src/Models/Texts/PagesText/coursePage.text";
+
+//
 const BlogContent = ({ blog }: { blog: IBlogData }) => {
   const similarBlogs = useCallback(() => {
     return getCoursesWithSameTags(blog, 4);
@@ -27,12 +30,15 @@ const BlogContent = ({ blog }: { blog: IBlogData }) => {
   const name = getTextByLang(l.code, blog.name);
   const level = getTextByLang(l.code, blog.level);
   const content = getTextByLang(l.code, blog.content);
+  const coursePage = getTextByLang(l.code, coursePageText);
+
+  //
   return (
     <BlogContentStyled>
       <header>
         <Link to="/blog" className="goBack">
           <TbArrowBack />
-          Back
+          {coursePage.goBack}
         </Link>
         <h3>{name}</h3>
       </header>

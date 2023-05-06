@@ -18,7 +18,7 @@ var app = new Vue({
   // Optionen
 })
 
-\`\`\`
+\`\`\`js
 
 Das Options-Objekt, das an die Vue-Funktion übergeben wird, ist der Ort, an dem Sie die Daten, Methoden und Lifecycle-Hooks Ihrer Anwendung definieren. Hier ist ein Beispiel:
 

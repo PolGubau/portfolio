@@ -4,7 +4,7 @@ import List from "../Card/CardList/CardList";
 import CenteredLoader from "../Loader/CenteredLoader";
 
 const AboutLazy = lazy(() => import("src/Pages/About/About"));
-const BlogPageLazy = lazy(() => import("src/Pages/Blog/BlogPage"));
+const BlogPageLazy = lazy(() => import("src/Pages/Blog/CoursesPage"));
 const ConcreteBlogLazy = lazy(() => import("src/Pages/Blog/ConcreteBlog"));
 //
 const Router = () => {

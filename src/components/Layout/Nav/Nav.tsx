@@ -48,9 +48,9 @@ export const Nav = memo((): JSX.Element => {
             />
           </div>
           {projects.searched.length === 0 && <Categories />}
-          <div className="sortIcon" onClick={toggleAscending}>
+          {/* <div className="sortIcon" onClick={toggleAscending}>
             {projects.ascending ? <HiSortAscending /> : <HiSortDescending />}
-          </div>
+          </div> */}
         </div>
         {projects.searched && (
           <div onClick={resetSearch} className="refreshIcon">
