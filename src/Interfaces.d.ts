@@ -109,3 +109,9 @@ export interface IMadeForText {
   ca: IMadeForTextOneLanguage;
   de: IMadeForTextOneLanguage;
 }
+export interface IAboutYouTextLanguage {
+  en: IAboutYouText;
+  es: IAboutYouText;
+  ca: IAboutYouText;
+  de: IAboutYouText;
+}
