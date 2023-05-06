@@ -9,9 +9,10 @@ export const nuweText: IProject = {
   year: 2022,
 
   category: {
-    English: "design",
-    Spanish: "diseño",
-    Catalan: "disseny",
+    en: "design",
+    es: "diseño",
+    ca: "disseny",
+    de: "design",
   },
   pointOfInterest: { x: 20, y: 20 },
 
@@ -22,17 +23,16 @@ export const nuweText: IProject = {
   tags: ["Figma", "Illustrator", "Photoshop"],
   invisibleTags: [...tagsDesign],
   madeFor: {
-    English: "NUWE",
-    Spanish: "NUWE",
-    Catalan: "NUWE",
+    en: "NUWE",
+    es: "NUWE",
+    ca: "NUWE",
+    de: "NUWE",
   },
   description: {
-    English:
-      "NUWE is a gamification company in hiring developers. I work here as a graphic designer and I carry the creatives of social networks, rollups... I visually capture the ideas of my jobmates.",
-    Spanish:
-      "NUWE es una empresa de gamificación en contratar desarrolladores. Trabajo aquí como diseñador gráfico y llevo las creatividades de redes sociales, rollups... Plasmar visualmente las ideas de mis compañeros.",
-    Catalan:
-      "NUWE és una empresa de gamificació en contractar desenvolupadors. Treballo aquí com a dissenyador gràfic i porto les creativitats de xarxes socials, rollups... Plasmar visualment les idees dels meus companys.",
+    en: "NUWE is a gamification company in hiring developers. I work here as a graphic designer and I carry the creatives of social networks, rollups... I visually capture the ideas of my jobmates.",
+    es: "NUWE es una empresa de gamificación en contratar desarrolladores. Trabajo aquí como diseñador gráfico y llevo las creatividades de redes sociales, rollups... Plasmar visualmente las ideas de mis compañeros.",
+    ca: "NUWE és una empresa de gamificació en contractar desenvolupadors. Treballo aquí com a dissenyador gràfic i porto les creativitats de xarxes socials, rollups... Plasmar visualment les idees dels meus companys.",
+    de: "NUWE ist ein Gamification-Unternehmen bei der Einstellung von Entwicklern. Ich arbeite hier als Grafikdesigner und trage die Kreativen der sozialen Netzwerke, Rollups... Ich fange die Ideen meiner Arbeitskollegen visuell ein.",
   },
   figmaLink: "",
 

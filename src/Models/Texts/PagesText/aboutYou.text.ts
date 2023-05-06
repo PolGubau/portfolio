@@ -7,12 +7,12 @@ export interface IAboutYouText {
   partnersTitle: string;
 }
 interface IAboutYouTextLanguage {
-  English: IAboutYouText;
-  Spanish: IAboutYouText;
-  Catalan: IAboutYouText;
+  en: IAboutYouText;
+  es: IAboutYouText;
+  ca: IAboutYouText;
 }
 export const aboutYouText: IAboutYouTextLanguage = {
-  English: {
+  en: {
     mainTitle: `A pixel perfectionist, even though I work with vectors. 🎨👨‍💻`,
     firstParagraph: `Software developer and UX designer with 5 years of experience.
         I have a strong background in web development and have worked on a variety of projects, from small websites to large-scale web applications.`,
@@ -21,7 +21,7 @@ export const aboutYouText: IAboutYouTextLanguage = {
     studiesTitle: `Where I've learned from`,
     partnersTitle: `Some organizations I've worked with`,
   },
-  Spanish: {
+  es: {
     mainTitle: `Un perfeccionista a cada píxel, y eso que trabajo con vectores. 🎨👨‍💻`,
     firstParagraph: `Desarrollador de software y diseñador UX con 5 años de experiencia.
         Tengo un sólido conocimiento en desarrollo web y he trabajado en una variedad de proyectos, desde pequeños sitios web hasta aplicaciones web de gran escala.`,
@@ -30,7 +30,7 @@ export const aboutYouText: IAboutYouTextLanguage = {
     studiesTitle: `Donde he aprendido`,
     partnersTitle: `Algunas empresas con las que he colaborado`,
   },
-  Catalan: {
+  ca: {
     mainTitle: `Un perfeccionista a cada píxel, i això que treballo amb vectors. 🎨👨‍💻`,
     firstParagraph: `Desenvolupador de software i dissenyador UX amb 5 anys d'experiència.
         Tinc un sòlid coneixement en desenvolupament web i he treballat en una varietat de projectes, des de petits llocs web fins a aplicacions web d'escala gran.`,

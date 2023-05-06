@@ -4,42 +4,8 @@ import { useLocation } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { getTextByLang } from "src/utils/getTextByLang";
+import { NavContent } from "src/Models/Texts/PagesText/layout.text";
 
-export const NavContent = [
-  {
-    name: "Home",
-    path: "/",
-    labels: {
-      English: "Home",
-      Spanish: "Inicio",
-      Catalan: "Inici",
-      German: "Zuhause",
-    },
-    active: true,
-  },
-  {
-    name: "About",
-    path: "/about",
-    labels: {
-      English: "About",
-      Spanish: "Sobre mi ",
-      Catalan: "Sobre mi",
-      German: "Über",
-    },
-    active: true,
-  },
-  {
-    name: "Courses",
-    path: "/courses",
-    labels: {
-      English: "Courses",
-      Spanish: "Cursos",
-      Catalan: "Cursos",
-      German: "Kurse",
-    },
-    active: true,
-  },
-];
 const UpperButtons = () => {
   const l = useRecoilValue(LanguageAtom);
 

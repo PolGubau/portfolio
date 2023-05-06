@@ -1,21 +1,22 @@
-import { memo, useState } from "react";
-import { navTexts } from "src/Consts";
+import { memo } from "react";
 import { BiSearch } from "react-icons/bi";
 import useMedia from "src/hooks/useMedia";
-
 import { getTextByLang } from "src/utils/getTextByLang";
 import { NavStyled } from "./NavStyled";
-
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue } from "recoil";
 import { baseTheme } from "src/styles/theme/baseTheme";
 import useFilter from "src/hooks/useFilter";
-
+import { IoMdRefresh } from "react-icons/io";
+import { HiSortAscending, HiSortDescending } from "react-icons/hi";
+import Categories from "./Categories/Categories";
+import { navTexts } from "src/Models/Texts/PagesText/home.text";
 export const Nav = memo((): JSX.Element => {
   const mobile = useMedia(baseTheme.breakpoints.tablet);
   const language = useRecoilValue(LanguageAtom);
   const text = getTextByLang(language.code, navTexts);
-  const { filterProjects, projects } = useFilter();
+  const { filterProjects, projects, toggleAscending, resetSearch } =
+    useFilter();
 
   const filterWord = () => {
     filterProjects();
@@ -40,48 +41,24 @@ export const Nav = memo((): JSX.Element => {
             <input
               maxLength={20}
               type="text"
-              className={`input `}
+              className={`input`}
               value={projects.searched}
               placeholder={text.placeholder}
               onChange={handleChangeInput}
             />
           </div>
+          {projects.searched.length === 0 && <Categories />}
+          <div className="sortIcon" onClick={toggleAscending}>
+            {projects.ascending ? <HiSortAscending /> : <HiSortDescending />}
+          </div>
         </div>
+        {projects.searched && (
+          <div onClick={resetSearch} className="refreshIcon">
+            <IoMdRefresh />
+          </div>
+        )}
       </div>
     </NavStyled>
   );
 });
 export default Nav;
-
-/**
- * <div className={`filterNav`}>
-          {searched.length === 0 && (
-            <ul className="filterWord-container">
-              <li
-                className="filterWord"
-                // onClick={() => onlyShowCategory("web")}
-              >
-                {text.web}
-              </li>
-              <li
-                className="filterWord"
-                // onClick={() => onlyShowCategory("design")}
-              >
-                {text.design}
-              </li>
-            </ul>
-          )}
-
-          {projectList.toShow.length > 0 && (
-            <div onClick={changeOrder} className="sortIcon">
-              {newest ? <p>+</p> : <p>-</p>}
-               {newest ? <HiSortAscending /> : <HiSortDescending />} 
-              </div>
-              )}
-               {filtered && (
-                <div onClick={refresh} className="refreshIcon">
-                  <IoMdRefresh />
-                </div>
-              )} 
-            </div>
- */

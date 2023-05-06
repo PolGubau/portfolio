@@ -1,12 +1,12 @@
 import { BsSearch } from "react-icons/bs";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
-import { cardTexts } from "src/Consts";
 import { useRecoilValue } from "recoil";
 import { CentralActionsButtonsStyle } from "./Styled";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { allProjects } from "src/utils/textsUtils";
+import { cardTexts } from "src/Models/Texts/PagesText/home.text";
 
 const CentralActionsButtons = () => {
   const params = useParams<{ path: string }>();

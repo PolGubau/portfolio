@@ -5,28 +5,28 @@ import {
   IErrorLanguages,
   ILanguagesDataLanguages,
   InavTextsLanguages,
-} from "./Interfaces";
+} from "src/Interfaces";
 
 export const languagesTexts: ILanguagesDataLanguages = {
-  English: {
-    English: "English",
-    Spanish: "Spanish",
-    Catalan: "Catalan",
+  en: {
+    en: "English",
+    es: "Spanish",
+    ca: "Catalan",
   },
-  Spanish: {
-    English: "Inglés",
-    Spanish: "Español",
-    Catalan: "Catalán",
+  es: {
+    en: "Inglés",
+    es: "Español",
+    ca: "Catalán",
   },
-  Catalan: {
-    English: "Anglès",
-    Spanish: "Castellà",
-    Catalan: "Català",
+  ca: {
+    en: "Anglès",
+    es: "Castellà",
+    ca: "Català",
   },
 };
 
 export const footerText: FooterDataInterface = {
-  English: {
+  en: {
     greeting: "Thank you :)",
     curriculum: "Download my CV",
     email: "Send me an Email",
@@ -34,7 +34,7 @@ export const footerText: FooterDataInterface = {
     github: "My GitHub",
     instagram: "My Instagram",
   },
-  Spanish: {
+  es: {
     greeting: "Muchas gracias :)",
     curriculum: "Descarga mi CV",
     email: "Envíame un Email",
@@ -42,7 +42,7 @@ export const footerText: FooterDataInterface = {
     github: "Mi GitHub",
     instagram: "Mi Instagram",
   },
-  Catalan: {
+  ca: {
     greeting: "Moltes gràcies :)",
     curriculum: "Descarrega el meu CV",
     email: "Envia'm un email",
@@ -52,32 +52,32 @@ export const footerText: FooterDataInterface = {
   },
 };
 export const headerText: HeaderDataInterface = {
-  English: {
+  en: {
     title: "Pol Gubau Amores",
     description: "Full-Stack Developer and UX designer.",
   },
-  Spanish: {
+  es: {
     title: "Pol Gubau Amores",
     description: "Desarrollador Full-Stack y diseñador UX.",
   },
-  Catalan: {
+  ca: {
     title: "Pol Gubau Amores",
     description: "Programador Full-Stack i dissenyador UX.",
   },
 };
 export const errorOnSearch: IErrorLanguages = {
-  English: {
+  en: {
     title: "Oups, nothing here...",
     description:
       "It seems that you are looking for something that doesn't exist",
     action: "Delete all filters",
   },
-  Spanish: {
+  es: {
     title: "Uy, nada por aquí...",
     description: "Parece que has buscado algo que no existe",
     action: "Borra todos los filtros",
   },
-  Catalan: {
+  ca: {
     title: "Ui, res per aquí...",
     description: "Sembla que has buscat alguna cosa que no existeix",
     action: "Esborra tots els filtres",
@@ -85,7 +85,7 @@ export const errorOnSearch: IErrorLanguages = {
 };
 
 export const cardTexts: ICardDataLanguages = {
-  English: {
+  en: {
     madeFor: "Made for",
     tags: "Tags",
     description: "Description",
@@ -93,7 +93,7 @@ export const cardTexts: ICardDataLanguages = {
     link: "Link",
     linkButton: "Search",
   },
-  Spanish: {
+  es: {
     madeFor: "Hecho para",
     tags: "Etiquetas",
     description: "Descripción",
@@ -101,7 +101,7 @@ export const cardTexts: ICardDataLanguages = {
     link: "Enlace",
     linkButton: "Échale un vistazo",
   },
-  Catalan: {
+  ca: {
     madeFor: "Fet per",
     tags: "Etiquetes",
     description: "Descripció",
@@ -112,19 +112,32 @@ export const cardTexts: ICardDataLanguages = {
 };
 
 export const navTexts: InavTextsLanguages = {
-  English: {
-    web: "Web",
-    design: "Design",
+  en: {
     placeholder: "Search...",
   },
-  Spanish: {
-    web: "Web",
-    design: "Diseño",
+  es: {
     placeholder: "Buscar...",
   },
-  Catalan: {
-    web: "Web",
-    design: "Disseny",
+  ca: {
     placeholder: "Buscar...",
   },
 };
+
+export const categoriesText = [
+  {
+    name: "web",
+    text: {
+      en: "Web",
+      es: "Web",
+      ca: "Web",
+    },
+  },
+  {
+    name: "design",
+    text: {
+      en: "Design",
+      es: "Diseño",
+      ca: "Design",
+    },
+  },
+];

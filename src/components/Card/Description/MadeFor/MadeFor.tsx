@@ -3,18 +3,13 @@ import { getTextByLang } from "src/utils/getTextByLang";
 import { IMadeForTextOneLanguage, madeForText } from "./MadeFor.text";
 import "./MadeforModule.css";
 import { useRecoilValue } from "recoil";
+import { ITextByLanguage } from "src/Interfaces";
 //
 
 export default function Madefor({
   madeFor,
 }: {
-  madeFor:
-    | undefined
-    | {
-        English: string;
-        Spanish: string;
-        Catalan: string;
-      };
+  madeFor: ITextByLanguage | undefined;
 }) {
   const l = useRecoilValue(LanguageAtom);
 

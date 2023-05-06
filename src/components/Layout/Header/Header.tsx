@@ -1,4 +1,3 @@
-import { headerText } from "src/Consts";
 import { getTextByLang } from "src/utils/getTextByLang";
 import UpperButtons from "./upperButtons/upperButtons";
 import useMedia from "src/hooks/useMedia";
@@ -10,6 +9,7 @@ import useMountTransition from "src/hooks/useMountTransition";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue } from "recoil";
 import { baseTheme } from "src/styles/theme/baseTheme";
+import { headerText } from "src/Models/Texts/PagesText/home.text";
 
 export default function Header() {
   const l = useRecoilValue(LanguageAtom);

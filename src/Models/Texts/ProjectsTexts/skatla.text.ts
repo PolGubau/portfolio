@@ -8,9 +8,10 @@ export const skatlaText: IProject = {
   title: "Škatla",
   year: 2021,
   category: {
-    English: "design",
-    Spanish: "diseño",
-    Catalan: "disseny",
+    en: "design",
+    es: "diseño",
+    ca: "disseny",
+    de: "design",
   },
   pointOfInterest: { x: 20, y: 0 },
 
@@ -30,17 +31,16 @@ export const skatlaText: IProject = {
     "design",
   ],
   madeFor: {
-    English: "Škatla",
-    Spanish: "Škatla",
-    Catalan: "Škatla",
+    en: "Škatla",
+    es: "Škatla",
+    ca: "Škatla",
+    de: "Škatla",
   },
   description: {
-    English:
-      "Škatla is a university project where we created an ecological packaging company, a lot of mockups and designs for social networks were made. Škatla creates boxes and merchandising at the customer's request. ",
-    Spanish:
-      "Škatla es un proyecto universitario donde creamos una empresa de packagings ecologicos, se realizaron cantidad de mockups y diseños para redes sociales. Škatla crea cajas y merchandising a demanda del cliente. ",
-    Catalan:
-      "Škatla és un projecte universitari on vam crear una empresa de Packagings ecològics, es van realitzar quantitat de mockups i dissenys per a xarxes socials. Škatla crea caixes i marxandatge a demanda del client.",
+    en: "Škatla is a university project where we created an ecological packaging company, a lot of mockups and designs for social networks were made. Škatla creates boxes and merchandising at the customer's request. ",
+    es: "Škatla es un proyecto universitario donde creamos una empresa de packagings ecologicos, se realizaron cantidad de mockups y diseños para redes sociales. Škatla crea cajas y merchandising a demanda del cliente. ",
+    ca: "Škatla és un projecte universitari on vam crear una empresa de Packagings ecològics, es van realitzar quantitat de mockups i dissenys per a xarxes socials. Škatla crea caixes i marxandatge a demanda del client.",
+    de: "Škatla ist ein Universitätsprojekt, bei dem wir ein Unternehmen für ökologische Verpackungen gegründet haben. Es wurden viele Mockups und Designs für soziale Netzwerke erstellt. Škatla erstellt Boxen und Merchandising auf Kundenwunsch.",
   },
   figmaLink: "",
 

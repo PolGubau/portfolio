@@ -2,22 +2,22 @@ export interface INotFound {
   text: string;
 }
 interface ILoadingText {
-  English: INotFound;
-  Spanish: INotFound;
-  Catalan: INotFound;
-  Deutsch: INotFound;
+  en: INotFound;
+  es: INotFound;
+  ca: INotFound;
+  de: INotFound;
 }
 const loadingText: ILoadingText = {
-  English: {
+  en: {
     text: `Loading...`,
   },
-  Spanish: {
+  es: {
     text: `Cargando... `,
   },
-  Catalan: {
+  ca: {
     text: `Carregant...`,
   },
-  Deutsch: {
+  de: {
     text: `Wird geladen...`,
   },
 };

@@ -7,14 +7,16 @@ export const cvCreatorText: IProject = {
   path: "CvCreator",
   year: 2022,
   category: {
-    English: "web",
-    Spanish: "web",
-    Catalan: "web",
+    en: "web",
+    es: "web",
+    ca: "web",
+    de: "web",
   },
   madeFor: {
-    English: "Autonomous University of Barcelona",
-    Spanish: "Universidad autónoma de Barcelona",
-    Catalan: "Universitat autònoma de Barcelona",
+    en: "Autonomous University of Barcelona",
+    es: "Universidad autónoma de Barcelona",
+    ca: "Universitat autònoma de Barcelona",
+    de: "Autonome Universität Barcelona",
   },
   pointOfInterest: { x: 30, y: 20 },
 
@@ -36,12 +38,10 @@ export const cvCreatorText: IProject = {
   ],
 
   description: {
-    English:
-      "Cv Creator is a tool to generate resumes in a web way, they are downloadable and each user can have infinite resumes.  ",
-    Spanish:
-      "Cv Creator es una herramienta para generar currículums de manera web, son descargables y cada usuario puede tener infinitos. ",
-    Catalan:
-      "Cv Creator és una eina per generar currículums de manera web, es poden descarregar i cada usuari pot tenir infinitat de currículums.",
+    en: "Cv Creator is a tool to generate resumes in a web way, they are downloadable and each user can have infinite resumes.  ",
+    es: "Cv Creator es una herramienta para generar currículums de manera web, son descargables y cada usuario puede tener infinitos. ",
+    ca: "Cv Creator és una eina per generar currículums de manera web, es poden descarregar i cada usuari pot tenir infinitat de currículums.",
+    de: "Cv Creator ist ein Tool zum Erstellen von Lebensläufen auf Webbasis. Sie sind herunterladbar und jeder Benutzer kann unendlich viele haben.",
   },
   githubLink: "https://github.com/PolGubau/uab-2022-Practica3",
 

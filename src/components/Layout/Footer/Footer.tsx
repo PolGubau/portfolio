@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { RiGithubLine, RiLinkedinLine } from "react-icons/ri";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
-import { footerText } from "src/Consts";
 import { FooterTextInterface } from "src/Interfaces";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { FooterStyled } from "./FooterStyled";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue } from "recoil";
+import { footerText } from "src/Models/Texts/PagesText/home.text";
 export default function Footer() {
   const l = useRecoilValue(LanguageAtom);
   const text: FooterTextInterface = getTextByLang(l.code, footerText);

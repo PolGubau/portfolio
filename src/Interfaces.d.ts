@@ -1,7 +1,8 @@
 export interface ITextByLanguage {
-  English: string;
-  Spanish: string;
-  Catalan: string;
+  en: string;
+  es: string;
+  ca: string;
+  de: string;
 }
 
 export interface IProject {
@@ -52,9 +53,9 @@ export interface IErrorOnSearch {
   action: string;
 }
 export interface ILanguagesData {
-  English: string;
-  Spanish: string;
-  Catalan: string;
+  en: string;
+  es: string;
+  ca: string;
 }
 
 export interface ICardText {
@@ -66,39 +67,44 @@ export interface ICardText {
   linkButton: string;
 }
 export interface InavTexts {
-  web: string;
-  design: string;
   placeholder: string;
 }
 export interface InavTextsLanguages {
-  English: InavTexts;
-  Spanish: InavTexts;
-  Catalan: InavTexts;
+  en: InavTexts;
+  es: InavTexts;
+  ca: InavTexts;
 }
 
 export interface ICardDataLanguages {
-  English: CardTextInterface;
-  Spanish: CardTextInterface;
-  Catalan: CardTextInterface;
+  en: CardTextInterface;
+  es: CardTextInterface;
+  ca: CardTextInterface;
 }
 
 export interface FooterDataInterface {
-  English: FooterTextInterface;
-  Spanish: FooterTextInterface;
-  Catalan: FooterTextInterface;
+  en: FooterTextInterface;
+  es: FooterTextInterface;
+  ca: FooterTextInterface;
 }
 export interface HeaderDataInterface {
-  English: HeaderTextInterface;
-  Spanish: HeaderTextInterface;
-  Catalan: HeaderTextInterface;
+  en: HeaderTextInterface;
+  es: HeaderTextInterface;
+  ca: HeaderTextInterface;
 }
 export interface IErrorLanguages {
-  English: IErrorOnSearch;
-  Spanish: IErrorOnSearch;
-  Catalan: IErrorOnSearch;
+  en: IErrorOnSearch;
+  es: IErrorOnSearch;
+  ca: IErrorOnSearch;
 }
 export interface ILanguagesDataLanguages {
-  English: ILanguagesData;
-  Spanish: ILanguagesData;
-  Catalan: ILanguagesData;
+  en: ILanguagesData;
+  es: ILanguagesData;
+  ca: ILanguagesData;
+}
+
+export interface IMadeForText {
+  en: IMadeForTextOneLanguage;
+  es: IMadeForTextOneLanguage;
+  ca: IMadeForTextOneLanguage;
+  de: IMadeForTextOneLanguage;
 }

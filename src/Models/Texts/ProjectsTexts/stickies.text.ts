@@ -7,9 +7,10 @@ export const stickiesText: IProject = {
   path: "Stickies",
   year: 2022,
   category: {
-    English: "web",
-    Spanish: "web",
-    Catalan: "web",
+    en: "web",
+    es: "web",
+    ca: "web",
+    de: "web",
   },
   pointOfInterest: { x: -10, y: 20 },
 
@@ -32,12 +33,10 @@ export const stickiesText: IProject = {
   ],
 
   description: {
-    English:
-      "Stickies is an app to take notes and manage them. You can make private notes and classify them into categories.",
-    Spanish:
-      "Stickies es una app para tomar notas y manejarlas. Puedes hacer notas privadas y clasificarlas en categorías. ",
-    Catalan:
-      "Stickies és una app per prendre notes i manejar-les. Es poden fer notes privades i classificar-les en categories.",
+    en: "Stickies is an app to take notes and manage them. You can make private notes and classify them into categories.",
+    es: "Stickies es una app para tomar notas y manejarlas. Puedes hacer notas privadas y clasificarlas en categorías. ",
+    ca: "Stickies és una app per prendre notes i manejar-les. Es poden fer notes privades i classificar-les en categories.",
+    de: "Stickies ist eine App zum Notizen machen und verwalten. Sie können private Notizen machen und in Kategorien einteilen.",
   },
   githubLink: "https://github.com/PolGubau/stickies",
   link: "https://mystickies.vercel.app/",

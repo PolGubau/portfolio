@@ -9,9 +9,10 @@ export const unbrushedText: IProject = {
   year: 2021,
 
   category: {
-    English: "web",
-    Spanish: "web",
-    Catalan: "web",
+    en: "web",
+    es: "web",
+    ca: "web",
+    de: "web",
   },
 
   pointOfInterest: { x: -120, y: -80 },
@@ -44,17 +45,16 @@ export const unbrushedText: IProject = {
     "SCSS",
   ],
   madeFor: {
-    English: "Unbrushed",
-    Spanish: "Unbrushed",
-    Catalan: "Unbrushed",
+    en: "Unbrushed",
+    es: "Unbrushed",
+    ca: "Unbrushed",
+    de: "Unbrushed",
   },
   description: {
-    English:
-      "A dynamic portfolio for Unbrushed, where you can show the hairdressing sessions and their collaborations. The whole website is controlled from a different page where the database is modified. Both the frontend and the backend were created by me.",
-    Spanish:
-      "Un portafolio dinámico para Unbrushed, donde mostrar las sesiones de peluquería y sus colaboraciones. Toda la web se controla desde una página distinta donde se modifica la base de datos. Se creó tanto el frontend como el backend.",
-    Catalan:
-      "Un portafoli dinàmic per a Unbrushed, on mostrar les sessions de perruqueria i les seves col·laboracions. Tot el web es controla des d'una pàgina diferent on es modifica la base de dades. Es va crear tant el frontend com el backend.",
+    en: "A dynamic portfolio for Unbrushed, where you can show the hairdressing sessions and their collaborations. The whole website is controlled from a different page where the database is modified. Both the frontend and the backend were created by me.",
+    es: "Un portafolio dinámico para Unbrushed, donde mostrar las sesiones de peluquería y sus colaboraciones. Toda la web se controla desde una página distinta donde se modifica la base de datos. Se creó tanto el frontend como el backend.",
+    ca: "Un portafoli dinàmic per a Unbrushed, on mostrar les sessions de perruqueria i les seves col·laboracions. Tot el web es controla des d'una pàgina diferent on es modifica la base de dades. Es va crear tant el frontend com el backend.",
+    de: "Ein dynamisches Portfolio für Unbrushed, in dem Sie die Friseursitzungen und ihre Zusammenarbeit zeigen können. Die gesamte Website wird von einer anderen Seite aus gesteuert, auf der die Datenbank geändert wird. Sowohl das Frontend als auch das Backend wurden von mir erstellt.",
   },
   githubLink: "https://github.com/PolGubau/Unbrushed",
 

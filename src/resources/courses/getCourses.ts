@@ -4,7 +4,7 @@ export const getCourses = () => {
 };
 export const getCourseByName = (nameInEnglish: string) => {
   const courses = getCourses();
-  return courses.find((course) => course.name.English === nameInEnglish);
+  return courses.find((course) => course.name.en === nameInEnglish);
 };
 export const getCourseByPath = (path: string) => {
   const courses = getCourses();
@@ -23,7 +23,7 @@ export const getCoursesWithSameTags = (
   // delete the currentBlog from the list
   if (deleteCurrent) {
     const index = coursesWithSameTags.findIndex(
-      (course) => course.name.English === blog.name.English
+      (course) => course.name.en === blog.name.en
     );
     if (index !== -1) {
       coursesWithSameTags.splice(index, 1);

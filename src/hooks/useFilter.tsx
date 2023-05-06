@@ -1,12 +1,18 @@
-import { useRecoilState } from "recoil";
-import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import {
+  SearchProjectAtom,
+  initialSearch,
+} from "src/Recoil/Atoms/SearchProjectAtom";
 import { relevantProjects, allProjects } from "src/utils/textsUtils";
 
 import { IProject } from "src/Interfaces";
 import { useState } from "react";
+import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
+import { getTextByLang } from "src/utils/getTextByLang";
 
 //
 const useFilter = () => {
+  const l = useRecoilValue(LanguageAtom);
   const [projects, setProjects] = useRecoilState(SearchProjectAtom);
   const [newest, setNewest] = useState(false);
 
@@ -58,11 +64,7 @@ const useFilter = () => {
     });
   };
   const resetSearch = () => {
-    setProjects({
-      searched: "",
-      orderBy: "name",
-      toShow: relevantProjects,
-    });
+    setProjects(initialSearch);
   };
   const resetAll = () => {
     resetShowingListToRelevant();
@@ -84,6 +86,50 @@ const useFilter = () => {
     }
     setNewest(!newest);
   };
+  const onlyShowCategory = (category: string) => {
+    console.log(projects);
+    // we need to check if the user is already filtering by web
+    // if so, we need to reset the filter
+    const allCategoriesEnglish = projects.toShow.map(
+      (project) => project.category.en
+    );
+    // if all the categories are web, we need to reset the filter
+    const allCategoriesAreWeb = allCategoriesEnglish.every(
+      (projectCategory) => projectCategory === category
+    );
+
+    if (allCategoriesAreWeb) {
+      resetSearch();
+      return;
+    }
+    const filteredProjects = allProjects.filter((project) => {
+      const categoryOfProject = getTextByLang(l.code, project.category);
+      return categoryOfProject === category;
+    });
+    setProjects({
+      ...projects,
+      filteredCategory: category,
+      toShow: filteredProjects,
+    });
+  };
+  const setAscending = () => {
+    setProjects({
+      ...projects,
+      ascending: true,
+      toShow: relevantProjects,
+    });
+  };
+  const setDescending = () => {
+    setProjects({
+      ...projects,
+      ascending: false,
+      toShow: relevantProjects.reverse(),
+    });
+  };
+
+  const toggleAscending = () => {
+    projects.ascending ? setDescending() : setAscending();
+  };
 
   return {
     projects,
@@ -94,7 +140,9 @@ const useFilter = () => {
     resetSearch,
     resetAll,
     updateSearched,
+    onlyShowCategory,
     changeOrder,
+    toggleAscending,
   };
 };
 

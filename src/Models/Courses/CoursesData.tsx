@@ -48,19 +48,22 @@ const levels: {
   Advanced: ITextByLanguage;
 } = {
   Beginner: {
-    English: "Beginner",
-    Spanish: "Principiante",
-    Catalan: "Principiant",
+    en: "Beginner",
+    es: "Principiante",
+    ca: "Principiant",
+    de: "Anfänger",
   },
   Intermediate: {
-    English: "Intermediate",
-    Spanish: "Intermedio",
-    Catalan: "Intermedi",
+    en: "Intermediate",
+    es: "Intermedio",
+    ca: "Intermedi",
+    de: "Mittelstufe",
   },
   Advanced: {
-    English: "Advanced",
-    Spanish: "Avanzado",
-    Catalan: "Avançat",
+    en: "Advanced",
+    es: "Avanzado",
+    ca: "Avançat",
+    de: "Fortgeschritten",
   },
 };
 
@@ -68,9 +71,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-0",
     name: {
-      English: "What is React?",
-      Spanish: "¿Qué es React?",
-      Catalan: "Què és React?",
+      en: "What is React?",
+      es: "¿Qué es React?",
+      ca: "Què és React?",
+      de: "Was ist React?",
     },
     path: "WhatIsReact",
     tags: ["React", "JavaScript", "Frontend"],
@@ -85,9 +89,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-1",
     name: {
-      English: "What is Redux?",
-      Spanish: "¿Qué es Redux?",
-      Catalan: "Què és Redux?",
+      en: "What is Redux?",
+      es: "¿Qué es Redux?",
+      ca: "Què és Redux?",
+      de: "Was ist Redux?",
     },
     path: "what-is-redux",
     tags: ["Redux", "JavaScript", "Frontend"],
@@ -101,9 +106,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-2",
     name: {
-      English: "What is Typescript?",
-      Spanish: "¿Qué es Typescript?",
-      Catalan: "Què és Typescript?",
+      en: "What is Typescript?",
+      es: "¿Qué es Typescript?",
+      ca: "Què és Typescript?",
+      de: "Was ist Typescript?",
     },
     path: "what-is-typescript",
     tags: ["TypeScript", "JavaScript", "Frontend"],
@@ -117,9 +123,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-9",
     name: {
-      English: "What is Figma?",
-      Spanish: "¿Qué es Figma?",
-      Catalan: "Què és Figma?",
+      en: "What is Figma?",
+      es: "¿Qué es Figma?",
+      ca: "Què és Figma?",
+      de: "Was ist Figma?",
     },
     path: "what-is-figma",
     tags: ["Figma", "Design", "UI"],
@@ -133,9 +140,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-11",
     name: {
-      English: "What is Next.js?",
-      Spanish: "¿Qué es Next.js?",
-      Catalan: "Què és Next.js?",
+      en: "What is Next.js?",
+      es: "¿Qué es Next.js?",
+      ca: "Què és Next.js?",
+      de: "Was ist Next.js?",
     },
     path: "what-is-nextjs",
     tags: ["Server-Rendered", "React", "Frontend"],
@@ -149,9 +157,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-6",
     name: {
-      English: "What is Material Design?",
-      Spanish: "¿Qué es Material Design?",
-      Catalan: "Què és Material Design?",
+      en: "What is Material Design?",
+      es: "¿Qué es Material Design?",
+      ca: "Què és Material Design?",
+      de: "Was ist Material Design?",
     },
     path: "what-is-material-design",
     tags: ["Material Design", "UI", "Interface"],
@@ -165,9 +174,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-12",
     name: {
-      English: "JavaScript: Beginner's Guide",
-      Spanish: "JavaScript: Guía para Principiantes",
-      Catalan: "JavaScript: Guia per a Principiants",
+      en: "JavaScript: Beginner's Guide",
+      es: "JavaScript: Guía para Principiantes",
+      ca: "JavaScript: Guia per a Principiants",
+      de: "JavaScript: Anfängerleitfaden",
     },
     path: "what-is-js",
     tags: ["Javascript", "Website", "Frontend"],
@@ -181,9 +191,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-3",
     name: {
-      English: "What is Vue?",
-      Spanish: "¿Qué es Vue?",
-      Catalan: "Què és Vue?",
+      en: "What is Vue?",
+      es: "¿Qué es Vue?",
+      ca: "Què és Vue?",
+      de: "Was ist Vue?",
     },
     path: "what-is-vue",
     tags: ["Vue", "JavaScript", "Frontend"],
@@ -197,9 +208,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-4",
     name: {
-      English: "What is Angular?",
-      Spanish: "¿Qué es Angular?",
-      Catalan: "Què és Angular?",
+      en: "What is Angular?",
+      es: "¿Qué es Angular?",
+      ca: "Què és Angular?",
+      de: "Was ist Angular?",
     },
     path: "what-is-angular",
     tags: ["Angular", "JavaScript", "Frontend"],
@@ -213,9 +225,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-5",
     name: {
-      English: "What is Bootstrap?",
-      Spanish: "¿Qué es Bootstrap?",
-      Catalan: "Què és Bootstrap?",
+      en: "What is Bootstrap?",
+      es: "¿Qué es Bootstrap?",
+      ca: "Què és Bootstrap?",
+      de: "Was ist Bootstrap?",
     },
     path: "what-is-bootstrap",
     tags: ["Bootstrap", "CSS", "UI"],
@@ -229,9 +242,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-7",
     name: {
-      English: "What is Adobe XD?",
-      Spanish: "¿Qué es Adobe XD?",
-      Catalan: "Què és Adobe XD?",
+      en: "What is Adobe XD?",
+      es: "¿Qué es Adobe XD?",
+      ca: "Què és Adobe XD?",
+      de: "Was ist Adobe XD?",
     },
     path: "what-is-adobe-xd",
     tags: ["UI", "Design", "Prototype"],
@@ -245,9 +259,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-8",
     name: {
-      English: "What is Sketch?",
-      Spanish: "¿Qué es Sketch?",
-      Catalan: "Què és Sketch?",
+      en: "What is Sketch?",
+      es: "¿Qué es Sketch?",
+      ca: "Què és Sketch?",
+      de: "Was ist Sketch?",
     },
     path: "what-is-sketch",
     tags: ["Sketch", "Design", "UI"],
@@ -261,9 +276,10 @@ const courseData: IBlogData[] = [
   {
     id: "course-10",
     name: {
-      English: "What is Gatsby?",
-      Spanish: "¿Qué es Gatsby?",
-      Catalan: "Què és Gatsby?",
+      en: "What is Gatsby?",
+      es: "¿Qué es Gatsby?",
+      ca: "Què és Gatsby?",
+      de: "Was ist Gatsby?",
     },
     path: "what-is-gatsby",
     tags: ["Gatsby", "React", "Frontend"],

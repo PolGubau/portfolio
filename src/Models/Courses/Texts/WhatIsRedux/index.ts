@@ -3,9 +3,10 @@ import { English } from "./English";
 import { Spanish } from "./Spanish";
 
 const WhatIsRedux = {
-  English: English,
-  Spanish: Spanish,
-  Catalan: Catalan,
+  en: English,
+  es: Spanish,
+  ca: Catalan,
+  de: English,
 };
 
 export default WhatIsRedux;

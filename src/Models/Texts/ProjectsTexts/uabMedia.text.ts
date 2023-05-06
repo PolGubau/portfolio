@@ -8,9 +8,10 @@ export const uabMediaText: IProject = {
   title: "UAB Mèdia",
   year: 2022,
   category: {
-    English: "web",
-    Spanish: "web",
-    Catalan: "web",
+    en: "web",
+    es: "web",
+    ca: "web",
+    de: "web",
   },
   pointOfInterest: { x: 30, y: 20 },
 
@@ -33,17 +34,16 @@ export const uabMediaText: IProject = {
     "2022",
   ],
   madeFor: {
-    English: "Autonomous University of Barcelona",
-    Spanish: "Universidad autónoma de Barcelona",
-    Catalan: "Universitat autònoma de Barcelona",
+    en: "Autonomous University of Barcelona",
+    es: "Universidad autónoma de Barcelona",
+    ca: "Universitat autònoma de Barcelona",
+    de: "Autonome Universität Barcelona",
   },
   description: {
-    English:
-      "Web and mobile application for viewing UAB Mèdia content. On this page you can see the news, television programs, radio and interviews in real time and on demand. You can also listen to the college radio.",
-    Spanish:
-      "Aplicación web y móvil para la visualización de contenidos de UAB Mèdia. En esta página se pueden ver las notícias, programas de televisión, de radio y entrevistes, tanto en tiempo real como a la carta. También escuchar la radio de la universidad.",
-    Catalan:
-      "Aplicació web i mòbil per a la visualització de continguts de la UAB Mèdia. En aquesta pàgina es poden veure les notícies, programes de televisió, de ràdio i entrevistes tant a temps real com a la carta. També escoltar la ràdio de la universitat.",
+    en: "Web and mobile application for viewing UAB Mèdia content. On this page you can see the news, television programs, radio and interviews in real time and on demand. You can also listen to the college radio.",
+    es: "Aplicación web y móvil para la visualización de contenidos de UAB Mèdia. En esta página se pueden ver las notícias, programas de televisión, de radio y entrevistes, tanto en tiempo real como a la carta. También escuchar la radio de la universidad.",
+    ca: "Aplicació web i mòbil per a la visualització de continguts de la UAB Mèdia. En aquesta pàgina es poden veure les notícies, programes de televisió, de ràdio i entrevistes tant a temps real com a la carta. També escoltar la ràdio de la universitat.",
+    de: "Web- und Mobilanwendung zur Anzeige von UAB-Mediainhalten. Auf dieser Seite können Sie die Nachrichten, Fernsehprogramme, Radio und Interviews in Echtzeit und auf Abruf sehen. Sie können auch das College-Radio hören.",
   },
   githubLink: "https://github.com/orgs/UABmedia/repositories",
   link: "https://uab.media/",
