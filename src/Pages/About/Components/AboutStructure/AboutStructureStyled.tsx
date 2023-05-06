@@ -71,25 +71,7 @@ export const AboutStructureStyled = styled.main<StyledProps>`
       transform: translate(0, 0);
     }
   }
-  .titleContainer {
-    animation: appearFromLeft 0.5s ease;
-    margin-top: 100px;
-    border: 1px solid white;
-    padding: 20px 30px;
-    border-radius: 30px;
-    background-color: rgba(0, 0, 180, 0.1);
-    backdrop-filter: blur(5px);
-    h3 {
-      margin: 0;
-      font-size: 3em;
-      @media screen and (max-width: 500px) {
-        font-size: 2em;
-      }
-      @media screen and (max-width: 300px) {
-        font-size: 1.5em;
-      }
-    }
-  }
+
   .descriptionAndDreams {
     margin-top: 200px;
     display: grid;

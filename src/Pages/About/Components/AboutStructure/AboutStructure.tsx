@@ -15,6 +15,7 @@ import {
   aboutYouText,
   IAboutYouText,
 } from "src/Models/Texts/PagesText/aboutYou.text";
+import MainTitle from "./MainTitle/MainTitle";
 const breakpoints = baseTheme.breakpoints;
 
 //
@@ -26,9 +27,8 @@ const AboutStructure = () => {
     <AboutStructureStyled smallerThanTablet={smallerThanTablet}>
       <div className="greenCircle"></div>
       <div className="yellowCircle"></div>
-      <div className="titleContainer">
-        <h3>{text.mainTitle} </h3>
-      </div>
+
+      <MainTitle />
 
       <section className="descriptionAndDreams">
         <MyDescription />
