@@ -28,7 +28,7 @@ export const allLanguages: IAvailableLanguages[] = [
   {
     code: "DE",
     name: "Deutsch",
-    available: false,
+    available: true,
     flag: <DE />,
   },
   {

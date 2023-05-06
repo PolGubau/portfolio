@@ -12,16 +12,25 @@ export const languagesTexts: ILanguagesDataLanguages = {
     en: "English",
     es: "Spanish",
     ca: "Catalan",
+    de: "German",
   },
   es: {
     en: "Inglés",
     es: "Español",
     ca: "Catalán",
+    de: "Alemán",
   },
   ca: {
     en: "Anglès",
     es: "Castellà",
     ca: "Català",
+    de: "Alemany",
+  },
+  de: {
+    en: "Englisch",
+    es: "Spanisch",
+    ca: "Katalanisch",
+    de: "Deutsch",
   },
 };
 
@@ -50,6 +59,14 @@ export const footerText: FooterDataInterface = {
     github: "El meu GitHub",
     instagram: "El meu Instagram",
   },
+  de: {
+    greeting: "Vielen Dank :)",
+    curriculum: "Laden Sie meinen Lebenslauf herunter",
+    email: "Senden Sie mir eine E-Mail",
+    linkedin: "Mein Linkedin",
+    github: "Mein GitHub",
+    instagram: "Mein Instagram",
+  },
 };
 export const headerText: HeaderDataInterface = {
   en: {
@@ -63,6 +80,10 @@ export const headerText: HeaderDataInterface = {
   ca: {
     title: "Pol Gubau Amores",
     description: "Programador Full-Stack i dissenyador UX.",
+  },
+  de: {
+    title: "Pol Gubau Amores",
+    description: "Full-Stack-Entwickler und UX-Designer.",
   },
 };
 export const errorOnSearch: IErrorLanguages = {
@@ -81,6 +102,11 @@ export const errorOnSearch: IErrorLanguages = {
     title: "Ui, res per aquí...",
     description: "Sembla que has buscat alguna cosa que no existeix",
     action: "Esborra tots els filtres",
+  },
+  de: {
+    title: "Oups, nichts hier...",
+    description: "Es scheint, dass Sie nach etwas suchen, das nicht existiert",
+    action: "Löschen Sie alle Filter",
   },
 };
 
@@ -109,6 +135,14 @@ export const cardTexts: ICardDataLanguages = {
     link: "Enllaç",
     linkButton: "Fes-li una ullada",
   },
+  de: {
+    madeFor: "Gemacht für",
+    tags: "Tags",
+    description: "Beschreibung",
+    githubLink: "GitHub",
+    link: "Link",
+    linkButton: "Suche",
+  },
 };
 
 export const navTexts: InavTextsLanguages = {
@@ -121,6 +155,9 @@ export const navTexts: InavTextsLanguages = {
   ca: {
     placeholder: "Buscar...",
   },
+  de: {
+    placeholder: "Suchen...",
+  },
 };
 
 export const categoriesText = [
@@ -130,6 +167,7 @@ export const categoriesText = [
       en: "Web",
       es: "Web",
       ca: "Web",
+      de: "Web",
     },
   },
   {
@@ -138,6 +176,7 @@ export const categoriesText = [
       en: "Design",
       es: "Diseño",
       ca: "Design",
+      de: "Design",
     },
   },
 ];

@@ -14,6 +14,8 @@ export const getTextByLang = (
       return text.es;
     case "CA":
       return text.ca;
+    case "DE":
+      return text.de;
     default:
       return text.en;
   }

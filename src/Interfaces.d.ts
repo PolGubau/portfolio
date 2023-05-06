@@ -52,11 +52,6 @@ export interface IErrorOnSearch {
   description: string;
   action: string;
 }
-export interface ILanguagesData {
-  en: string;
-  es: string;
-  ca: string;
-}
 
 export interface ICardText {
   madeFor: string;
@@ -73,33 +68,39 @@ export interface InavTextsLanguages {
   en: InavTexts;
   es: InavTexts;
   ca: InavTexts;
+  de: InavTexts;
 }
 
 export interface ICardDataLanguages {
   en: CardTextInterface;
   es: CardTextInterface;
   ca: CardTextInterface;
+  de: CardTextInterface;
 }
 
 export interface FooterDataInterface {
   en: FooterTextInterface;
   es: FooterTextInterface;
   ca: FooterTextInterface;
+  de: FooterTextInterface;
 }
 export interface HeaderDataInterface {
   en: HeaderTextInterface;
   es: HeaderTextInterface;
   ca: HeaderTextInterface;
+  de: HeaderTextInterface;
 }
 export interface IErrorLanguages {
   en: IErrorOnSearch;
   es: IErrorOnSearch;
   ca: IErrorOnSearch;
+  de: IErrorOnSearch;
 }
 export interface ILanguagesDataLanguages {
-  en: ILanguagesData;
-  es: ILanguagesData;
-  ca: ILanguagesData;
+  en: ITextByLanguage;
+  es: ITextByLanguage;
+  ca: ITextByLanguage;
+  de: ITextByLanguage;
 }
 
 export interface IMadeForText {
