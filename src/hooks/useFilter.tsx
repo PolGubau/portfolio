@@ -35,7 +35,11 @@ const useFilter = () => {
       const plainProject = `${title} ${tagsString}  ${year} ${category} ${invisibleTagsString} ${madeForString} ${description}`;
 
       const plainValue = value.toLowerCase();
-      return plainProject.toLowerCase().includes(plainValue);
+
+      const includes = plainProject.toLowerCase().includes(plainValue);
+      console.log(includes);
+
+      return includes;
     });
 
   const filterProjects = (value: string = projects.searched) => {
@@ -120,23 +124,13 @@ const useFilter = () => {
     });
     return;
   };
-  const setAscending = () => {
-    setProjects({
-      ...projects,
-      ascending: true,
-      toShow: relevantProjects,
-    });
-  };
-  const setDescending = () => {
-    setProjects({
-      ...projects,
-      ascending: false,
-      toShow: relevantProjects.reverse(),
-    });
-  };
-
   const toggleAscending = () => {
-    projects.ascending ? setDescending() : setAscending();
+    const newArraw = [...projects.toShow].reverse();
+    setProjects({
+      ...projects,
+      ascending: !projects.ascending,
+      toShow: newArraw,
+    });
   };
 
   return {

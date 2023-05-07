@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { BiSearch } from "react-icons/bi";
 import useMedia from "src/hooks/useMedia";
 import { getTextByLang } from "src/utils/getTextByLang";
@@ -39,9 +39,11 @@ export const Nav = memo((): JSX.Element => {
       </div>
 
       <Categories />
-      {/* <div className="icon" onClick={toggleAscending}>
-        {projects.ascending ? <HiSortAscending /> : <HiSortDescending />}
-      </div> */}
+      {projects.toShow.length > 0 && (
+        <div className="icon" onClick={toggleAscending}>
+          {projects.ascending ? <HiSortAscending /> : <HiSortDescending />}
+        </div>
+      )}
       {projects.searched && (
         <div onClick={resetSearch} className="icon">
           <IoMdRefresh />
