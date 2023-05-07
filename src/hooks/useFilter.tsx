@@ -23,7 +23,6 @@ const useFilter = () => {
       const {
         title,
         tags,
-        backgroundColor,
         year,
         category,
         invisibleTags,
@@ -33,7 +32,7 @@ const useFilter = () => {
       const tagsString = tags.join(" ");
       const invisibleTagsString = invisibleTags ? invisibleTags.join(" ") : "";
       const madeForString = madeFor ? Object.values(madeFor).join(" ") : "";
-      const plainProject = `${title} ${tagsString} ${backgroundColor} ${year} ${category} ${invisibleTagsString} ${madeForString} ${description}`;
+      const plainProject = `${title} ${tagsString}  ${year} ${category} ${invisibleTagsString} ${madeForString} ${description}`;
 
       const plainValue = value.toLowerCase();
       return plainProject.toLowerCase().includes(plainValue);
@@ -119,7 +118,6 @@ const useFilter = () => {
       filteredCategory: category,
       toShow: filteredProjects,
     });
-    console.log(filteredProjects);
     return;
   };
   const setAscending = () => {
