@@ -12,7 +12,6 @@ import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 import Categories from "./Categories/Categories";
 import { navTexts } from "src/Models/Texts/PagesText/home.text";
 export const Nav = memo((): JSX.Element => {
-  const mobile = useMedia(baseTheme.breakpoints.tablet);
   const language = useRecoilValue(LanguageAtom);
   const text = getTextByLang(language.code, navTexts);
   const { filterProjects, projects, toggleAscending, resetSearch } =
@@ -28,36 +27,26 @@ export const Nav = memo((): JSX.Element => {
 
   return (
     <NavStyled>
-      <div className="contentNav">
-        <div className={`searchNav ${mobile ? "mobileSearch" : ""}`}>
-          <div
-            className={`inputWithIcon ${
-              projects.searched.length > 0 ? "activeInput" : ""
-            }`}
-          >
-            <div className="inputIconDiv">
-              <BiSearch className="iconSearch" onClick={filterWord} />
-            </div>
-            <input
-              maxLength={20}
-              type="text"
-              className={`input`}
-              value={projects.searched}
-              placeholder={text.placeholder}
-              onChange={handleChangeInput}
-            />
-          </div>
-          {projects.searched.length === 0 && <Categories />}
-          {/* <div className="sortIcon" onClick={toggleAscending}>
-            {projects.ascending ? <HiSortAscending /> : <HiSortDescending />}
-          </div> */}
-        </div>
-        {projects.searched && (
-          <div onClick={resetSearch} className="refreshIcon">
-            <IoMdRefresh />
-          </div>
-        )}
+      <div className={`seachBar`}>
+        <BiSearch onClick={filterWord} />
+        <input
+          maxLength={20}
+          type="text"
+          value={projects.searched}
+          placeholder={text.placeholder}
+          onChange={handleChangeInput}
+        />
       </div>
+
+      <Categories />
+      {/* <div className="icon" onClick={toggleAscending}>
+        {projects.ascending ? <HiSortAscending /> : <HiSortDescending />}
+      </div> */}
+      {projects.searched && (
+        <div onClick={resetSearch} className="icon">
+          <IoMdRefresh />
+        </div>
+      )}
     </NavStyled>
   );
 });

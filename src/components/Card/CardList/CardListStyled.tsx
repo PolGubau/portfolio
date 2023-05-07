@@ -21,7 +21,6 @@ export const CardListStyled = styled(motion.ul)`
   }
 `;
 export const ContentStyled = styled.section`
-  border-top: 1px solid ${({ theme }) => theme.colors.text};
   @media only screen and (max-width: ${baseTheme.breakpoints.tablet}) {
     border: none;
   }

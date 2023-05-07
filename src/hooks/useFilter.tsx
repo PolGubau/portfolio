@@ -87,27 +87,25 @@ const useFilter = () => {
     setNewest(!newest);
   };
   const onlyShowCategory = (category: string) => {
-    console.log(projects);
-    // we need to check if the user is already filtering by web
-    // if so, we need to reset the filter
     const allCategoriesEnglish = projects.toShow.map(
       (project) => project.category.en
     );
-    // if all the categories are web, we need to reset the filter
-    const allCategoriesAreWeb = allCategoriesEnglish.every(
+    const alreadyFiltered = allCategoriesEnglish.every(
       (projectCategory) => projectCategory === category
     );
 
-    if (allCategoriesAreWeb) {
+    if (alreadyFiltered) {
       resetSearch();
       return;
     }
+
     const filteredProjects = allProjects.filter((project) => {
       const categoryOfProject = getTextByLang(l.code, project.category);
       return categoryOfProject === category;
     });
     setProjects({
       ...projects,
+      searched: "",
       filteredCategory: category,
       toShow: filteredProjects,
     });

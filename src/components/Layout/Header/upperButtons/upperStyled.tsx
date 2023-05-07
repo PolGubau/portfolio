@@ -20,7 +20,6 @@ export const LanguageStyled = styled.div`
     background-color: ${({ theme }) => theme.colors.grey};
     color: ${({ theme }) => theme.colors.text};
 
-    border: 1px solid ${({ theme }) => theme.colors.background};
     :hover {
       background-color: ${({ theme }) => theme.colors.mainHover};
       color: ${({ theme }) => theme.colors.background};
