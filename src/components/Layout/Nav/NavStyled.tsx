@@ -51,6 +51,7 @@ export const NavStyled = styled.nav`
     outline: none;
     align-items: center;
     align-content: center;
+    flex: 1;
   }
 
   .icon {

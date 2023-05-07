@@ -31,12 +31,10 @@ const List = () => {
     <ContentStyled>
       <Nav />
       {projectList.toShow.length === 0 && <NotFoundNav />}
-
       {allProjects.map(
         (card) =>
           card.path === path && <OpenedCard project={card} key={card.id} />
       )}
-
       <CardListStyled variants={container} initial="hidden" animate="show">
         {projectList.toShow.map((card, index) => (
           <ClosedCard index={index} project={card} key={card.id} />

@@ -14,6 +14,7 @@ const Categories = () => {
   const filterCategory = (category: string) => {
     onlyShowCategory(category);
   };
+
   return (
     <NaCategoriesStyled>
       {categoriesText.map((category) => {

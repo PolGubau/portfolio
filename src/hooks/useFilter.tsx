@@ -4,7 +4,6 @@ import {
   initialSearch,
 } from "src/Recoil/Atoms/SearchProjectAtom";
 import { relevantProjects, allProjects } from "src/utils/textsUtils";
-
 import { IProject } from "src/Interfaces";
 import { useState } from "react";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
@@ -16,11 +15,11 @@ const useFilter = () => {
   const [projects, setProjects] = useRecoilState(SearchProjectAtom);
   const [newest, setNewest] = useState(false);
 
-  const filterProjects = (
+  const projectsFilteredByQuery = (
     value: string = projects.searched,
     projectArray: IProject[] = allProjects
-  ) => {
-    const filteredProjects = projectArray.filter((project) => {
+  ) =>
+    projectArray.filter((project) => {
       const {
         title,
         tags,
@@ -39,10 +38,24 @@ const useFilter = () => {
       const plainValue = value.toLowerCase();
       return plainProject.toLowerCase().includes(plainValue);
     });
+
+  const filterProjects = (value: string = projects.searched) => {
+    // if there is a category filter, filter the filteredProjects also by category
+    if (projects.filteredCategory) {
+      const filteredByCategory = projectsFilteredByQuery().filter((project) => {
+        return project.category.en === projects.filteredCategory;
+      });
+      setProjects({
+        ...projects,
+        searched: value,
+        toShow: filteredByCategory,
+      });
+      return;
+    }
     setProjects({
       ...projects,
       searched: value,
-      toShow: filteredProjects,
+      toShow: projectsFilteredByQuery(),
     });
   };
   const updateSearched = (value: string) => {
@@ -87,28 +100,27 @@ const useFilter = () => {
     setNewest(!newest);
   };
   const onlyShowCategory = (category: string) => {
-    const allCategoriesEnglish = projects.toShow.map(
-      (project) => project.category.en
-    );
-    const alreadyFiltered = allCategoriesEnglish.every(
-      (projectCategory) => projectCategory === category
-    );
-
-    if (alreadyFiltered) {
-      resetSearch();
+    if (projects.filteredCategory === category) {
+      setProjects({
+        ...projects,
+        filteredCategory: "",
+        toShow: relevantProjects,
+      });
+      filterProjects;
       return;
     }
 
-    const filteredProjects = allProjects.filter((project) => {
+    const filteredProjects = projectsFilteredByQuery().filter((project) => {
       const categoryOfProject = getTextByLang(l.code, project.category);
       return categoryOfProject === category;
     });
     setProjects({
       ...projects,
-      searched: "",
       filteredCategory: category,
       toShow: filteredProjects,
     });
+    console.log(filteredProjects);
+    return;
   };
   const setAscending = () => {
     setProjects({
