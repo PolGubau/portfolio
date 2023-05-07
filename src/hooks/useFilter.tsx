@@ -86,22 +86,7 @@ const useFilter = () => {
     resetShowingListToRelevant();
     resetSearch();
   };
-  const changeOrder = () => {
-    if (!newest) {
-      const newOrder = [...projects.toShow].sort((a, b) => a.year - b.year);
-      setProjects({
-        ...projects,
-        toShow: newOrder,
-      });
-    } else {
-      const newOrder = [...projects.toShow].sort((a, b) => b.year - a.year);
-      setProjects({
-        ...projects,
-        toShow: newOrder,
-      });
-    }
-    setNewest(!newest);
-  };
+
   const onlyShowCategory = (category: string) => {
     if (projects.filteredCategory === category) {
       setProjects({
@@ -125,11 +110,13 @@ const useFilter = () => {
     return;
   };
   const toggleAscending = () => {
-    const newArraw = [...projects.toShow].reverse();
+    const reversedProjects: IProject[] = [...projects.toShow].reverse();
+
+    // Set the projects state with the reversed projects
     setProjects({
       ...projects,
       ascending: !projects.ascending,
-      toShow: newArraw,
+      toShow: reversedProjects,
     });
   };
 
@@ -143,7 +130,6 @@ const useFilter = () => {
     resetAll,
     updateSearched,
     onlyShowCategory,
-    changeOrder,
     toggleAscending,
   };
 };

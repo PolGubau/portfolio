@@ -1,11 +1,9 @@
-import { memo, useCallback } from "react";
+import { memo } from "react";
 import { BiSearch } from "react-icons/bi";
-import useMedia from "src/hooks/useMedia";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { NavStyled } from "./NavStyled";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { useRecoilValue } from "recoil";
-import { baseTheme } from "src/styles/theme/baseTheme";
 import useFilter from "src/hooks/useFilter";
 import { IoMdRefresh } from "react-icons/io";
 import { HiSortAscending, HiSortDescending } from "react-icons/hi";
@@ -20,9 +18,15 @@ export const Nav = memo((): JSX.Element => {
   const filterWord = () => {
     filterProjects();
   };
-  const handleChangeInput = (event: any) => {
-    const valueSearched: string = event.target.value;
-    filterProjects(valueSearched);
+  const handleChangeInput = (event: any): void => {
+    try {
+      // Get the value that the user typed in the input
+      const valueSearched: string = event.target.value;
+      // Filter projects based on the user input
+      filterProjects(valueSearched);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
