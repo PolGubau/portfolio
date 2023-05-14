@@ -13,7 +13,6 @@ import { getTextByLang } from "src/utils/getTextByLang";
 const useFilter = () => {
   const l = useRecoilValue(LanguageAtom);
   const [projects, setProjects] = useRecoilState(SearchProjectAtom);
-  const [newest, setNewest] = useState(false);
 
   const projectsFilteredByQuery = (
     value: string = projects.searched,
@@ -37,7 +36,6 @@ const useFilter = () => {
       const plainValue = value.toLowerCase();
 
       const includes = plainProject.toLowerCase().includes(plainValue);
-      console.log(includes);
 
       return includes;
     });
@@ -48,18 +46,23 @@ const useFilter = () => {
       const filteredByCategory = projectsFilteredByQuery().filter((project) => {
         return project.category.en === projects.filteredCategory;
       });
+      console.log(" category filter");
+
       setProjects({
         ...projects,
         searched: value,
-        toShow: filteredByCategory,
+        toShow: filteredByCategory, //filtering the projects
       });
       return;
+    } else {
+      console.log("no category filter");
+      console.log(projectsFilteredByQuery());
+      setProjects({
+        ...projects,
+        searched: value,
+        toShow: projectsFilteredByQuery(),
+      });
     }
-    setProjects({
-      ...projects,
-      searched: value,
-      toShow: projectsFilteredByQuery(),
-    });
   };
   const updateSearched = (value: string) => {
     setProjects({
@@ -86,7 +89,6 @@ const useFilter = () => {
     resetShowingListToRelevant();
     resetSearch();
   };
-
   const onlyShowCategory = (category: string) => {
     if (projects.filteredCategory === category) {
       setProjects({

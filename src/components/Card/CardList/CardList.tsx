@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import Nav from "src/components/Layout/Nav/Nav";
-
 import NotFoundNav from "./NotFoundNav/NotFoundNav";
 import CentralActionsButtons from "src/components/Buttons/ButtonsOnTop/CentralProjectButtons/CentralActionsButtons";
 import { CardListStyled, ContentStyled } from "./CardListStyled";
@@ -16,7 +15,9 @@ const List = () => {
   const { projects } = useFilter();
 
   const projectList = useRecoilValue(SearchProjectAtom);
+
   const { path } = useParams();
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -31,16 +32,20 @@ const List = () => {
     <ContentStyled>
       <Nav />
       {projectList.toShow.length === 0 && <NotFoundNav />}
+
       {allProjects.map(
         (card) =>
           card.path === path && <OpenedCard project={card} key={card.id} />
       )}
+
       <CardListStyled variants={container} initial="hidden" animate="show">
         {projectList.toShow.map((card, index) => (
           <ClosedCard index={index} project={card} key={card.id} />
         ))}
       </CardListStyled>
+
       {!projects.searched && <ChangeVisibilityButton />}
+
       <CentralActionsButtons />
     </ContentStyled>
   );

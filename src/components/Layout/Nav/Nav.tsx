@@ -18,16 +18,7 @@ export const Nav = memo((): JSX.Element => {
   const filterWord = () => {
     filterProjects();
   };
-  const handleChangeInput = (event: any): void => {
-    try {
-      // Get the value that the user typed in the input
-      const valueSearched: string = event.target.value;
-      // Filter projects based on the user input
-      filterProjects(valueSearched);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+
 
   return (
     <NavStyled>
@@ -38,7 +29,7 @@ export const Nav = memo((): JSX.Element => {
           type="text"
           value={projects.searched}
           placeholder={text.placeholder}
-          onChange={handleChangeInput}
+          onChange={(e) => filterProjects(e.target.value)}
         />
       </div>
 

@@ -76,7 +76,6 @@ export const NavStyled = styled.nav`
     text-decoration: none;
     align-items: center;
     align-content: flex-start;
-    flex-wrap: wrap;
 
     .contentNav {
       display: flex;
