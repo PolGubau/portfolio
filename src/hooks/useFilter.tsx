@@ -5,7 +5,6 @@ import {
 } from "src/Recoil/Atoms/SearchProjectAtom";
 import { relevantProjects, allProjects } from "src/utils/textsUtils";
 import { IProject } from "src/Interfaces";
-import { useState } from "react";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { getTextByLang } from "src/utils/getTextByLang";
 
@@ -46,7 +45,6 @@ const useFilter = () => {
       const filteredByCategory = projectsFilteredByQuery().filter((project) => {
         return project.category.en === projects.filteredCategory;
       });
-      console.log(" category filter");
 
       setProjects({
         ...projects,
@@ -55,8 +53,6 @@ const useFilter = () => {
       });
       return;
     } else {
-      console.log("no category filter");
-      console.log(projectsFilteredByQuery());
       setProjects({
         ...projects,
         searched: value,

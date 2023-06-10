@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { closeSpring, openSpring } from "src/components/Card/utils/animations";
 import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { IProject } from "src/Interfaces";
 import { getTextByLang } from "src/utils/getTextByLang";
 import { TitleStyled } from "./TitleStyled";
