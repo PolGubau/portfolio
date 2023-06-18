@@ -52,7 +52,6 @@ export const Title = ({
           {title}
         </h2>
       )}
-
       <div className="details">
         <span
           className="category"
@@ -68,19 +67,17 @@ export const Title = ({
         </span>
       </div>
       {isSelected && (
-        <>
-          <div className="Description-tagsContainer">
-            {project.tags.map((tag: string) => (
-              <p
-                key={tag}
-                onClick={() => handleClickTag(tag)}
-                className="Description-tag"
-              >
-                {tag}
-              </p>
-            ))}
-          </div>
-        </>
+        <div className="Description-tagsContainer">
+          {project.tags.map((tag: string) => (
+            <p
+              key={tag}
+              onClick={() => handleClickTag(tag)}
+              className="Description-tag"
+            >
+              {tag}
+            </p>
+          ))}
+        </div>
       )}
     </TitleStyled>
   );
