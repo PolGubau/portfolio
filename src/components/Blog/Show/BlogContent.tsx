@@ -36,7 +36,7 @@ const BlogContent = ({ blog }: { blog: IBlogData }) => {
   return (
     <BlogContentStyled>
       <header>
-        <Link to="/blog" className="goBack">
+        <Link to="/courses" className="goBack">
           <TbArrowBack />
           {coursePage.goBack}
         </Link>

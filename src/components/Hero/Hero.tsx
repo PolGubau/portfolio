@@ -10,8 +10,8 @@ import { lightTheme } from "src/styles/theme/lightTheme";
 import { ThemeProvider } from "styled-components";
 import RightBottomButtons from "../Buttons/ButtonsOnTop/rightBottomButtons";
 import Header from "../Layout/Header/Header";
-import { Modal } from "pol-ui";
 import { MainStyled } from "./MainStyles";
+import OptionsModal from "../Modals/Options/Options";
 
 const Hero = () => {
   const theme = useRecoilValue(ThemeAtom);
@@ -28,18 +28,7 @@ const Hero = () => {
       <MainStyled>
         <div className="App">
           <LanguageButtons />
-          <Modal
-            open={options && options.show}
-            title="Options"
-            onClose={() => {}}
-          >
-            <div className="option" onClick={toggleDarkMode}>
-              <h3>Dark Mode</h3>
-              <div
-                className={`switch ${darkMode === "dark" ? "selected" : ""}`}
-              ></div>
-            </div>
-          </Modal>
+          {options.show && <OptionsModal />}
           {/* {options && options.show && <OptionsModal />} */}
           {!projectSelected.id && <RightBottomButtons />}
 
