@@ -17,7 +17,6 @@ interface CardInterfaceInline {
 
 export const OpenedCard = memo(({ project }: CardInterfaceInline) => {
   const mobile = useMedia(baseTheme.breakpoints.tablet);
-  const cardRef = useRef(null);
   const setProjectSelected = useSetRecoilState(projectSelectedAtom);
 
   useEffect(() => {
@@ -25,15 +24,16 @@ export const OpenedCard = memo(({ project }: CardInterfaceInline) => {
   }, [project, setProjectSelected]);
 
   return (
-    <OpenedCardStyled project={project} transition={openSpring}>
+    <>
       <Overlay />
 
-      <motion.div
-        ref={cardRef}
+      <OpenedCardStyled
+        project={project}
+        transition={openSpring}
         className={`cardContainer ${mobile ? "openMobile" : " openPC"}`}
       >
         <CardContent project={project} mobile={mobile} />
-      </motion.div>
-    </OpenedCardStyled>
+      </OpenedCardStyled>
+    </>
   );
 });

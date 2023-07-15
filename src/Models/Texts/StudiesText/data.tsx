@@ -1,4 +1,4 @@
-import { ES } from "src/assets";
+import { EN, ES } from "src/assets";
 import { ITextByLanguage } from "src/Interfaces";
 
 export const actualYear = new Date().getFullYear();
@@ -129,7 +129,7 @@ export const dataStudies: IDataStudies[] = [
   {
     id: 6,
     placed: "right",
-    title: "Almato Iberia",
+    title: "Mesalvo Gmbh",
     description: {
       en: `Opportunity to create a web-based environment for international customers. As a Mid-Level Developer I have been able to learn and apply my knowledge in web application development. I work in a team as part of the Innovation Hub of Mesalvo Freiburg.`,
       es: `Oportunidad de crear un entorno basado en tecnologías web para clientes internacionales. Como Desarrollador Mid-Level he podido aprender y aplicar mis conocimientos en el desarrollo de aplicaciones web. Trabajo en equipo como parte del Innovation Hub de Mesalvo Freiburg.`,
@@ -143,6 +143,6 @@ export const dataStudies: IDataStudies[] = [
       width: "60%",
       marginTop: "70px",
     },
-    flag: <ES />,
+    flag: <EN />,
   },
 ];
