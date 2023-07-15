@@ -46,6 +46,7 @@ export default function Header() {
                   src={`images/me.webp`}
                   alt="Me"
                   width={120}
+                  height={120}
                   initial={false}
                 />
                 {hasTransitionedIn && (
