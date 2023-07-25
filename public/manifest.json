@@ -6,6 +6,10 @@
   "version_name": "1.0 base",
   "description": "A showcase of my work and skills as an interactive website.",
   "default_locale": "en",
+  "orientation": "portrait",
+  "lang": "en",
+  
+  
   "author": {
     "email": "gubaupol@gmail.com",
     "name": "Pol Gubau Amores"

@@ -21,7 +21,7 @@ export default function Footer() {
             <motion.p>{text.greeting}</motion.p>
           </article>
           <article>
-            <a href="files/cv2022.pdf" download>
+            <a href="files/cv2023.pdf" download>
               <div className="cv">{text.curriculum}</div>
             </a>
           </article>
