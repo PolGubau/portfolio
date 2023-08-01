@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ScrollButton from "./ScrollButtons";
-import SettingsButtons from "./OptionsButton.tsx/OptionsButtons";
+import SettingsButtons from "./OptionsButton/OptionsButtons";
 import { RightBottomButtonsStyled } from "./Styles/RightButtonsStyled";
 import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 import { useRecoilValue } from "recoil";

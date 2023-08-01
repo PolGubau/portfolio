@@ -1,4 +1,4 @@
-import AdobeIllustratorLogo from "./AdobeIllustrator.logo";
+import AdobeIllustratorLogo from "./brands/AdobeIllustrator.logo";
 import AdobePhotoshopLogo from "./AdobePhotoshop.logo";
 import AntDesignLogo from "./AntDesign.logo";
 import FigmaLogo from "./Figma.logo";
@@ -23,7 +23,7 @@ import WebpackLogo from "./Webpack.logo";
 import Material from "./Material.logo";
 import VSCode from "./VSCode.logo";
 
-export { default as AdobeIllustratorLogo } from "./AdobeIllustrator.logo";
+export { default as AdobeIllustratorLogo } from "./brands/AdobeIllustrator.logo";
 export { default as AdobePhotoshopLogo } from "./AdobePhotoshop.logo";
 export { default as AntDesignLogo } from "./AntDesign.logo";
 export { default as FigmaLogo } from "./Figma.logo";

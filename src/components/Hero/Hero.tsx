@@ -8,10 +8,10 @@ import { ThemeAtom } from "src/Recoil/Atoms/ThemeAtoms";
 import { darkTheme } from "src/styles/theme/darkMode";
 import { lightTheme } from "src/styles/theme/lightTheme";
 import { ThemeProvider } from "styled-components";
-import RightBottomButtons from "../Buttons/ButtonsOnTop/rightBottomButtons";
 import Header from "../Layout/Header/Header";
 import { MainStyled } from "./MainStyles";
 import OptionsModal from "../Modals/Options/Options";
+import { RightBottomButtons } from "../Buttons/ButtonsOnTop/rightBottomButtons";
 
 const Hero = () => {
   const theme = useRecoilValue(ThemeAtom);

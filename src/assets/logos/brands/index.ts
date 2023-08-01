@@ -1,0 +1,10 @@
+export { default as Almato } from './Almato';
+export { default as Binance } from './Binance';
+export { default as CaixaBank } from './CaixaBank';
+export { default as Heretics } from './Heretics';
+export { default as MediaMarkt } from './MediaMarkt';
+export { default as Mesalvo } from './Mesalvo';
+export { default as Novartis } from './Novartis';
+export { default as Nuwe } from './Nuwe';
+export { default as Santander } from './Santander';
+export { default as UabIcon } from './UabIcon';
