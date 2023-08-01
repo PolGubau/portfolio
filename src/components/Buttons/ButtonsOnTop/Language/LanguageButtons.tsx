@@ -8,16 +8,14 @@ import {
 import useMedia from "src/hooks/useMedia";
 import {
   LanguageAtom,
-  ToggleLanguageSelectorAtom,
+  viewLangSelectorModal,
 } from "src/Recoil/Atoms/LanguageAtom";
 import { baseTheme } from "src/styles/theme/baseTheme";
 import { LanguageButtons } from "./Styled";
 
 export default function CustomSelect() {
   const [language, setLanguage] = useRecoilState(LanguageAtom);
-  const [langSelector, setLangSelector] = useRecoilState(
-    ToggleLanguageSelectorAtom
-  );
+  const [langSelector, setLangSelector] = useRecoilState(viewLangSelectorModal);
   const handleTrigger = () => {
     setLangSelector(!langSelector);
   };

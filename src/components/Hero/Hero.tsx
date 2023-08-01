@@ -1,4 +1,4 @@
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import LanguageButtons from "src/components/Buttons/ButtonsOnTop/Language/LanguageButtons";
 import Footer from "src/components/Layout/Footer/Footer";
 import Router from "src/components/Router/Router";
@@ -17,11 +17,7 @@ const Hero = () => {
   const theme = useRecoilValue(ThemeAtom);
   const options = useRecoilValue(OptionsAtom);
   const projectSelected = useRecoilValue(projectSelectedAtom);
-  const [darkMode, setDarkMode] = useRecoilState(ThemeAtom);
 
-  const toggleDarkMode = () => {
-    setDarkMode(darkMode === "light" ? "dark" : "light");
-  };
   const actualTheme = theme === "light" ? lightTheme : darkTheme;
   return (
     <ThemeProvider theme={actualTheme}>

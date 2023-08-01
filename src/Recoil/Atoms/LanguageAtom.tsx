@@ -7,12 +7,12 @@ export const LanguageAtom = atom({
   default: {
     code: "EN" as availableLangCodesType,
     name: "English",
-    available: true as boolean,
+    available: true,
     flag: <EN />,
   },
 });
 
-export const ToggleLanguageSelectorAtom = atom({
-  key: "toggleLanguageSelectorAtom",
+export const viewLangSelectorModal = atom({
+  key: "viewLangSelectorModal",
   default: false,
 });

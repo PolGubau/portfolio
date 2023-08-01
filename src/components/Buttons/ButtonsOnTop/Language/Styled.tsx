@@ -1,5 +1,3 @@
-import { useRecoilValue } from "recoil";
-import { ToggleLanguageSelectorAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { baseTheme } from "src/styles/theme/baseTheme";
 import styled from "styled-components";
 //

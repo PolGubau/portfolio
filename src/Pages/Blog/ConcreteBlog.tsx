@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BlogContent from "src/components/Blog/Show/BlogContent";
-import { getCourseByPath } from "src/resources/courses/getCourses";
+import { getCourseByPath } from "src/components/Blog/Functions/getCourses";
 
 const ConcreteBlog = () => {
   const location = useLocation();

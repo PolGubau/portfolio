@@ -5,7 +5,7 @@ import { BlogContentStyled } from "./BlogContentStyled";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Link } from "react-router-dom";
-import { getCoursesWithSameTags } from "src/resources/courses/getCourses";
+import { getCoursesWithSameTags } from "src/components/Blog/Functions/getCourses";
 import BlogList from "../List/BlogList/CourseList";
 import remarkGfm from "remark-gfm";
 import { useRecoilValue } from "recoil";
