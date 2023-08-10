@@ -15,8 +15,8 @@ export const stickiesText: IProject = {
   pointOfInterest: { x: -10, y: 20 },
 
   textColor: "#000",
-  width: 320,
-  backgroundColor: "#ffe9ab",
+  width: 340,
+  backgroundColor: "#FFABD3",
   pathToImg: "/Stickies/0.webp",
   tags: ["React", "React Icons", "Styled Components", "TypeScript"],
   invisibleTags: [

@@ -12,8 +12,9 @@ import { thoseColorsText } from "./thoseColors.text";
 import { uabMediaText } from "./uabMedia.text";
 import { unbrushedText } from "./unbrushed.text";
 import Beecipes from "./beecipes.text";
-import PolUI from "./pol-ui.text";
+import Paris2024 from "./paris2024.text";
 
+export * from "./paris2024.text";
 export * from "./afternoons.text";
 export * from "./askaquest.text";
 export * from "./cvCreator.text";
@@ -30,6 +31,7 @@ export * from "./beecipes.text";
 export * from "./pol-ui.text";
 
 export const projects: IProject[] = [
+  Paris2024,
   Beecipes,
   habitsText,
   stickiesText,
