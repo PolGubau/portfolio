@@ -27,6 +27,8 @@ export const OpenedCardStyled = styled(motion.div)<CardInterfaceInline>`
     max-width: 90vw;
   }
   .button {
+    min-height: 45px;
+    min-width: 45px;
     display: flex;
     justify-content: center;
     gap: 5px;

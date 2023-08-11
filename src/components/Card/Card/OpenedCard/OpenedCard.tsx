@@ -1,6 +1,5 @@
 import { IProject } from "src/Interfaces";
 import { openSpring } from "../../utils/animations";
-import { CardContent } from "../CardContent";
 import useMedia from "src/hooks/useMedia";
 import { OpenedCardStyled } from "./OpenedCardStyled";
 import { baseTheme } from "src/styles/theme/baseTheme";

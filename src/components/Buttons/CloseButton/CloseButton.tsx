@@ -1,8 +1,6 @@
 import { GrFormClose } from "react-icons/gr";
-import { FiGithub } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { BsSearch } from "react-icons/bs";
 import { IProject } from "src/Interfaces";
 import { useRecoilState } from "recoil";
 import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
@@ -17,27 +15,15 @@ const CloseButtonStyled = styled.div`
   flex-direction: column;
   gap: 10px;
 
-  .button {
-    padding: 5px;
-    border-radius: 10px;
+  .closeButton {
     display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: ${({ theme }) => theme.colors.main};
-
-    color: ${({ theme }) => theme.colors.text};
-    aspect-ratio: 1/1;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
     :hover {
-      background-color: ${({ theme }) => theme.colors.darkBlue};
-    }
-  }
-  .red {
-    background-color: ${({ theme }) => theme.colors.lightRed};
-    :hover {
-      background-color: ${({ theme }) => theme.colors.red};
+      background-color: ${({ theme }) => theme.colors.main};
     }
   }
 `;
@@ -48,7 +34,7 @@ const CloseButton = ({ project }: { project: IProject }) => {
   };
   return (
     <CloseButtonStyled>
-      <Link to={`/`} onClick={handleClick} className={"button red"}>
+      <Link to={`/`} onClick={handleClick} className={"closeButton"}>
         <GrFormClose size={25} />
       </Link>
     </CloseButtonStyled>

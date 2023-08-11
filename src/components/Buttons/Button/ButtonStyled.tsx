@@ -13,6 +13,7 @@ export const ButtonStyled = styled.div<IButtonStyled>`
   gap: 5px;
   border: none;
   outline: none;
+  min-height: 45px;
 
   .type-main {
     background-color: ${({ theme }) => theme.colors.main};
@@ -56,8 +57,8 @@ export const ButtonStyled = styled.div<IButtonStyled>`
     outline: none;
 
     svg {
-      max-width: 15px;
-      max-height: 15px;
+      max-width: 25px;
+      max-height: 25px;
     }
 
     :hover {
