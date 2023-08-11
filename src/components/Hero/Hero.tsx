@@ -12,20 +12,34 @@ import Header from "../Layout/Header/Header";
 import { MainStyled } from "./MainStyles";
 import OptionsModal from "../Modals/Options/Options";
 import { RightBottomButtons } from "../Buttons/ButtonsOnTop/rightBottomButtons";
+import { modalState } from "src/Recoil";
+import { Button, Modal, ModalContent } from "@nextui-org/react";
+import { Icon } from "../Icon";
 
 const Hero = () => {
+  const modal = useRecoilValue(modalState);
   const theme = useRecoilValue(ThemeAtom);
   const options = useRecoilValue(OptionsAtom);
   const projectSelected = useRecoilValue(projectSelectedAtom);
 
   const actualTheme = theme === "light" ? lightTheme : darkTheme;
+
   return (
     <ThemeProvider theme={actualTheme}>
       <MainStyled>
         <div className="App">
           <LanguageButtons />
-          {options.show && <OptionsModal />}
-          {/* {options && options.show && <OptionsModal />} */}
+
+          <Modal
+            placement="center"
+            isOpen={modal.isOpen}
+            onOpenChange={modal.handleClose}
+            size="5xl"
+          >
+            <ModalContent>{modal.children}</ModalContent>
+          </Modal>
+
+          {options?.show && <OptionsModal />}
           {!projectSelected.id && <RightBottomButtons />}
 
           <Header />

@@ -9,29 +9,24 @@ import { baseTheme } from "src/styles/theme/baseTheme";
 const breakpoints = baseTheme.breakpoints;
 
 const OverlayStyled = styled(motion.div)`
-  bottom: 0;
-  left: 50%;
+  min-height: 100vh;
   width: 100vw;
   position: fixed;
   top: 0;
-  background-color: ${({ theme }) => theme.colors.background};
-  opacity: 0.8;
-  transform: translateX(-50%);
-  width: 100%;
   cursor: pointer;
-  z-index: 5;
-  a {
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100vw;
-    left: 50%;
 
-    transform: translateX(-50%);
+  background-color: ${({ theme }) => theme.colors.background}40;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  main {
+    z-index: 6;
   }
 `;
-const Overlay = () => {
+interface Props {
+  children: React.ReactNode;
+}
+const Overlay: React.FC<Props> = ({ children }) => {
   const [projectSelected, setProjectSelected] =
     useRecoilState(projectSelectedAtom);
 
@@ -50,7 +45,9 @@ const Overlay = () => {
           initial={false}
           transition={{ duration: 0.3 }}
           onClick={handleClick}
-        ></OverlayStyled>
+        >
+          <main>{children}</main>
+        </OverlayStyled>
       )}
     </>
   );

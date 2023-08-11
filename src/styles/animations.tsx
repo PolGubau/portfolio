@@ -8,7 +8,6 @@ export const appear = keyframes`
         opacity: 1;
     }
 `;
-
 export const growBouncing = keyframes`
   from{ transform: scale(1, 1); }
   25% { transform: scale(9, 11); }
@@ -34,4 +33,17 @@ export const rotate180 = keyframes`
     to {
         transform: rotate(180deg);
     }
+`;
+export const spring = {
+  type: "spring",
+  stiffness: 700,
+  damping: 30,
+};
+export const slideUp = keyframes` 
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
 `;

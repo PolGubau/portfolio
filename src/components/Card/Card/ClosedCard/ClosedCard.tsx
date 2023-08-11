@@ -7,6 +7,8 @@ import { Title } from "../../Title/Title";
 import { useSetRecoilState } from "recoil";
 import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 import { motion } from "framer-motion";
+import { useDisclosure } from "@nextui-org/react";
+import useModal from "src/hooks/useModal";
 
 interface CardInterfaceInline {
   project: IProject;
@@ -18,10 +20,15 @@ export const ClosedCard = memo(({ project, index }: CardInterfaceInline) => {
   const cardRef = useRef(null);
   const setProjectSelected = useSetRecoilState(projectSelectedAtom);
 
+  const { triggerModal } = useModal();
   const handleClick = () => {
+    triggerModal({
+      title: project.title,
+    });
     setProjectSelected(project);
     navigate(`/${project.path}`);
   };
+
   const item = {
     hidden: { opacity: 0, scale: 0.8, y: 100 },
     show: {

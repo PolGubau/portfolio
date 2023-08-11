@@ -1,22 +1,38 @@
-import { useParams } from "react-router-dom";
 import Nav from "src/components/Layout/Nav/Nav";
 import NotFoundNav from "./NotFoundNav/NotFoundNav";
 import CentralActionsButtons from "src/components/Buttons/ButtonsOnTop/CentralProjectButtons/CentralActionsButtons";
 import { CardListStyled, ContentStyled } from "./CardListStyled";
-import { OpenedCard } from "../Card/OpenedCard/OpenedCard";
 import { ClosedCard } from "../Card/ClosedCard/ClosedCard";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
 import { useRecoilValue } from "recoil";
-import ChangeVisibilityButton from "./ChangeVisibility/ChangeVisibilityButton";
-import useFilter from "src/hooks/useFilter";
-import { allProjects } from "src/utils/textsUtils";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import useModal from "src/hooks/useModal";
+import { IProject } from "src/Interfaces";
+import { allProjects } from "src/utils";
+import { OpenedCard } from "../Card/OpenedCard";
+import { useGoTo } from "src/hooks";
 
 const List = () => {
-  const { projects } = useFilter();
+  const { path } = useParams<{ path: string }>();
+  const { triggerModal, closeModal } = useModal();
+  const { goThere } = useGoTo();
+
+  const handleCloseModal = () => {
+    closeModal();
+    goThere("/");
+  };
+
+  const triggerOpenedCard = (card: IProject) => {
+    triggerModal({
+      // handleClose: handleCloseModal,
+      children: <OpenedCard project={card} />,
+      title: card.title,
+      maxWidth: "80vw",
+    });
+  };
 
   const projectList = useRecoilValue(SearchProjectAtom);
-
-  const { path } = useParams();
 
   const container = {
     hidden: { opacity: 0 },
@@ -28,24 +44,29 @@ const List = () => {
     },
   };
 
+  useEffect(() => {
+    if (path) {
+      const openedProject = allProjects.find(
+        (project) => project.path === path
+      );
+
+      if (!openedProject) return;
+      console.log("openedProject", openedProject);
+      triggerOpenedCard(openedProject);
+    } else {
+      closeModal();
+    }
+  }, [path]);
+
   return (
     <ContentStyled>
       <Nav />
       {projectList.toShow.length === 0 && <NotFoundNav />}
-
-      {allProjects.map(
-        (card) =>
-          card.path === path && <OpenedCard project={card} key={card.id} />
-      )}
-
       <CardListStyled variants={container} initial="hidden" animate="show">
         {projectList.toShow.map((card, index) => (
           <ClosedCard index={index} project={card} key={card.id} />
         ))}
       </CardListStyled>
-
-      {!projects.searched && <ChangeVisibilityButton />}
-
       <CentralActionsButtons />
     </ContentStyled>
   );

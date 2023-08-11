@@ -3,12 +3,15 @@ import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import Hero from "./components/Hero/Hero";
 import { createRoot } from "react-dom/client";
+import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
   return (
     <RecoilRoot>
       <BrowserRouter>
-        <Hero />
+        <NextUIProvider>
+          <Hero />
+        </NextUIProvider>
       </BrowserRouter>
     </RecoilRoot>
   );
@@ -16,4 +19,5 @@ function App() {
 
 const domNode = document.getElementById("root");
 const root = createRoot(domNode!);
+
 root.render(<App />);

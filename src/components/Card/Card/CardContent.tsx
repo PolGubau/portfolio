@@ -1,19 +1,9 @@
-import { memo, useEffect } from "react";
 import { Image } from "src/components/Card/Image/Image";
 import Description from "src/components/Card/Description/Description";
 import { CardInterface } from "src/Interfaces";
 import { Title } from "../Title/Title";
 
-export const CardContent = memo(({ project, mobile }: CardInterface) => {
-  const isAProjectSelected = project.title !== "";
-  const show = isAProjectSelected;
-  useEffect(() => {
-    show && document.body.classList.add("no-scroll");
-    return () => {
-      document.body.classList.remove("no-scroll");
-    };
-  }, [show]);
-
+export const CardContent = ({ project, mobile }: CardInterface) => {
   return (
     <>
       <article
@@ -37,4 +27,4 @@ export const CardContent = memo(({ project, mobile }: CardInterface) => {
       </article>
     </>
   );
-});
+};

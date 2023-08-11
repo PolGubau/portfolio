@@ -7,6 +7,7 @@ import { relevantProjects, allProjects } from "src/utils/textsUtils";
 import { IProject } from "src/Interfaces";
 import { LanguageAtom } from "src/Recoil/Atoms/LanguageAtom";
 import { getTextByLang } from "src/utils/getTextByLang";
+import useGoTo from "./useGoTo";
 
 //
 const useFilter = () => {
@@ -78,7 +79,10 @@ const useFilter = () => {
       toShow: relevantProjects,
     });
   };
+
+  const { goThere } = useGoTo();
   const resetSearch = () => {
+    goThere("/");
     setProjects(initialSearch);
   };
   const resetAll = () => {
