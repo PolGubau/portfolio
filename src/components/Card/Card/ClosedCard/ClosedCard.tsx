@@ -1,15 +1,10 @@
 import { memo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { IProject } from "src/Interfaces";
-import { closeSpring } from "../../utils/animations";
 import { ClosedCardStyled } from "./ClosedCardStyled";
-import { Title } from "../../Title/Title";
 import { useSetRecoilState } from "recoil";
 import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
-import { motion } from "framer-motion";
-import { useDisclosure } from "@nextui-org/react";
 import useModal from "src/hooks/useModal";
-import { Image } from "@nextui-org/react";
 interface CardInterfaceInline {
   project: IProject;
   index: number;

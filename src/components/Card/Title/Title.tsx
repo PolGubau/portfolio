@@ -59,12 +59,7 @@ export const Title = ({
         >
           {categoryLangugaged}
         </span>
-        <span
-          className="yearCard"
-          style={{ color: textColor, opacity: isSelected ? 1 : 0 }}
-        >
-          {year}
-        </span>
+        <span className="yearCard">{year}</span>
       </div>
       {isSelected && (
         <div className="Description-tagsContainer">

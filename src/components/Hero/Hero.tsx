@@ -7,15 +7,15 @@ import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 import { ThemeAtom } from "src/Recoil/Atoms/ThemeAtoms";
 import { darkTheme } from "src/styles/theme/darkMode";
 import { lightTheme } from "src/styles/theme/lightTheme";
-import { ThemeProvider } from "styled-components";
 import Header from "../Layout/Header/Header";
 import { MainStyled } from "./MainStyles";
 import OptionsModal from "../Modals/Options/Options";
 import { RightBottomButtons } from "../Buttons/ButtonsOnTop/rightBottomButtons";
 import { modalState } from "src/Recoil";
-import { Button, Modal, ModalContent } from "@nextui-org/react";
-import { Icon } from "../Icon";
-
+import { ThemeProvider } from "styled-components";
+import FocusLock from "react-focus-lock";
+import { ModalStyled } from "../Modals/Modal.styled";
+import { useState } from "react";
 const Hero = () => {
   const modal = useRecoilValue(modalState);
   const theme = useRecoilValue(ThemeAtom);
@@ -29,15 +29,16 @@ const Hero = () => {
       <MainStyled>
         <div className="App">
           <LanguageButtons />
-
-          <Modal
-            placement="center"
+          <ModalStyled
+            onBackgroundClick={modal.handleClose}
             isOpen={modal.isOpen}
-            onOpenChange={modal.handleClose}
-            size="5xl"
+            onEscapeKeydown={modal.handleClose}
+            aria-modal={true}
+            aria-labelledby="modal-label"
+            maxWidth={modal.maxWidth}
           >
-            <ModalContent>{modal.children}</ModalContent>
-          </Modal>
+            {modal.children}
+          </ModalStyled>
 
           {options?.show && <OptionsModal />}
           {!projectSelected.id && <RightBottomButtons />}

@@ -7,6 +7,7 @@ interface CardInterfaceInline {
 }
 
 export const OpenedCardStyled = styled(motion.div)<CardInterfaceInline>`
+  position: relative;
   display: flex;
   overflow-y: auto;
   flex-direction: column;
@@ -20,7 +21,7 @@ export const OpenedCardStyled = styled(motion.div)<CardInterfaceInline>`
   @media screen and (min-width: 768px) {
     height: 80vh;
     overflow-x: hidden;
-    width: 100%;
+    border-radius: 20px;
   }
   .card-content-PC {
     max-width: 700px;

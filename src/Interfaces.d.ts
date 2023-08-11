@@ -75,10 +75,10 @@ export interface InavTextsLanguages {
 }
 
 export interface ICardDataLanguages {
-  en: CardInterface;
-  es: CardInterface;
-  ca: CardInterface;
-  de: CardInterface;
+  en: ICardText;
+  es: ICardText;
+  ca: ICardText;
+  de: ICardText;
 }
 
 export interface FooterDataInterface {

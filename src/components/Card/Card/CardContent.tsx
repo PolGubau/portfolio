@@ -10,21 +10,7 @@ export const CardContent = ({ project, mobile }: CardInterface) => {
         className={`imageAndDescription ${
           mobile ? "imageAndDescriptionMobile" : ""
         }`}
-      >
-        <>
-          {project.tags.map((tag: string) => {
-            <p>{tag}</p>;
-          })}
-          <Title isSelected={true} project={project} />
-          <Image project={project} />
-
-          <div
-            className={`${mobile ? "card-content-Mobile" : "card-content-PC"} `}
-          >
-            <Description project={project} />
-          </div>
-        </>
-      </article>
+      ></article>
     </>
   );
 };

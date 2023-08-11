@@ -1,19 +1,18 @@
 import { slideUp } from "src/styles/animations";
 import styled from "styled-components";
+import Modal from "styled-react-modal";
 interface Props {
   maxWidth?: string;
 }
 
-export const ModalStyled = styled.section<Props>`
-  overflow: hidden;
+export const ModalStyled = styled(Modal)<Props>`
   position: relative;
   max-height: 80vh;
   min-width: 600px;
-  max-width: ${({ maxWidth }) => maxWidth ?? "80vw"};
+  width: 80vw;
   animation: ${slideUp} 0.5s ease-in-out;
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 10px;
-  width: fit-content;
   text-align: center;
   box-shadow: "0 0 10px rgba(0, 0, 0, 0.2)";
   display: flex;
@@ -32,7 +31,6 @@ export const ModalStyled = styled.section<Props>`
     align-items: center;
     text-align: center;
     gap: 5px;
-    width: 100%;
   }
 
   .modalContent {
@@ -42,12 +40,10 @@ export const ModalStyled = styled.section<Props>`
     flex-direction: column;
     gap: 20px;
     justify-content: flex-start;
-    width: 100%;
   }
 
   footer {
     display: flex;
-    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

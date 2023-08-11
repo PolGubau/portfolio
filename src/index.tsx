@@ -3,15 +3,15 @@ import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import Hero from "./components/Hero/Hero";
 import { createRoot } from "react-dom/client";
-import { NextUIProvider } from "@nextui-org/react";
+import { ModalProvider } from "styled-react-modal";
 
 function App() {
   return (
     <RecoilRoot>
       <BrowserRouter>
-        <NextUIProvider>
+        <ModalProvider>
           <Hero />
-        </NextUIProvider>
+        </ModalProvider>
       </BrowserRouter>
     </RecoilRoot>
   );
