@@ -1,3 +1,6 @@
+import { IAboutYouText } from "./Models/Texts/PagesText/aboutYou.text";
+import { IMadeForTextOneLanguage } from "./components";
+
 export interface ITextByLanguage {
   en: string;
   es: string;
@@ -72,10 +75,10 @@ export interface InavTextsLanguages {
 }
 
 export interface ICardDataLanguages {
-  en: CardTextInterface;
-  es: CardTextInterface;
-  ca: CardTextInterface;
-  de: CardTextInterface;
+  en: CardInterface;
+  es: CardInterface;
+  ca: CardInterface;
+  de: CardInterface;
 }
 
 export interface FooterDataInterface {
