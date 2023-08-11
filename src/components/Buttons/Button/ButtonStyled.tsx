@@ -20,8 +20,8 @@ export const ButtonStyled = styled.div<IButtonStyled>`
   }
 
   .type-normal {
-    background-color: ${({ theme }) => theme.colors.secondary};
-    color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.background};
   }
 
   .type-transparent {

@@ -1,4 +1,4 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import LanguageButtons from "src/components/Buttons/ButtonsOnTop/Language/LanguageButtons";
 import Footer from "src/components/Layout/Footer/Footer";
 import Router from "src/components/Router/Router";
@@ -13,9 +13,8 @@ import OptionsModal from "../Modals/Options/Options";
 import { RightBottomButtons } from "../Buttons/ButtonsOnTop/rightBottomButtons";
 import { modalState } from "src/Recoil";
 import { ThemeProvider } from "styled-components";
-import FocusLock from "react-focus-lock";
 import { ModalStyled } from "../Modals/Modal.styled";
-import { useState } from "react";
+import { emptyProject } from "src/utils";
 const Hero = () => {
   const modal = useRecoilValue(modalState);
   const theme = useRecoilValue(ThemeAtom);

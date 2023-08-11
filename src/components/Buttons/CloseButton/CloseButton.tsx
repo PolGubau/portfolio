@@ -42,8 +42,7 @@ const CloseButtonStyled = styled.div`
   }
 `;
 const CloseButton = ({ project }: { project: IProject }) => {
-  const [someProjectSelected, setSomeProjectSelected] =
-    useRecoilState(projectSelectedAtom);
+  const [, setSomeProjectSelected] = useRecoilState(projectSelectedAtom);
   const handleClick = () => {
     setSomeProjectSelected(emptyProject);
   };
@@ -52,21 +51,6 @@ const CloseButton = ({ project }: { project: IProject }) => {
       <Link to={`/`} onClick={handleClick} className={"button red"}>
         <GrFormClose size={25} />
       </Link>
-
-      {project.githubLink && (
-        <a href={project.githubLink} onClick={handleClick} className={"button"}>
-          <FiGithub size={18} />
-        </a>
-      )}
-
-      <a
-        href={project.link}
-        onClick={handleClick}
-        target="_blank"
-        className={"button"}
-      >
-        <BsSearch size={15} />
-      </a>
     </CloseButtonStyled>
   );
 };

@@ -1,7 +1,6 @@
 import { ButtonStyled } from "./ButtonStyled";
 import { Icon } from "src/components/Icon";
 import { IconType } from "src/components/Icon/Icon";
-import useModal from "src/hooks/useModal";
 export type ButtonType = "main" | "normal" | "error" | "transparent";
 export interface IButtonProps {
   children?: React.ReactNode | null;

@@ -17,33 +17,40 @@ export const OpenedCardStyled = styled(motion.div)<CardInterfaceInline>`
   overflow-x: hidden;
   margin: 0 auto;
   left: 0;
+  height: 80vh;
+  border-radius: 20px;
+  max-width: 80vw;
+  width: 1000px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     height: 80vh;
-    overflow-x: hidden;
-    border-radius: 20px;
+    max-width: 90vw;
   }
-  .card-content-PC {
-    max-width: 700px;
-    width: 100%;
-  }
-
-  .card-content-Mobile {
+  .button {
     display: flex;
-    max-width: 700px;
-    width: calc(100% - 5vw);
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    background-color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.background};
+    padding: 10px;
+    border-radius: 10px;
   }
-
-  .imageAndDescription {
-    width: 100%;
-  }
-
-  .imageAndDescriptionMobile {
+  .description {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    align-content: center;
-    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 20px;
+    .projectFooter {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      & > *:first-child {
+        flex: 1;
+      }
+    }
   }
 `;

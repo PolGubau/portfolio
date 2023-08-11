@@ -14,11 +14,7 @@ export const LanguageButtons = styled.div<IProps>`
     bottom: 30px;
     left: 25px;
     color: ${(props) => props.theme.colors.text};
-    border: 2px solid
-      ${({ isSelectingLanguage }) =>
-        isSelectingLanguage
-          ? ({ theme }) => theme.colors.text
-          : ({ theme }) => theme.colors.background};
+
     padding: 10px;
     border-radius: 15px;
     background-color: ${({ isSelectingLanguage }) =>
@@ -28,7 +24,6 @@ export const LanguageButtons = styled.div<IProps>`
     cursor: pointer;
     :hover {
       background-color: ${({ theme }) => theme.colors.buttons.hover};
-      border: 2px solid ${({ theme }) => theme.colors.text};
     }
     @media screen and (max-width: ${baseTheme.breakpoints.tablet}px) {
       bottom: 10px;

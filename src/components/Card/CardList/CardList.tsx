@@ -66,7 +66,6 @@ const List = () => {
           <ClosedCard index={index} project={card} key={card.id} />
         ))}
       </CardListStyled>
-      <CentralActionsButtons />
     </ContentStyled>
   );
 };

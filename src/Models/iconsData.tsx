@@ -78,6 +78,7 @@ import {
   TbLink,
   TbQuestionMark,
   TbEdit,
+  TbSearch,
 } from "react-icons/tb";
 import { TiFlowSwitch } from "react-icons/ti";
 
@@ -182,6 +183,7 @@ export const icons = [
   { id: "96", name: "link", icon: <TbLink /> },
   { id: "97", name: "question", icon: <TbQuestionMark /> },
   { id: "98", name: "edit", icon: <TbEdit /> },
+  { id: "99", name: "search", icon: <TbSearch /> },
 ];
 
 type Icon = (typeof icons)[number];

@@ -7,6 +7,10 @@ import { baseTheme } from "src/styles/theme/baseTheme";
 import { Image } from "../../Image";
 import { Description } from "../../Description";
 import { Title } from "../../Title";
+import { CloseButton } from "src/components/Buttons/CloseButton";
+import { Icon } from "src/components/Icon";
+import { Link } from "react-router-dom";
+import { FiGithub } from "react-icons/fi";
 
 interface CardInterfaceInline {
   project: IProject;
@@ -25,12 +29,22 @@ export const OpenedCard = ({ project }: CardInterfaceInline) => {
           <p>{tag}</p>;
         })}
         <Title isSelected={true} project={project} />
+        <CloseButton project={project} />
+
         <Image project={project} />
 
-        <div
-          className={`${mobile ? "card-content-Mobile" : "card-content-PC"} `}
-        >
+        <div className="description">
           <Description project={project} />
+          <footer className="projectFooter">
+            <Link className="button" to={project.link}>
+              <Icon icon="search" /> Search
+            </Link>
+            {project.githubLink && (
+              <Link className="button" to={project.githubLink}>
+                <FiGithub size={0} />
+              </Link>
+            )}
+          </footer>
         </div>
       </>
     </OpenedCardStyled>
