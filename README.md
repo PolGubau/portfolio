@@ -1,4 +1,5 @@
 # **Pol Gubau Amores**
+
 **React Portfolio using TypeScript, styled-components, Framer Motion, and React Routing**
 
 Welcome to my React Portfolio! This webpage is a showcase of my skills and projects, built with TypeScript, styled-components, Framer Motion, and React Routing.
@@ -12,7 +13,7 @@ Welcome to my React Portfolio! This webpage is a showcase of my skills and proje
 
 ## **URL**
 
-Visit my portfolio at **[https://www.polgubauamores.me](https://www.polgubauamores.me/)** to see the project in action!
+Visit my portfolio at **[https://www.polgubauamores.me](https://www.polgubau.com/)** to see the project in action!
 
 ## **Technologies Used**
 
@@ -24,7 +25,7 @@ Visit my portfolio at **[https://www.polgubauamores.me](https://www.polgubauamor
 
 ## **Installation**
 
-1. Clone the repository: **`git clone https://github.com/PolGubau/polgubauamores.git`**
+1. Clone the repository: **`git clone https://github.com/PolGubau/portfolio.git`**
 2. Install dependencies: **`npm install`**
 3. Run the project: **`npm start`**
 
