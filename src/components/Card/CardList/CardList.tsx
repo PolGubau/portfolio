@@ -25,7 +25,7 @@ const List = () => {
 
   const triggerOpenedCard = (card: IProject) => {
     triggerModal({
-      // handleClose: handleCloseModal,
+      handleClose: handleCloseModal,
       children: <OpenedCard project={card} />,
       title: card.title,
       maxWidth: "80vw",
@@ -51,7 +51,6 @@ const List = () => {
       );
 
       if (!openedProject) return;
-      console.log("openedProject", openedProject);
       triggerOpenedCard(openedProject);
     } else {
       closeModal();

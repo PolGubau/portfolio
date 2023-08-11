@@ -14,10 +14,10 @@ export const afternoonsText: IProject = {
     ca: "web",
     de: "web",
   },
-  pointOfInterest: { x: 20, y: 60 },
+  pointOfInterest: { x: 30, y: 80 },
 
   textColor: "#000",
-  width: 200,
+  width: 600,
   backgroundColor: "#b49cff",
   pathToImg: "/GubauAfternoons/0.webp",
   tags: ["HTML", "SCSS", "JQUERY"],

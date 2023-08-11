@@ -9,7 +9,7 @@ import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 import { motion } from "framer-motion";
 import { useDisclosure } from "@nextui-org/react";
 import useModal from "src/hooks/useModal";
-
+import { Image } from "@nextui-org/react";
 interface CardInterfaceInline {
   project: IProject;
   index: number;
@@ -52,8 +52,7 @@ export const ClosedCard = memo(({ project, index }: CardInterfaceInline) => {
       className={`card`}
       onClick={handleClick}
     >
-      <Title project={project} isSelected={false} />
-      <img src={`images/${project.pathToImg}`} alt={project.title} />
+      <h3>{project.title}</h3>
     </ClosedCardStyled>
   );
 });

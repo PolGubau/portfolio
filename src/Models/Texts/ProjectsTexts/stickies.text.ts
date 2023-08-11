@@ -12,10 +12,10 @@ export const stickiesText: IProject = {
     ca: "web",
     de: "web",
   },
-  pointOfInterest: { x: -10, y: 20 },
+  pointOfInterest: { x: 90, y: 10 },
 
   textColor: "#000",
-  width: 340,
+  width: 550,
   backgroundColor: "#FFABD3",
   pathToImg: "/Stickies/0.webp",
   tags: ["React", "React Icons", "Styled Components", "TypeScript"],

@@ -12,10 +12,10 @@ export const askaquestText: IProject = {
     ca: "web",
     de: "web",
   },
-  pointOfInterest: { x: -70, y: 10 },
+  pointOfInterest: { x: 10, y: 70 },
 
   textColor: "#000",
-  width: 270,
+  width: 450,
   backgroundColor: "#abd7ff",
   pathToImg: "/AskaQuest/0.webp",
   tags: ["Nextjs", "PostgreSQL", "TypeScript", "Vercel", "SWR"],

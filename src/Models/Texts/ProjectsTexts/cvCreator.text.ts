@@ -18,10 +18,10 @@ export const cvCreatorText: IProject = {
     ca: "Universitat autònoma de Barcelona",
     de: "Autonome Universität Barcelona",
   },
-  pointOfInterest: { x: 30, y: 20 },
+  pointOfInterest: { x: 0, y: 20 },
 
   textColor: "#000",
-  width: 300,
+  width: 500,
   backgroundColor: "#abffe2",
   pathToImg: "/cvCreator/0.webp",
   tags: ["PHP", "MYSQL", "PDO", "CRUD", "DDBB"],

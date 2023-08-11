@@ -14,10 +14,10 @@ export const nuweText: IProject = {
     ca: "disseny",
     de: "design",
   },
-  pointOfInterest: { x: 20, y: 20 },
+  pointOfInterest: { x: 70, y: 70 },
 
   textColor: "#000",
-  width: 300,
+  width: 400,
   backgroundColor: "#c1ffab",
   pathToImg: "/NUWE/0.webp",
   tags: ["Figma", "Illustrator", "Photoshop"],

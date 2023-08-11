@@ -15,10 +15,10 @@ export const unbrushedText: IProject = {
     de: "web",
   },
 
-  pointOfInterest: { x: -120, y: -80 },
+  pointOfInterest: { x: -30, y: 0 },
 
   textColor: "#000",
-  width: 500,
+  width: 590,
   backgroundColor: "#ffabd5",
   pathToImg: "/Unbrushed/0.webp",
   tags: ["PHP", "SQL", "JavaScript"],

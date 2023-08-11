@@ -13,7 +13,7 @@ export const uabMediaText: IProject = {
     ca: "web",
     de: "web",
   },
-  pointOfInterest: { x: 30, y: 20 },
+  pointOfInterest: { x: 30, y: 80 },
 
   textColor: "#000",
   width: 290,
