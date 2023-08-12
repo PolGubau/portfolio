@@ -1,9 +1,8 @@
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import LanguageButtons from "src/components/Buttons/ButtonsOnTop/Language/LanguageButtons";
 import Footer from "src/components/Layout/Footer/Footer";
 import Router from "src/components/Router/Router";
 import { OptionsAtom } from "src/Recoil/Atoms/OptionsAtom";
-import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 import { ThemeAtom } from "src/Recoil/Atoms/ThemeAtoms";
 import { darkTheme } from "src/styles/theme/darkMode";
 import { lightTheme } from "src/styles/theme/lightTheme";
@@ -14,14 +13,18 @@ import { RightBottomButtons } from "../Buttons/ButtonsOnTop/rightBottomButtons";
 import { modalState } from "src/Recoil";
 import { ThemeProvider } from "styled-components";
 import { ModalStyled } from "../Modals/Modal.styled";
-import { emptyProject } from "src/utils";
+
 const Hero = () => {
   const modal = useRecoilValue(modalState);
   const theme = useRecoilValue(ThemeAtom);
   const options = useRecoilValue(OptionsAtom);
-  const projectSelected = useRecoilValue(projectSelectedAtom);
 
   const actualTheme = theme === "light" ? lightTheme : darkTheme;
+  interface Item {
+    id: string;
+    title: string;
+    subtitle: string;
+  }
 
   return (
     <ThemeProvider theme={actualTheme}>
@@ -40,7 +43,7 @@ const Hero = () => {
           </ModalStyled>
 
           {options?.show && <OptionsModal />}
-          {!projectSelected.id && <RightBottomButtons />}
+          <RightBottomButtons />
 
           <Header />
           <Router />

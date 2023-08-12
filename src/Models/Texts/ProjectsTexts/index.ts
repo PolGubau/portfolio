@@ -13,6 +13,7 @@ import { uabMediaText } from "./uabMedia.text";
 import { unbrushedText } from "./unbrushed.text";
 import Beecipes from "./beecipes.text";
 import Paris2024 from "./paris2024.text";
+import polUi from "./pol-ui.text";
 
 export * from "./paris2024.text";
 export * from "./afternoons.text";
@@ -34,6 +35,7 @@ export const projects: IProject[] = [
   Paris2024,
   Beecipes,
   habitsText,
+  polUi,
   stickiesText,
   nuweText,
   askaquestText,

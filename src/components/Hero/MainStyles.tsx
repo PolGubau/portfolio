@@ -27,7 +27,7 @@ export const MainStyled = styled.main`
   }
   .App {
     width: 100%;
-    max-width: 950px;
+    max-width: 1000px;
     flex: 1 1 100%;
     display: flex;
     flex-direction: column;

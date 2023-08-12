@@ -37,6 +37,15 @@ export const OpenedCardStyled = styled(motion.div)<CardInterfaceInline>`
     color: ${({ theme }) => theme.colors.background};
     padding: 10px;
     border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    :hover {
+      cursor: pointer;
+      filter: brightness(1.05);
+      box-shadow: 0 0 10px ${({ theme }) => theme.colors.text};
+    }
+    :focus {
+      outline: 2px solid ${({ theme }) => theme.colors.main};
+    }
   }
   .description {
     display: flex;
@@ -50,6 +59,7 @@ export const OpenedCardStyled = styled(motion.div)<CardInterfaceInline>`
       justify-content: center;
       gap: 10px;
       align-items: center;
+
       & > *:first-child {
         flex: 1;
       }

@@ -19,12 +19,12 @@ export const Nav = memo((): JSX.Element => {
     filterProjects();
   };
 
-
   return (
     <NavStyled>
       <div className={`seachBar`}>
         <BiSearch onClick={filterWord} />
         <input
+          autoFocus
           maxLength={20}
           type="text"
           value={projects.searched}
@@ -35,14 +35,14 @@ export const Nav = memo((): JSX.Element => {
 
       <Categories />
       {projects.toShow.length > 0 && (
-        <div className="icon" onClick={toggleAscending}>
+        <button className="icon" onClick={toggleAscending}>
           {projects.ascending ? <HiSortAscending /> : <HiSortDescending />}
-        </div>
+        </button>
       )}
       {projects.searched && (
-        <div onClick={resetSearch} className="icon">
+        <button onClick={resetSearch} className="icon">
           <IoMdRefresh />
-        </div>
+        </button>
       )}
     </NavStyled>
   );

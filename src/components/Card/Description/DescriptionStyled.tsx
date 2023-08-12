@@ -8,4 +8,7 @@ export const DescriptionStyled = styled.article`
     margin-bottom: 30px;
     padding-bottom: 10px;
   }
+  p {
+    color: ${({ theme }) => theme.colors.text};
+  }
 `;

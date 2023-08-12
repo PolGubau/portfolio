@@ -1,6 +1,5 @@
 import Nav from "src/components/Layout/Nav/Nav";
 import NotFoundNav from "./NotFoundNav/NotFoundNav";
-import CentralActionsButtons from "src/components/Buttons/ButtonsOnTop/CentralProjectButtons/CentralActionsButtons";
 import { CardListStyled, ContentStyled } from "./CardListStyled";
 import { ClosedCard } from "../Card/ClosedCard/ClosedCard";
 import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";

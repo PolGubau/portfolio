@@ -13,10 +13,10 @@ export const skatlaText: IProject = {
     ca: "disseny",
     de: "design",
   },
-  pointOfInterest: { x: 20, y: 0 },
+  pointOfInterest: { x: 70, y: 70 },
 
   textColor: "#000000",
-  width: 350,
+  width: 450,
   backgroundColor: "#ffdbab",
   pathToImg: "/Skatla/0.webp",
   tags: ["Indesign", "Illustrator", "Photoshop"],
@@ -45,5 +45,5 @@ export const skatlaText: IProject = {
   figmaLink: "",
 
   link: "https://www.instagram.com/skatlapack/",
-  relevant: false,
+  relevant: true,
 };

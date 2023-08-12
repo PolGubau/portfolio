@@ -20,14 +20,17 @@ const Categories = () => {
       {categoriesText.map((category) => {
         const text = getTextByLang(l.code, category.text);
         return (
-          <li
-            key={category.name}
-            className={`category ${
-              state.filteredCategory === category.name ? "category-active" : ""
-            }`}
-            onClick={() => filterCategory(category.name)}
-          >
-            {text}
+          <li key={category.name}>
+            <button
+              className={`category ${
+                state.filteredCategory === category.name
+                  ? "category-active"
+                  : ""
+              }`}
+              onClick={() => filterCategory(category.name)}
+            >
+              {text}
+            </button>
           </li>
         );
       })}

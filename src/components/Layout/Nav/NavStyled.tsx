@@ -46,25 +46,30 @@ export const NavStyled = styled.nav`
     background-color: transparent;
     padding: 4px 10px;
     border: none;
-    border-radius: 0 0 15px 0;
+    border-radius: 0 10px 10px 0;
     color: ${({ theme }) => theme.colors.text};
-    outline: none;
     align-items: center;
     align-content: center;
     flex: 1;
+    outline: none;
+
+    :focus:not(:focus-visible) {
+      outline: 1px solid ${({ theme }) => theme.colors.text};
+    }
   }
 
   .icon {
+    background-color: transparent;
+    aspect-ratio: 1;
+    border: none;
     display: flex;
-    flex-direction: row;
-    margin: 0 0 0 0;
-    padding: 8px 5px 5px 5px;
+    min-height: 30px;
+    min-width: 30px;
     color: ${({ theme }) => theme.colors.text};
-    cursor: pointer;
     align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
     border-radius: 15px;
+    justify-content: center;
+
     :hover {
       background-color: ${({ theme }) => theme.colors.main};
     }
