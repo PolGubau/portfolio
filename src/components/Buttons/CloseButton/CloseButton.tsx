@@ -5,7 +5,11 @@ import { IProject } from "src/Interfaces";
 import { useRecoilState } from "recoil";
 import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
 import { emptyProject } from "src/utils/empties/Project";
-const CloseButtonStyled = styled.div`
+
+interface StyleProps {
+  color: string;
+}
+const CloseButtonStyled = styled.div<StyleProps>`
   position: absolute;
   right: 10px;
   z-index: 5;
@@ -23,7 +27,8 @@ const CloseButtonStyled = styled.div`
     border-radius: 10px;
     background-color: transparent;
     :hover {
-      background-color: ${({ theme }) => theme.colors.main};
+      background-color: ${({ color }) => color};
+      filter: brightness(0.7);
     }
   }
 `;
@@ -33,7 +38,7 @@ const CloseButton = ({ project }: { project: IProject }) => {
     setSomeProjectSelected(emptyProject);
   };
   return (
-    <CloseButtonStyled>
+    <CloseButtonStyled color={project.backgroundColor}>
       <Link to={`/`} onClick={handleClick} className={"closeButton"}>
         <GrFormClose size={25} />
       </Link>

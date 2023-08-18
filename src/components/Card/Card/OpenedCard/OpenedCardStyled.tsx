@@ -26,6 +26,13 @@ export const OpenedCardStyled = styled(motion.div)<CardInterfaceInline>`
     height: 80vh;
     max-width: 90vw;
   }
+
+  .cardHeader {
+    width: 100%;
+    background-color: ${({ project }) => project.backgroundColor};
+    display: flex;
+    justify-content: center;
+  }
   .button {
     min-height: 45px;
     min-width: 45px;
@@ -47,22 +54,25 @@ export const OpenedCardStyled = styled(motion.div)<CardInterfaceInline>`
       outline: 2px solid ${({ theme }) => theme.colors.main};
     }
   }
-  .description {
+  .projectContent {
+    height: 100%;
+    padding: 40px;
     display: flex;
+
     flex-direction: column;
+    justify-content: space-between;
+
+    gap: 40px;
+  }
+  .projectFooter {
+    display: flex;
+    align-items: stretch;
     justify-content: center;
     gap: 10px;
-    padding: 20px;
-    .projectFooter {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      gap: 10px;
-      align-items: center;
+    align-items: center;
 
-      & > *:first-child {
-        flex: 1;
-      }
+    & > *:first-child {
+      flex: 1;
     }
   }
 `;

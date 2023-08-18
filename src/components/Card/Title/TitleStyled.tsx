@@ -6,9 +6,7 @@ interface ITitleInterface {
   project: IProject;
 }
 export const TitleStyled = styled(motion.div)<ITitleInterface>`
-  position: absolute;
-  top: 5%;
-  left: 5%;
+  padding: 40px 60px;
   max-width: 500px;
   z-index: 3;
 

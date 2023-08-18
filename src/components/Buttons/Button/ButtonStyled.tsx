@@ -15,6 +15,8 @@ export const ButtonStyled = styled.div<IButtonStyled>`
   outline: none;
   min-height: 45px;
 
+  border: none;
+
   .type-main {
     background-color: ${({ theme }) => theme.colors.main};
     color: ${({ theme }) => theme.colors.background};
