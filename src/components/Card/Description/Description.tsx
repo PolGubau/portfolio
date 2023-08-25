@@ -17,7 +17,6 @@ export default function Description({ project }: { project: IProject }) {
     navigator.clipboard.writeText(project.npmComand ?? "");
     setCopied(true);
   };
-
   return (
     <DescriptionStyled>
       <header>
