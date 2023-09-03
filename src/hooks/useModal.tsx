@@ -1,6 +1,7 @@
-import { IModalState, ModalProps, modalState } from "src/Recoil/modal.state";
+import { IModalState, modalState } from "src/Recoil/modal.state";
 import { useSetRecoilState } from "recoil";
 import { useScrollLock } from "./useScrollLock";
+import { ModalProps } from "pol-ui";
 
 const useModal = () => {
   const trigger = useSetRecoilState<IModalState>(modalState);
@@ -20,7 +21,6 @@ const useModal = () => {
     handleClose = closeModalAndGoHome,
     children,
     title,
-    maxWidth = "500px",
   }: ModalProps): void => {
     lockScroll();
     trigger({
@@ -28,7 +28,6 @@ const useModal = () => {
       handleClose,
       children,
       title,
-      maxWidth,
     });
   };
 

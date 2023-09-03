@@ -12,10 +12,10 @@ const polUi: IProject = {
     ca: "web",
     de: "web",
   },
-  pointOfInterest: { x: 20, y: 60 },
+  pointOfInterest: { x: 70, y: 20 },
 
   textColor: "#000",
-  width: 200,
+  width: 480,
   backgroundColor: "#b49cff",
   pathToImg: "/polui/0.webp",
   tags: ["React", "NPM", "UI", "Components", "JSX"],

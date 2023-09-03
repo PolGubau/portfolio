@@ -20,11 +20,6 @@ const Hero = () => {
   const options = useRecoilValue(OptionsAtom);
 
   const actualTheme = theme === "light" ? lightTheme : darkTheme;
-  interface Item {
-    id: string;
-    title: string;
-    subtitle: string;
-  }
 
   return (
     <ThemeProvider theme={actualTheme}>

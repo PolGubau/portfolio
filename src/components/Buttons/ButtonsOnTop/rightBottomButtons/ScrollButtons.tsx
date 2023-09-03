@@ -1,5 +1,5 @@
 import { BsArrowUpShort } from "react-icons/bs";
-import { ButtonStyled } from "./Styles/RightButtonsStyled";
+import { IconButton } from "pol-ui";
 
 const ScrollButton = () => {
   const goToTop = () => {
@@ -9,9 +9,11 @@ const ScrollButton = () => {
     });
   };
   return (
-    <ButtonStyled onClick={goToTop}>
-      <BsArrowUpShort size={30} />
-    </ButtonStyled>
+    <IconButton
+      onClick={goToTop}
+      icon={<BsArrowUpShort size={30} />}
+      rounded="xl"
+    />
   );
 };
 

@@ -1,26 +1,14 @@
+import { ModalProps } from "pol-ui";
 import { atom } from "recoil";
-
-export interface ModalProps {
-  handleClose?: () => void;
-  children?: React.ReactNode;
-  title?: string;
-  footer?: React.ReactNode;
-  maxWidth?: string;
-}
 
 export interface IModalState extends ModalProps {
   isOpen: boolean;
 }
 const initialState: IModalState = {
-  isOpen: true,
-  handleClose: () => {},
-  children: null,
-  title: "",
-  footer: null,
-  maxWidth: "500px",
+  isOpen: false,
 };
 
-export const modalState = atom<IModalState>({
+export const modalState = atom<ModalProps>({
   key: "modalState1",
   default: initialState,
 });

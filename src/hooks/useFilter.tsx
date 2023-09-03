@@ -52,7 +52,6 @@ const useFilter = () => {
         searched: value,
         toShow: filteredByCategory, //filtering the projects
       });
-      return;
     } else {
       setProjects({
         ...projects,
@@ -96,7 +95,7 @@ const useFilter = () => {
         filteredCategory: "",
         toShow: relevantProjects,
       });
-      filterProjects;
+      filterProjects();
       return;
     }
 

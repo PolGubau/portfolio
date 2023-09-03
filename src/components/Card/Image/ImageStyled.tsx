@@ -1,7 +1,6 @@
 import styled from "styled-components";
 interface IImageStyled {
   opened: boolean;
-  backgroundColor: string;
   mobile: boolean;
   tablet: boolean;
 }
@@ -19,25 +18,24 @@ export const ImageStyled = styled.div<IImageStyled>`
   height: ${(props) => (props.mobile ? "300px" : "40vh")};
   overflow: hidden;
 
-  background-color: ${(props) => props.backgroundColor};
   .card-image {
+    object-fit: cover;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     overflow: hidden;
     align-self: auto;
-    /* width: 60%; */
     overflow: hidden;
-    width: ${(props) => (props.tablet ? "60vw" : "40vw")};
+    max-height: 400px;
+    max-width: 60%;
     padding-top: ${(props) => (props.tablet ? "20px" : "0px")};
     padding-right: 20px;
     opacity: ${(props) => (props.mobile ? "0.4" : "1")};
     transition: 0.3s ease-out all;
     perspective: ${(props) => (props.opened ? "1000px" : "0px")};
-
     :hover {
-      transition: none;
+      transition: 0.3s ease-out all;
     }
   }
 `;

@@ -6,6 +6,9 @@ interface ITitleInterface {
   project: IProject;
 }
 export const TitleStyled = styled(motion.div)<ITitleInterface>`
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 40px 60px;
   max-width: 500px;
   z-index: 3;
@@ -57,8 +60,9 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
       1px 1px 0 ${(props) => props.project.backgroundColor};
   }
 
-  .Description-tagsContainer {
-    max-width: 300px;
+  .tags {
+    max-width: 50%;
+    font-size: 0.8em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -66,18 +70,5 @@ export const TitleStyled = styled(motion.div)<ITitleInterface>`
     align-items: flex-start;
     margin: 20px 0;
     gap: 5px;
-  }
-
-  .Description-tag {
-    padding: 4px 8px;
-    border-radius: 10px;
-    background-color: ${(props) => props.theme.colors.buttons.base};
-    color: ${(props) => props.theme.colors.buttons.text};
-    transition: all 0.1s ease-in-out;
-    :hover {
-      cursor: pointer;
-      filter: brightness(0.8);
-      transform: scale(0.95);
-    }
   }
 `;

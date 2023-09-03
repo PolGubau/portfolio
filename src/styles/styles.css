@@ -12,6 +12,10 @@
 * {
   box-sizing: border-box;
   font-family: "Poppins", Helvetica, Arial, sans-serif;
+  ::selection {
+    background-color: #a1d7f0;
+    color: #000000;
+  }
 }
 html {
   scroll-behavior: smooth;

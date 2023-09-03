@@ -1,18 +1,13 @@
-import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import Hero from "./components/Hero/Hero";
 import { createRoot } from "react-dom/client";
-import { ModalProvider } from "styled-react-modal";
 import { Analytics } from "@vercel/analytics/react";
 import "./styles/styles.css";
+import ControlledApp from "./ControlledApp";
+
 function App() {
   return (
     <RecoilRoot>
-      <BrowserRouter>
-        <ModalProvider>
-          <Hero />
-        </ModalProvider>
-      </BrowserRouter>
+      <ControlledApp />
       <Analytics />
     </RecoilRoot>
   );

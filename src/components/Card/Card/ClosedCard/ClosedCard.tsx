@@ -2,9 +2,6 @@ import { memo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { IProject } from "src/Interfaces";
 import { ClosedCardStyled } from "./ClosedCardStyled";
-import { useSetRecoilState } from "recoil";
-import { projectSelectedAtom } from "src/Recoil/Atoms/ProjectSelectedAtom";
-import useModal from "src/hooks/useModal";
 interface CardInterfaceInline {
   project: IProject;
   index: number;
@@ -13,14 +10,8 @@ interface CardInterfaceInline {
 export const ClosedCard = memo(({ project, index }: CardInterfaceInline) => {
   const navigate = useNavigate();
   const cardRef = useRef(null);
-  const setProjectSelected = useSetRecoilState(projectSelectedAtom);
 
-  const { triggerModal } = useModal();
   const handleClick = () => {
-    triggerModal({
-      title: project.title,
-    });
-    setProjectSelected(project);
     navigate(`/${project.path}`);
   };
 

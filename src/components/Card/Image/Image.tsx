@@ -14,15 +14,10 @@ export const Image = ({
 }) => {
   const mobile = useMedia(breakpoints.mobile);
   const tablet = useMedia(breakpoints.tablet);
-  const { pathToImg, backgroundColor } = project;
+  const { pathToImg } = project;
 
   return (
-    <ImageStyled
-      opened={isSelected}
-      mobile={mobile}
-      tablet={tablet}
-      backgroundColor={backgroundColor}
-    >
+    <ImageStyled opened={isSelected} mobile={mobile} tablet={tablet}>
       <motion.img
         className={`card-image`}
         src={`images/${pathToImg}`}
