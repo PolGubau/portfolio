@@ -9,7 +9,7 @@ import { IoMdRefresh } from "react-icons/io";
 import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 import Categories from "./Categories/Categories";
 import { navTexts } from "src/Models/Texts/PagesText/home.text";
-export const Nav = memo((): JSX.Element => {
+ export const Nav = memo((): JSX.Element => {
   const language = useRecoilValue(LanguageAtom);
   const text = getTextByLang(language.code, navTexts);
   const { filterProjects, projects, toggleAscending, resetSearch } =

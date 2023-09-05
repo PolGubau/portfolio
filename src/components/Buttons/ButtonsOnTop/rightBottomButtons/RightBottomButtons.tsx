@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import ScrollButton from "./ScrollButtons";
-import SettingsButtons from "./OptionsButton/OptionsButtons";
 import { RightBottomButtonsStyled } from "./Styles/RightButtonsStyled";
+import { ThemeAtom } from "src/Recoil";
+import { useRecoilState } from "recoil";
+import { IconButton } from "pol-ui";
+import { TbMoon, TbSun } from "react-icons/tb";
 
 const RightBottomButtons = () => {
   const [show, setShow] = useState(false);
@@ -15,10 +18,19 @@ const RightBottomButtons = () => {
     });
   }, []);
 
+  const [theme, setTheme] = useRecoilState(ThemeAtom);
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <RightBottomButtonsStyled>
       {show && <ScrollButton />}
-      <SettingsButtons />
+      <IconButton
+        onClick={toggleTheme}
+        rounded="xl"
+        icon={theme === "dark" ? <TbSun size={30} /> : <TbMoon size={30} />}
+      />
     </RightBottomButtonsStyled>
   );
 };
