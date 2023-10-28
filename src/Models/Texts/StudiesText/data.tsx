@@ -16,7 +16,6 @@ export interface IDataStudies {
     marginTop: string;
     width: string;
   };
-  flag: any;
 }
 
 export const dataStudies: IDataStudies[] = [
@@ -38,7 +37,6 @@ export const dataStudies: IDataStudies[] = [
       width: "54%",
       marginTop: "0px",
     },
-    flag: <ES />,
   },
   {
     id: 2,
@@ -57,7 +55,6 @@ export const dataStudies: IDataStudies[] = [
       width: "49%",
       marginTop: "10px",
     },
-    flag: <ES />,
   },
   {
     id: 3,
@@ -77,7 +74,6 @@ export const dataStudies: IDataStudies[] = [
       width: "53%",
       marginTop: "0px",
     },
-    flag: <ES />,
   },
   {
     id: 4,
@@ -96,26 +92,17 @@ export const dataStudies: IDataStudies[] = [
       width: "51%",
       marginTop: "25px",
     },
-    flag: <ES />,
   },
   {
     id: 5,
     placed: "left",
     title: "NUWE",
     description: {
-      en: `My main source of learning in terms of design, working more than ${yearSince(
-        2021
-      )} years as main Graphic Designer of the company.`,
+      en: `My main source of learning in terms of design, working more than 2 years as main Graphic Designer of the company.`,
 
-      es: `Mi principal fuente de aprendizaje en cuanto a diseño, trabajando más de ${yearSince(
-        2021
-      )} años como principal Diseñador gáfico de la empresa. `,
-      ca: `La meva principal font d'aprenentatge en matèria de disseny, treballant més de ${yearSince(
-        2021
-      )} anys com a principal Dissenyador gràfic de l'empresa.`,
-      de: `Meine Hauptlernquelle in Bezug auf Design, die seit mehr als ${yearSince(
-        2021
-      )} Jahren als Hauptgrafikdesigner des Unternehmens arbeitet.`,
+      es: `Mi principal fuente de aprendizaje en cuanto a diseño, trabajando más de 2 años como principal Diseñador gáfico de la empresa. `,
+      ca: `La meva principal font d'aprenentatge en matèria de disseny, treballant més de 2 anys com a principal Dissenyador gràfic de l'empresa.`,
+      de: `Meine Hauptlernquelle in Bezug auf Design, die seit mehr als 2 Jahren als Hauptgrafikdesigner des Unternehmens arbeitet.`,
     },
     date: `2021-act`,
     style: {
@@ -124,7 +111,6 @@ export const dataStudies: IDataStudies[] = [
       width: "50%",
       marginTop: "100px",
     },
-    flag: <ES />,
   },
   {
     id: 6,
@@ -143,6 +129,5 @@ export const dataStudies: IDataStudies[] = [
       width: "60%",
       marginTop: "70px",
     },
-    flag: <EN />,
   },
 ];

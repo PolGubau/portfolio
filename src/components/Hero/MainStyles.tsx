@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const MainStyled = styled.main`
   margin: 0;
-  padding: 0;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  max-width: 1000px;
 
   .card-list {
     display: flex;

@@ -10,12 +10,9 @@ import Header from "../Layout/Header/Header";
 import { MainStyled } from "./MainStyles";
 import OptionsModal from "../Modals/Options/Options";
 import { RightBottomButtons } from "../Buttons/ButtonsOnTop/rightBottomButtons";
-import { modalState } from "src/Recoil";
 import { ThemeProvider } from "styled-components";
-import { ModalStyled } from "../Modals/Modal.styled";
 
 const Hero = () => {
-  const modal = useRecoilValue(modalState);
   const theme = useRecoilValue(ThemeAtom);
   const options = useRecoilValue(OptionsAtom);
 
@@ -24,19 +21,8 @@ const Hero = () => {
   return (
     <ThemeProvider theme={actualTheme}>
       <MainStyled>
-        <div className="App">
+        <div className={`main ${theme} `}>
           <LanguageButtons />
-          <ModalStyled
-            onBackgroundClick={modal.handleClose}
-            isOpen={modal.isOpen}
-            onEscapeKeydown={modal.handleClose}
-            aria-modal={true}
-            aria-labelledby="modal-label"
-            maxWidth={modal.maxWidth}
-          >
-            {modal.children}
-          </ModalStyled>
-
           {options?.show && <OptionsModal />}
           <RightBottomButtons />
 

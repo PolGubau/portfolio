@@ -8,7 +8,7 @@ export const Title = ({ project }: { project: IProject }) => {
   const l = useRecoilValue(LanguageAtom);
 
   const { title, year, category, link } = project;
-  const categoryLangugaged = getTextByLang(l.code, category);
+  const cat = getTextByLang(l.code, category);
 
   return (
     <TitleStyled project={project} initial={false}>
@@ -16,7 +16,7 @@ export const Title = ({ project }: { project: IProject }) => {
         <Text size={2} className="title titleOpened" value={title} />
       </a>
       <div className="details">
-        <Text value={categoryLangugaged} className="category" />
+        <Text value={cat} className="category" />
         <Text value={year.toString()} className="yearCard" />
       </div>
     </TitleStyled>

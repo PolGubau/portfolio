@@ -21,6 +21,7 @@ export const CardListStyled = styled(motion.ul)`
   }
 `;
 export const ContentStyled = styled.section`
+  margin-top: 25px;
   @media only screen and (max-width: ${baseTheme.breakpoints.tablet}) {
     border: none;
   }

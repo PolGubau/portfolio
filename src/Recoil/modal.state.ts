@@ -6,6 +6,8 @@ export interface IModalState extends ModalProps {
 }
 const initialState: IModalState = {
   isOpen: false,
+  padding: "none",
+  
 };
 
 export const modalState = atom<ModalProps>({

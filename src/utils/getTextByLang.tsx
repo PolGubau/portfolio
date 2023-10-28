@@ -1,5 +1,12 @@
 import { availableLangCodesType } from "src/Constants/Languages";
 
+export enum Languages {
+  EN = "EN",
+  ES = "ES",
+  CA = "CA",
+  DE = "DE",
+}
+
 export const getTextByLang = (
   lang: availableLangCodesType,
   text: {
@@ -10,11 +17,11 @@ export const getTextByLang = (
   }
 ) => {
   switch (lang) {
-    case "ES":
+    case Languages.ES:
       return text.es;
-    case "CA":
+    case Languages.CA:
       return text.ca;
-    case "DE":
+    case Languages.DE:
       return text.de;
     default:
       return text.en;

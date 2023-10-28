@@ -25,8 +25,9 @@ const useModal = () => {
     lockScroll();
     trigger({
       isOpen: true,
+      padding: "none",
       handleClose,
-      children,
+      children: children,
       title,
     });
   };

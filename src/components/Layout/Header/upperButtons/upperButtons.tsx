@@ -23,7 +23,6 @@ const UpperButtons = () => {
 
     const allPaths = allProjects.map((item) => item.path);
     if (pathFromTab === "/" || allPaths.includes(actualPath)) {
-      console.log(actualPath, allPaths);
       return actualPath === "/" || allPaths.includes(actualPath);
     }
     if (pathFromTab === "/about") {

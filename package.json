@@ -1,20 +1,15 @@
 {
-  "name": "polgubau",
-  "version": "1.0.0",
-  "description": "Pol Gubau's website Portfolio",
-  "license": "MIT",
-  "keywords": [
-    "polgubau",
-    "polgubau.com",
-    "Pol Gubau Amores",
-    "Pol Gubau",
-    "Portfolio"
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
   ],
-  "main": "src/index.tsx",
   "dependencies": {
     "@vercel/analytics": "^1.0.2",
+    "crypto": "^1.0.1",
     "framer-motion": "^10.6.0",
-    "pol-ui": "^1.0.33",
+    "pol-ui": "^1.0.90",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-focus-lock": "^2.9.5",
@@ -25,9 +20,9 @@
     "react-syntax-highlighter": "^15.5.0",
     "recoil": "^0.7.7",
     "remark-gfm": "^3.0.1",
-    "styled-components": "^5.3.11",
-    "styled-react-modal": "^3.0.1"
+    "styled-components": "^5.3.11"
   },
+  "description": "Pol Gubau's website Portfolio",
   "devDependencies": {
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.28",
@@ -35,28 +30,34 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/react-syntax-highlighter": "^15.5.6",
     "@types/styled-components": "^5.1.26",
-    "@types/styled-react-modal": "^1.2.2",
     "@vitejs/plugin-react": "^4.0.4",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.16",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "postcss": "^8.4.31",
     "prettier": "^2.8.4",
+    "tailwindcss": "^3.3.3",
     "typescript": "^4.9.5",
     "vite": "^4.4.9",
     "vite-plugin-svgr": "^3.2.0",
     "vite-tsconfig-paths": "^4.2.0"
   },
+  "keywords": [
+    "polgubau",
+    "polgubau.com",
+    "Pol Gubau Amores",
+    "Pol Gubau",
+    "Portfolio"
+  ],
+  "license": "MIT",
+  "main": "src/index.tsx",
+  "name": "polgubau",
   "scripts": {
-    "start": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview",
     "eslint": "eslint './**/*.{js,jsx,ts,tsx}'",
+    "serve": "vite preview",
+    "start": "vite",
     "vercel": "vercel --prod"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "version": "1.0.0"
 }

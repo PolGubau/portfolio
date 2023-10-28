@@ -9,16 +9,7 @@ interface CardInterfaceInline {
 export const OpenedCardStyled = styled(motion.div)<CardInterfaceInline>`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  .cardHeader {
-    max-height: 300px;
-    overflow: hidden;
-    width: 100%;
-    background-color: ${({ project }) => project.backgroundColor};
-    display: flex;
-    justify-content: flex-end;
-    border-radius: 10px;
-  }
+  background-color: aliceblue;
 
   .projectContent {
     height: 100%;

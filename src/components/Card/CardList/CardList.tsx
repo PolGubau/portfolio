@@ -1,14 +1,10 @@
-import Nav from "src/components/Layout/Nav/Nav";
-import NotFoundNav from "./NotFoundNav/NotFoundNav";
 import { CardListStyled, ContentStyled } from "./CardListStyled";
 import { ClosedCard } from "../Card/ClosedCard/ClosedCard";
-import { SearchProjectAtom } from "src/Recoil/Atoms/SearchProjectAtom";
-import { useRecoilValue } from "recoil";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import useModal from "src/hooks/useModal";
 import { IProject } from "src/Interfaces";
-import { allProjects } from "src/utils";
+import { allProjects, relevantProjects } from "src/utils";
 import { OpenedCard } from "../Card/OpenedCard";
 import { useGoTo } from "src/hooks";
 
@@ -29,8 +25,6 @@ const List = () => {
       children: <OpenedCard project={card} />,
     });
   };
-
-  const projectList = useRecoilValue(SearchProjectAtom);
 
   const container = {
     hidden: { opacity: 0 },
@@ -57,10 +51,8 @@ const List = () => {
 
   return (
     <ContentStyled>
-      <Nav />
-      {projectList.toShow.length === 0 && <NotFoundNav />}
       <CardListStyled variants={container} initial="hidden" animate="show">
-        {projectList.toShow.map((card, index) => (
+        {relevantProjects.map((card, index) => (
           <ClosedCard index={index} project={card} key={card.id} />
         ))}
       </CardListStyled>
