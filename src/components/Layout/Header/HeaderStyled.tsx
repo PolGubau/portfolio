@@ -76,6 +76,8 @@ export const HeaderStyled = styled.header`
     background-color: ${({ theme }) => theme.colors.main};
 
     .meinPhoto {
+      width: 100%;
+      height: 100%;
       z-index: 2;
       object-fit: cover;
       border-radius: 50%;
@@ -102,6 +104,7 @@ export const HeaderStyled = styled.header`
   }
 
   .titles {
+    max-width: 70%;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -125,5 +128,8 @@ export const HeaderStyled = styled.header`
     width: 100%;
     margin-bottom: 5px;
     gap: 10%;
+    h2 {
+      max-width: 50%;
+    }
   }
 `;

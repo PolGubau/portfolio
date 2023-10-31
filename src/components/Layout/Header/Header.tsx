@@ -42,7 +42,7 @@ export default function Header() {
               <h2>{text.description}</h2>
               <div className="imageContainer">
                 <motion.img
-                  className="meinPhoto"
+                  className="meinPhoto aspect-square w-20 h-20"
                   src={`images/me.webp`}
                   alt="Me"
                   width={120}
@@ -70,7 +70,7 @@ export default function Header() {
 
               <div className="imageContainer">
                 <motion.img
-                  className="meinPhoto"
+                  className="meinPhoto aspect-square "
                   src={`images/me.webp`}
                   alt="Me"
                   width={120}
