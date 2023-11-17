@@ -1,25 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
-const gradients = [
-  "linear-gradient(90deg, #a5c624 0%, #c1c630 100%)",
-  "linear-gradient(90deg, #ff4 0%, #cc0 100%)",
-  "linear-gradient(90deg, #bb0 0%, #ff0 100%)",
-];
-
-const randomGradient = () => {
-  return gradients[Math.floor(Math.random() * gradients.length)];
-};
-
 const Header = () => {
   return (
     <header className="flex flex-col md:flex-row gap-8 justify-between items-center mb-16">
       <Image
-        style={{
-          backgroundImage: randomGradient(),
-        }}
         src="/images/me.png"
-        className=" rounded-3xl flex md:hidden"
+        className=" rounded-3xl flex md:hidden bg-yellow-200 dark:bg-accent   "
         alt="Pol Gubau Amores' profile image"
         width={150}
         height={150}
@@ -35,10 +22,7 @@ const Header = () => {
 
       <Image
         src="/images/me.png"
-        style={{
-          backgroundImage: randomGradient(),
-        }}
-        className="rounded-full hidden md:flex  "
+        className="rounded-full hidden md:flex  bg-yellow-200 dark:bg-accent "
         alt="Pol Gubau Amores' profile image"
         width={150}
         height={150}

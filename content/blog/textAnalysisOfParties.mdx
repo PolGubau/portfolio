@@ -1,0 +1,234 @@
+---
+title: "Text Analysis of Political Party Programs in Spain ✍🏼"
+publishedAt: "2023-11-12"
+summary: "The following essay focuses on the main topic in this course: Big Data analisis. We will use some techniques seen in class to analyse some text. Before all, let’s talk about what that is."
+tags: spain
+  politics
+  machine learning
+---
+
+# Text Analysis of Political Party Programs in Spain
+
+The following essay focuses on the main topic in this course: Big Data analisis. We will use some techniques seen in class to analyse some text. Before all, let’s talk about what that is.
+
+Text analysis takes a **crucial role** in extracting meaningful conclusions from huge datasets, offering a deeper understanding of the language used in **diverse contexts**.
+
+This theoretical essay explores a Python-based approach to analyse political party programs in Spain, with a specific focus on four major parties: Vox, PP, PSOE, and Podemos. The code utilises various natural language processing (NLP) techniques, including **tokenization**, **word cloud generation**, and **sentiment analysis**, to discover patterns and sentiments inside the political discourse.
+
+# I. Setup and Data Preparation:
+
+The initial steps involve setting up the Python environment and importing essential **libraries** for text analysis. The code utilises popular libraries such as Pandas, NLTK, Scikit-learn, Gensim, and WordCloud.
+
+The data analysed during the code is basically each program pdf as a txt file, we will include the political programs of **Vox**, **PP**, **PSOE**, and **Podemos**, we will save the whole text of them in variables and we will use those along the code.
+
+## Why I used variables and not links to get data.
+
+The data in these political programs is presented in a pdf to keep their **colours and shapes**… a csv or txt link would skip all this Marketing, then they publish in a format that can not be easily imported in colab. I found some plugins that try to translate from pdf to text, but the result was a bit chaotic.
+
+The text as variables is a consistent style, the results can not be changed due to **link affections** as 404 errors if they move the origin, but creates a bigger file in size term.
+
+# II. Tokenization and Basic Data Wrangling:
+
+Tokenization is a fundamental step in breaking down the programs into individual words for further analysis.
+
+The code employs the **NLTK** library for tokenization, along with the removal of common stop words. The resulting tokenized data is then used to create document-term matrices (DTMs) for each party program.
+
+## Stopwords
+
+A stopword is a **common word** that is often excluded from text analysis because it is considered to have little meaningful information.
+
+These words, such as articles, prepositions, and conjunctions, are frequently used in a language but may not contribute much to the overall understanding of the content.
+
+In the provided code, mystopwords is a **customised list of stopwords** created by combining specific punctuation marks and the stopwords obtained from the NLTK library for the Spanish language.
+
+My implementation:
+
+```python
+ mystopwords=[".", ",","-","\_","·"]+stopwords.words("spanish")
+```
+
+**Punctuation Marks:**
+
+These are common punctuation symbols. Including them in the list helps to remove them during the tokenization process, ensuring they don't interfere with the analysis of meaningful words.
+
+**NLTK Stopwords**
+
+The **stopwords.words("spanish")** function from the NLTK library provides a predefined set of stopwords for the Spanish language. These include common words like articles, pronouns, and conjunctions. Combining these 2 sets of stopwords, the code aims to create a comprehensive list (mystopwords) to be used during text analysis.
+
+# III. Word Cloud Generation:
+
+Word clouds offer a visual representation of the most frequently occurring words in a given text. The code utilizes the **WordCloud library** to generate word clouds for each political party program. This visual representation aids in identifying prominent themes and keywords within each program.
+
+```python
+wc_vox=wordcloud(size_vox, cv, background_color="white")
+plt.imshow(wc_vox)
+plt.axis("off")
+```
+
+The first line creates a word cloud object (wc_vox) by calling the wordcloud function. The function takes **three parameters**:
+
+1. size_vox: The document-term matrix (DTM) representing the frequency of words in a particular dataset (size_vox in this case).
+1. cv: The CountVectorizer object (cv) used for tokenization and counting word frequencies.
+1. background_color="white": Specifies the background color.
+
+The second line uses Matplotlib's imshow function to display the word cloud (wc_vox). It essentially renders the generated word cloud as an image.
+
+By the usage of these word clouds, we can have a **visual approach** to the most repeated words in the programs.
+
+### Word Clouds:
+
+#### Vox:
+
+<SlideUpWhenVisible>
+  <div className="mb-16">
+    <Image
+      src="/images/blog/textAnalysisOfParties/wc_vox.png"
+      className=""
+      alt="Gubau Afternoons mobile version"
+      width={500}
+      height={400}
+    />
+  </div>
+</SlideUpWhenVisible>
+
+#### Podemos:
+
+<SlideUpWhenVisible>
+  <div className="mb-16">
+    <Image
+      src="/images/blog/textAnalysisOfParties/wc_podemos.png"
+      className=""
+      alt="Gubau Afternoons mobile version"
+      width={500}
+      height={400}
+    />
+  </div>
+</SlideUpWhenVisible>
+
+#### PSOE:
+
+<SlideUpWhenVisible>
+  <div className="mb-16">
+    <Image
+      src="/images/blog/textAnalysisOfParties/wc_psoe.png"
+      className=""
+      alt="Gubau Afternoons mobile version"
+      width={500}
+      height={400}
+    />
+  </div>
+</SlideUpWhenVisible>
+
+#### PP:
+
+<SlideUpWhenVisible>
+  <div className="mb-16">
+    <Image
+      src="/images/blog/textAnalysisOfParties/wc_pp.png"
+      className=""
+      alt="Gubau Afternoons mobile version"
+      width={500}
+      height={400}
+    />
+  </div>
+</SlideUpWhenVisible>
+
+# IV. N-gram Analysis:
+
+To delve deeper into the linguistic characteristics, the code explores n-gram analysis, specifically bigrams (two-word combinations). The CountVectorizer is employed to analyse the most repeated bigrams in each political party program. This step provides a more nuanced understanding of the language structure and commonly used phrases.
+
+Then we can create lists like this one:
+
+```python
+ngram_vox = ngram_count.fit_transform(vox_token)
+vox_word_count = termstats(ngram_vox, ngram_count)
+print('\n VOX: ' , vox_word_count.filter(like="españa", axis=0).head(1)['frequency'])
+```
+
+With this code, we count the n-grams about the vox program and we filter the result by the word 'españa’, that gives us the number of total repetitions, useful later to check the percent of words that are this one.
+
+# V. Contextual Analysis:
+
+In the contextual analysis we put in perspective the n-gram functions, we’ve counted the times that each political party mentioned 'españa’ but that makes no sense without more data as the number of pages.
+
+```python
+vox_word_count['frequency\_españa'] = vox_word_count['frequency'] / len(vox_program)
+```
+
+In the ahead code, we have created a function to know the percent of repetitions that a word has in the text.
+
+## What we subtract:
+
+### In Vox's program
+
+1. 'españa' it's the most repeated word.
+1. Vox has a strong addiction to **'españa'** as a term, the (0.000714% of repetitions), almost the same as 'ley', the third position is 'españoles' (maybe summable to the first position). 'españa' it's used **more than double as the fifth word** ('medidas').
+
+### In PP's program
+
+1. 'españa' is again the most repeated word.
+1. The repetition is **almost the same as in Vox's case**; in the second position we find again 'ley' (almost the same as in Vox's % repetitions). National is lower than the other right-wing party, but they have the 'objetivo' keyword in the 4th position.
+
+### In PSOE's program
+
+1. 'españa' isn't in their top 5 words, as the number of repetitions is a bit lower, 240, representing the 0.000387% of the words.
+1. Their most repeated word is 'Personas', more or less in the same range as the 1st word in PP's ranking.
+
+### In Podemos' program
+
+1. 'españa' is just **mentioned 13 times** (0.000018% percent of the total). The keywords are similar to the PSOE's one ('personas' is in the ranking, but in the 5th position.
+1. The interesting data is that even though it's in the 5th position, it's more repeated than in the PSOE's program, so they count with much **less vocabulary variety**). Also, the word 'comunidad' is the most repeated term in the whole group of texts.
+
+# VI. Sentiment Analysis:
+
+Sentiment analysis, a powerful **NLP technique**, is applied to check the emotional tone of each political party program. The AFINN lexicon is used to assign **sentiment scores** to individual words, and these scores are aggregated to determine the overall sentiment of each program.
+
+In this case, we have used the [following](https://gist.githubusercontent.com/damianesteban/06e8be3225f641100126/raw/a51c27d4e9cc242f829d895e23b4435021ab55e5/afinn-111.txt)[ ](https://gist.githubusercontent.com/damianesteban/06e8be3225f641100126/raw/a51c27d4e9cc242f829d895e23b4435021ab55e5/afinn-111.txt)[AFINN](https://gist.githubusercontent.com/damianesteban/06e8be3225f641100126/raw/a51c27d4e9cc242f829d895e23b4435021ab55e5/afinn-111.txt).
+
+Then we transformed the data into dictionaries to manage the numbers as values and the **words as keys**.
+
+Applying a sentiment function that sums each word found in our programs to the AFINN used, the result is the following:
+
+Keep in mind that -5 would mean the most negative mark and +5 the most positive:
+
+The sentiment of the **Vox** political party program is 0.238.
+
+The sentiment of the **PP** political party program is 0.621.
+
+The sentiment of the **PSOE** political party program is 1.130.
+
+The sentiment of the **Podemos** political party program is -0.365.
+
+Trying to be the most objective posible, **Podemos** seems to be the most different political party, if we check the word cloud, they use almost utopian words as 'igualdad’, 'democracia’, 'sostenibles’... but they have the worst position in the sentiment analysis.
+
+Seems like they use a 'negative way to formulate sentences’ about how we don’t have this utopian future and they attract new voters by making them feeling bad.
+
+We can also check their unconformity with the national words as the country name, just 13 times during the program less than 5.5% of the times that the other left-wing party had mentioned it.
+
+Also the party has less vocabulary variety in their program so, if we also keep in mind that some of their most used words are 'menor’, 'menores’... we can draw a slight target personality, a young one, if we commit [a](https://www.elespanol.com/espana/politica/20230723/perfil-votantes-psoe-pp-vox-sumar-cis-tezanos/780672162_0.html)[ ](https://www.elespanol.com/espana/politica/20230723/perfil-votantes-psoe-pp-vox-sumar-cis-tezanos/780672162_0.html)[bit](https://www.elespanol.com/espana/politica/20230723/perfil-votantes-psoe-pp-vox-sumar-cis-tezanos/780672162_0.html)[ ](https://www.elespanol.com/espana/politica/20230723/perfil-votantes-psoe-pp-vox-sumar-cis-tezanos/780672162_0.html)[of](https://www.elespanol.com/espana/politica/20230723/perfil-votantes-psoe-pp-vox-sumar-cis-tezanos/780672162_0.html)[ ](https://www.elespanol.com/espana/politica/20230723/perfil-votantes-psoe-pp-vox-sumar-cis-tezanos/780672162_0.html)[research](https://www.elespanol.com/espana/politica/20230723/perfil-votantes-psoe-pp-vox-sumar-cis-tezanos/780672162_0.html), we find that the 26.5% of the people who vote them has less than 34 years old. This comes in contradiction with the PP ones, that 55% of them are +55 years old.
+
+# Conclusion:
+
+In wrapping up our exploration of political party programs through text analysis, several key observations and insights emerge:
+
+1. Distinctive Linguistic Patterns
+
+The word clouds vividly illustrate distinct linguistic patterns within each political party program. Vox and PP frequently reference terms like 'españa,' reflecting a strong nationalistic discourse. In contrast, Podemos employs utopian language, emphasising concepts such as 'igualdad' and 'democracia.'
+
+1. N-gram analysis
+
+Particularly focusing on bigrams, enhances our linguistic understanding by revealing commonly used phrases. This provides a nuanced view of language structure and recurring themes unique to each political party.
+
+1. Contextual analysis
+
+Considering term frequency in relation to the length of the program, offers a more balanced perspective. This approach allows us to gauge the significance of repeated terms in the context of the overall content.
+
+1. Sentiment analysis using the AFINN lexicon
+
+It provides a punctuation to the emotional tone of each political party program. The results indicate varying sentiment scores, with Podemos displaying a more negative tone compared to other parties.
+
+1. Target Audience and Vocabulary Variety:
+
+The choice of words and their frequency also hints at the potential target audience. Podemos, with its emphasis on terms like 'menor' and 'menores,' may be targeting a younger demographic. In contrast, PP, with a more extensive vocabulary, could be appealing to an older audience.
+
+The chosen tools in Python contribute to the success of this text analysis project. Their collective utility streamlines complex processes, from tokenization to sentiment analysis, making Python a powerful and accessible platform for deriving meaningful insights from extensive datasets.
