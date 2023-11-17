@@ -6,6 +6,7 @@ import Sidebar from "./components/sidebar";
 import { Analytics } from "@vercel/analytics/react";
 
 import { Footer } from "./components/Layout";
+import Meta from "./components/Meta";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://polgubau.com"),
@@ -25,6 +26,63 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  generator: "Pol Gubau Amores",
+  keywords: [
+    "Pol Gubau Amores",
+    "Pol Gubau",
+    "Pol",
+    "Gubau",
+    "Amores",
+    "Frontend Developer",
+    "Frontend",
+    "Developer",
+    "UX Designer",
+    "Barcelona",
+    "Mesalvo",
+    "Best React Developer",
+    "React",
+    "React Developer",
+    "UX Designer",
+    "UI Designer",
+    "Next.js developer",
+    "TailwindCSS",
+  ],
+  publisher: "Pol Gubau Amores",
+  creator: "Pol Gubau Amores",
+  themeColor: [
+    {
+      color: "#fef08a",
+      media: "light",
+    },
+    {
+      color: "#facc15",
+      media: "dark",
+    },
+  ],
+  manifest: "/brand/manifest.json",
+  icons: {
+    /** rel="icon" */
+    icon: [
+      {
+        url: "/brand/favicon.ico",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/brand/favicon_dark.svg",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    apple: {
+      url: "/brand/apple-touch-icon.png",
+      type: "image/png",
+      sizes: "180x180",
+      color: "#fef08a",
+      rel: "apple-touch-icon",
+      media: "light",
+      fetchPriority: "high",
+    },
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -67,6 +125,7 @@ export default function RootLayout({
       lang="en"
       className={`${font.className} text-neutral-950 bg-neutral-50 dark:text-neutral-50 dark:bg-neutral-900 transition-colors duration-200 w-full overflow-x-hidden`}
     >
+      <Meta />
       <body className="antialiased w-full max-w-4xl mb-40 flex mt-8 md:mx-auto">
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
           <Sidebar />

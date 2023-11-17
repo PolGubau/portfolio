@@ -29,7 +29,7 @@ const ProjectPreview = ({
         backgroundColor,
       }}
     >
-      <Link href={`/${slug}`}>
+      <Link href={`/${slug}`} title={title}>
         <Image
           style={{
             mixBlendMode: "multiply",
