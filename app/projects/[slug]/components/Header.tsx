@@ -88,6 +88,7 @@ const Header = ({ project: p }: { project: Projects }) => {
         {p.link && (
           <Link
             href={p.link}
+            title="Visit Project"
             className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit flex-1 justify-center sm:justify-start"
             target="_blank"
             style={{
@@ -95,7 +96,9 @@ const Header = ({ project: p }: { project: Projects }) => {
             }}
             rel="noopener noreferrer"
           >
+            <span className="sr-only">Link to the project</span>
             <svg
+              xlinkTitle="Link to the project"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -114,6 +117,7 @@ const Header = ({ project: p }: { project: Projects }) => {
         )}
         {p.githubLink && (
           <Link
+            title="Link to Github Source"
             href={p.githubLink}
             className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate"
             target="_blank"
@@ -123,6 +127,7 @@ const Header = ({ project: p }: { project: Projects }) => {
             rel="noopener noreferrer"
           >
             <svg
+              xlinkTitle="Link to Github Source"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -136,11 +141,13 @@ const Header = ({ project: p }: { project: Projects }) => {
                 />
               </g>
             </svg>
+            <span className="sr-only">Link to Github Source</span>
             <span className="hidden sm:block">View Source</span>
           </Link>
         )}
         {p.npmLink && (
           <Link
+            title="Link to NPM Package"
             href={p.npmLink}
             className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate"
             target="_blank"
@@ -150,6 +157,7 @@ const Header = ({ project: p }: { project: Projects }) => {
             rel="noopener noreferrer"
           >
             <svg
+              xlinkTitle="Link to NPM Package"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -162,6 +170,7 @@ const Header = ({ project: p }: { project: Projects }) => {
                 clipRule="evenodd"
               />
             </svg>
+            <span className="sr-only">Link to NPM</span>
             <span className="hidden sm:block">View package</span>
           </Link>
         )}

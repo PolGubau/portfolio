@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     },
   ],
   manifest: "/brand/manifest.json",
+  verification: {
+    google: "",
+  },
   icons: {
     /** rel="icon" */
     icon: [
@@ -105,9 +108,6 @@ export const metadata: Metadata = {
   twitter: {
     title: "Pol Gubau Amores",
     card: "summary_large_image",
-  },
-  verification: {
-    google: "a2dehJer8aiyNPzYUrl1PNnhx3cejg6OxfZKcwYmm50",
   },
 };
 export const font = Poppins({
