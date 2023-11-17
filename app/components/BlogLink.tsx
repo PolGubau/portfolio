@@ -23,6 +23,7 @@ interface BlogLinkProps {
 export function BlogLink({ slug, name, children }: Readonly<BlogLinkProps>) {
   return (
     <Link
+      title={name}
       href={`${slug}`}
       className="w-full flex flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl justify-between p-4 md:p-6 gap-6 balance items-center group hover:brightness-125 transition-all text-neutral-900 dark:text-neutral-100 no_underline"
     >

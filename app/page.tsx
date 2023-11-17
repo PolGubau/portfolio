@@ -117,9 +117,9 @@ export default async function Page() {
         </div>
         <ProjectsList projects={firstProjects} />
 
-        <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
+        <nav className=" gap-4 grid grid-cols-1 md:grid-cols-2">
           <BlogLink slug="/projects" name="See all my projects" />
-        </div>
+        </nav>
       </main>
     </section>
   );
