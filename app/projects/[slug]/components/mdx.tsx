@@ -2,11 +2,11 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { Badge } from "./Badge";
-import { ThreePhones } from "./home";
-import { SlideUpWhenVisible } from "./home/ThreePhones";
-import { BlogLink } from "./BlogLink";
-import PodiumGraph from "./single/PodiumGraph";
+import { Badge } from "../../../components/Badge";
+import { ThreePhones } from "../../../components/home";
+import { SlideUpWhenVisible } from "../../../components/home/ThreePhones";
+import { BlogLink } from "../../../components/BlogLink";
+import PodiumGraph from "../../../components/single/PodiumGraph";
 
 const CustomLink = (props) => {
   const href = props.href;

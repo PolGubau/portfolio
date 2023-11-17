@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Mdx } from "app/components/mdx";
+import { Mdx } from "app/projects/[slug]/components/mdx";
 import { allProjects } from "contentlayer/generated";
 import SimilarProjects from "./components/SimilarProjects";
 import Header from "./components/Header";
