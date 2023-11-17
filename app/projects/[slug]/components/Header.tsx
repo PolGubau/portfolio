@@ -19,10 +19,11 @@ const Header = ({ project: p }: { project: Projects }) => {
     <header className="flex flex-col gap-6   mb-8">
       <section className="flex flex-col gap-4  ">
         <Link
+          title="Back to projects"
           href="/projects"
           className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
         >
-          ← Back
+          <span className="sr-only">Back to projects</span>← Back
         </Link>
         <header
           className="flex justify-between items-end rounded-2xl overflow-hidden  relative min-h-[200px] md:min-h-[250px]  "

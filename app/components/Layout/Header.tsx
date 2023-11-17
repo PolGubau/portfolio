@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { largeProfileAvatar } from "./profileImageData";
 
 const Header = () => {
   return (
@@ -21,8 +22,9 @@ const Header = () => {
       </hgroup>
 
       <Image
+        placeholder={largeProfileAvatar}
         src="/images/me.png"
-        className="rounded-full hidden md:flex  bg-yellow-200 dark:bg-accent "
+        className="shadow-xl rounded-full hidden md:flex  bg-yellow-200 dark:bg-accent "
         alt="Pol Gubau Amores' profile image"
         width={150}
         height={150}

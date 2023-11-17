@@ -7,21 +7,27 @@ const Footer = () => {
     <div className="flex flex-col mt-24 mb-20 gap-6 text-neutral-700 dark:text-neutral-300 text-center justify-center md:justify-start md:text-left">
       <p>
         Made with ❤️ by{" "}
-        <Link href="https://polgubau.com">Pol Gubau Amores</Link>
+        <Link href="https://polgubau.com" title="Visit my website">
+          Pol Gubau Amores
+        </Link>
       </p>
 
       <Link
+        title="Download my CV"
         href="/files/cv2023.pdf"
         download="Pol Gubau Amores CV"
         passHref
         target="_blank"
       >
+        <span className="sr-only">Click here to download my CV</span>
         Download my CV
       </Link>
 
       <div className="flex gap-4 text-center justify-center md:justify-start md:text-left">
-        <Link href={metadata.links.github}>
+        <Link href={metadata.links.github} title="Visit my GitHub profile">
+          <span className="sr-only">Visit my GitHub profile</span>
           <svg
+            xlinkTitle="Visit my GitHub profile"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -36,7 +42,8 @@ const Footer = () => {
           </svg>
         </Link>
 
-        <Link href={metadata.links.linkedin}>
+        <Link href={metadata.links.linkedin} title="Visit my LinkedIn profile">
+          <span className="sr-only">Visit my LinkedIn profile</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -53,8 +60,10 @@ const Footer = () => {
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
         </Link>
-        <Link href={metadata.links.website}>
+        <Link href={metadata.links.website} title="Visit my website">
+          <span className="sr-only">Visit my website</span>
           <svg
+            xlinkTitle="Visit my website"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
