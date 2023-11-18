@@ -29,12 +29,12 @@ const ProjectPreview = ({
         backgroundColor,
       }}
     >
-      <Link href={`/${slug}`} title={title}>
+      <Link href={`/${slug}`} title={title} className="h-full flex ">
         <Image
           style={{
             mixBlendMode: "multiply",
           }}
-          className="ml-20 mt-20"
+          className="mt-20 ml-14 object-cover object-left w-full h-full"
           src={src}
           title={`Cover Image for ${title}`}
           alt={`Cover Image for ${alt}`}

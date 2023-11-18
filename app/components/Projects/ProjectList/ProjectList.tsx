@@ -26,7 +26,7 @@ export const ProjectsList = ({ projects }: { projects: Projects[] }) => {
       className="flex flex-wrap gap-4"
     >
       {projects.map((p) => (
-        <motion.div variants={item} key={p.slug} className="postGrid">
+        <motion.div variants={item} key={p.slug} className="postGrid ">
           <ProjectPreview
             backgroundColor={p.color}
             title={p.title}
