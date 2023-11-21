@@ -24,7 +24,7 @@ const ProjectPreview = ({
     <motion.div
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 1 }}
-      className="flex flex-col gap-1 group bg-slate-400 h-60 md:h-96 rounded-2xl overflow-hidden relative hover:brightness-75 transition-all "
+      className="flex flex-col gap-1 group bg-slate-400 h-64 md:h-96 rounded-2xl overflow-hidden relative hover:brightness-75 transition-all "
       style={{
         backgroundColor,
       }}
