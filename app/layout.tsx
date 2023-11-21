@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     url: "https://polgubau.com",
     siteName: "Pol Gubau Amores",
     locale: "en_US",
+    images: [
+      {
+        url: "https://polgubau.com/brand/thumbnail.png",
+        width: 1920,
+        height: 1080,
+        alt: "Pol Gubau Amores' website preview",
+      },
+    ],
     type: "website",
   },
   generator: "Pol Gubau Amores",
@@ -49,16 +57,7 @@ export const metadata: Metadata = {
   ],
   publisher: "Pol Gubau Amores",
   creator: "Pol Gubau Amores",
-  themeColor: [
-    {
-      color: "#fef08a",
-      media: "light",
-    },
-    {
-      color: "#facc15",
-      media: "dark",
-    },
-  ],
+  themeColor: "#facc15",
   manifest: "/brand/manifest.json",
   verification: {
     google: "",
@@ -79,7 +78,7 @@ export const metadata: Metadata = {
       url: "/brand/apple-touch-icon.png",
       type: "image/png",
       sizes: "180x180",
-      color: "#fef08a",
+      color: "#facc15",
       rel: "apple-touch-icon",
       media: "light",
       fetchPriority: "high",
