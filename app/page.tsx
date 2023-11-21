@@ -73,19 +73,23 @@ export default async function Page() {
             name="Should you go to university?"
           />
         </div>
-        <h2 className="text-3xl font-medium   balance">
-          A pixel perfectionist, even though I work with vectors. 🎨👨‍💻
-        </h2>
+
+        <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
+          <p>🎨👨‍💻</p>
+          <h2> A pixel perfectionist, even though I work with vectors. </h2>
+        </hgroup>
+
         <p>
           My roots are in arts and design, my passion is in technology and my
           goal is to combine both in digital products that are{" "}
           <strong>beautiful</strong> and <strong>functional</strong>.
         </p>
         <ThreePhones images={imagesPhones} />
-        <h2 className="text-3xl font-medium   balance mt-16">
-          I'm a <strong>performance</strong> and <strong>accessibility</strong>{" "}
-          advocate. 🥑🚀
-        </h2>
+
+        <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
+          <p>🥑🚀</p>
+          <h2> I'm a performance and accessibility advocate.</h2>
+        </hgroup>
         <p>
           I'm a big fan of{" "}
           <strong>progressive enhancement and graceful degradation</strong> and
@@ -101,9 +105,11 @@ export default async function Page() {
           height={600}
         />
         <small>My technical blog is a good example of this.</small>
-        <h2 className="text-3xl font-medium   balance mt-16">
-          I love to create personal projects and experiments. 🧪👨‍🔬
-        </h2>
+
+        <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
+          <p>🧪🥼</p>
+          <h2>I love to create personal projects and experiments.</h2>
+        </hgroup>
 
         <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
           <BlogLink
