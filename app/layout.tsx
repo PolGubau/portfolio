@@ -15,6 +15,7 @@ export const metadata: Metadata = {
       "Pol Gubau Amores - Frontend Developer and UX Designer based in Barcelona",
     template: "%s | Pol Gubau Amores",
   },
+  
   description:
     "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps. In my portfolio you can read my blog and check my most important projects.",
   openGraph: {
