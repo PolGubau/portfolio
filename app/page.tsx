@@ -45,18 +45,13 @@ export default async function Page() {
       <main className="flex flex-col  w-full flex-1 gap-8 text-neutral-900 dark:text-neutral-50">
         <div className="inline">
           <p className="text-neutral-900 dark:text-neutral-50 inline">
-            👋🏼 Hi, I'm a full time tech enthusiast graduated in{" "}
-            <strong>Interactive Communication</strong> and currently working at
+            👋🏼 Hi, I'm a full time tech enthusiast graduated in <strong>Interactive Communication</strong> and currently working at
           </p>
           <Badge href="https://mesalvo.com/en" label="Mesalvo." />
         </div>
         <div className="flex flex-col gap-4">
           <p>
-            With +{yearSince2018} years of experience, I have a strong
-            background in web development and have worked from small websites to{" "}
-            <strong>large-scale web applications</strong>. I started my career
-            as graphic designer thanks to my <strong>Arts Bachelor</strong>{" "}
-            degree. Then I had the opportunity to attend universities such as:{" "}
+            With +{yearSince2018} years of experience, I have a strong background in web development and have worked from small websites to <strong>large-scale web applications</strong>. I started my career as graphic designer thanks to my <strong>Arts Bachelor</strong> degree. Then I had the opportunity to attend universities such as:{" "}
           </p>
           <ul className="flex flex-wrap gap-4 flex-col md:flwx-row">
             {universities.map((university) => (
@@ -68,10 +63,7 @@ export default async function Page() {
         </div>
         <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
           <BlogLink slug="blog/bio" name="My biography and career" />
-          <BlogLink
-            slug="blog/shouldGoUniversity"
-            name="Should you go to university?"
-          />
+          <BlogLink slug="blog/shouldGoUniversity" name="Should you go to university?" />
         </div>
 
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
@@ -80,9 +72,7 @@ export default async function Page() {
         </hgroup>
 
         <p>
-          My roots are in arts and design, my passion is in technology and my
-          goal is to combine both in digital products that are{" "}
-          <strong>beautiful</strong> and <strong>functional</strong>.
+          My roots are in arts and design, my passion is in technology and my goal is to combine both in digital products that are <strong>beautiful</strong> and <strong>functional</strong>.
         </p>
         <ThreePhones images={imagesPhones} />
 
@@ -91,19 +81,9 @@ export default async function Page() {
           <h2> I'm a performance and accessibility advocate.</h2>
         </hgroup>
         <p>
-          I'm a big fan of{" "}
-          <strong>progressive enhancement and graceful degradation</strong> and
-          I always try to make my websites as accessible as possible. Reaching a
-          professional level in both SEO and performance is the key for a
-          successful digital project.
+          I'm a big fan of <strong>progressive enhancement and graceful degradation</strong> and I always try to make my websites as accessible as possible. Reaching a professional level in both SEO and performance is the key for a successful digital project.
         </p>
-        <Image
-          className="rounded-xl object-cover h-full"
-          alt="A preview of the performance stats in my technical blog"
-          src="/images/other/blog-preview.png"
-          width={800}
-          height={600}
-        />
+        <Image className="rounded-xl object-cover  w-auto h-auto" alt="A preview of the performance stats in my technical blog" src="/images/other/blog-preview.png" width={800} height={600} />
         <small>My technical blog is a good example of this.</small>
 
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
@@ -112,14 +92,8 @@ export default async function Page() {
         </hgroup>
 
         <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
-          <BlogLink
-            slug="blog/whyHaveSideProjects"
-            name="Why you should have a side project"
-          />
-          <BlogLink
-            slug="blog/chooseSideProjects"
-            name="How to choose a side project"
-          />
+          <BlogLink slug="blog/whyHaveSideProjects" name="Why you should have a side project" />
+          <BlogLink slug="blog/chooseSideProjects" name="How to choose a side project" />
         </div>
         <ProjectsList projects={firstProjects} />
 
