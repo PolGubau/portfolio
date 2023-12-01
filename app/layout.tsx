@@ -36,10 +36,9 @@ export const metadata: Metadata = {
   keywords: ["Pol Gubau Amores", "Pol Gubau", "Pol", "Gubau", "Amores", "Frontend Developer", "Frontend", "Developer", "UX Designer", "Barcelona", "Mesalvo", "Best React Developer", "React", "React Developer", "UX Designer", "UI Designer", "Next.js developer", "TailwindCSS"],
   publisher: "Pol Gubau Amores",
   creator: "Pol Gubau Amores",
-  themeColor: "#facc15",
   manifest: "/brand/manifest.json",
   verification: {
-    google: "",
+    google: "google3c76d94f17d4b233",
   },
   icons: {
     /** rel="icon" */
