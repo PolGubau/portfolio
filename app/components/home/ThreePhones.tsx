@@ -37,18 +37,7 @@ const ThreePhones = ({ images }: { images: Image[] }) => {
           }}
         >
           <SlideUpWhenVisible>
-            <Image
-              className={clsx(
-                `rounded-xl  h-full max-h-[500px] object-contain`,
-                i === 0 && "rotate-12",
-                i === 1 && "",
-                i === 2 && "-rotate-12"
-              )}
-              alt="A preview of the performance stats in my technical blog"
-              src={image.src}
-              width={350}
-              height={550}
-            />
+            <Image className={clsx(`rounded-xl  h-full max-h-[500px] object-contain`, i === 0 && "rotate-12", i === 1 && "", i === 2 && "-rotate-12")} alt="A preview of the performance stats in my technical blog" src={image.src} width={350} height={550} />
           </SlideUpWhenVisible>
         </div>
       ))}

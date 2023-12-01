@@ -11,17 +11,14 @@ import Meta from "./components/Meta";
 export const metadata: Metadata = {
   metadataBase: new URL("https://polgubau.com"),
   title: {
-    default:
-      "Pol Gubau Amores - Frontend Developer and UX Designer based in Barcelona",
+    default: "Pol Gubau Amores - Frontend Developer and UX Designer based in Barcelona",
     template: "%s | Pol Gubau Amores",
   },
-  
-  description:
-    "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps. In my portfolio you can read my blog and check my most important projects.",
+
+  description: "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps. In my portfolio you can read my blog and check my most important projects.",
   openGraph: {
     title: "Pol Gubau Amores",
-    description:
-      "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
+    description: "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
     url: "https://polgubau.com",
     siteName: "Pol Gubau Amores",
     locale: "en_US",
@@ -36,26 +33,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   generator: "Pol Gubau Amores",
-  keywords: [
-    "Pol Gubau Amores",
-    "Pol Gubau",
-    "Pol",
-    "Gubau",
-    "Amores",
-    "Frontend Developer",
-    "Frontend",
-    "Developer",
-    "UX Designer",
-    "Barcelona",
-    "Mesalvo",
-    "Best React Developer",
-    "React",
-    "React Developer",
-    "UX Designer",
-    "UI Designer",
-    "Next.js developer",
-    "TailwindCSS",
-  ],
+  keywords: ["Pol Gubau Amores", "Pol Gubau", "Pol", "Gubau", "Amores", "Frontend Developer", "Frontend", "Developer", "UX Designer", "Barcelona", "Mesalvo", "Best React Developer", "React", "React Developer", "UX Designer", "UI Designer", "Next.js developer", "TailwindCSS"],
   publisher: "Pol Gubau Amores",
   creator: "Pol Gubau Amores",
   themeColor: "#facc15",
@@ -121,10 +99,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${font.className} text-neutral-950 bg-neutral-50 dark:text-neutral-50 dark:bg-neutral-900 transition-colors duration-200 w-full overflow-x-hidden`}
-    >
+    <html lang="en" className={`${font.className} text-neutral-950 bg-neutral-50 dark:text-neutral-50 dark:bg-neutral-900 transition-colors duration-200 w-full overflow-x-hidden`}>
       <Meta />
       <body className="antialiased w-full max-w-4xl mb-40 flex mt-8 md:mx-auto">
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
