@@ -26,7 +26,7 @@ export default function NavItem({
       key={path}
       href={path}
       className={clsx("transition-all  flex align-middle", {
-        "text-neutral-500 hover:brightness-150": !isActive,
+        "text-neutral-400 hover:brightness-150": !isActive,
         "text-neutral-900 dark:text-neutral-800 font-semibold": isActive,
       })}
     >

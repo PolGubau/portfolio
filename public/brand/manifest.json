@@ -1,12 +1,13 @@
 {
   "theme_color": "#ff4",
+
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
   "start_url": "https://polgubau.com",
-  "name": "CodedByPol",
+  "name": "Pol Gubau Amores",
   "description": "Read about Frontend development and Design",
-  "short_name": "Pol's Blog",
+  "short_name": "Pol Gubau",
   "icons": [
     {
       "src": "/brand/icon-192x192.png",
