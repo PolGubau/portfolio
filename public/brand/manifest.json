@@ -4,7 +4,10 @@
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
-  "start_url": "https://polgubau.com",
+  "start_url": "/",
+  "orientation":"any",
+  "lang": "en",
+  "categories":["blog", "design", "frontend"],
   "name": "Pol Gubau Amores",
   "description": "Read about Frontend development and Design",
   "short_name": "Pol Gubau",
@@ -30,10 +33,40 @@
       "type": "image/png"
     },
     {
-      "src": "/brand/maskable_icon_x192",
+      "src": "/brand/maskable_icon_x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/brand/thumbnail.png",
+      "sizes": "976x933",
+      "type": "image/gif",
+      "form_factor": "wide",
+      "label": "Main Screen Thumbnail"
+    },
+    {
+      "src": "/brand/thumbnail-blog.png",
+      "sizes": "972x931",
+      "type": "image/gif",
+      "form_factor": "wide",
+      "label": "Blog Screen Thumbnail"
+    },
+    {
+      "src": "/brand/thumbnail-projects.png",
+      "sizes": "967x928",
+      "type": "image/gif",
+      "form_factor": "wide",
+      "label": "Projects Screen Thumbnail"
+    },
+    {
+      "src": "/brand/thumbnail_narrow.png",
+      "sizes": "967x928",
+      "type": "image/gif",
+      "form_factor": "narrow",
+      "label": "Mobile UI Screen Thumbnail"
     }
   ]
 }
