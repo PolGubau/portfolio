@@ -23,7 +23,7 @@ const imagesPhones = [
 const universities = [
   {
     name: "Universitat Autònoma de Barcelona",
-    href: "https://www.uab.cat",
+    href: "https://uab.cat",
   },
   {
     name: "Universidad de Salamanca",
@@ -72,7 +72,7 @@ export default async function Page() {
         </hgroup>
 
         <p>
-          My roots are in arts and design, my passion is in technology and my goal is to combine both in digital products that are <strong>beautiful</strong> and <strong>functional</strong>.
+          My roots are in arts and design. My passion is in technology and my goal is to combine both in digital products that are <strong>beautiful</strong> and <strong>functional</strong>.
         </p>
         <ThreePhones images={imagesPhones} />
 
@@ -83,7 +83,7 @@ export default async function Page() {
         <p>
           I'm a big fan of <strong>progressive enhancement and graceful degradation</strong> and I always try to make my websites as accessible as possible. Reaching a professional level in both SEO and performance is the key for a successful digital project.
         </p>
-        <Image className="rounded-xl object-cover  w-auto h-auto" alt="A preview of the performance stats in my technical blog" src="/images/other/blog-preview.png" width={800} height={600} />
+        <Image className="rounded-xl object-cover  w-auto h-auto" alt="A preview of the performance stats in my technical blog" title="A preview of the performance stats in my technical blog" src="/images/other/blog-preview.png" width={800} height={600} />
         <small>My technical blog is a good example of this.</small>
 
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
