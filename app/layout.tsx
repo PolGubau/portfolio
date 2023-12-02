@@ -1,12 +1,9 @@
 import "./global.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-
 import Sidebar from "./components/sidebar";
-
 import { Footer } from "./components/Layout";
 import Meta from "./components/Meta";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://polgubau.com"),
   title: {
