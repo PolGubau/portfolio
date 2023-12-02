@@ -89,7 +89,7 @@ export const metadata: Metadata = {
 };
 export const font = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
+  weight: ["300", "400", "600",'800'],
 });
 
 export default function RootLayout({

@@ -27,7 +27,7 @@ export default function NavItem({
       href={path}
       className={clsx("transition-all  flex align-middle", {
         "text-neutral-400 hover:brightness-150": !isActive,
-        "text-neutral-900 dark:text-neutral-800 font-semibold": isActive,
+        "text-neutral-900 dark:text-neutral-800 font-bold": isActive,
       })}
     >
       <span className="relative py-1 px-2">
