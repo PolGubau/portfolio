@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
 import Sidebar from "./components/sidebar";
-import { Analytics } from "@vercel/analytics/react";
 
 import { Footer } from "./components/Layout";
 import Meta from "./components/Meta";
@@ -89,7 +88,7 @@ export const metadata: Metadata = {
 };
 export const font = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "600",'800'],
+  weight: ["300", "400", "600", "800"],
 });
 
 export default function RootLayout({
@@ -104,7 +103,6 @@ export default function RootLayout({
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
           <Sidebar />
           {children}
-          <Analytics />
           <Footer />
         </main>
       </body>
