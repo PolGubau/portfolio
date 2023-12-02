@@ -5,6 +5,7 @@ import ThreePhones from "./components/home/ThreePhones";
 import { ProjectsList } from "./components/Projects/ProjectList/ProjectList";
 import { firstProjects } from "./projects/page";
 import { BlogLink } from "./components/BlogLink";
+import HomeSkeleton from "./components/home/HomeSkeleton";
 
 const imagesPhones = [
   {
@@ -41,7 +42,6 @@ export default async function Page() {
   return (
     <section className="overflow-visible">
       <Header />
-
       <main className="flex flex-col  w-full flex-1 gap-8 text-neutral-900 dark:text-neutral-50">
         <div className="inline">
           <p className="text-neutral-900 dark:text-neutral-50 inline">
@@ -53,7 +53,7 @@ export default async function Page() {
           <p>
             With +{yearSince2018} years of experience, I have a strong background in web development and have worked from small websites to <strong>large-scale web applications</strong>. I started my career as graphic designer thanks to my <strong>Arts Bachelor</strong> degree. Then I had the opportunity to attend universities such as:{" "}
           </p>
-          <ul className="flex flex-wrap gap-4 flex-col md:flwx-row">
+          <ul className="flex flex-wrap gap-4 flex-col">
             {universities.map((university) => (
               <li key={university.name}>
                 <Badge href={university.href} label={university.name} />

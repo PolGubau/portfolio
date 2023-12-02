@@ -4,6 +4,8 @@ import { Poppins } from "next/font/google";
 import Sidebar from "./components/sidebar";
 import { Footer } from "./components/Layout";
 import Meta from "./components/Meta";
+import NextTopLoader from "nextjs-toploader";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://polgubau.com"),
   title: {
@@ -94,8 +96,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${font.className} text-neutral-950 bg-neutral-50 dark:text-neutral-50 dark:bg-neutral-900 transition-colors duration-200 w-full overflow-x-hidden`}>
       <Meta />
+
       <body className="antialiased w-full max-w-4xl mb-40 flex mt-8 md:mx-auto">
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
+          <NextTopLoader color="#facc15" height={2} showSpinner={false} />
           <Sidebar />
           {children}
           <Footer />
