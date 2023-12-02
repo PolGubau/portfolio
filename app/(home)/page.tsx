@@ -1,11 +1,11 @@
-import Header from "./components/Layout/Header";
-import { Badge } from "./components/Badge";
+import Header from "../components/Layout/Header";
+import { Badge } from "../components/Badge";
 import Image from "next/image";
-import ThreePhones from "./components/home/ThreePhones";
-import { ProjectsList } from "./components/Projects/ProjectList/ProjectList";
-import { firstProjects } from "./projects/page";
-import { BlogLink } from "./components/BlogLink";
-import HomeSkeleton from "./components/home/HomeSkeleton";
+import ThreePhones from "../components/home/ThreePhones";
+import { ProjectsList } from "../components/Projects/ProjectList/ProjectList";
+import { firstProjects } from "../projects/page";
+import { BlogLink } from "../components/BlogLink";
+import HomeSkeleton from "../components/home/HomeSkeleton";
 
 const imagesPhones = [
   {

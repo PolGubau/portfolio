@@ -2,11 +2,11 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { Badge } from "../../../components/Badge";
-import { ThreePhones } from "../../../components/home";
-import { SlideUpWhenVisible } from "../../../components/home/ThreePhones";
-import { BlogLink } from "../../../components/BlogLink";
-import PodiumGraph from "../../../components/single/PodiumGraph";
+import { Badge } from "./Badge";
+import { ThreePhones } from "./home";
+import { SlideUpWhenVisible } from "./home/ThreePhones";
+import { ArrowIcon, BlogLink } from "./BlogLink";
+import PodiumGraph from "./single/PodiumGraph";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -42,7 +42,7 @@ function Callout({ emoji, children }: Readonly<{ emoji: string; children: React.
 function ProsCard({ title, pros }) {
   return (
     <div className="border border-emerald-200 dark:border-emerald-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
-      <span>{`You might use ${title} if...`}</span>
+      <span>{title}</span>
       <div className="mt-4">
         {pros.map((pro) => (
           <div key={pro} className="flex font-medium items-baseline mb-2">
@@ -65,7 +65,7 @@ function ProsCard({ title, pros }) {
 function ConsCard({ title, cons }) {
   return (
     <div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
-      <span>{`You might not use ${title} if...`}</span>
+      <span>{title}</span>
       <div className="mt-4">
         {cons.map((con) => (
           <div key={con} className="flex font-medium items-baseline mb-2">
@@ -90,8 +90,24 @@ function At({ label, href }) {
   );
 }
 
+function StyledLink({ href, name, children }) {
+  return (
+    <CustomLink title={name} href={`${href}`} className="w-full flex flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl justify-between p-4 md:p-6 gap-6 balance items-center group hover:brightness-125 transition-all text-neutral-900 dark:text-neutral-100 no_underline">
+      <div className="flex flex-col gap-2">
+        <span className="w-full font-semibold text-md md:text-lg ">{name}</span>
+        {children && <span className="w-full">{children}</span>}
+      </div>
+
+      <div className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+        <ArrowIcon />
+      </div>
+    </CustomLink>
+  );
+}
+
 const components = {
   Image: RoundedImage,
+  StyledLink: StyledLink,
   a: CustomLink,
   Callout,
   ProsCard,
