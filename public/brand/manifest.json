@@ -18,17 +18,17 @@
     },
     {
       "src": "/brand/icon-256x256.png",
-      "sizes": "256x256",
+      "sizes": "257x257",
       "type": "image/png"
     },
     {
       "src": "/brand/icon-384x384.png",
-      "sizes": "384x384",
+      "sizes": "385x385",
       "type": "image/png"
     },
     {
       "src": "/brand/icon-512x512.png",
-      "sizes": "512x512",
+      "sizes": "513x513",
       "type": "image/png"
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "src": "/brand/thumbnail_narrow.png",
-      "sizes": "967x928",
+      "sizes": "503x675",
       "type": "image/gif",
       "form_factor": "narrow",
       "label": "Mobile UI Screen Thumbnail"
