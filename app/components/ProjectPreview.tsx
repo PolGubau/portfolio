@@ -14,12 +14,7 @@ type Props = {
   };
 };
 
-const ProjectPreview = ({
-  title,
-  image: { src, alt },
-  slug,
-  backgroundColor,
-}: Props) => {
+const ProjectPreview = ({ title, image: { src, alt }, slug, backgroundColor }: Props) => {
   return (
     <motion.div
       whileHover={{ scale: 1.01 }}
@@ -29,11 +24,7 @@ const ProjectPreview = ({
         backgroundColor,
       }}
     >
-      <Link
-        href={`/${slug}`}
-        title={title}
-        className="h-full flex items-start md:justify-center  "
-      >
+      <Link href={`/${slug}`} title={title} className="h-full flex items-start md:justify-center  ">
         <Image
           style={{
             mixBlendMode: "multiply",
@@ -46,9 +37,7 @@ const ProjectPreview = ({
           height={330}
         />
 
-        <h2 className=" absolute top-6 left-6 z-10 text-3xl dark:text-neutral-800 mb-3 leading-snug font-medium">
-          {title}
-        </h2>
+        <h3 className=" absolute top-6 left-6 z-10 text-3xl dark:text-neutral-800 mb-3 leading-snug font-medium">{title}</h3>
       </Link>
     </motion.div>
   );
