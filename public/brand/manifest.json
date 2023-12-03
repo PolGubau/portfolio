@@ -42,28 +42,28 @@
   "screenshots": [
     {
       "src": "/brand/thumbnail.png",
-      "sizes": "1167x862.4",
+      "sizes": "1167x862",
       "type": "image/gif",
       "form_factor": "wide",
       "label": "Main Screen Thumbnail"
     },
     {
       "src": "/brand/thumbnail_2.png",
-      "sizes": "1167x862.4",
+      "sizes": "1167x862",
       "type": "image/gif",
       "form_factor": "wide",
       "label": "Projects Screen on Computer"
     },
     {
       "src": "/brand/thumbnail_narrow.png",
-      "sizes": "548x862.4",
+      "sizes": "548x862",
       "type": "image/gif",
       "form_factor": "narrow",
       "label": "Projects Screen Thumbnail"
     },
     {
       "src": "/brand/thumbnail_narrow_2.png",
-      "sizes": "548x862.4",
+      "sizes": "548x862",
       "type": "image/gif",
       "form_factor": "narrow",
       "label": "Mobile UI Screen Thumbnail"
