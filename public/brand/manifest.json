@@ -63,7 +63,7 @@
     },
     {
       "src": "/brand/thumbnail_narrow_2.png",
-      "sizes": "549x863",
+      "sizes": "549x864",
       "type": "image/gif",
       "form_factor": "narrow",
       "label": "Mobile UI Screen Thumbnail"
