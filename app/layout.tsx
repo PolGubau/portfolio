@@ -1,5 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
+import { metadata as constants } from "../lib/constants";
 import { Poppins } from "next/font/google";
 import Sidebar from "./components/sidebar";
 import { Footer } from "./components/Layout";
@@ -12,12 +13,16 @@ export const metadata: Metadata = {
     default: "Pol Gubau Amores - Frontend Developer and UX Designer",
     template: "%s | Pol Gubau Amores",
   },
-  description: "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
+  description: constants.description,
+  themeColor: "#facc15",
+  colorScheme: "light dark",
+  viewport: "width=device-width, initial-scale=1.0",
+  applicationName: constants.title,
   openGraph: {
-    title: "Pol Gubau Amores",
-    description: "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
+    title: constants.title,
+    description: constants.description,
     url: "https://polgubau.com",
-    siteName: "Pol Gubau Amores",
+    siteName: constants.title,
     locale: "en_US",
     images: [
       {
@@ -29,10 +34,10 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-  generator: "Pol Gubau Amores",
-  keywords: ["Pol Gubau Amores", "Pol Gubau", "Pol", "Gubau", "Amores", "Frontend Developer", "Frontend", "Developer", "UX Designer", "Barcelona", "Mesalvo", "Best React Developer", "React", "React Developer", "UX Designer", "UI Designer", "Next.js developer", "TailwindCSS"],
-  publisher: "Pol Gubau Amores",
-  creator: "Pol Gubau Amores",
+  generator: constants.title,
+  keywords: constants.tags,
+  publisher: constants.title,
+  creator: constants.title,
   manifest: "/brand/manifest.json",
   verification: {
     google: "google3c76d94f17d4b233",
@@ -70,17 +75,25 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  applicationName: "Pol Gubau Amores",
   authors: [
     {
-      name: "Pol Gubau Amores",
-      url: "https://polgubau.com",
+      name: constants.title,
+      url: constants.links.website,
     },
   ],
 
   twitter: {
-    title: "Pol Gubau Amores",
+    site: constants.links.twitter,
+    description: constants.description,
+    creator: constants.links.twitter,
+    title: constants.title,
     card: "summary_large_image",
+  },
+  appleWebApp: {
+    title: constants.title,
+    statusBarStyle: "black-translucent",
+    capable: true,
+    startupImage: "/brand/apple_splash_2048.png",
   },
 };
 export const font = Poppins({
