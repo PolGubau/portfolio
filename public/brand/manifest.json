@@ -1,5 +1,6 @@
 {
   "theme_color": "#ff4",
+  "dir": "ltr",
   "background_color": "#facc15",
   "display": "standalone",
   "scope": "/",
