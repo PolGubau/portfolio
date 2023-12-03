@@ -1,7 +1,7 @@
 {
-  "theme_color": "#ff4",
+  "theme_color": "#facc15",
   "dir": "ltr",
-  "background_color": "#facc15",
+  "background_color": "#ededed",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
