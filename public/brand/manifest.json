@@ -5,6 +5,7 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
+  "id": "com.polgubau",
   "orientation": "any",
   "lang": "en",
   "categories": ["blog", "design", "frontend"],
