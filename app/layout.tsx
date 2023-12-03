@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     default: "Pol Gubau Amores - Frontend Developer and UX Designer",
     template: "%s | Pol Gubau Amores",
   },
+  alternates: {
+    canonical: "/",
+  },
   description: constants.description,
   themeColor: "#facc15",
   colorScheme: "light dark",
