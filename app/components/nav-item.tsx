@@ -34,7 +34,7 @@ export default function NavItem({
         {name}
         {path === pathname ? (
           <motion.div
-            className="absolute h-full rounded-full inset-0 bg-accent z-[-1]  "
+            className="absolute h-full rounded-full inset-0 bg-primary z-[-1]  "
             layoutId="sidebar"
             transition={{
               type: "spring",
