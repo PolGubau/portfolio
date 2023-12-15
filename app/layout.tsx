@@ -6,6 +6,7 @@ import Sidebar from "./components/sidebar";
 import { Footer } from "./components/Layout";
 import Meta from "./components/Meta";
 import NextTopLoader from "nextjs-toploader";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://polgubau.com"),
@@ -121,6 +122,8 @@ export default function RootLayout({
           <Footer />
         </main>
       </body>
+      <SpeedInsights />
+
     </html>
   );
 }
