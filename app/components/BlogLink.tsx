@@ -23,13 +23,13 @@ interface BlogLinkProps {
 export function BlogLink({ slug, name, children }: Readonly<BlogLinkProps>) {
   return (
     <Link
-      title={name}
-      href={`${slug}`}
-      className="w-full flex flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl justify-between p-4 md:p-6 gap-6 balance items-center group hover:brightness-125 transition-all text-neutral-900 dark:text-neutral-100 no_underline"
+      title={ name }
+      href={ `${slug}` }
+      className="w-full flex flex-1 bg-dark/10 dark:bg-light/10 rounded-xl justify-between p-4 md:p-6 gap-6 balance items-center group hover:brightness-125 transition-all "
     >
       <div className="flex flex-col gap-2">
-        <span className="w-full font-semibold text-md md:text-lg ">{name}</span>
-        {children && <span className="w-full">{children}</span>}
+        <span className="w-full font-semibold text-md md:text-lg ">{ name }</span>
+        { children && <span className="w-full">{ children }</span> }
       </div>
 
       <div className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">

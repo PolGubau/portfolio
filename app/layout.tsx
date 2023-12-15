@@ -60,7 +60,7 @@ export const metadata: Metadata = {
       url: "/brand/apple-touch-icon.png",
       type: "image/png",
       sizes: "180x180",
-      color: "#facc15",
+      color: "#ff4",
       rel: "apple-touch-icon",
       media: "light",
       fetchPriority: "high",
@@ -110,14 +110,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${font.className} text-neutral-950 bg-neutral-50 dark:text-neutral-50 dark:bg-neutral-900 transition-colors duration-200 w-full overflow-x-hidden`}>
+    <html lang="en" className={ `${font.className} text-dark bg-light dark:text-light dark:bg-dark transition-colors duration-200 w-full overflow-x-hidden` }>
       <Meta />
 
-      <body className="antialiased w-full max-w-4xl mb-40 flex mt-8 md:mx-auto">
+      <body className="antialiased w-full max-w-4xl mb-20 flex mt-8 md:mx-auto">
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
-          <NextTopLoader color="#facc15" height={2} showSpinner={false} />
+          <NextTopLoader color="#ff4" height={ 2 } showSpinner={ false } />
           <Sidebar />
-          {children}
+          { children }
           <Footer />
         </main>
       </body>

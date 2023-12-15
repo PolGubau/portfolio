@@ -4,6 +4,7 @@ import { Mdx } from "app/components/mdx";
 import { allProjects } from "contentlayer/generated";
 import SimilarProjects from "./components/SimilarProjects";
 import Header from "./components/Header";
+import ProjectBar from "./components/ProjectBar";
 
 export const dynamic = "force-static";
 
@@ -58,23 +59,24 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section className="flex flex-col gap-4 overflow-x-hidden">
+    <section className="flex flex-col gap-4 overflow-x-hidden relative">
       <script
         type="application/ld+json"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{
+        dangerouslySetInnerHTML={ {
           __html: JSON.stringify(p.structuredData),
-        }}
+        } }
       ></script>
 
-      <Header project={p} />
+      <Header project={ p } />
 
-      <div className="overflow-hidden">
-        {/* table of content from the mdx content */}
+      <div className="overflow-hidden px-1">
+        {/* table of content from the mdx content */ }
 
-        <Mdx code={p.body.code} />
+        <Mdx code={ p.body.code } />
       </div>
-      <SimilarProjects project={p} slug={params.slug} />
+      <SimilarProjects project={ p } slug={ params.slug } />
+      <ProjectBar project={ p } />
     </section>
   );
 }
