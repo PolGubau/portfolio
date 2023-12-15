@@ -6,7 +6,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#facc15",
+        primary: "#ff4",
+        light: "#fafafa",
+        dark: "#171717",
       },
       typography: {
         quoteless: {
