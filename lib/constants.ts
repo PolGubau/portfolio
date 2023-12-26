@@ -3,7 +3,6 @@ export const metadata = {
   description: "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
   name: "Pol",
   picture: "/assets/blog/authors/pol.jpg",
-
   tags: ["Pol Gubau Amores", "Pol Gubau", "Pol", "Gubau", "Amores", "Frontend Developer", "Frontend", "Developer", "UX Designer", "Barcelona", "Mesalvo", "Best React Developer", "React", "React Developer", "UX Designer", "UI Designer", "Next.js developer", "TailwindCSS"],
 
   links: {
@@ -13,5 +12,5 @@ export const metadata = {
     linkedin: "https://www.linkedin.com/in/polgubauamores/",
   },
 
-  homeOgImage: "/assets/thumbnail.png",
+  homeOgImage: "/assets/thumbnail.png"
 };

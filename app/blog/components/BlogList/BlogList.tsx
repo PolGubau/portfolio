@@ -23,9 +23,18 @@ const BlogList = ({ blogs }: { blogs: Blog[] }) => {
   };
 
   return (
-    <motion.ul variants={container} initial="hidden" animate="show" className="flex flex-col gap-4">
+    <motion.ul
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="flex flex-col gap-4"
+    >
       {blogs.map((post) => (
-        <motion.li key={post.slug} variants={item} className="text-neutral-900 dark:text-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 bg-neutral-200  first-letter:hover:bg-neutral-300 rounded-xl transition-all">
+        <motion.li
+          key={post.slug}
+          variants={item}
+          className="text-neutral-900 dark:text-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 bg-neutral-200  first-letter:hover:bg-neutral-300 rounded-xl transition-all"
+        >
           <BlogLink slug={post.slug} name={post.title}>
             {post.publishedAt}
           </BlogLink>

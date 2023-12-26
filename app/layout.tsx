@@ -18,9 +18,6 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   description: constants.description,
-  themeColor: "#ffff44",
-  colorScheme: "light dark",
-  viewport: "width=device-width, initial-scale=1.0",
   applicationName: constants.title,
   openGraph: {
     title: constants.title,
@@ -99,6 +96,14 @@ export const metadata: Metadata = {
     capable: true,
     startupImage: "/brand/apple_splash_2048.png",
   },
+};
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ff4" },
+    { media: "(prefers-color-scheme: dark)", color: "#ff4" },
+  ],
+  viewport: "width=device-width, initial-scale=1.0",
+  colorScheme: "light dark",
 };
 export const font = Poppins({
   subsets: ["latin"],
