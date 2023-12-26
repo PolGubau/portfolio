@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { Mdx } from "app/components/mdx";
 import { allProjects } from "contentlayer/generated";
@@ -8,14 +8,38 @@ import ProjectBar from "./components/ProjectBar";
 
 export const dynamic = "force-static";
 
-export async function generateMetadata({
-  params,
-}): Promise<Metadata | undefined> {
-  const post = allProjects.find((post) => post.slug === params.slug);
-  if (!post) {
-    return;
-  }
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+
+  const post = allProjects.find(
+    (post) => post.slug === `projects/${params.slug}`
+  );
+  if (!post) {
+    return {
+      title: "Not found",
+      description: "This project was not found.",
+
+      openGraph: {
+        title: "Not found",
+        description: "This project was not found.",
+        type: "article",
+        url: `https://polgubau.com/project/${params.slug}`,
+        images: [
+          {
+            url: `https://polgubau.com/og?title=Not found`,
+          },
+        ],
+      },
+    };
+  }
   const {
     title,
     endedAt: publishedTime,
@@ -24,23 +48,20 @@ export async function generateMetadata({
     slug,
   } = post;
   const ogImage = image
-    ? `https://polgubau.com${image}`
+    ? `https://polgubau.com/images/${slug}/${image}`
     : `https://polgubau.com/og?title=${title}`;
+  const previousImages = (await parent).openGraph?.images ?? [];
 
   return {
     title,
     description,
     openGraph: {
-      title,
+      title: `${title} | Pol Gubau Amores`,
       description,
       type: "article",
       publishedTime,
-      url: `https://polgubau.com/blog/${slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
+      url: `https://polgubau.com/projects/${slug}`,
+      images: [ogImage, ...previousImages],
     },
     twitter: {
       card: "summary_large_image",
@@ -63,20 +84,20 @@ export default function Blog({ params }) {
       <script
         type="application/ld+json"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={ {
+        dangerouslySetInnerHTML={{
           __html: JSON.stringify(p.structuredData),
-        } }
+        }}
       ></script>
 
-      <Header project={ p } />
+      <Header project={p} />
 
       <div className="overflow-hidden px-1">
-        {/* table of content from the mdx content */ }
+        {/* table of content from the mdx content */}
 
-        <Mdx code={ p.body.code } />
+        <Mdx code={p.body.code} />
       </div>
-      <SimilarProjects project={ p } slug={ params.slug } />
-      <ProjectBar project={ p } />
+      <SimilarProjects project={p} slug={params.slug} />
+      <ProjectBar project={p} />
     </section>
   );
 }
