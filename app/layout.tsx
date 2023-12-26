@@ -6,7 +6,7 @@ import Sidebar from "./components/sidebar";
 import { Footer } from "./components/Layout";
 import Meta from "./components/Meta";
 import NextTopLoader from "nextjs-toploader";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://polgubau.com"),
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   description: constants.description,
-  themeColor: "#facc15",
+  themeColor: "#ff4",
   colorScheme: "light dark",
   viewport: "width=device-width, initial-scale=1.0",
   applicationName: constants.title,
@@ -111,19 +111,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={ `${font.className} text-dark bg-light dark:text-light dark:bg-dark transition-colors duration-200 w-full overflow-x-hidden` }>
+    <html
+      lang="en"
+      className={`${font.className} text-dark bg-light dark:text-light dark:bg-dark transition-colors duration-200 w-full overflow-x-hidden`}
+    >
       <Meta />
 
       <body className="antialiased w-full max-w-4xl mb-20 flex mt-8 md:mx-auto">
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
-          <NextTopLoader color="#ff4" height={ 2 } showSpinner={ false } />
+          <NextTopLoader color="#ff4" height={2} showSpinner={false} />
           <Sidebar />
-          { children }
+          {children}
           <Footer />
         </main>
       </body>
       <SpeedInsights />
-
     </html>
   );
 }
