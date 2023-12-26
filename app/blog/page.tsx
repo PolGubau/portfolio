@@ -36,5 +36,12 @@ const sortBlogs = (blogs: Blog[]) =>
   });
 
 export default function BlogPage() {
-  return <BlogList blogs={sortBlogs(allBlogs)} />;
+  return (
+    <>
+      <h1 className="font-semibold text-2xl mb-8">
+        Check my personal Blog and Essays
+      </h1>
+      <BlogList blogs={sortBlogs(allBlogs)} />
+    </>
+  );
 }
