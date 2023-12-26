@@ -60,7 +60,7 @@ export async function generateMetadata(
       description,
       type: "article",
       publishedTime,
-      url: `https://polgubau.com/projects/${slug}`,
+      url: `https://polgubau.com/${slug}`,
       images: [ogImage, ...previousImages],
     },
     twitter: {

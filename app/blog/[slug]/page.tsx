@@ -55,7 +55,7 @@ export async function generateMetadata(
       description,
       type: "article",
       publishedTime,
-      url: `https://polgubau.com/blog/${slug}`,
+      url: `https://polgubau.com/${slug}`,
       images: [ogImage, ...previousImages],
     },
     twitter: {
