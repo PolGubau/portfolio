@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   description: constants.description,
-  themeColor: "#ff4",
+  themeColor: "#ffff44",
   colorScheme: "light dark",
   viewport: "width=device-width, initial-scale=1.0",
   applicationName: constants.title,
