@@ -32,12 +32,5 @@ const orderedProjects = allProjects.sort((a, b) => {
 
 export const firstProjects = orderedProjects.slice(0, 4);
 export default function BlogPage() {
-  return (
-    <section>
-      <h1 className="font-semibold text-2xl mb-8">
-        Discover my recent Projects 🚀
-      </h1>
-      <ProjectsList projects={orderedProjects} />
-    </section>
-  );
+  return <ProjectsList projects={orderedProjects} />;
 }

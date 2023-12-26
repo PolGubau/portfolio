@@ -120,8 +120,6 @@ export default function RootLayout({
       lang="en"
       className={`${font.className} text-dark bg-light dark:text-light dark:bg-dark transition-colors duration-200 w-full overflow-x-hidden`}
     >
-      <Meta />
-
       <body className="antialiased w-full max-w-4xl mb-20 flex mt-8 md:mx-auto">
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
           <NextTopLoader color="#ff4" height={2} showSpinner={false} />

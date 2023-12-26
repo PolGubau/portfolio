@@ -18,6 +18,38 @@ export default {
           },
         },
       },
+      keyframes: {
+        "fade-in-down": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        widthGrow: {
+          "0%": {
+            left: "0%",
+             width: "0%",
+          },
+          
+          "70%": {
+            left: "0%",
+            width: "100%",
+          },
+          "100%": {
+            left: "100%",
+            width: "0%",
+          },
+        },
+      },
+      animation: {
+        "fade-in-down": "fade-in-down 0.5s ease-out",
+        widthGrow: "widthGrow 2s ease-out infinite",
+      },
+      
     },
   },
   future: {
