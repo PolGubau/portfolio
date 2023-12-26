@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { Mdx } from "app/components/mdx";
 import { allBlogs } from "contentlayer/generated";
@@ -6,13 +6,33 @@ import Link from "next/link";
 import SimilarBlogs from "../components/SimilarBlogs";
 
 export const dynamic = "force-static";
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const post = allBlogs.find((post) => post.slug === `blog/${params.slug}`);
 
-export async function generateMetadata({
-  params,
-}): Promise<Metadata | undefined> {
-  const post = allBlogs.find((post) => post.slug === params.slug);
   if (!post) {
-    return;
+    return {
+      title: "Not found",
+      description: "This blog was not found.",
+
+      openGraph: {
+        title: "Not found",
+        description: "This blog was not found.",
+        type: "article",
+        url: `https://polgubau.com/blog/${params.slug}`,
+        images: [
+          {
+            url: `https://polgubau.com/og?title=Not found`,
+          },
+        ],
+      },
+    };
   }
 
   const {
@@ -23,11 +43,13 @@ export async function generateMetadata({
     slug,
   } = post;
   const ogImage = cover
-    ? `https://polgubau.com/images/${post.title}/${cover}`
-    : `https://polgubau.com/og?title=${title}`;
+    ? `http://polgubau/images/${post.title}/${cover}`
+    : `http://polgubau/og?title=${title}`;
 
+  const previousImages = (await parent).openGraph?.images ?? [];
+  console.log(ogImage);
   return {
-    title,
+    title: `${title} | Pol Gubau Amores`,
     description,
     openGraph: {
       title,
@@ -35,11 +57,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime,
       url: `https://polgubau.com/blog/${slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
+      images: [ogImage, ...previousImages],
     },
     twitter: {
       card: "summary_large_image",
