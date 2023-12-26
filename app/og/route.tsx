@@ -6,31 +6,22 @@ export const runtime = "edge";
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const postTitle = searchParams.get("title");
-  const fontData = await fetch(
-    "https://polgubau.com/fonts/Poppins-Regular.ttf"
-  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
-      <div className="w-full h-full grid place-items-center text-black bg-primary text-6xl ">
+      <div className="w-full h-full grid place-items-center text-black bg-primary text-6xl text-cemter">
         <div
           style={{
             background:
-              "url(https://polgubau.com/assets/thumbnail.png) no-repeat center center fixed",
+              "url(https://polgubau.com/assets/thumbnail.png) no-repeat center",
           }}
         ></div>
-        <p>{postTitle}</p>
+        <p className="text-center">{postTitle}</p>
       </div>
     ),
     {
       width: 1920,
       height: 1080,
-      fonts: [
-        {
-          name: "Pol Gubau Amores",
-          data: fontData,
-          style: "normal",
-        },
-      ],
     }
   );
 }

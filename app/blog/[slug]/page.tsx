@@ -43,16 +43,15 @@ export async function generateMetadata(
     slug,
   } = post;
   const ogImage = cover
-    ? `http://polgubau/images/${post.title}/${cover}`
-    : `http://polgubau/og?title=${title}`;
-
+    ? `https://polgubau.com/images/${slug}/${cover}`
+    : `https://polgubau.com/og?title=${title}`;
   const previousImages = (await parent).openGraph?.images ?? [];
-  console.log(ogImage);
+
   return {
-    title: `${title} | Pol Gubau Amores`,
+    title,
     description,
     openGraph: {
-      title,
+      title: `${title} | Pol Gubau Amores`,
       description,
       type: "article",
       publishedTime,
