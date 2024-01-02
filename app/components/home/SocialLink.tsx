@@ -11,7 +11,7 @@ const SocialLink = ({ href, label, icon }: SocialLinkProps) => {
   return (
     <Link
       href={href}
-      className="bg-dark/10 dark:bg-light/10  rounded-full flex gap-2 w-fit py-1 px-3 items-center transition-all hover:shadow-md hover:bg-dark/20 dark:hover:bg-light/20"
+      className="bg-transparent border border-dark/30  dark:bg-light/10  rounded-full flex gap-2 w-fit py-1 px-3 items-center transition-all hover:bg-dark/10 dark:hover:bg-light/20"
     >
       {icon}
       {label}
