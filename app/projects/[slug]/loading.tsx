@@ -1,4 +1,10 @@
+import AnimatedLogo from "app/components/AnimatedLogo";
+
 export default function Loading() {
-  // Or a custom loading skeleton component
-  return <p>Loading...</p>;
+  return (
+    <div className="flex flex-col items-center justify-center space-y-4 mt-16 mb-8">
+      <AnimatedLogo />
+      <p className="text-center">Loading...</p>
+    </div>
+  );
 }

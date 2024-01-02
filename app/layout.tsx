@@ -4,9 +4,9 @@ import { metadata as constants } from "../lib/constants";
 import { Poppins } from "next/font/google";
 import Sidebar from "./components/sidebar";
 import { Footer } from "./components/Layout";
-import Meta from "./components/Meta";
 import NextTopLoader from "nextjs-toploader";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import GoTopButton from "./components/GoTopButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://polgubau.com"),
@@ -123,6 +123,7 @@ export default function RootLayout({
       <body className="antialiased w-full max-w-4xl mb-20 flex mt-8 md:mx-auto">
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
           <NextTopLoader color="#ff4" height={2} showSpinner={false} />
+          <GoTopButton />
           <Sidebar />
           {children}
           <Footer />
