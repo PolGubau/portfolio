@@ -9,10 +9,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoTopButton from "./components/GoTopButton";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://polgubau.com"),
+  metadataBase: new URL(constants.links.website),
   title: {
-    default: "Pol Gubau Amores - Frontend Developer and UX Designer",
-    template: "%s | Pol Gubau Amores",
+    default: `${constants.title} - Frontend Developer and UX Designer`,
+    template: `%s | ${constants.title}`,
   },
   alternates: {
     canonical: "/",
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: constants.title,
     description: constants.description,
-    url: "https://polgubau.com",
+    url: constants.links.website,
     siteName: constants.title,
     locale: "en_US",
     images: [
       {
-        url: "https://polgubau.com/brand/thumbnail.png",
+        url: `${constants.links.website}/brand/thumbnail.png`,
         width: 1920,
         height: 1080,
-        alt: "Pol Gubau Amores' website preview",
+        alt: `${constants.title}' website preview`,
       },
     ],
     type: "website",
