@@ -18,13 +18,19 @@ interface BlogLinkProps {
   slug: string;
   name: string;
   children?: React.ReactNode;
+  className?: string;
 }
-export function BlogLink({ slug, name, children }: Readonly<BlogLinkProps>) {
+export function BlogLink({
+  slug,
+  name,
+  children,
+  className,
+}: Readonly<BlogLinkProps>) {
   return (
     <Link
       title={name}
       href={`${slug}`}
-      className="w-full flex flex-1 bg-dark/10 dark:bg-light/10 hover:bg-dark/20 dark:hover:bg-light/20 rounded-full md:rounded-2xl justify-between px-5 py-4 md:px-6 md:py-6  gap-6 balance items-center group hover:brightness-125 transition-all"
+      className={`w-full flex flex-1 bg-dark/10 dark:bg-light/10 hover:bg-dark/20 dark:hover:bg-light/20 rounded-full md:rounded-2xl justify-between px-5 py-4 md:px-6 md:py-6  gap-6 balance items-center group hover:brightness-125 transition-all ${className}`}
     >
       <div className="flex flex-col gap-2">
         <span className="w-full font-semibold text-md md:text-lg ">{name}</span>

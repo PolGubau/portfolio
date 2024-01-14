@@ -30,12 +30,8 @@ const BlogList = ({ blogs }: { blogs: Blog[] }) => {
       className="flex flex-col gap-4"
     >
       {blogs.map((post) => (
-        <motion.li
-          key={post.slug}
-          variants={item}
-          className="text-neutral-900 dark:text-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 bg-neutral-200  first-letter:hover:bg-neutral-300 rounded-xl transition-all"
-        >
-          <BlogLink slug={post.slug} name={post.title}>
+        <motion.li key={post.slug} variants={item}>
+          <BlogLink slug={post.slug} name={post.title} className="pl-8">
             {post.publishedAt}
           </BlogLink>
         </motion.li>

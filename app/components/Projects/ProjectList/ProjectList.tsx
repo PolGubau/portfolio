@@ -19,12 +19,22 @@ const item = {
 };
 export const ProjectsList = ({ projects }: { projects: Projects[] }) => {
   return (
-    <motion.ul variants={ container } initial="hidden" animate="show" className="flex flex-wrap gap-4">
-      { projects.map((p) => (
-        <motion.li variants={ item } key={ p.slug } className="postGrid ">
-          <ProjectPreview backgroundColor={ p.color } title={ p.title } slug={ p.slug } image={ { src: `/images/${p.slug}/${p.cover}`, alt: "" } } />
+    <motion.ul
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="flex flex-wrap gap-4"
+    >
+      {projects.map((p) => (
+        <motion.li variants={item} key={p.slug} className="postGrid ">
+          <ProjectPreview
+            backgroundColor={p.color}
+            title={p.title}
+            slug={p.slug}
+            image={{ src: `/images/${p.slug}/${p.cover}`, alt: "" }}
+          />
         </motion.li>
-      )) }
+      ))}
     </motion.ul>
   );
 };
