@@ -34,7 +34,11 @@ const Footer = () => {
       </Link>{" "}
       <MainSocials />
       <p>
-        Made with <span className="text-primary font-semibold">love</span> by{" "}
+        Made with{" "}
+        <span className="text-primary-700 dark:text-primary font-semibold">
+          love
+        </span>{" "}
+        by{" "}
         <Link href="https://polgubau.com" title="Visit my website">
           {metadata.longName}
         </Link>
