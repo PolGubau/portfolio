@@ -152,3 +152,87 @@ table {
 strong {
   @apply font-semibold;
 }
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .show-animation {
+    view-timeline: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+  }
+
+  /* three phones part */
+  @keyframes first-phone {
+    from {
+      opacity: 0;
+      scale: 25%;
+      rotate: 0deg;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+      rotate: 12deg;
+    }
+  }
+  .show-first-phone {
+    view-timeline: --phone1;
+    view-timeline-axis: block;
+    animation-timeline: --phone1;
+    animation-name: first-phone;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+  }
+  @keyframes second-phone {
+    from {
+      opacity: 0;
+      scale: 25%;
+      rotate: 0deg;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+      rotate: -4deg;
+    }
+  }
+  .show-second-phone {
+    view-timeline: --phone2;
+    view-timeline-axis: block;
+    animation-timeline: --phone2;
+    animation-name: second-phone;
+    animation-range: entry 25% cover 70%;
+    animation-fill-mode: both;
+  }
+  @keyframes third-phone {
+    from {
+      opacity: 0;
+      scale: 25%;
+      rotate: 10deg;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+      rotate: -20deg;
+    }
+  }
+  .show-third-phone {
+    view-timeline: --phone2;
+    view-timeline-axis: block;
+    animation-timeline: --phone2;
+    animation-name: third-phone;
+    animation-range: entry 25% cover 70%;
+    animation-fill-mode: both;
+  }
+}

@@ -98,7 +98,8 @@ export default async function Page() {
           successful digital project.
         </p>
         <Image
-          className="rounded-xl object-cover  w-auto h-auto"
+          className="rounded-xl object-cover w-auto h-auto show-animation "
+          style={{}}
           alt="A preview of the performance stats in my technical blog"
           title="A preview of the performance stats in my technical blog"
           src="/images/other/blog-preview.png"
