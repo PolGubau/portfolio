@@ -12,7 +12,7 @@ const BlogList = ({ blogs }: { blogs: Blog[] }) => {
       transition: {
         type: "spring",
         duration: 0.2,
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -31,7 +31,11 @@ const BlogList = ({ blogs }: { blogs: Blog[] }) => {
     >
       {blogs.map((post) => (
         <motion.li key={post.slug} variants={item}>
-          <BlogLink slug={post.slug} name={post.title} className="pl-8">
+          <BlogLink
+            slug={post.slug}
+            name={post.title}
+            className="pl-8 width-animation"
+          >
             {post.publishedAt}
           </BlogLink>
         </motion.li>

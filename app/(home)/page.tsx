@@ -5,21 +5,17 @@ import ThreePhones from "../components/home/ThreePhones";
 import { ProjectsList } from "../components/Projects/ProjectList/ProjectList";
 import { firstProjects } from "../projects/page";
 import { BlogLink } from "../components/BlogLink";
-import HomeSkeleton from "../components/home/HomeSkeleton";
 
 const imagesPhones = [
   {
     src: "/images/other/coiae.png",
-    mt: 40,
-  },
+   },
   {
     src: "/images/other/santJordi.png",
-    mt: 0,
-  },
+   },
   {
     src: "/images/other/gymZ.png",
-    mt: 80,
-  },
+   },
 ];
 const universities = [
   {

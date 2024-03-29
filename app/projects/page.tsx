@@ -26,8 +26,15 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-const orderedProjects = allProjects.sort((a, b) => {
-  return new Date(b.startedAt).getTime() - new Date(a.startedAt).getTime();
+
+// order by date with the 'toSorted' function, the projects without endedAt will act as 'ended today', then order from the most recent to the oldest
+const orderedProjects = allProjects.toSorted((a, b) => {
+  const today = new Date().toISOString().split("T")[0];
+  const aEnded = !a.endedAt ? today : a.endedAt;
+  const bEnded = !b.endedAt ? today : b.endedAt;
+  if (aEnded < bEnded) return 1;
+  if (aEnded > bEnded) return -1;
+  return 0;
 });
 
 export const firstProjects = orderedProjects.slice(0, 4);

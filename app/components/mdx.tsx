@@ -4,8 +4,7 @@ import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { Badge } from "./Badge";
 import { ThreePhones } from "./home";
-import { SlideUpWhenVisible } from "./home/ThreePhones";
-import { ArrowIcon, BlogLink } from "./BlogLink";
+ import { ArrowIcon, BlogLink } from "./BlogLink";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -144,8 +143,7 @@ const components = {
   At,
   Badge,
   ThreePhones,
-  SlideUpWhenVisible,
-  BlogLink,
+   BlogLink,
 };
 
 export function Mdx({ code }: Readonly<{ code: string }>) {
