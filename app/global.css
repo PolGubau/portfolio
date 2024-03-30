@@ -7,9 +7,7 @@ html {
 }
 
 *::selection {
-  background-color: #c3c618;
-  color: #fca164;
-  color: rgb(59, 60, 35);
+  @apply bg-primary-800 text-secondary-900;
 }
 
 .prose .anchor {

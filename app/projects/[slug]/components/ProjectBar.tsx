@@ -7,8 +7,10 @@ import {
   motion,
 } from "framer-motion";
 import Link from "next/link";
+import { toast, useCopyToClipboard } from "pol-ui";
 import React from "react";
-import { TbBrandGithub, TbBrandNpm, TbSearch } from "react-icons/tb";
+import { TbBrandGithub, TbBrandNpm, TbSearch, TbShare } from "react-icons/tb";
+
 interface ProjectBarProps {
   project: Projects;
 }
@@ -20,9 +22,20 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScroll(latest);
   });
+  const { copy } = useCopyToClipboard();
+
+  const handleCopyUrl = () => {
+    copy(window.location.href);
+    toast({
+      title: "Copied to clipboard",
+      dismissible: true,
+      className:
+        "bg-secondary-800 text-secondary-50 mb-16  3xl:mb-0 max-w-[90vw]",
+    });
+  };
 
   return (
-    <div className="fixed bottom-8 left-0 w-full flex justify-center">
+    <div className="fixed bottom-4 left-0 w-full flex justify-center">
       <AnimatePresence mode="wait">
         {scroll > 300 && (
           <motion.div
@@ -33,12 +46,21 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
             style={{
               backgroundColor: project.color ?? "#808080",
             }}
-            className="w-full max-w-4xl shadow-lg mx-6 p-3 rounded-2xl flex gap-4 items-center justify-between "
+            className="w-[90vw] max-w-4xl shadow-lg p-3 rounded-2xl flex gap-4 items-center justify-between "
           >
             <h2 className="text-black text-2xl font-semibold pl-2">
               {project.title}
             </h2>
             <ul className="flex gap-2 items-center">
+              {/* copy url button */}
+              <li>
+                <button
+                  className=" transition-all hover:bg-secondary-900/60 rounded-lg flex aspect-square p-2 text-secondary-900"
+                  onClick={handleCopyUrl}
+                >
+                  <TbShare size={20} />
+                </button>
+              </li>
               {project.npmLink && (
                 <Link
                   href={project.npmLink}
@@ -46,7 +68,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <li className=" transition-all hover:bg-dark/60 rounded-lg flex aspect-square p-2 text-dark">
+                  <li className=" transition-all hover:bg-secondary-900/60 rounded-lg flex aspect-square p-2 text-secondary-900">
                     <TbBrandNpm size={20} />
                   </li>
                 </Link>
@@ -59,7 +81,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <li className=" transition-all hover:bg-dark/60 rounded-lg flex aspect-square p-2 text-dark">
+                  <li className=" transition-all hover:bg-secondary-900/60 rounded-lg flex aspect-square p-2 text-secondary-900">
                     <TbBrandGithub size={20} />
                   </li>{" "}
                 </Link>
@@ -74,7 +96,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
                 >
                   {" "}
                   <li
-                    className="bg-dark/90 hover:bg-dark  transition-all rounded-lg flex aspect-square p-2"
+                    className="bg-secondary-900/90 hover:bg-secondary-900  transition-all rounded-lg flex aspect-square p-2"
                     style={{
                       color: project.color ?? "#808080",
                     }}

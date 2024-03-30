@@ -24,7 +24,7 @@ const GoTopButton = () => {
   }
 
   return (
-    <div className="fixed bottom-3 right-3 z-50">
+    <div className="fixed bottom-3 right-3 z-50 hidden sm:flex">
       <AnimatePresence mode="wait">
         {scroll > 400 && (
           <motion.button
@@ -36,7 +36,7 @@ const GoTopButton = () => {
             style={{
               zIndex: 99999,
             }}
-            className="aspect-square shadow-xl p-3 rounded-2xl flex gap-4 items-center justify-center bg-primary text-dark/90 hover:bg-primary/90 transition-all "
+            className="aspect-square shadow-xl p-3 rounded-2xl flex gap-4 items-center justify-center bg-primary text-secondary-900/90 hover:bg-primary/90 transition-all "
           >
             <svg
               className="w-4 h-4"

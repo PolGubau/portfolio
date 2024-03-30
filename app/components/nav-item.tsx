@@ -23,26 +23,27 @@ export default function NavItem({
 
   return (
     <Link
-      key={ path }
-      href={ path }
-      className={ clsx("transition-all  flex align-middle ", {
-        "text-dark/70 dark:text-light/70 hover:brightness-150": !isActive,
-        "text-dark ": isActive,
-      }) }
+      key={path}
+      href={path}
+      className={clsx("transition-all flex align-middle", {
+        "text-secondary-900/70 dark:text-secondary-50/70 hover:brightness-150":
+          !isActive,
+        "text-secondary-900 ": isActive,
+      })}
     >
       <span className="relative py-1 px-2">
-        { name }
-        { path === pathname ? (
+        {name}
+        {path === pathname ? (
           <motion.div
-            className="absolute h-full rounded-full inset-0 bg-primary z-[-1]  "
+            className="absolute h-full rounded-full inset-0 bg-primary z-[-1]"
             layoutId="sidebar"
-            transition={ {
+            transition={{
               type: "spring",
               stiffness: 350,
               damping: 30,
-            } }
+            }}
           />
-        ) : null }
+        ) : null}
       </span>
     </Link>
   );

@@ -12,7 +12,7 @@ const Footer = () => {
         download={`${metadata.longName} CV`}
         passHref
         target="_blank"
-        className="bg-transparent border border-dark/30  dark:bg-light/10  rounded-full flex gap-2 w-fit py-3 px-5 items-center transition-all hover:bg-dark/10 dark:hover:bg-light/20"
+        className="bg-transparent border border-secondary-900/30  dark:bg-secondary-50/10  rounded-full flex gap-2 w-fit py-3 px-5 items-center transition-all hover:bg-secondary-900/10 dark:hover:bg-secondary-50/20"
       >
         <span className="sr-only">Click here to download my CV</span> {` `}
         <svg

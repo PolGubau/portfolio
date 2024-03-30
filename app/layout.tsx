@@ -4,9 +4,10 @@ import { metadata as constants } from "../lib/constants";
 import { Poppins } from "next/font/google";
 import Sidebar from "./components/sidebar";
 import { Footer } from "./components/Layout";
-import NextTopLoader from "nextjs-toploader";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoTopButton from "./components/GoTopButton";
+import Providers from "./providers";
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
   metadataBase: new URL(constants.links.website),
@@ -118,17 +119,23 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${font.className} text-dark bg-light dark:text-light dark:bg-dark transition-colors duration-200 w-full overflow-x-hidden`}
+      suppressHydrationWarning
+      className={`${font.className} transition-colors duration-200 w-full overflow-x-hidden`}
     >
-      <body className="antialiased w-full max-w-4xl mb-20 flex mt-8 md:mx-auto">
-        <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
+      <body>
+        <Providers>
           <NextTopLoader color="#ff4" height={2} showSpinner={false} />
-          <GoTopButton />
-          <Sidebar />
-          {children}
-          <Footer />
-        </main>
+          <main className="antialiased w-full flex  text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900">
+            <div className="  mt-8 mb-20 flex-auto flex flex-col w-full px-8 md:px-10 max-w-4xl md:mx-auto">
+              <GoTopButton />
+              <Sidebar />
+              {children}
+              <Footer />
+            </div>
+          </main>
+        </Providers>
       </body>
+
       <SpeedInsights />
     </html>
   );

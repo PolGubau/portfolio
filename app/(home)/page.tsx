@@ -9,13 +9,13 @@ import { BlogLink } from "../components/BlogLink";
 const imagesPhones = [
   {
     src: "/images/other/coiae.png",
-   },
+  },
   {
     src: "/images/other/santJordi.png",
-   },
+  },
   {
     src: "/images/other/gymZ.png",
-   },
+  },
 ];
 const universities = [
   {
@@ -38,13 +38,14 @@ export default async function Page() {
   return (
     <section className="overflow-visible">
       <Header />
-      <main className="flex flex-col  w-full flex-1 gap-8 text-neutral-900 dark:text-neutral-50">
+      <main className="flex flex-col  w-full flex-1 gap-8 text-secondary-900 dark:text-secondary-50">
         <div className="inline">
-          <p className="text-neutral-900 dark:text-neutral-50 inline">
+          <p className="text-secondary-900 dark:text-secondary-50 inline">
             👋🏼 Hi, I'm a full time tech enthusiast graduated in{" "}
             <strong>Interactive Communication</strong> and currently working at
+            Mesalvo.
           </p>
-          <Badge href="https://mesalvo.com/en" label="Mesalvo." />
+          {/* <Badge href="https://mesalvo.com/en" label="Mesalvo." /> */}
         </div>
         <div className="flex flex-col gap-4">
           <p>
@@ -64,10 +65,7 @@ export default async function Page() {
         </div>
         <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
           <BlogLink slug="blog/bio" name="My biography and career" />
-          <BlogLink
-            slug="blog/shouldGoUniversity"
-            name="Should you go to university?"
-          />
+          <BlogLink slug="projects" name="My projects" />
         </div>
 
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">

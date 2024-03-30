@@ -88,16 +88,14 @@ export default function Blog({ params }) {
           __html: JSON.stringify(p.structuredData),
         }}
       ></script>
-
       <Header project={p} />
-
       <div className="overflow-hidden px-1">
         {/* table of content from the mdx content */}
 
         <Mdx code={p.body.code} />
       </div>
       <SimilarProjects project={p} slug={params.slug} />
-      <ProjectBar project={p} />
+      {p.link && <ProjectBar project={p} />}{" "}
     </section>
   );
 }
