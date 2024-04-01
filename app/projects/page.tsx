@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 // order by date with the 'toSorted' function, the projects without endedAt will act as 'ended today', then order from the most recent to the oldest
-const orderedProjects = allProjects.toSorted((a, b) => {
+const orderedProjects = allProjects.sort((a, b) => {
   const today = new Date().toISOString().split("T")[0];
   const aEnded = !a.endedAt ? today : a.endedAt;
   const bEnded = !b.endedAt ? today : b.endedAt;
