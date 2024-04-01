@@ -19,7 +19,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.12.0",
-    "recharts": "^2.9.3",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.10.1",
     "rehype-slug": "^6.0.0",

@@ -173,7 +173,7 @@ strong {
     from {
       opacity: 0;
       scale: 25%;
-      rotate: 0deg;
+      rotate: -20deg;
     }
     to {
       opacity: 1;

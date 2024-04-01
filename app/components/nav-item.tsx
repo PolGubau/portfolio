@@ -1,9 +1,9 @@
 "use client";
 
-import clsx from "clsx";
-import Link from "next/link";
+ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import { cn } from "pol-ui";
 
 export default function NavItem({
   path,
@@ -25,7 +25,7 @@ export default function NavItem({
     <Link
       key={path}
       href={path}
-      className={clsx("transition-all flex align-middle", {
+      className={cn("transition-all flex align-middle", {
         "text-secondary-900/70 dark:text-secondary-50/70 hover:brightness-150":
           !isActive,
         "text-secondary-900 ": isActive,
