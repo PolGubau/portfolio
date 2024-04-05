@@ -5,6 +5,7 @@ import { allProjects } from "contentlayer/generated";
 import SimilarProjects from "./components/SimilarProjects";
 import Header from "./components/Header";
 import ProjectBar from "./components/ProjectBar";
+import Link from "next/link";
 
 export const dynamic = "force-static";
 
@@ -80,7 +81,7 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section className="flex flex-col gap-4 overflow-x-hidden relative">
+    <section className="flex flex-col gap-4 overflow-x-visible relative">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -89,12 +90,17 @@ export default function Blog({ params }) {
         }}
       ></script>
       <Header project={p} />
-      <div className="overflow-hidden px-1">
-        {/* table of content from the mdx content */}
-
+      <div className="overflow-visible px-1">
         <Mdx code={p.body.code} />
       </div>
       <SimilarProjects project={p} slug={params.slug} />
+      <Link
+        title="Back to projects"
+        href="/projects"
+        className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
+      >
+        <span className="sr-only">Back to projects</span>← Back
+      </Link>
       {p.link && <ProjectBar project={p} />}{" "}
     </section>
   );

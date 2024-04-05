@@ -41,7 +41,7 @@ export const firstProjects = orderedProjects.slice(0, 4);
 export default function BlogPage() {
   return (
     <>
-      <h1 className="font-semibold text-2xl mb-8">
+      <h1 className="font-medium md:font-semibold text-xl md:text-2xl mb-8 text-center md:text-start text-pretty">
         Discover my recent Projects 🚀
       </h1>
       <ProjectsList projects={orderedProjects} />

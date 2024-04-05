@@ -1,4 +1,5 @@
 import { BlogLink } from "app/components/BlogLink";
+import { ProjectsList } from "app/components/Projects/ProjectList/ProjectList";
 import { Projects, allProjects } from "contentlayer/generated";
 import React from "react";
 
@@ -28,15 +29,11 @@ const SimilarProjects = ({
   };
   return (
     <>
-      {" "}
       <h2 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mt-16">
         Similar Projects
       </h2>
       <div className="flex flex-wrap gap-2">
-        {similarTechProjects().map((p) => {
-          const realSlug = p.slug.replace("projects/", "");
-          return <BlogLink key={p.slug} name={p.title} slug={realSlug} />;
-        })}
+        <ProjectsList projects={similarTechProjects()} />
       </div>
     </>
   );

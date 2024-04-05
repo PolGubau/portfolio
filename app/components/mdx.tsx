@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { Badge } from "./Badge";
 import { ThreePhones } from "./home";
- import { ArrowIcon, BlogLink } from "./BlogLink";
+import { ArrowIcon, BlogLink } from "./BlogLink";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -143,14 +143,14 @@ const components = {
   At,
   Badge,
   ThreePhones,
-   BlogLink,
+  BlogLink,
 };
 
 export function Mdx({ code }: Readonly<{ code: string }>) {
   const Component = useMDXComponent(code);
 
   return (
-    <article className="prose prose-quoteless prose-neutral dark:prose-invert ">
+    <article className="prose prose-quoteless prose-neutral dark:prose-invert w-full">
       <Component components={components} />
     </article>
   );
