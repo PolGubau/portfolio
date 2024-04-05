@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://polgubau.com/brand/thumbnail.png",
+        url: "https://polgubau.com/brand/blog-thumbnail.png",
         width: 1920,
         height: 1080,
         alt: "Pol Gubau Amores' website preview",
