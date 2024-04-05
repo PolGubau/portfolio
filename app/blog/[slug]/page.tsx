@@ -11,7 +11,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const post = allBlogs.find((post) => post.slug === `blog/${params.slug}`);
