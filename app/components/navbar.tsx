@@ -17,12 +17,9 @@ const navItems = {
 export default function Navbar() {
   return (
     <aside className="mb-12 tracking-tight flex justify-center md:justify-start">
-      <div className="lg:sticky lg:top-20 flex gap-2 items-center">
+      <div className="sticky top-20 flex gap-2 items-center">
         <LayoutGroup>
-          <nav
-            className="flex flex-row items-start relative px-2 pb-0 fade md:overflow-auto scroll-pr-6 md:relative w-full "
-            id="nav"
-          >
+          <nav className="flex flex-row items-start relative w-full">
             {Object.entries(navItems).map(([path, { name }]) => {
               return <NavItem key={path} path={path} name={name} />;
             })}

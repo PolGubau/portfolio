@@ -2,7 +2,7 @@ import "./global.css";
 import type { Metadata } from "next";
 import { metadata as constants } from "../lib/constants";
 import { Poppins } from "next/font/google";
-import Sidebar from "./components/sidebar";
+import Sidebar from "./components/navbar";
 import { Footer } from "./components/Layout";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoTopButton from "./components/GoTopButton";

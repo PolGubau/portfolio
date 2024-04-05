@@ -247,4 +247,35 @@ strong {
     animation-range: entry cover 30%;
     animation-fill-mode: both;
   }
+
+  /* animation to enter from left while fading in*/
+  @keyframes width-animation {
+    0% {
+      opacity: 0;
+      transform: rotateX(-70deg);
+    }
+    20% {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+
+    80% {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+    100% {
+      opacity: 0;
+      transform: rotateX(70deg);
+    }
+  }
+
+  /* animation that shows in each Y axis border a width animation where the more external it is, the wider */
+  .width-animation-both {
+    view-timeline: --width-animation;
+    view-timeline-axis: block;
+    animation-timeline: --width-animation;
+    animation-name: width-animation;
+    animation-fill-mode: both;
+    animation-range: cover 10% cover 100%;
+  }
 }

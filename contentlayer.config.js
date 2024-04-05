@@ -105,8 +105,11 @@ export const Blog = defineDocumentType(() => ({
       type: "string",
     },
     tags: {
-      type: "string",
-      list: true,
+      default: [],
+      type: "list",
+      of: {
+        type: "string",
+      },
     },
   },
   computedFields,

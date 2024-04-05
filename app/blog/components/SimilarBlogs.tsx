@@ -9,7 +9,7 @@ const SimilarBlogs = ({ blog: p, slug }: { blog: Blog; slug: string }) => {
     const tags = p.tags;
     const otherBlogs = allBlogs.filter((post) => post.slug !== `blog/${slug}`);
     const similarTechProjects = otherBlogs.filter((post) =>
-      post.tags?.split(" ").some((t) => tags?.includes(t))
+      post.tags?.some((t) => tags?.includes(t))
     );
 
     if (similarTechProjects.length > 3) {
