@@ -15,7 +15,7 @@ export default function Loading() {
                   <span className="font-semibold text-md md:text-lg line-clamp-2 bg-secondary animate-pulse	text-pretty w-[100px] md:w-[300px] h-[22px] rounded-lg"></span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <span className="font-semibold text-md md:text-lg line-clamp-2 bg-secondary-700 animate-pulse	text-pretty w-[120px] h-[18px] rounded-lg"></span>
+                  <span className="font-semibold text-md md:text-lg line-clamp-2 bg-secondary-300 dark:bg-secondary-700 animate-pulse	text-pretty w-[120px] h-[18px] rounded-lg"></span>
                 </div>
               </div>
               <div className="group-hover:translate-x-1 group-hover:-translate-y-0 transition-all">
