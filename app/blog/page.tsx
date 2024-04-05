@@ -5,7 +5,13 @@ import BlogList from "./components/BlogList/BlogList";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Read my thoughts on software development, design, and more.",
-  keywords: ["projects", "portfolio", "web development", "coding"],
+  keywords: [
+    "projects",
+    "portfolio",
+    "web development",
+    "coding",
+    "Pol Gubau Amores",
+  ],
   authors: {
     url: "https://polgubau.com",
     name: "Pol Gubau Amores",
@@ -21,7 +27,7 @@ export const metadata: Metadata = {
         url: "https://polgubau.com/brand/blog-thumbnail.png",
         width: 1920,
         height: 1080,
-        alt: "Pol Gubau Amores' website preview",
+        alt: "Pol Gubau Amores' blog",
       },
     ],
     type: "website",

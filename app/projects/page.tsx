@@ -5,7 +5,13 @@ import { ProjectsList } from "app/components/Projects/ProjectList/ProjectList";
 export const metadata: Metadata = {
   title: "Projects",
   description: "Discover my recent projects and achievements.",
-  keywords: ["projects", "portfolio", "web development", "coding"],
+  keywords: [
+    "projects",
+    "portfolio",
+    "web development",
+    "coding",
+    "Pol Gubau Amores",
+  ],
   authors: {
     url: "https://polgubau.com",
     name: "Pol Gubau Amores",
@@ -17,10 +23,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://polgubau.com/brand/thumbnail.png",
+        url: "https://polgubau.com/brand/projects-thumbnail.png",
         width: 1920,
         height: 1080,
-        alt: "Pol Gubau Amores' website preview",
+        alt: "Pol Gubau Amores' projects preview",
       },
     ],
     type: "website",
