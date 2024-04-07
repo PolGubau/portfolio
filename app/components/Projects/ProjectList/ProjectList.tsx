@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Projects } from "contentlayer/generated";
 import "./post-list.css";
 import ProjectPreview from "app/components/ProjectPreview";
+import { cn } from "pol-ui";
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -23,18 +24,20 @@ export const ProjectsList = ({ projects }: { projects: Projects[] }) => {
       variants={container}
       initial="hidden"
       animate="show"
-      className="flex flex-wrap gap-4"
+      className="flex flex-wrap gap-4 w-full"
     >
-      {projects.map((p) => (
-        <motion.li variants={item} key={p.slug} className="postGrid ">
-          <ProjectPreview
-            backgroundColor={p.color}
-            title={p.title}
-            slug={p.slug}
-            image={{ src: `/images/${p.slug}/${p.cover}`, alt: "" }}
-          />
-        </motion.li>
-      ))}
+      {projects.map((p, i) => {
+        return (
+          <motion.li variants={item} key={p.slug} className={cn("postGrid  ")}>
+            <ProjectPreview
+              backgroundColor={p.color}
+              title={p.title}
+              slug={p.slug}
+              image={{ src: `/images/${p.slug}/${p.cover}`, alt: "" }}
+            />
+          </motion.li>
+        );
+      })}
     </motion.ul>
   );
 };
