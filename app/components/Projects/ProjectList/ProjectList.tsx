@@ -26,7 +26,7 @@ export const ProjectsList = ({ projects }: { projects: Projects[] }) => {
       animate="show"
       className="flex flex-wrap gap-4 w-full"
     >
-      {projects.map((p, i) => {
+      {projects.map((p) => {
         return (
           <motion.li variants={item} key={p.slug} className={cn("postGrid  ")}>
             <ProjectPreview
