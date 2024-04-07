@@ -21,10 +21,8 @@ const ProjectPreview = ({
   backgroundColor,
 }: Props) => {
   return (
-    <motion.div
-      whileHover={{ scale: 1.01 }}
-      whileTap={{ scale: 1 }}
-      className="flex flex-col gap-1 group bg-slate-400 h-64 md:h-96 rounded-2xl overflow-hidden relative hover:brightness-75 transition-all "
+    <div
+      className="flex flex-col transition-all gap-1 group bg-transparent h-64 md:h-96 rounded-2xl overflow-hidden relative cursor-pointer hover:brightness-110"
       style={{
         backgroundColor,
       }}
@@ -32,13 +30,13 @@ const ProjectPreview = ({
       <Link
         href={`/${slug}`}
         title={title}
-        className="h-full flex items-start md:justify-center  "
+        className="h-full flex items-start md:justify-center "
       >
         <Image
           style={{
             mixBlendMode: "multiply",
           }}
-          className="mt-20 ml-14  w-full h-auto md:h-[500px] object-cover object-left  "
+          className="mt-20 ml-14 transition-all w-full h-auto md:h-[500px] object-cover object-left pointer-events-none first-letter: "
           src={src}
           title={`Cover Image for ${title}`}
           alt={`Cover Image for ${alt}`}
@@ -50,7 +48,7 @@ const ProjectPreview = ({
           {title}
         </h3>
       </Link>
-    </motion.div>
+    </div>
   );
 };
 
