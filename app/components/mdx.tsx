@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { Badge } from "./Badge";
 import { ThreePhones } from "./home";
@@ -24,14 +24,9 @@ const CustomLink = (props) => {
   return <Link target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-function RoundedImage(props) {
+function RoundedImage({ ...props }: ImageProps) {
   return (
-    <Image
-      alt={props.alt}
-      className="rounded-xl"
-      {...props}
-      title={props.alt}
-    />
+    <Image className="rounded-xl mb-4 w-full" {...props} title={props.alt} />
   );
 }
 
@@ -40,8 +35,8 @@ function Callout({
   children,
 }: Readonly<{ emoji: string; children: React.ReactNode }>) {
   return (
-    <div className="px-4 py-3 border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8">
-      <div className="flex items-center w-4 mr-4">{emoji}</div>
+    <div className="px-4 py-3 border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800 rounded-xl p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8">
+      <div className="flex items-center w-5 mr-4">{emoji}</div>
       <div className="w-full callout">{children}</div>
     </div>
   );

@@ -5,11 +5,19 @@
   "display": "standalone",
   "start_url": "https://polgubau.com",
   "scope": "https://polgubau.com",
-  "id": "https://polgubau.com/UScGRN52vWrGW3SGFLVt",
+  "id": "/UScGRN52vWrGW3SGFLVt",
   "orientation": "any",
   "lang": "en",
   "prefer_related_applications": false,
-  "categories": ["development", "pol", "pol gubau amores", "Pol Gubau Amores", "news", "blog", "frontend"],
+  "categories": [
+    "development",
+    "pol",
+    "pol gubau amores",
+    "Pol Gubau Amores",
+    "news",
+    "blog",
+    "frontend"
+  ],
   "name": "Pol Gubau Amores",
   "description": "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
   "short_name": "Pol Gubau",
@@ -27,6 +35,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "/brand/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "monochrome"
     },
 
     {
@@ -59,17 +73,17 @@
   "protocol_handlers": [
     {
       "protocol": "web+pwa",
-      "url": "https://polgubau.com/?pwaprotocolredirect=%s"
+      "url": "/?pwaprotocolredirect=%s"
     },
     {
       "protocol": "web+polgubauamores",
-      "url": "https://polgubau.com/?pwaprotocolredirect=%s"
+      "url": "/?pwaprotocolredirect=%s"
     }
   ],
   "shortcuts": [
     {
       "name": "Blog",
-      "url": "https://polgubau.com/blog",
+      "url": "/blog",
       "icons": [
         {
           "src": "/icons/book-open.png",
@@ -79,7 +93,7 @@
     },
     {
       "name": "Projects",
-      "url": "https://polgubau.com/projects",
+      "url": "/projects",
       "icons": [
         {
           "src": "/icons/folder.png",

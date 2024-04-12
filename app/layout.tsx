@@ -125,7 +125,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <NextTopLoader color="#ff4" height={2} showSpinner={false} />
-          <main className="antialiased w-full flex  text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900">
+          <main className="antialiased w-full flex  text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 min-h-screen">
             <div className="  mt-8 mb-20 flex-auto flex flex-col w-full px-8 md:px-10 max-w-4xl md:mx-auto">
               <GoTopButton />
               <Sidebar />
