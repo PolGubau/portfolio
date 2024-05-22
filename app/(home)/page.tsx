@@ -19,16 +19,16 @@ const imagesPhones = [
 ];
 const universities = [
   {
-    name: "Universitat Autònoma de Barcelona",
+    name: "Autònoma de Barcelona, Spain",
     href: "https://uab.cat",
   },
   {
-    name: "Universidad de Salamanca",
-    href: "https://usal.es",
+    name: "Linnaeus University, Sweden",
+    href: "https://lnu.se/en/",
   },
   {
-    name: "Linnaeus University",
-    href: "https://lnu.se/en/",
+    name: "Universidad de Salamanca, Spain",
+    href: "https://usal.es",
   },
 ];
 

@@ -24,7 +24,8 @@
       }
     ],
     "strictNullChecks": true
-  },
+  },  
+  "extends": "pol-standard/typescript/node20",
   "include": [
     "next-env.d.ts",
     "**/*.ts",
