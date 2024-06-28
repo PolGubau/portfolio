@@ -4,7 +4,7 @@ export const metadata = {
     "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
   name: "Pol",
   longName: "Pol Gubau Amores",
-  slogan: "Frontend Developer and UX designer.",
+  slogan: "Frontend Developer and UX designer",
   picture: "/assets/blog/authors/pol.jpg",
   tags: [
     "Pol Gubau Amores",

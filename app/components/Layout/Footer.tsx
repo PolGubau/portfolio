@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="flex flex-col items-center mt-24 mb-20 gap-6 text-neutral-700 dark:text-neutral-300 text-center justify-center md:justify-start md:text-left">
       <Link
         title="Download my CV"
-        href="/files/cv2023.pdf"
+        href="/files/PolGubau_CV.pdf"
         download={`${metadata.longName} CV`}
         passHref
         target="_blank"

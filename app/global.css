@@ -251,21 +251,25 @@ strong {
   /* animation to enter from left while fading in*/
   @keyframes width-animation {
     0% {
-      opacity: 0;
-      transform: rotateX(-70deg);
+      opacity: 0.5;
+       padding: 30px 0;
     }
     20% {
       opacity: 1;
       transform: rotateX(0deg);
-    }
-
-    80% {
-      opacity: 1;
-      transform: rotateX(0deg);
+            padding: 0px 0;
+            
+          }
+          
+          80% {
+            opacity: 1;
+            transform: rotateX(0deg);
+            padding: 0px 0;
     }
     100% {
-      opacity: 0;
-      transform: rotateX(70deg);
+      opacity: 0.5;
+       padding: 30px 0;
+
     }
   }
 

@@ -3,8 +3,8 @@ import { ArrowIcon } from "app/components/BlogLink";
 export default function Loading() {
   return (
     <>
-      <h1 className="font-semibold text-2xl mb-8 text-center md:text-start text-pretty">
-        Check my personal Blog and Essays ✏️
+     <h1 className="font-semibold text-2xl mb-8 text-center md:text-start text-pretty">
+        Some thoughts written down ✏️
       </h1>
       <ul className="flex flex-col gap-4 justify-center">
         {Array.from({ length: 5 }).map((_, i) => (

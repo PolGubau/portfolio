@@ -44,8 +44,8 @@ const sortBlogs = (blogs: Blog[]) =>
 export default function BlogPage() {
   return (
     <>
-      <h1 className="font-medium md:font-semibold text-xl md:text-2xl mb-8 text-center md:text-start text-balance">
-        Check my personal Blog and Essays ✏️
+      <h1 className="font-semibold text-2xl mb-8 text-center md:text-start text-pretty">
+        Some thoughts written down ✏️
       </h1>
 
       <BlogList blogs={sortBlogs(allBlogs)} />
