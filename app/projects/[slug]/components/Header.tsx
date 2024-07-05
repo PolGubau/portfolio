@@ -20,7 +20,7 @@ const Header = ({ project: p }: { project: Projects }) => {
   }
   return (
     <header className="flex flex-col gap-6   mb-8">
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <section className="flex flex-col gap-4  ">
           <Link
             title="Back to projects"
@@ -92,17 +92,11 @@ const Header = ({ project: p }: { project: Projects }) => {
         </section>
         <nav className="w-full flex flex-wrap gap-4">
           {p.link && (
-            <motion.div
-              initial={{ scaleY: 0, y: -20 }}
-              animate={{ scaleY: 1, y: 0 }}
-              exit={{ scaleY: 0, y: -20 }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="flex-1"
-            >
+           
               <Link
                 href={p.link}
                 title="Visit Project"
-                className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center flex-1 justify-center sm:justify-start h-full"
+                className="hover:brightness-90 flex-1 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center justify-center sm:justify-start h-full animate-expand-vertically"
                 target="_blank"
                 style={{
                   backgroundColor: p.color ?? "transparent",
@@ -113,18 +107,13 @@ const Header = ({ project: p }: { project: Projects }) => {
                 <TbSearch size={20} />
                 <span>Visit Project</span>
               </Link>
-            </motion.div>
           )}
           {p.githubLink && (
-            <motion.div
-              initial={{ scaleY: 0, y: -20 }}
-              animate={{ scaleY: 1, y: 0 }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            >
+       
               <Link
                 title="Link to Github Source"
                 href={p.githubLink}
-                className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full"
+                className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
                 target="_blank"
                 style={{
                   backgroundColor: p.color ?? "transparent",
@@ -135,18 +124,13 @@ const Header = ({ project: p }: { project: Projects }) => {
                 <span className="sr-only">Link to Github Source</span>
                 <span className="hidden md:block">View Source</span>
               </Link>
-            </motion.div>
-          )}
+           )}
           {p.npmLink && (
-            <motion.div
-              initial={{ scaleY: 0, y: -20 }}
-              animate={{ scaleY: 1, y: 0 }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            >
+         
               <Link
                 title="Link to NPM Package"
                 href={p.npmLink}
-                className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full"
+                className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
                 target="_blank"
                 style={{
                   backgroundColor: p.color ?? "transparent",
@@ -157,8 +141,7 @@ const Header = ({ project: p }: { project: Projects }) => {
                 <span className="sr-only">Link to NPM</span>
                 <span className="hidden md:block">View package</span>
               </Link>
-            </motion.div>
-          )}
+           )}
         </nav>
       </AnimatePresence>
     </header>
