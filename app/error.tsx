@@ -18,7 +18,7 @@ export default function ({
   return (
     <div className="flex text-center w-full flex-col gap-4 items-center justify-center">
       <p>🫥 Oh no, something went wrong... maybe refresh?</p>
-      <Button outline onClick={reset}>
+      <Button variant='outline' onClick={reset}>
         Refresh
       </Button>
     </div>
