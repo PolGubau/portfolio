@@ -1,7 +1,6 @@
 import { allBlogs, allProjects } from "contentlayer/generated";
-import { MetadataRoute } from "next";
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+ 
+export default async function sitemap()  {
   const blogs = allBlogs.map((post) => ({
     url: `https://polgubau.com/${post.slug}`,
     lastModified: post.publishedAt,
