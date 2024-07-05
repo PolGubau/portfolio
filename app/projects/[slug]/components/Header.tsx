@@ -1,12 +1,11 @@
 "use client";
 import { ChevronDownLeft } from "assets/icons/ChevronDownLeft";
 import { Projects } from "contentlayer/generated";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { TbBrandGithub, TbSearch } from "react-icons/tb";
 import { SiNpm } from "react-icons/si";
+import { TbBrandGithub, TbSearch } from "react-icons/tb";
 
 const Header = ({ project: p }: { project: Projects }) => {
   function formatDate(date: string) {

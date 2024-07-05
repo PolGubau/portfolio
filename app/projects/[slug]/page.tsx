@@ -2,7 +2,7 @@ import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { Mdx } from "app/components/mdx";
 import { allProjects } from "contentlayer/generated";
-import SimilarProjects from "./components/SimilarProjects";
+import SimilarProjects from "./components/similar-projects";
 import Header from "./components/Header";
 import ProjectBar from "./components/ProjectBar";
 import Link from "next/link";
