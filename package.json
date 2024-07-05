@@ -44,12 +44,20 @@
     "gubau",
     "amores",
     "portfolio",
+    "web",
+    "freiburg",
+    "Pol Gubau Amores",
+    "Pol Gubau",
+    "freelance",
     "frontend",
     "developer",
     "designer",
     "barcelona",
     "blog",
-    "projects"
+    "projects",
+    "web development",
+    "web design",
+    "web developer"
   ],
   "author": {
     "name": "Pol Gubau Amores",
@@ -66,5 +74,23 @@
     "url": "https://github.com/PolGubau/portfolio/issues",
     "email": "gubaupol@gmail.com"
   },
-  "publisher": "Pol Gubau Amores"
+  "publisher": "Pol Gubau Amores",
+  "categories": [
+    "Other"
+  ],
+  "contributors": [
+    {
+       "name": "Pol Gubau Amores",
+    "email": "gubaupol@gmail.com",
+    "url": "https://polgubau.com"
+    }
+  ],
+  "icon": "https://polgubau.com/favicon.ico",
+  "name": "polgubau",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }],
+    "readme": "README.md"
 }
