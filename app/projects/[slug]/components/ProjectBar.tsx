@@ -26,9 +26,8 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
 
   const handleCopyUrl = () => {
     copy(window.location.href);
-    toast({
-      title: "Copied to clipboard",
-      dismissible: true,
+    toast("Copied to clipboard",{
+       dismissible: true,
       className:
         "bg-secondary-800 text-secondary-50 mb-16 3xl:mb-0 max-w-[90vw]",
     });
