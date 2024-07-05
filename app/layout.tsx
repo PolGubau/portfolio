@@ -8,7 +8,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoTopButton from "./components/GoTopButton";
 import Providers from "./providers";
 import NextTopLoader from "nextjs-toploader";
-
+import { ScrollLine } from "./components/ScrollLine";
+ 
 export const metadata: Metadata = {
   metadataBase: new URL(constants.links.website),
   title: {
@@ -125,8 +126,9 @@ export default function RootLayout({
       <body>
         <Providers>
           <NextTopLoader color="#ff4" height={2} showSpinner={false} />
+          <ScrollLine/>
           <main className="antialiased w-full flex  text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 min-h-screen">
-            <div className="  mt-8 mb-20 flex-auto flex flex-col w-full px-8 md:px-10 max-w-4xl md:mx-auto">
+            <div className="mt-8 mb-20 flex-auto flex flex-col w-full px-8 md:px-10 max-w-4xl md:mx-auto">
               <GoTopButton />
               <Sidebar />
               {children}

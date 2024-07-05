@@ -33,7 +33,7 @@ export const ProjectsList = ({ projects }: { projects: Projects[] }) => {
               backgroundColor={p.color}
               title={p.title}
               slug={p.slug}
-              image={{ src: `/images/${p.slug}/${p.cover}`, alt: "" }}
+              image={{ src: `/images/${p.slug}/${p.cover}`, alt: p.cover }}
             />
           </motion.li>
         );

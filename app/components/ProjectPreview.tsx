@@ -40,6 +40,8 @@ const ProjectPreview = ({
           title={`Cover Image for ${title}`}
           alt={`Cover Image for ${alt}`}
           width={600}
+          priority
+          
           height={330}
         />
 
