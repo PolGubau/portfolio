@@ -9,9 +9,9 @@ const HomeSkeleton = () => {
       </div>
       <div className="flex flex-col gap-3 px-1">
         <p className=" rounded-xl w-full bg-neutral-100 dark:bg-neutral-800  h-[75px]"></p>
-        <p className=" rounded-xl w-[300px] bg-yellow-100 dark:bg-yellow-500 h-[1.7em]"></p>
-        <p className=" rounded-xl w-[230px] bg-yellow-100 dark:bg-yellow-500 h-[1.7em]"></p>
-        <p className=" rounded-xl w-[165px] bg-yellow-100 dark:bg-yellow-500 h-[1.7em]"></p>
+        <p className=" rounded-xl w-[300px] bg-yellow-100 dark:bg-primary h-[1.7em]"></p>
+        <p className=" rounded-xl w-[230px] bg-yellow-100 dark:bg-primary h-[1.7em]"></p>
+        <p className=" rounded-xl w-[165px] bg-yellow-100 dark:bg-primary h-[1.7em]"></p>
       </div>
       <div className="flex gap-4 w-full">
         <p className=" rounded-xl flex flex-1 bg-neutral-100 dark:bg-neutral-800 p-6 justify-between items-center">
