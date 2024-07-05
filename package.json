@@ -8,6 +8,7 @@
   },
   "prettier": "pol-standard/prettier",
   "dependencies": {
+    "@next/eslint-plugin-next": "^14.2.4",
     "@vercel/edge-config": "^0.4.1",
     "@vercel/speed-insights": "^1.0.2",
     "contentlayer": "^0.3.4",
