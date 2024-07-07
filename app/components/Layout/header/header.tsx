@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import { metadata } from "lib/constants";
-import MainSocials from "../Social/main-socials";
-import Avatar from "./avatar/avatar";
-
+import MainSocials from "app/components/Social/main-socials";
+import Avatar from "../avatar/avatar";
+  
 function Header() {
   return (
     <header className="flex flex-col md:flex-row gap-8 justify-between items-center mb-16">

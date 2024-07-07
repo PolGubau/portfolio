@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import { metadata } from "lib/constants";
-import MainSocials from "../Social/main-socials";
-
+import MainSocials from "app/components/Social/main-socials";
+ 
 function Footer() {
   return (
     <div className="flex flex-col items-center mt-24 mb-20 gap-6 text-neutral-700 dark:text-neutral-300 text-center justify-center md:justify-start md:text-left">
