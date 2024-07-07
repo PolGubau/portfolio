@@ -6,11 +6,11 @@ import {
   useScroll,
   motion,
 } from "framer-motion";
-import React from "react";
-
+import { useState } from "react";
+ 
 function GoTopButton() {
   const { scrollY } = useScroll();
-  const [scroll, setScroll] = React.useState(0);
+  const [scroll, setScroll] =  useState(0);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScroll(latest);

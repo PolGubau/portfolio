@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface Props {
+interface ProjectPreviewProps {
   title: string;
   slug: string;
   backgroundColor?: string;
@@ -18,7 +18,7 @@ function ProjectPreview({
   image: { src, alt },
   slug,
   backgroundColor,
-}: Props) {
+}: ProjectPreviewProps) {
   return (
     <div
       className="flex flex-col transition-all gap-1 group bg-transparent h-64 md:h-96 rounded-2xl overflow-hidden relative cursor-pointer hover:brightness-110"

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { largeProfileAvatar } from "../profileImageData";
+import { largeProfileAvatar } from "../profile-image-data";
 
 function Avatar() {
   return (

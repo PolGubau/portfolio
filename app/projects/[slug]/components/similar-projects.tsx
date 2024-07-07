@@ -1,4 +1,4 @@
-import { ProjectsList } from "app/components/Projects/ProjectList/ProjectList";
+import { ProjectsList } from "app/components/Projects/ProjectList/project-list";
 import { type Projects, allProjects } from "contentlayer/generated";
 
 function SimilarProjects({

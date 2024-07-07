@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { allProjects } from "contentlayer/generated";
-import { ProjectsList } from "app/components/Projects/ProjectList/ProjectList";
+import { ProjectsList } from "app/components/Projects/ProjectList/project-list";
 
 export const metadata: Metadata = {
   title: "Projects",

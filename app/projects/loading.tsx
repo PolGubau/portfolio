@@ -1,5 +1,6 @@
-import AnimatedLogo from "app/components/AnimatedLogo";
+import AnimatedLogo from "app/components/animated-logo";
 
+ 
 export default function Loading() {
   return (
     <>

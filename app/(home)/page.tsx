@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Header from "../components/Layout/header";
-import { Badge } from "../components/Badge";
-import ThreePhones from "../components/home/three-phones";
-import { ProjectsList } from "../components/Projects/ProjectList/ProjectList";
+import { Badge } from "../components/badge";
+ import Header from "../components/Layout/header";
+ import ThreePhones from "../components/home/three-phones";
+import { ProjectsList } from "../components/Projects/ProjectList/project-list";
 import { firstProjects } from "../projects/page";
 import { BlogLink } from "../components/blog-link";
 
@@ -32,7 +32,7 @@ const universities = [
   },
 ];
 
-export default async function Page() {
+export default   function Page() {
   const thisYear = new Date().getFullYear();
   const yearSince2018 = thisYear - 2018;
   return (
@@ -41,7 +41,7 @@ export default async function Page() {
       <main className="flex flex-col  w-full flex-1 gap-8 text-secondary-900 dark:text-secondary-50">
         <div className="inline">
           <p className="text-secondary-900 dark:text-secondary-50 inline">
-            👋🏼 Hi, I'm a full time tech enthusiast graduated in{" "}
+            👋🏼 Hi, I&apos;m a full time tech enthusiast graduated in{" "}
             <strong>Interactive Communication</strong> and currently working at
             Mesalvo.
           </p>
@@ -82,10 +82,10 @@ export default async function Page() {
 
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
           <p>🥑🚀</p>
-          <h2> I'm a performance and accessibility advocate.</h2>
+          <h2> I&apos;m a performance and accessibility advocate.</h2>
         </hgroup>
         <p>
-          I'm a big fan of{" "}
+          I&apos;m a big fan of{" "}
           <strong>progressive enhancement and graceful degradation</strong> and
           I always try to make my websites as accessible as possible. Reaching a
           professional level in both SEO and performance is the key for a
