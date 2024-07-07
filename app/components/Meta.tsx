@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { metadata } from "../../lib/constants";
 
-const Meta = () => {
+function Meta() {
   return (
     <Head>
        <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32x32.png" />
@@ -31,6 +31,6 @@ const Meta = () => {
       <meta name="twitter:image:alt" content={metadata.title} />
     </Head>
   );
-};
+}
 
 export default Meta;

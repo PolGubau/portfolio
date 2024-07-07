@@ -1,6 +1,6 @@
 import { allBlogs, allProjects } from "contentlayer/generated";
  
-export default async function sitemap()  {
+export default function sitemap()  {
   const blogs = allBlogs.map((post) => ({
     url: `https://polgubau.com/${post.slug}`,
     lastModified: post.publishedAt,

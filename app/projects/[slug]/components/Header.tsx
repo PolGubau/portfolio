@@ -1,13 +1,12 @@
 "use client";
-import { ChevronDownLeft } from "assets/icons/ChevronDownLeft";
-import { Projects } from "contentlayer/generated";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { SiNpm } from "react-icons/si";
-import { TbBrandGithub, TbSearch } from "react-icons/tb";
-
-const Header = ({ project: p }: { project: Projects }) => {
+import { TbBrandGithub, TbChevronDownLeft, TbSearch } from "react-icons/tb";
+import { type Projects } from "contentlayer/generated";
+ 
+function Header({ project: p }: { project: Projects }) {
   function formatDate(date: string) {
     const fullDate = new Date(date).toLocaleString("en-us", {
       month: "long",
@@ -15,7 +14,7 @@ const Header = ({ project: p }: { project: Projects }) => {
       year: "numeric",
     });
 
-    return `${fullDate}`;
+    return fullDate;
   }
   return (
     <header className="flex flex-col gap-6   mb-8">
@@ -34,7 +33,7 @@ const Header = ({ project: p }: { project: Projects }) => {
               backgroundColor: p.color ?? "transparent",
             }}
           >
-            <div className={`flex flex-col px-6 py-6`}>
+            <div className="flex flex-col px-6 py-6">
               <div className="flex gap-4 items-center group">
                 {p.link ? (
                   <Link href={p.link} target="_blank">
@@ -66,11 +65,11 @@ const Header = ({ project: p }: { project: Projects }) => {
                 }}
               >
                 <p className="flex items-center">
-                  <ChevronDownLeft className="rotate-90" />
+                  <TbChevronDownLeft className="rotate-90" />
                   {formatDate(p.startedAt)}
                 </p>
                 <p className="flex items-center">
-                  <ChevronDownLeft />
+                  <TbChevronDownLeft />
                   {p.endedAt ? formatDate(p.endedAt) : "In Progress"}
                 </p>
               </div>
@@ -90,9 +89,7 @@ const Header = ({ project: p }: { project: Projects }) => {
           </header>
         </section>
         <nav className="w-full flex flex-wrap gap-4">
-          {p.link && (
-           
-              <Link
+          {p.link ? <Link
                 href={p.link}
                 title="Visit Project"
                 className="hover:brightness-90 flex-1 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center justify-center sm:justify-start h-full animate-expand-vertically"
@@ -105,11 +102,8 @@ const Header = ({ project: p }: { project: Projects }) => {
                 <span className="sr-only">Link to the project</span>
                 <TbSearch size={20} />
                 <span>Visit Project</span>
-              </Link>
-          )}
-          {p.githubLink && (
-       
-              <Link
+              </Link> : null}
+          {p.githubLink ? <Link
                 title="Link to Github Source"
                 href={p.githubLink}
                 className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
@@ -122,11 +116,8 @@ const Header = ({ project: p }: { project: Projects }) => {
                 <TbBrandGithub size={20} />
                 <span className="sr-only">Link to Github Source</span>
                 <span className="hidden md:block">View Source</span>
-              </Link>
-           )}
-          {p.npmLink && (
-         
-              <Link
+              </Link> : null}
+          {p.npmLink ? <Link
                 title="Link to NPM Package"
                 href={p.npmLink}
                 className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
@@ -139,12 +130,11 @@ const Header = ({ project: p }: { project: Projects }) => {
                 <SiNpm size={20} />
                 <span className="sr-only">Link to NPM</span>
                 <span className="hidden md:block">View package</span>
-              </Link>
-           )}
+              </Link> : null}
         </nav>
       </AnimatePresence>
     </header>
   );
-};
+}
 
 export default Header;

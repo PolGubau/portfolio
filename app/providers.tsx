@@ -2,13 +2,13 @@
 import { PoluiProvider, Toaster } from "pol-ui";
 import React from "react";
 
-const Providers = ({ children }) => {
+function Providers({ children }) {
   return (
     <PoluiProvider>
       <Toaster />
       {children}
     </PoluiProvider>
   );
-};
+}
 
-export default Providers;
+export {Providers};

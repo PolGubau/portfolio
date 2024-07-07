@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import { metadata } from "lib/constants";
-import MainSocials from "../Social/MainSocials";
+import MainSocials from "../Social/main-socials";
 import Avatar from "./avatar/avatar";
 
-const Header = () => {
+function Header() {
   return (
     <header className="flex flex-col md:flex-row gap-8 justify-between items-center mb-16">
       <Image
@@ -27,6 +27,6 @@ const Header = () => {
       <Avatar />
     </header>
   );
-};
+}
 
 export default Header;

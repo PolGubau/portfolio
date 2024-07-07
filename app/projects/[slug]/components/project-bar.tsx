@@ -1,15 +1,15 @@
 "use client";
-import { Projects } from "contentlayer/generated";
 import {
   AnimatePresence,
+  motion,
   useMotionValueEvent,
   useScroll,
-  motion,
 } from "framer-motion";
 import Link from "next/link";
 import { toast, useCopyToClipboard } from "pol-ui";
-import React from "react";
+import React, { useState } from "react";
 import { TbBrandGithub, TbBrandNpm, TbSearch, TbShare } from "react-icons/tb";
+import { type Projects } from "contentlayer/generated";
 
 interface ProjectBarProps {
   project: Projects;
@@ -17,21 +17,25 @@ interface ProjectBarProps {
 
 const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
   const { scrollY } = useScroll();
-  const [scroll, setScroll] = React.useState(0);
+  const [scroll, setScroll] = useState(0);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScroll(latest);
   });
   const { copy } = useCopyToClipboard();
 
-  const handleCopyUrl = () => {
-    copy(window.location.href);
-    toast("Copied to clipboard",{
+  const  handleCopyUrl =  () => {
+      copy(window.location.href) 
+      toast("Copied to clipboard", {
        dismissible: true,
       className:
         "bg-secondary-800 text-secondary-50 mb-16 3xl:mb-0 max-w-[90vw]",
-    });
-  };
+        
+      });
+  }
+
+     
+   
 
   return (
     <div className="fixed bottom-4 left-0 w-full flex justify-center">
@@ -54,14 +58,14 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
               {/* copy url button */}
               <li>
                 <button
+                  type='button'
                   className=" transition-all hover:bg-secondary-900/60 rounded-lg flex aspect-square p-2 text-secondary-900"
                   onClick={handleCopyUrl}
                 >
                   <TbShare size={20} />
                 </button>
               </li>
-              {project.npmLink && (
-                <Link
+              {project.npmLink ? <Link
                   href={project.npmLink}
                   title="Link to the NPM repository"
                   target="_blank"
@@ -70,11 +74,9 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
                   <li className=" transition-all hover:bg-secondary-900/60 rounded-lg flex aspect-square p-2 text-secondary-900">
                     <TbBrandNpm size={20} />
                   </li>
-                </Link>
-              )}
+                </Link> : null}
 
-              {project.githubLink && (
-                <Link
+              {project.githubLink ? <Link
                   href={project.githubLink}
                   title="Link to the Github repository"
                   target="_blank"
@@ -83,11 +85,9 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
                   <li className=" transition-all hover:bg-secondary-900/60 rounded-lg flex aspect-square p-2 text-secondary-900">
                     <TbBrandGithub size={20} />
                   </li>{" "}
-                </Link>
-              )}
+                </Link> : null}
 
-              {project.link && (
-                <Link
+              {project.link ? <Link
                   href={project.link}
                   title="Link to the project"
                   target="_blank"
@@ -102,8 +102,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
                   >
                     <TbSearch size={20} />
                   </li>{" "}
-                </Link>
-              )}
+                </Link> : null}
             </ul>
           </motion.div>
         )}
@@ -112,4 +111,5 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
   );
 };
 
-export default ProjectBar;
+export { ProjectBar };
+

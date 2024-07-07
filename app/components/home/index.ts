@@ -1,2 +1,2 @@
-export { default as Freelance } from './Freelance';
-export { default as ThreePhones } from './ThreePhones';
+export { default as HomeSkeleton } from './home-skeleton';
+export { default as ThreePhones } from './three-phones';

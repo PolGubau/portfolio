@@ -1,10 +1,10 @@
-import Header from "../components/Layout/Header";
-import { Badge } from "../components/Badge";
 import Image from "next/image";
-import ThreePhones from "../components/home/ThreePhones";
+import Header from "../components/Layout/header";
+import { Badge } from "../components/Badge";
+import ThreePhones from "../components/home/three-phones";
 import { ProjectsList } from "../components/Projects/ProjectList/ProjectList";
 import { firstProjects } from "../projects/page";
-import { BlogLink } from "../components/BlogLink";
+import { BlogLink } from "../components/blog-link";
 
 const imagesPhones = [
   {

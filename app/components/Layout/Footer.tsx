@@ -1,9 +1,9 @@
-import { metadata } from "lib/constants";
 import Link from "next/link";
 import React from "react";
-import MainSocials from "../Social/MainSocials";
+import { metadata } from "lib/constants";
+import MainSocials from "../Social/main-socials";
 
-const Footer = () => {
+function Footer() {
   return (
     <div className="flex flex-col items-center mt-24 mb-20 gap-6 text-neutral-700 dark:text-neutral-300 text-center justify-center md:justify-start md:text-left">
       <Link
@@ -26,9 +26,9 @@ const Footer = () => {
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
         </svg>
         Download my CV
       </Link>{" "}
@@ -45,6 +45,6 @@ const Footer = () => {
       </p>
     </div>
   );
-};
+}
 
 export default Footer;

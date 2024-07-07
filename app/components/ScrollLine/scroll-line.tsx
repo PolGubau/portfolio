@@ -2,7 +2,8 @@
 'use client'
 import { motion, useScroll } from 'framer-motion';
 import './ScrollLine.css';
-export const ScrollLine = () => {
+
+export function ScrollLine() {
   const { scrollYProgress } = useScroll();
  
   return (

@@ -1,13 +1,13 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { metadata as constants } from "../lib/constants";
 import { Poppins } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import NextTopLoader from "nextjs-toploader";
+import { metadata as constants } from "../lib/constants";
 import Sidebar from "./components/navbar";
 import { Footer } from "./components/Layout";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import GoTopButton from "./components/GoTopButton";
-import Providers from "./providers";
-import NextTopLoader from "nextjs-toploader";
+import GoTopButton from "./components/go-top-button";
+import {Providers} from "./providers";
 import { ScrollLine } from "./components/ScrollLine";
  
 export const metadata: Metadata = {
@@ -112,7 +112,7 @@ export const font = Poppins({
   weight: ["300", "400", "600", "800"],
 });
 
-export default function RootLayout({
+export function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

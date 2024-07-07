@@ -1,9 +1,9 @@
 import { ImageResponse } from "next/og";
-import { NextRequest } from "next/server";
+import { type NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-export async function GET(req: NextRequest) {
+export   function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const postTitle = searchParams.get("title");
 
@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
             background:
               "url(https://polgubau.com/assets/thumbnail.png) no-repeat center",
           }}
-        ></div>
+         />
         <p className="text-center">{postTitle}</p>
       </div>
     ),

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {
+interface Props {
   title: string;
   slug: string;
   backgroundColor?: string;
@@ -11,14 +11,14 @@ type Props = {
     src: string;
     alt: string;
   };
-};
+}
 
-const ProjectPreview = ({
+function ProjectPreview({
   title,
   image: { src, alt },
   slug,
   backgroundColor,
-}: Props) => {
+}: Props) {
   return (
     <div
       className="flex flex-col transition-all gap-1 group bg-transparent h-64 md:h-96 rounded-2xl overflow-hidden relative cursor-pointer hover:brightness-110"
@@ -51,6 +51,6 @@ const ProjectPreview = ({
       </Link>
     </div>
   );
-};
+}
 
 export default ProjectPreview;

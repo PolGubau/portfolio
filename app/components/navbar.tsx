@@ -2,6 +2,7 @@
 
 import { LayoutGroup } from "framer-motion";
 import NavItem from "./nav-item";
+
 const navItems = {
   "/": {
     name: "Home",

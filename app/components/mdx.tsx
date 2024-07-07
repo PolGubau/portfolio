@@ -1,28 +1,33 @@
 import * as React from "react";
-import Link from "next/link";
-import Image, { ImageProps } from "next/image";
+import Link, { type LinkProps } from "next/link";
+import Image, { type ImageProps } from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { Badge } from "./Badge";
 import { ThreePhones } from "./home";
-import { ArrowIcon, BlogLink } from "./BlogLink";
+import { ArrowIcon, BlogLink } from "./blog-link";
 
-const CustomLink = (props) => {
+interface CustomLinkProps extends Omit<LinkProps,'href'> {
+  children?: React.ReactNode;
+  className?: string;
+  href: string;
+}
+function CustomLink(props: CustomLinkProps) {
   const href = props.href;
 
-  if (href.startsWith("/")) {
+  if (String(href).startsWith("/")) {
     return (
-      <Link href={href} {...props}>
+      <Link {...props} href={props.href}>
         {props.children}
       </Link>
     );
   }
 
-  if (href.startsWith("#")) {
+  if (String(href).startsWith("#")) {
     return <Link {...props} />;
   }
 
   return <Link target="_blank" rel="noopener noreferrer" {...props} />;
-};
+}
 
 function RoundedImage({ ...props }: ImageProps) {
   return (
@@ -42,7 +47,12 @@ function Callout({
   );
 }
 
-function ProsCard({ title, pros }) {
+
+interface ProsConsProps {
+  title: string;
+  pros: string[];
+}
+function ProsCard({ title, pros }:ProsConsProps) {
   return (
     <div className="border border-emerald-200 dark:border-emerald-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
       <span>{title}</span>
@@ -70,8 +80,11 @@ function ProsCard({ title, pros }) {
     </div>
   );
 }
-
-function ConsCard({ title, cons }) {
+interface ConsCardProps {
+  title: string;
+  cons: string[];
+}
+function ConsCard({ title, cons }:ConsCardProps) {
   return (
     <div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
       <span>{title}</span>
@@ -96,7 +109,11 @@ function ConsCard({ title, cons }) {
   );
 }
 
-function At({ label, href }) {
+interface AtProps {
+  label: string;
+  href: string;
+}
+function At({ label, href }:AtProps) {
   return (
     <Link
       target="_blank"
@@ -109,16 +126,19 @@ function At({ label, href }) {
   );
 }
 
-function StyledLink({ href, name, children }) {
+
+interface StyledLinkProps extends Omit<CustomLinkProps,'className'>{
+   name: string;
+}
+function StyledLink(props:StyledLinkProps) {
   return (
     <CustomLink
-      title={name}
-      href={`${href}`}
+      {...props}
       className="w-full flex flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl justify-between p-4 md:p-6 gap-6 balance items-center group hover:brightness-125 transition-all text-neutral-900 dark:text-neutral-100 no_underline"
     >
       <div className="flex flex-col gap-2">
-        <span className="w-full font-semibold text-md md:text-lg ">{name}</span>
-        {children && <span className="w-full">{children}</span>}
+        <span className="w-full font-semibold text-md md:text-lg ">{props.name}</span>
+        {props.children ? <span className="w-full">{props.children}</span> : null}
       </div>
 
       <div className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
@@ -130,7 +150,7 @@ function StyledLink({ href, name, children }) {
 
 const components = {
   Image: RoundedImage,
-  StyledLink: StyledLink,
+  StyledLink,
   a: CustomLink,
   Callout,
   ProsCard,

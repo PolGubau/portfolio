@@ -2,13 +2,13 @@
 import Image from "next/image";
 import { largeProfileAvatar } from "../profileImageData";
 
-const Avatar = () => {
+function Avatar() {
   return (
     <div className=" bg-primary rounded-full">
       <Image
         placeholder={largeProfileAvatar}
         src="/images/me.png"
-        className={"shadow-xl rounded-full hidden md:flex z-30"}
+        className="shadow-xl rounded-full hidden md:flex z-30"
         alt="Pol Gubau Amores' profile image"
         width={150}
         height={150}
@@ -16,6 +16,6 @@ const Avatar = () => {
       />
     </div>
   );
-};
+}
 
 export default Avatar;

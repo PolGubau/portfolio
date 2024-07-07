@@ -1,4 +1,4 @@
-const { resolve } = require('node:path');
+ const { resolve } = require('node:path');
 
 const project = resolve(__dirname, 'tsconfig.json');
 
@@ -12,6 +12,17 @@ module.exports = {
    ],
   parserOptions: {
     project,
+  },
+  rules: {
+    
+
+    '@typescript-eslint/explicit-function-return-type': 'off',
+     'func-names': 'off',
+    'react/display-name': 'off',
+    'import/no-default-export': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    'react/function-component-definition': 'off',
+    'no-undef': 'off',
   },
   settings: {
     'import/resolver': {

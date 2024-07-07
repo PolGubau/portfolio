@@ -1,15 +1,15 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { Mdx } from "app/components/mdx";
 import { allBlogs } from "contentlayer/generated";
-import Link from "next/link";
-import SimilarBlogs from "../components/SimilarBlogs";
+import SimilarBlogs from "../components/similar-blogs";
 
 export const dynamic = "force-static";
-type Props = {
+interface Props {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+  searchParams: Record<string, string | string[] | undefined>;
+}
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
@@ -76,7 +76,7 @@ function formatDate(date: string) {
     year: "numeric",
   });
 
-  return `${fullDate}`;
+  return fullDate;
 }
 
 export default function Blog({ params }) {
@@ -93,7 +93,7 @@ export default function Blog({ params }) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(post.structuredData),
         }}
-      ></script>
+       />
       <Link
         href="/blog"
         className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"

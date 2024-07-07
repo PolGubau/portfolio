@@ -1,1 +1,1 @@
-export * from './ScrollLine';
+export * from './scroll-line';

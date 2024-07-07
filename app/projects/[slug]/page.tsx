@@ -1,27 +1,27 @@
-import { Metadata, ResolvingMetadata } from "next";
+import { type Metadata, type ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { Mdx } from "app/components/mdx";
 import { allProjects } from "contentlayer/generated";
-import SimilarProjects from "./components/similar-projects";
+import {SimilarProjects} from "./components/similar-projects";
+ import {ProjectBar} from "./components/project-bar";
 import Header from "./components/Header";
-import ProjectBar from "./components/ProjectBar";
-import Link from "next/link";
 
 export const dynamic = "force-static";
 
-type Props = {
+interface GenerateMetadataProps {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+  searchParams: Record<string, string | string[] | undefined>;
+}
 
 export async function generateMetadata(
-  { params }: Props,
+  { params }: GenerateMetadataProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
 
   const post = allProjects.find(
-    (post) => post.slug === `projects/${params.slug}`
+    (postIteration) => postIteration.slug === `projects/${params.slug}`
   );
   if (!post) {
     return {
@@ -73,8 +73,13 @@ export async function generateMetadata(
   };
 }
 
-export default function Blog({ params }) {
-  const p = allProjects.find((post) => post.slug === `projects/${params.slug}`);
+export default function Blog({ params }: {
+  params: {
+    slug: string;
+  };
+}) {
+  const slug = `projects/${String(params.slug)}`
+  const p = allProjects.find((post) => post.slug === slug);
 
   if (!p) {
     notFound();
@@ -88,7 +93,7 @@ export default function Blog({ params }) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(p.structuredData),
         }}
-      ></script>
+       />
       <Header project={p} />
       <div className="overflow-visible px-1">
         <Mdx code={p.body.code} />
@@ -101,7 +106,7 @@ export default function Blog({ params }) {
       >
         <span className="sr-only">Back to projects</span>← Back
       </Link>
-      {p.link && <ProjectBar project={p} />}{" "}
+      {p.link ? <ProjectBar project={p} /> : null}{" "}
     </section>
   );
 }

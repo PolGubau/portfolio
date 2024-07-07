@@ -4,7 +4,8 @@
     "dev": "next dev",
     "build": "next build",
     "build-only": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
   },
   "prettier": "pol-standard/prettier",
   "dependencies": {
