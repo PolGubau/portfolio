@@ -32,7 +32,9 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-  const orderedProjects = allProjects.sort((a, b) => {
+
+
+const orderedProjects = allProjects.sort((a, b) => {
   const today = new Date().toISOString().split("T")[0];
   const aEnded =  !a.endedAt ? today : a.endedAt || today 
   const bEnded = !b.endedAt ? today : b.endedAt || today;

@@ -40,9 +40,8 @@ const orderedProjects = allProjects.sort((a, b) => {
   if (aEnded > bEnded) return -1;
   return 0;
 });
-
-  const firstProjects = orderedProjects.slice(0, 4);
-export default   function Page() {
+const firstProjects = orderedProjects.slice(0, 4);
+export default function Page() {
   const thisYear = new Date().getFullYear();
   const yearSince2018 = thisYear - 2018;
   return (
