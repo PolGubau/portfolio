@@ -9,13 +9,12 @@ import Header from "./components/Header";
 
 export const dynamic = "force-static";
 
-interface GenerateMetadataProps {
+ 
+export async function generateMetadata(
+  { params }: {
   params: { slug: string };
   searchParams: Record<string, string | string[] | undefined>;
-}
-
-export async function generateMetadata(
-  { params }: GenerateMetadataProps,
+},
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
@@ -73,7 +72,7 @@ export async function generateMetadata(
   };
 }
 
-export default function Blog({ params }: {
+export default function Page({ params }: {
   params: {
     slug: string;
   };
