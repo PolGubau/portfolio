@@ -2,7 +2,7 @@ import * as React from "react";
 import Link, { type LinkProps } from "next/link";
 import Image, { type ImageProps } from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { Badge } from "./badge";
+import { Badge } from "./badge/badge";
 import { ThreePhones } from "./home";
 import { ArrowIcon, BlogLink } from "./blog-link";
 

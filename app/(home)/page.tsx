@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Badge } from "../components/badge";
- import Header from "../components/Layout/header";
+import { Badge } from "../components/badge/badge";
+ import Header from "../components/Layout/header/header";
  import ThreePhones from "../components/home/three-phones";
 import { ProjectsList } from "../components/Projects/ProjectList/project-list";
 import { firstProjects } from "../projects/page";

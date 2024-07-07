@@ -1,2 +1,4 @@
-export { default as Footer } from './footer';
-export { default as Header } from './header';
+export { default as avatar } from './avatar/avatar';
+export { default as footer } from './footer/footer';
+export { default as header } from './header/header';
+export * from './profile-image-data';
