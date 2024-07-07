@@ -3,8 +3,8 @@ import { Badge } from "../components/badge/badge";
  import Header from "../components/Layout/header/header";
  import ThreePhones from "../components/home/three-phones";
 import { ProjectsList } from "../components/Projects/ProjectList/project-list";
-import { firstProjects } from "../projects/page";
-import { BlogLink } from "../components/blog-link";
+ import { BlogLink } from "../components/blog-link";
+import { firstProjects } from "app/data/projects";
 
 const imagesPhones = [
   {

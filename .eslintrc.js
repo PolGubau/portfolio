@@ -23,6 +23,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     'react/function-component-definition': 'off',
     'no-undef': 'off',
+    'unicorn/filename-case': 'off',
   },
   settings: {
     'import/resolver': {

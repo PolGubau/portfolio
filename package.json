@@ -14,7 +14,7 @@
     "@vercel/speed-insights": "^1.0.2",
     "contentlayer": "^0.3.4",
     "framer-motion": "^10.16.4",
-    "next": "^14.0.1",
+    "next": "^14.2.4",
     "next-contentlayer": "^0.3.4",
     "nextjs-toploader": "^1.6.4",
     "pol-ui": "^2.1.1052",
@@ -81,9 +81,9 @@
   ],
   "contributors": [
     {
-       "name": "Pol Gubau Amores",
-    "email": "gubaupol@gmail.com",
-    "url": "https://polgubau.com"
+      "name": "Pol Gubau Amores",
+      "email": "gubaupol@gmail.com",
+      "url": "https://polgubau.com"
     }
   ],
   "icon": "https://polgubau.com/favicon.ico",
@@ -92,6 +92,7 @@
     {
       "type": "MIT",
       "url": "https://opensource.org/licenses/MIT"
-    }],
-    "readme": "README.md"
+    }
+  ],
+  "readme": "README.md"
 }
