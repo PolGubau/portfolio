@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { Badge } from "../components/badge/badge";
- import Header from "../components/Layout/header/header";
- import ThreePhones from "../components/home/three-phones";
+import { allProjects } from "contentlayer/generated";
+import Header from "../components/Layout/header/header";
 import { ProjectsList } from "../components/Projects/ProjectList/project-list";
- import { BlogLink } from "../components/blog-link";
-import { firstProjects } from "app/data/projects";
+import { Badge } from "../components/badge/badge";
+import { BlogLink } from "../components/blog-link";
+import ThreePhones from "../components/home/three-phones";
 
 const imagesPhones = [
   {
@@ -31,7 +31,17 @@ const universities = [
     href: "https://usal.es",
   },
 ];
+const orderedProjects = allProjects.sort((a, b) => {
+  const today = new Date().toISOString().split("T")[0];
+  const aEnded =  !a.endedAt ? today : a.endedAt || today 
+  const bEnded = !b.endedAt ? today : b.endedAt || today;
+  if(!aEnded || !bEnded) return 0;
+  if (aEnded < bEnded) return 1;
+  if (aEnded > bEnded) return -1;
+  return 0;
+});
 
+  const firstProjects = orderedProjects.slice(0, 4);
 export default   function Page() {
   const thisYear = new Date().getFullYear();
   const yearSince2018 = thisYear - 2018;

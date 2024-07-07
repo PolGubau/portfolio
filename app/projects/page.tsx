@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { allProjects } from "contentlayer/generated";
 import { ProjectsList } from "app/components/Projects/ProjectList/project-list";
-import { orderedProjects } from "app/data/projects";
+import { allProjects } from "contentlayer/generated";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -33,9 +32,18 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+  const orderedProjects = allProjects.sort((a, b) => {
+  const today = new Date().toISOString().split("T")[0];
+  const aEnded =  !a.endedAt ? today : a.endedAt || today 
+  const bEnded = !b.endedAt ? today : b.endedAt || today;
+  if(!aEnded || !bEnded) return 0;
+  if (aEnded < bEnded) return 1;
+  if (aEnded > bEnded) return -1;
+  return 0;
+});
 
-
-export default function BlogPage() {
+ 
+export default function Page() {
   return (
     <>
       <h1 className="font-medium md:font-semibold text-xl md:text-2xl mb-8 text-center md:text-start text-pretty ">
