@@ -5,7 +5,6 @@ import { poluiPlugin } from "pol-ui";
 export default {
   content: [
     "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
     "./content/**/*.mdx",
   ],
   theme: {

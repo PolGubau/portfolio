@@ -120,7 +120,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${font.className} transition-colors duration-200 w-full overflow-x-hidden`}
     >
       <body>
