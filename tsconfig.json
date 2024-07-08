@@ -31,7 +31,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
-, "postcss.config.ts"  ],
+    ".contentlayer/generated", 
+    "postcss.config.js", 
+    "tailwind.config.js"
+  ],
   "exclude": ["node_modules"]
 }

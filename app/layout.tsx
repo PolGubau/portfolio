@@ -9,6 +9,7 @@ import { Footer } from "./components/Layout";
 import GoTopButton from "./components/go-top-button";
 import {Providers} from "./providers";
 import { ScrollLine } from "./components/ScrollLine";
+import { Suspense } from "react";
  
 export const metadata: Metadata = {
   metadataBase: new URL(constants.links.website),
@@ -118,12 +119,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
+     <html
       lang="en"
       className={`${font.className} transition-colors duration-200 w-full overflow-x-hidden`}
     >
       <body>
         <Providers>
+          <SpeedInsights />
           <NextTopLoader color="#ff4" height={2} showSpinner={false} />
           <ScrollLine/>
           <main className="antialiased w-full flex  text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 min-h-screen">
@@ -137,7 +139,6 @@ export default function RootLayout({
         </Providers>
       </body>
 
-      <SpeedInsights />
-    </html>
+    </html> 
   );
 }

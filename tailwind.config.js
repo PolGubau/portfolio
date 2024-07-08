@@ -1,9 +1,9 @@
-import type { Config } from "tailwindcss";
 import typography from "@tailwindcss/typography";
 import { poluiPlugin } from "pol-ui";
 
 export default {
   content: [
+    "./app/**.{js,ts,jsx,tsx}",
     "./app/**/*.{ts,tsx}",
     "./content/**/*.mdx",
     "node_modules/pol-ui/lib/**/*.js",
@@ -84,4 +84,4 @@ export default {
     }),
   ],
   darkMode: "media",
-} satisfies Config;
+}  
