@@ -260,11 +260,10 @@ strong {
             padding: 0px 0;
             
           }
-          
-          80% {
-            opacity: 1;
-            transform: rotateX(0deg);
-            padding: 0px 0;
+    80% {
+      opacity: 1;
+      transform: rotateX(0deg);
+      padding: 0px 0;
     }
     100% {
       opacity: 0.5;
@@ -283,3 +282,27 @@ strong {
     animation-range: cover 10% cover 100%;
   }
 }
+
+  @keyframes toLeft {
+    from {
+      opacity: 0;
+      scale: 85%;
+      /* margin-right: 200px; */
+      max-height: 20%;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+      /* margin-right: 0px;       */
+      max-height: 100%;
+    }
+  }
+  .project-cascade {
+    view-timeline: --slight;
+    view-timeline-axis: block;
+    animation-timeline: --slight;
+    animation-name: toLeft;
+    animation-range: entry 25% cover 70%;
+    animation-fill-mode: both;
+  }
+   
