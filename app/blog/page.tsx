@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 
 
-export default function BlogPage() {
+export default function Page() {
   const sortBlogs = (blogs: Blog[]) =>
   blogs.sort((a, b) => {
     const dateA = new Date(a.publishedAt);

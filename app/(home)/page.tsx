@@ -6,7 +6,7 @@ import { Badge } from "../components/badge/badge";
 import { BlogLink } from "../components/blog-link";
 import ThreePhones from "../components/home/three-phones";
 
-const imagesPhones = [
+ const imagesPhones = [
   {
     src: "/images/other/coiae.png",
   },
@@ -40,8 +40,8 @@ const orderedProjects = allProjects.sort((a, b) => {
   if (aEnded > bEnded) return -1;
   return 0;
 });
-const firstProjects = orderedProjects.slice(0, 4);
 export default function Page() {
+  const firstProjects = orderedProjects.slice(0, 4); 
   const thisYear = new Date().getFullYear();
   const yearSince2018 = thisYear - 2018;
   return (
@@ -54,7 +54,6 @@ export default function Page() {
             <strong>Interactive Communication</strong> and currently working at
             Mesalvo.
           </p>
-          {/* <Badge href="https://mesalvo.com/en" label="Mesalvo." /> */}
         </div>
         <div className="flex flex-col gap-4">
           <p>
@@ -102,7 +101,6 @@ export default function Page() {
         </p>
         <Image
           className="rounded-xl object-cover w-auto h-auto show-animation "
-          style={{}}
           alt="A preview of the performance stats in my technical blog"
           title="A preview of the performance stats in my technical blog"
           src="/images/other/blog-preview.png"
@@ -133,3 +131,6 @@ export default function Page() {
     </section>
   );
 }
+
+
+ 

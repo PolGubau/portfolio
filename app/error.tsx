@@ -1,15 +1,15 @@
 "use client";
 
 import { Button } from "pol-ui";
- 
-export function errorComponent ({
-  error,
+
+export default function ErrorComponent({
+   error,
   reset,
 }: {
   error: Error;
-  reset: () => void;
-}) {
- 
+    reset: () => void;
+  }) {
+
 
   return (
     <div className="flex text-center w-full flex-col gap-4 items-center justify-center">

@@ -78,8 +78,7 @@ function formatDate(date: string) {
 
   return fullDate;
 }
-
-export default function Blog({ params }: {
+export default function Page({ params }: {
   params: {
     slug: string;
   };

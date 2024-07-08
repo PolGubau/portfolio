@@ -111,9 +111,9 @@ export const font = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "600", "800"],
 });
+export default function RootLayout({
 
-export function RootLayout({
-  children,
+   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
