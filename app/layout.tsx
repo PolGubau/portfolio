@@ -9,7 +9,6 @@ import { Footer } from "./components/Layout";
 import GoTopButton from "./components/go-top-button";
 import {Providers} from "./providers";
 import { ScrollLine } from "./components/ScrollLine";
-import { Suspense } from "react";
  
 export const metadata: Metadata = {
   metadataBase: new URL(constants.links.website),
