@@ -9,12 +9,12 @@ import Header from "./components/Header";
 
 export const dynamic = "force-static";
 
- 
+interface GenerateMetadataProps {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 export async function generateMetadata(
-  { params }: {
-  params: { slug: string };
-  searchParams: Record<string, string | string[] | undefined>;
-},
+  { params }: GenerateMetadataProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params

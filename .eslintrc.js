@@ -14,10 +14,8 @@ module.exports = {
     project,
   },
   rules: {
-    
-
     '@typescript-eslint/explicit-function-return-type': 'off',
-     'func-names': 'off',
+    'func-names': 'off',
     'react/display-name': 'off',
     'import/no-default-export': 'off',
     '@typescript-eslint/no-floating-promises': 'off',

@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
 };
 
-
-const orderedProjects = allProjects.sort((a, b) => {
+export default function Page() {
+  const orderedProjects = allProjects.sort((a, b) => {
   const today = new Date().toISOString().split("T")[0];
   const aEnded =  !a.endedAt ? today : a.endedAt || today 
   const bEnded = !b.endedAt ? today : b.endedAt || today;
@@ -43,9 +43,6 @@ const orderedProjects = allProjects.sort((a, b) => {
   if (aEnded > bEnded) return -1;
   return 0;
 });
-
- 
-export default function Page() {
   return (
     <>
       <h1 className="font-medium md:font-semibold text-xl md:text-2xl mb-8 text-center md:text-start text-pretty ">

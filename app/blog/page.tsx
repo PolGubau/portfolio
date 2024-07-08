@@ -34,14 +34,15 @@ export const metadata: Metadata = {
   },
 };
 
-const sortBlogs = (blogs: Blog[]) =>
+
+
+export default function BlogPage() {
+  const sortBlogs = (blogs: Blog[]) =>
   blogs.sort((a, b) => {
     const dateA = new Date(a.publishedAt);
     const dateB = new Date(b.publishedAt);
     return dateB.getTime() - dateA.getTime();
   });
-
-export default function BlogPage() {
   return (
     <>
       <h1 className="font-semibold text-2xl mb-8 text-center md:text-start text-pretty">
