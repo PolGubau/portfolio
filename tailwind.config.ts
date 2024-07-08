@@ -6,6 +6,7 @@ export default {
   content: [
     "./app/**/*.{ts,tsx}",
     "./content/**/*.mdx",
+    "node_modules/pol-ui/lib/**/*.js",
   ],
   theme: {
     extend: {
@@ -50,9 +51,7 @@ export default {
       },
     },
   },
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
+ 
   plugins: [
     typography,
     poluiPlugin({
