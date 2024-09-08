@@ -1,8 +1,7 @@
 import "./global.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import NextTopLoader from "nextjs-toploader";
+ import NextTopLoader from "nextjs-toploader";
 import { metadata as constants } from "../lib/constants";
 import Sidebar from "./components/navbar";
 import { Footer } from "./components/Layout";
@@ -124,8 +123,7 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          <SpeedInsights />
-          <NextTopLoader color="#ff4" height={2} showSpinner={false} />
+           <NextTopLoader color="#ff4" height={2} showSpinner={false} />
           <ScrollLine/>
           <main className="antialiased w-full flex  text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 min-h-screen">
             <div className="mt-8 mb-20 flex-auto flex flex-col w-full px-8 md:px-10 max-w-4xl md:mx-auto">
