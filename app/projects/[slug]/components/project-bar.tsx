@@ -57,7 +57,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
 
 
               {project.audio.length>0 && (
-              <audio controls>
+              <audio controls className='hidden md:flex'>
                 <track kind="captions" />
                 {project.audio.map((audioSrc) => {
                   const type = audioSrc.split('.').pop()??'mp3'
