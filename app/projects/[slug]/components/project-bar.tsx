@@ -56,7 +56,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
             </h2>
 
 
-              {project.audio?.length>0 && (
+              {project.audio.length>0 && (
               <audio controls>
                 <track kind="captions" />
                 {project.audio.map((audioSrc) => {

@@ -16,7 +16,7 @@ function SimilarProjects({
       (post) => post.slug !== `projects/${slug}`
     );
     const similarProjects = otherProjects.filter((post) =>
-      post.tech.some((t) => tech?.includes(t))
+      post.tech.some((t) => tech.includes(t))
     );
 
     if (similarProjects.length > 3) {
