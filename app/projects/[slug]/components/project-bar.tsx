@@ -56,13 +56,15 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
             </h2>
 
 
-              {project.audio && (
-                <audio controls>
-                  {project.audio.map((audioSrc, index) => (
-                    <source key={index} src={audioSrc} type={`audio/${
-                      audioSrc.split('.').pop()
-                    }`} />
-                  ))}
+              {project.audio?.length>0 && (
+              <audio controls>
+                <track kind="captions" />
+                {project.audio.map((audioSrc) => {
+                  const type = audioSrc.split('.').pop()??'mp3'
+                  const audioType = `audio/${type}`;
+                  return (
+                    <source key={audioSrc} src={audioSrc} type={audioType} />
+                  )})}
 
                   Your browser does not support the audio element.
                 </audio>
