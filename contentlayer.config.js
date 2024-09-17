@@ -21,7 +21,7 @@ const computedFields = {
       dateModified: doc.publishedAt,
       description: doc.summary,
       image: doc.cover
-        ? `https://polgubau.com/images/${doc.title}/${doc.cover}`
+        ? `https://polgubau.com/media/${doc.title}/${doc.cover}`
         : `https://polgubau.com/og?title=${doc.title}`,
       url: `https://polgubau.com/projects/${doc._raw.flattenedPath}`,
       author: {
@@ -68,7 +68,6 @@ export const Project = defineDocumentType(() => ({
     npmLink: {
       type: "string",
     },
-
     cover: {
       required: true,
       type: "string",
@@ -78,9 +77,19 @@ export const Project = defineDocumentType(() => ({
       required: true,
     },
     tech: {
-      type: "string",
-      list: true,
+     default: [],
+      type: "list",
+      of: {
+        type: "string",
+      },
     },
+    audio: {
+      default: [],
+      type: "list",
+      of: {
+        type: "string",
+      },
+    }
   },
   computedFields,
 }));

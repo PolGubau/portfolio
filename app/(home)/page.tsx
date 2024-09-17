@@ -8,13 +8,13 @@ import ThreePhones from "../components/home/three-phones";
 
  const imagesPhones = [
   {
-    src: "/images/other/coiae.png",
+    src: "/media/other/coiae.png",
   },
   {
-    src: "/images/other/santJordi.png",
+    src: "/media/other/santJordi.png",
   },
   {
-    src: "/images/other/gymZ.png",
+    src: "/media/other/gymZ.png",
   },
 ];
 const universities = [
@@ -103,7 +103,7 @@ export default function Page() {
           className="rounded-xl object-cover w-auto h-auto show-animation "
           alt="A preview of the performance stats in my technical blog"
           title="A preview of the performance stats in my technical blog"
-          src="/images/other/blog-preview.png"
+          src="/media/other/blog-preview.png"
           width={800}
           height={600}
         />

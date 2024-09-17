@@ -54,6 +54,20 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
             <h2 className="text-black text-2xl font-semibold pl-2">
               {project.title}
             </h2>
+
+
+              {project.audio && (
+                <audio controls>
+                  {project.audio.map((audioSrc, index) => (
+                    <source key={index} src={audioSrc} type={`audio/${
+                      audioSrc.split('.').pop()
+                    }`} />
+                  ))}
+
+                  Your browser does not support the audio element.
+                </audio>
+              )}
+
             <ul className="flex gap-2 items-center">
               {/* copy url button */}
               <li>

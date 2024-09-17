@@ -43,7 +43,7 @@ export async function generateMetadata(
     slug,
   } = post;
   const ogImage = cover
-    ? `https://polgubau.com/images/${slug}/${cover}`
+    ? `https://polgubau.com/media/${slug}/${cover}`
     : `https://polgubau.com/og?title=${title}`;
   const previousImages = (await parent).openGraph?.images ?? [];
 

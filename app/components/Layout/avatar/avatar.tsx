@@ -7,7 +7,7 @@ function Avatar() {
     <div className=" bg-primary rounded-full">
       <Image
         placeholder={largeProfileAvatar}
-        src="/images/me.png"
+        src="/media/me.png"
         className="shadow-xl rounded-full hidden md:flex z-30"
         alt="Pol Gubau Amores' profile image"
         width={150}

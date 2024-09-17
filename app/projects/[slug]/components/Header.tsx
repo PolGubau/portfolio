@@ -81,7 +81,7 @@ function Header({ project: p }: { project: Projects }) {
               }}
               title={`Cover Image for the project ${p.title}`}
               className="absolute -top-16 -right-60 md:-right-40 opacity-50 md:opacity-100"
-              src={`/images/${p.slug}/${p.cover}`}
+              src={`/media/${p.slug}/${p.cover}`}
               alt={p.title}
               width={500}
               height={500}

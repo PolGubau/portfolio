@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className="flex flex-col md:flex-row gap-8 justify-between items-center mb-16">
       <Image
-        src="/images/me.png"
+        src="/media/me.png"
         className=" rounded-3xl flex md:hidden bg-primary   "
         alt="Pol Gubau Amores' profile image"
         title="Pol Gubau Amores' profile image"
