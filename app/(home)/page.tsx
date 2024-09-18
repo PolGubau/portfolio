@@ -46,7 +46,7 @@ export default function Page() {
   return (
     <section className="overflow-visible">
       <Header />
-      <main className="flex flex-col  w-full flex-1 gap-8 text-secondary-900 dark:text-secondary-50">
+      <main className="flex flex-col w-full flex-1 gap-8 text-secondary-900 dark:text-secondary-50">
         <div className="inline">
           <p className="text-secondary-900 dark:text-secondary-50 inline">
             👋🏼 Hi, I&apos;m a full time tech enthusiast graduated in{" "}

@@ -6,7 +6,7 @@ import Avatar from "../avatar/avatar";
   
 function Header() {
   return (
-    <header className="flex flex-col md:flex-row gap-8 justify-between items-center mb-16">
+    <header className="flex flex-col md:flex-row gap-8 justify-between items-center mb-8">
       <Image
         src="/media/me.png"
         className=" rounded-3xl flex md:hidden bg-primary   "
