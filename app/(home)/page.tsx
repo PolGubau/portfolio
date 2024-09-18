@@ -2,8 +2,7 @@ import Image from "next/image";
 import { allProjects } from "contentlayer/generated";
 import Header from "../components/Layout/header/header";
 import { ProjectsList } from "../components/Projects/ProjectList/project-list";
-import { Badge } from "../components/badge/badge";
-import { BlogLink } from "../components/blog-link";
+ import { BlogLink } from "../components/blog-link";
 import ThreePhones from "../components/home/three-phones";
 
  const imagesPhones = [
@@ -17,20 +16,20 @@ import ThreePhones from "../components/home/three-phones";
     src: "/media/other/gymZ.png",
   },
 ];
-const universities = [
-  {
-    name: "Autònoma de Barcelona, Spain",
-    href: "https://uab.cat",
-  },
-  {
-    name: "Linnaeus University, Sweden",
-    href: "https://lnu.se/en/",
-  },
-  {
-    name: "Universidad de Salamanca, Spain",
-    href: "https://usal.es",
-  },
-];
+// const universities = [
+//   {
+//     name: "Autònoma de Barcelona, Spain",
+//     href: "https://uab.cat",
+//   },
+//   {
+//     name: "Linnaeus University, Sweden",
+//     href: "https://lnu.se/en/",
+//   },
+//   {
+//     name: "Universidad de Salamanca, Spain",
+//     href: "https://usal.es",
+//   },
+// ];
 const orderedProjects = allProjects.sort((a, b) => {
   const today = new Date().toISOString().split("T")[0];
   const aEnded =  !a.endedAt ? today : a.endedAt || today 
@@ -59,7 +58,9 @@ export default function Page() {
           <p>
             With +{yearSince2018} years of experience, I have a strong
             background in web development and have worked from small websites to{" "}
-            <strong>large-scale web applications</strong>. I started my career
+            <strong>large-scale web applications</strong>.
+</p>            
+            {/* I started my career
             as graphic designer thanks to my <strong>Arts Bachelor</strong>{" "}
             degree. Then I had the opportunity to attend universities such as:{" "}
           </p>
@@ -69,7 +70,7 @@ export default function Page() {
                 <Badge href={university.href} label={university.name} />
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
         <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
           <BlogLink slug="blog/bio" name="My biography and career" />

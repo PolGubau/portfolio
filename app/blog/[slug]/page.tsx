@@ -89,7 +89,7 @@ export default function Page({ params }: {
   }
 
   return (
-    <section className="  w-full ">
+    <section className="w-full ">
       <script
         type="application/ld+json"
         suppressHydrationWarning
