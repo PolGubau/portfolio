@@ -4,7 +4,7 @@ export default function Loading() {
   const array = Array.from({ length: 5 }, (_, i) => i + 1);
   return (
     <>
-     <h1 className="font-semibold text-2xl mb-8 text-center md:text-start text-pretty">
+ <h1 className="font-medium md:font-semibold text-xl md:text-2xl mb-8 text-center md:text-start text-pretty ">
         Some thoughts written down ✏️
       </h1>
       <ul className="flex flex-col gap-4 justify-center">

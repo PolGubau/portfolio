@@ -108,7 +108,7 @@ export const viewport = {
 };
 export const font = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "800"],
+  weight: ["300", "400", "600"],
 });
 export default function RootLayout({
 
