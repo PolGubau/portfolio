@@ -45,7 +45,9 @@ export const Project = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
-
+ available: {
+      type: "boolean",
+     },
     startedAt: {
       type: "string",
       required: true,

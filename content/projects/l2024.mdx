@@ -1,0 +1,109 @@
+---
+title: "L2024"
+startedAt: "2024-01-25"
+endedAt: "2024-09-29"
+category: "web"
+color: "#df2937"
+cover: "0.webp"
+available: true
+
+summary: "Web project to illustrate a personal challenge of walking over all Metro stations in Barcelona tube network in a year."
+
+githubLink: https://github.com/PolGubau/l2024
+link: l2024.vercel.app
+tech: 
+  - React
+  - Tailwind CSS
+  - React Icons
+  - Eslint 
+  - Typescript
+  - Vite
+---
+
+# L2024 Project
+
+## The Story
+
+L2024 is a web project to illustrate a personal challenge of walking over all Metro stations in Barcelona tube network in a year. The project is named after the year 2024, when the challenge was done.
+
+<div className="flex -gap-32 p-8"> 
+  <Image
+    alt="Stickies notes mobile mockup image"
+    width={200}
+    height={400}
+    className="rounded-xl h-full max-h-[400px object-contain show-animation -rotate-12"
+    src="/media/projects/l2024/1.webp"
+  />
+  <Image
+    alt="Stickies notes mobile mockup image"
+    width={200}
+    height={400}
+    className="rounded-xl h-full max-h-[400px] object-contain show-animation rotate-12"
+    src="/media/projects/l2024/3.webp"
+  />
+</div>
+
+
+The challenge started as a personal goal to walk more and discover the city with <At label='Marcos Rayo' href='https://www.linkedin.com/in/marcos-rayo-garc%C3%ADa-308342308/'/>. So we scheduled each last Saturday of the month to walk over a different line of the Metro network but in the street level. The project was born to keep track of the progress and share it with friends and family.
+
+### People involved
+
+The best part of the challenge was the people involved, we shared the activity with multiple friends and they came in different dates, so each metro line has converted into a new and interesant day, not just because the people but because everyone that has been part off the completion.
+
+
+## The Website 
+
+Personally, the best part of the challenge has been recording our GPS activity while walking and take a photo in each stop, with the goal of creating a website where to share our activity.
+
+The project was built with **React**, **Tailwind CSS**, and **Typescript**. 
+
+I exported each route in KMP format from different sources as multiple phone apps and Google Maps, then using <a href='https://gpx.studio/'>GPX Studio</a> I edited the incorrect lines, the missing references and the points of interest. Once there I exported the lines in GPX and converted it into GeoJson, a format that makes the map manipulation easier in JavaScript.
+The results are geometry points in 3 dimensions and then a line connects all them.
+```json
+"geometry": {
+  "type": "LineString",
+  "coordinates": [
+    [2.119049, 41.398776, 129.8],
+    [2.119456, 41.399061, 131.8],
+    [2.119314, 41.399147, 132],
+    [2.119277, 41.399126, 132],
+    [2.119186, 41.399148, 131.8],
+    [2.11927, 41.399069, 131.5],
+    [2.119327, 41.399108, 131.8],
+```
+<small>Example of Coordinates</small>
+
+This Jsons are exported into a typescript file with some metadata of the line used later for UX purposes:
+```typescript
+export const linesData: LineType[] = [
+{
+    id: "L1",
+    gpx: line1,
+    metadata: {
+      title: "L1",
+      transport: "metro",
+      subtitle: "Hospital de Bellvitge / Fondo",
+      color: "#df2937",
+      distance: 29.64,
+      metro_distance: 20.2,
+      stations: 30,
+      timeWalking: "06:56:45",
+      velocity: 3.38,
+      dateTime: "2024-02-03T09:44:01.928Z",
+      time: "04:42:45",
+    },
+  },
+  {
+    id: "L2",
+    gpx: line2,
+    metadata: {
+      title: "L2",
+      subtitle: "Paral·lel / Badalona Pompeu Fabra",
+      timeWalking: "04:04:00",
+      distance: 17.18,
+    ...},
+  ...}
+...]
+      ```
+
+          
