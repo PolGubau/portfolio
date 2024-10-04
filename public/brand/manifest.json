@@ -3,9 +3,9 @@
   "dir": "auto",
   "background_color": "#ededed",
   "display": "standalone",
-  "start_url": "https://polgubau.com",
-  "scope": "https://polgubau.com",
-  "id": "/UScGRN52vWrGW3SGFLVt",
+  "start_url": "/",
+  "scope": "/",
+  "id": "com.polgubau.portfolio",
   "orientation": "any",
   "lang": "en",
   "prefer_related_applications": false,
@@ -76,7 +76,7 @@
       "url": "/?pwaprotocolredirect=%s"
     },
     {
-      "protocol": "web+polgubauamores",
+      "protocol": "web+polgubau",
       "url": "/?pwaprotocolredirect=%s"
     }
   ],

@@ -6,7 +6,6 @@ function Meta() {
     <Head>
        <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16x16.png" />
-      <link rel="manifest" href="/brand/manifest.json" />
       <link rel="mask-icon" href="/brand/safari-pinned-tab.svg" color="#131313" />
       <link rel="shortcut icon" href="/brand/favicon.ico" />
       <meta name="msapplication-TileColor" content="#ff4" />

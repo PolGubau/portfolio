@@ -40,7 +40,6 @@ export const metadata: Metadata = {
   keywords: constants.tags,
   publisher: constants.title,
   creator: constants.title,
-  manifest: "/brand/manifest.json",
   verification: {
     google: "google3c76d94f17d4b233",
   },
