@@ -10,8 +10,9 @@
   "prettier": "pol-standard/prettier",
   "dependencies": {
     "@next/eslint-plugin-next": "^14.2.4",
+    "@serwist/next": "^9.0.9",
     "@vercel/edge-config": "^0.4.1",
-     "contentlayer": "^0.3.4",
+    "contentlayer": "^0.3.4",
     "framer-motion": "^10.16.4",
     "next": "^14.2.4",
     "next-contentlayer": "^0.3.4",
@@ -35,6 +36,7 @@
     "eslint": "^8.6.0",
     "pol-standard": "^0.0.1",
     "postcss": "^8.4.39",
+    "serwist": "^9.0.9",
     "tailwindcss": "^3.4.4",
     "typescript": "5.2.2"
   },

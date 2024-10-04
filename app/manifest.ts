@@ -1,6 +1,10 @@
 import type { MetadataRoute } from 'next'
   
+
+
+
 export default function manifest(): MetadataRoute.Manifest {
+ 
   return {
   theme_color: "#facc15",
   dir: "auto",

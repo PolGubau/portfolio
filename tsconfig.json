@@ -17,6 +17,10 @@
     "paths": {
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
+    "types": [
+            "@serwist/next/typings"
+
+    ],
     "incremental": true,
     "plugins": [
       {
@@ -25,6 +29,10 @@
     ],
     "strictNullChecks": true
   },  
+   "lib": [
+       // Add this! Doing so adds WebWorker and ServiceWorker types to the global.
+      "webworker"
+    ],
   "extends": "pol-standard/typescript/node20",
   "include": [
     "next-env.d.ts",
@@ -35,5 +43,5 @@
     "postcss.config.js", 
     "tailwind.config.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules","public/sw.js"]
 }

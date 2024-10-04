@@ -8,38 +8,49 @@ import { Footer } from "./components/Layout";
 import GoTopButton from "./components/go-top-button";
 import {Providers} from "./providers";
 import { ScrollLine } from "./components/ScrollLine";
- 
+import { dir } from "console";
+
+// 
+const APP_NAME = constants.title;
+//  
+const APP_DEFAULT_TITLE = `${APP_NAME} - Frontend Developer and UX Designer`;
+const APP_TITLE_TEMPLATE = `%s | ${APP_NAME}`;
+const APP_DESCRIPTION = constants.description;
 export const metadata: Metadata = {
   metadataBase: new URL(constants.links.website),
   title: {
-    default: `${constants.title} - Frontend Developer and UX Designer`,
-    template: `%s | ${constants.title}`,
+    default: APP_DEFAULT_TITLE,
+    template: APP_TITLE_TEMPLATE,
   },
   alternates: {
     canonical: "/",
   },
-  description: constants.description,
-  applicationName: constants.title,
-  openGraph: {
-    title: constants.title,
-    description: constants.description,
+  applicationName: APP_NAME,
+ 
+  formatDetection: {
+    telephone: false,
+  },
+  description: APP_DESCRIPTION,
+   openGraph: {
+    title: APP_NAME,
+    description: APP_DESCRIPTION,
     url: constants.links.website,
-    siteName: constants.title,
+    siteName: APP_NAME,
     locale: "en_US",
     images: [
       {
         url: `${constants.links.website}/brand/thumbnail.png`,
         width: 1920,
         height: 1080,
-        alt: `${constants.title}' website preview`,
+        alt: `${APP_NAME}' website preview`,
       },
     ],
     type: "website",
   },
-  generator: constants.title,
+  generator: APP_NAME,
   keywords: constants.tags,
-  publisher: constants.title,
-  creator: constants.title,
+  publisher: APP_NAME,
+  creator: APP_NAME,
   verification: {
     google: "google3c76d94f17d4b233",
   },
@@ -107,7 +118,7 @@ export const viewport = {
 };
 export const font = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
+  weight: ["400", "600"],
 });
 export default function RootLayout({
 
@@ -117,7 +128,7 @@ export default function RootLayout({
 }>) {
   return (
      <html
-      lang="en"
+      lang="en" dir="ltr"
       className={`${font.className} transition-colors duration-200 w-full overflow-x-hidden`}
     >
       <body>

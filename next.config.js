@@ -1,5 +1,10 @@
 const { get } = require("@vercel/edge-config");
 const { withContentlayer } = require("next-contentlayer");
+ const {
+  PHASE_DEVELOPMENT_SERVER,
+  PHASE_PRODUCTION_BUILD,
+} = require("next/constants");
+
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,11 +15,27 @@ const nextConfig = {
       return [];
     }
   },
-  headers() {
+  async headers() {
     return [
       {
         source: "/(.*)",
         headers: securityHeaders,
+      },{
+        source: '/service-worker.js',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/javascript; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self'",
+          },
+        ],
       },
     ];
   },
@@ -67,4 +88,21 @@ const securityHeaders = [
   },
 ];
 
-module.exports = withContentlayer(nextConfig);
+const baseConfig = withContentlayer(nextConfig);
+
+
+
+ module.exports = async (phase) => {
+  
+  if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
+    const withSerwist = (await import("@serwist/next")).default({
+      // Note: This is only an example. If you use Pages Router,
+      // use something else that works, such as "service-worker/index.ts".
+      swSrc: "app/sw.ts",
+      swDest: "public/sw.js",
+    });
+    return withSerwist(baseConfig);
+  }
+
+  return baseConfig;
+};
