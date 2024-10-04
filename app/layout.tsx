@@ -8,8 +8,7 @@ import { Footer } from "./components/Layout";
 import GoTopButton from "./components/go-top-button";
 import {Providers} from "./providers";
 import { ScrollLine } from "./components/ScrollLine";
-import { dir } from "console";
-
+ 
 // 
 const APP_NAME = constants.title;
 //  
