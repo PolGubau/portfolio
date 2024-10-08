@@ -45,7 +45,7 @@ export function AnimatedHeading({
             }, ref);
 
             return () => {
-                ctx?.revert();
+                ctx.revert();
             };
         }
     }, [isReady]);

@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { AnimatedHeading } from "app/components/animated-heading";
 import MainSocials from "app/components/Social/main-socials";
 import { metadata } from "lib/constants";
-import Image from "next/image";
 import Avatar from "../avatar/avatar";
    
 function Header() {

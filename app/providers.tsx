@@ -53,7 +53,7 @@ const firstLayer = useRef<HTMLDivElement | null>(null);
       <Toaster />
       {children} 
 
-         <div ref={firstLayer} className="fixed inset-0 z-50 translate-x-full overflow-hidden bg-secondary-50 dark:bg-secondary-900" />
+         <div ref={firstLayer} className="fixed inset-0 z-40 translate-x-full overflow-hidden bg-secondary-50 dark:bg-secondary-900" />
     </TransitionRouter>
   </PoluiProvider>
   );
