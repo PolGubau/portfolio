@@ -56,10 +56,13 @@ html {
   @apply m-0;
 }
 
+.prose h1{
+  @apply font-bold text-xl md:text-3xl;
+}
 .prose h2,
 h3,
 h4 {
-  @apply font-semibold;
+  @apply font-semibold text-lg md:text-2xl;
 }
 
 .prose > :first-child {

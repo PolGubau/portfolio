@@ -17,11 +17,11 @@ function Header() {
         />
       <div className="flex flex-col max-md:gap-6 md:gap-3">
         <AnimatedHeading className="text-center flex flex-col gap-4 ">
-          <h1 className="overflow-hidden text-4xl sm:text-5xl leading-[.85]">
+          <h1 className="overflow-hidden text-3xl sm:text-4xl md:text-5xl leading-[.85]">
             <span className="block">{metadata.longName}</span>
           </h1>
           <h2 className="overflow-hidden md:pb-2 opacity-75">
-            <span className="block text-xl sm:text-2xl  leading-[.85]">{metadata.slogan}</span>
+            <span className="block text-md sm:text-xl md:text-2xl  leading-[.85]">{metadata.slogan}</span>
           </h2>
           </AnimatedHeading>
         

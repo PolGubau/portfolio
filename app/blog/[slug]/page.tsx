@@ -103,7 +103,7 @@ export default function Page({ params }: {
       >
         ← Back
       </Link>
-      <h2 className="font-semibold text-2xl mt-4 balance">{post.title}</h2>
+      <h1 className="font-semibold text-2xl mt-4 balance">{post.title}</h1>
       <p className="text-sm text-neutral-600 dark:text-neutral-400">
         {formatDate(post.publishedAt)}
       </p>
