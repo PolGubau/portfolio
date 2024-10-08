@@ -16,12 +16,12 @@ function Header() {
             height={150}
         />
       <div className="flex flex-col gap-4">
-         <AnimatedHeading className="relative z-10 text-5xl leading-[.85] text-white mix-blend-difference lg:text-xl lg:leading-[.85]">
-          <h1 className="overflow-hidden px-2">
-            <span className="block text-5xl">{metadata.longName}</span>
+         <AnimatedHeading className="text-center">
+          <h1 className="overflow-hidden text-4xl sm:text-5xl">
+            <span className="block">{metadata.longName}</span>
           </h1>
-          <h2 className="overflow-hidden px-2">
-            <span className="block text-2xl opacity-75">{metadata.slogan}</span>
+          <h2 className="overflow-hidden">
+            <span className="block text-xl sm:text-2xl opacity-75">{metadata.slogan}</span>
           </h2>
           </AnimatedHeading>
         
