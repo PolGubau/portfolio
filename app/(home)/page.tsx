@@ -89,6 +89,27 @@ export default function Page() {
         </p>
         <ThreePhones images={imagesPhones} />
 
+
+        <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
+          <p>🧪🥼</p>
+          <h2>I love to create personal projects and experiments.</h2>
+        </hgroup>
+
+        <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
+          <BlogLink
+            slug="blog/whyHaveSideProjects"
+            name="Why you should have a side project"
+          />
+          <BlogLink
+            slug="blog/chooseSideProjects"
+            name="How to choose a side project"
+          />
+        </div>
+        <ProjectsList projects={firstProjects} />
+
+        <BlogLink slug="/projects" name="See all my projects" />
+
+        
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
           <p>🥑🚀</p>
           <h2> I&apos;m a performance and accessibility advocate.</h2>
@@ -109,25 +130,6 @@ export default function Page() {
           height={600}
         />
         <small>My technical blog is a good example of this.</small>
-
-        <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
-          <p>🧪🥼</p>
-          <h2>I love to create personal projects and experiments.</h2>
-        </hgroup>
-
-        <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
-          <BlogLink
-            slug="blog/whyHaveSideProjects"
-            name="Why you should have a side project"
-          />
-          <BlogLink
-            slug="blog/chooseSideProjects"
-            name="How to choose a side project"
-          />
-        </div>
-        <ProjectsList projects={firstProjects} />
-
-        <BlogLink slug="/projects" name="See all my projects" />
       </main>
     </section>
   );

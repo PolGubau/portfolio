@@ -3,20 +3,11 @@
 import { LayoutGroup } from "framer-motion";
 import NavItem from "./nav-item";
 
-const navItems = {
-  "/": {
-    name: "Home",
-  },
-  "/projects": {
-    name: "Projects",
-  },
-  "/blog": {
-    name: "Blog",
-  },
- 
-  
+export const navItems = {
+  "/": {name: "Home"},
+  "/projects": {name: "Projects"},
+  "/blog": {name: "Blog"}
 };
-
 export default function Navbar() {
   return (
     <aside className="mb-12 tracking-tight flex justify-center md:justify-start">

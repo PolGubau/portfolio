@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SiNpm } from "react-icons/si";
 import { TbBrandGithub, TbChevronDownLeft, TbSearch } from "react-icons/tb";
 import { type Projects } from "contentlayer/generated";
+import { AnimatedHeading } from "app/components/animated-heading";
  
 function Header({ project: p }: { project: Projects }) {
   function formatDate(date: string) {
@@ -33,10 +34,11 @@ function Header({ project: p }: { project: Projects }) {
               backgroundColor: p.color ?? "transparent",
             }}
           >
+                     <AnimatedHeading className="relative">
+
             <div className="flex flex-col px-6 py-6">
-              <div className="flex gap-4 items-center group">
-                {p.link ? (
-                  <Link href={p.link} target="_blank">
+              <span className="flex gap-4 group">
+                   <Link href={p.link??''} target="_blank"   tabIndex={!p.link ? -1 : undefined} className={!p.link  ? 'pointer-events-none' :''} aria-disabled={!p.link }> 
                     <h1
                       title="Visit Project"
                       className="font-semibold text-4xl md:text-7xl tracking-tighter max-w-[650px] text-neutral-900 z-10 rounded-full w-fit p-2 balance"
@@ -47,34 +49,26 @@ function Header({ project: p }: { project: Projects }) {
                       {p.title}
                     </h1>
                   </Link>
-                ) : (
-                  <h1
-                    className="font-semibold text-4xl md:text-7xl tracking-tighter max-w-[650px] text-neutral-900 z-10 rounded-full w-fit p-2 balance"
-                    style={{
-                      backgroundColor: p.color ?? "transparent",
-                    }}
-                  >
-                    {p.title}
-                  </h1>
-                )}
-              </div>
+                
+              </span>
               <div
                 className="rounded-xl p-2 py-1 font-medium sm:font-normal w-fit text-neutral-800 dark:text-neutral-800 z-10 text-sm md:text-lg flex gap-1 flex-col "
                 style={{
                   backgroundColor: p.color ?? "transparent",
                 }}
               >
-                <p className="flex items-center">
+                <span className="flex items-center">
                   <TbChevronDownLeft className="rotate-90" />
                   {formatDate(p.startedAt)}
-                </p>
-                <p className="flex items-center">
+                </span>
+                <span className="flex items-center">
                   <TbChevronDownLeft />
                   {p.endedAt ? formatDate(p.endedAt) : "In Progress"}
-                </p>
+                </span>
               </div>
             </div>
 
+              </AnimatedHeading>
             <Image
               style={{
                 mixBlendMode: "multiply",

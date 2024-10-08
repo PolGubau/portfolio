@@ -23,6 +23,7 @@ module.exports = {
     'no-undef': 'off',
     'unicorn/filename-case': 'off',
   },
+  ignorePatterns: ['sw.js'],
   settings: {
     'import/resolver': {
       typescript: {
