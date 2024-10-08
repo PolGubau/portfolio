@@ -3,7 +3,7 @@
 export default function manifest()  {
  
   return {
-  theme_color: "#facc15",
+  theme_color: "#ffff44",
   dir: "auto",
   background_color: "#ededed",
     display: "standalone",

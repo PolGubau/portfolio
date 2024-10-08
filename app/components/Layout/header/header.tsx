@@ -15,17 +15,17 @@ function Header() {
             width={150}
             height={150}
         />
-      <div className="flex flex-col gap-4">
-         <AnimatedHeading className="text-center">
-          <h1 className="overflow-hidden text-4xl sm:text-5xl">
+      <div className="flex flex-col max-md:gap-6 md:gap-3">
+        <AnimatedHeading className="text-center flex flex-col gap-4 ">
+          <h1 className="overflow-hidden text-4xl sm:text-5xl leading-[.85]">
             <span className="block">{metadata.longName}</span>
           </h1>
-          <h2 className="overflow-hidden">
-            <span className="block text-xl sm:text-2xl opacity-75">{metadata.slogan}</span>
+          <h2 className="overflow-hidden md:pb-2 opacity-75">
+            <span className="block text-xl sm:text-2xl  leading-[.85]">{metadata.slogan}</span>
           </h2>
           </AnimatedHeading>
         
-        <MainSocials />
+         <MainSocials />
       </div>
       <Avatar />
     </header>

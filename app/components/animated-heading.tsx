@@ -26,16 +26,14 @@ export function AnimatedHeading({
                     })
                     .from("span", {
                         y: "110%",
-                        opacity: 0,
-                        duration: 0.6,
+                         duration: 0.6,
                         ease: "circ.out",
                         stagger: {
                             each: 0.2,
                         },
                     }).to("span", {
                         y: "0%",
-                        opacity: 1,
-                        duration: 0.6,
+                         duration: 0.6,
                         ease: "circ.out",
                         stagger: {
                             each: 0.2,
