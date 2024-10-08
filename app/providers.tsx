@@ -13,7 +13,7 @@ const firstLayer = useRef<HTMLDivElement | null>(null);
     <TransitionRouter
       auto 
         leave={(next) => {
-        const tl = gsap
+         const tl = gsap
           .timeline({
             onComplete: next,
           })
@@ -22,10 +22,12 @@ const firstLayer = useRef<HTMLDivElement | null>(null);
             { x: "100%" },
             {
               x: 0,
-              duration: 0.4,
-              // ease: "circ.inOut",
+              duration: 0.5,
+              ease: "circ.inOut",
             },
           )
+          
+
         return () => {
           tl.kill();
         };
@@ -39,12 +41,13 @@ const firstLayer = useRef<HTMLDivElement | null>(null);
             { x: 0 },
             {
               x: "-100%",
-              duration: 0.4,
-              // ease: "circ.inOut",
+              duration: 0.5,
+              ease: "circ.inOut",
             },
             "<50%",
           )
           .call(next, undefined, "<50%");
+
         return () => {
           tl.kill();
         };
@@ -53,8 +56,9 @@ const firstLayer = useRef<HTMLDivElement | null>(null);
       <Toaster />
       {children} 
 
-         <div ref={firstLayer} className="fixed inset-0 z-40 translate-x-full overflow-hidden bg-secondary-50 dark:bg-secondary-900" />
-    </TransitionRouter>
+        <div ref={firstLayer} className="fixed inset-0 z-50 translate-x-full  
+         bg-secondary-900" />
+     </TransitionRouter>
   </PoluiProvider>
   );
 }
