@@ -1,8 +1,7 @@
 "use client";
 
  import { gsap } from "gsap";
-import { useTransitionState } from "next-transition-router";
-import { cn } from "pol-ui";
+ import { cn } from "pol-ui";
 import { useLayoutEffect, useRef } from "react";
 
 export function AnimatedHeading({
@@ -12,12 +11,10 @@ export function AnimatedHeading({
     children: React.ReactNode;
     className: string;
 }) {
-    const { isReady } = useTransitionState();
-    const ref = useRef<HTMLHeadingElement | null>(null);
+     const ref = useRef<HTMLHeadingElement | null>(null);
 
     useLayoutEffect(() => {
-        if (isReady) {
-            const ctx = gsap.context(() => {
+             const ctx = gsap.context(() => {
                 gsap
                     .timeline()
                     .set(ref.current, {
@@ -45,8 +42,8 @@ export function AnimatedHeading({
             return () => {
                 ctx.revert();
             };
-        }
-    }, [isReady]);
+    },
+        []);
 
     return (
         <div ref={ref} className={cn(className, "invisible")}>
