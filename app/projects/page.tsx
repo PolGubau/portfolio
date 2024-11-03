@@ -34,7 +34,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const orderedProjects = allProjects.sort((a, b) => {
+  const orderedProjects = allProjects
+    .filter(p => p.available)
+    .sort((a, b) => {
   const today = new Date().toISOString().split("T")[0];
   const aEnded =  !a.endedAt ? today : a.endedAt || today 
   const bEnded = !b.endedAt ? today : b.endedAt || today;

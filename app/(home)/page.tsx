@@ -4,7 +4,8 @@ import Header from "../components/Layout/header/header";
 import { ProjectsList } from "../components/Projects/ProjectList/project-list";
  import { BlogLink } from "../components/blog-link";
 import ThreePhones from "../components/home/three-phones";
-
+import GeoTooltip from "app/components/GeoTooltip";
+ 
  const imagesPhones = [
   {
     src: "/media/other/coiae.png",
@@ -50,9 +51,8 @@ export default function Page() {
         <div className="inline">
           <p className="text-secondary-900 dark:text-secondary-50 inline">
             👋🏼 Hi, I&apos;m a full time tech enthusiast graduated in{" "}
-            <strong>Interactive Communication</strong> and currently working at
-            Mesalvo.
-          </p>
+            <strong>Interactive Communication</strong> and based in {` `}
+            <GeoTooltip/></p>
         </div>
         <div className="flex flex-col gap-4">
           <p>
@@ -79,7 +79,7 @@ export default function Page() {
 
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
           <p>🎨👨‍💻</p>
-          <h2> A pixel perfectionist, even though I work with vectors. </h2>
+          <h2>Pixel perfectionist, even though I work with vectors. </h2>
         </hgroup>
 
         <p>

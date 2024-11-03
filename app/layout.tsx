@@ -1,6 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Space_Grotesk } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import { metadata as constants } from "../lib/constants";
 import Sidebar from "./components/navbar";
@@ -115,7 +115,7 @@ export const viewport = {
   viewport: "width=device-width, initial-scale=1.0",
   colorScheme: "light dark",
 };
-export const font = Poppins({
+export const font = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "600"],
 });

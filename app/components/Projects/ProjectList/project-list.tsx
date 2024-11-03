@@ -1,8 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
-import { cn } from "pol-ui";
 import ProjectPreview from "app/components/project-preview";
 import { type Projects } from "contentlayer/generated";
+import { motion } from "framer-motion";
 import "./post-list.css";
 
 const container = {
@@ -25,11 +24,11 @@ export function ProjectsList({ projects }: { projects: Projects[] }) {
       variants={container}
       initial="hidden"
       animate="show"
-      className="flex flex-wrap gap-4 w-full"
+      className="flex flex-wrap gap-3 w-full"
     >
       {projects.map((p) => {
         return (
-          <motion.li variants={item} key={p.slug} className={cn("postGrid  ")}>
+          <motion.li variants={item} key={p.slug} className="postGrid">
             <ProjectPreview
               backgroundColor={p.color}
               title={p.title}

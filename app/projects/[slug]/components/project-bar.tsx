@@ -49,7 +49,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
             style={{
               backgroundColor: project.color ?? "#808080",
             }}
-            className="w-[90vw] sm:w-[80vw] lg:w-[90vw] max-w-4xl shadow-lg p-3 rounded-2xl flex gap-4 items-center justify-between "
+            className="w-fit max-w-4xl shadow-lg p-3 rounded-2xl flex gap-8 items-center justify-between "
           >
             <h2 className="text-black text-2xl font-semibold pl-2">
               {project.title}

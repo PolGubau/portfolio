@@ -21,7 +21,7 @@ function ProjectPreview({
 }: ProjectPreviewProps) {
   return (
     <div
-      className="flex flex-col transition-all gap-1 group bg-transparent h-64 md:h-96 rounded-2xl overflow-hidden relative cursor-pointer hover:brightness-110 project-cascade"
+      className="flex flex-col transition-all gap-1 group bg-transparent h-64 md:h-96  overflow-hidden relative cursor-pointer hover:brightness-110 project-cascade"
       style={{
         backgroundColor,
       }}
