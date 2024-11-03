@@ -1,13 +1,13 @@
-import "./global.css";
 import type { Metadata } from "next";
-import { Poppins, Space_Grotesk } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import { metadata as constants } from "../lib/constants";
-import Sidebar from "./components/navbar";
 import { Footer } from "./components/Layout";
-import GoTopButton from "./components/go-top-button";
-import {Providers} from "./providers";
 import { ScrollLine } from "./components/ScrollLine";
+import GoTopButton from "./components/go-top-button";
+import Sidebar from "./components/navbar";
+import "./global.css";
+import { Providers } from "./providers";
  
 // 
 const APP_NAME = constants.title;
