@@ -22,7 +22,8 @@ module.exports = {
     'react/function-component-definition': 'off',
     'no-undef': 'off',
     'unicorn/filename-case': 'off',
-     'import/order': ['off'],
+    'import/order': ['off'],
+    camelcase: 'off',
   },
   ignorePatterns: ['sw.js'],
   settings: {
