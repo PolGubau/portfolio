@@ -7,7 +7,7 @@ html {
 }
 
 *::selection {
-  @apply bg-primary-800 text-secondary-900;
+  @apply bg-primary-800 text-secondary-50 dark:text-secondary-900;
 }
 
 .prose .anchor {
