@@ -16,7 +16,7 @@ function Header() {
             height={150}
         />
       <div className="flex flex-col max-md:gap-6 md:gap-3">
-        <AnimatedHeading className="text-center justify-start flex flex-col gap-2">
+        <AnimatedHeading className="text-center md:items-start justify-center items-center flex flex-col gap-2">
           <h1 className="overflow-hidden w-fit text-3xl sm:text-4xl md:text-5xl leading-[.85]">
             <span className="block">{metadata.longName}</span>
           </h1>

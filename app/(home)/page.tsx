@@ -45,7 +45,7 @@ export default function Page() {
   const thisYear = new Date().getFullYear();
   const yearSince2018 = thisYear - 2018;
   return (
-    <section className="overflow-visible">
+    <section className="">
       <Header />
       <main className="flex flex-col w-full flex-1 gap-8 text-secondary-900 dark:text-secondary-50">
         <div className="inline">
