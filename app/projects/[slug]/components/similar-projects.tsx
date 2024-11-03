@@ -7,9 +7,13 @@ function SimilarProjects({
 }: {
   project: Projects;
   slug: string;
-}): JSX.Element  {
+  }): JSX.Element  {
+  
+  
+  const AMOUNT = 2;
+  
   const similarTechProjects = (): Projects[] => {
-    // get 3 projects that has tech in common, if it's not the case, get up to 3 random projects
+    // get AMOUNT projects that has tech in common, if it's not the case, get up to 3 random projects
 
     const tech = p.tech;
     const otherProjects = allProjects.filter(
@@ -19,11 +23,11 @@ function SimilarProjects({
       post.tech.some((t) => tech.includes(t))
     );
 
-    if (similarProjects.length > 3) {
-      return similarProjects.slice(0, 3);
+    if (similarProjects.length > AMOUNT) {
+      return similarProjects.slice(0, AMOUNT);
     }
 
-    return otherProjects.slice(0, 3);
+    return otherProjects.slice(0, AMOUNT);
   };
   return (
     <>

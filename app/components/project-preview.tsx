@@ -21,7 +21,7 @@ function ProjectPreview({
 }: ProjectPreviewProps) {
   return (
     <div
-      className="flex flex-col transition-all gap-1 group bg-transparent h-64 md:h-96  overflow-hidden relative cursor-pointer hover:brightness-110 project-cascade"
+      className="flex flex-col transition-all gap-1 group bg-transparent h-64 md:h-96  overflow-hidden relative cursor-pointer hover:brightness-110 project-cascade "
       style={{
         backgroundColor,
       }}
@@ -29,7 +29,7 @@ function ProjectPreview({
       <Link
         href={`/${slug}`}
         title={title}
-        className="h-full flex items-start md:justify-center "
+        className="h-full flex items-start md:justify-center focus-visible:outline-1 outline-0 outline-primary"
       >
         <Image
           style={{
