@@ -21,7 +21,7 @@ export default function NavItem({
       key={path}
       href={path}
       tabIndex={isActive ? -1 : undefined}
-      className={cn("transition-all flex align-middle", {
+      className={cn("transition-all flex align-middle outline-0 outline-primary rounded-xl focus-visible:outline-1", {
         "text-secondary-900/70 dark:text-secondary-50/70 hover:brightness-150":
           !isActive,
         "text-secondary-900 pointer-events-none": isActive,
