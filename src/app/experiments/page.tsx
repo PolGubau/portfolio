@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { MansoryGrid } from "./_components/concepts-grid";
-  
+  import dynamic from 'next/dynamic';
+
+  const MansoryGrid = dynamic(() => import("./_components/concepts-grid"), { ssr: false });
+
 export const metadata: Metadata = {
   title: "Concepts",
   description: "Read my thoughts on software development, design, and more.",

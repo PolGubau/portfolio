@@ -97,9 +97,10 @@ const videos = [{
 
   
 
-export const MansoryGrid = () => {
+const MansoryGrid = () => {
   const dateOrdered = videos.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // the most recent first
   return (
   <Masonry ssrWidth={300} ssrHeight={400} maxColumnCount={2} columnGutter={20} tabIndex={undefined} items={dateOrdered} render={Video}  />
 )};
 
+export default MansoryGrid;
