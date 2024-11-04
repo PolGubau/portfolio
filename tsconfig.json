@@ -15,24 +15,18 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "@contentlayer": ["./contentlayer/generated"],
+      "@app/*": ["src/app/*"],
+      "@components/*": ["src/components/*"],
+      "@lib/*": ["src/lib/*"],
+      "@hooks/*": ["src/hooks/*"],
     },
-    "types": [
-            "@serwist/next/typings"
-
-    ],
+    "types": ["@serwist/next/typings"],
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "plugins": [{"name": "next"}  ],
     "strictNullChecks": true
   },  
-   "lib": [
-       // Add this! Doing so adds WebWorker and ServiceWorker types to the global.
-      "webworker"
-    ],
+   "lib": ["webworker"],
   "extends": "pol-standard/typescript/node20",
   "include": [
     "next-env.d.ts",

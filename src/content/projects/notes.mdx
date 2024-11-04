@@ -1,0 +1,76 @@
+---
+title: "Notes"
+startedAt: "2023-09-20"
+endedAt: "2023-06-08"
+color: "#dcfce7"
+cover: "notesComputer.png"
+category: "web"
+available: false
+githubLink: https://github.com/PolGubau/notes
+link: https://notes.polgubau.com
+summary: "Notes is a real time notes app that allows you to take notes and manage them. This project introduces supabase to my stack of knowledge and it uses NextJS as the main framework"
+tech: 
+  - Nextjs
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - Supabase
+---
+
+# Notes - The modern Stickies
+
+Notes is a real time notes app that allows you to take notes and manage them.
+
+This project introduces supabase to my stack of knowledge and it uses NextJS as the main framework.
+
+{" "}
+<Image
+  alt="Notes computer mockup image where you see the notes list and the note editor"
+  width={800}
+  height={500}
+  className="rounded-xl h-full max-h-[500px] object-contain pl-16 show-animation"
+  src="/media/projects/notes/notesComputer.png"
+/>
+
+ 
+
+## Modernizing Stickies
+
+During 2023 I decided to turn a bit the project and modernize it. Stickies used local storage to save the notes, but I wanted to use a database to store the notes and be able to access them from any device.
+
+The problem was that the notes where part of the device, not the user. So if you take notes in your computer, you can't access them from your phone, or if you change browsers....
+
+### The solution, Notes
+
+I created a new project called **Notes** that is the evolution of Stickies. It's a web application to take notes and manage them.
+
+The main difference is that Notes is a **PWA** (Progressive Web App) and it's based in **React** and **NextJS**. It uses **Supabase** as the database and **Vercel** as the hosting service.
+
+It's a **serverless** application, so it's very easy to maintain and scale.
+
+{" "}
+
+<Image
+  alt="Notes mobile mockup image where you see the notes list and the note editor"
+  width={800}
+  height={500}
+  className="rounded-xl h-full max-h-[500px] my-8 object-contain pl-16 show-first-phone "
+  src="/media/projects/notes/notesMobile.png"
+/>
+### Tech Stack
+
+Notes it's based in modern web development technologies as:
+
+- **NextJS** as the framework for server side rendering, it allows to create a serverless application and to be able to access it from any device. It's based in React so it's easy to migrate from Stickies.
+
+- **Supabase** as the database, it allows to store the notes in a database and get them each time the user access the application. It's based in **PostgreSQL**.
+
+- **Typescript** as the main language, it allows to have a typed code and to be able to detect errors in the code before executing it.
+
+- **Tailwind CSS** as the main CSS framework, it allows to create components with their own styles and to be able to reuse them in the application.
+
+## Origins
+
+One of my first projects using React as a framework was Stickies, a simple web application to take notes and manage them. Nowaday it's a bit outdated, but it was the first step to learn React and modern web development.
+
+<BlogLink slug="stickies" name="Discover Stickies project ✍🏼 " />

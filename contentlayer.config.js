@@ -10,7 +10,6 @@ const computedFields = {
     type: "string",
     resolve: (doc) => doc._raw.flattenedPath,
   },
-
   structuredData: {
     type: "object",
     resolve: (doc) => ({
@@ -32,102 +31,48 @@ const computedFields = {
   },
 };
 
+// Define "Project" document type
 export const Project = defineDocumentType(() => ({
-  name: "Projects",
-  filePathPattern: `**/projects/*.mdx`,
+  name: "Project",
+  filePathPattern: `projects/*.mdx`,
   contentType: "mdx",
   fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    summary: {
-      type: "string",
-      required: true,
-    },
- available: {
-      type: "boolean",
-     },
-    startedAt: {
-      type: "string",
-      required: true,
-    },
-    endedAt: {
-      type: "string",
-    },
-    color: {
-      type: "string",
-    },
-    link: {
-      type: "string",
-    },
-    githubLink: {
-      type: "string",
-    },
-    npmCommand: {
-      type: "string",
-    },
-    npmLink: {
-      type: "string",
-    },
-    cover: {
-      required: true,
-      type: "string",
-    },
-    category: {
-      type: "string",
-      required: true,
-    },
-    tech: {
-     default: [],
-      type: "list",
-      of: {
-        type: "string",
-      },
-    },
-    audio: {
-      default: [],
-      type: "list",
-      of: {
-        type: "string",
-      },
-    }
+    title: { type: "string", required: true },
+    summary: { type: "string", required: true },
+    available: { type: "boolean" },
+    startedAt: { type: "string", required: true },
+    endedAt: { type: "string" },
+    color: { type: "string" },
+    link: { type: "string" },
+    githubLink: { type: "string" },
+    npmCommand: { type: "string" },
+    npmLink: { type: "string" },
+    cover: { type: "string", required: true },
+    category: { type: "string", required: true },
+    tech: { type: "list", of: { type: "string" }, default: [] },
+    audio: { type: "list", of: { type: "string" }, default: [] },
   },
   computedFields,
 }));
+
+// Define "Blog" document type
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
-  filePathPattern: `**/blog/**.mdx`,
+  filePathPattern: `blog/*.mdx`,
   contentType: "mdx",
+  
   fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    publishedAt: {
-      type: "string",
-      required: true,
-    },
-    summary: {
-      type: "string",
-      required: true,
-    },
-    cover: {
-      type: "string",
-    },
-    tags: {
-      default: [],
-      type: "list",
-      of: {
-        type: "string",
-      },
-    },
+    title: { type: "string", required: true },
+    publishedAt: { type: "string", required: true },
+    summary: { type: "string", required: true },
+    cover: { type: "string" },
+    tags: { type: "list", of: { type: "string" }, default: [] },
   },
   computedFields,
 }));
 
 export default makeSource({
-  contentDirPath: "content",
+  contentDirPath: "./src/content",
   documentTypes: [Blog, Project],
   mdx: {
     remarkPlugins: [remarkGfm],
@@ -137,11 +82,8 @@ export default makeSource({
         rehypePrettyCode,
         {
           defaultLang: "js",
-
           theme: "one-dark-pro",
           onVisitLine(node) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
             if (node.children.length === 0) {
               node.children = [{ type: "text", value: " " }];
             }

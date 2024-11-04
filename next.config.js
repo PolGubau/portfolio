@@ -4,6 +4,7 @@ const { withContentlayer } = require("next-contentlayer");
   PHASE_DEVELOPMENT_SERVER,
   PHASE_PRODUCTION_BUILD,
 } = require("next/constants");
+const { env } = require("process");
 
 
 /** @type {import('next').NextConfig} */
@@ -98,8 +99,9 @@ const baseConfig = withContentlayer(nextConfig);
     const withSerwist = (await import("@serwist/next")).default({
       // Note: This is only an example. If you use Pages Router,
       // use something else that works, such as "service-worker/index.ts".
-      swSrc: "app/sw.ts",
+      swSrc: "src/sw.ts",
       swDest: "public/sw.js",
+      disable: env.NODE_ENV === "development",
     });
     return withSerwist(baseConfig);
   }

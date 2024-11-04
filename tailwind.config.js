@@ -3,9 +3,7 @@ import { poluiPlugin } from "pol-ui";
 
 export default {
   content: [
-    "./app/**.{js,ts,jsx,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./content/**/*.mdx",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "node_modules/pol-ui/lib/**/*.js",
   ],
   theme: {

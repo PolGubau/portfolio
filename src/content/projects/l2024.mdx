@@ -1,0 +1,210 @@
+---
+title: "L2024"
+startedAt: "2024-01-25"
+endedAt: "2024-09-29"
+category: "web"
+color: "#ff8a93"
+cover: "0.webp"
+available: true
+
+summary: "Web project to illustrate a personal challenge of walking over all Metro stations in Barcelona tube network in a year."
+
+githubLink: https://github.com/PolGubau/l2024
+link: l2024.vercel.app
+tech: 
+  - React
+  - Tailwind CSS
+  - React Icons
+  - Eslint 
+  - Typescript
+  - Vite
+---
+
+# L2024 Project
+
+## The Story
+
+L2024 is a web project to illustrate a personal challenge of walking over all Metro stations in Barcelona tube network in a year. The project is named after the year 2024, when the challenge was done.
+
+<div className="flex -gap-32 p-6 md:p-8"> 
+  <Image
+    alt="Stickies notes mobile mockup image"
+    width={200}
+    height={400}
+    className="rounded-xl h-full max-h-[300px] md:max-h-[400px] object-contain show-animation -rotate-12"
+    src="/media/projects/l2024/1.webp"
+  />
+  <Image
+    alt="Stickies notes mobile mockup image"
+    width={200}
+    height={400}
+    className="rounded-xl h-full max-h-[300px] md:max-h-[400px] object-contain show-animation rotate-12"
+    src="/media/projects/l2024/3.webp"
+  />
+</div>
+
+
+The challenge started as a personal goal to walk more and discover the city with <At label='Marcos Rayo' href='https://www.linkedin.com/in/marcos-rayo-garc%C3%ADa-308342308/'/>. So we scheduled each last Saturday of the month to walk over a different line of the Metro network but in the street level. The project was born to keep track of the progress and share it with friends and family.
+
+### People involved
+
+The best part of the challenge was the people involved, we shared the activity with multiple friends and they came in different dates, so each metro line has converted into a new and interesant day, not just because the people but because everyone that has been part off the completion.
+
+
+## The Website 
+
+Personally, the best part of the challenge has been recording our GPS activity while walking and take a photo in each stop, with the goal of creating a website where to share our activity.
+
+The project was built with **React**, **Tailwind CSS**, and **Typescript**. 
+
+I exported each route in KMP format from different sources as multiple phone apps and Google Maps, then using <a href='https://gpx.studio/'>GPX Studio</a> I edited the incorrect lines, the missing references and the points of interest. Once there I exported the lines in GPX and converted it into GeoJson, a format that makes the map manipulation easier in JavaScript.
+The results are geometry points in 3 dimensions and then a line connects all them.
+```json
+"geometry": {
+  "type": "LineString",
+  "coordinates": [
+    [2.119049, 41.398776, 129.8],
+    [2.119456, 41.399061, 131.8],
+    [2.119314, 41.399147, 132],
+    [2.119277, 41.399126, 132],
+    [2.119186, 41.399148, 131.8],
+    [2.11927, 41.399069, 131.5],
+    [2.119327, 41.399108, 131.8],
+```
+<small>Example of Coordinates</small>
+
+This Jsons are exported into a typescript file with some metadata of the line used later for UX purposes:
+```typescript
+export const linesData: LineType[] = [
+{
+    id: "L1",
+    gpx: line1,
+    metadata: {
+      title: "L1",
+      transport: "metro",
+      subtitle: "Hospital de Bellvitge / Fondo",
+      color: "#df2937",
+      distance: 29.64,
+      metro_distance: 20.2,
+      stations: 30,
+      timeWalking: "06:56:45",
+      velocity: 3.38,
+      dateTime: "2024-02-03T09:44:01.928Z",
+      time: "04:42:45",
+    },
+  },
+  {
+    id: "L2",
+    gpx: line2,
+    metadata: {
+      title: "L2",
+      subtitle: "Paral·lel / Badalona Pompeu Fabra",
+      timeWalking: "04:04:00",
+      distance: 17.18,
+    ...},
+  ...}
+...]
+```
+
+The public transport  stops are also exported from the official documentation from the Barcelona Metro system and converted into a JSON file with the following structure:
+```json
+...
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [2.153048, 41.402037]
+  },
+  "properties": {
+    "line": ["L3"],
+    "stop_name": "fontana",
+    "nom_districte": "Gràcia",
+    "nom_barri": "la Vila de Gràcia"
+  }
+},
+...
+```
+
+To export the stops to the rest of the application I settled a common interface for all stops.
+```typescript
+
+export const rawStops: RawStop[] = JSON.parse(stopsJson).features; // Parse the JSON file into a variable
+
+export const stops: StopData[] = rawStops.map((f) => { // Map the raw stops into a common interface
+  return {
+    name: f.properties.stop_name, // Name of the stop (Fontana, Sagrada Familia...)
+    lines: f.properties.line ?? [], // Lines that pass through the stop
+    district: f.properties.nom_districte, // District of the stop (Gràcia, Eixample...)
+    neighborhood: f.properties.nom_barri, // Neighborhood of the stop (Vila de Gràcia, Sagrada Familia...)
+    coordinates: f.geometry.coordinates, // Coordinates of the stop [longitude, latitude]
+  };
+});
+```
+
+The website has a map with all the lines and stops, a list of the lines with the metadata and a page for each line with the map of the line and the photos taken in each stop.
+
+### The Map
+
+The map is built with **MapLibre** using the German library: **@mapcomponents/react-maplibre**. The map has a layer for each line and a layer for the stops. 
+
+The stops are clickable and show a popup with the name of the stop and the lines that pass through it.
+
+  <Image
+    alt="Detail of the map"
+    width={600}
+    height={400}
+    className="rounded-2xl h-full object-contain show-animation"
+    src="/media/projects/l2024/map-detail.png"
+  />
+
+The map development was the most challenging part of the project, I had to learn how to use the library and how to manipulate the GeoJson data to show the lines and stops in the map, the library creates a great output as I don't need any API key or pricings but it has no documentation so I had to read the source code and the examples to understand how to use it.
+
+The code to create a layer in the map is the following:
+```typescript
+ useLayer({
+    layerId: layerNameLines.current,
+
+    options: {
+      type: "line",
+
+      paint: {
+        "line-width": isSelected
+          ? ["interpolate", ["linear"], ["zoom"], 5, 2, 22, 10]
+          : 0.01,
+        "line-color": line.metadata?.color || "rgba(72, 77, 99,0.5)",
+      },
+      source: sourceName.current,
+    },
+  });
+```
+The paint property is the one that styles the line, the line-width is a function that interpolates the width of the line depending on the zoom level of the map,  and the **isSelected** variable is a state that changes the width of the line when the user selects that line or not, so it's easier to see the line in the map.
+
+### The Photos
+
+Another interesting part of the project is the photos, with the current map setup it's impossible to detect with stop you have clicked, so the only way to know it iis to capture the click event, get the name of the stop, check which lines have this stop and dynamically render the routes of the images from the public folder.
+
+I used the following funtion to ensure all images were equally loaded:
+
+```typescript
+export const getImage = (line: LineName, stop: string): string => {
+  return `/images/${line}/${stop}.jpg`;
+};
+```
+
+The images are stored in the public folder and the path is built with the line and the stop name, so the function returns the correct path to the image.
+
+### The UX
+
+The website has a simple design, the main page has a map with all the lines and stops, a list of the lines with the metadata and a page for each line with the map of the line and the photos taken in each stop.
+
+For UI elements, I use **Pol-ui** a library that I created with **Tailwind CSS**. The library has a set of components that I use in all my projects, so I can ensure that all my projects have the same style and the same components.
+
+The website is responsive and has a good performance, all images and the map are lazy loaded, so the website loads fast and the user can navigate through the website without any problem.
+
+## Conclusion
+
+The project has been a great experience, I have learned a lot about maps, GeoJson, and React. The project is finished but it can be always improved, I want to add more features like a search bar, a filter for the stops, and a better design for the photos.
+
+The project is open source and you can check the code in my GitHub account. If you have any suggestion or you want to contribute to the project, feel free to open an issue or a pull request.
+
+I hope you like the project and you find it useful. If you have any question or you want to know more about the project, feel free to contact me.
