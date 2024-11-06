@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-  import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 
-  const MansoryGrid = dynamic(() => import("./_components/concepts-grid"), { ssr: false });
+const MansoryGrid = dynamic(() => import("./_components/concepts-grid"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Concepts",
@@ -40,6 +40,6 @@ export const metadata: Metadata = {
 export default function Page() {
  
   return (
-    <MansoryGrid/>
+     <MansoryGrid/>
   );
 }
