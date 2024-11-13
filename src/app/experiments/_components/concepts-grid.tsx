@@ -4,6 +4,10 @@ import Video from "./Video";
 
   
 const videos = [{
+  mp4: 'langarray',
+  date: '2024-11-13',
+  title: 'Fullscreen bar',
+},{
   mp4: 'fullscreen-menu',
   date: '2024-11-06',
   title: 'Fullscreen bar',
