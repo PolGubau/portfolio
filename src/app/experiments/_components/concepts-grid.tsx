@@ -4,6 +4,14 @@ import Video from "./Video";
 
   
 const videos = [{
+  mp4: 'lang-selector',
+  date: '2024-11-18',
+  title: 'language selector',
+},{
+  mp4: 'boolean-card',
+  date: '2024-11-17',
+  title: 'Boolean Card',
+},{
   mp4: 'langarray',
   date: '2024-11-13',
   title: 'Fullscreen bar',
