@@ -50,8 +50,8 @@ export default function Page() {
              
         </div>
         <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
-          <BlogLink slug="blog/bio" name="My biography and career" />
-          <BlogLink slug="projects" name="My projects" />
+          <BlogLink slug="projects" name="Recent projects" />
+          <BlogLink slug="experiments" name="Some cool UI concepts" />
         </div>
 
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
