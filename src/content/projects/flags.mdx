@@ -1,0 +1,202 @@
+---
+title: "Flags"
+startedAt: "2024-11-16"
+endedAt: "2024-12-20"
+category: "web"
+color: "#f3fe6c"
+cover: "0.webp"
+available: true
+
+
+summary: "React library that renders handmade flags for different topics as countries or cities. It provides an easy way to display flags in your website without a setup."
+githubLink: https://github.com/PolGubau/flags
+link: https://flags.polgubau.com
+tech: 
+  -   React
+  -   TypeScript
+  -   NPM Package
+  -   Tailwind CSS
+---
+
+# React Beauty Flags
+**React Beauty Flags** is a simple React library that renders handmade flags for different topics as countries or cities. It provides an easy way to display flags in your React applications with minimal setup.
+
+<Image
+    alt="Flags cover image"
+    width={720}
+    height={480}
+    className="rounded-xl h-full max-h-[300px] md:max-h-[400px] object-contain show-animation"
+    src="/media/projects/flags/og.webp"
+  />
+
+## Goal of the project
+
+As a frontend developer, I faced many times the need to display flags in my applications. I found that most libraries available were either **too complex or their designs were not visually appealing**. I wanted to create a set based on beautiful designs that would allow me and any developer to display flags with ease.
+
+As a **Duolingo** user, I was inspired by their flag designs and decided to create a similar feeling for React applications.
+
+You will find +250 flags, including countries, regions, cities, and symbols. The flags are designed with a unique style that makes them visually appealing and easy to recognize.
+
+If you develop a bank or financial application, this might not be the best choice for you. However, if you are building a beautiful with modern UX design, this library is perfect for you. 😀
+
+
+## Features of the library
+
+- **Beautiful Designs**: The flags are handmade designed with a unique style that makes them visually appealing.
+- **Easy to Use**: The library is simple to use and requires minimal setup.
+- **Customizable**: You can customize the size of the flags by passing the width and height props, as well as other standard SVG props.
+- **Utility Functions**: The library includes utility functions to help you work with flags, such as getting flag data by code or name.
+- **Typescript Support**: The library is written in TypeScript, providing type safety and autocompletion in your IDE.
+
+## Tech Stack of the library
+
+- **React**: The library is built with React, a popular JavaScript library for building user interfaces.
+- **TypeScript**: The library is written in TypeScript, providing type safety and autocompletion in your IDE.
+- **NPM Package**: The library is published as an NPM package, making it easy to install and use in your projects.
+- **Tailwind CSS**: The library uses Tailwind CSS for styling, providing a utility-first approach to CSS.
+
+
+
+If you are interested in using the library, you can find more information in the [Official website](https://flags.polgubau.com).
+
+## About the website
+
+The website is built with Next.js and Tailwind CSS. It includes a landing page with a brief description of the library, a showcase of the flags, and a documentation page with examples of how to use the library.
+
+The website is hosted on Vercel and uses a custom domain name. 
+
+### Showcase of the flags
+
+As the library exports all **FlagData** objects, I created a showcase page that displays all the flags available in the library. They are ordered in the server alphabetically inside their category.
+
+That means each time the page load, the user will experience a consistent feeling, even if the flags in the library are updated. 
+
+In the top part you will always find the **Country** flags, followed by **World**, **Region**, **City**, and so ... 
+<div className='flex flex-col gap-2'>
+<Image
+    alt="How flags are grouped by type and then alphabetically"
+    width={250}
+    height={400}
+    className="rounded-xl h-full max-h-[300px] object-cover show-animation"
+    src="/media/projects/flags/q3.webp"
+  />
+    <small>How flags are grouped by type and then alphabetically</small>
+  </div>
+
+
+For additional usability, I added a search bar that allows the user to filter the flags by name, code or type. This is useful when you are looking for a specific flag and don't want to scroll through the entire list.
+
+This filter is saved in the URL, so you can share the link with your friends and they will see the same flags you are seeing.
+
+<div className='grid md:grid-cols-2 gap-4'>
+<div className='flex flex-col gap-2'>
+<Image
+    alt="Example when searching 'Mata'"
+    width={550}
+    height={400}
+    className="rounded-xl h-full max-h-[350px] w-full object-cover show-animation"
+    src="/media/projects/flags/q2.webp"
+  />
+  <small>Example when searching "Mata"</small>
+  </div>
+  <div className='flex flex-col gap-2'>
+
+  <Image
+    alt="Direct feedback when no flags are found"
+    width={550}
+    height={400}
+    className="rounded-xl h-full max-h-[350px] w-full object-cover show-animation"
+    src="/media/projects/flags/q1.webp"
+  />  <small>Direct feedback when no flags are found </small>
+  </div>
+</div>
+
+
+### Flag details page
+
+One aspect I loved about my fav react icons library: **react-icons** was the ability to see the details of each icon and just click to copy the needed commands. I wanted to replicate this feature in my library.
+
+When you click on a flag, without leaving the page, a drawer modal will appear from the right with the flag details. 
+
+You can see the flag, the name, the code, and the category.
+
+But this part goes further as you can interact with the flag, apply different roundness, borders and shadows, once you are happy with the result, you can copy the code to your clipboard and the **Tailwind** classes will be copied with the component.
+
+Also, all flags in the page will be updated with the new roundness, borders, and shadows you applied. This way you can see how the flag will look in your application.
+
+
+   <div className='flex flex-col gap-2'>
+
+  <Image
+    alt="Flag details with interactive elements and the needed commands"
+    width={250}
+    height={500}
+    className="rounded-xl h-full max-h-[500px] show-animation"
+    src="/media/projects/flags/1.webp"
+  />
+    <small>Flag details with interactive elements and the needed commands</small>
+  </div>
+
+  This "selected flag" will be saved in the URL, so you can share the link with your friends and they will see the same flag you are seeing.
+
+  ### Documentation page
+
+The documentation page includes more complete guides and examples of how to use the library in your React applications. 
+
+It provides code snippets and explanations of the different components and utility functions available in the library.
+
+The documentation page is built with MDX, a format that allows you to write JSX in Markdown files. This makes it easy to include React components and interactive elements in the documentation.
+
+
+## Scripting
+
+As some parts of the development process is repetitive, I created some scripts to automate the process.
+
+This is how the usual development process looks like:
+
+1. **Creation of a new flag**: I use Figma to design the flag with standard dimensions, colors and shapes (as stars, castles...) until I'm happy with the design.
+
+2. **Get-Figma command**: I created a command that gets the figma contents using the Figma API and saves all svg flags in a configured folder.
+
+```typescript
+// we fetch the file: 
+ const response = await fetch(`${FIGMA_API_BASE}/files/${fileKey}`, {
+        method: "GET",
+        headers: {
+            "X-Figma-Token": FIGMA_API_TOKEN!,
+        },
+    });
+
+// we search the desired frames
+const flagsPage = fileData.document.children.find(
+        (page: any) => page.name === "Flags" && page.type === "CANVAS",
+    );
+
+    //For each SVG we save it in a file
+      // Generate a valid file name
+    const fileName = `${name.replace(/[^a-z0-9]/gi, "_").toLowerCase()}.svg`;
+    const filePath = path.join(OUTPUT_DIR, fileName);
+
+      // Save the SVG file
+    await fs.writeFile(filePath, svgContent, "utf8");
+    
+    //... 
+```
+
+3. **Build-Flags command**: I also created a command that reads all the svg files in the folder and creates a new react flag component with the svg content, this uses **svgo** to optimize the svg content. This command also generates the updated index file and Enums with all the flags, this is how the library knows which flags are available.
+
+4. **Github Actions**: I created a Github action that runs the **Get-Figma** and **Build-Flags** commands every time a new commit is pushed to the repository. This way, the library is always updated with the latest flags designs. Then the website is built and deployed to Vercel and the library is published to NPM with a new version.
+
+ 
+5. **Check-flags command** (Optional): I created a command that checks if all the flags are correctly designed and optimized. This is useful when I'm designing new flags and I want to make sure they are correctly designed and optimized. This also checks if I forgot to add a FlagData for a existing svg file.
+
+ 
+## Conclusion
+
+This library has been a fun project to work on, and I'm proud of the result as now I won't struggle again to find beautiful flags for my projects :)
+
+The scripting part was a bit challenging, but it was worth it as it saved me a lot of time in the long run. 
+
+I'm happy with the final result and I'm excited to share this project with the community. 
+
+I hope it will be useful for other developers as well.
