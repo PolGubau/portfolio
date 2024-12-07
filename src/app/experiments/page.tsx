@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
-const MansoryGrid = dynamic(() => import("./_components/concepts-grid"), { ssr: false });
+const MansoryGrid = dynamic(() => import("./_components/concepts-grid"), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Concepts",
   description: "Read my thoughts on software development, design, and more.",
-  keywords: [
-    "UI",
-    "UX",
-    "web development",
-    "coding",
-    "Pol Gubau Amores",
-  ],
+  keywords: ["UI", "UX", "web development", "coding", "Pol Gubau Amores"],
   authors: {
     url: "https://polgubau.com",
     name: "Pol Gubau Amores",
@@ -35,11 +31,6 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 export default function Page() {
- 
-  return (
-     <MansoryGrid/>
-  );
+  return <MansoryGrid />;
 }

@@ -12,20 +12,27 @@ export default function NavItem({
   name: string;
 }>) {
   let pathname = usePathname() || "/";
-  if (pathname.includes("/blog/")) {pathname = "/blog"}
-  if (pathname.includes("/projects/")) {pathname = "/projects"}
+  if (pathname.includes("/blog/")) {
+    pathname = "/blog";
+  }
+  if (pathname.includes("/projects/")) {
+    pathname = "/projects";
+  }
   const isActive = path === pathname;
 
   return (
-     <Link
+    <Link
       key={path}
       href={path}
       tabIndex={isActive ? -1 : undefined}
-      className={cn("transition-all flex align-middle outline-0 outline-primary rounded-xl focus-visible:outline-1", {
-        "text-secondary-900/70 dark:text-secondary-50/70 hover:brightness-150":
-          !isActive,
-        "text-secondary-900 pointer-events-none": isActive,
-      })}
+      className={cn(
+        "transition-all flex align-middle outline-0 outline-primary rounded-xl focus-visible:outline-1",
+        {
+          "text-secondary-900/70 dark:text-secondary-50/70 hover:brightness-150":
+            !isActive,
+          "text-secondary-900 pointer-events-none": isActive,
+        },
+      )}
     >
       <span className="relative py-1 px-2">
         {name}

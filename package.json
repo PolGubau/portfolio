@@ -5,11 +5,15 @@
     "build": "next build",
     "build-only": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
+    "lint": "biome check .",
+    "lint-fix": "biome check --write .",
+    "check": "biome lint --write .",
+    "lint-check": "biome lint ./src",
+    "format-check": "biome format ./src",
+    "format": "biome format --write ./src"
   },
   "prettier": "pol-standard/prettier",
   "dependencies": {
-    "@next/eslint-plugin-next": "^14.2.4",
     "@serwist/next": "^9.0.9",
     "@vercel/edge-config": "^0.4.1",
     "contentlayer": "^0.3.4",
@@ -30,12 +34,12 @@
     "shiki": "^0.14.5"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "20.8.9",
     "@types/react": "18.2.32",
     "@types/react-dom": "18.2.14",
     "autoprefixer": "^10.4.19",
-    "eslint": "^8.6.0",
     "pol-standard": "^0.0.1",
     "postcss": "^8.4.39",
     "serwist": "^9.0.9",
@@ -80,9 +84,7 @@
     "email": "gubaupol@gmail.com"
   },
   "publisher": "Pol Gubau Amores",
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "contributors": [
     {
       "name": "Pol Gubau Amores",

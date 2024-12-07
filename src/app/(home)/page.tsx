@@ -1,12 +1,12 @@
+import GeoTooltip from "@/components/GeoTooltip";
 import Image from "next/image";
- import Header from "../../components/Layout/header/header";
+import Header from "../../components/Layout/header/header";
 import { ProjectsList } from "../../components/Projects/ProjectList/project-list";
- import { BlogLink } from "../../components/blog-link";
+import { BlogLink } from "../../components/blog-link";
 import ThreePhones from "../../components/home/three-phones";
-import GeoTooltip from "@components/GeoTooltip";
 import { allProjects } from ".contentlayer/generated";
- 
- const imagesPhones = [
+
+const imagesPhones = [
   {
     src: "/media/other/coiae.png",
   },
@@ -17,18 +17,24 @@ import { allProjects } from ".contentlayer/generated";
     src: "/media/other/gymZ.png",
   },
 ];
- 
+
 const orderedProjects = allProjects.sort((a, b) => {
   const today = new Date().toISOString().split("T")[0];
-  const aEnded =  !a.endedAt ? today : a.endedAt || today 
-  const bEnded = !b.endedAt ? today : b.endedAt || today;
-  if(!aEnded || !bEnded) return 0;
-  if (aEnded < bEnded) return 1;
-  if (aEnded > bEnded) return -1;
+  const aEnded = a.endedAt ? a.endedAt || today : today;
+  const bEnded = b.endedAt ? b.endedAt || today : today;
+  if (!(aEnded && bEnded)) {
+    return 0;
+  }
+  if (aEnded < bEnded) {
+    return 1;
+  }
+  if (aEnded > bEnded) {
+    return -1;
+  }
   return 0;
 });
 export default function Page() {
-  const firstProjects = orderedProjects.slice(0, 4); 
+  const firstProjects = orderedProjects.slice(0, 4);
   const thisYear = new Date().getFullYear();
   const yearSince2018 = thisYear - 2018;
   return (
@@ -38,16 +44,16 @@ export default function Page() {
         <div className="inline">
           <p className="text-secondary-900 dark:text-secondary-50 inline">
             👋🏼 Hi, I&apos;m a full time tech enthusiast graduated in{" "}
-            <strong>Interactive Communication</strong> and based in {` `}
-            <GeoTooltip/></p>
+            <strong>Interactive Communication</strong> and based in{" "}
+            <GeoTooltip />
+          </p>
         </div>
         <div className="flex flex-col gap-4">
           <p>
             With +{yearSince2018} years of experience, I have a strong
             background in web development and have worked from small websites to{" "}
             <strong>large-scale web applications</strong>.
-</p>            
-             
+          </p>
         </div>
         <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
           <BlogLink slug="projects" name="Recent projects" />
@@ -65,7 +71,6 @@ export default function Page() {
           <strong>beautiful</strong> and <strong>functional</strong>.
         </p>
         <ThreePhones images={imagesPhones} />
-
 
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
           <p>🧪🥼</p>
@@ -86,7 +91,6 @@ export default function Page() {
 
         <BlogLink slug="/projects" name="See all my projects" />
 
-        
         <hgroup className="text-3xl font-medium balance mt-16 flex flex-col gap-5">
           <p>🥑🚀</p>
           <h2> I&apos;m a performance and accessibility advocate.</h2>
@@ -111,6 +115,3 @@ export default function Page() {
     </section>
   );
 }
-
-
- 

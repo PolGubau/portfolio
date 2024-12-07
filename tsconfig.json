@@ -16,9 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@contentlayer": ["./contentlayer/generated"],
-      "@app/*": ["src/app/*"],
-      "@components/*": ["src/components/*"],
-      "@lib/*": ["src/lib/*"],
+      "@/app/*": ["src/app/*"],
+      "@/components/*": ["src/components/*"],
+      "@/lib/*": ["src/lib/*"],
       "@hooks/*": ["src/hooks/*"],
     },
     "types": ["@serwist/next/typings"],

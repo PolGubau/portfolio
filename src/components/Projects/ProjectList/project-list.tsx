@@ -1,8 +1,8 @@
 "use client";
-import ProjectPreview from "@components/project-preview";
- import { motion } from "framer-motion";
+import ProjectPreview from "@/components/project-preview";
+import { motion } from "framer-motion";
 import "./post-list.css";
-import { type Project } from ".contentlayer/generated";
+import type { Project } from ".contentlayer/generated";
 
 const container = {
   hidden: { opacity: 0 },

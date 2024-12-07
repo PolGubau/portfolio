@@ -56,7 +56,7 @@ html {
   @apply m-0;
 }
 
-.prose h1{
+.prose h1 {
   @apply font-bold text-xl md:text-3xl;
 }
 .prose h2,
@@ -255,14 +255,13 @@ strong {
   @keyframes width-animation {
     0% {
       opacity: 0.5;
-       padding: 30px 0;
+      padding: 30px 0;
     }
     20% {
       opacity: 1;
       transform: rotateX(0deg);
-            padding: 0px 0;
-            
-          }
+      padding: 0px 0;
+    }
     80% {
       opacity: 1;
       transform: rotateX(0deg);
@@ -270,8 +269,7 @@ strong {
     }
     100% {
       opacity: 0.5;
-       padding: 30px 0;
-
+      padding: 30px 0;
     }
   }
 
@@ -286,28 +284,27 @@ strong {
   }
 }
 
-  @keyframes cascade-animation {
-    from {
-      opacity: 0;
-      scale: 85%;
-      /* margin-right: 200px; */
-      max-height: 20%;
-      border-radius: 40px;
-    }
-    to {
-      opacity: 1;
-      scale: 100%;
-      /* margin-right: 0px;       */
-      max-height: 100%;
-      border-radius: 10px;
-    }
+@keyframes cascade-animation {
+  from {
+    opacity: 0;
+    scale: 85%;
+    /* margin-right: 200px; */
+    max-height: 20%;
+    border-radius: 40px;
   }
-  .project-cascade {
-    view-timeline: --slight;
-    view-timeline-axis: block;
-    animation-timeline: --slight;
-    animation-name: cascade-animation;
-    animation-range: entry 20% cover 50%;
-    animation-fill-mode: both;
+  to {
+    opacity: 1;
+    scale: 100%;
+    /* margin-right: 0px;       */
+    max-height: 100%;
+    border-radius: 10px;
   }
-   
+}
+.project-cascade {
+  view-timeline: --slight;
+  view-timeline-axis: block;
+  animation-timeline: --slight;
+  animation-name: cascade-animation;
+  animation-range: entry 20% cover 50%;
+  animation-fill-mode: both;
+}

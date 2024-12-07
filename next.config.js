@@ -1,11 +1,9 @@
 const { get } = require("@vercel/edge-config");
 const { withContentlayer } = require("next-contentlayer");
- const {
+const {
   PHASE_DEVELOPMENT_SERVER,
   PHASE_PRODUCTION_BUILD,
 } = require("next/constants");
-const { env } = require("process");
-
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,19 +19,20 @@ const nextConfig = {
       {
         source: "/(.*)",
         headers: securityHeaders,
-      },{
-        source: '/service-worker.js',
+      },
+      {
+        source: "/service-worker.js",
         headers: [
           {
-            key: 'Content-Type',
-            value: 'application/javascript; charset=utf-8',
+            key: "Content-Type",
+            value: "application/javascript; charset=utf-8",
           },
           {
-            key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate",
           },
           {
-            key: 'Content-Security-Policy',
+            key: "Content-Security-Policy",
             value: "default-src 'self'; script-src 'self'",
           },
         ],
@@ -91,17 +90,14 @@ const securityHeaders = [
 
 const baseConfig = withContentlayer(nextConfig);
 
-
-
- module.exports = async (phase) => {
-  
+module.exports = async (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
     const withSerwist = (await import("@serwist/next")).default({
       // Note: This is only an example. If you use Pages Router,
       // use something else that works, such as "service-worker/index.ts".
       swSrc: "src/sw.ts",
       swDest: "public/sw.js",
-      disable: env.NODE_ENV === "development",
+      disable: process.env.NODE_ENV === "development",
     });
     return withSerwist(baseConfig);
   }

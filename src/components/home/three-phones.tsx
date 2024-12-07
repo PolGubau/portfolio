@@ -1,18 +1,15 @@
 import Image from "next/image";
 
-interface Image {
+interface ImageProps {
   src: string;
 }
-function ThreePhones({ images }: { images: Image[] }) {
-  
-
-
+function ThreePhones({ images }: { images: ImageProps[] }) {
   return (
     <div className="grid grid-cols-3 gap-4 xl:gap-8">
       {images.map((image, i) => {
         const classes = `h-auto max-h-[500px] w-full object-contain ${
-          i === 0 ? "show-first-phone mt-[40px]" :""
-        } ${i === 1 ?"show-second-phone":""} ${
+          i === 0 ? "show-first-phone mt-[40px]" : ""
+        } ${i === 1 ? "show-second-phone" : ""} ${
           i === 2 ? "show-third-phone mt-[80px]" : ""
         }`;
         return (

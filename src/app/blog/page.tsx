@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import BlogList from "./components/BlogList/blog-list";
-import { allBlogs, type Blog } from ".contentlayer/generated";
+import { type Blog, allBlogs } from ".contentlayer/generated";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -34,15 +34,13 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 export default function Page() {
   const sortBlogs = (blogs: Blog[]) =>
-  blogs.sort((a, b) => {
-    const dateA = new Date(a.publishedAt);
-    const dateB = new Date(b.publishedAt);
-    return dateB.getTime() - dateA.getTime();
-  });
+    blogs.sort((a, b) => {
+      const dateA = new Date(a.publishedAt);
+      const dateB = new Date(b.publishedAt);
+      return dateB.getTime() - dateA.getTime();
+    });
   return (
     <>
       <h1 className="font-medium md:font-semibold text-xl md:text-2xl mb-8 text-center md:text-start text-pretty ">

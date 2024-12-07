@@ -1,8 +1,8 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import remarkGfm from "remark-gfm";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkGfm from "remark-gfm";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -34,7 +34,7 @@ const computedFields = {
 // Define "Project" document type
 export const Project = defineDocumentType(() => ({
   name: "Project",
-  filePathPattern: `projects/*.mdx`,
+  filePathPattern: "projects/*.mdx",
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
@@ -58,9 +58,9 @@ export const Project = defineDocumentType(() => ({
 // Define "Blog" document type
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
-  filePathPattern: `blog/*.mdx`,
+  filePathPattern: "blog/*.mdx",
   contentType: "mdx",
-  
+
   fields: {
     title: { type: "string", required: true },
     publishedAt: { type: "string", required: true },

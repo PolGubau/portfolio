@@ -1,5 +1,5 @@
-import { ProjectsList } from "@components/Projects/ProjectList/project-list";
-import { type  Project, allProjects } from ".contentlayer/generated";
+import { ProjectsList } from "@/components/Projects/ProjectList/project-list";
+import { type Project, allProjects } from ".contentlayer/generated";
 
 function SimilarProjects({
   project: p,
@@ -7,20 +7,18 @@ function SimilarProjects({
 }: {
   project: Project;
   slug: string;
-  }): JSX.Element  {
-  
-  
+}) {
   const AMOUNT = 2;
-  
+
   const similarTechProjects = (): Project[] => {
     // get AMOUNT projects that has tech in common, if it's not the case, get up to 2 random projects
 
     const tech = p.tech;
     const otherProjects = allProjects.filter(
-      (post) => post.slug !== `projects/${slug}`
+      (post) => post.slug !== `projects/${slug}`,
     );
     const similarProjects = otherProjects.filter((post) =>
-      post.tech.some((t) => tech.includes(t))
+      post.tech.some((t) => tech.includes(t)),
     );
 
     if (similarProjects.length > AMOUNT) {
@@ -42,4 +40,4 @@ function SimilarProjects({
   );
 }
 
-export {SimilarProjects};
+export { SimilarProjects };

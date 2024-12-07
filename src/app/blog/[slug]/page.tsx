@@ -1,9 +1,9 @@
+import { Mdx } from "@/components/mdx";
 import type { Metadata, ResolvingMetadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Mdx } from "@components/mdx";
-import { allBlogs } from ".contentlayer/generated";
+import { notFound } from "next/navigation";
 import SimilarBlogs from "../components/similar-blogs";
+import { allBlogs } from ".contentlayer/generated";
 
 export const dynamic = "force-static";
 interface GenerateMetadataProps {
@@ -12,7 +12,7 @@ interface GenerateMetadataProps {
 }
 export async function generateMetadata(
   { params }: GenerateMetadataProps,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const post = allBlogs.find((p) => p.slug === `blog/${params.slug}`);
 
@@ -28,7 +28,7 @@ export async function generateMetadata(
         url: `https://polgubau.com/blog/${params.slug}`,
         images: [
           {
-            url: `https://polgubau.com/og?title=Not found`,
+            url: "https://polgubau.com/og?title=Not found",
           },
         ],
       },
@@ -78,7 +78,9 @@ function formatDate(date: string) {
 
   return fullDate;
 }
-export default function Page({ params }: {
+export default function Page({
+  params,
+}: {
   params: {
     slug: string;
   };
@@ -92,11 +94,12 @@ export default function Page({ params }: {
     <section className="w-full ">
       <script
         type="application/ld+json"
-        suppressHydrationWarning
+        suppressHydrationWarning={true}
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(post.structuredData),
         }}
-       />
+      />
       <Link
         href="/blog"
         className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"

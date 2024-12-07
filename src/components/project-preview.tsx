@@ -40,7 +40,7 @@ function ProjectPreview({
           title={`Cover Image for ${title}`}
           alt={`Cover Image for ${alt}`}
           width={600}
-           height={330}
+          height={330}
         />
         <h3 className=" absolute top-6 left-6 z-10 text-3xl dark:text-neutral-800 mb-3 leading-snug font-medium">
           {title}

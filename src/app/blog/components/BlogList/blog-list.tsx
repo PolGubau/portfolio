@@ -1,6 +1,5 @@
-import React from "react";
-import { BlogLink } from "@components/blog-link";
-import { type Blog } from ".contentlayer/generated";
+import { BlogLink } from "@/components/blog-link";
+import type { Blog } from ".contentlayer/generated";
 
 function BlogList({ blogs }: { blogs: Blog[] }) {
   return (

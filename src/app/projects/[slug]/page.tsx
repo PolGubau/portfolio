@@ -1,26 +1,26 @@
-import { type Metadata, type ResolvingMetadata } from "next";
-import { notFound } from "next/navigation";
+import { Mdx } from "@/components/mdx";
+import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
-import { Mdx } from "@components/mdx";
- import {SimilarProjects} from "./components/similar-projects";
- import {ProjectBar} from "./components/project-bar";
+import { notFound } from "next/navigation";
 import Header from "./components/Header";
+import { ProjectBar } from "./components/project-bar";
+import { SimilarProjects } from "./components/similar-projects";
 import { allProjects } from ".contentlayer/generated";
 
 export const dynamic = "force-static";
 
 interface GenerateMetadataProps {
-  params: { slug: string }
-  searchParams: Record<string, string | string[] | undefined>
+  params: { slug: string };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 export async function generateMetadata(
   { params }: GenerateMetadataProps,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   // read route params
 
   const post = allProjects.find(
-    (postIteration) => postIteration.slug === `projects/${params.slug}`
+    (postIteration) => postIteration.slug === `projects/${params.slug}`,
   );
   if (!post) {
     return {
@@ -34,7 +34,7 @@ export async function generateMetadata(
         url: `https://polgubau.com/project/${params.slug}`,
         images: [
           {
-            url: `https://polgubau.com/og?title=Not found`,
+            url: "https://polgubau.com/og?title=Not found",
           },
         ],
       },
@@ -71,12 +71,14 @@ export async function generateMetadata(
     },
   };
 }
-export default function Page({ params }: {
+export default function Page({
+  params,
+}: {
   params: {
     slug: string;
   };
 }) {
-  const slug = `projects/${String(params.slug)}`
+  const slug = `projects/${String(params.slug)}`;
   const p = allProjects.find((post) => post.slug === slug);
 
   if (!p) {
@@ -87,11 +89,12 @@ export default function Page({ params }: {
     <section className="flex flex-col gap-4 overflow-x-visible relative">
       <script
         type="application/ld+json"
-        suppressHydrationWarning
+        suppressHydrationWarning={true}
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(p.structuredData),
         }}
-       />
+      />
       <Header project={p} />
       <div className="overflow-visible px-1">
         <Mdx code={p.body.code} />

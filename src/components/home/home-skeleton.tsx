@@ -1,5 +1,3 @@
-import React from "react";
-
 function HomeSkeleton() {
   return (
     <main className="flex flex-col  w-full flex-1 gap-8 animate-pulse">
@@ -7,7 +5,7 @@ function HomeSkeleton() {
         <p className=" rounded-xl w-full bg-neutral-100 dark:bg-neutral-800  h-[1.3em]" />
         <p className="rounded-xl w:[120px] sm:w-[80px] bg-neutral-100 dark:bg-neutral-800 h-[1.3em]" />
       </div>
-     
+
       <div className="flex gap-4 w-full">
         <p className=" rounded-xl flex flex-1 bg-neutral-100 dark:bg-neutral-800 p-6 justify-between items-center">
           <span className="w-[235px] bg-neutral-200 dark:bg-neutral-700 h-[1.7em] rounded-md" />

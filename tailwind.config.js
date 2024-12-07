@@ -49,7 +49,7 @@ export default {
       },
     },
   },
- 
+
   plugins: [
     typography,
     poluiPlugin({
@@ -82,4 +82,4 @@ export default {
     }),
   ],
   darkMode: "media",
-}  
+};

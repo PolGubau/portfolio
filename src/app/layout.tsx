@@ -1,17 +1,18 @@
+import GoTopButton from "@/components/go-top-button";
+import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
+import type { ReactNode } from "react";
 import { metadata as constants } from "../lib/constants";
-  import "./global.css";
+import "./global.css";
+import { ScrollLine } from "@/components/ScrollLine/scroll-line";
+import { Footer } from "pol-ui";
 import { Providers } from "./providers";
-import GoTopButton from "@components/go-top-button";
-import { Footer } from "@components/Layout";
-import { ScrollLine } from "@components/ScrollLine";
-import Navbar from "@components/navbar";
- 
-// 
+
+//
 const APP_NAME = constants.title;
-//  
+//
 const APP_DEFAULT_TITLE = `${APP_NAME} - Frontend Developer and UX Designer`;
 const APP_TITLE_TEMPLATE = `%s | ${APP_NAME}`;
 const APP_DESCRIPTION = constants.description;
@@ -25,12 +26,12 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   applicationName: APP_NAME,
- 
+
   formatDetection: {
     telephone: false,
   },
   description: APP_DESCRIPTION,
-   openGraph: {
+  openGraph: {
     title: APP_NAME,
     description: APP_DESCRIPTION,
     url: constants.links.website,
@@ -120,19 +121,19 @@ export const font = Space_Grotesk({
   weight: ["400", "600"],
 });
 export default function RootLayout({
-
-   children,
+  children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
-     <html
-      lang="en" dir="ltr"
+    <html
+      lang="en"
+      dir="ltr"
       className={`${font.className} w-full overflow-x-hidden`}
     >
       <body>
         <Providers>
-          <NextTopLoader color="#ff4" height={2} showSpinner={false}  />
+          <NextTopLoader color="#ff4" height={2} showSpinner={false} />
           <ScrollLine />
           <main className="antialiased w-full flex text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 min-h-screen">
             <div className="mt-8 mb-20 flex-auto flex flex-col w-full px-4 md:px-10 max-w-4xl md:mx-auto">
@@ -144,7 +145,6 @@ export default function RootLayout({
           </main>
         </Providers>
       </body>
-
-    </html> 
+    </html>
   );
 }

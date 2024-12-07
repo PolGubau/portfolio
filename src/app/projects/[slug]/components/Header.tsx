@@ -1,12 +1,12 @@
 "use client";
+import { AnimatedHeading } from "@/components/animated-heading";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { SiNpm } from "react-icons/si";
 import { TbBrandGithub, TbChevronDownLeft, TbSearch } from "react-icons/tb";
- import { AnimatedHeading } from "@components/animated-heading";
-import { type Project } from ".contentlayer/generated";
- 
+import type { Project } from ".contentlayer/generated";
+
 function Header({ project: p }: { project: Project }) {
   function formatDate(date: string) {
     const fullDate = new Date(date).toLocaleString("en-us", {
@@ -34,11 +34,16 @@ function Header({ project: p }: { project: Project }) {
               backgroundColor: p.color ?? "transparent",
             }}
           >
-                     <AnimatedHeading className="relative">
-
-            <div className="flex flex-col px-6 py-6">
-              <span className="flex gap-4 group">
-                   <Link href={p.link??''} target="_blank"   tabIndex={!p.link ? -1 : undefined} className={!p.link  ? 'pointer-events-none' :''} aria-disabled={!p.link }> 
+            <AnimatedHeading className="relative">
+              <div className="flex flex-col px-6 py-6">
+                <span className="flex gap-4 group">
+                  <Link
+                    href={p.link ?? ""}
+                    target="_blank"
+                    tabIndex={p.link ? undefined : -1}
+                    className={p.link ? "" : "pointer-events-none"}
+                    aria-disabled={!p.link}
+                  >
                     <h1
                       title="Visit Project"
                       className="font-semibold text-4xl md:text-7xl tracking-tighter max-w-[650px] text-neutral-900 z-10 rounded-full w-fit p-2 balance"
@@ -49,26 +54,24 @@ function Header({ project: p }: { project: Project }) {
                       {p.title}
                     </h1>
                   </Link>
-                
-              </span>
-              <div
-                className="rounded-xl p-2 py-1 font-medium sm:font-normal w-fit text-neutral-800 dark:text-neutral-800 z-10 text-sm md:text-lg flex gap-1 flex-col "
-                style={{
-                  backgroundColor: p.color ?? "transparent",
-                }}
-              >
-                <span className="flex items-center">
-                  <TbChevronDownLeft className="rotate-90" />
-                  {formatDate(p.startedAt)}
                 </span>
-                <span className="flex items-center">
-                  <TbChevronDownLeft />
-                  {p.endedAt ? formatDate(p.endedAt) : "In Progress"}
-                </span>
+                <div
+                  className="rounded-xl p-2 py-1 font-medium sm:font-normal w-fit text-neutral-800 dark:text-neutral-800 z-10 text-sm md:text-lg flex gap-1 flex-col "
+                  style={{
+                    backgroundColor: p.color ?? "transparent",
+                  }}
+                >
+                  <span className="flex items-center">
+                    <TbChevronDownLeft className="rotate-90" />
+                    {formatDate(p.startedAt)}
+                  </span>
+                  <span className="flex items-center">
+                    <TbChevronDownLeft />
+                    {p.endedAt ? formatDate(p.endedAt) : "In Progress"}
+                  </span>
+                </div>
               </div>
-            </div>
-
-              </AnimatedHeading>
+            </AnimatedHeading>
             <Image
               style={{
                 mixBlendMode: "multiply",
@@ -83,48 +86,54 @@ function Header({ project: p }: { project: Project }) {
           </header>
         </section>
         <nav className="w-full flex flex-wrap gap-4">
-          {p.link ? <Link
-                href={p.link}
-                title="Visit Project"
-                className="hover:brightness-90 flex-1 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center justify-center sm:justify-start h-full animate-expand-vertically"
-                target="_blank"
-                style={{
-                  backgroundColor: p.color ?? "transparent",
-                }}
-                rel="noopener noreferrer"
-              >
-                <span className="sr-only">Link to the project</span>
-                <TbSearch size={20} />
-                <span>Visit Project</span>
-              </Link> : null}
-          {p.githubLink ? <Link
-                title="Link to Github Source"
-                href={p.githubLink}
-                className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
-                target="_blank"
-                style={{
-                  backgroundColor: p.color ?? "transparent",
-                }}
-                rel="noopener noreferrer"
-              >
-                <TbBrandGithub size={20} />
-                <span className="sr-only">Link to Github Source</span>
-                <span className="hidden md:block">View Source</span>
-              </Link> : null}
-          {p.npmLink ? <Link
-                title="Link to NPM Package"
-                href={p.npmLink}
-                className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
-                target="_blank"
-                style={{
-                  backgroundColor: p.color ?? "transparent",
-                }}
-                rel="noopener noreferrer"
-              >
-                <SiNpm size={20} />
-                <span className="sr-only">Link to NPM</span>
-                <span className="hidden md:block">View package</span>
-              </Link> : null}
+          {p.link ? (
+            <Link
+              href={p.link}
+              title="Visit Project"
+              className="hover:brightness-90 flex-1 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center justify-center sm:justify-start h-full animate-expand-vertically"
+              target="_blank"
+              style={{
+                backgroundColor: p.color ?? "transparent",
+              }}
+              rel="noopener noreferrer"
+            >
+              <span className="sr-only">Link to the project</span>
+              <TbSearch size={20} />
+              <span>Visit Project</span>
+            </Link>
+          ) : null}
+          {p.githubLink ? (
+            <Link
+              title="Link to Github Source"
+              href={p.githubLink}
+              className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
+              target="_blank"
+              style={{
+                backgroundColor: p.color ?? "transparent",
+              }}
+              rel="noopener noreferrer"
+            >
+              <TbBrandGithub size={20} />
+              <span className="sr-only">Link to Github Source</span>
+              <span className="hidden md:block">View Source</span>
+            </Link>
+          ) : null}
+          {p.npmLink ? (
+            <Link
+              title="Link to NPM Package"
+              href={p.npmLink}
+              className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
+              target="_blank"
+              style={{
+                backgroundColor: p.color ?? "transparent",
+              }}
+              rel="noopener noreferrer"
+            >
+              <SiNpm size={20} />
+              <span className="sr-only">Link to NPM</span>
+              <span className="hidden md:block">View package</span>
+            </Link>
+          ) : null}
         </nav>
       </AnimatePresence>
     </header>
