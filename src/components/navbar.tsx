@@ -3,7 +3,7 @@
 import { LayoutGroup } from "framer-motion";
 import NavItem from "./nav-item";
 
-export const navItems = {
+const navItems = {
   "/": { name: "Home" },
   "/projects": { name: "Projects" },
   "/experiments": { name: "Experiments" },

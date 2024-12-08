@@ -7,8 +7,8 @@ import type { ReactNode } from "react";
 import { metadata as constants } from "../lib/constants";
 import "./global.css";
 import { ScrollLine } from "@/components/ScrollLine/scroll-line";
-import { Footer } from "pol-ui";
 import { Providers } from "./providers";
+import Footer from "@/components/Layout/footer/footer";
 
 //
 const APP_NAME = constants.title;
