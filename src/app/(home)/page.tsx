@@ -104,7 +104,7 @@ export default function Page() {
         </p>
         <div className="flex md:-space-y-40 max-md:gap-6 flex-col">
           <Image
-            className="rounded-3xl object-cover show-animation md:h-[300px] border-8 border-secondary-50 object-top dark:border-secondary-900 md:scale-75"
+            className="rounded-3xl object-cover show-animation md:h-[300px] border-4 border-secondary-200 object-top dark:border-secondary-700 md:scale-75 shadow-lg"
             alt="A preview of the performance stats in my technical blog"
             title="A preview of the performance stats in my technical blog"
             src="/media/other/example-3.webp"
@@ -112,7 +112,7 @@ export default function Page() {
             height={600}
           />
           <Image
-            className="rounded-3xl object-cover show-animation border-8 border-secondary-50 dark:border-secondary-900 md:scale-90"
+            className="rounded-3xl object-cover show-animation border-4 border-secondary-200 dark:border-secondary-700 md:scale-90 shadow-lg object-top"
             alt="A preview of the performance stats in my technical blog"
             title="A preview of the performance stats in my technical blog"
             src="/media/other/example-2.webp"
@@ -120,7 +120,7 @@ export default function Page() {
             height={500}
           />{" "}
           <Image
-            className="rounded-3xl object-cover show-animation border-8 border-secondary-50 dark:border-secondary-900 "
+            className="rounded-3xl object-cover show-animation border-4 border-secondary-200 dark:border-secondary-700 shadow-lg object-top"
             alt="A preview of the performance stats in my technical blog"
             title="A preview of the performance stats in my technical blog"
             src="/media/other/example-1.webp"
