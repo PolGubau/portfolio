@@ -1,6 +1,6 @@
 import { ProjectsList } from "@/components/Projects/ProjectList/project-list";
+import { sortedProjects } from "@/lib/sortedProjects";
 import type { Metadata } from "next";
-import { allProjects } from ".contentlayer/generated";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -34,29 +34,12 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const orderedProjects = allProjects
-    .filter((p) => p.available)
-    .sort((a, b) => {
-      const today = new Date().toISOString().split("T")[0];
-      const aEnded = a.endedAt ? a.endedAt || today : today;
-      const bEnded = b.endedAt ? b.endedAt || today : today;
-      if (!(aEnded && bEnded)) {
-        return 0;
-      }
-      if (aEnded < bEnded) {
-        return 1;
-      }
-      if (aEnded > bEnded) {
-        return -1;
-      }
-      return 0;
-    });
   return (
     <>
       <h1 className="font-medium md:font-semibold text-xl md:text-2xl mb-8 text-center md:text-start text-pretty ">
         Discover my recent Projects 🚀
       </h1>
-      <ProjectsList projects={orderedProjects} />
+      <ProjectsList projects={sortedProjects} />
     </>
   );
 }

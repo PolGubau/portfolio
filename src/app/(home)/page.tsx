@@ -1,10 +1,10 @@
 import GeoTooltip from "@/components/GeoTooltip";
+import { sortedProjects } from "@/lib/sortedProjects";
 import Image from "next/image";
 import Header from "../../components/Layout/header/header";
 import { ProjectsList } from "../../components/Projects/ProjectList/project-list";
 import { BlogLink } from "../../components/blog-link";
 import ThreePhones from "../../components/home/three-phones";
-import { allProjects } from ".contentlayer/generated";
 
 const imagesPhones = [
   {
@@ -18,25 +18,11 @@ const imagesPhones = [
   },
 ];
 
-const orderedProjects = allProjects.sort((a, b) => {
-  const today = new Date().toISOString().split("T")[0];
-  const aEnded = a.endedAt ? a.endedAt || today : today;
-  const bEnded = b.endedAt ? b.endedAt || today : today;
-  if (!(aEnded && bEnded)) {
-    return 0;
-  }
-  if (aEnded < bEnded) {
-    return 1;
-  }
-  if (aEnded > bEnded) {
-    return -1;
-  }
-  return 0;
-});
 export default function Page() {
-  const firstProjects = orderedProjects.slice(0, 4);
+  const firstProjects = sortedProjects.slice(0, 4);
   const thisYear = new Date().getFullYear();
   const yearSince2018 = thisYear - 2018;
+
   return (
     <section className="">
       <Header />
