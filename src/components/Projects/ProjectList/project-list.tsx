@@ -14,7 +14,6 @@ const container = {
     },
   },
 };
-
 export function ProjectsList({ projects }: { projects: Project[] }) {
   const memoizedProjects = useMemo(() => {
     return projects.map((p) => {
