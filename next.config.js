@@ -1,3 +1,4 @@
+const MillionLint = require("@million/lint");
 const { get } = require("@vercel/edge-config");
 const { withContentlayer } = require("next-contentlayer");
 const {
@@ -90,7 +91,10 @@ const securityHeaders = [
 
 const baseConfig = withContentlayer(nextConfig);
 
-module.exports = async (phase) => {
+module.exports = MillionLint.next({
+  enabled: true,
+  rsc: true,
+})(async (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
     const withSerwist = (await import("@serwist/next")).default({
       // Note: This is only an example. If you use Pages Router,
@@ -103,4 +107,4 @@ module.exports = async (phase) => {
   }
 
   return baseConfig;
-};
+});

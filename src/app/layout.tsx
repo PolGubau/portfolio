@@ -1,4 +1,3 @@
-import GoTopButton from "@/components/go-top-button";
 import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
@@ -6,9 +5,9 @@ import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";
 import { metadata as constants } from "../lib/constants";
 import "./global.css";
+import Footer from "@/components/Layout/footer/footer";
 import { ScrollLine } from "@/components/ScrollLine/scroll-line";
 import { Providers } from "./providers";
-import Footer from "@/components/Layout/footer/footer";
 
 //
 const APP_NAME = constants.title;
@@ -137,7 +136,6 @@ export default function RootLayout({
           <ScrollLine />
           <main className="antialiased w-full flex text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 min-h-screen">
             <div className="mt-8 mb-20 flex-auto flex flex-col w-full px-4 md:px-10 max-w-4xl md:mx-auto">
-              <GoTopButton />
               <Navbar />
               {children}
               <Footer />

@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "pol-ui";
+import { memo, useMemo } from "react";
 
-export default function NavItem({
+const NavItem = memo(function NavItem({
   path,
   name,
 }: Readonly<{
@@ -19,6 +20,22 @@ export default function NavItem({
     pathname = "/projects";
   }
   const isActive = path === pathname;
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  const memoizedMotionDiv = useMemo(
+    () => (
+      <motion.div
+        className="absolute h-full rounded-full inset-0 bg-primary z-[-1]"
+        layoutId="sidebar"
+        transition={{
+          type: "spring",
+          stiffness: 350,
+          damping: 30,
+        }}
+      />
+    ),
+    [pathname],
+  );
 
   return (
     <Link
@@ -36,18 +53,10 @@ export default function NavItem({
     >
       <span className="relative py-1 px-2">
         {name}
-        {path === pathname ? (
-          <motion.div
-            className="absolute h-full rounded-full inset-0 bg-primary z-[-1]"
-            layoutId="sidebar"
-            transition={{
-              type: "spring",
-              stiffness: 350,
-              damping: 30,
-            }}
-          />
-        ) : null}
+        {path === pathname ? memoizedMotionDiv : null}
       </span>
     </Link>
   );
-}
+});
+
+export default NavItem;

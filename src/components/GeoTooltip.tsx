@@ -1,11 +1,15 @@
 "use client";
 import { Tooltip } from "pol-ui";
+import { useMemo } from "react";
 
 const GeoTooltip = () => {
-  return (
-    <Tooltip label={<div>DE</div>}>
-      <span className="cursor-help">Freiburg.</span>
-    </Tooltip>
+  return useMemo(
+    () => (
+      <Tooltip label={<div>DE</div>}>
+        <span className="cursor-help">Freiburg.</span>
+      </Tooltip>
+    ),
+    [],
   );
 };
 

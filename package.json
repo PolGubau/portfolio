@@ -15,24 +15,25 @@
   },
   "prettier": "pol-standard/prettier",
   "dependencies": {
+    "@million/lint": "^1.0.14",
     "@serwist/next": "^9.0.9",
     "@vercel/edge-config": "^0.4.1",
     "contentlayer": "^0.3.4",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^10.18.0",
     "gsap": "^3.12.5",
     "masonic": "^4.0.1",
     "next": "^14.2.4",
     "next-contentlayer": "^0.3.4",
-    "nextjs-toploader": "^1.6.4",
+    "nextjs-toploader": "^1.6.12",
     "pol-ui": "^2.1.1052",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.12.0",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-pretty-code": "^0.10.1",
+    "rehype-pretty-code": "^0.10.2",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^3.0.1",
-    "shiki": "^0.14.5"
+    "shiki": "^0.14.7"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
@@ -86,7 +87,9 @@
     "email": "gubaupol@gmail.com"
   },
   "publisher": "Pol Gubau Amores",
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "contributors": [
     {
       "name": "Pol Gubau Amores",
