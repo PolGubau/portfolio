@@ -33,14 +33,14 @@ function Footer() {
         </svg>
         Download my CV
       </Link>
-      " "
+
       <MainSocials />
       <p>
         Made with{" "}
         <span className="text-primary-700 dark:text-primary font-semibold">
           love
-        </span>
-        " " by" "
+        </span>{" "}
+        by{" "}
         <Link href="https://polgubau.com" title="Visit my website">
           {metadata.longName}
         </Link>

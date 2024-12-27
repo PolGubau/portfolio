@@ -102,15 +102,33 @@ export default function Page() {
           professional level in both SEO and performance is the key for a
           successful digital project.
         </p>
-        <Image
-          className="rounded-xl object-cover w-auto h-auto show-animation "
-          alt="A preview of the performance stats in my technical blog"
-          title="A preview of the performance stats in my technical blog"
-          src="/media/other/blog-preview.png"
-          width={800}
-          height={600}
-        />
-        <small>My technical blog is a good example of this.</small>
+        <div className="flex md:-space-y-40 max-md:gap-6 flex-col">
+          <Image
+            className="rounded-3xl object-cover show-animation md:h-[300px] border-8 border-secondary-50 object-top dark:border-secondary-900 md:scale-75"
+            alt="A preview of the performance stats in my technical blog"
+            title="A preview of the performance stats in my technical blog"
+            src="/media/other/example-3.webp"
+            width={800}
+            height={600}
+          />
+          <Image
+            className="rounded-3xl object-cover show-animation border-8 border-secondary-50 dark:border-secondary-900 md:scale-90"
+            alt="A preview of the performance stats in my technical blog"
+            title="A preview of the performance stats in my technical blog"
+            src="/media/other/example-2.webp"
+            width={800}
+            height={500}
+          />{" "}
+          <Image
+            className="rounded-3xl object-cover show-animation border-8 border-secondary-50 dark:border-secondary-900 "
+            alt="A preview of the performance stats in my technical blog"
+            title="A preview of the performance stats in my technical blog"
+            src="/media/other/example-1.webp"
+            width={1000}
+            height={500}
+          />
+        </div>
+        <small>My lastest websites are good examples of this.</small>
       </main>
     </section>
   );

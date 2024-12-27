@@ -4,7 +4,7 @@ import Link, { type LinkProps } from "next/link";
 import type * as React from "react";
 import { Badge } from "./badge/badge";
 import { ArrowIcon, BlogLink } from "./blog-link";
-import { ThreePhones } from "./home";
+import ThreePhones from "./home/three-phones";
 
 interface CustomLinkProps extends Omit<LinkProps, "href"> {
   children?: React.ReactNode;

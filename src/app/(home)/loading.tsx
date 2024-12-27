@@ -1,4 +1,4 @@
-import { Header } from "../../components/Layout";
+import Header from "@/components/Layout/header/header";
 import HomeSkeleton from "../../components/home/home-skeleton";
 
 export default function Loading() {
