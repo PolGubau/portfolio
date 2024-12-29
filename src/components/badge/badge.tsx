@@ -10,7 +10,7 @@ export function Badge({ label, href }: Readonly<BadgeProps>) {
       target="_blank"
       href={href}
       aria-label={label}
-      className=" bg-primary text-neutral-800 font-semibold hover:brightness-90 dark:hover:brightness-75 transition-all rounded-xl py-0.5 p-1.5 mx-0.5 w-fit inline"
+      className=" mx-0.5 inline w-fit rounded-xl bg-primary p-1.5 py-0.5 font-semibold text-neutral-800 transition-all hover:brightness-90 dark:hover:brightness-75"
     >
       {label}
     </Link>

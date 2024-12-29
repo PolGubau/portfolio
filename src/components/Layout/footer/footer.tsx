@@ -1,17 +1,17 @@
-import MainSocials from "@/components/Social/main-socials";
+import { MainSocials } from "@/components/Social/MainSocials";
 import { metadata } from "@/lib/constants";
 import Link from "next/link";
 
-function Footer() {
+export function Footer() {
   return (
-    <div className="flex flex-col items-center mt-24 mb-20 gap-6 text-neutral-700 dark:text-neutral-300 text-center justify-center md:justify-start md:text-left">
+    <div className="mt-24 mb-20 flex flex-col items-center justify-center gap-6 text-center text-neutral-700 md:justify-start md:text-left dark:text-neutral-300">
       <Link
         title="Download my CV"
         href="/files/PolGubau_CV.pdf"
         download={`${metadata.longName} CV`}
         passHref={true}
         target="_blank"
-        className="bg-transparent border border-secondary-900/30  dark:bg-secondary-50/10  rounded-full flex gap-2 w-fit py-3 px-5 items-center transition-all hover:bg-secondary-900/10 dark:hover:bg-secondary-50/20"
+        className="flex w-fit items-center gap-2 rounded-full border border-secondary-900/30 bg-transparent px-5 py-3 transition-all hover:bg-secondary-900/10 dark:bg-secondary-50/10 dark:hover:bg-secondary-50/20"
       >
         <span className="sr-only">Click here to download my CV</span>{" "}
         <svg
@@ -36,11 +36,7 @@ function Footer() {
 
       <MainSocials />
       <p>
-        Made with{" "}
-        <span className="text-primary-700 dark:text-primary font-semibold">
-          love
-        </span>{" "}
-        by{" "}
+        Made with <span className="font-semibold text-primary-700 dark:text-primary">love</span> by{" "}
         <Link href="https://polgubau.com" title="Visit my website">
           {metadata.longName}
         </Link>
@@ -48,5 +44,3 @@ function Footer() {
     </div>
   );
 }
-
-export default Footer;

@@ -1,13 +1,13 @@
 export default function Loading() {
   const array = Array.from({ length: 10 }, (_, i) => i + 1);
   return (
-    <ul className="gap-4 grid md:grid-cols-2">
+    <ul className="grid gap-4 md:grid-cols-2">
       {array.map((n) => (
         <li
           key={n}
-          className="min-h-[12rem] project-cascade w-full flex bg-secondary-900/10 dark:bg-secondary-50/10 rounded-2xl justify-end items-end p-4"
+          className="project-cascade flex min-h-[12rem] w-full items-end justify-end rounded-2xl bg-secondary-900/10 p-4 dark:bg-secondary-50/10"
         >
-          <span className="m-4 bg-secondary-300 dark:bg-secondary-700 animate-pulse w-[120px] h-[18px] rounded-lg" />
+          <span className="m-4 h-[18px] w-[120px] animate-pulse rounded-lg bg-secondary-300 dark:bg-secondary-700" />
         </li>
       ))}
     </ul>

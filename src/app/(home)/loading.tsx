@@ -1,5 +1,5 @@
-import Header from "@/components/Layout/header/header";
-import HomeSkeleton from "../../components/home/home-skeleton";
+import { Header } from "@/components/Layout/header/header";
+import { HomeSkeleton } from "../../components/home/HomeSkeleton";
 
 export default function Loading() {
   return (

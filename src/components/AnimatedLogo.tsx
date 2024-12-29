@@ -1,9 +1,9 @@
 "use client";
 
-function AnimatedLogo() {
+export function AnimatedLogo() {
   return (
     <svg
-      className="w-96 h-96 "
+      className="h-96 w-96 "
       width="482"
       height="442"
       viewBox="0 0 482 442"
@@ -32,5 +32,3 @@ function AnimatedLogo() {
     </svg>
   );
 }
-
-export default AnimatedLogo;

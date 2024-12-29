@@ -29,29 +29,22 @@ interface BlogLinkProps {
   children?: ReactNode;
   className?: string;
 }
-export function BlogLink({
-  slug,
-  name,
-  children,
-  className,
-}: Readonly<BlogLinkProps>) {
+export function BlogLink({ slug, name, children, className }: Readonly<BlogLinkProps>) {
   return (
     <Link
       title={name}
       href={slug}
       className={cn(
-        "w-full flex flex-1 bg-secondary-900/10 dark:bg-secondary-50/10 hover:bg-secondary-900/20 dark:hover:bg-secondary-50/20 rounded-2xl justify-between px-5 py-4 md:px-6 md:py-6 gap-6 text-balanced items-center group hover:brightness-125 transition-all select-none",
+        "group flex w-full flex-1 select-none items-center justify-between gap-6 rounded-2xl bg-secondary-900/10 px-5 py-4 text-balanced transition-all hover:bg-secondary-900/20 hover:brightness-125 md:px-6 md:py-6 dark:bg-secondary-50/10 dark:hover:bg-secondary-50/20",
         className,
       )}
     >
       <div className="flex flex-col gap-2">
-        <span className="w-full font-semibold text-md md:text-lg line-clamp-2	text-pretty">
-          {name}
-        </span>
+        <span className="line-clamp-2 w-full text-pretty font-semibold text-md md:text-lg">{name}</span>
         {children ? <span className="w-full">{children}</span> : null}
       </div>
 
-      <div className="group-hover:translate-x-1 group-hover:-translate-y-0 transition-all">
+      <div className="group-hover:-translate-y-0 transition-all group-hover:translate-x-1">
         <ArrowIcon />
       </div>
     </Link>

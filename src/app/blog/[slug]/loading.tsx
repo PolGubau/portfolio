@@ -1,8 +1,8 @@
-import AnimatedLogo from "@/components/animated-logo";
+import { AnimatedLogo } from "@/components/AnimatedLogo";
 
 export default function Loading() {
   return (
-    <div className="flex flex-col items-center justify-center space-y-4 mt-16 mb-8">
+    <div className="mt-16 mb-8 flex flex-col items-center justify-center space-y-4">
       <AnimatedLogo />
       <p className="text-center">Loading...</p>
     </div>

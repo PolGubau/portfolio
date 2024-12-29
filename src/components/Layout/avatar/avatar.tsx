@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
-import { largeProfileAvatar } from "../profile-image-data";
+import { largeProfileAvatar } from "../largeProfileAvatar";
 
-function Avatar() {
+export function Avatar() {
   return (
-    <div className=" bg-primary rounded-full">
+    <div className=" rounded-full bg-primary">
       <Image
         placeholder={largeProfileAvatar}
         src="/media/me.png"
-        className="shadow-xl rounded-full hidden md:flex z-30"
+        className="z-30 hidden rounded-full shadow-xl md:flex"
         alt="Pol Gubau Amores' profile image"
         width={150}
         height={150}
@@ -17,5 +17,3 @@ function Avatar() {
     </div>
   );
 }
-
-export default Avatar;

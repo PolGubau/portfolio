@@ -1,25 +1,18 @@
 import type { Metadata } from "next";
-import BlogList from "./components/BlogList/blog-list";
+import { BlogList } from "./components/BlogList/BlogList";
 import { type Blog, allBlogs } from ".contentlayer/generated";
 
 export const metadata: Metadata = {
   title: "Blog",
   description: "Read my thoughts on software development, design, and more.",
-  keywords: [
-    "projects",
-    "portfolio",
-    "web development",
-    "coding",
-    "Pol Gubau Amores",
-  ],
+  keywords: ["projects", "portfolio", "web development", "coding", "Pol Gubau Amores"],
   authors: {
     url: "https://polgubau.com",
     name: "Pol Gubau Amores",
   },
   openGraph: {
     title: "Blog | Pol Gubau Amores",
-    description:
-      "Explore my thoughts on software development, design, and more.",
+    description: "Explore my thoughts on software development, design, and more.",
     url: "https://polgubau.com/blog",
     locale: "en_US",
     images: [
@@ -43,7 +36,7 @@ export default function Page() {
     });
   return (
     <>
-      <h1 className="font-medium md:font-semibold text-xl md:text-2xl mb-8 text-center md:text-start text-pretty ">
+      <h1 className="mb-8 text-pretty text-center font-medium text-xl md:text-start md:font-semibold md:text-2xl ">
         Some thoughts written down ✏️
       </h1>
       <BlogList blogs={sortBlogs(allBlogs)} />

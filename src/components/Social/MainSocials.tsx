@@ -1,9 +1,9 @@
 import { metadata } from "@/lib/constants";
-import SocialLink from "./social-link";
+import { SocialLink } from "./SocialLink";
 
-function MainSocials() {
+export function MainSocials() {
   return (
-    <div className="flex gap-2 flex-wrap justify-center md:justify-start">
+    <div className="flex flex-wrap justify-center gap-2 md:justify-start">
       <SocialLink
         href={metadata.links.linkedin}
         label="Linkedin"
@@ -67,5 +67,3 @@ function MainSocials() {
     </div>
   );
 }
-
-export default MainSocials;

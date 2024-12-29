@@ -2,10 +2,7 @@ import typography from "@tailwindcss/typography";
 import { poluiPlugin } from "pol-ui";
 
 export default {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "node_modules/pol-ui/lib/**/*.js",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "node_modules/pol-ui/lib/**/*.js"],
   theme: {
     extend: {
       typography: {

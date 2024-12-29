@@ -2,9 +2,9 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import Image, { type ImageProps } from "next/image";
 import Link, { type LinkProps } from "next/link";
 import type * as React from "react";
+import { ArrowIcon, BlogLink } from "./BlogLink";
 import { Badge } from "./badge/badge";
-import { ArrowIcon, BlogLink } from "./blog-link";
-import ThreePhones from "./home/three-phones";
+import { ThreePhones } from "./home/ThreePhones";
 
 interface CustomLinkProps extends Omit<LinkProps, "href"> {
   children?: React.ReactNode;
@@ -30,19 +30,14 @@ function CustomLink(props: CustomLinkProps) {
 }
 
 function RoundedImage({ ...props }: ImageProps) {
-  return (
-    <Image className="rounded-xl mb-4 w-full" {...props} title={props.alt} />
-  );
+  return <Image className="mb-4 w-full rounded-xl" {...props} title={props.alt} />;
 }
 
-function Callout({
-  emoji,
-  children,
-}: Readonly<{ emoji: string; children: React.ReactNode }>) {
+function Callout({ emoji, children }: Readonly<{ emoji: string; children: React.ReactNode }>) {
   return (
-    <div className="px-4 py-3 border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800 rounded-xl p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8">
-      <div className="flex items-center w-5 mr-4">{emoji}</div>
-      <div className="w-full callout">{children}</div>
+    <div className="mb-8 flex items-center rounded-xl border border-neutral-200 bg-neutral-50 p-1 px-4 py-3 text-neutral-900 text-sm dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-100">
+      <div className="mr-4 flex w-5 items-center">{emoji}</div>
+      <div className="callout w-full">{children}</div>
     </div>
   );
 }
@@ -53,21 +48,15 @@ interface ProsConsProps {
 }
 function ProsCard({ title, pros }: ProsConsProps) {
   return (
-    <div className="border border-emerald-200 dark:border-emerald-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
+    <div className="my-4 w-full rounded-xl border border-emerald-200 bg-neutral-50 p-6 dark:border-emerald-900 dark:bg-neutral-900">
       <span>{title}</span>
       <div className="mt-4">
         {pros.map((pro) => (
-          <div key={pro} className="flex font-medium items-baseline mb-2">
-            <div className="h-4 w-4 mr-2">
+          <div key={pro} className="mb-2 flex items-baseline font-medium">
+            <div className="mr-2 h-4 w-4">
               <svg className="h-4 w-4 text-emerald-500" viewBox="0 0 24 24">
                 <title>Pros</title>
-                <g
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
+                <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
                   <path d="M22 4L12 14.01l-3-3" />
                 </g>
@@ -86,12 +75,12 @@ interface ConsCardProps {
 }
 function ConsCard({ title, cons }: ConsCardProps) {
   return (
-    <div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
+    <div className="my-6 w-full rounded-xl border border-red-200 bg-neutral-50 p-6 dark:border-red-900 dark:bg-neutral-900">
       <span>{title}</span>
       <div className="mt-4">
         {cons.map((con) => (
-          <div key={con} className="flex font-medium items-baseline mb-2">
-            <div className="h-4 w-4 mr-2">
+          <div key={con} className="mb-2 flex items-baseline font-medium">
+            <div className="mr-2 h-4 w-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -120,7 +109,7 @@ function At({ label, href }: AtProps) {
       target="_blank"
       href={href}
       aria-label={label}
-      className="no-underline bg-neutral-100 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all rounded-lg py-0.5 px-1 mx-1 border border-neutral-300 dark:border-neutral-500"
+      className="mx-1 rounded-lg border border-neutral-300 bg-neutral-100 px-1 py-0.5 text-neutral-800 no-underline transition-all hover:bg-neutral-200 dark:border-neutral-500 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
     >
       @{label}
     </Link>
@@ -134,18 +123,14 @@ function StyledLink(props: StyledLinkProps) {
   return (
     <CustomLink
       {...props}
-      className="w-full flex flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl justify-between p-4 md:p-6 gap-6 balance items-center group hover:brightness-125 transition-all text-neutral-900 dark:text-neutral-100 no_underline"
+      className="balance group no_underline flex w-full flex-1 items-center justify-between gap-6 rounded-xl bg-neutral-100 p-4 text-neutral-900 transition-all hover:brightness-125 md:p-6 dark:bg-neutral-800 dark:text-neutral-100"
     >
       <div className="flex flex-col gap-2">
-        <span className="w-full font-semibold text-md md:text-lg ">
-          {props.name}
-        </span>
-        {props.children ? (
-          <span className="w-full">{props.children}</span>
-        ) : null}
+        <span className="w-full font-semibold text-md md:text-lg ">{props.name}</span>
+        {props.children ? <span className="w-full">{props.children}</span> : null}
       </div>
 
-      <div className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+      <div className="group-hover:-translate-y-1 transition-all group-hover:translate-x-1">
         <ArrowIcon />
       </div>
     </CustomLink>

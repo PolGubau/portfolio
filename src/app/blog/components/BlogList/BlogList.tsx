@@ -1,9 +1,9 @@
-import { BlogLink } from "@/components/blog-link";
+import { BlogLink } from "@/components/BlogLink";
 import type { Blog } from ".contentlayer/generated";
 
-function BlogList({ blogs }: { blogs: Blog[] }) {
+export function BlogList({ blogs }: { blogs: Blog[] }) {
   return (
-    <ul className="flex flex-col gap-4 justify-center">
+    <ul className="flex flex-col justify-center gap-4">
       {blogs.map((post) => (
         <li key={post.slug} className=" project-cascade ">
           <BlogLink slug={post.slug} name={post.title}>
@@ -14,5 +14,3 @@ function BlogList({ blogs }: { blogs: Blog[] }) {
     </ul>
   );
 }
-
-export default BlogList;

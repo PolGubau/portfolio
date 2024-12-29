@@ -131,9 +131,7 @@ const videos = [
 ];
 
 const MansoryGrid = () => {
-  const dateOrdered = videos.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  ); // the most recent first
+  const dateOrdered = videos.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // the most recent first
   return (
     <Masonry
       ssrWidth={300}
@@ -146,5 +144,4 @@ const MansoryGrid = () => {
     />
   );
 };
-
 export default MansoryGrid;

@@ -1,16 +1,20 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
 
+  "extends": ["@polgubau/configs/biome"],
   "files": {
-    "ignore": [
-      ".next",
-      ".turbo",
-      "node_modules",
-      "public",
-      "tsconfig.json",
-      ".contentlayer"
-    ]
+    "ignore": ["**/node_modules/**", "contentlayer.config.js", "next.config.js", "tailwind.config.js"]
   },
-
-  "extends": ["configs/formatter.json", "configs/linter.json"]
+  "overrides": [
+    {
+      "include": ["**/not-found.tsx"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
+    }
+  ]
 }

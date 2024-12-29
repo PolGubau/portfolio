@@ -1,10 +1,5 @@
 "use client";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-} from "framer-motion";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
 import { toast, useCopyToClipboard } from "pol-ui";
 import type React from "react";
@@ -29,13 +24,12 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
     copy(window.location.href);
     toast("Copied to clipboard", {
       dismissible: true,
-      className:
-        "bg-secondary-800 text-secondary-50 mb-16 3xl:mb-0 max-w-[90vw]",
+      className: "bg-secondary-800 text-secondary-50 mb-16 3xl:mb-0 max-w-[90vw]",
     });
   };
 
   return (
-    <div className="fixed bottom-4 left-0 w-full flex justify-center">
+    <div className="fixed bottom-4 left-0 flex w-full justify-center">
       <AnimatePresence mode="wait">
         {scroll > 300 && (
           <motion.div
@@ -46,11 +40,9 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
             style={{
               backgroundColor: project.color ?? "#808080",
             }}
-            className="w-fit max-w-4xl shadow-lg p-3 rounded-2xl flex gap-8 items-center justify-between "
+            className="flex w-fit max-w-4xl items-center justify-between gap-8 rounded-2xl p-3 shadow-lg "
           >
-            <h2 className="text-black text-2xl font-semibold pl-2">
-              {project.title}
-            </h2>
+            <h2 className="pl-2 font-semibold text-2xl text-black">{project.title}</h2>
 
             {project.audio.length > 0 && (
               <audio controls={true} className="hidden md:flex">
@@ -58,20 +50,18 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
                 {project.audio.map((audioSrc) => {
                   const type = audioSrc.split(".").pop() ?? "mp3";
                   const audioType = `audio/${type}`;
-                  return (
-                    <source key={audioSrc} src={audioSrc} type={audioType} />
-                  );
+                  return <source key={audioSrc} src={audioSrc} type={audioType} />;
                 })}
                 Your browser does not support the audio element.
               </audio>
             )}
 
-            <ul className="flex gap-2 items-center">
+            <ul className="flex items-center gap-2">
               {/* copy url button */}
               <li>
                 <button
                   type="button"
-                  className=" transition-all hover:bg-secondary-900/60 rounded-lg flex aspect-square p-2 text-secondary-900"
+                  className=" flex aspect-square rounded-lg p-2 text-secondary-900 transition-all hover:bg-secondary-900/60"
                   onClick={handleCopyUrl}
                 >
                   <TbShare size={20} />
@@ -84,7 +74,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <li className=" transition-all hover:bg-secondary-900/60 rounded-lg flex aspect-square p-2 text-secondary-900">
+                  <li className=" flex aspect-square rounded-lg p-2 text-secondary-900 transition-all hover:bg-secondary-900/60">
                     <TbBrandNpm size={20} />
                   </li>
                 </Link>
@@ -97,22 +87,17 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <li className=" transition-all hover:bg-secondary-900/60 rounded-lg flex aspect-square p-2 text-secondary-900">
+                  <li className=" flex aspect-square rounded-lg p-2 text-secondary-900 transition-all hover:bg-secondary-900/60">
                     <TbBrandGithub size={20} />
                   </li>{" "}
                 </Link>
               ) : null}
 
               {project.link ? (
-                <Link
-                  href={project.link}
-                  title="Link to the project"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href={project.link} title="Link to the project" target="_blank" rel="noopener noreferrer">
                   {" "}
                   <li
-                    className="bg-secondary-900/90 hover:bg-secondary-900  transition-all rounded-lg flex aspect-square p-2"
+                    className="flex aspect-square rounded-lg bg-secondary-900/90 p-2 transition-all hover:bg-secondary-900"
                     style={{
                       color: project.color ?? "#808080",
                     }}

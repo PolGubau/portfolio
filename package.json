@@ -13,9 +13,9 @@
     "format": "biome format --write ./src",
     "knip": "knip"
   },
-  "prettier": "pol-standard/prettier",
   "dependencies": {
     "@million/lint": "^1.0.14",
+    "@polgubau/configs": "^1.0.1",
     "@serwist/next": "^9.0.9",
     "@vercel/edge-config": "^0.4.1",
     "contentlayer": "^0.3.4",

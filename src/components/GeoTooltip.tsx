@@ -2,7 +2,7 @@
 import { Tooltip } from "pol-ui";
 import { useMemo } from "react";
 
-const GeoTooltip = () => {
+export const GeoTooltip = () => {
   return useMemo(
     () => (
       <Tooltip label={<div>DE</div>}>
@@ -12,5 +12,3 @@ const GeoTooltip = () => {
     [],
   );
 };
-
-export default GeoTooltip;

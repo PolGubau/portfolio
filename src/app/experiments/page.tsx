@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
-const MansoryGrid = dynamic(() => import("./_components/concepts-grid"), {
+const MansoryGrid = dynamic(() => import("./_components/MansoryGrid"), {
   ssr: false,
 });
 
@@ -15,8 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Concepts | Pol Gubau Amores",
-    description:
-      "Explore my thoughts on software development, design, and more.",
+    description: "Explore my thoughts on software development, design, and more.",
     url: "https://polgubau.com/concepts",
     locale: "en_US",
     images: [

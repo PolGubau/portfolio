@@ -14,7 +14,7 @@ interface ProjectPreviewProps {
   };
 }
 
-const ProjectPreview = memo(function ProjectPreview({
+export const ProjectPreview = memo(function ProjectPreview({
   title,
   image: { src, alt },
   slug,
@@ -26,7 +26,7 @@ const ProjectPreview = memo(function ProjectPreview({
         style={{
           mixBlendMode: "multiply",
         }}
-        className="mt-20 transition-all w-full h-auto md:h-[500px] object-cover object-left pointer-events-none "
+        className="pointer-events-none mt-20 h-auto w-full object-cover object-left transition-all md:h-[500px] "
         src={src}
         title={`Cover Image for ${title}`}
         alt={`Cover Image for ${alt}`}
@@ -39,7 +39,7 @@ const ProjectPreview = memo(function ProjectPreview({
 
   return (
     <div
-      className="flex flex-col transition-all gap-1 group bg-transparent h-64 md:h-96 overflow-hidden relative cursor-pointer hover:brightness-110 project-cascade"
+      className="group project-cascade relative flex h-64 cursor-pointer flex-col gap-1 overflow-hidden bg-transparent transition-all hover:brightness-110 md:h-96"
       style={{
         backgroundColor,
       }}
@@ -47,15 +47,13 @@ const ProjectPreview = memo(function ProjectPreview({
       <Link
         href={`/${slug}`}
         title={title}
-        className="h-full flex items-start md:justify-center focus-visible:outline-1 outline-0 outline-primary"
+        className="flex h-full items-start outline-0 outline-primary focus-visible:outline-1 md:justify-center"
       >
         {memoizedImage}
-        <h3 className="absolute top-6 left-6 z-10 text-3xl dark:text-neutral-800 mb-3 leading-snug font-medium">
+        <h3 className="absolute top-6 left-6 z-10 mb-3 font-medium text-3xl leading-snug dark:text-neutral-800">
           {title}
         </h3>
       </Link>
     </div>
   );
 });
-
-export default ProjectPreview;

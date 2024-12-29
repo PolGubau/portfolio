@@ -11,7 +11,7 @@ export default function ErrorComponent({
   reset: () => void;
 }) {
   return (
-    <div className="flex text-center w-full flex-col gap-4 items-center justify-center">
+    <div className="flex w-full flex-col items-center justify-center gap-4 text-center">
       <p>🫥 Oh no, something went wrong... maybe refresh?</p>
       {useMemo(
         () => (

@@ -3,8 +3,8 @@ import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "./components/Header";
-import { ProjectBar } from "./components/project-bar";
-import { SimilarProjects } from "./components/similar-projects";
+import { ProjectBar } from "./components/ProjectBar";
+import { SimilarProjects } from "./components/SimilarProjects";
 import { allProjects } from ".contentlayer/generated";
 
 export const dynamic = "force-static";
@@ -19,9 +19,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // read route params
 
-  const post = allProjects.find(
-    (postIteration) => postIteration.slug === `projects/${params.slug}`,
-  );
+  const post = allProjects.find((postIteration) => postIteration.slug === `projects/${params.slug}`);
   if (!post) {
     return {
       title: "Not found",
@@ -40,16 +38,8 @@ export async function generateMetadata(
       },
     };
   }
-  const {
-    title,
-    endedAt: publishedTime,
-    summary: description,
-    cover: image,
-    slug,
-  } = post;
-  const ogImage = image
-    ? `https://polgubau.com/media/${slug}/${image}`
-    : `https://polgubau.com/og?title=${title}`;
+  const { title, endedAt: publishedTime, summary: description, cover: image, slug } = post;
+  const ogImage = image ? `https://polgubau.com/media/${slug}/${image}` : `https://polgubau.com/og?title=${title}`;
   const previousImages = (await parent).openGraph?.images ?? [];
 
   return {
@@ -86,7 +76,7 @@ export default function Page({
   }
 
   return (
-    <section className="flex flex-col gap-4 overflow-x-visible relative">
+    <section className="relative flex flex-col gap-4 overflow-x-visible">
       <script
         type="application/ld+json"
         suppressHydrationWarning={true}

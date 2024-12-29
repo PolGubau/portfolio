@@ -8,11 +8,10 @@ export function GET(req: NextRequest) {
   const postTitle = searchParams.get("title");
 
   return new ImageResponse(
-    <div className="w-full h-full grid place-items-center text-black bg-primary text-6xl text-cemter">
+    <div className="grid h-full w-full place-items-center bg-primary text-6xl text-black text-cemter">
       <div
         style={{
-          background:
-            "url(https://polgubau.com/assets/thumbnail.png) no-repeat center",
+          background: "url(https://polgubau.com/assets/thumbnail.png) no-repeat center",
         }}
       />
       <p className="text-center">{postTitle}</p>

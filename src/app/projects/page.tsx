@@ -1,17 +1,11 @@
-import { ProjectsList } from "@/components/Projects/ProjectList/project-list";
+import { ProjectsList } from "@/components/Projects/ProjectList/ProjectsList";
 import { sortedProjects } from "@/lib/sortedProjects";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Projects",
   description: "Discover my recent projects and achievements.",
-  keywords: [
-    "projects",
-    "portfolio",
-    "web development",
-    "coding",
-    "Pol Gubau Amores",
-  ],
+  keywords: ["projects", "portfolio", "web development", "coding", "Pol Gubau Amores"],
   authors: {
     url: "https://polgubau.com",
     name: "Pol Gubau Amores",
@@ -36,7 +30,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1 className="font-medium md:font-semibold text-xl md:text-2xl mb-8 text-center md:text-start text-pretty ">
+      <h1 className="mb-8 text-pretty text-center font-medium text-xl md:text-start md:font-semibold md:text-2xl ">
         Discover my recent Projects 🚀
       </h1>
       <ProjectsList projects={sortedProjects} />

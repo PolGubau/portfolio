@@ -1,4 +1,4 @@
-import { ProjectsList } from "@/components/Projects/ProjectList/project-list";
+import { ProjectsList } from "@/components/Projects/ProjectList/ProjectsList";
 import { type Project, allProjects } from ".contentlayer/generated";
 
 function SimilarProjects({
@@ -14,12 +14,8 @@ function SimilarProjects({
     // get AMOUNT projects that has tech in common, if it's not the case, get up to 2 random projects
 
     const tech = p.tech;
-    const otherProjects = allProjects.filter(
-      (post) => post.slug !== `projects/${slug}`,
-    );
-    const similarProjects = otherProjects.filter((post) =>
-      post.tech.some((t) => tech.includes(t)),
-    );
+    const otherProjects = allProjects.filter((post) => post.slug !== `projects/${slug}`);
+    const similarProjects = otherProjects.filter((post) => post.tech.some((t) => tech.includes(t)));
 
     if (similarProjects.length > AMOUNT) {
       const shuffled = similarProjects.sort(() => 0.5 - Math.random());
@@ -30,9 +26,7 @@ function SimilarProjects({
   };
   return (
     <>
-      <h2 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mt-16">
-        Similar Projects
-      </h2>
+      <h2 className="mt-16 font-semibold text-2xl text-neutral-900 dark:text-neutral-100">Similar Projects</h2>
       <div className="flex flex-wrap gap-2">
         <ProjectsList projects={similarTechProjects()} />
       </div>

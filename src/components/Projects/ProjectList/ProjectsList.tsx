@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import "./post-list.css";
 import { useMemo } from "react";
-import ProjectListItem from "./project-list-item";
+import { ProjectListItem } from "./ProjectListItem";
 import type { Project } from ".contentlayer/generated";
 
 const container = {
@@ -22,12 +22,7 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
   }, [projects]);
 
   return (
-    <motion.ul
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="flex flex-wrap gap-3 w-full"
-    >
+    <motion.ul variants={container} initial="hidden" animate="show" className="flex w-full flex-wrap gap-3">
       {memoizedProjects}
     </motion.ul>
   );

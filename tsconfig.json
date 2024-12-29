@@ -19,23 +19,23 @@
       "@/app/*": ["src/app/*"],
       "@/components/*": ["src/components/*"],
       "@/lib/*": ["src/lib/*"],
-      "@hooks/*": ["src/hooks/*"],
+      "@hooks/*": ["src/hooks/*"]
     },
     "types": ["@serwist/next/typings"],
     "incremental": true,
-    "plugins": [{"name": "next"}  ],
+    "plugins": [{ "name": "next" }],
     "strictNullChecks": true
-  },  
-   "lib": ["webworker"],
+  },
+  "lib": ["webworker"],
   "extends": "pol-standard/typescript/node20",
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated", 
-    "postcss.config.js", 
+    ".contentlayer/generated",
+    "postcss.config.js",
     "tailwind.config.js"
   ],
-  "exclude": ["node_modules","public/sw.js"]
+  "exclude": ["node_modules", "public/sw.js"]
 }

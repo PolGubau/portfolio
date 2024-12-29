@@ -18,12 +18,9 @@ const Video = ({
   return (
     <div
       key={index}
-      className={cn(
-        "relative w-full project-cascade h-full rounded-lg bg-white dark:bg-black overflow-hidden",
-        {
-          "animate-pulse": loading,
-        },
-      )}
+      className={cn("project-cascade relative h-full w-full overflow-hidden rounded-lg bg-white dark:bg-black", {
+        "animate-pulse": loading,
+      })}
     >
       <video
         preload="none"
@@ -32,14 +29,12 @@ const Video = ({
         muted={true}
         loop={true}
         width={width}
-        className="object-cover w-full h-full"
+        className="h-full w-full object-cover"
       >
         <source src={`/media/concepts/${videoName}.mp4`} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <p className="absolute bottom-2 right-2 text-sm text-secondary-300 mix-blend-difference">
-        {date}
-      </p>
+      <p className="absolute right-2 bottom-2 text-secondary-300 text-sm mix-blend-difference">{date}</p>
     </div>
   );
 };

@@ -9,7 +9,7 @@ export function ScrollLine() {
   return useMemo(
     () => (
       <motion.div
-        className="bg-primary scrollLine sticky top-0 h-1 w-full z-50 transform-gpu rounded-r-xl"
+        className="scrollLine sticky top-0 z-50 h-1 w-full transform-gpu rounded-r-xl bg-primary"
         style={{ scaleX: scrollYProgress }}
       />
     ),

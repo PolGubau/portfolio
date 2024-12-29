@@ -1,5 +1,5 @@
 "use client";
-import { AnimatedHeading } from "@/components/animated-heading";
+import { AnimatedHeading } from "@/components/AnimatedHeading";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,8 +20,7 @@ function Header({ project: p }: { project: Project }) {
   }
 
   return (
-    <header className="flex flex-col gap-6 mb-8">
-      {/* biome-ignore lint/correctness/useExhaustiveDependencies: <explanation> */}
+    <header className="mb-8 flex flex-col gap-6">
       {useMemo(
         () => (
           <AnimatePresence>
@@ -34,14 +33,14 @@ function Header({ project: p }: { project: Project }) {
                 <span className="sr-only">Back to projects</span>← Back
               </Link>
               <header
-                className="flex justify-between items-end rounded-2xl overflow-hidden relative min-h-[200px] md:min-h-[250px]"
+                className="relative flex min-h-[200px] items-end justify-between overflow-hidden rounded-2xl md:min-h-[250px]"
                 style={{
                   backgroundColor: p.color ?? "transparent",
                 }}
               >
                 <AnimatedHeading className="relative">
                   <div className="flex flex-col px-6 py-6">
-                    <span className="flex gap-4 group">
+                    <span className="group flex gap-4">
                       <Link
                         href={p.link ?? ""}
                         target="_blank"
@@ -51,7 +50,7 @@ function Header({ project: p }: { project: Project }) {
                       >
                         <h1
                           title="Visit Project"
-                          className="font-semibold text-4xl md:text-7xl tracking-tighter max-w-[650px] text-neutral-900 z-10 rounded-full w-fit p-2 balance"
+                          className="balance z-10 w-fit max-w-[650px] rounded-full p-2 font-semibold text-4xl text-neutral-900 tracking-tighter md:text-7xl"
                           style={{
                             backgroundColor: p.color ?? "transparent",
                           }}
@@ -61,7 +60,7 @@ function Header({ project: p }: { project: Project }) {
                       </Link>
                     </span>
                     <div
-                      className="rounded-xl p-2 py-1 font-medium sm:font-normal w-fit text-neutral-800 dark:text-neutral-800 z-10 text-sm md:text-lg flex gap-1 flex-col"
+                      className="z-10 flex w-fit flex-col gap-1 rounded-xl p-2 py-1 font-medium text-neutral-800 text-sm sm:font-normal md:text-lg dark:text-neutral-800"
                       style={{
                         backgroundColor: p.color ?? "transparent",
                       }}
@@ -82,7 +81,7 @@ function Header({ project: p }: { project: Project }) {
                     mixBlendMode: "multiply",
                   }}
                   title={`Cover Image for the project ${p.title}`}
-                  className="absolute -top-16 -right-60 md:-right-40 opacity-50 md:opacity-100"
+                  className="-top-16 -right-60 md:-right-40 absolute opacity-50 md:opacity-100"
                   src={`/media/${p.slug}/${p.cover}`}
                   alt={p.title}
                   width={500}
@@ -90,12 +89,12 @@ function Header({ project: p }: { project: Project }) {
                 />
               </header>
             </section>
-            <nav className="w-full flex flex-wrap gap-4">
+            <nav className="flex w-full flex-wrap gap-4">
               {p.link ? (
                 <Link
                   href={p.link}
                   title="Visit Project"
-                  className="hover:brightness-90 flex-1 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center justify-center sm:justify-start h-full animate-expand-vertically"
+                  className="flex h-full flex-1 animate-expand-vertically items-center justify-center gap-2 rounded-2xl px-3 py-2 text-background text-black text-xl hover:brightness-90 sm:justify-start"
                   target="_blank"
                   style={{
                     backgroundColor: p.color ?? "transparent",
@@ -111,7 +110,7 @@ function Header({ project: p }: { project: Project }) {
                 <Link
                   title="Link to Github Source"
                   href={p.githubLink}
-                  className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
+                  className="flex h-full w-fit animate-expand-vertically items-center gap-2 truncate rounded-2xl px-3 py-2 text-background text-black text-xl hover:brightness-90"
                   target="_blank"
                   style={{
                     backgroundColor: p.color ?? "transparent",
@@ -127,7 +126,7 @@ function Header({ project: p }: { project: Project }) {
                 <Link
                   title="Link to NPM Package"
                   href={p.npmLink}
-                  className="hover:brightness-90 px-3 py-2 text-xl text-background rounded-2xl text-black flex gap-2 items-center w-fit truncate h-full animate-expand-vertically"
+                  className="flex h-full w-fit animate-expand-vertically items-center gap-2 truncate rounded-2xl px-3 py-2 text-background text-black text-xl hover:brightness-90"
                   target="_blank"
                   style={{
                     backgroundColor: p.color ?? "transparent",

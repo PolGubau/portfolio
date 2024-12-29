@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "pol-ui";
 import { memo, useMemo } from "react";
 
-const NavItem = memo(function NavItem({
+export const NavItem = memo(function NavItem({
   path,
   name,
 }: Readonly<{
@@ -21,11 +21,10 @@ const NavItem = memo(function NavItem({
   }
   const isActive = path === pathname;
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   const memoizedMotionDiv = useMemo(
     () => (
       <motion.div
-        className="absolute h-full rounded-full inset-0 bg-primary z-[-1]"
+        className="absolute inset-0 z-[-1] h-full rounded-full bg-primary"
         layoutId="sidebar"
         transition={{
           type: "spring",
@@ -42,21 +41,15 @@ const NavItem = memo(function NavItem({
       key={path}
       href={path}
       tabIndex={isActive ? -1 : undefined}
-      className={cn(
-        "transition-all flex align-middle outline-0 outline-primary rounded-xl focus-visible:outline-1",
-        {
-          "text-secondary-900/70 dark:text-secondary-50/70 hover:brightness-150":
-            !isActive,
-          "text-secondary-900 pointer-events-none": isActive,
-        },
-      )}
+      className={cn("flex rounded-xl align-middle outline-0 outline-primary transition-all focus-visible:outline-1", {
+        "text-secondary-900/70 hover:brightness-150 dark:text-secondary-50/70": !isActive,
+        "pointer-events-none text-secondary-900": isActive,
+      })}
     >
-      <span className="relative py-1 px-2">
+      <span className="relative px-2 py-1">
         {name}
         {path === pathname ? memoizedMotionDiv : null}
       </span>
     </Link>
   );
 });
-
-export default NavItem;

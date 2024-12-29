@@ -2,7 +2,7 @@ import { Mdx } from "@/components/mdx";
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import SimilarBlogs from "../components/similar-blogs";
+import SimilarBlogs from "../components/SimilarBlogs";
 import { allBlogs } from ".contentlayer/generated";
 
 export const dynamic = "force-static";
@@ -35,16 +35,8 @@ export async function generateMetadata(
     };
   }
 
-  const {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    cover,
-    slug,
-  } = post;
-  const ogImage = cover
-    ? `https://polgubau.com/media/${slug}/${cover}`
-    : `https://polgubau.com/og?title=${title}`;
+  const { title, publishedAt: publishedTime, summary: description, cover, slug } = post;
+  const ogImage = cover ? `https://polgubau.com/media/${slug}/${cover}` : `https://polgubau.com/og?title=${title}`;
   const previousImages = (await parent).openGraph?.images ?? [];
 
   return {
@@ -106,12 +98,10 @@ export default function Page({
       >
         ← Back
       </Link>
-      <h1 className="font-semibold text-2xl mt-4 balance">{post.title}</h1>
-      <p className="text-sm text-neutral-600 dark:text-neutral-400">
-        {formatDate(post.publishedAt)}
-      </p>
+      <h1 className="balance mt-4 font-semibold text-2xl">{post.title}</h1>
+      <p className="text-neutral-600 text-sm dark:text-neutral-400">{formatDate(post.publishedAt)}</p>
 
-      <article className="mb-8 w-full  flex flex-col gap-6">
+      <article className="mb-8 flex w-full flex-col gap-6">
         <Mdx code={post.body.code} />
         <SimilarBlogs blog={post} slug={params.slug} />
         <Link
