@@ -93,6 +93,7 @@ export default function Page({
         }}
       />
       <Link
+        hrefLang="en-us"
         href="/blog"
         className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
       >
@@ -106,6 +107,7 @@ export default function Page({
         <SimilarBlogs blog={post} slug={params.slug} />
         <Link
           href="/blog"
+          hrefLang="en-us"
           className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
         >
           ← Back to blog

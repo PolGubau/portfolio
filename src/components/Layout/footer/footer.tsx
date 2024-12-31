@@ -9,6 +9,7 @@ export function Footer() {
         title="Download my CV"
         href="/files/PolGubau_CV.pdf"
         download={`${metadata.longName} CV`}
+        hrefLang="en-us"
         passHref={true}
         target="_blank"
         className="flex w-fit items-center gap-2 rounded-full border border-secondary-900/30 bg-transparent px-5 py-3 transition-all hover:bg-secondary-900/10 dark:bg-secondary-50/10 dark:hover:bg-secondary-50/20"

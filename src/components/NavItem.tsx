@@ -40,6 +40,7 @@ export const NavItem = memo(function NavItem({
     <Link
       key={path}
       href={path}
+      hrefLang="en-us"
       tabIndex={isActive ? -1 : undefined}
       className={cn("flex rounded-xl align-middle outline-0 outline-primary transition-all focus-visible:outline-1", {
         "text-secondary-900/70 hover:brightness-150 dark:text-secondary-50/70": !isActive,

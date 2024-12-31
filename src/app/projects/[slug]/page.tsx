@@ -93,6 +93,7 @@ export default function Page({
       <Link
         title="Back to projects"
         href="/projects"
+        hrefLang="en-us"
         className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
       >
         <span className="sr-only">Back to projects</span>← Back

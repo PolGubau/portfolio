@@ -16,14 +16,14 @@ function CustomLink(props: CustomLinkProps) {
 
   if (String(href).startsWith("/")) {
     return (
-      <Link {...props} href={props.href}>
+      <Link {...props} href={props.href} hrefLang="en-us">
         {props.children}
       </Link>
     );
   }
 
   if (String(href).startsWith("#")) {
-    return <Link {...props} />;
+    return <Link {...props} hrefLang="en-us" />;
   }
 
   return <Link target="_blank" rel="noopener noreferrer" {...props} />;
@@ -107,6 +107,7 @@ function At({ label, href }: AtProps) {
   return (
     <Link
       target="_blank"
+      hrefLang="en-us"
       href={href}
       aria-label={label}
       className="mx-1 rounded-lg border border-neutral-300 bg-neutral-100 px-1 py-0.5 text-neutral-800 no-underline transition-all hover:bg-neutral-200 dark:border-neutral-500 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"

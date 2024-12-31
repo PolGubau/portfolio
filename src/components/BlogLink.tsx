@@ -34,6 +34,7 @@ export function BlogLink({ slug, name, children, className }: Readonly<BlogLinkP
     <Link
       title={name}
       href={slug}
+      hrefLang="en-us"
       className={cn(
         "group flex w-full flex-1 select-none items-center justify-between gap-6 rounded-2xl bg-secondary-900/10 px-5 py-4 text-balanced transition-all hover:bg-secondary-900/20 hover:brightness-125 md:px-6 md:py-6 dark:bg-secondary-50/10 dark:hover:bg-secondary-50/20",
         className,

@@ -26,6 +26,7 @@ function Header({ project: p }: { project: Project }) {
           <AnimatePresence>
             <section className="flex flex-col gap-4">
               <Link
+                hrefLang="en-us"
                 title="Back to projects"
                 href="/projects"
                 className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
@@ -43,6 +44,7 @@ function Header({ project: p }: { project: Project }) {
                     <span className="group flex gap-4">
                       <Link
                         href={p.link ?? ""}
+                        hrefLang="en-us"
                         target="_blank"
                         tabIndex={p.link ? undefined : -1}
                         className={p.link ? "" : "pointer-events-none"}
@@ -93,6 +95,7 @@ function Header({ project: p }: { project: Project }) {
               {p.link ? (
                 <Link
                   href={p.link}
+                  hrefLang="en-us"
                   title="Visit Project"
                   className="flex h-full flex-1 animate-expand-vertically items-center justify-center gap-2 rounded-2xl px-3 py-2 text-background text-black text-xl hover:brightness-90 sm:justify-start"
                   target="_blank"
@@ -110,6 +113,7 @@ function Header({ project: p }: { project: Project }) {
                 <Link
                   title="Link to Github Source"
                   href={p.githubLink}
+                  hrefLang="en-us"
                   className="flex h-full w-fit animate-expand-vertically items-center gap-2 truncate rounded-2xl px-3 py-2 text-background text-black text-xl hover:brightness-90"
                   target="_blank"
                   style={{
@@ -126,6 +130,7 @@ function Header({ project: p }: { project: Project }) {
                 <Link
                   title="Link to NPM Package"
                   href={p.npmLink}
+                  hrefLang="en-us"
                   className="flex h-full w-fit animate-expand-vertically items-center gap-2 truncate rounded-2xl px-3 py-2 text-background text-black text-xl hover:brightness-90"
                   target="_blank"
                   style={{

@@ -70,6 +70,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
               {project.npmLink ? (
                 <Link
                   href={project.npmLink}
+                  hrefLang="en-us"
                   title="Link to the NPM repository"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -83,6 +84,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
               {project.githubLink ? (
                 <Link
                   href={project.githubLink}
+                  hrefLang="en-us"
                   title="Link to the Github repository"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -94,7 +96,13 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
               ) : null}
 
               {project.link ? (
-                <Link href={project.link} title="Link to the project" target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={project.link}
+                  hrefLang="en-us"
+                  title="Link to the project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {" "}
                   <li
                     className="flex aspect-square rounded-lg bg-secondary-900/90 p-2 transition-all hover:bg-secondary-900"
