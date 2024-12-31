@@ -33,5 +33,12 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <MansoryGrid />;
+  return (
+    <div>
+      <h1 className="mb-8 text-pretty text-center font-medium text-xl md:text-start md:font-semibold md:text-2xl ">
+        UI Concepts
+      </h1>
+      <MansoryGrid />
+    </div>
+  );
 }
