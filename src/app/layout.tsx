@@ -7,6 +7,7 @@ import { metadata as constants } from "../lib/constants";
 import "./global.css";
 import { Footer } from "@/components/Layout/footer/footer";
 import { ScrollLine } from "@/components/ScrollLine/ScrollLine";
+import Script from "next/script";
 import { Providers } from "./providers";
 
 //
@@ -138,6 +139,7 @@ export default function RootLayout({
             </div>
           </main>
         </Providers>
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="dyTcaD/5vUVCeolv+FrhSQ" async={true} />
       </body>
     </html>
   );

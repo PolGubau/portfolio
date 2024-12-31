@@ -2,7 +2,7 @@
 
 import { LayoutGroup } from "framer-motion";
 import { useMemo } from "react";
-import NavItem from "./navItem";
+import { NavItem } from "./NavItem";
 
 const navItems = {
   "/": { name: "Home" },

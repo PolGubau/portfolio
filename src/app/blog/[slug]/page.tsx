@@ -2,7 +2,7 @@ import { Mdx } from "@/components/mdx";
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import SimilarBlogs from "../components/SimilarBlogs";
+import { SimilarBlogs } from "../components/SimilarBlogs";
 import { allBlogs } from ".contentlayer/generated";
 
 export const dynamic = "force-static";
