@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Projects | Pol Gubau Amores",
-    description: "Discover my recent projects and achievements.",
+    description: "Discover my recent projects and achievements, get to know my work and how I can help you.",
     url: "https://polgubau.com/projects",
     locale: "en_US",
     images: [

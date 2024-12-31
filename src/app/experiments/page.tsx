@@ -7,7 +7,8 @@ const MansoryGrid = dynamic(() => import("./_components/MansoryGrid"), {
 
 export const metadata: Metadata = {
   title: "Concepts",
-  description: "Read my thoughts on software development, design, and more.",
+  description:
+    "Discover some UI pieces I used for various projects, these are short videos that show the UI in action.",
   keywords: ["UI", "UX", "web development", "coding", "Pol Gubau Amores"],
   authors: {
     url: "https://polgubau.com",
@@ -15,7 +16,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Concepts | Pol Gubau Amores",
-    description: "Explore my thoughts on software development, design, and more.",
+    description:
+      "Discover some UI pieces I used for various projects, these are short videos that show the UI in action.",
     url: "https://polgubau.com/concepts",
     locale: "en_US",
     images: [

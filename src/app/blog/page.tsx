@@ -4,7 +4,7 @@ import { type Blog, allBlogs } from ".contentlayer/generated";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Read my thoughts on software development, design, and more.",
+  description: "Read my thoughts on software development, design, and more, and get to know me better.",
   keywords: ["projects", "portfolio", "web development", "coding", "Pol Gubau Amores"],
   authors: {
     url: "https://polgubau.com",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Blog | Pol Gubau Amores",
-    description: "Explore my thoughts on software development, design, and more.",
+    description: "Read my thoughts on software development, design, and more, and get to know me better.",
     url: "https://polgubau.com/blog",
     locale: "en_US",
     images: [
