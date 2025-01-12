@@ -49,9 +49,6 @@ Visit my portfolio at **[https://www.polgubau.com](https://www.polgubau.com/)** 
 3. Run the development server: **`pnpm dev`**
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## **Contributing**
-
-To contribute to this project, please check the [CONTRIBUTING.md](https://github.com/PolGubau/portfolio/blob/main/CONTRIBUTING.md) file.
 
 ## **License**
 
