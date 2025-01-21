@@ -24,7 +24,7 @@ export default function Page() {
   const yearSince2018 = thisYear - 2018;
 
   return (
-    <section className="">
+    <section>
       <Header />
       <main className="flex w-full flex-1 flex-col gap-8 text-secondary-900 dark:text-secondary-50">
         <div className="inline">

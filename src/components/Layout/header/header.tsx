@@ -9,7 +9,7 @@ export function Header() {
     <header className="mb-8 flex flex-col items-center justify-between gap-8 md:flex-row">
       <Image
         src="/media/me.png"
-        className=" flex justify-center rounded-3xl bg-primary object-cover object-bottom md:hidden"
+        className="flex justify-center rounded-3xl bg-primary-300 object-cover object-bottom drop-shadow-md md:hidden"
         alt="Pol Gubau Amores' profile image"
         title="Pol Gubau Amores' profile image"
         width={150}
