@@ -27,22 +27,24 @@ export default function Page() {
     <section>
       <Header />
       <main className="flex w-full flex-1 flex-col gap-8 text-secondary-900 dark:text-secondary-50">
-        <div className="inline">
-          <p className="inline text-secondary-900 dark:text-secondary-50">
-            👋🏼 Hi, I&apos;m a full time tech enthusiast graduated in <strong>Interactive Communication</strong> and
-            based in <GeoTooltip />
-          </p>
-        </div>
-        <div className="flex flex-col gap-4">
-          <p>
-            With +{yearSince2018} years of experience, I have a strong background in web development and have worked
-            from small websites to <strong>large-scale web applications</strong>.
-          </p>
-        </div>
-        <div className=" grid grid-cols-1 gap-4 md:grid-cols-2">
-          <BlogLink slug="projects" name="Recent projects" />
-          <BlogLink slug="experiments" name="Some cool UI concepts" />
-        </div>
+        <article className="flex flex-col gap-8 pb-10">
+          <div>
+            <p className="inline text-secondary-900 dark:text-secondary-50">
+              👋🏼 Hi, I&apos;m a full time tech enthusiast graduated in <strong>Interactive Communication</strong> and
+              based in <GeoTooltip />
+            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <p>
+              With +{yearSince2018} years of experience, I have a strong background in web development and have worked
+              from small websites to <strong>large-scale web applications</strong>.
+            </p>
+          </div>
+          <div className=" grid grid-cols-1 gap-4 md:grid-cols-2">
+            <BlogLink slug="projects" name="Recent projects" />
+            <BlogLink slug="experiments" name="Some cool UI concepts" />
+          </div>
+        </article>
 
         <hgroup className="balance mt-16 flex flex-col gap-5 font-medium text-3xl">
           <p>🎨👨‍💻</p>
