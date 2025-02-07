@@ -5,6 +5,7 @@ import { BlogLink } from "../../components/BlogLink";
 import { Header } from "../../components/Layout/header/header";
 import { ProjectsList } from "../../components/Projects/ProjectList/ProjectsList";
 import { ThreePhones } from "../../components/home/ThreePhones";
+import { CircularGallery } from "@/components/circularGallery/circularGallery";
 
 const imagesPhones = [
   {
@@ -107,6 +108,14 @@ export default function Page() {
         </div>
         <small>My lastest websites are good examples of this.</small>
       </main>
+
+      <div className="relative h-[600px] w-full">
+        <div className="sticky top-0 left-0 w-full">
+          <div className="-translate-x-1/2 absolute inset-x-0 top-0 left-1/2 h-[600px] w-screen">
+            <CircularGallery bend={1} textColor="#ffffff" borderRadius={0.05} />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
