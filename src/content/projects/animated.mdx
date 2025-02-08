@@ -1,0 +1,234 @@
+---
+title: "Animated"
+startedAt: "2025-01-20"
+endedAt: "2025-02-10"
+category: "web"
+color: "#ff8a93"
+cover: "0.webp"
+available: true
+
+summary: "Easy animations for your next project, thoughtfully designed for modern Tailwind CSS ✨"
+
+githubLink: https://github.com/PolGubau/animated
+link: https://animated.polgubau.com
+
+tech: 
+  - CSS
+  - Tailwind CSS
+  - animations
+  - React
+  - Typescript
+---
+
+Animated is a npm package that collects +75 handmade modern CSS animations for Tailwind CSS 4, designed to enhance your frontend projects. 🚀  
+
+I also provided a documentation page with all details and examples of the animations so you can easily integrate them into your project.
+
+## 📦 Installation
+
+Install the package via npm or pnpm:
+
+```sh
+pnpm add @polgubau/animated
+```
+(You can use yarn if you prefer; the library is available on npm as well.)
+
+
+## 🎨 Usage with tailwind >4
+
+1. Import the CSS file in your index css file:
+
+```css
+  /* index.css */
+  @import "tailwindcss";
+  @import "@polgubau/animated";
+```
+
+2. Use the animations in your Tailwind classes:
+
+```html
+  <div class="animate-fade-in">
+    Hello, world!
+  </div>
+```
+
+## 🎨 Usage without tailwind or old majors
+
+1. Import the CSS file in your main tsx file:
+```css
+import '@polgubau/animated';
+```
+Now you can use all keyframes to build you own animations.
+
+```css
+.fade-in {
+  animation: 3s infinite alternate slide-in-top;
+}
+```
+
+
+## 📋 Available Animations
+
+@polgubau/animated provides a variety of CSS animations categorized into different groups:
+
+- **Blur**: 
+  - animate-blur 
+  - animate-blur-pulse
+  - animate-blur-flash
+  - ...
+
+- Fade 
+  - animate-fade-in
+  - animate-fade-out
+  - animate-fade-pulse
+  - ...
+
+- Grow
+  - animate-grow
+  - animate-grow-pulse
+  - ...
+
+- Pump
+  - animate-pump
+  - animate-pump-pulse
+  - ...
+
+- Shake
+  - animate-shake-x
+  - animate-shake-y
+  - ...
+
+- Slide
+  - animate-slide-left
+  - animate-slide-right
+  - animate-slide-up
+  - animate-slide-down
+  - ...
+
+- Wiggle
+  - animate-wiggle
+  - ...
+
+- Flip
+  - animate-flip-x
+  - animate-flip-y
+  - animate-flip-pulse
+  - ...
+
+- Roll
+  - animate-roll-left
+  - animate-roll-right
+  - animate-roll-pulse
+  - ...
+
+These are just some examples, the library has +75 animations to use in your project.
+*(More categories coming soon!)*
+
+## ⚡ Customization
+
+You can customize animation durations and other properties using Tailwind's utility classes:
+
+```html
+<div class="animate-slide-left duration-1000 ease-in-out">
+  Sliding effect!
+</div>
+```
+
+## Configuration
+To make it easier to configure, the animations are based in predefined css variables. You can change the default values by overriding the variables in your CSS.
+
+These are the default values:
+
+```css
+:root {
+  --smaller-scale: 0.8;
+  --larger-scale: 1.2;
+  --pump-amount: 1.1;
+  --pump-soft-amount: 1.05;
+  --pump-hard-amount: 1.2;
+  --pump-x-amount: 1.1;
+  --pump-y-amount: 1.1;
+  --pump-bounce-amount: 1.15;
+  --blur-amount: 8px;
+  --slide-amount: 20px;
+  --slide-amount-negative: calc(-1 * var(--slide-amount));
+  --rotation: 10deg;
+  --rotation-negative: calc(-1 * var(--rotation));
+  --small-rotation: calc(0.5 * var(--rotation));
+  --small-rotation-negative: calc(-1 * var(--small-rotation));
+  --shake-amount: 5px;
+  --shake-amount-negative: calc(-1 * var(--shake-amount));
+  --movement-distance: 10px;
+  --fade-scale: 0.95;
+  --rolled-degree: 360deg;
+  --rolled-degree-negative: calc(-1 * var(--rolled-degree));
+  --rolled-distance: 100%;
+  --rolled-distance-negative: calc(-1 * var(--rolled-distance));
+}
+```
+Simply override these values in your main CSS file under the library import to personalize your animations.
+
+```css
+/* index.css */
+@import "tailwindcss";
+@import "@polgubau/animated";
+
+:root {
+  --slide-amount: 40px;
+}
+```
+*Now all slide animations will slide 40px instead of the default 20px! 😎*
+
+## How Can I See the Available Animations? 🔍
+
+You can simply type `animate-` and you'll see all available animations in your editor.
+
+![Tailwind intellisense highlighting animations](tailwindIntellisenseImage)
+
+> This will work automatically if you have your Tailwind extension installed in your IDE.
+
+### But I Want to Access Them Dynamically 💡
+
+The library exports an array of all animations in JSON format:
+
+```ts
+import animations from "@polgubau/animated/summary";
+
+/* [
+  "animate-blur",
+  "animate-blur-flash",
+  "animate-blur-pulse",
+  ...
+] */
+```
+
+*You can use this array however you like. TIP: This is useful for creating dynamically animated UI components based on props. 🌟*
+
+## I'm Not Using Tailwind 🚫
+
+**@polgubau/animated** is fully compatible with any CSS framework or vanilla CSS. Just import the library in your main CSS file:
+
+```tsx
+/* index.tsx */
+import "@polgubau/animated";
+```
+
+You'll now have access to all keyframe animations, but remember you'll need to create the classes manually.
+
+```css
+.fade-in {
+  animation: 3s infinite alternate slide-in-top;
+}
+```
+
+---
+
+## Explore the Animations 🌟
+
+Now that you know how to use the library, dive into the animations! Use the sidebar to explore different categories and see them in action. Enjoy! 🎉
+
+---
+
+## Documentation 📝
+
+The documentation is built using a **monorepo with Vite and React**. It uses **TailwindCSS** and features **fully dynamic animations**, meaning they are loaded directly from the package and not prebuilt into the documentation itself.
