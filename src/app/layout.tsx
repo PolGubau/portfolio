@@ -1,13 +1,13 @@
+import { Footer } from "@/components/Layout/footer/footer";
 import { Navbar } from "@/components/navbar";
+import { ScrollLine } from "@/components/ScrollLine/ScrollLine";
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Gabarito } from "next/font/google";
+import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";
 import { metadata as constants } from "../lib/constants";
 import "./global.css";
-import { Footer } from "@/components/Layout/footer/footer";
-import { ScrollLine } from "@/components/ScrollLine/ScrollLine";
-import Script from "next/script";
 import { Providers } from "./providers";
 
 //
@@ -116,7 +116,7 @@ export const viewport = {
   viewport: "width=device-width, initial-scale=1.0",
   colorScheme: "light dark",
 };
-export const font = Space_Grotesk({
+export const font = Gabarito({
   subsets: ["latin"],
   weight: ["400", "600"],
 });

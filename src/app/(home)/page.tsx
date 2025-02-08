@@ -5,8 +5,9 @@ import { BlogLink } from "../../components/BlogLink";
 import { Header } from "../../components/Layout/header/header";
 import { ProjectsList } from "../../components/Projects/ProjectList/ProjectsList";
 import { ThreePhones } from "../../components/home/ThreePhones";
-import { CircularGallery } from "@/components/circularGallery/circularGallery";
-
+import { LoadingGallery } from "../../components/circularGallery/loading-gallery";
+import { lazy, Suspense } from "react";
+const CircularGallery = lazy(() => import("@/components/circularGallery/circularGallery"));
 const imagesPhones = [
   {
     src: "/media/other/coiae.png",
@@ -107,15 +108,23 @@ export default function Page() {
           />
         </div>
         <small>My lastest websites are good examples of this.</small>
-      </main>
 
-      <div className="relative h-[600px] w-full">
-        <div className="sticky top-0 left-0 w-full">
-          <div className="-translate-x-1/2 absolute inset-x-0 top-0 left-1/2 h-[600px] w-screen">
-            <CircularGallery bend={1} textColor="#ffffff" borderRadius={0.05} />
+        <section className="-space-y-12 flex flex-col gap-2">
+          <hgroup className="balance mt-16 flex flex-col gap-5 font-medium text-3xl">
+            <p>📸✨</p>
+            <h2>Some photos I like</h2>
+          </hgroup>
+          <div className="relative h-[550px] w-full">
+            <div className="sticky top-0 left-0 w-full">
+              <div className="-translate-x-1/2 absolute inset-x-0 top-0 left-1/2 h-[600px] w-screen">
+                <Suspense fallback={<LoadingGallery />}>
+                  <CircularGallery bend={0.3} textColor="#ffffff" borderRadius={0.05} />
+                </Suspense>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </section>
   );
 }

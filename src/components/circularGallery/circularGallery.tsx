@@ -21,11 +21,11 @@ function lerp(p1: number, p2: number, t: number): number {
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 function autoBind(instance: any): void {
   const proto = Object.getPrototypeOf(instance);
-  Object.getOwnPropertyNames(proto).forEach((key) => {
+  for (const key of Object.getOwnPropertyNames(proto)) {
     if (key !== "constructor" && typeof instance[key] === "function") {
       instance[key] = instance[key].bind(instance);
     }
-  });
+  }
 }
 
 function getFontSize(font: string): number {
@@ -294,6 +294,7 @@ class Media {
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.src = this.image;
+    img.alt = this.text;
     img.onload = () => {
       texture.image = img;
       this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
@@ -472,52 +473,96 @@ class App {
   ) {
     const defaultItems = [
       {
-        image: `https://picsum.photos/seed/1/800/600?grayscale`,
-        text: "Bridge",
+        image: "/media/photos/tfg.webp",
+        text: "Thesis Defense",
       },
       {
-        image: `https://picsum.photos/seed/2/800/600?grayscale`,
-        text: "Desk Setup",
+        image: "/media/photos/barcelona.webp",
+        text: "Barcelona",
       },
       {
-        image: `https://picsum.photos/seed/3/800/600?grayscale`,
-        text: "Waterfall",
+        image: "/media/photos/berlin.webp",
+        text: "Berlin",
       },
       {
-        image: `https://picsum.photos/seed/4/800/600?grayscale`,
-        text: "Strawberries",
+        image: "/media/photos/bilbao.jpg",
+        text: "Bilbao",
       },
       {
-        image: `https://picsum.photos/seed/5/800/600?grayscale`,
-        text: "Deep Diving",
+        image: "/media/photos/brussels.webp",
+        text: "Brussels",
       },
       {
-        image: `https://picsum.photos/seed/16/800/600?grayscale`,
-        text: "Train Track",
+        image: "/media/photos/colmar.webp",
+        text: "Colmar",
       },
       {
-        image: `https://picsum.photos/seed/17/800/600?grayscale`,
-        text: "Santorini",
+        image: "/media/photos/florence.webp",
+        text: "Florence",
       },
       {
-        image: `https://picsum.photos/seed/8/800/600?grayscale`,
-        text: "Blurry Lights",
+        image: "/media/photos/geneva.webp",
+        text: "Geneva",
       },
       {
-        image: `https://picsum.photos/seed/9/800/600?grayscale`,
-        text: "New York",
+        image: "/media/photos/gothenburg.webp",
+        text: "Gothenburg",
       },
       {
-        image: `https://picsum.photos/seed/10/800/600?grayscale`,
-        text: "Good Boy",
+        image: "/media/photos/helsinki.webp",
+        text: "Helsinki",
       },
       {
-        image: `https://picsum.photos/seed/21/800/600?grayscale`,
-        text: "Coastline",
+        image: "/media/photos/kalmar.webp",
+        text: "Kalmar",
       },
       {
-        image: `https://picsum.photos/seed/12/800/600?grayscale`,
-        text: "Palm Trees",
+        image: "/media/photos/lyon.webp",
+        text: "Lyon",
+      },
+      {
+        image: "/media/photos/madrid.webp",
+        text: "Madrid",
+      },
+      {
+        image: "/media/photos/marseille.webp",
+        text: "Marseille",
+      },
+      {
+        image: "/media/photos/pisa.webp",
+        text: "Pisa",
+      },
+      {
+        image: "/media/photos/rome.webp",
+        text: "Rome",
+      },
+      {
+        image: "/media/photos/santander.webp",
+        text: "Santander",
+      },
+      {
+        image: "/media/photos/stockholm.webp",
+        text: "Stockholm",
+      },
+      {
+        image: "/media/photos/strasbourg.webp",
+        text: "Strasbourg",
+      },
+      {
+        image: "/media/photos/valladolid.webp",
+        text: "Valladolid",
+      },
+      {
+        image: "/media/photos/vatican.webp",
+        text: "Vatican",
+      },
+      {
+        image: "/media/photos/växjö.webp",
+        text: "Växjö",
+      },
+      {
+        image: "/media/photos/vilnius.webp",
+        text: "Vilnius",
       },
     ];
     const galleryItems = items?.length ? items : defaultItems;
@@ -652,7 +697,7 @@ interface CircularGalleryProps {
   font?: string;
 }
 
-export const CircularGallery = ({
+const CircularGallery = ({
   items,
   bend = 3,
   textColor = "#ffffff",
@@ -678,3 +723,4 @@ export const CircularGallery = ({
 
   return <div className="h-full w-full cursor-grab overflow-hidden active:cursor-grabbing" ref={containerRef} />;
 };
+export default CircularGallery;
