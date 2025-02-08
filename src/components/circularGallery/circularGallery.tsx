@@ -587,17 +587,24 @@ class App {
     });
   }
 
+  // onTouchDown(e: MouseEvent | TouchEvent) {
+  //   this.isDown = true;
+  //   this.scroll.position = this.scroll.current ?? 0;
+  //   this.start = "touches" in e ? e.touches[0].clientX : e.clientX;
+  // }
   onTouchDown(e: MouseEvent | TouchEvent) {
     this.isDown = true;
-    this.scroll.position = this.scroll.current;
-    this.start = "touches" in e ? e.touches[0].clientX : e.clientX;
+    this.scroll.position = this.scroll.current ?? 0;
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+    this.start = "touches" in e && e.touches[0] ? e.touches[0].clientX : (e as any).clientX;
   }
 
   onTouchMove(e: MouseEvent | TouchEvent) {
     if (!this.isDown) {
       return;
     }
-    const x = "touches" in e ? e.touches[0].clientX : e.clientX;
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+    const x = "touches" in e && e.touches[0] ? e.touches[0].clientX : (e as any).clientX;
     const distance = (this.start - x) * 0.05;
     this.scroll.target = (this.scroll.position ?? 0) + distance;
   }
