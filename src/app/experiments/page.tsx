@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 const MansoryGrid = dynamic(() => import("./_components/MansoryGrid"), {
   ssr: false,
@@ -38,7 +39,11 @@ export default function Page() {
       <h1 className="mb-8 text-pretty text-center font-medium text-xl md:text-start md:font-semibold md:text-2xl ">
         UI Concepts
       </h1>
-      <MansoryGrid />
+      <section className="min-h-screen">
+        <Suspense fallback={<div>Loading...</div>}>
+          <MansoryGrid />
+        </Suspense>
+      </section>
     </div>
   );
 }
