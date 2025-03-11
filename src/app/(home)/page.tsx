@@ -28,10 +28,10 @@ export default function Page() {
   return (
     <section>
       <Header />
-      <main className="flex w-full flex-1 flex-col gap-8 text-secondary-900 dark:text-secondary-50">
+      <main className="flex w-full flex-1 flex-col gap-8">
         <article className="flex flex-col gap-8 pb-10">
           <div>
-            <p className="inline text-secondary-900 dark:text-secondary-50">
+            <p className="inline">
               👋🏼 Hi, I&apos;m a full time tech enthusiast graduated in <strong>Interactive Communication</strong> and
               based in <GeoTooltip />
             </p>

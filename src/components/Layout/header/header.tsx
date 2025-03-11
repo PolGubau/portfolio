@@ -1,4 +1,3 @@
-import { AnimatedHeading } from "@/components/AnimatedHeading";
 import { MainSocials } from "@/components/Social/MainSocials";
 import { metadata } from "@/lib/constants";
 import Image from "next/image";
@@ -16,20 +15,17 @@ export function Header() {
         height={150}
       />
       <div className="flex flex-col max-md:gap-6 md:gap-3">
-        <h1 className="w-fit overflow-hidden text-3xl leading-[.85] sm:text-4xl md:text-5xl ">
-          <span className="block">{metadata.longName}</span>
-        </h1>
-
-        {/*  */}
-
-        <AnimatedHeading className="flex flex-col items-center justify-center gap-2 text-center md:items-start">
-          <h1 className="w-fit overflow-hidden text-3xl leading-[.85] sm:text-4xl md:text-5xl">
+        <div className="overflow-hidden">
+          <h1 className="w-fit animate-slide-in-bottom overflow-hidden text-3xl leading-[.85] sm:text-4xl md:text-5xl">
             <span className="block">{metadata.longName}</span>
           </h1>
-          <h2 className="w-fit overflow-hidden opacity-75 md:pb-2">
+        </div>
+        <div className="overflow-hidden">
+          <h2 className="w-fit animate-slide-in-bottom overflow-hidden opacity-75 md:pb-2">
             <span className="block text-md leading-[.85] sm:text-xl md:text-2xl">{metadata.slogan}</span>
           </h2>
-        </AnimatedHeading>
+        </div>
+
         <MainSocials />
       </div>
       <Avatar />

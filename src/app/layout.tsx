@@ -3,7 +3,6 @@ import { ScrollLine } from "@/components/ScrollLine/ScrollLine";
 import { Navbar } from "@/components/navbar";
 import type { Metadata } from "next";
 import { Gabarito } from "next/font/google";
-import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";
 import { metadata as constants } from "../lib/constants";
 import "./global.css";
@@ -117,7 +116,7 @@ export const viewport = {
 };
 const font = Gabarito({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: "variable",
 });
 export default function RootLayout({
   children,
@@ -128,8 +127,7 @@ export default function RootLayout({
     <html lang="en" dir="ltr" className={`${font.className} w-full overflow-x-hidden`}>
       <body>
         <Providers>
-          <NextTopLoader color="#ff4" height={2} showSpinner={false} />
-          <ScrollLine />
+           <ScrollLine />
           <main className="flex min-h-screen w-full">
             <div className="mt-8 mb-20 flex w-full max-w-4xl flex-auto flex-col px-4 md:mx-auto md:px-10">
               <Navbar />

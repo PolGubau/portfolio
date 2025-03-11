@@ -43,10 +43,6 @@
     ],
     "strictNullChecks": true
   },
-  "lib": [
-    "webworker"
-  ],
-  "extends": "pol-standard/typescript/node20",
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -54,7 +50,7 @@
     ".next/types/**/*.ts",
     ".contentlayer/generated",
     "postcss.config.js",
-    "tailwind.config.js"
+    "tailwind.config.ts"
   ],
   "exclude": [
     "node_modules"

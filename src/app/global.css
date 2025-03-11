@@ -1,104 +1,85 @@
 @import "tailwindcss";
 @import  "@polgubau/animated";
+@plugin "@tailwindcss/typography";
+@config "../../tailwind.config.ts";
 
-
-@theme {
-  --color-primary-50: oklch(0.987 0.026 102.212);
-  --color-primary-100: oklch(0.973 0.071 103.193);
-  --color-primary-200: oklch(0.945 0.129 101.54);
-  --color-primary-300: oklch(0.905 0.182 98.111);
-  --color-primary-400: oklch(0.852 0.199 91.936);
-  --color-primary-500: oklch(0.795 0.184 86.047);
-  --color-primary-600: oklch(0.681 0.162 75.834);
-  --color-primary-700: oklch(0.554 0.135 66.442);
-  --color-primary-800: oklch(0.476 0.114 61.907);
-  --color-primary-900: oklch(0.421 0.095 57.708);
-  --color-primary-950: oklch(0.286 0.066 53.813);
-
-  --color-background: oklch(0.985 0.001 106.423);
-  
-  --color-secondary-50: oklch(0.985 0.001 106.423);
-  --color-secondary-100: oklch(0.97 0.001 106.424);
-  --color-secondary-200: oklch(0.923 0.003 48.717);
-  --color-secondary-300: oklch(0.869 0.005 56.366);
-  --color-secondary-400: oklch(0.709 0.01 56.259);
-  --color-secondary-500: oklch(0.553 0.013 58.071);
-  --color-secondary-600: oklch(0.444 0.011 73.639);
-  --color-secondary-700: oklch(0.374 0.01 67.558);
-  --color-secondary-800: oklch(0.268 0.007 34.298);
-  --color-secondary-900: oklch(0.216 0.006 56.043);
-  --color-secondary-950: oklch(0.147 0.004 49.25);
+@theme inline {
+  --color-background: var(--color-secondary-50);
+  --color-foreground: var(--color-secondary-950);
 }
 
 [data-theme="dark"] {
-  --color-background: oklch(0.147 0.004 49.25);
+  --color-background: var(--color-secondary-950);
+  --color-foreground: var(--color-secondary-50);
 }
-@theme inline {
-  --color-background: var(--color-background);
-}
-
-:root{
-  @apply bg-background text-secondary-900 dark:text-secondary-50 antialiased;
+body{
+  @apply bg-background text-foreground antialiased;
 }
 
 *::selection {
-  @apply bg-primary-800 text-secondary-50 dark:text-secondary-900;
+  @apply bg-primary/30 text-background;
 }
 
-.prose .anchor {
-  @apply absolute invisible no-underline;
 
-  margin-left: -1em;
-  padding-right: 0.5em;
-  width: 80%;
-  max-width: 700px;
-  cursor: pointer;
+.prose {
+a {
+  transition: all;
+  @apply decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
 }
+  .anchor {
+    position: absolute;
+    visibility: hidden;
+    cursor: pointer;
+    width: 80%;
+    max-width: 700px;
+    margin-left: -1em;
+    padding-right: 0.5em;
+    text-decoration: none;
+    @apply text-neutral-300 dark:text-neutral-700;
 
-.anchor:hover {
-  @apply visible;
+ 
+    ::after {
+      @apply text-neutral-300 dark:text-neutral-700;
+      content: "#";
+    }
+  }
+  .anchor:hover {
+ visibility: visible;  }
+
+
+*:hover > .anchor {
+  visibility: visible;
 }
-
-.prose a {
-  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
-}
-
-.prose .anchor:after {
-  @apply text-neutral-300 dark:text-neutral-700;
-  content: "#";
-}
-
-.prose *:hover > .anchor {
-  @apply visible;
-}
-
-.prose pre {
+pre {
   @apply border border-neutral-800 !bg-neutral-900;
 }
-
-.prose code {
-  @apply text-neutral-800 dark:text-neutral-200 px-1 py-0.5 border border-neutral-100 dark:border-neutral-800 rounded-lg bg-neutral-100 dark:bg-neutral-900;
-}
-
-.prose pre code {
-  @apply text-neutral-800 dark:text-neutral-200 p-0;
+code {
+  @apply text-secondary-800 dark:text-secondary-200 px-1 py-0.5 border border-neutral-100 dark:border-secondary-800 rounded-lg bg-secondary-100 dark:bg-neutral-900 p-0;
   border: initial;
   line-height: 1.5;
 }
-
-.prose img {
+img {
   /* Don't apply styles to next/image */
   @apply m-0;
 }
-
-.prose h1 {
+ h1 {
   @apply font-bold text-xl md:text-3xl;
 }
-.prose h2,
+h2,
 h3,
 h4 {
   @apply font-semibold text-lg md:text-2xl;
 }
+ .tweet a {
+  text-decoration: inherit;
+  font-weight: inherit;
+} 
+ .callout > p {
+  margin: 0 !important;
+}
+}
+  
+
 
 .prose > :first-child {
   /* Override removing top margin, causing layout shift */
@@ -128,11 +109,7 @@ input[type="email"] {
   appearance: none;
 }
 
-.prose .tweet a {
-  text-decoration: inherit;
-  font-weight: inherit;
-}
-
+ 
 table {
   display: block;
   max-width: fit-content;
@@ -140,9 +117,6 @@ table {
   white-space: nowrap;
 }
 
-.prose .callout > p {
-  margin: 0 !important;
-}
 
 [data-rehype-pretty-code-fragment] code {
   @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
@@ -162,10 +136,10 @@ table {
   color: gray;
 }
 [data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-secondary-500/10;
-}
-[data-rehype-pretty-code-fragment] .line-highlighted span {
-  @apply relative;
+  @apply bg-secondary-500/10; 
+  span {
+    @apply relative;
+  }
 }
 [data-rehype-pretty-code-fragment] .word--highlighted {
   @apply rounded-md bg-secondary-500/10 p-1;
@@ -196,128 +170,127 @@ strong {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .show-animation {
-    view-timeline: --image;
-    view-timeline-axis: block;
-    animation-timeline: --image;
-    animation-name: show;
-    animation-range: entry 25% cover 50%;
-    animation-fill-mode: both;
-  }
+.show-animation {
+view-timeline: --image;
+view-timeline-axis: block;
+animation-timeline: --image;
+animation-name: show;
+animation-range: entry 25% cover 50%;
+animation-fill-mode: both;
+}
 
-  /* three phones part */
-  @keyframes first-phone {
-    from {
-      opacity: 0;
-      scale: 25%;
-      rotate: -20deg;
-    }
-    to {
-      opacity: 1;
-      scale: 100%;
-      rotate: 12deg;
-    }
+/* three phones part */
+@keyframes first-phone {
+  from {
+    opacity: 0;
+    scale: 25%;
+    rotate: -20deg;
   }
-  .show-first-phone {
-    view-timeline: --phone1;
-    view-timeline-axis: block;
-    animation-timeline: --phone1;
-    animation-name: first-phone;
-    animation-range: entry 25% cover 50%;
-    animation-fill-mode: both;
-  }
-  @keyframes second-phone {
-    from {
-      opacity: 0;
-      scale: 25%;
-      rotate: 0deg;
-    }
-    to {
-      opacity: 1;
-      scale: 100%;
-      rotate: -4deg;
-    }
-  }
-  .show-second-phone {
-    view-timeline: --phone2;
-    view-timeline-axis: block;
-    animation-timeline: --phone2;
-    animation-name: second-phone;
-    animation-range: entry 25% cover 70%;
-    animation-fill-mode: both;
-  }
-  @keyframes third-phone {
-    from {
-      opacity: 0;
-      scale: 25%;
-      rotate: 10deg;
-    }
-    to {
-      opacity: 1;
-      scale: 100%;
-      rotate: -20deg;
-    }
-  }
-  .show-third-phone {
-    view-timeline: --phone2;
-    view-timeline-axis: block;
-    animation-timeline: --phone2;
-    animation-name: third-phone;
-    animation-range: entry 25% cover 70%;
-    animation-fill-mode: both;
-  }
-  @keyframes width-animation {
-    from {
-      opacity: 0;
-      margin-top: 60px;
-    }
-    to {
-      opacity: 1;
-      margin-top: 0;
-    }
-  }
-  .width-animation {
-    view-timeline: --width;
-    view-timeline-axis: block;
-    animation-timeline: --width;
-    animation-name: width-animation;
-    animation-range: entry cover 30%;
-    animation-fill-mode: both;
-  }
-
-  /* animation to enter from left while fading in*/
-  @keyframes width-animation {
-    0% {
-      opacity: 0.5;
-      padding: 30px 0;
-    }
-    20% {
-      opacity: 1;
-      transform: rotateX(0deg);
-      padding: 0px 0;
-    }
-    80% {
-      opacity: 1;
-      transform: rotateX(0deg);
-      padding: 0px 0;
-    }
-    100% {
-      opacity: 0.5;
-      padding: 30px 0;
-    }
-  }
-
-  /* animation that shows in each Y axis border a width animation where the more external it is, the wider */
-  .width-animation-both {
-    view-timeline: --width-animation;
-    view-timeline-axis: block;
-    animation-timeline: --width-animation;
-    animation-name: width-animation;
-    animation-fill-mode: both;
-    animation-range: cover 10% cover 100%;
+  to {
+    opacity: 1;
+    scale: 100%;
+    rotate: 12deg;
   }
 }
+.show-first-phone {
+  view-timeline: --phone1;
+  view-timeline-axis: block;
+  animation-timeline: --phone1;
+  animation-name: first-phone;
+  animation-range: entry 25% cover 50%;
+  animation-fill-mode: both;
+}
+@keyframes second-phone {
+  from {
+    opacity: 0;
+    scale: 25%;
+    rotate: 0deg;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+    rotate: -4deg;
+  }
+}
+.show-second-phone {
+  view-timeline: --phone2;
+  view-timeline-axis: block;
+  animation-timeline: --phone2;
+  animation-name: second-phone;
+  animation-range: entry 25% cover 70%;
+  animation-fill-mode: both;
+}
+@keyframes third-phone {
+  from {
+    opacity: 0;
+    scale: 25%;
+    rotate: 10deg;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+    rotate: -20deg;
+  }
+}
+.show-third-phone {
+  view-timeline: --phone2;
+  view-timeline-axis: block;
+  animation-timeline: --phone2;
+  animation-name: third-phone;
+  animation-range: entry 25% cover 70%;
+  animation-fill-mode: both;
+}
+@keyframes width-animation {
+  from {
+    opacity: 0;
+    margin-top: 60px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+.width-animation {
+  view-timeline: --width;
+  view-timeline-axis: block;
+  animation-timeline: --width;
+  animation-name: width-animation;
+  animation-range: entry cover 30%;
+  animation-fill-mode: both;
+}
+
+/* animation to enter from left while fading in*/
+@keyframes width-animation {
+  0% {
+    opacity: 0.5;
+    padding: 30px 0;
+  }
+  20% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    padding: 0px 0;
+  }
+  80% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    padding: 0px 0;
+  }
+  100% {
+    opacity: 0.5;
+    padding: 30px 0;
+  }
+}
+
+/* animation that shows in each Y axis border a width animation where the more external it is, the wider */
+.width-animation-both {
+  view-timeline: --width-animation;
+  view-timeline-axis: block;
+  animation-timeline: --width-animation;
+  animation-name: width-animation;
+  animation-fill-mode: both;
+  animation-range: cover 10% cover 100%;
+}
+
 
 @keyframes cascade-animation {
   from {
