@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-
-const MansoryGrid = dynamic(() => import("./_components/MansoryGrid"), {
-  ssr: false,
-});
+import { MansoryGrid } from "./_components/MansoryGrid";
 
 export const metadata: Metadata = {
   title: "Concepts",

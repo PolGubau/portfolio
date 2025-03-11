@@ -38,8 +38,3 @@ next-env.d.ts
 
 # contentlayer
 .contentlayer
-# Serwist
-public/sw*
-public/swe-worker*
-# Million Lint
-.million
