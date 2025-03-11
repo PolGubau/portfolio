@@ -88,20 +88,4 @@ const securityHeaders = [
 
 const baseConfig = withContentlayer(nextConfig);
 
-module.exports = MillionLint.next({
-  enabled: true,
-  rsc: true,
-})(async (phase) => {
-  if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
-    const withSerwist = (await import("@serwist/next")).default({
-      // Note: This is only an example. If you use Pages Router,
-      // use something else that works, such as "service-worker/index.ts".
-      swSrc: "src/sw.ts",
-      swDest: "public/sw.js",
-      disable: process.env.NODE_ENV === "development",
-    });
-    return withSerwist(baseConfig);
-  }
-
-  return baseConfig;
-});
+module.exports =baseConfig;

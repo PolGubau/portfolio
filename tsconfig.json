@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -15,18 +19,33 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@contentlayer": ["./contentlayer/generated"],
-      "@/app/*": ["src/app/*"],
-      "@/components/*": ["src/components/*"],
-      "@/lib/*": ["src/lib/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@/contentlayer": [
+        "./contentlayer/generated"
+      ],
+      "@/app/*": [
+        "src/app/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/lib/*": [
+        "src/lib/*"
+      ],
+      "@/hooks/*": [
+        "src/hooks/*"
+      ],
     },
-    "types": ["@serwist/next/typings"],
     "incremental": true,
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "strictNullChecks": true
   },
-  "lib": ["webworker"],
+  "lib": [
+    "webworker"
+  ],
   "extends": "pol-standard/typescript/node20",
   "include": [
     "next-env.d.ts",
@@ -37,5 +56,7 @@
     "postcss.config.js",
     "tailwind.config.js"
   ],
-  "exclude": ["node_modules", "public/sw.js"]
+  "exclude": [
+    "node_modules"
+  ]
 }

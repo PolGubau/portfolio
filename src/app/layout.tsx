@@ -1,9 +1,8 @@
 import { Footer } from "@/components/Layout/footer/footer";
-import { Navbar } from "@/components/navbar";
 import { ScrollLine } from "@/components/ScrollLine/ScrollLine";
+import { Navbar } from "@/components/navbar";
 import type { Metadata } from "next";
 import { Gabarito } from "next/font/google";
-import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";
 import { metadata as constants } from "../lib/constants";
@@ -116,7 +115,7 @@ export const viewport = {
   viewport: "width=device-width, initial-scale=1.0",
   colorScheme: "light dark",
 };
-export const font = Gabarito({
+const font = Gabarito({
   subsets: ["latin"],
   weight: ["400", "600"],
 });
@@ -131,7 +130,7 @@ export default function RootLayout({
         <Providers>
           <NextTopLoader color="#ff4" height={2} showSpinner={false} />
           <ScrollLine />
-          <main className="flex min-h-screen w-full bg-secondary-50 text-secondary-900 antialiased dark:bg-secondary-900 dark:text-secondary-50">
+          <main className="flex min-h-screen w-full">
             <div className="mt-8 mb-20 flex w-full max-w-4xl flex-auto flex-col px-4 md:mx-auto md:px-10">
               <Navbar />
               {children}
@@ -139,7 +138,6 @@ export default function RootLayout({
             </div>
           </main>
         </Providers>
-        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="dyTcaD/5vUVCeolv+FrhSQ" async={true} />
       </body>
     </html>
   );

@@ -17,7 +17,7 @@ export default function manifest() {
     categories: ["development", "pol", "pol gubau amores", "Pol Gubau Amores", "news", "blog", "frontend"],
     name: "Pol Gubau Amores",
     description:
-      "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
+      "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Germany. I love to create beautiful and functional websites and apps.",
     short_name: "Pol Gubau",
     related_applications: [],
     icons: [

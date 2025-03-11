@@ -1,9 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import  "@polgubau/animated";
 
-html {
-  min-width: 360px;
+
+@theme {
+  --color-primary-50: oklch(0.987 0.026 102.212);
+  --color-primary-100: oklch(0.973 0.071 103.193);
+  --color-primary-200: oklch(0.945 0.129 101.54);
+  --color-primary-300: oklch(0.905 0.182 98.111);
+  --color-primary-400: oklch(0.852 0.199 91.936);
+  --color-primary-500: oklch(0.795 0.184 86.047);
+  --color-primary-600: oklch(0.681 0.162 75.834);
+  --color-primary-700: oklch(0.554 0.135 66.442);
+  --color-primary-800: oklch(0.476 0.114 61.907);
+  --color-primary-900: oklch(0.421 0.095 57.708);
+  --color-primary-950: oklch(0.286 0.066 53.813);
+
+  --color-background: oklch(0.985 0.001 106.423);
+  
+  --color-secondary-50: oklch(0.985 0.001 106.423);
+  --color-secondary-100: oklch(0.97 0.001 106.424);
+  --color-secondary-200: oklch(0.923 0.003 48.717);
+  --color-secondary-300: oklch(0.869 0.005 56.366);
+  --color-secondary-400: oklch(0.709 0.01 56.259);
+  --color-secondary-500: oklch(0.553 0.013 58.071);
+  --color-secondary-600: oklch(0.444 0.011 73.639);
+  --color-secondary-700: oklch(0.374 0.01 67.558);
+  --color-secondary-800: oklch(0.268 0.007 34.298);
+  --color-secondary-900: oklch(0.216 0.006 56.043);
+  --color-secondary-950: oklch(0.147 0.004 49.25);
+}
+
+[data-theme="dark"] {
+  --color-background: oklch(0.147 0.004 49.25);
+}
+@theme inline {
+  --color-background: var(--color-background);
+}
+
+:root{
+  @apply bg-background text-secondary-900 dark:text-secondary-50 antialiased;
 }
 
 *::selection {
@@ -127,13 +162,13 @@ table {
   color: gray;
 }
 [data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-slate-500 bg-opacity-10;
+  @apply bg-secondary-500/10;
 }
 [data-rehype-pretty-code-fragment] .line-highlighted span {
   @apply relative;
 }
 [data-rehype-pretty-code-fragment] .word--highlighted {
-  @apply rounded-md bg-slate-500 bg-opacity-10 p-1;
+  @apply rounded-md bg-secondary-500/10 p-1;
 }
 [data-rehype-pretty-code-title] {
   @apply px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-neutral-200 border-[#333333] bg-[#1c1c1c];
