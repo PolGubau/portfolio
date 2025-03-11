@@ -1,10 +1,10 @@
 export const metadata = {
   title: "Pol Gubau Amores",
   description:
-    "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
+    "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and UX Designer based in Germany. I love to create beautiful and functional websites and apps.",
   name: "Pol",
   longName: "Pol Gubau Amores",
-  slogan: "Frontend Developer and UX designer",
+  slogan: "Frontend Developer and UX Designer",
   picture: "/assets/blog/authors/pol.jpg",
   tags: [
     "Pol Gubau Amores",
@@ -17,6 +17,9 @@ export const metadata = {
     "Developer",
     "UX Designer",
     "Barcelona",
+    "Germany",
+    "Spain",
+    "Web Developer",
     "Mesalvo",
     "Best React Developer",
     "React",
