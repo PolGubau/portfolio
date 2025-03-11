@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@polgubau/animated':
-        specifier: ^1.0.11
-        version: 1.0.11
+        specifier: ^1.0.12
+        version: 1.0.12
       '@polgubau/configs':
         specifier: ^1.0.1
         version: 1.1.0(@biomejs/biome@1.9.4)
@@ -794,8 +794,8 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@polgubau/animated@1.0.11':
-    resolution: {integrity: sha512-2qqAbYRUBA9XN+TvaJ19oZzrUCUJxZyVY8OQDc3S2w6k6l7euoopOy+J6y3jJxeRRjIamXc9yHcXKi5gJBwMJQ==}
+  '@polgubau/animated@1.0.12':
+    resolution: {integrity: sha512-cWUj5HREsWdcagJE9aAK9XEd64DBCc4Aej1CYj2i1VOArgOICihYCImxu31EBzLwphl9QkzDD+hKX276AfbwTw==}
 
   '@polgubau/configs@1.1.0':
     resolution: {integrity: sha512-mkS1t1N6MZcbprejGjVV96oiQ8awrkdU/cHHSF0h/SQQU7nl/jcefTn1XWkE9lTHB8GL6EQkwtOoHzN0HmeZaw==}
@@ -4748,7 +4748,7 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@polgubau/animated@1.0.11':
+  '@polgubau/animated@1.0.12':
     dependencies:
       esbuild: 0.24.2
 

@@ -1,8 +1,6 @@
-const MillionLint = require("@million/lint");
 const { get } = require("@vercel/edge-config");
 const { withContentlayer } = require("next-contentlayer");
-const { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } = require("next/constants");
-
+ 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   redirects() {
