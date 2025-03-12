@@ -7,7 +7,6 @@ export default function manifest() {
     background_color: "#ededed",
     display: "standalone",
     display_override: ["window-controls-overlay", "standalone"],
-
     start_url: "/",
     scope: "/",
     id: "com.polgubau.portfolio",
