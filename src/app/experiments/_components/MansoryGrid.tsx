@@ -8,6 +8,7 @@ type VideoType = {
   height: number;
   width: number;
 };
+
 const videos: VideoType[] = [
   {
     mp4: "avatar",
@@ -75,7 +76,7 @@ const videos: VideoType[] = [
   {
     mp4: "hamburguer",
     date: "2024-15-04",
-    title: "Hamburguer",
+    title: "Hamburger",
     height: 576,
     width: 576,
   },
@@ -138,7 +139,7 @@ const videos: VideoType[] = [
   {
     mp4: "resize",
     date: "2024-01-10",
-    title: "Resizeable contents",
+    title: "Resizable contents",
     height: 864,
     width: 2016,
   },
