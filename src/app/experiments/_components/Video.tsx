@@ -9,6 +9,7 @@ interface VideoProps extends React.HTMLProps<HTMLVideoElement> {
 const Video = (props: VideoProps) => {
   const { index, src, date, width, height } = props;
   const { value: loading, setFalse: stopLoading } = useBoolean(true);
+
   return (
     <div
       key={index}
