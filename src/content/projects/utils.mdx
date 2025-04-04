@@ -1,0 +1,124 @@
+---
+title: "Utils"
+startedAt: "2025-02-20"
+endedAt: "2025-03-20"
+category: "web"
+color: "#ff8a93"
+cover: "0.webp"
+available: true
+
+summary: "Easy animations for your next project, thoughtfully designed for modern Tailwind CSS ✨"
+
+githubLink: https://github.com/PolGubau/animated
+link: https://animated.polgubau.com
+
+tech: 
+  - CSS
+  - Tailwind CSS
+  - animations
+  - React
+  - Typescript
+---
+
+Utils is a npm package that collects +50 handmade typed Javascript utilities, made to enhance your projects. 🚀  
+
+I have also coded a documentation page with all details and examples of the utilities so you can easily integrate them into your project.
+
+## 📦 Installation
+
+Install the library via npm or pnpm:
+  
+```sh
+npm install @polgubau/utils
+# or
+pnpm add @polgubau/utils
+```
+
+
+## What and why
+
+Over the past few years, TypeScript has become almost my second mother tongue after Spanish.  
+I kept noticing how often I was rewriting the same utilities "debounce", "throttle", or "copy to clipboard" across different projects. Instead of reinventing the wheel every time, I decided to build a small library with the utilities I use the most in my daily work.
+
+**@polgubau/utils** is a lightweight utility library designed to simplify common JavaScript and TypeScript tasks. It's modular, framework-agnostic, tree-shakable, and optimized for performance.
+
+### What this is NOT ⚠️
+- A catch-all library that solves every problem.
+- A replacement for Lodash or Underscore.
+- A package that will unnecessarily inflate your bundle size.
+
+### What this IS ✅
+- A collection of small, focused utility functions.
+- Modular, tree-shakable and lightweight both for CJS and ESM.
+- Designed to be simple, efficient, and easy to use.
+- Fully typed, with TypeScript definitions included.
+
+## Installation
+
+Install the library using your package manager of choice:
+
+```sh
+pnpm add @polgubau/utils
+```
+
+## Usage
+
+Import the utilities you need from the package:
+
+```js
+import { copyToClipboard } from "@polgubau/utils";
+```
+
+For even better optimization, you can import specific modules or functions as needed:
+
+```js
+import { copyToClipboard } from "@polgubau/utils/functions";
+import { shuffle } from "@polgubau/utils/arrays";
+```
+
+## Available Modules
+
+- **Storage**: Utilities for working with `localStorage` and `sessionStorage`.
+- **Accessibility**: Helpers to improve web accessibility.
+- **Arrays**: Functions to manipulate arrays efficiently.
+- **Comparators**: Utility functions for sorting and comparing data.
+- **Functions**: Higher-order functions and utility methods.
+- **Numbers**: Mathematical and number-related utilities.
+- **Objects**: Object manipulation and transformation helpers.
+- **Parsers**: Functions for parsing different types of data as JSON.
+- **Texts**: String and text processing utilities.
+
+## Example
+
+Using the arrays module:
+
+```js
+import { limitArray } from "@polgubau/utils/arrays"; 
+const { limitedArray } = limitArray([1, 2, 3, 4, 5]); 
+console.log(limitedArray); // [1, 2]
+```
+
+## TypeScript Support
+
+As it should always be, this library includes full TypeScript support with type definitions included.
+
+
+
+## 🛠 Development
+
+### Building the project
+
+The easiest way to work with the project monorepo is to run
+
+```sh
+pnpm dev
+```
+in the root directory. This will start a watch build for the package and start a local server to preview the documentation page.
+
+## 📜 License
+
+This project is licensed under the **MIT** License.  
+
+---
+
+Made with ❤️ by [Pol Gubau Amores](https://polgubau.com)
