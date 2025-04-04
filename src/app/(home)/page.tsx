@@ -109,7 +109,7 @@ export default function Page() {
         </div>
         <small>My lastest websites are good examples of this.</small>
 
-        <section className="-space-y-12 flex flex-col gap-2">
+        {/* <section className="-space-y-12 flex flex-col gap-2">
           <hgroup className="balance mt-16 flex flex-col gap-5 font-medium text-3xl">
             <p>📸✨</p>
             <h2>Some photos I like</h2>
@@ -123,7 +123,7 @@ export default function Page() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </section>
   );
