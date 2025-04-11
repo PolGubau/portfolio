@@ -1,16 +1,49 @@
 @import "tailwindcss";
 @import  "@polgubau/animated";
 @plugin "@tailwindcss/typography";
-@config "../../tailwind.config.ts";
 
-@theme inline {
-  --color-background: var(--color-secondary-50);
-  --color-foreground: var(--color-secondary-950);
+/* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
+ 
+@theme {
+--color-primary-50: #ffffec;
+--color-primary-100: #ffffc5;
+--color-primary-200: #ffffa9;
+--color-primary-300: #ffff82;
+--color-primary-400: #ffff69;
+--color-primary-500: #ffff44;
+--color-primary-600: #e8e83e;
+--color-primary-700: #b5b530;
+--color-primary-800: #8c8c25;
+--color-primary-900: #6b6b1d;
+--color-primary-950: #4d4d14;
+
+--color-secondary-50: #f7f7f7;
+--color-secondary-100: #eaeaea;
+--color-secondary-200: #d4d4d4;
+--color-secondary-300: #bcbcbc;
+--color-secondary-400: #a1a1a1;
+--color-secondary-500: #7f7f7f;
+--color-secondary-600: #666666;
+--color-secondary-700: #4d4d4d;
+--color-secondary-800: #333333;
+--color-secondary-900: #121212;
+--color-secondary-950: #0d0d0d;
 }
-
-[data-theme="dark"] {
-  --color-background: var(--color-secondary-950);
-  --color-foreground: var(--color-secondary-50);
+:root{
+  --background: var(--color-secondary-50);
+  --foreground: var(--color-secondary-900);
+}
+@media (prefers-color-scheme: dark) {  
+  :root {
+    --background: var(--color-secondary-900);
+    --foreground: var(--color-secondary-50);
+  }
+}
+@theme inline {
+  --color-primary: var(--color-primary-500);
+  --color-secondary: var(--color-secondary-500);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 body{
   @apply bg-background text-foreground antialiased;

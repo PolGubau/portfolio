@@ -1,7 +1,7 @@
 {
   "private": false,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "build-only": "next build",
     "start": "next start",
@@ -19,12 +19,12 @@
     "@vercel/edge-config": "^0.4.1",
     "contentlayer": "^0.3.4",
     "framer-motion": "^10.18.0",
-    "next": "^14.2.4",
+    "next": "15.3.0",
     "next-contentlayer": "^0.3.4",
     "ogl": "^1.0.11",
     "pol-ui": "^2.1.1052",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-icons": "^4.12.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.10.2",
@@ -37,8 +37,8 @@
     "@tailwindcss/postcss": "^4.0.12",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "20.8.9",
-    "@types/react": "18.2.32",
-    "@types/react-dom": "18.2.14",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.2",
     "knip": "^5.39.2",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.12",
@@ -97,5 +97,11 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   ],
-  "readme": "README.md"
+  "readme": "README.md",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.1.0",
+      "@types/react-dom": "19.1.2"
+    }
+  }
 }

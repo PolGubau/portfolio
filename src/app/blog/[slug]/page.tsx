@@ -7,13 +7,11 @@ import { allBlogs } from ".contentlayer/generated";
 
 export const dynamic = "force-static";
 interface GenerateMetadataProps {
-  params: { slug: string };
-  searchParams: Record<string, string | string[] | undefined>;
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
-export async function generateMetadata(
-  { params }: GenerateMetadataProps,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata(props: GenerateMetadataProps, parent: ResolvingMetadata): Promise<Metadata> {
+  const params = await props.params;
   const post = allBlogs.find((p) => p.slug === `blog/${params.slug}`);
 
   if (!post) {
@@ -70,13 +68,14 @@ function formatDate(date: string) {
 
   return fullDate;
 }
-export default function Page({
-  params,
-}: {
-  params: {
-    slug: string;
-  };
-}) {
+export default async function Page(
+  props: {
+    params: Promise<{
+      slug: string;
+    }>;
+  }
+) {
+  const params = await props.params;
   const post = allBlogs.find((p) => p.slug === `blog/${String(params.slug)}`);
   if (!post) {
     notFound();

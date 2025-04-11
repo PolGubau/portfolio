@@ -33,6 +33,7 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
       <AnimatePresence mode="wait">
         {scroll > 300 && (
           <motion.div
+            className="flex w-fit max-w-4xl items-center justify-between gap-8 rounded-2xl p-3 shadow-lg "
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             exit={{ y: 100 }}
@@ -40,7 +41,6 @@ const ProjectBar: React.FC<ProjectBarProps> = ({ project }) => {
             style={{
               backgroundColor: project.color ?? "#808080",
             }}
-            className="flex w-fit max-w-4xl items-center justify-between gap-8 rounded-2xl p-3 shadow-lg "
           >
             <h2 className="pl-2 font-semibold text-2xl text-black">{project.title}</h2>
 

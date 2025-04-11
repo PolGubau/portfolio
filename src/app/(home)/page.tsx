@@ -47,16 +47,17 @@ export default function Page() {
             <BlogLink slug="experiments" name="Some cool UI concepts" />
           </div>
         </article>
+        <section className="flex flex-col gap-5">
+          <hgroup className="balance mt-16 flex flex-col gap-5 font-medium text-3xl">
+            <p>🎨👨‍💻</p>
+            <h2>Pixel perfectionist, even though I work with vectors. </h2>
+          </hgroup>
 
-        <hgroup className="balance mt-16 flex flex-col gap-5 font-medium text-3xl">
-          <p>🎨👨‍💻</p>
-          <h2>Pixel perfectionist, even though I work with vectors. </h2>
-        </hgroup>
-
-        <p>
-          My roots are in arts and design. My passion is in technology and my goal is to combine both in digital
-          products that are <strong>beautiful</strong> and <strong>functional</strong>.
-        </p>
+          <p>
+            My roots are in arts and design. My passion is in technology and my goal is to combine both in digital
+            products that are <strong>beautiful</strong> and <strong>functional</strong>.
+          </p>
+        </section>
         <ThreePhones images={imagesPhones} />
 
         <hgroup className="balance mt-16 flex flex-col gap-5 font-medium text-3xl">
